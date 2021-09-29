@@ -2,17 +2,21 @@
   "name": "pokewrap",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
+    "start": "nodemon --require dotenv/config -e js,json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Greg Lyons",
   "license": "MIT",
   "dependencies": {
+    "cross-fetch": "^3.1.4",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mongodb": "^4.1.2",
-    "mongoose": "^6.0.8"
-  }
+    "mongoose": "^6.0.8",
+    "nodemon": "^2.0.13"
+  },
+  "type": "module"
 }
