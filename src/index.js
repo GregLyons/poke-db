@@ -1,12 +1,9 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
+import {pokemonSchema, pokemonSchema} from './mongoSchema';
 
 mongoose.connect(process.env.DB_CONNECTION_STRING);
 
-const pokemonSchema = new mongoose.Schema({
-  name: String,
-  dexNumber: Number,
-  typing: [String],
-});
+const pokemonSchema = new mongoose.Schema(pokemonSchema);
 
 // const Pokemon = mongoose.model('Pokemon', pokemonSchema);
 
