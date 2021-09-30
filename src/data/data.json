@@ -1,0 +1,746 @@
+[
+  {
+    "name": "aegislash-blade",
+    "prevGen": "S/M",
+    "currentGen": "SW/SH",
+    "changes": [
+      [
+        "defense",
+        150,
+        140
+      ],
+      [
+        "special-defense",
+        150,
+        140
+      ]
+    ]
+  },
+  {
+    "name": "aegislash-shield",
+    "prevGen": "S/M",
+    "currentGen": "SW/SH",
+    "changes": [
+      [
+        "attack",
+        150,
+        140
+      ],
+      [
+        "special-attack",
+        150,
+        140
+      ]
+    ]
+  },
+  {
+    "name": "Butterfree",
+    "prevGen": "B/W",
+    "currentGen": "X/Y",
+    "changes": [
+      [
+        "special-attack",
+        90,
+        80
+      ]
+    ]
+  },
+  {
+    "name": "Beedrill",
+    "prevGen": "B/W",
+    "currentGen": "X/Y",
+    "changes": [
+      [
+        "attack",
+        90,
+        80
+      ]
+    ]
+  },
+  {
+    "name": "Pidgeot",
+    "prevGen": "B/W",
+    "currentGen": "X/Y",
+    "changes": [
+      [
+        "speed",
+        101,
+        91
+      ]
+    ]
+  },
+  {
+    "name": "Pikachu",
+    "prevGen": "B/W",
+    "currentGen": "X/Y",
+    "changes": [
+      [
+        "defense",
+        40,
+        30
+      ],
+      [
+        "special-defense",
+        50,
+        40
+      ]
+    ]
+  },
+  {
+    "name": "Raichu",
+    "prevGen": "B/W",
+    "currentGen": "X/Y",
+    "changes": [
+      [
+        "speed",
+        110,
+        100
+      ]
+    ]
+  },
+  {
+    "name": "Nidoqueen",
+    "prevGen": "B/W",
+    "currentGen": "X/Y",
+    "changes": [
+      [
+        "attack",
+        92,
+        82
+      ]
+    ]
+  },
+  {
+    "name": "Nidoking",
+    "prevGen": "B/W",
+    "currentGen": "X/Y",
+    "changes": [
+      [
+        "attack",
+        102,
+        92
+      ]
+    ]
+  },
+  {
+    "name": "Clefable",
+    "prevGen": "B/W",
+    "currentGen": "X/Y",
+    "changes": [
+      [
+        "special-attack",
+        95,
+        85
+      ]
+    ]
+  },
+  {
+    "name": "Wigglytuff",
+    "prevGen": "B/W",
+    "currentGen": "X/Y",
+    "changes": [
+      [
+        "special-attack",
+        85,
+        75
+      ]
+    ]
+  },
+  {
+    "name": "Vileplume",
+    "prevGen": "B/W",
+    "currentGen": "X/Y",
+    "changes": [
+      [
+        "special-attack",
+        110,
+        100
+      ]
+    ]
+  },
+  {
+    "name": "Poliwrath",
+    "prevGen": "B/W",
+    "currentGen": "X/Y",
+    "changes": [
+      [
+        "attack",
+        95,
+        85
+      ]
+    ]
+  },
+  {
+    "name": "Alakazam",
+    "prevGen": "B/W",
+    "currentGen": "X/Y",
+    "changes": [
+      [
+        "special-defense",
+        95,
+        85
+      ]
+    ]
+  },
+  {
+    "name": "Victreebel",
+    "prevGen": "B/W",
+    "currentGen": "X/Y",
+    "changes": [
+      [
+        "special-defense",
+        70,
+        60
+      ]
+    ]
+  },
+  {
+    "name": "Golem",
+    "prevGen": "B/W",
+    "currentGen": "X/Y",
+    "changes": [
+      [
+        "attack",
+        120,
+        110
+      ]
+    ]
+  },
+  {
+    "name": "Ampharos",
+    "prevGen": "B/W",
+    "currentGen": "X/Y",
+    "changes": [
+      [
+        "defense",
+        85,
+        75
+      ]
+    ]
+  },
+  {
+    "name": "Bellossom",
+    "prevGen": "B/W",
+    "currentGen": "X/Y",
+    "changes": [
+      [
+        "defense",
+        95,
+        85
+      ]
+    ]
+  },
+  {
+    "name": "Azumarill",
+    "prevGen": "B/W",
+    "currentGen": "X/Y",
+    "changes": [
+      [
+        "special-attack",
+        60,
+        50
+      ]
+    ]
+  },
+  {
+    "name": "Jumpluff",
+    "prevGen": "B/W",
+    "currentGen": "X/Y",
+    "changes": [
+      [
+        "special-defense",
+        95,
+        85
+      ]
+    ]
+  },
+  {
+    "name": "Beautifly",
+    "prevGen": "B/W",
+    "currentGen": "X/Y",
+    "changes": [
+      [
+        "special-attack",
+        100,
+        90
+      ]
+    ]
+  },
+  {
+    "name": "Exploud",
+    "prevGen": "B/W",
+    "currentGen": "X/Y",
+    "changes": [
+      [
+        "special-defense",
+        73,
+        63
+      ]
+    ]
+  },
+  {
+    "name": "Staraptor",
+    "prevGen": "B/W",
+    "currentGen": "X/Y",
+    "changes": [
+      [
+        "special-defense",
+        60,
+        50
+      ]
+    ]
+  },
+  {
+    "name": "Roserade",
+    "prevGen": "B/W",
+    "currentGen": "X/Y",
+    "changes": [
+      [
+        "defense",
+        65,
+        55
+      ]
+    ]
+  },
+  {
+    "name": "Stoutland",
+    "prevGen": "B/W",
+    "currentGen": "X/Y",
+    "changes": [
+      [
+        "attack",
+        110,
+        100
+      ]
+    ]
+  },
+  {
+    "name": "Unfezant",
+    "prevGen": "B/W",
+    "currentGen": "X/Y",
+    "changes": [
+      [
+        "attack",
+        115,
+        105
+      ]
+    ]
+  },
+  {
+    "name": "Gigalith",
+    "prevGen": "B/W",
+    "currentGen": "X/Y",
+    "changes": [
+      [
+        "special-defense",
+        80,
+        70
+      ]
+    ]
+  },
+  {
+    "name": "Seismitoad",
+    "prevGen": "B/W",
+    "currentGen": "X/Y",
+    "changes": [
+      [
+        "attack",
+        95,
+        85
+      ]
+    ]
+  },
+  {
+    "name": "Leavanny",
+    "prevGen": "B/W",
+    "currentGen": "X/Y",
+    "changes": [
+      [
+        "special-defense",
+        80,
+        70
+      ]
+    ]
+  },
+  {
+    "name": "Scolipede",
+    "prevGen": "B/W",
+    "currentGen": "X/Y",
+    "changes": [
+      [
+        "attack",
+        100,
+        90
+      ]
+    ]
+  },
+  {
+    "name": "Krookodile",
+    "prevGen": "B/W",
+    "currentGen": "X/Y",
+    "changes": [
+      [
+        "defense",
+        80,
+        70
+      ]
+    ]
+  },
+  {
+    "name": "Arbok",
+    "prevGen": "X/Y",
+    "currentGen": "Su/Mo",
+    "changes": [
+      [
+        "attack",
+        95,
+        85
+      ]
+    ]
+  },
+  {
+    "name": "Dugtrio",
+    "prevGen": "X/Y",
+    "currentGen": "Su/Mo",
+    "changes": [
+      [
+        "attack",
+        100,
+        80
+      ]
+    ]
+  },
+  {
+    "name": "Mega Alakazam",
+    "prevGen": "X/Y",
+    "currentGen": "Su/Mo",
+    "changes": [
+      [
+        "special-defense",
+        105,
+        95
+      ]
+    ]
+  },
+  {
+    "name": "Farfetch'd",
+    "prevGen": "X/Y",
+    "currentGen": "Su/Mo",
+    "changes": [
+      [
+        "attack",
+        90,
+        65
+      ]
+    ]
+  },
+  {
+    "name": "Dodrio",
+    "prevGen": "X/Y",
+    "currentGen": "Su/Mo",
+    "changes": [
+      [
+        "speed",
+        110,
+        100
+      ]
+    ]
+  },
+  {
+    "name": "Electrode",
+    "prevGen": "X/Y",
+    "currentGen": "Su/Mo",
+    "changes": [
+      [
+        "speed",
+        150,
+        140
+      ]
+    ]
+  },
+  {
+    "name": "Exeggutor",
+    "prevGen": "X/Y",
+    "currentGen": "Su/Mo",
+    "changes": [
+      [
+        "special-defense",
+        75,
+        65
+      ]
+    ]
+  },
+  {
+    "name": "Noctowl",
+    "prevGen": "X/Y",
+    "currentGen": "Su/Mo",
+    "changes": [
+      [
+        "special-attack",
+        86,
+        76
+      ]
+    ]
+  },
+  {
+    "name": "Ariados",
+    "prevGen": "X/Y",
+    "currentGen": "Su/Mo",
+    "changes": [
+      [
+        "special-defense",
+        70,
+        60
+      ]
+    ]
+  },
+  {
+    "name": "Qwilfish",
+    "prevGen": "X/Y",
+    "currentGen": "Su/Mo",
+    "changes": [
+      [
+        "defense",
+        85,
+        75
+      ]
+    ]
+  },
+  {
+    "name": "Magcargo",
+    "prevGen": "X/Y",
+    "currentGen": "Su/Mo",
+    "changes": [
+      [
+        "hp",
+        60,
+        50
+      ],
+      [
+        "special-attack",
+        90,
+        80
+      ]
+    ]
+  },
+  {
+    "name": "Corsola",
+    "prevGen": "X/Y",
+    "currentGen": "Su/Mo",
+    "changes": [
+      [
+        "hp",
+        65,
+        55
+      ],
+      [
+        "defense",
+        95,
+        85
+      ],
+      [
+        "special-defense",
+        95,
+        85
+      ]
+    ]
+  },
+  {
+    "name": "Mantine",
+    "prevGen": "X/Y",
+    "currentGen": "Su/Mo",
+    "changes": [
+      [
+        "hp",
+        85,
+        65
+      ]
+    ]
+  },
+  {
+    "name": "Swellow",
+    "prevGen": "X/Y",
+    "currentGen": "Su/Mo",
+    "changes": [
+      [
+        "special-attack",
+        75,
+        50
+      ]
+    ]
+  },
+  {
+    "name": "Pelipper",
+    "prevGen": "X/Y",
+    "currentGen": "Su/Mo",
+    "changes": [
+      [
+        "special-attack",
+        95,
+        85
+      ]
+    ]
+  },
+  {
+    "name": "Masquerain",
+    "prevGen": "X/Y",
+    "currentGen": "Su/Mo",
+    "changes": [
+      [
+        "special-attack",
+        100,
+        80
+      ],
+      [
+        "speed",
+        80,
+        60
+      ]
+    ]
+  },
+  {
+    "name": "Delcatty",
+    "prevGen": "X/Y",
+    "currentGen": "Su/Mo",
+    "changes": [
+      [
+        "speed",
+        90,
+        70
+      ]
+    ]
+  },
+  {
+    "name": "Volbeat",
+    "prevGen": "X/Y",
+    "currentGen": "Su/Mo",
+    "changes": [
+      [
+        "defense",
+        75,
+        55
+      ],
+      [
+        "special-defense",
+        85,
+        75
+      ]
+    ]
+  },
+  {
+    "name": "Illumise",
+    "prevGen": "X/Y",
+    "currentGen": "Su/Mo",
+    "changes": [
+      [
+        "defense",
+        75,
+        55
+      ],
+      [
+        "special-defense",
+        85,
+        75
+      ]
+    ]
+  },
+  {
+    "name": "Lunatone",
+    "prevGen": "X/Y",
+    "currentGen": "Su/Mo",
+    "changes": [
+      [
+        "hp",
+        90,
+        70
+      ]
+    ]
+  },
+  {
+    "name": "Solrock",
+    "prevGen": "X/Y",
+    "currentGen": "Su/Mo",
+    "changes": [
+      [
+        "hp",
+        90,
+        70
+      ]
+    ]
+  },
+  {
+    "name": "Chimecho",
+    "prevGen": "X/Y",
+    "currentGen": "Su/Mo",
+    "changes": [
+      [
+        "hp",
+        75,
+        65
+      ],
+      [
+        "defense",
+        80,
+        70
+      ],
+      [
+        "special-defense",
+        90,
+        80
+      ]
+    ]
+  },
+  {
+    "name": "Woobat",
+    "prevGen": "X/Y",
+    "currentGen": "Su/Mo",
+    "changes": [
+      [
+        "hp",
+        65,
+        55
+      ]
+    ]
+  },
+  {
+    "name": "Crustle",
+    "prevGen": "X/Y",
+    "currentGen": "Su/Mo",
+    "changes": [
+      [
+        "attack",
+        105,
+        95
+      ]
+    ]
+  },
+  {
+    "name": "Beartic",
+    "prevGen": "X/Y",
+    "currentGen": "Su/Mo",
+    "changes": [
+      [
+        "attack",
+        130,
+        110
+      ]
+    ]
+  },
+  {
+    "name": "Cryogonal",
+    "prevGen": "X/Y",
+    "currentGen": "Su/Mo",
+    "changes": [
+      [
+        "hp",
+        80,
+        70
+      ],
+      [
+        "defense",
+        50,
+        30
+      ]
+    ]
+  }
+]

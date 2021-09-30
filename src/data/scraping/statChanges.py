@@ -1,4 +1,5 @@
 from bs4 import BeautifulSoup
+import json
 import re
 
 class StatChange:
@@ -19,6 +20,14 @@ class StatChange:
         statChanges.append([stats[i], self.prevGenStats[i], self.currentGenStats[i]])
 
     return statChanges
+
+  def toJSON(self):
+    return {
+      'name': self.pokemonName,
+      'prevGen': self.prevGen,
+      'currentGen': self.currentGen,
+      'changes': self.getChanges()
+    }
 
 def getDataFromRowTriplet(rowPair):  
   
@@ -64,7 +73,13 @@ def getDataFromRowTriplet(rowPair):
 # get stat change data for gens 6 and 7
 statLinks = [r"src\data\scraping\gen6\updatedStats.html", r"src\data\scraping\gen7\updatedStats.html"]
 
-allStatChanges = []
+allStatChangesJSON = []
+
+# the regexes for gens 6 and 7 dont work for gen 8; only aegislash's stats were changed in gen 8, so we add that manually
+aegisSlashBlade_StatChanges = StatChange("aegislash-blade", "S/M", [60, 50, 150, 50, 150, 60], "SW/SH", [60, 50, 140, 50, 140, 60])
+aegisSlashShield_StatChanges = StatChange("aegislash-shield", "S/M", [60, 150, 50, 150, 50, 60], "SW/SH", [60, 140, 50, 140, 50, 60])
+allStatChangesJSON.append(aegisSlashBlade_StatChanges.toJSON())
+allStatChangesJSON.append(aegisSlashShield_StatChanges.toJSON())
 
 for link in statLinks:
   with open(link) as fp:
@@ -75,13 +90,7 @@ for link in statLinks:
       rowPair = (str(rows[i]), str(rows[i+2]))
       pokemonName, prevGen, prevGenStats, currentGen, currentGenStats = getDataFromRowTriplet(rowPair)
       statChanges = StatChange(pokemonName, prevGen, prevGenStats, currentGen, currentGenStats)
-      allStatChanges.append(statChanges)
+      allStatChangesJSON.append(statChanges.toJSON())
 
-# the regexes for gens 6 and 7 dont work for gen 8; only aegislash's stats were changed in gen 8, so we add that manually
-aegisSlashBlade_StatChanges = StatChange("aegislash-blade", "S/M", [60, 50, 150, 50, 150, 60], "SW/SH", [60, 50, 140, 50, 140, 60])
-aegisSlashShield_StatChanges = StatChange("aegislash-shield", "S/M", [60, 150, 50, 150, 50, 60], "SW/SH", [60, 140, 50, 140, 50, 60])
-allStatChanges.append(aegisSlashBlade_StatChanges)
-allStatChanges.append(aegisSlashShield_StatChanges)
-
-for changes in allStatChanges:
-  print(changes.pokemonName, changes.getChanges())
+with open('src\data\data.json', 'w', encoding='utf-8') as f:
+  json.dump(allStatChangesJSON, f, ensure_ascii=False, indent=2 * ' ')
