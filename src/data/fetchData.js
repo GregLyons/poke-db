@@ -83,14 +83,8 @@ async function fetchPokemonData(limit, offset) {
       console.log(variety.name, 'data complete');
     }
   }
-
-  console.log(data);
   return data;
 }
-
-
-
-fetchPokemonData(50);
 
 // HELPER FUNCTIONS
 
@@ -132,3 +126,5 @@ function varietyNameToGen(variantName, speciesGen) {
     return speciesGen;
   }
 }
+
+export {fetchPokemonData};
