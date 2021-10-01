@@ -53,10 +53,13 @@ for i in range(len(genMap)):
       csvRow = []
       for cell in row.findAll(['td', 'th']):
         value = cell.get_text().rstrip('\n')
-        if value != '' and value != '#':
-          csvRow.append(value)
-        if value == '#': 
-          csvRow.append('Dex Number')
+        if value != '':
+          if value == 'Pokémon':
+            csvRow.append('Pokemon')
+          elif value == '#':
+            csvRow.append('Dex Number')
+          else:
+            csvRow.append(value.lstrip('0'))
 
       # cut off last two columns, Total and Average
       csvRow = csvRow[:-2]
