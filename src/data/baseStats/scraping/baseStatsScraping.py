@@ -35,7 +35,7 @@ for i in range(len(genMap)):
   req = urllib.request.Request(url, headers={'User-Agent' : "Magic Browser"}) 
   html = urllib.request.urlopen( req )
 
-  # Get the table rows
+  # Get the table rows--the desired table has the 'sortable' class
   bs = BeautifulSoup(html.read(), 'html.parser')
   table = bs.find('table', {'class':'sortable'})
 
