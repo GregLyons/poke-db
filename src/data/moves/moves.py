@@ -274,4 +274,5 @@ def makeInitialMoveDict(fname, unparsedNotes):
 
 fname = f'src\data\moves\movesList.csv'
 notes = makeCSVandExtractNotes(fname)
-initialMoveDict = makeInitialMoveDict(fname, notes)
+
+moveDict = makeInitialMoveDict(fname, notes)

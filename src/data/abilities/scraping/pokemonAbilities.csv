@@ -1,4 +1,4 @@
-Dex Number,Sprite URL,Pokemon,Ability 1,Ability 2,Hidden,1
+Dex Number,Sprite URL,Pokemon,Ability 1,Ability 2,Hidden,Introduced
 1,//cdn2.bulbagarden.net/upload/2/21/001MS8.png,Bulbasaur,Overgrow,,Chlorophyll,1
 2,//cdn2.bulbagarden.net/upload/3/38/002MS8.png,Ivysaur,Overgrow,,Chlorophyll,1
 3,//cdn2.bulbagarden.net/upload/b/ba/003MS8.png,Venusaur,Overgrow,,Chlorophyll,1
@@ -235,7 +235,7 @@ Dex Number,Sprite URL,Pokemon,Ability 1,Ability 2,Hidden,1
 150,//cdn2.bulbagarden.net/upload/4/4d/150MXMS6.png,Mewtwo (Mega Mewtwo X),Steadfast,,,6
 150,//cdn2.bulbagarden.net/upload/6/66/150MYMS6.png,Mewtwo (Mega Mewtwo Y),Insomnia,,,6
 151,//cdn2.bulbagarden.net/upload/b/b0/151MS8.png,Mew,Synchronize,,,1
-Dex Number,Sprite URL,Pokemon,Ability 1,Ability 2,Hidden,2
+Dex Number,Sprite URL,Pokemon,Ability 1,Ability 2,Hidden,Introduced
 152,//cdn2.bulbagarden.net/upload/4/41/152MS6.png,Chikorita,Overgrow,,Leaf Guard,2
 153,//cdn2.bulbagarden.net/upload/7/71/153MS6.png,Bayleef,Overgrow,,Leaf Guard,2
 154,//cdn2.bulbagarden.net/upload/2/23/154MS6.png,Meganium,Overgrow,,Leaf Guard,2
@@ -335,7 +335,7 @@ Dex Number,Sprite URL,Pokemon,Ability 1,Ability 2,Hidden,2
 249,//cdn2.bulbagarden.net/upload/1/1e/249MS8.png,Lugia,Pressure,,Multiscale,2
 250,//cdn2.bulbagarden.net/upload/c/c4/250MS8.png,Ho-Oh,Pressure,,Regenerator,2
 251,//cdn2.bulbagarden.net/upload/2/26/251MS8.png,Celebi,Natural Cure,,,2
-Dex Number,Sprite URL,Pokemon,Ability 1,Ability 2,Hidden,3
+Dex Number,Sprite URL,Pokemon,Ability 1,Ability 2,Hidden,Introduced
 252,//cdn2.bulbagarden.net/upload/e/e0/252MS8.png,Treecko,Overgrow,,Unburden,3
 253,//cdn2.bulbagarden.net/upload/4/43/253MS8.png,Grovyle,Overgrow,,Unburden,3
 254,//cdn2.bulbagarden.net/upload/6/67/254MS8.png,Sceptile,Overgrow,,Unburden,3
@@ -508,7 +508,7 @@ Dex Number,Sprite URL,Pokemon,Ability 1,Ability 2,Hidden,3
 386,//cdn2.bulbagarden.net/upload/2/23/386AMS6.png,Deoxys (Attack Forme),Pressure,,,3
 386,//cdn2.bulbagarden.net/upload/6/63/386DMS6.png,Deoxys (Defense Forme),Pressure,,,3
 386,//cdn2.bulbagarden.net/upload/3/3f/386SMS6.png,Deoxys (Speed Forme),Pressure,,,3
-Dex Number,Sprite URL,Pokemon,Ability 1,Ability 2,Hidden,4
+Dex Number,Sprite URL,Pokemon,Ability 1,Ability 2,Hidden,Introduced
 387,//cdn2.bulbagarden.net/upload/8/89/387MS6.png,Turtwig,Overgrow,,Shell Armor,4
 388,//cdn2.bulbagarden.net/upload/1/1b/388MS6.png,Grotle,Overgrow,,Shell Armor,4
 389,//cdn2.bulbagarden.net/upload/6/61/389MS6.png,Torterra,Overgrow,,Shell Armor,4
@@ -605,7 +605,7 @@ Dex Number,Sprite URL,Pokemon,Ability 1,Ability 2,Hidden,4
 492,//cdn2.bulbagarden.net/upload/2/2b/492MS6.png,Shaymin (Land Forme),Natural Cure,,,4
 492,//cdn2.bulbagarden.net/upload/e/e4/492SMS6.png,Shaymin (Sky Forme),Serene Grace,,,4
 493,//cdn2.bulbagarden.net/upload/0/04/493MS6.png,Arceus,Multitype,,,4
-Dex Number,Sprite URL,Pokemon,Ability 1,Ability 2,Hidden,5
+Dex Number,Sprite URL,Pokemon,Ability 1,Ability 2,Hidden,Introduced
 494,//cdn2.bulbagarden.net/upload/6/63/494MS8.png,Victini,Victory Star,,,5
 495,//cdn2.bulbagarden.net/upload/0/07/495MS6.png,Snivy,Overgrow,,Contrary,5
 496,//cdn2.bulbagarden.net/upload/6/6d/496MS6.png,Servine,Overgrow,,Contrary,5
@@ -784,7 +784,7 @@ Dex Number,Sprite URL,Pokemon,Ability 1,Ability 2,Hidden,5
 648,//cdn2.bulbagarden.net/upload/6/6e/648MS6.png,Meloetta (Aria Forme),Serene Grace,,,5
 648,//cdn2.bulbagarden.net/upload/8/88/648PMS6.png,Meloetta (Pirouette Forme),Serene Grace,,,5
 649,//cdn2.bulbagarden.net/upload/c/ca/649MS8.png,Genesect,Download,,,5
-Dex Number,Sprite URL,Pokemon,Ability 1,Ability 2,Hidden,6
+Dex Number,Sprite URL,Pokemon,Ability 1,Ability 2,Hidden,Introduced
 650,//cdn2.bulbagarden.net/upload/2/27/650MS6.png,Chespin,Overgrow,,Bulletproof,6
 651,//cdn2.bulbagarden.net/upload/b/b0/651MS6.png,Quilladin,Overgrow,,Bulletproof,6
 652,//cdn2.bulbagarden.net/upload/8/8f/652MS6.png,Chesnaught,Overgrow,,Bulletproof,6
@@ -864,7 +864,7 @@ Dex Number,Sprite URL,Pokemon,Ability 1,Ability 2,Hidden,6
 720,//cdn2.bulbagarden.net/upload/c/c1/720MS6.png,Hoopa (Hoopa Confined),Magician,,,6
 720,//cdn2.bulbagarden.net/upload/c/cd/720UMS6.png,Hoopa (Hoopa Unbound),Magician,,,6
 721,//cdn2.bulbagarden.net/upload/d/d4/721MS8.png,Volcanion,Water Absorb,,,6
-Dex Number,Sprite URL,Pokemon,Ability 1,Ability 2,Hidden,7
+Dex Number,Sprite URL,Pokemon,Ability 1,Ability 2,Hidden,Introduced
 722,//cdn2.bulbagarden.net/upload/d/d1/722MS8.png,Rowlet,Overgrow,,Long Reach,7
 723,//cdn2.bulbagarden.net/upload/a/ad/723MS8.png,Dartrix,Overgrow,,Long Reach,7
 724,//cdn2.bulbagarden.net/upload/e/ec/724MS8.png,Decidueye,Overgrow,,Long Reach,7
@@ -965,7 +965,7 @@ Dex Number,Sprite URL,Pokemon,Ability 1,Ability 2,Hidden,7
 807,//cdn2.bulbagarden.net/upload/0/05/807MS8.png,Zeraora,Volt Absorb,,,7
 808,//cdn2.bulbagarden.net/upload/2/2f/808MS8.png,Meltan,Magnet Pull,,,7
 809,//cdn2.bulbagarden.net/upload/9/97/809MS8.png,Melmetal,Iron Fist,,,7
-Dex Number,Sprite URL,Pokemon,Ability 1,Ability 2,Hidden,8
+Dex Number,Sprite URL,Pokemon,Ability 1,Ability 2,Hidden,Introduced
 810,//cdn2.bulbagarden.net/upload/e/ec/810MS8.png,Grookey,Overgrow,,Grassy Surge,8
 811,//cdn2.bulbagarden.net/upload/6/69/811MS8.png,Thwackey,Overgrow,,Grassy Surge,8
 812,//cdn2.bulbagarden.net/upload/e/e8/812MS8.png,Rillaboom,Overgrow,,Grassy Surge,8

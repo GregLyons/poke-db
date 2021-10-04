@@ -1,5 +1,6 @@
 import csv
 import urllib.request
+import re
 from bs4 import BeautifulSoup
 
 # converts roman numeral for to arabic numeral
@@ -46,16 +47,31 @@ def dexNumberToGen(dexNumber):
 
 # the notes are somewhat inconsistent, so there are a few different exceptions to consider
 def parseNote(note):
-  print('hi')
+  description = note[2]
 
-def makeCSVandExtractnotes():
+  # Notes of the form 'Generation {gen} onwards', indicating a Pokemon gained a new ability
+  if re.search(r'Generation (IV|V|VI|VII|VIII) onwards', description):
+    gen = genSymbolToNumber(description.split()[1])
+    return ['New ability', gen]
+  # Notes of the form 'Hidden Ability is {ability} in Generation(s) {gen}'
+  elif re.search(r'Hidden Ability is (\w+(\s\w+)*) in Generation(s*) (\w+)(-\w+)*', description):
+    words = description.split()
+    ability = ' '.join(words[3:-3:])
+    generations = words[-1].split('-')
+    startGen, endGen = genSymbolToNumber(generations[0]), genSymbolToNumber(generations[-1])
+    return ['Changed hidden ability', ability, startGen, endGen]
+  # Only other cases are Gengar and Basculin, which we will handle outside this code
+  else:
+    return note
+
+def makeCSVandExtractnotes(fname):
   url = 'https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Ability'
 
   req = urllib.request.Request(url, headers={'User-Agent' : "Magic Browser"}) 
   html = urllib.request.urlopen( req )
   bs = BeautifulSoup(html.read(), 'html.parser')
 
-  csvFile = open((f'src\\data\\abilities\\scraping\\abilities.csv'), 'w', newline='', encoding='utf-8')
+  csvFile = open(fname, 'w', newline='', encoding='utf-8')
   writer = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
 
   # keep track of notes
@@ -131,14 +147,56 @@ def makeCSVandExtractnotes():
 
               csvRow.append(value)
             headerIndex += 1
-        csvRow.append(currentGen)
+        if row.find('th') != None:
+          csvRow.append('Introduced')
+        else: 
+          csvRow.append(currentGen)
         writer.writerow(csvRow)
   finally:
     csvFile.close()
 
   return notes
 
-notes = makeCSVandExtractnotes()
+def makeInitialAbilityDict(fname, unparsedNotes):
+  initialAbilityDict = {}
 
-for note in notes:
-  print(note)
+  with open(fname, encoding='utf-8') as abilitiesCSV:
+    reader = csv.DictReader(abilitiesCSV)
+
+    for row in reader:
+      if row["Pokemon"] != "Pokemon":
+        initialAbilityDict[row["Pokemon"]] = {
+          "Dex Number": row["Dex Number"],
+          "Sprite URL": row["Sprite URL"],
+          "Ability 1": [row["Ability 1"], max(int(row['Introduced']), 3)],
+          "Ability 2": [row["Ability 2"], max(int(row['Introduced']), 3)],
+          "Hidden": [row["Hidden"], max(int(row['Introduced']), 5)]
+        }
+
+    # Go through majority of notes; handle Gengar
+    for note in unparsedNotes:
+      action = parseNote(note)
+      pokemonName = note[0]
+      header = note[1]
+
+      # action denotes adding a new ability, ['New Ability', gen]
+      if action[0] == 'New ability':
+        startGen = action[1]
+
+        initialAbilityDict[pokemonName][header][1] = startGen
+
+      # action denotes change in hidden ability, ['Changed hidden ability', ability, startGen, endGen]
+      elif action[0] == 'Changed hidden ability':
+        currentHiddenAbility = initialAbilityDict[pokemonName]["Hidden"][0]
+        oldHiddenAbility = action[1]
+        startGen = action[2]
+        endGen = action[3]
+        # the currently listed hidden ability starts in endGen + 1
+        initialAbilityDict[pokemonName]["Hidden"] = [[oldHiddenAbility, startGen], [currentHiddenAbility, endGen + 1]]
+    
+    return initialAbilityDict
+
+fname = f'src\\data\\abilities\\scraping\\pokemonAbilities.csv'
+notes = makeCSVandExtractnotes(fname)
+
+abilityDict = makeInitialAbilityDict(fname, notes)
