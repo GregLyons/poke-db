@@ -90,17 +90,6 @@ def parseNote(note):
     print(description)
     return None
 
-# a note is of the form [moveID, header, description]  
-def getChangesFromNote(note):
-  moveID = note[0]
-  header = note[1]
-  description = note[2]
-
-  # A note may contain multiple changes, separated by a comma
-  changesInNote = [[moveID, header, parseNotes(descriptionPart)] for descriptionPart in description.split(',')]
-
-  return changesInNote
-
 # a patch is of the form [value, gen], where gen is either 1-8 or "LGPE"
 def comparePatches(patch1, patch2):
   # make LGPE last, otherwise sort by gen
@@ -149,6 +138,7 @@ def makeCSVandExtractNotes(fname):
   # Write rows with data
   rows = moveTable.findAll('tr')[1:]
 
+  # keep track of notes
   notes = []
 
   try:
