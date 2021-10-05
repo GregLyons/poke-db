@@ -105,7 +105,7 @@ def comparePatches(patch1, patch2):
 
 
 # creates .csv file for Bulbapedia table with name fp
-def makeCSVandExtractNotes(fname):
+def makeMoveCSVandExtractNotes(fname):
 
   # Open CSV file
   csvFile = open((fname), 'w', newline='', encoding='utf-8')
@@ -272,7 +272,10 @@ def makeInitialMoveDict(fname, unparsedNotes):
 
   return initialMoveDict
 
+
 fname = f'src\data\moves\movesList.csv'
-notes = makeCSVandExtractNotes(fname)
+notes = makeMoveCSVandExtractNotes(fname)
 
 moveDict = makeInitialMoveDict(fname, notes)
+
+

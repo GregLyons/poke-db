@@ -1,0 +1,6 @@
+Move,Type,Category,Probability,Power,Accuracy,Notes
+Fling,Dark,Physical,100%,30,100%,If Toxic Orb is held by user
+Poison Fang,Poison,Physical,50%,50,100%,Had a 30% chance of badly poisoning in Generations III-V
+Psycho Shift,Psychic,Status,100%,—,100%,If the user is badly poisoned
+Toxic,Poison,Status,100%,—,90%,Never misses when used by a Poison-type Pokémon from Generation VI onwards
+Toxic Spikes,Poison,Status,100%,—,—%,"Upon switching in, if the move was used twice"

@@ -1,0 +1,32 @@
+Move,Type,Category,Probability,Power,Accuracy,Notes
+Body Slam,Normal,Physical,30%,85,100%,
+Bolt Strike,Electric,Physical,20%,130,85%,
+Bounce,Flying,Physical,30%,85,85%,
+Buzzy Buzz,Electric,Special,100%,90,100%,
+Discharge,Electric,Special,30%,80,100%,
+Dragon Breath,Dragon,Special,30%,60,100%,
+Fling,Dark,Physical,100%,30,100%,If Light Ball is held by user
+Force Palm,Fighting,Physical,30%,60,100%,
+Freeze Shock,Ice,Physical,30%,140,90%,
+G-Max Befuddle,Bug,Varies,33.3%,—,—%,Exclusive G-Max Move of Gigantamax ButterfreeMay also poison or sleep (33.3% chance of each)
+G-Max Stun Shock,Electric,Varies,50%,—,—%,Exclusive G-Max Move of Gigantamax ToxtricityMay also poison (50% chance of each)
+G-Max Volt Crash,Electric,Varies,100%,—,—%,Exclusive G-Max Move of Gigantamax PikachuParalyzes all opponents
+Glare,Normal,Status,100%,—,100%,
+Lick,Ghost,Physical,30%,30,100%,
+Nuzzle,Electric,Physical,100%,20,100%,
+Psycho Shift,Psychic,Status,100%,—,100%,If the user is paralyzed
+Secret Power,Normal,Physical,30%,70,100%,"May cause paralysis only when used on plain terrain or building floors, in link battles or Sky Battles, in the Distortion World, or when Electric Terrain is in effect"
+Shadow Bolt,Shadow,Special,10%,75,100%,
+Spark,Electric,Physical,30%,65,100%,
+Splishy Splash,Water,Special,30%,90,100%,
+Stoked Sparksurfer,Electric,Special,100%,175,—%,Exclusive Z-Move of Alolan Raichu
+Stun Spore,Grass,Status,100%,—,75%,"Grass types, as well as Pokémon with Overcoat or Safety Goggles, are immune to Stun Spore from Generation VI onward."
+Thunder,Electric,Special,30%,110,70%,
+Thunder Fang,Electric,Physical,10%,65,95%,May also cause flinching (10% chance)
+Thunder Punch,Electric,Physical,10%,75,100%,
+Thunder Shock,Electric,Special,10%,40,100%,
+Thunder Wave,Electric,Status,100%,—,90%,
+Thunderbolt,Electric,Special,10%,90,100%,
+Tri Attack,Normal,Special,6.67%,80,100%,May also burn or freeze (6.67% chance of each)
+Volt Tackle,Electric,Physical,10%,120,100%,May cause paralysis from Generation IV onwards. User receives ⅓ of damage dealt as recoil damage
+Zap Cannon,Electric,Special,100%,120,50%,

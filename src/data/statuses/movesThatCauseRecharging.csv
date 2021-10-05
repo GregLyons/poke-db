@@ -1,0 +1,12 @@
+Move,Type,Category,Power,Accuracy,Notes
+Blast Burn,Fire,Special,150,90%,
+Eternabeam,Dragon,Special,160,90%,
+Frenzy Plant,Grass,Special,150,90%,
+Giga Impact,Normal,Physical,150,90%,
+Hydro Cannon,Water,Special,150,90%,
+Hyper Beam,Normal,Special,150,90%,
+Meteor Assault,Fighting,Physical,150,100%,
+Prismatic Laser,Psychic,Special,160,100%,
+Roar of Time,Dragon,Special,150,90%,
+Rock Wrecker,Rock,Physical,150,90%,
+Shadow Half,Shadow,Status,—,100%,Halves the current HP of all Pokémon in battle

@@ -1,0 +1,15 @@
+Move,Type,Category,Probability,Power,Accuracy,Notes
+Dark Void,Dark,Status,100%,—,50%,"Targets all adjacent opponents. In Generation VII, fails if the user is not Darkrai"
+G-Max Befuddle,Bug,Varies,33.3%,—,—%,Exclusive G-Max Move of Gigantamax ButterfreeMay also paralyze or poison (33.3% chance of each)
+G-Max Snooze,Dark,Varies,50%,—,—%,"Exclusive G-Max Move of Gigantamax GrimmsnarlTakes effect at end of the next turn after use. If the afflicted switches, the move does not take effect"
+Grass Whistle,Grass,Status,100%,—,55%,Will not affect Pokémon with Soundproof
+Hypnosis,Psychic,Status,100%,—,60%,
+Lovely Kiss,Normal,Status,100%,—,75%,
+Psycho Shift,Psychic,Status,100%,—,100%,If the user is asleep and uses the move via Sleep Talk
+Relic Song,Normal,Special,10%,75,100%,Hits all adjacent opponents. Causes Meloetta to change Forme. Will not affect Pokémon with Soundproof
+Rest,Psychic,Status,100%,—,—,"Puts user to sleep, restoring HP to 100% and removing any other non-volatile status condition. Sleep will only last 2 turns"
+Secret Power,Normal,Physical,30%,70,100%,"May cause sleep only when used in long grass (Generation III), tall grass (Generation IV onward), or when Grassy Terrain is in effect (Generation VI onward)"
+Sing,Normal,Status,100%,—,55%,Will not affect Pokémon with Soundproof
+Sleep Powder,Grass,Status,100%,—,75%,"Grass types, as well as Pokémon with Overcoat and Safety Goggles, are immune to Sleep Powder (Generation VI onward)"
+Spore,Grass,Status,100%,—,100%,"Grass types, as well as Pokémon with Overcoat and Safety Goggles, are immune to Spore (Generation VI onward)"
+Yawn,Normal,Status,100%,—,—,"Takes effect at end of the next turn after use. If the afflicted switches, the move does not take effect"

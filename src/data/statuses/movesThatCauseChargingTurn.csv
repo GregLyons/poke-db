@@ -1,0 +1,17 @@
+Move,Type,Category,Power,Accuracy,Notes
+Bounce,Flying,Physical,85,85%,User becomes semi-invulnerable. 30% chance of paralyzing the target
+Dig,Ground,Physical,80,100%,User becomes semi-invulnerable
+Dive,Water,Physical,80,100%,User becomes semi-invulnerable
+Fly,Flying,Physical,90,95%,User becomes semi-invulnerable
+Freeze Shock,Ice,Physical,140,90%,30% chance of paralyzing the target
+Geomancy,Fairy,Status,—,—%,"Raises the user's Special Attack, Special Defense, and Speed by two stages"
+Ice Burn,Ice,Special,140,90%,30% chance of burning the target
+Meteor Beam,Rock,Special,120,90%,Raises the user's Special Attack by one level on the first turn
+Phantom Force,Ghost,Physical,90,100%,User becomes semi-invulnerable
+Razor Wind,Normal,Special,80,100%,Has an increased critical hit ratio
+Shadow Force,Ghost,Physical,120,100%,User becomes semi-invulnerable
+Skull Bash,Normal,Physical,130,100%,Raises the user's Defense by one level on the first turn
+Sky Attack,Flying,Physical,140,90%,Has an increased critical hit ratioHas a 30% chance of causing the target to flinch
+Sky Drop,Flying,Physical,60,100%,User and target become semi-invulnerable
+Solar Beam,Grass,Special,120,100%,Will not need a turn to charge if used during harsh sunlight
+Solar Blade,Grass,Physical,125,100%,Will not need a turn to charge if used during harsh sunlight

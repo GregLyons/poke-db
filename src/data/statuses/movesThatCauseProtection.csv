@@ -1,0 +1,12 @@
+Move,Type,Category,Priority,Accuracy,Notes
+Baneful Bunker,Poison,Status,+4,—%,Will poison a Pokémon that attempts to use a contact move on the user
+Crafty Shield,Fairy,Status,+3,—%,Protects the user's side of the field from status moves
+Detect,Fighting,Status,+4,—%,
+King's Shield,Steel,Status,+4,—%,Will drop the Attack stat by 1 stage of a Pokémon that attempts to use a contact move on the user.Protects the user from any moves except status moves
+Mat Block,Fighting,Status,0,—%,Always goes first; only works if it is the user's first turn
+Max Guard,Normal,Status,+4,—%,"User must be Dynamaxed and know a status moveFully protects the user from Max MovesProtects the user from Block, Flower Shield, Gear Up, Magnetic Flux, Phantom Force, Psych Up, Teatime, and Transform"
+Obstruct,Dark,Status,+4,—%,Will drop the Defense stat by 2 stages of a Pokémon that attempts to use a contact move on the user.
+Protect,Normal,Status,+4,—%,
+Quick Guard,Fighting,Status,+3,—%,Protects the user's side of the field from moves that have increased priority
+Spiky Shield,Grass,Status,+4,—%,Will deal damage equal to 1/8 of its maximum HP of a Pokémon that attempts to use a contact move on the user
+Wide Guard,Rock,Status,+3,—%,Protects the user's side of the field from damaging moves that can target multiple Pokémon

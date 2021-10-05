@@ -3,6 +3,9 @@ import urllib.request
 import re
 from bs4 import BeautifulSoup
 
+# The event Blue-Striped Basculin with Rock Head is not included. My apologies for any inconvenience.
+# The Bulbapedia list scraped here happens to be a convenient location for all the sprites, including the megas, so we grab them here.
+
 # converts roman numeral for to arabic numeral
 def genSymbolToNumber(roman):
   if roman == 'I':

@@ -1,0 +1,23 @@
+Move,Type,Category,Probability,Power,Accuracy,Notes
+Baneful Bunker,Poison,Status,100%,—,—%,If a Pokémon attempts to use a contact move on the user
+Cross Poison,Poison,Physical,10%,70,100%,
+Fling,Dark,Physical,100%,70,100%,If Poison Barb is held by the user
+G-Max Befuddle,Bug,Varies,33.3%,—,—%,Exclusive G-Max Move of Gigantamax ButterfreeMay also paralyze or sleep (33.3% chance of each)
+G-Max Malodor,Poison,Varies,100%,—,—%,Exclusive G-Max Move of Gigantamax GarbodorPoisons all opponents
+G-Max Stun Shock,Electric,Varies,50%,—,—%,Exclusive G-Max Move of Gigantamax ToxtricityMay also paralyze (50% chance of each)
+Gunk Shot,Poison,Physical,30%,120,80%,
+Poison Gas,Poison,Status,100%,—,90%,
+Poison Jab,Poison,Physical,30%,80,100%,
+Poison Powder,Poison,Status,100%,—,75%,"Grass types, as well as Pokémon with Overcoat and Safety Goggles, are immune to Poison Powder (Generation VI)"
+Poison Sting,Poison,Physical,30%,15,100%,
+Poison Tail,Poison,Physical,10%,50,100%,
+Psycho Shift,Psychic,Status,100%,—,100%,If the user is poisoned
+Secret Power,Normal,Physical,30%,70,100%,May cause poison only when used in tall grass (Generation III only)
+Shell Side Arm,Poison,Special,20%,90,100%,
+Sludge,Poison,Special,30%,65,100%,
+Sludge Bomb,Poison,Special,30%,90,100%,
+Sludge Wave,Poison,Special,10%,95,100%,
+Smog,Poison,Special,40%,30,70%,
+Toxic Spikes,Poison,Status,100%,—,—%,"Upon switching in, if the move was used once."
+Toxic Thread,Poison,Status,100%,—,100%,
+Twineedle,Bug,Physical,20%,25,100%,Each hit has a separate chance of poisoning.
