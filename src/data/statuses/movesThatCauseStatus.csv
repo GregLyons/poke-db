@@ -192,12 +192,12 @@ Trapped,Octolock,Fighting,Status,--,--,100%,"At the end of each turn, the target
 Trapped,Shadow Hold,Shadow,Status,--,--,80%,
 Trapped,Spider Web,Bug,Status,--,--,--%,
 Trapped,Spirit Shackle,Ghost,Physical,--,80,100%,
-Trapped,Thousand Waves,Ground,Physical,--,90,100%
+Trapped,Thousand Waves,Ground,Physical,--,90,100%,--
 Drowsy,Yawn,Normal,Status,--,--,100%,
 Drowsy,G-Max Snooze,Dark,Varies,--,--,--%,
-Identified,Foresight,Normal,Status,--,--%,Removes Ghost-type Pokémon's immunity to Fighting-type and Normal-type moves
-Identified,Odor Sleuth,Normal,Status,--,--%,Removes Ghost-type Pokémon's immunity to Fighting-type and Normal-type moves
-Identified,Miracle Eye,Psychic,Status,--,--%,Removes Dark-type Pokémon's immunity to Psychic-type moves
+Identified,Foresight,Normal,Status,--,--%,Removes Ghost-type Pokémon's immunity to Fighting-type and Normal-type moves,--
+Identified,Odor Sleuth,Normal,Status,--,--%,Removes Ghost-type Pokémon's immunity to Fighting-type and Normal-type moves,--
+Identified,Miracle Eye,Psychic,Status,--,--%,Removes Dark-type Pokémon's immunity to Psychic-type moves,--
 Infatuation,Attract,Normal,Status,100%,--,100%,Opponent of the opposite gender of the user become infatuated
 Infatuation,G-Max Cuddle,Normal,Varies,100%,--,--%,Exclusive G-Max Move of Gigantamax EeveeAll opponents of the opposite gender of the user become infatuated
 LeechSeed,Leech Seed,Grass,Status,--,--,90%,
@@ -266,8 +266,7 @@ MagicCoat,Magic Coat,--,--,100%,--,--,
 Mimic,Mimic,--,--,100%,--,--,
 Minimize,Minimize,--,--,100%,--,--,
 Substitute,Substitute,--,--,100%,--,--,
-CenterofAttention,Follow Me,--,--,100%,--,--,
-CenterofAttention,Rage Powder,--,--,100%,--,--,
+CenterOfAttention,Center Of Attention,--,--,100%,--,--,
 Rooted,Ingrain,--,--,100%,--,--,
 MagneticLevitation,Magnet Rise,--,--,100%,--,--,
 Transformed,Transform,--,--,100%,--,--,
