@@ -433,6 +433,44 @@ def addPriorityToMoveDict(fname, moveDict, inverseDict):
 
   return
 
+# read contact data from Bulbapedia and update moveDict
+def addContactToMoveDict(moveDict, inverseDict):
+  # initially, no moves make contact
+  for key in moveDict.keys():
+    moveDict[key]["Contact"] = [False, max(moveDict[key]["Gen"], 3)]
+
+  url = 'https://bulbapedia.bulbagarden.net/wiki/Contact'
+  req = urllib.request.Request(url, headers={'User-Agent' : "Magic Browser"}) 
+  html = urllib.request.urlopen( req )
+  bs = BeautifulSoup(html.read(), 'html.parser')
+
+  rows = bs.find('span', {'id': 'Moves_that_make_contact'}).find_next('table').find('table').find_all('tr')
+
+
+
+  for row in rows:
+    for cell in row.find_all('td'):
+      # checks if cell describes a move
+      if cell.find('a') and cell.find('a').get('title') and '(move)' in cell.find('a').get('title'):
+        # if move is in table, it's a contact move
+        moveName = cell.get_text().rstrip('\n').replace(' ', '')
+        genOfMoveName = moveDict[inverseDict[moveName]]["Gen"]
+        # contact was introduced as a mechanic in gen 3
+        moveDict[inverseDict[moveName]]["Contact"] = [True, max(genOfMoveName, 3)]
+
+  # exceptions: covet, faint attack, fakeout were not contact in Gen 3
+  for key in ['185', '252', '343']:
+    moveDict[key]["Contact"] = [[False, max(moveDict[key]["Gen"], 3)], [True, 4]]
+
+  # exceptions: ancient power, overheat make contact in Gen 3
+  for key in ['246', '315']:
+    moveDict[key]["Contact"] = [[True, max(moveDict[key]["Gen"], 3)], [False, 4]]
+
+  # exception: Shell Side Arm
+  
+  return
+
+
 # Read Bulbapedia's table of moves, convert to .csv, and extract any notes
 # Holds moveID, Name, Type, Category, Contest, PP, Power, Accuracy, Gen
 moveList_fname = f'src\data\moves\movesList.csv'
@@ -443,10 +481,13 @@ moveDict = makeInitialMoveDict(moveList_fname, moveListNotes)
 inverseDict = makeInverseDict(moveList_fname)
 
 # Read Bulbapedia's table of move priority and convert to .csv
-# Add data to initialMoveDict and story in priorityMoveDict
+# Add priority data to moveDict and store in priorityMoveDict
 priority_fname = f'src\data\moves\priority.csv'
 makePriorityCSV(priority_fname)
 addPriorityToMoveDict(priority_fname, moveDict, inverseDict)
 
+# Add contact data to moveDict
+addContactToMoveDict(moveDict, inverseDict)
+
 for key in moveDict.keys():
-  print(moveDict[key]["Priority"])
+  print(moveDict[key]["Contact"])
