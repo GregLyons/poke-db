@@ -162,7 +162,7 @@ def makeMoveListCSVandExtractNotes(fname):
           for note in notesInCell:
             notes.append([moveID, headers[headerIndex], note.get('title')])
 
-        value = cell.get_text().strip('\n').rstrip('*').replace(' ', '')
+        value = cell.get_text().strip('\n').rstrip('*').replace(' ', '').replace('—', '--')
         csvRow.append(value)
         headerIndex += 1
 
@@ -252,7 +252,7 @@ def makeInitialMoveDict(fname, unparsedNotes):
         initialMoveDict[row["Move ID"]] = {
           "Name": row["Name"],
           "Type": [[row["Type"], 8]],
-          "Category": row["Category"],
+          "Category": [row["Category"], 8],
           "Contest": row["Contest"],
           "PP": [[row["PP"], 8]],
           "Power": [[row["Power"], 8]],
@@ -282,6 +282,11 @@ def makeInitialMoveDict(fname, unparsedNotes):
   # Standard note, majority of cases [moveID, header, [value, gen]]
   changes = [[note[0], note[1], note[2][:2]] for note in parsedNotes if len(note[2]) == 3 and note[2][2] == 'Standard']
   for change in changes:
+    # Exception is Water Shuriken, moveID = 594
+    if change[0] == 594:
+      initialMoveDict[str(moveID)]['Category'] = [['Physical', 6], ['Special', 8]]
+      continue
+
     moveID = change[0]
     header = change[1]
     valueAndGen = change[2]
@@ -326,12 +331,46 @@ def makeInitialMoveDict(fname, unparsedNotes):
     initialMoveDict[str(moveID)][header].append(valueAndGen)
     initialMoveDict[str(moveID)][header].append(valueAndLGPE)
 
-  #For each move in initialMoveDict, sort the "Type", "PP", "Power", and "Accuracy" fields by generation
+  # For each move in initialMoveDict, sort the "Type", "PP", "Power", and "Accuracy" fields by generation
   for key in initialMoveDict:
     for innerKey in ['Type', 'PP', 'Power', 'Accuracy']:
       if len(initialMoveDict[key][innerKey]) > 1:
         initialMoveDict[key][innerKey].sort(key = cmp_to_key(comparePatches))
 
+  # For each move in initialMoveDict, rewrite the patches in "Type", "PP", "Power", and "Accuracy" fields so that the generation represents the starting gen rather than the ending gen of that value
+  for key in initialMoveDict:
+    for innerKey in ['Type', 'PP', 'Power', 'Accuracy']:
+      # Split up patch into LGPE-only and other
+      LGPEOnlyPatch = [patch for patch in initialMoveDict[key][innerKey] if patch[1] == 'LGPE Only']
+      noLGPEOnlyPatches = [patch for patch in initialMoveDict[key][innerKey] if patch[1] != 'LGPE Only']
+
+      # If the move is LGPE-only, no change required
+      if LGPEOnlyPatch == initialMoveDict[key][innerKey]:
+        continue
+      # If the move is not LGPE-only, change the non-LGPE-only patches
+      else:
+        # If only one non-LGPE-only patch, set gen equal to when move was introduced
+        if len(noLGPEOnlyPatches) == 1:
+          patch = initialMoveDict[key][innerKey][0]
+          value = patch[0]
+          initialMoveDict[key][innerKey] = [[value, initialMoveDict[key]["Gen"]]]
+        # Otherwise, need to determine when the starting gens from the list of ending gens
+        else:
+          modifiedPatchList = []
+          for i in range(len(initialMoveDict[key][innerKey])):
+            # first 'patch' applied in gen the move was introduced
+            if i == 0:
+              modifiedPatchList.append([initialMoveDict[key][innerKey][0][0], initialMoveDict[key]["Gen"]])
+            # send [value, endGen] to [value, oldEndGen + 1]
+            else:
+              oldValueEndGen = initialMoveDict[key][innerKey][i - 1][1]
+              value = initialMoveDict[key][innerKey][i][0]
+              modifiedPatchList.append([value, oldValueEndGen + 1])
+
+          initialMoveDict[key][innerKey] = modifiedPatchList
+      if LGPEOnlyPatch:
+        initialMoveDict[key][innerKey].append(LGPEOnlyPatch[0])
+     
   return initialMoveDict
 
 # Uses move list located at fname to make inverse lookup of moveID from moveName possible
@@ -388,6 +427,9 @@ def addPriorityToMoveDict(fname, moveDict, inverseDict):
           priorities_noDuplicates.append(patch)
 
     moveDict[key]["Priority"] = priorities_noDuplicates
+  
+  # lastly, we add Teleport, ID 100 with -6 priority in LGPE
+  moveDict["100"]["Priority"].append([-6, 'LGPE Only'])
 
   return
 
@@ -401,15 +443,10 @@ moveDict = makeInitialMoveDict(moveList_fname, moveListNotes)
 inverseDict = makeInverseDict(moveList_fname)
 
 # Read Bulbapedia's table of move priority and convert to .csv
-# LGPE teleport not handled yet
 # Add data to initialMoveDict and story in priorityMoveDict
 priority_fname = f'src\data\moves\priority.csv'
 makePriorityCSV(priority_fname)
 addPriorityToMoveDict(priority_fname, moveDict, inverseDict)
 
-for key in moveDict:
+for key in moveDict.keys():
   print(moveDict[key]["Priority"])
-
-
-
-# TELEPORT LGPE
