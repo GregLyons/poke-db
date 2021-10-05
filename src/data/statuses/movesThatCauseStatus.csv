@@ -1,0 +1,273 @@
+Status caused,Move,Type,Category,Probability,Power,Accuracy,Notes
+Burn,Beak Blast,Flying,Physical,100%,--,--,If a Pokémon uses a contact move on the user before executing Beak Blast
+Burn,Blaze Kick,Fire,Physical,10%,85,90%,
+Burn,Blue Flare,Fire,Special,20%,130,85%,
+Burn,Burning Jealousy,Fire,Special,100%,70,100%,If a Pokémon has increased its stats during that turn
+Burn,Ember,Fire,Special,10%,40,100%,
+Burn,Fire Blast,Fire,Special,10%,110,85%,Had a 30% chance of burning in Generation I
+Burn,Fire Fang,Fire,Physical,10%,65,95%,May also cause flinching (10% chance)
+Burn,Fire Punch,Fire,Physical,10%,75,100%,
+Burn,Flame Wheel,Fire,Physical,10%,60,100%,
+Burn,Flamethrower,Fire,Special,10%,90,100%,
+Burn,Flare Blitz,Fire,Physical,10%,120,100%,
+Burn,Fling,Dark,Physical,100%,30,100%,If Flame Orb is held by user
+Burn,Heat Wave,Fire,Special,10%,95,90%,
+Burn,Ice Burn,Ice,Special,30%,140,90%,
+Burn,Inferno,Fire,Special,100%,100,50%,
+Burn,Lava Plume,Fire,Special,30%,80,100%,
+Burn,Psycho Shift,Psychic,Status,100%,--,100%,If the user is burned
+Burn,Pyro Ball,Fire,Physical,10%,120,90%,
+Burn,Sacred Fire,Fire,Physical,50%,100,95%,
+Burn,Scald,Water,Special,30%,80,100%,
+Burn,Scorching Sands,Ground,Special,30%,70,100%,
+Burn,Searing Shot,Fire,Special,30%,100,100%,
+Burn,Secret Power,Normal,Physical,30%,70,100%,May cause burn only when used on a volcano (Generations VI and VII)
+Burn,Shadow Fire,Shadow,Special,10%,75,100%,
+Burn,Sizzly Slide,Fire,Physical,100%,90,100%,
+Burn,Steam Eruption,Water,Special,30%,110,95%,
+Burn,Tri Attack,Normal,Special,6.67%,80,100%,May also freeze or paralyze (6.67% chance of each)
+Burn,Will-O-Wisp,Fire,Status,100%,--,85%,
+Freeze,Blizzard,Ice,Special,10%,110,70%,"When used during hail, bypasses accuracy checks to always hit, unless the target is in the semi-invulnerable turn of a move such as Dig or Fly."
+Freeze,Freeze-Dry,Ice,Special,10%,70,100%,Inflicts super-effective damage against Water types
+Freeze,Freezing Glare,Psychic,Special,10%,90,100%,
+Freeze,Ice Beam,Ice,Special,10%,90,100%,
+Freeze,Ice Fang,Ice,Physical,10%,65,95%,May also cause flinching (10% chance)
+Freeze,Ice Punch,Ice,Physical,10%,75,100%,
+Freeze,Powder Snow,Ice,Special,10%,40,100%,
+Freeze,Secret Power,Normal,Physical,30%,70,100%,May cause freezing only when used in snow or ice
+Freeze,Shadow Chill,Shadow,Special,10%,75,100%,
+Freeze,Tri Attack,Normal,Special,6.67%,80,100%,May also cause burn or paralysis (6.67% chance of each)
+Paralysis,Body Slam,Normal,Physical,30%,85,100%,
+Paralysis,Bolt Strike,Electric,Physical,20%,130,85%,
+Paralysis,Bounce,Flying,Physical,30%,85,85%,
+Paralysis,Buzzy Buzz,Electric,Special,100%,90,100%,
+Paralysis,Discharge,Electric,Special,30%,80,100%,
+Paralysis,Dragon Breath,Dragon,Special,30%,60,100%,
+Paralysis,Fling,Dark,Physical,100%,30,100%,If Light Ball is held by user
+Paralysis,Force Palm,Fighting,Physical,30%,60,100%,
+Paralysis,Freeze Shock,Ice,Physical,30%,140,90%,
+Paralysis,G-Max Befuddle,Bug,Varies,33.3%,--,--%,Exclusive G-Max Move of Gigantamax ButterfreeMay also poison or sleep (33.3% chance of each)
+Paralysis,G-Max Stun Shock,Electric,Varies,50%,--,--%,Exclusive G-Max Move of Gigantamax ToxtricityMay also poison (50% chance of each)
+Paralysis,G-Max Volt Crash,Electric,Varies,100%,--,--%,Exclusive G-Max Move of Gigantamax PikachuParalyzes all opponents
+Paralysis,Glare,Normal,Status,100%,--,100%,
+Paralysis,Lick,Ghost,Physical,30%,30,100%,
+Paralysis,Nuzzle,Electric,Physical,100%,20,100%,
+Paralysis,Psycho Shift,Psychic,Status,100%,--,100%,If the user is paralyzed
+Paralysis,Secret Power,Normal,Physical,30%,70,100%,"May cause paralysis only when used on plain terrain or building floors, in link battles or Sky Battles, in the Distortion World, or when Electric Terrain is in effect"
+Paralysis,Shadow Bolt,Shadow,Special,10%,75,100%,
+Paralysis,Spark,Electric,Physical,30%,65,100%,
+Paralysis,Splishy Splash,Water,Special,30%,90,100%,
+Paralysis,Stoked Sparksurfer,Electric,Special,100%,175,--%,Exclusive Z-Move of Alolan Raichu
+Paralysis,Stun Spore,Grass,Status,100%,--,75%,"Grass types, as well as Pokémon with Overcoat or Safety Goggles, are immune to Stun Spore from Generation VI onward."
+Paralysis,Thunder,Electric,Special,30%,110,70%,
+Paralysis,Thunder Fang,Electric,Physical,10%,65,95%,May also cause flinching (10% chance)
+Paralysis,Thunder Punch,Electric,Physical,10%,75,100%,
+Paralysis,Thunder Shock,Electric,Special,10%,40,100%,
+Paralysis,Thunder Wave,Electric,Status,100%,--,90%,
+Paralysis,Thunderbolt,Electric,Special,10%,90,100%,
+Paralysis,Tri Attack,Normal,Special,6.67%,80,100%,May also burn or freeze (6.67% chance of each)
+Paralysis,Volt Tackle,Electric,Physical,10%,120,100%,May cause paralysis from Generation IV onwards. User receives ⅓ of damage dealt as recoil damage
+Paralysis,Zap Cannon,Electric,Special,100%,120,50%,
+Poison,Baneful Bunker,Poison,Status,100%,--,--%,If a Pokémon attempts to use a contact move on the user
+Poison,Cross Poison,Poison,Physical,10%,70,100%,
+Poison,Fling,Dark,Physical,100%,70,100%,If Poison Barb is held by the user
+Poison,G-Max Befuddle,Bug,Varies,33.3%,--,--%,Exclusive G-Max Move of Gigantamax ButterfreeMay also paralyze or sleep (33.3% chance of each)
+Poison,G-Max Malodor,Poison,Varies,100%,--,--%,Exclusive G-Max Move of Gigantamax GarbodorPoisons all opponents
+Poison,G-Max Stun Shock,Electric,Varies,50%,--,--%,Exclusive G-Max Move of Gigantamax ToxtricityMay also paralyze (50% chance of each)
+Poison,Gunk Shot,Poison,Physical,30%,120,80%,
+Poison,Poison Gas,Poison,Status,100%,--,90%,
+Poison,Poison Jab,Poison,Physical,30%,80,100%,
+Poison,Poison Powder,Poison,Status,100%,--,75%,"Grass types, as well as Pokémon with Overcoat and Safety Goggles, are immune to Poison Powder (Generation VI)"
+Poison,Poison Sting,Poison,Physical,30%,15,100%,
+Poison,Poison Tail,Poison,Physical,10%,50,100%,
+Poison,Psycho Shift,Psychic,Status,100%,--,100%,If the user is poisoned
+Poison,Secret Power,Normal,Physical,30%,70,100%,May cause poison only when used in tall grass (Generation III only)
+Poison,Shell Side Arm,Poison,Special,20%,90,100%,
+Poison,Sludge,Poison,Special,30%,65,100%,
+Poison,Sludge Bomb,Poison,Special,30%,90,100%,
+Poison,Sludge Wave,Poison,Special,10%,95,100%,
+Poison,Smog,Poison,Special,40%,30,70%,
+Poison,Toxic Spikes,Poison,Status,100%,--,--%,"Upon switching in, if the move was used once."
+Poison,Toxic Thread,Poison,Status,100%,--,100%,
+Poison,Twineedle,Bug,Physical,20%,25,100%,Each hit has a separate chance of poisoning.
+BadPoison,Fling,Dark,Physical,100%,30,100%,If Toxic Orb is held by user
+BadPoison,Poison Fang,Poison,Physical,50%,50,100%,Had a 30% chance of badly poisoning in Generations III-V
+BadPoison,Psycho Shift,Psychic,Status,100%,--,100%,If the user is badly poisoned
+BadPoison,Toxic,Poison,Status,100%,--,90%,Never misses when used by a Poison-type Pokémon from Generation VI onwards
+BadPoison,Toxic Spikes,Poison,Status,100%,--,--%,"Upon switching in, if the move was used twice"
+Sleep,Dark Void,Dark,Status,100%,--,50%,"Targets all adjacent opponents. In Generation VII, fails if the user is not Darkrai"
+Sleep,G-Max Befuddle,Bug,Varies,33.3%,--,--%,Exclusive G-Max Move of Gigantamax ButterfreeMay also paralyze or poison (33.3% chance of each)
+Sleep,G-Max Snooze,Dark,Varies,50%,--,--%,"Exclusive G-Max Move of Gigantamax GrimmsnarlTakes effect at end of the next turn after use. If the afflicted switches, the move does not take effect"
+Sleep,Grass Whistle,Grass,Status,100%,--,55%,Will not affect Pokémon with Soundproof
+Sleep,Hypnosis,Psychic,Status,100%,--,60%,
+Sleep,Lovely Kiss,Normal,Status,100%,--,75%,
+Sleep,Psycho Shift,Psychic,Status,100%,--,100%,If the user is asleep and uses the move via Sleep Talk
+Sleep,Relic Song,Normal,Special,10%,75,100%,Hits all adjacent opponents. Causes Meloetta to change Forme. Will not affect Pokémon with Soundproof
+Sleep,Rest,Psychic,Status,100%,--,--,"Puts user to sleep, restoring HP to 100% and removing any other non-volatile status condition. Sleep will only last 2 turns"
+Sleep,Secret Power,Normal,Physical,30%,70,100%,"May cause sleep only when used in long grass (Generation III), tall grass (Generation IV onward), or when Grassy Terrain is in effect (Generation VI onward)"
+Sleep,Sing,Normal,Status,100%,--,55%,Will not affect Pokémon with Soundproof
+Sleep,Sleep Powder,Grass,Status,100%,--,75%,"Grass types, as well as Pokémon with Overcoat and Safety Goggles, are immune to Sleep Powder (Generation VI onward)"
+Sleep,Spore,Grass,Status,100%,--,100%,"Grass types, as well as Pokémon with Overcoat and Safety Goggles, are immune to Spore (Generation VI onward)"
+Sleep,Yawn,Normal,Status,100%,--,--,"Takes effect at end of the next turn after use. If the afflicted switches, the move does not take effect"
+Confusion,Chatter,Flying,Special,100%,65,100%,Chance of confusion depends on volume of recording prior to Generation VI
+Confusion,Confuse Ray,Ghost,Status,100%,--,100%,
+Confusion,Confusion,Psychic,Special,10%,50,100%,
+Confusion,Dizzy Punch,Normal,Physical,20%,70,100%,Generation II onward
+Confusion,Dynamic Punch,Fighting,Physical,100%,100,50%,
+Confusion,Flatter,Dark,Status,100%,--,100%,Raises the target's Special Attack by one stage
+Confusion,G-Max Gold Rush,Normal,Varies,100%,Varies,--%,Exclusive G-Max Move of Gigantamax MeowthScatters money
+Confusion,G-Max Smite,Fairy,Varies,100%,Varies,--%,Exclusive G-Max Move of Gigantamax HattereneConfuses all opponents
+Confusion,Hurricane,Flying,Special,30%,110,70%,
+Confusion,Psybeam,Psychic,Special,10%,65,100%,
+Confusion,Rock Climb,Normal,Physical,20%,90,85%,
+Confusion,Secret Power,Normal,Physical,30%,70,100%,May cause confusion only when used on a rocky surface (Generation III only)
+Confusion,Shadow Panic,Shadow,Status,100%,--,60%,Targets all opponents
+Confusion,Signal Beam,Bug,Special,10%,75,100%,
+Confusion,Strange Steam,Fairy,Special,20%,90,95%,
+Confusion,Supersonic,Normal,Status,100%,--,55%,
+Confusion,Swagger,Normal,Status,100%,--,90%,Raises the target's Attack by two stages
+Confusion,Sweet Kiss,Fairy,Status,100%,--,75%,
+Confusion,Teeter Dance,Normal,Status,100%,--,100%,Targets all adjacent Pokémon
+Confusion,Water Pulse,Water,Special,20%,60,100%,
+Flinch,Air Slash,Flying,Special,30%,75,95%,
+Flinch,Astonish,Ghost,Physical,30%,30,100%,
+Flinch,Bite,Dark,Physical,30%,60,100%,
+Flinch,Bone Club,Ground,Physical,10%,65,85%,
+Flinch,Dark Pulse,Dark,Special,20%,80,100%,
+Flinch,Double Iron Bash,Steel,Physical,30%,60,100%,Each hit has a separate chance of flinching
+Flinch,Dragon Rush,Dragon,Physical,20%,100,75%,
+Flinch,Extrasensory,Psychic,Special,10%,80,100%,
+Flinch,Fake Out,Normal,Physical,100%,40,100%,Always goes first; only works if it is the user's first turn
+Flinch,Fiery Wrath,Dark,Special,20%,90,100%,
+Flinch,Fire Fang,Fire,Physical,10%,65,95%,May also cause burn (10% chance)
+Flinch,Fling,Dark,Physical,100%,30,100%,Only if King's Rock or Razor Fang is held by user
+Flinch,Floaty Fall,Flying,Physical,30%,90,95%,
+Flinch,Headbutt,Normal,Physical,30%,70,100%,
+Flinch,Heart Stamp,Psychic,Physical,30%,60,100%,
+Flinch,Hyper Fang,Normal,Physical,10%,80,90%,
+Flinch,Ice Fang,Ice,Physical,10%,65,95%,May also cause freeze (10% chance)
+Flinch,Icicle Crash,Ice,Physical,30%,85,90%,
+Flinch,Iron Head,Steel,Physical,30%,80,100%,
+Flinch,Low Kick,Fighting,Physical,30%,50,90%,Generations I and II only
+Flinch,Needle Arm,Grass,Physical,30%,60,100%,
+Flinch,Rock Slide,Rock,Physical,30%,75,90%,Generation II onward
+Flinch,Rolling Kick,Fighting,Physical,30%,60,85%,
+Flinch,Secret Power,Normal,Physical,30%,70,100%,"May cause flinching only when used in caves, on rocky terrain (Generation IV and V), in burial grounds (Generation VI), or in space"
+Flinch,Sky Attack,Flying,Physical,30%,140,90%,Generation III onward
+Flinch,Snore,Normal,Special,30%,50,100%,Fails if the user is not asleep
+Flinch,Steamroller,Bug,Physical,30%,65,100%,
+Flinch,Stomp,Normal,Physical,30%,65,100%,
+Flinch,Thunder Fang,Electric,Physical,10%,65,95%,May also cause paralysis (10% chance)
+Flinch,Twister,Dragon,Special,20%,40,100%,"Can hit targets using Fly, Bounce, or Sky Drop"
+Flinch,Waterfall,Water,Physical,20%,80,100%,Generation IV onward
+Flinch,Zen Headbutt,Psychic,Physical,20%,80,90%,
+Flinch,Zing Zap,Electric,Physical,30%,80,100%,
+SemiInvulnerableTurn,Bounce,Flying,Physical,--,85,85%,30% chance of paralyzing the target
+SemiInvulnerableTurn,Dig,Ground,Physical,--,80,100%,
+SemiInvulnerableTurn,Dive,Water,Physical,--,80,100%,
+SemiInvulnerableTurn,Fly,Flying,Physical,--,90,95%,
+SemiInvulnerableTurn,Phantom Force,Ghost,Physical,--,90,100%,"Ignores protection moves, except Max Guard"
+SemiInvulnerableTurn,Shadow Force,Ghost,Physical,--,120,100%,"Ignores protection moves, except Max Guard"
+SemiInvulnerableTurn,Sky Drop,Flying,Physical,--,60,100%,"User and target become semi-invulnerable. Since Generation VI, only targets that weigh less than 440.9 lbs. (200 kg) can be lifted."
+Bound,Bind,Normal,Physical,--,15,85%,
+Bound,Clamp,Water,Physical,--,35,85%,
+Bound,Fire Spin,Fire,Special,--,35,85%,
+Bound,G-Max Centiferno,Fire,Varies,--,--,--%,Exclusive G-Max Move of Gigantamax Centiskorch
+Bound,G-Max Sandblast,Ground,Varies,--,--,--%,Exclusive G-Max Move of Gigantamax Sandaconda
+Bound,Infestation,Bug,Special,--,20,100%,
+Bound,Magma Storm,Fire,Special,--,100,75%,
+Bound,Sand Tomb,Ground,Physical,--,35,85%,
+Bound,Snap Trap,Grass,Physical,--,35,100%,
+Bound,Thunder Cage,Electric,Special,--,80,90%,
+Bound,Whirlpool,Water,Special,--,35,85%,
+Bound,Wrap,Normal,Physical,--,15,90%,
+Trapped,Anchor Shot,Steel,Physical,--,80,100%,
+Trapped,Block,Normal,Status,--,--,--%,
+Trapped,Fairy Lock,Fairy,Status,--,--,--%,Prevents all Pokémon on the field from switching out or fleeing during their next turn
+Trapped,G-Max Terror,Ghost,Varies,--,--,--%,Exclusive G-Max Move of Gigantamax Gengar
+Trapped,Jaw Lock,Dark,Physical,--,80,100%,Prevents the user and the target from switching out or fleeing
+Trapped,Mean Look,Normal,Status,--,--,--%,
+Trapped,No Retreat,Fighting,Status,--,--,--%,"Raises the user's Attack, Defense, Special Attack, Special Defense, and Speed by one stage each. Prevents the user from switching out or fleeing"
+Trapped,Octolock,Fighting,Status,--,--,100%,"At the end of each turn, the target's Defense and Special Defense are lowered by one stage each"
+Trapped,Shadow Hold,Shadow,Status,--,--,80%,
+Trapped,Spider Web,Bug,Status,--,--,--%,
+Trapped,Spirit Shackle,Ghost,Physical,--,80,100%,
+Trapped,Thousand Waves,Ground,Physical,--,90,100%
+Drowsy,Yawn,Normal,Status,--,--,100%,
+Drowsy,G-Max Snooze,Dark,Varies,--,--,--%,
+Identified,Foresight,Normal,Status,--,--%,Removes Ghost-type Pokémon's immunity to Fighting-type and Normal-type moves
+Identified,Odor Sleuth,Normal,Status,--,--%,Removes Ghost-type Pokémon's immunity to Fighting-type and Normal-type moves
+Identified,Miracle Eye,Psychic,Status,--,--%,Removes Dark-type Pokémon's immunity to Psychic-type moves
+Infatuation,Attract,Normal,Status,100%,--,100%,Opponent of the opposite gender of the user become infatuated
+Infatuation,G-Max Cuddle,Normal,Varies,100%,--,--%,Exclusive G-Max Move of Gigantamax EeveeAll opponents of the opposite gender of the user become infatuated
+LeechSeed,Leech Seed,Grass,Status,--,--,90%,
+LeechSeed,Sappy Seed,Grass,Physical,--,90,100%,
+Torment,Torment,Dark,Status,100%,--,100%,
+Torment,G-Max Meltdown,Steel,Varies,100%,--,--%,Exclusive G-Max Move of Gigantamax MelmetalAffects all opponents on the field
+TypeChange,Forest's Curse,Grass,Status,--,100%,,
+TypeChange,Trick-or-Treat,Ghost,Status,--,100%,,
+TypeChange,Magic Powder,Psychic,Status,--,100%,,
+TypeChange,Soak,Water,Status,--,100%,,
+ChargingTurn,Bounce,Flying,Physical,--,85,85%,User becomes semi-invulnerable. 30% chance of paralyzing the target
+ChargingTurn,Dig,Ground,Physical,--,80,100%,User becomes semi-invulnerable
+ChargingTurn,Dive,Water,Physical,--,80,100%,User becomes semi-invulnerable
+ChargingTurn,Fly,Flying,Physical,--,90,95%,User becomes semi-invulnerable
+ChargingTurn,Freeze Shock,Ice,Physical,--,140,90%,30% chance of paralyzing the target
+ChargingTurn,Geomancy,Fairy,Status,--,--,--%,"Raises the user's Special Attack, Special Defense, and Speed by two stages"
+ChargingTurn,Ice Burn,Ice,Special,--,140,90%,30% chance of burning the target
+ChargingTurn,Meteor Beam,Rock,Special,--,120,90%,Raises the user's Special Attack by one level on the first turn
+ChargingTurn,Phantom Force,Ghost,Physical,--,90,100%,User becomes semi-invulnerable
+ChargingTurn,Razor Wind,Normal,Special,--,80,100%,Has an increased critical hit ratio
+ChargingTurn,Shadow Force,Ghost,Physical,--,120,100%,User becomes semi-invulnerable
+ChargingTurn,Skull Bash,Normal,Physical,--,130,100%,Raises the user's Defense by one level on the first turn
+ChargingTurn,Sky Attack,Flying,Physical,--,140,90%,Has an increased critical hit ratioHas a 30% chance of causing the target to flinch
+ChargingTurn,Sky Drop,Flying,Physical,--,60,100%,User and target become semi-invulnerable
+ChargingTurn,Solar Beam,Grass,Special,--,120,100%,Will not need a turn to charge if used during harsh sunlight
+ChargingTurn,Solar Blade,Grass,Physical,--,125,100%,Will not need a turn to charge if used during harsh sunlight
+Protection,Baneful Bunker,Poison,Status,--,+4,--%,Will poison a Pokémon that attempts to use a contact move on the user
+Protection,Crafty Shield,Fairy,Status,--,+3,--%,Protects the user's side of the field from status moves
+Protection,Detect,Fighting,Status,--,+4,--%,
+Protection,King's Shield,Steel,Status,--,+4,--%,Will drop the Attack stat by 1 stage of a Pokémon that attempts to use a contact move on the user.Protects the user from any moves except status moves
+Protection,Mat Block,Fighting,Status,--,0,--%,Always goes first; only works if it is the user's first turn
+Protection,Max Guard,Normal,Status,--,+4,--%,"User must be Dynamaxed and know a status moveFully protects the user from Max MovesProtects the user from Block, Flower Shield, Gear Up, Magnetic Flux, Phantom Force, Psych Up, Teatime, and Transform"
+Protection,Obstruct,Dark,Status,--,+4,--%,Will drop the Defense stat by 2 stages of a Pokémon that attempts to use a contact move on the user.
+Protection,Protect,Normal,Status,--,+4,--%,
+Protection,Quick Guard,Fighting,Status,--,+3,--%,Protects the user's side of the field from moves that have increased priority
+Protection,Spiky Shield,Grass,Status,--,+4,--%,Will deal damage equal to 1/8 of its maximum HP of a Pokémon that attempts to use a contact move on the user
+Protection,Wide Guard,Rock,Status,--,+3,--%,Protects the user's side of the field from damaging moves that can target multiple Pokémon
+Recharging,Blast Burn,Fire,Special,--,150,90%,
+Recharging,Eternabeam,Dragon,Special,--,160,90%,
+Recharging,Frenzy Plant,Grass,Special,--,150,90%,
+Recharging,Giga Impact,Normal,Physical,--,150,90%,
+Recharging,Hydro Cannon,Water,Special,--,150,90%,
+Recharging,Hyper Beam,Normal,Special,--,150,90%,
+Recharging,Meteor Assault,Fighting,Physical,--,150,100%,
+Recharging,Prismatic Laser,Psychic,Special,--,160,100%,
+Recharging,Roar of Time,Dragon,Special,--,150,90%,
+Recharging,Rock Wrecker,Rock,Physical,--,150,90%,
+Recharging,Shadow Half,Shadow,Status,--,--,100%,Halves the current HP of all Pokémon in battle
+TakingAim,Mind Reader,Normal,Status,--,--,--%,
+TakingAim,Lock-On,Normal,Status,--,--,--%,
+Thrashing,Rage,Normal,Physical,--,20,100%,Only in generation I
+Thrashing,Thrash,Normal,Physical,--,120,100%,
+Thrashing,Outrage,Dragon,Physical,--,120,100%,
+Thrashing,Petal Dance,Grass,Special,--,120,100%,
+Curse,Curse,--,--,100%,--,--,If user is a Ghost-type Pokemon
+Embargo,Embargo,--,--,100%,--,--,
+HealBlock,Heal Block,--,--,100%,--,--,
+Nightmare,Nightmare,--,--,100%,--,--,
+PerishSong,Perish Song,--,--,100%,--,--,
+Taunt,Taunt,--,--,100%,--,--,
+Telekinesis,Telekinesis,--,--,100%,--,--,
+AquaRing,Aqua Ring,--,--,100%,--,--,
+Bracing,Bracing,--,--,100%,--,--,
+DefenseCurl,Defense Curl,--,--,100%,--,--,
+MagicCoat,Magic Coat,--,--,100%,--,--,
+Mimic,Mimic,--,--,100%,--,--,
+Minimize,Minimize,--,--,100%,--,--,
+Substitute,Substitute,--,--,100%,--,--,
+CenterofAttention,Follow Me,--,--,100%,--,--,
+CenterofAttention,Rage Powder,--,--,100%,--,--,
+Rooted,Ingrain,--,--,100%,--,--,
+MagneticLevitation,Magnet Rise,--,--,100%,--,--,
+Transformed,Transform,--,--,100%,--,--,

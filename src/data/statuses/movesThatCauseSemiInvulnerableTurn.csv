@@ -1,8 +1,0 @@
-Move,Type,Category,Power,Accuracy,Notes
-Bounce,Flying,Physical,85,85%,30% chance of paralyzing the target
-Dig,Ground,Physical,80,100%,
-Dive,Water,Physical,80,100%,
-Fly,Flying,Physical,90,95%,
-Phantom Force,Ghost,Physical,90,100%,"Ignores protection moves, except Max Guard"
-Shadow Force,Ghost,Physical,120,100%,"Ignores protection moves, except Max Guard"
-Sky Drop,Flying,Physical,60,100%,"User and target become semi-invulnerable. Since Generation VI, only targets that weigh less than 440.9 lbs. (200 kg) can be lifted."
