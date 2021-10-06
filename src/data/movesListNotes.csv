@@ -1,0 +1,233 @@
+Move ID,Header,Description
+2,Name,Normal-type move in Generation I
+12,Accuracy,Success is calculated using a custom formula.
+13,Accuracy,75% in Generations I-II
+14,PP,30 in Generations I-V
+16,Name,Normal-type move in Generation I
+17,Power,35 in Generation I
+18,Accuracy,"85% in Generation I, 100% in Generations II-V"
+19,Power,70 in Generations I-III
+20,Accuracy,75% in Generations I-IV
+22,PP,"10 in Generations I-III, 15 in Generations IV-V"
+22,Power,35 in Generations I-V
+26,PP,25 in Generations I-IV
+26,Power,"70 in Generations I-III, 85 in Generation IV"
+28,Name,Normal-type move in Generation I
+32,Accuracy,Success is calculated using a custom formula.
+33,Power,"35 in Generations I-IV, 50 in Generations V-VI"
+33,Accuracy,95% in Generations I-IV
+35,Accuracy,85 in Generations I-IV
+37,PP,20 in Generations I-IV
+37,Power,90 in Generations I-IV
+38,Power,100 in Generation I
+42,Power,14 in Generations I-V
+42,Accuracy,85% in Generations I-V
+44,Name,Normal-type move in Generation I
+46,Accuracy,100% in Generations I-V
+49,Power,Always deals 20 HP damage
+50,Accuracy,"55% in Generations I-III, 80% in Generation IV"
+53,Power,95 in Generations I-V
+56,Power,120 in Generations I-V
+57,Power,95 in Generations I-V
+58,Power,95 in Generations I-V
+59,Power,120 in Generations I-V
+59,Accuracy,90% in Generation I
+66,PP,25 in Generations I-V
+67,Power,50 in Generations I-II
+67,Accuracy,90% in Generations I-II
+71,PP,"20 in Generations I-III, 15 in LGPE"
+71,Power,40 in LGPE
+72,PP,10 in Generations I-III and LGPE
+72,Power,75 in LGPE
+74,PP,40 in Generations I-V
+76,Power,200 in LGPE
+80,PP,20 in Generations I-IV
+80,Power,"70 in Generations I-III, 90 in Generation IV"
+82,Power,Always deals 40 HP damage
+83,Power,15 in Generations I-IV
+83,Accuracy,70% in Generations I-IV
+85,Power,95 in Generations I-V
+86,Accuracy,100% in Generations I-VI
+87,Power,120 in Generations I-V
+88,Accuracy,65% in Generation I
+90,Accuracy,Success is calculated using a custom formula.
+91,Power,"100 in Generation I, 60 in Generations II-III"
+92,Accuracy,85% in Generations I-IV
+95,Accuracy,70% in Diamond and Pearl
+102,Accuracy,100% in Generations I-II
+105,PP,20 in Generations I-III
+107,PP,20 in Generations I-V
+112,PP,30 in Generations I-V
+117,Accuracy,100% in Generations I-III
+120,Power,130 in Generation I
+122,Power,20 in Generations I-V
+123,Power,20 in Generations I-V
+126,Power,120 in Generations I-V
+128,PP,10 in Generations I-IV
+128,Accuracy,75% in Generations I-IV
+130,PP,15 in Generations I-V
+130,Power,100 in Generations I-V
+136,PP,20 in Generations I-IV
+136,Power,"85 in Generations I-III, 100 in Generation IV"
+137,Accuracy,"75% in Generations I-IV, 90% in Generation V"
+139,Accuracy,"55% in Generations I-IV, 80% in Generation V"
+141,PP,15 in Generations I-VI
+141,Power,20 in Generations I-VI
+143,Power,200 in LGPE
+145,Power,20 in Generations I-V
+148,Accuracy,70% in Generations I-III
+149,Accuracy,80% in Generations I-V
+151,PP,40 in Generations I-V
+152,Power,90 in Generations I-V
+152,Accuracy,85% in Generations I-IV
+153,Power,170 in Generation I
+165,PP,10 in Generation I
+165,Accuracy,100% in Generations I-III
+168,PP,10 in Generations II-V
+168,Power,40 in Generations II-V
+170,Accuracy,100% in Generations II-III
+173,Power,40 in Generations II-V
+174,Name,???-type move in Generations II-IV
+178,Accuracy,85% in Generations II-IV
+184,Accuracy,90% in Generations II-IV
+186,Name,Normal-type move prior to Gen VI
+192,Power,100 in Generations II-III
+193,Accuracy,100% in Generations II-III
+198,Accuracy,80% in Generations II-IV
+199,Accuracy,100% in Generations II-III
+200,PP,15 in Generations II-IV
+200,Power,90 in Generations II-III
+202,PP,5 in Generations II-III
+202,Power,60 in Generations II-IV
+204,Name,Normal-type move prior to Gen VI
+207,Accuracy,90% in Generations II-VI
+210,Power,"10 in Generations II-IV, 20 in Generation V"
+220,Accuracy,100% in Generation II
+229,Power,20 in Generations II-VII
+236,Name,Normal-type move prior to Gen VI
+237,Power,— in Generations II-V
+248,PP,15 in Generations II-IV
+248,Power,"80 in Generations II-IV, 100 in Generation V"
+248,Accuracy,90% in Generations II-IV
+249,Power,20 in Generations II-III
+250,Power,15 in Generations II-IV
+250,Accuracy,70% in Generations II-IV
+251,Power,10 in Generations II-IV
+253,Power,50 in Generations III-IV
+254,PP,10 in Generation III
+257,Power,100 in Generations III-V
+261,Accuracy,75% in Generations III-V
+265,Power,60 in Generations III-V
+282,Power,20 in Generations III-V
+291,Power,60 in Generation III
+309,Power,100 in Generations III-V
+309,Accuracy,85% in Generations III-V
+314,Power,55 in Generations III-V
+315,Power,140 in Generations III-V
+316,Accuracy,100% in Generation III
+317,PP,10 in Generations III-V
+317,Power,50 in Generations III-V
+317,Accuracy,80% in Generations III-V
+326,PP,30 in Generations III-V
+328,Power,15 in Generations III-IV
+328,Accuracy,70 in Generations III-IV
+329,Accuracy,Success is calculated using a custom formula.
+330,Power,95 in Generations III-V
+331,Power,10 in Generations III-IV
+333,Power,10 in Generations III-IV
+343,PP,40 in Generations III-V
+343,Power,40 in Generations III-IV
+348,Power,70 in Generation III
+350,Accuracy,80% in Generations III-IV
+353,Power,120 in Generations III-IV
+353,Accuracy,85% in Generations III-IV
+358,Power,60 in Generations IV-V
+364,Power,50 in Generation IV
+366,PP,30 in Generations IV-V
+372,Power,50 in Generations IV-V
+375,Accuracy,90% in Generations IV-V
+387,Power,130 in Generation IV
+389,Power,80 in Generations IV-VI
+396,Power,90 in Generations IV-V
+403,PP,20 in Generations IV-V
+406,Power,90 in Generations IV-V
+408,Power,70 in Generations IV-V
+409,PP,5 in Generation IV
+409,Power,60 in Generation IV
+412,Power,80 in Generations IV-V
+434,Power,140 in Generations IV-V
+437,Power,140 in Generations IV-V
+441,Accuracy,70% in Generations IV-V
+448,Power,60 in Generations IV-V
+463,Power,120 in Generations IV-V
+463,Accuracy,70% in Generation IV
+464,Accuracy,80% in Generations IV-VI
+480,Power,40 in Generation V
+485,PP,15 in Generation V
+485,Power,70 in Generation V
+490,Power,60 in Generation V
+506,Power,50 in Generation V
+510,Power,30 in Generation V
+518,Power,50 in Generation V
+519,Power,50 in Generation V
+520,Power,50 in Generation V
+522,Power,30 in Generation V
+524,Power,40 in Generation V
+533,PP,20 in Generation V
+542,Power,120 in Generation V
+546,Power,85 in Generation V
+560,Power,80 in Generation VI
+565,Power,30 in Generation VI
+570,Power,50 in Generation VI
+576,Accuracy,100% in Generation VI
+594,Name,Physical move in Generation VI
+595,Power,65 in Generation VI
+618,Gen,ORAS only
+619,Gen,ORAS only
+620,Gen,ORAS only
+621,Gen,ORAS only
+718,Power,90 in Generation VII
+720,Gen,USUM only
+721,Gen,USUM only
+722,Gen,USUM only
+723,Gen,USUM only
+724,Gen,USUM only
+725,Gen,USUM only
+726,Gen,USUM only
+727,Gen,USUM only
+728,Gen,USUM only
+729,PP,10 in Generation VIII
+729,Power,80 in Generation VIII
+729,Gen,LGPE only
+730,Gen,LGPE only
+731,Gen,LGPE only
+732,Gen,LGPE only
+733,PP,20 in Generation VIII
+733,Power,60 in Generation VIII
+733,Gen,LGPE only
+734,PP,20 in Generation VIII
+734,Power,60 in Generation VIII
+734,Gen,LGPE only
+735,PP,20 in Generation VIII
+735,Power,60 in Generation VIII
+735,Gen,LGPE only
+736,Power,80 in Generation VIII
+736,Accuracy,95% in Generation VIII
+736,Gen,LGPE only
+737,Power,80 in Generation VIII
+737,Accuracy,95% in Generation VIII
+737,Gen,LGPE only
+738,PP,10 in Generation VIII
+738,Power,100 in Generation VIII
+738,Accuracy,90% in Generation VIII
+738,Gen,LGPE only
+739,PP,10 in Generation VIII
+739,Power,100 in Generation VIII
+739,Accuracy,90% in Generation VIII
+739,Gen,LGPE only
+740,PP,5 in Generation VIII
+740,Power,120 in Generation VIII
+740,Accuracy,85% in Generation VIII
+740,Gen,LGPE only
+741,Gen,LGPE only
+742,Gen,LGPE only

@@ -1,64 +1,9 @@
 import csv
-import urllib.request
 import re
-from bs4 import BeautifulSoup
+from utils import openBulbapediaLink, genSymbolToNumber, dexNumberToGen
 
 # The event Blue-Striped Basculin with Rock Head is not included. My apologies for any inconvenience.
 # The Bulbapedia list scraped here happens to be a convenient location for all the sprites, including the megas, so we grab them here.
-
-# Returns BeautifulSoup object given Bulbapedia link
-def openBulbapediaLink(url, retryCount, retryMax):
-  try:
-    req = urllib.request.Request(url, headers={'User-Agent' : "Magic Browser"}) 
-    html = urllib.request.urlopen( req )
-    bs = BeautifulSoup(html.read(), 'html.parser')
-    return bs
-  except urllib.error.HTTPError:
-    if retryCount < retryMax:
-      openBulbapediaLink(url, retryCount + 1, retryMax)
-  else:
-    return None
-# converts roman numeral for to arabic numeral
-def genSymbolToNumber(roman):
-  if roman == 'I':
-    return 1
-  elif roman == 'II':
-    return 2
-  elif roman == 'III':
-    return 3
-  elif roman == 'IV':
-    return 4
-  elif roman == 'V':
-    return 5
-  elif roman == 'VI':
-    return 6
-  elif roman == 'VII':
-    return 7
-  elif roman == 'VIII':
-    return 8
-  elif roman == 'IX':
-    return 9
-  else:
-    raise ValueError('Not a valid gen.')
-
-def dexNumberToGen(dexNumber):
-  dexNumber = int(dexNumber)
-  if dexNumber <= 151:
-    return 1
-  elif dexNumber <= 251:
-    return 2
-  elif dexNumber <= 386:
-    return 3
-  elif dexNumber <= 493: 
-    return 4
-  elif dexNumber <= 649:
-    return 5
-  elif dexNumber <= 721:
-    return 6
-  elif dexNumber <= 809:
-    return 7
-  else:
-    return 8
 
 # the notes are somewhat inconsistent, so there are a few different exceptions to consider
 def parseNote(note):
@@ -83,13 +28,11 @@ def makeCSVandExtractnotes(fname):
   url = 'https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Ability'
   bs = openBulbapediaLink(url, 0, 10)
 
-  csvFile = open(fname, 'w', newline='', encoding='utf-8')
-  writer = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
+  with open(fname, 'w', newline='', encoding='utf-8') as csvFile, open(fname.rstrip('.csv') + 'Notes.csv', 'w', newline='', encoding='utf-8') as notesCSV:
+    writer = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
+    notesWriter = csv.writer(notesCSV, quoting=csv.QUOTE_MINIMAL)
+    notesWriter.writerow(['Pokemon Name', 'Header', 'Description'])
 
-  # keep track of notes
-  notes = [] 
-
-  try:
     for gen in ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII']:
 
       # the page has eight separate tables, with section labelled by generation number
@@ -107,7 +50,6 @@ def makeCSVandExtractnotes(fname):
 
         # need to keep track of both 
         currentPokemonName = ''
-        currentDexEntry = ''
 
         # table organized by Pokemon family rather than generation introduced, so, for example, Mega Venusaur shows up in the gen 1 table
         # we can determine the generation of the current pokemon based on its name
@@ -155,7 +97,7 @@ def makeCSVandExtractnotes(fname):
               if cell.find('span', {'class': 'explain'}) != None:
                 notesInCell = cell.find_all('span', {'class': 'explain'})
                 for note in notesInCell:
-                  notes.append([currentPokemonName, headers[headerIndex], note.get('title')])
+                  notesWriter.writerow([currentPokemonName, headers[headerIndex], note.get('title')])
 
               csvRow.append(value)
             headerIndex += 1
@@ -164,10 +106,8 @@ def makeCSVandExtractnotes(fname):
         else: 
           csvRow.append(currentGen)
         writer.writerow(csvRow)
-  finally:
-    csvFile.close()
 
-  return notes
+  return
 
 def makeInitialAbilityDict(fname, unparsedNotes):
   initialAbilityDict = {}
@@ -209,6 +149,6 @@ def makeInitialAbilityDict(fname, unparsedNotes):
     return initialAbilityDict
 
 fname = f'src\\data\\pokemonAbilities.csv'
-notes = makeCSVandExtractnotes(fname)
+makeCSVandExtractnotes(fname)
 
-abilityDict = makeInitialAbilityDict(fname, notes)
+# abilityDict = makeInitialAbilityDict(fname, notes)

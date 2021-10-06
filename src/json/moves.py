@@ -1,20 +1,5 @@
 import csv
-import urllib.request
-from bs4 import BeautifulSoup
 from functools import cmp_to_key
-
-# Returns BeautifulSoup object given Bulbapedia link
-def openBulbapediaLink(url, retryCount, retryMax):
-  try:
-    req = urllib.request.Request(url, headers={'User-Agent' : "Magic Browser"}) 
-    html = urllib.request.urlopen( req )
-    bs = BeautifulSoup(html.read(), 'html.parser')
-    return bs
-  except urllib.error.HTTPError:
-    if retryCount < retryMax:
-      openBulbapediaLink(url, retryCount + 1, retryMax)
-  else:
-    return None
 
 # Used for a few calculations--need to alter when gen 9 comes
 def numberOfGens():
@@ -120,130 +105,15 @@ def comparePatches(patch1, patch2):
     else:
       return -1
 
-# creates .csv file for move list Bulbapedia table
-def makeMoveListCSVandExtractNotes(fname):
-
-  # Open CSV file
-  csvFile = open((fname), 'w', newline='', encoding='utf-8')
-  writer = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
-
-  url = 'https://bulbapedia.bulbagarden.net/wiki/List_of_moves'
-  bs = openBulbapediaLink(url, 0, 10) 
-  outerTable = bs.find('table', {'class': 'sortable'})
-  moveTable = outerTable.find('table')
-  
-  # Write header row and keep track of headings
-  headerRow = moveTable.find('tr')
-  headers = []
-
-  for cell in headerRow.findAll(['th']):
-    header = cell.get_text().strip('\n')
-    if header == '#': 
-      headers.append('Move ID')
-    else:
-      headers.append(header)
-
-  writer.writerow(headers)
-
-  # Write rows with data
-  rows = moveTable.findAll('tr')[1:]
-
-  # keep track of notes
-  notes = []
-
-  try:
-    # used for keeping track of notes to be applied to move with id moveID
-    moveID = 0
-
-    for row in rows:
-      moveID += 1
-      csvRow = []
-      headerIndex = 0
-
-      # move changed since its introduction, add that to list of notes to process later
-
-      for cell in row.findAll(['td', 'th']):
-        # check if there's a note in this cell
-        if cell.find('span', {'class': 'explain'}) != None:
-          notesInCell = cell.find_all('span', {'class': 'explain'})
-          for note in notesInCell:
-            notes.append([moveID, headers[headerIndex], note.get('title')])
-
-        value = cell.get_text().strip('\n').rstrip('*').replace(' ', '').replace('—', '--')
-        csvRow.append(value)
-        headerIndex += 1
-
-      writer.writerow(csvRow)
-  finally:
-    csvFile.close()
-
-  return notes
-
-# creates .csv file for priority Bulbapedia tables
-def makePriorityCSV(fname):
-
-  csvFile = open((fname), 'w', newline='', encoding='utf-8')
-  writer = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
-
-  # Write the headers
-  writer.writerow(['Generation', 'Priority', 'Move Name'])
-
-  url = 'https://bulbapedia.bulbagarden.net/wiki/Priority'
-
-  bs = openBulbapediaLink(url)
-
-  genSymbols = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII']
-
-  # There are eight tables we need to read, one for each generation
-  for genSymbol in genSymbols:
-    gen = genSymbolToNumber(genSymbol)
-    # in this case, the table of interest is not nested in another, single cell table
-    table = bs.find('span', id=f'Generation_{genSymbol}').find_next('table')
-    rows = table.findAll('tr')
-
-    # each row can have multiple moves in the 'Moves' column
-    for row in rows:
-      csvRow = [gen]
-
-      # starts in the priority column
-      priorityColumn = True
-
-      # don't keep track of moves which have zero priority
-      zeroPriority = False
-
-      for cell in row.findAll('td'):
-        if priorityColumn:
-          priority = cell.get_text().rstrip('\n')
-          if priority == '0':
-            zeroPriority = True
-          csvRow.append(priority.lstrip('+'))
-          priorityColumn = False
-        else:
-          # ignore moves which have zero priority
-          if zeroPriority:
-            continue
-          else:
-            moves = cell.get_text().split(',')
-            for move in moves:
-              move = move.strip(' ')
-              # Handle two cases: Zippy Zap and Teleport--handle Teleport in exception later
-              if 'PE' in move: 
-                if 'Teleport' not in move:
-                  writer.writerow(csvRow + [move.replace('PE', '').rstrip('\n').replace(' ', '')])
-                else:
-                  continue
-              else:
-                writer.writerow(csvRow + [move.rstrip('\n').replace(' ', '')])
-
-  csvFile.close()
-
 # creates dictionary for moves in csv located at fname
 # contains moveID, name, type, category, contest type, PP, power, accuracy, gen introduced, whether move is OHKO, whether move is fixed damage/its fixed damage value, whether the move is LGPE exclusive
-def makeInitialMoveDict(fname, unparsedNotes):
-  initialMoveDict = {}
+def makeInitialMoveDict(fname):
+  moveDict = {}
+  parsedNotes = []
 
-  with open(fname, encoding='utf-8') as movesCSV:
-    reader = csv.DictReader(movesCSV)
+  # Initialize moveDict and parse the notes to apply afterwards
+  with open(fname, encoding='utf-8') as movesCSV, open(fname.rstrip('.csv') + 'Notes.csv', encoding='utf-8') as notesCSV:
+    reader, notesReader = csv.DictReader(movesCSV), csv.DictReader(notesCSV)
 
     # make initial move dictionary, capturing state of the moves in Gen VIII
 
@@ -253,7 +123,7 @@ def makeInitialMoveDict(fname, unparsedNotes):
         # "Type", "Power", and "Accuracy" are lists since those can potentially change across generations--Bulbapedia lists the latest values for each field, with the past values in notes
         isMax = row["Move ID"][:4] == "Max "
 
-        initialMoveDict[row["Move ID"]] = {
+        moveDict[row["Move ID"]] = {
           "Name": row["Name"],
           "Type": [[row["Type"], 8]],
           "Category": [row["Category"], 8],
@@ -266,63 +136,62 @@ def makeInitialMoveDict(fname, unparsedNotes):
           "Fixed Damage": None,
           "LGPE Only": False,
           "Max Move": isMax,
-          # Priority to be added later
           "Priority": [],
         }
 
-  # we will make a list of all the parsed notes, then filter them out into several other lists
-  parsedNotes = []
+    # we will make a list of all the parsed notes, then filter them out into several other lists
+    for note in notesReader:
+      # some moves, such as Disable, have had multiple changes across generations, so a note can describe multiple changes
+      moveID, header, description = note["Move ID"], note["Header"], note["Description"]
 
-  for note in unparsedNotes:
-    # some moves, such as Disable, have had multiple changes across generations, so a note can describe multiple changes
-    description = note[2] 
-    parts = description.split(',')
+      parts = description.split(',')
+      for part in parts:
+        parsedNote = parseNote([moveID, header, part])
+        if parsedNote[2] != None:
+          parsedNotes.append(parsedNote)
 
-    for part in parts:
-      parsedNote = parseNote([note[0], note[1], part])
-      if parsedNote[2] != None:
-        parsedNotes.append(parsedNote)
+  # Apply parsed notes to moveDict
 
   # Standard note, majority of cases [moveID, header, [value, gen]]
   changes = [[note[0], note[1], note[2][:2]] for note in parsedNotes if len(note[2]) == 3 and note[2][2] == 'Standard']
   for change in changes:
     # Exception is Water Shuriken, moveID = 594
     if change[0] == 594:
-      initialMoveDict[str(moveID)]['Category'] = [['Physical', 6], ['Special', 8]]
+      moveDict[str(moveID)]['Category'] = [['Physical', 6], ['Special', 8]]
       continue
 
     moveID = change[0]
     header = change[1]
     valueAndGen = change[2]
-    initialMoveDict[str(moveID)][header].append(valueAndGen)
+    moveDict[str(moveID)][header].append(valueAndGen)
 
   # OHKO moves [moveID, header, ['OHKO', None]]
   OHKOMoves = [note for note in parsedNotes if note[2][0] == 'OHKO']
   for OHKOMove in OHKOMoves:
     moveID = OHKOMove[0]
-    initialMoveDict[str(moveID)]["OHKO"] = True
+    moveDict[str(moveID)]["OHKO"] = True
 
   # Fixed damage moves [moveID, header, [value + "fixed", Gen]]
   fixedDamageMoves = [note for note in parsedNotes if note[2][0] != None and 'fixed' in note[2][0]]
   for fixedDamageMove in fixedDamageMoves:
     moveID = fixedDamageMove[0]
-    initialMoveDict[str(moveID)]["Fixed Damage"] = fixedDamageMove[2][0].rstrip('fixed')
+    moveDict[str(moveID)]["Fixed Damage"] = fixedDamageMove[2][0].rstrip('fixed')
 
   # Value for move in LGPE [moveID, header, [value, "LGPE"]]
   LGPEMoveValues = [note for note in parsedNotes if note[2][1] == 'LGPE']
   for LGPEMoveValue in LGPEMoveValues:
     moveID = LGPEMoveValue[0]
     header = LGPEMoveValue[1]
-    initialMoveDict[str(moveID)][header].append(LGPEMoveValue[2])
+    moveDict[str(moveID)][header].append(LGPEMoveValue[2])
 
   # LGPE exclusive move [moveID, header, [None, "LGPE only"]]
   LGPEExclusives = [note for note in parsedNotes if note[2][1] == 'LGPE only']
   for LGPEExclusive in LGPEExclusives:
     moveID = LGPEExclusive[0]
     header = LGPEExclusive[1]
-    initialMoveDict[str(moveID)]["LGPE Only"] = True
+    moveDict[str(moveID)]["LGPE Only"] = True
     for header in ['Type', 'PP', 'Power', 'Accuracy']:
-      initialMoveDict[str(moveID)][header][0][1] = "LGPE Only"
+      moveDict[str(moveID)][header][0][1] = "LGPE Only"
 
   # Value for move which holds in LGPE and in other gens [moveID, header, [value, gen, "LGPE"]]
   # only includes Mega Drain 
@@ -332,50 +201,50 @@ def makeInitialMoveDict(fname, unparsedNotes):
     header = LGPEandGenMove[1]
     valueAndGen = [LGPEandGenMove[2][0], LGPEandGenMove[2][1]]
     valueAndLGPE = [LGPEandGenMove[2][0], LGPEandGenMove[2][2]]
-    initialMoveDict[str(moveID)][header].append(valueAndGen)
-    initialMoveDict[str(moveID)][header].append(valueAndLGPE)
+    moveDict[str(moveID)][header].append(valueAndGen)
+    moveDict[str(moveID)][header].append(valueAndLGPE)
 
   # For each move in initialMoveDict, sort the "Type", "PP", "Power", and "Accuracy" fields by generation
-  for key in initialMoveDict:
+  for key in moveDict:
     for innerKey in ['Type', 'PP', 'Power', 'Accuracy']:
-      if len(initialMoveDict[key][innerKey]) > 1:
-        initialMoveDict[key][innerKey].sort(key = cmp_to_key(comparePatches))
+      if len(moveDict[key][innerKey]) > 1:
+        moveDict[key][innerKey].sort(key = cmp_to_key(comparePatches))
 
   # For each move in initialMoveDict, rewrite the patches in "Type", "PP", "Power", and "Accuracy" fields so that the generation represents the starting gen rather than the ending gen of that value
-  for key in initialMoveDict:
+  for key in moveDict:
     for innerKey in ['Type', 'PP', 'Power', 'Accuracy']:
       # Split up patch into LGPE-only and other
-      LGPEOnlyPatch = [patch for patch in initialMoveDict[key][innerKey] if patch[1] == 'LGPE Only']
-      noLGPEOnlyPatches = [patch for patch in initialMoveDict[key][innerKey] if patch[1] != 'LGPE Only']
+      LGPEOnlyPatch = [patch for patch in moveDict[key][innerKey] if patch[1] == 'LGPE Only']
+      noLGPEOnlyPatches = [patch for patch in moveDict[key][innerKey] if patch[1] != 'LGPE Only']
 
       # If the move is LGPE-only, no change required
-      if LGPEOnlyPatch == initialMoveDict[key][innerKey]:
+      if LGPEOnlyPatch == moveDict[key][innerKey]:
         continue
       # If the move is not LGPE-only, change the non-LGPE-only patches
       else:
         # If only one non-LGPE-only patch, set gen equal to when move was introduced
         if len(noLGPEOnlyPatches) == 1:
-          patch = initialMoveDict[key][innerKey][0]
+          patch = moveDict[key][innerKey][0]
           value = patch[0]
-          initialMoveDict[key][innerKey] = [[value, initialMoveDict[key]["Gen"]]]
+          moveDict[key][innerKey] = [[value, moveDict[key]["Gen"]]]
         # Otherwise, need to determine when the starting gens from the list of ending gens
         else:
           modifiedPatchList = []
-          for i in range(len(initialMoveDict[key][innerKey])):
+          for i in range(len(moveDict[key][innerKey])):
             # first 'patch' applied in gen the move was introduced
             if i == 0:
-              modifiedPatchList.append([initialMoveDict[key][innerKey][0][0], initialMoveDict[key]["Gen"]])
+              modifiedPatchList.append([moveDict[key][innerKey][0][0], moveDict[key]["Gen"]])
             # send [value, endGen] to [value, oldEndGen + 1]
             else:
-              oldValueEndGen = initialMoveDict[key][innerKey][i - 1][1]
-              value = initialMoveDict[key][innerKey][i][0]
+              oldValueEndGen = moveDict[key][innerKey][i - 1][1]
+              value = moveDict[key][innerKey][i][0]
               modifiedPatchList.append([value, oldValueEndGen + 1])
 
-          initialMoveDict[key][innerKey] = modifiedPatchList
+          moveDict[key][innerKey] = modifiedPatchList
       if LGPEOnlyPatch:
-        initialMoveDict[key][innerKey].append(LGPEOnlyPatch[0])
+        moveDict[key][innerKey].append(LGPEOnlyPatch[0])
      
-  return initialMoveDict
+  return moveDict
 
 # Uses move list located at fname to make inverse lookup of moveID from moveName possible
 def makeInverseDict(fname):
@@ -438,48 +307,36 @@ def addPriorityToMoveDict(fname, moveDict, inverseDict):
   return
 
 # read contact data from Bulbapedia and update moveDict
-def addContactToMoveDict(moveDict, inverseDict):
+def addContactToMoveDict(fname, moveDict, inverseDict):
   # initially, no moves make contact
   for key in moveDict.keys():
-    moveDict[key]["Contact"] = [False, max(moveDict[key]["Gen"], 3)]
+    moveDict[key]["Contact"] = [[False, max(moveDict[key]["Gen"], 3)]]
 
-  url = 'https://bulbapedia.bulbagarden.net/wiki/Contact'
-  bs = openBulbapediaLink(url)
+  with open(fname, encoding='utf-8') as contactCSV:
+    reader = csv.DictReader(contactCSV)
+    for row in reader:
+      moveName = row["Move Name"]
+      note = row["Note"]
+      genOfMoveName = moveDict[inverseDict[moveName]]["Gen"]
 
-  rows = bs.find('span', {'id': 'Moves_that_make_contact'}).find_next('table').find('table').find_all('tr')
+      if note == '--':
+        # contact as a mechanic was introduced in Gen 3
+        moveDict[inverseDict[moveName]]["Contact"] = [[True, max(genOfMoveName, 3)]]
+      else:
+        if note == 'Gen IV onward':
+          moveDict[inverseDict[moveName]]["Contact"].append([True, 4])
+        elif note == 'Only Gen III':
+          moveDict[inverseDict[moveName]]["Contact"] = [[True, 3], [False, 4]]
 
-
-
-  for row in rows:
-    for cell in row.find_all('td'):
-      # checks if cell describes a move
-      if cell.find('a') and cell.find('a').get('title') and '(move)' in cell.find('a').get('title'):
-        # if move is in table, it's a contact move
-        moveName = cell.get_text().rstrip('\n').replace(' ', '')
-        genOfMoveName = moveDict[inverseDict[moveName]]["Gen"]
-        # contact was introduced as a mechanic in gen 3
-        moveDict[inverseDict[moveName]]["Contact"] = [True, max(genOfMoveName, 3)]
-
-  # exceptions: covet, faint attack, fakeout were not contact in Gen 3
-  for key in ['185', '252', '343']:
-    moveDict[key]["Contact"] = [[False, max(moveDict[key]["Gen"], 3)], [True, 4]]
-
-  # exceptions: ancient power, overheat make contact in Gen 3
-  for key in ['246', '315']:
-    moveDict[key]["Contact"] = [[True, max(moveDict[key]["Gen"], 3)], [False, 4]]
-
-  # exception: Shell Side Arm
-  
   return
-
 
 # Read Bulbapedia's table of moves, convert to .csv, and extract any notes
 # Holds moveID, Name, Type, Category, Contest, PP, Power, Accuracy, Gen
 moveList_fname = f'src\data\movesList.csv'
-moveListNotes = makeMoveListCSVandExtractNotes(moveList_fname)
+# moveListNotes = makeMoveListCSVandExtractNotes(moveList_fname)
 
 # Store data in initialMoveDict and make inverseDict for reverse lookup of Move ID by Move Name
-moveDict = makeInitialMoveDict(moveList_fname, moveListNotes)
+moveDict = makeInitialMoveDict(moveList_fname)
 inverseDict = makeInverseDict(moveList_fname)
 
 # Read Bulbapedia's table of move priority and convert to .csv
@@ -488,8 +345,8 @@ priority_fname = f'src\data\movesByPriority.csv'
 addPriorityToMoveDict(priority_fname, moveDict, inverseDict)
 
 # Add contact data to moveDict
-addContactToMoveDict(moveDict, inverseDict)
+contact_fname = f'src\data\movesByContact.csv'
+addContactToMoveDict(contact_fname, moveDict, inverseDict)
 
-for key in moveDict.keys():
-  print(moveDict[key]["Priority"])
-  print(moveDict[key]["Contact"])
+for key in range(15):
+  print(moveDict[str(key + 1)])
