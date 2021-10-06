@@ -100,6 +100,7 @@ def makeCSVRow(status, writer):
   if status == 'Center of Attention':
     writer.writerow([statusName, 'Follow Me', '--', '--', '100%', '--', '--', note])
     writer.writerow([statusName, 'Rage Powder', '--', '--', '100%', '--', '--', note])
+    writer.writeRow([statusName, 'Spotlight', '--', '--', '100%', '--', '--', note])
   # Rooted
   elif status == 'Rooted':
     writer.writerow([statusName, 'Ingrain', '--', '--', '100%', '--', '--', note])
