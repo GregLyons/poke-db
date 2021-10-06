@@ -1,8 +1,19 @@
 import csv
 import urllib.request
-import re
 from bs4 import BeautifulSoup
 
+# Returns BeautifulSoup object given Bulbapedia link
+def openBulbapediaLink(url, retryCount, retryMax):
+  try:
+    req = urllib.request.Request(url, headers={'User-Agent' : "Magic Browser"}) 
+    html = urllib.request.urlopen( req )
+    bs = BeautifulSoup(html.read(), 'html.parser')
+    return bs
+  except urllib.error.HTTPError:
+    if retryCount < retryMax:
+      openBulbapediaLink(url, retryCount + 1, retryMax)
+  else:
+    return None
 # Used for writing the rows to the main .csv file when the status has a table on Bulbapedia
 def addCSVRowsForStatus(statusInfo, writer, wroteHeader, notes):
   status = statusInfo[0]
@@ -27,9 +38,7 @@ def addCSVRowsForStatus(statusInfo, writer, wroteHeader, notes):
   if hasSeparatePage and (status != 'Flinch' and status != 'SemiInvulnerableTurn'):
     url = url + '_(status_condition)'
 
-  req = urllib.request.Request(url, headers={'User-Agent' : "Magic Browser"}) 
-  html = urllib.request.urlopen( req )
-  bs = BeautifulSoup(html.read(), 'html.parser')
+  bs = openBulbapediaLink(url, 0, 10)
 
   findSection = bs.find('span', id=findId)
   table = findSection.findNext('table').find('table')

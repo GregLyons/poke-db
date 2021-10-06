@@ -3,6 +3,19 @@ import urllib.request
 from bs4 import BeautifulSoup
 from functools import cmp_to_key
 
+# Returns BeautifulSoup object given Bulbapedia link
+def openBulbapediaLink(url, retryCount, retryMax):
+  try:
+    req = urllib.request.Request(url, headers={'User-Agent' : "Magic Browser"}) 
+    html = urllib.request.urlopen( req )
+    bs = BeautifulSoup(html.read(), 'html.parser')
+    return bs
+  except urllib.error.HTTPError:
+    if retryCount < retryMax:
+      openBulbapediaLink(url, retryCount + 1, retryMax)
+  else:
+    return None
+
 # Used for a few calculations--need to alter when gen 9 comes
 def numberOfGens():
   return 8
@@ -115,13 +128,7 @@ def makeMoveListCSVandExtractNotes(fname):
   writer = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
 
   url = 'https://bulbapedia.bulbagarden.net/wiki/List_of_moves'
-
-  # Need to look like browser to access Bulbapedia
-  req = urllib.request.Request(url, headers={'User-Agent' : "Magic Browser"}) 
-  html = urllib.request.urlopen( req )
-
-  # Get the table rows--the desired table has the "sortable class", and is the first inner table of a larger outer table
-  bs = BeautifulSoup(html.read(), 'html.parser')
+  bs = openBulbapediaLink(url, 0, 10) 
   outerTable = bs.find('table', {'class': 'sortable'})
   moveTable = outerTable.find('table')
   
@@ -183,11 +190,8 @@ def makePriorityCSV(fname):
 
   url = 'https://bulbapedia.bulbagarden.net/wiki/Priority'
 
-  # Need to look like browser to access Bulbapedia
-  req = urllib.request.Request(url, headers={'User-Agent' : "Magic Browser"}) 
-  html = urllib.request.urlopen( req )
+  bs = openBulbapediaLink(url)
 
-  bs = BeautifulSoup(html.read(), 'html.parser')
   genSymbols = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII']
 
   # There are eight tables we need to read, one for each generation
@@ -440,9 +444,7 @@ def addContactToMoveDict(moveDict, inverseDict):
     moveDict[key]["Contact"] = [False, max(moveDict[key]["Gen"], 3)]
 
   url = 'https://bulbapedia.bulbagarden.net/wiki/Contact'
-  req = urllib.request.Request(url, headers={'User-Agent' : "Magic Browser"}) 
-  html = urllib.request.urlopen( req )
-  bs = BeautifulSoup(html.read(), 'html.parser')
+  bs = openBulbapediaLink(url)
 
   rows = bs.find('span', {'id': 'Moves_that_make_contact'}).find_next('table').find('table').find_all('tr')
 
@@ -482,12 +484,12 @@ inverseDict = makeInverseDict(moveList_fname)
 
 # Read Bulbapedia's table of move priority and convert to .csv
 # Add priority data to moveDict and store in priorityMoveDict
-priority_fname = f'src\data\moves\priority.csv'
-makePriorityCSV(priority_fname)
+priority_fname = f'src\data\moves\movesByPriority.csv'
 addPriorityToMoveDict(priority_fname, moveDict, inverseDict)
 
 # Add contact data to moveDict
 addContactToMoveDict(moveDict, inverseDict)
 
 for key in moveDict.keys():
+  print(moveDict[key]["Priority"])
   print(moveDict[key]["Contact"])

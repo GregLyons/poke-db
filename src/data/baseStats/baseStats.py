@@ -1,7 +1,7 @@
 import csv
 
 def makeBaseStatDict():
-  with open('src\data\\baseStats\scraping\gen1.csv', encoding='utf-8') as gen1, open('src\data\\baseStats\scraping\gen5.csv', encoding='utf-8') as gen5, open('src\data\\baseStats\scraping\gen6.csv', encoding='utf-8') as gen6, open('src\data\\baseStats\scraping\gen7.csv', encoding='utf-8') as gen7, open('src\data\\baseStats\scraping\gen8.csv', encoding='utf-8') as gen8:
+  with open('src\data\\baseStats\gen1.csv', encoding='utf-8') as gen1, open('src\data\\baseStats\gen5.csv', encoding='utf-8') as gen5, open('src\data\\baseStats\gen6.csv', encoding='utf-8') as gen6, open('src\data\\baseStats\gen7.csv', encoding='utf-8') as gen7, open('src\data\\baseStats\gen8.csv', encoding='utf-8') as gen8:
     gen1Reader, gen5Reader, gen6Reader, gen7Reader, gen8Reader = csv.DictReader(gen1), csv.DictReader(gen5), csv.DictReader(gen6), csv.DictReader(gen7), csv.DictReader(gen8)
 
     baseStatDict = {}
@@ -40,5 +40,4 @@ def makeBaseStatDict():
     print(baseStatDict["Butterfree"])
   return baseStatDict
     
-
 makeBaseStatDict()

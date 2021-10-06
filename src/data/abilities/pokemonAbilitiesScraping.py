@@ -6,6 +6,18 @@ from bs4 import BeautifulSoup
 # The event Blue-Striped Basculin with Rock Head is not included. My apologies for any inconvenience.
 # The Bulbapedia list scraped here happens to be a convenient location for all the sprites, including the megas, so we grab them here.
 
+# Returns BeautifulSoup object given Bulbapedia link
+def openBulbapediaLink(url, retryCount, retryMax):
+  try:
+    req = urllib.request.Request(url, headers={'User-Agent' : "Magic Browser"}) 
+    html = urllib.request.urlopen( req )
+    bs = BeautifulSoup(html.read(), 'html.parser')
+    return bs
+  except urllib.error.HTTPError:
+    if retryCount < retryMax:
+      openBulbapediaLink(url, retryCount + 1, retryMax)
+  else:
+    return None
 # converts roman numeral for to arabic numeral
 def genSymbolToNumber(roman):
   if roman == 'I':
@@ -69,10 +81,7 @@ def parseNote(note):
 
 def makeCSVandExtractnotes(fname):
   url = 'https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Ability'
-
-  req = urllib.request.Request(url, headers={'User-Agent' : "Magic Browser"}) 
-  html = urllib.request.urlopen( req )
-  bs = BeautifulSoup(html.read(), 'html.parser')
+  bs = openBulbapediaLink(url, 0, 10)
 
   csvFile = open(fname, 'w', newline='', encoding='utf-8')
   writer = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
@@ -199,7 +208,7 @@ def makeInitialAbilityDict(fname, unparsedNotes):
     
     return initialAbilityDict
 
-fname = f'src\\data\\abilities\\scraping\\pokemonAbilities.csv'
+fname = f'src\\data\\abilities\\pokemonAbilities.csv'
 notes = makeCSVandExtractnotes(fname)
 
 abilityDict = makeInitialAbilityDict(fname, notes)

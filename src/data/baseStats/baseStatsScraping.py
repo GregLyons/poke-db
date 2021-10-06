@@ -2,6 +2,19 @@ import csv
 import urllib.request
 from bs4 import BeautifulSoup
 
+# Returns BeautifulSoup object given Bulbapedia link
+def openBulbapediaLink(url, retryCount, retryMax):
+  try:
+    req = urllib.request.Request(url, headers={'User-Agent' : "Magic Browser"}) 
+    html = urllib.request.urlopen( req )
+    bs = BeautifulSoup(html.read(), 'html.parser')
+    return bs
+  except urllib.error.HTTPError:
+    if retryCount < retryMax:
+      openBulbapediaLink(url, retryCount + 1, retryMax)
+  else:
+    return None
+
 urls = [
   'https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_base_stats_(Generation_I)', 
   'https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_base_stats_(Generation_II-V)',
@@ -31,18 +44,12 @@ for i in range(len(genMap)):
   url = urls[i]
   gen = genMap[i]
 
-  # Need to look like browser to access Bulbapedia
-  req = urllib.request.Request(url, headers={'User-Agent' : "Magic Browser"}) 
-  html = urllib.request.urlopen( req )
-
-  # Get the table rows--the desired table has the 'sortable' class
-  bs = BeautifulSoup(html.read(), 'html.parser')
+  bs = openBulbapediaLink(url, 0, 10)
   table = bs.find('table', {'class':'sortable'})
-
   rows = table.findAll('tr')
 
   # Make CSV file
-  csvFile = open((f'src\\data\\baseStats\\scraping\\gen{gen}.csv'), 'w', newline='', encoding='utf-8')
+  csvFile = open((f'src\\data\\baseStats\\gen{gen}.csv'), 'w', newline='', encoding='utf-8')
   writer = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
 
   # Write data to file

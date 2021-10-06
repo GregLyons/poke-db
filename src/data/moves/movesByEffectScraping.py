@@ -1,16 +1,30 @@
 import csv
 import urllib.request
+import urllib.error
 from bs4 import BeautifulSoup
 import re
 
-def makeMoveEffectCSV(label, url, writer):
-  req = urllib.request.Request(url, headers={'User-Agent' : "Magic Browser"}) 
-  html = urllib.request.urlopen( req )
-  bs = BeautifulSoup(html.read(), 'html.parser')
+# Returns BeautifulSoup object given Bulbapedia link
+def openBulbapediaLink(url, retryCount, retryMax):
+  try:
+    req = urllib.request.Request(url, headers={'User-Agent' : "Magic Browser"}) 
+    html = urllib.request.urlopen( req )
+    bs = BeautifulSoup(html.read(), 'html.parser')
+    return bs
+  except urllib.error.HTTPError:
+    if retryCount < retryMax:
+      openBulbapediaLink(url, retryCount + 1, retryMax)
+  else:
+    return None
 
-  # the moves are listed after an h2 containing the text 'Pages in category', and they are links whose text has the string '(move)'
+def makeMoveEffectCSV(label, url, writer):
+  print(url)
+  bs = openBulbapediaLink(url, 0, 10)
   findSection = bs.find('h2', text=re.compile(r'Pages in category'))
   moves = [link.get_text().rstrip('(move)').replace(' ', '') for link in findSection.find_all_next('a') if '(move)' in link.get_text()]
+
+
+  # the moves are listed after an h2 containing the text 'Pages in category', and they are links whose text has the string '(move)'
 
   for move in moves:
     writer.writerow([label, move])
@@ -81,7 +95,7 @@ labelsAndLinks = [
 	['hasRecoil',
 	'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_have_recoil'],
 	['hasVariablePower',
-	'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_have_recoil'],
+	'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_have_variable_power'],
 	['ignoresAbilityOfTarget',
 	'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_ignore_Abilities'],
 	['powersUp',
@@ -131,8 +145,11 @@ csvFile = open(fname, 'w', newline='', encoding='utf-8')
 writer = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
 writer.writerow(['Effect', 'Move'])
 
+# 
 for [label, link] in labelsAndLinks:
   makeMoveEffectCSV(label, link, writer)
+
+# 
 
 csvFile.close()
 
