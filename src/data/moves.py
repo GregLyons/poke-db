@@ -475,7 +475,7 @@ def addContactToMoveDict(moveDict, inverseDict):
 
 # Read Bulbapedia's table of moves, convert to .csv, and extract any notes
 # Holds moveID, Name, Type, Category, Contest, PP, Power, Accuracy, Gen
-moveList_fname = f'src\data\moves\movesList.csv'
+moveList_fname = f'src\data\movesList.csv'
 moveListNotes = makeMoveListCSVandExtractNotes(moveList_fname)
 
 # Store data in initialMoveDict and make inverseDict for reverse lookup of Move ID by Move Name
@@ -484,7 +484,7 @@ inverseDict = makeInverseDict(moveList_fname)
 
 # Read Bulbapedia's table of move priority and convert to .csv
 # Add priority data to moveDict and store in priorityMoveDict
-priority_fname = f'src\data\moves\movesByPriority.csv'
+priority_fname = f'src\data\movesByPriority.csv'
 addPriorityToMoveDict(priority_fname, moveDict, inverseDict)
 
 # Add contact data to moveDict

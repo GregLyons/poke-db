@@ -173,10 +173,10 @@ def makeNotesCSV(fname, notes):
   csvFile.close()
 
 # Make main .csv and extract notes
-main_fname = 'src\data\statuses\movesThatCauseStatus.csv'
+main_fname = 'src\data\movesThatCauseStatus.csv'
 notes = makeMainCSVAndExtractNotes(main_fname)
 print(notes)
 
 # Make notes .csv
-notes_fname = 'src\data\statuses\movesThatCauseStatusNotes.csv'
+notes_fname = 'src\data\movesThatCauseStatusNotes.csv'
 makeNotesCSV(notes_fname, notes)

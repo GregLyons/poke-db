@@ -208,7 +208,7 @@ def makeInitialAbilityDict(fname, unparsedNotes):
     
     return initialAbilityDict
 
-fname = f'src\\data\\abilities\\pokemonAbilities.csv'
+fname = f'src\\data\\pokemonAbilities.csv'
 notes = makeCSVandExtractnotes(fname)
 
 abilityDict = makeInitialAbilityDict(fname, notes)

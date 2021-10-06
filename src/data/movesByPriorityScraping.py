@@ -96,5 +96,5 @@ def makePriorityCSV(fname):
 
   csvFile.close()
 
-priority_fname = f'src\data\moves\movesByPriority.csv'
+priority_fname = f'src\data\movesByPriority.csv'
 makePriorityCSV(priority_fname)

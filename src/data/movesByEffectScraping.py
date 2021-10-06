@@ -18,7 +18,6 @@ def openBulbapediaLink(url, retryCount, retryMax):
     return None
 
 def makeMoveEffectCSV(label, url, writer):
-  print(url)
   bs = openBulbapediaLink(url, 0, 10)
   findSection = bs.find('h2', text=re.compile(r'Pages in category'))
   moves = [link.get_text().rstrip('(move)').replace(' ', '') for link in findSection.find_all_next('a') if '(move)' in link.get_text()]
@@ -140,7 +139,7 @@ labelsAndLinks = [
   'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_have_special_type_effectiveness_properties']
 ]
 
-fname = 'src\data\moves\movesByEffect.csv'
+fname = 'src\data\movesByEffect.csv'
 csvFile = open(fname, 'w', newline='', encoding='utf-8')
 writer = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
 writer.writerow(['Effect', 'Move'])
