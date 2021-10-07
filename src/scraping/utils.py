@@ -57,3 +57,19 @@ def dexNumberToGen(dexNumber):
     return 7
   else:
     return 8
+
+# remove Shadow Moves, which are listed on Bulbapedia
+def removeShadowMoves(fname, firstHeader):
+  shadowMoves = ['Blitz', 'Rush', 'Break', 'End', 'Wave', 'Rave', 'Storm', 'Fire', 'Bolt', 'Chill', 'Blast', 'Sky', 'Hold', 'Mist', 'Panic', 'Down', 'Shed', 'Half']
+  shadowMoves = ['Shadow' + move for move in shadowMoves]
+
+  with open(fname, 'r', encoding='utf-8') as oldFile, open(fname.replace('WithShadowMoves', ''), 'w', newline='', encoding='utf-8') as newFile:
+    reader = csv.DictReader(oldFile)
+    writer = csv.writer(newFile, csv.QUOTE_MINIMAL)
+    writer.writerow([firstHeader, 'Move Name'])
+    for row in reader:
+      if row["Move Name"] not in shadowMoves:
+        writer.writerow([row[firstHeader], row['Move Name']])
+
+def getDataPath():
+  return 'src\data\\'

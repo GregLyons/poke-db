@@ -1,19 +1,5 @@
 import csv
-import urllib.request
-from bs4 import BeautifulSoup
-
-# Returns BeautifulSoup object given Bulbapedia link
-def openBulbapediaLink(url, retryCount, retryMax):
-  try:
-    req = urllib.request.Request(url, headers={'User-Agent' : "Magic Browser"}) 
-    html = urllib.request.urlopen( req )
-    bs = BeautifulSoup(html.read(), 'html.parser')
-    return bs
-  except urllib.error.HTTPError:
-    if retryCount < retryMax:
-      openBulbapediaLink(url, retryCount + 1, retryMax)
-  else:
-    return None
+from utils import openBulbapediaLink, getDataPath
 
 # In gen 1, Sp. Attack and Sp. Defense are merged into one stat, 'Special', which is after Speed rather than before
 def formatGen1(csvRow):
@@ -31,7 +17,7 @@ def formatGen1(csvRow):
   return csvRow
 
 # Makes .csv files for base stats in Gens 1, 5, 6, 7, and 8
-def makeBaseStatCSVs():
+def makeBaseStatCSVs(fnamePrefix):
   urls = [
     'https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_base_stats_(Generation_I)', 
     'https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_base_stats_(Generation_II-V)',
@@ -52,7 +38,7 @@ def makeBaseStatCSVs():
     rows = table.findAll('tr')
 
     # Make CSV file
-    csvFile = open((f'src\\data\\baseStatsGen{gen}.csv'), 'w', newline='', encoding='utf-8')
+    csvFile = open((f'{fnamePrefix + str(gen)}.csv'), 'w', newline='', encoding='utf-8')
     writer = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
 
     # Write data to file
@@ -82,4 +68,6 @@ def makeBaseStatCSVs():
     finally: 
       csvFile.close()
 
-makeBaseStatCSVs()
+# the function makes multiple CSVs, according to gen, all with this prefix
+fnamePrefix= getDataPath() + 'baseStatsGen'
+makeBaseStatCSVs(fnamePrefix)

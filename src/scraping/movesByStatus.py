@@ -1,5 +1,7 @@
 import csv
-from utils import openBulbapediaLink
+from utils import openBulbapediaLink, getDataPath
+
+# Columns are status caused, move name, type, category, probability of inflicting status, power, accuracy, and notes
 
 # Used for writing the rows to the main .csv file when the status has a table on Bulbapedia
 def addCSVRowsForStatus(statusInfo, writer, wroteHeader, notes):
@@ -94,7 +96,7 @@ def addCSVRowsForStatus(statusInfo, writer, wroteHeader, notes):
   filteredNotes = [note for note in notesFromTable if note[2] not in ['Type', 'Category', 'Power', 'Accuracy']]
   notes = notes.extend(filteredNotes)
 
-# For the statuses which do not have tables, make a CSV Row for them
+# Makes a row for the statuses which do not have tables on Bulbapedia
 def makeCSVRow(status, writer):
   moveName = status.replace(' ', '')
   note = ''
@@ -123,7 +125,7 @@ def makeCSVRow(status, writer):
     writer.writerow([status, moveName, '--', '--', '100.0', '--', '--', note])
 
 # Makes the main .csv file and extracts any notes
-def makeMainCSVAndExtractNotes(fname):
+def makeStatusCSVAndExtractNotes(fname):
   # List of statuses and the HTML "id" attributes for their Bulbapedia tables
   # Some statuses are on separate pages
   separatePageStatuses = ['Burn', 'Freeze', 'Paralysis', 'Poison', 'BadPoison', 'Sleep', 'Confusion', 'Flinch', 'SemiInvulnerableTurn']
@@ -160,9 +162,8 @@ def makeMainCSVAndExtractNotes(fname):
 
   return notes
 
-# Makes the .csv file of Notes
-# A note is of the form [status, move, header, ]
-def makeNotesCSV(fname, notes):
+# Makes the .csv file of notes, which won't be called by another file
+def makeStatusNotesCSV(fname, notes):
   csvFile = open(fname, 'w', newline='', encoding='utf-8')
   writer = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
 
@@ -174,9 +175,9 @@ def makeNotesCSV(fname, notes):
   csvFile.close()
 
 # Make main .csv and extract notes
-main_fname = 'src\data\movesThatCauseStatus.csv'
-notes = makeMainCSVAndExtractNotes(main_fname)
+main_fname = getDataPath() + 'movesThatCauseStatus.csv'
+notes = makeStatusCSVAndExtractNotes(main_fname)
 
 # Make notes .csv
-notes_fname = 'src\data\movesThatCauseStatusNotes.csv'
-makeNotesCSV(notes_fname, notes)
+notes_fname = getDataPath() + 'movesThatCauseStatusNotes.csv'
+makeStatusNotesCSV(notes_fname, notes)

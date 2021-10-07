@@ -1,22 +1,8 @@
 import csv
-import urllib.request
-from bs4 import BeautifulSoup
+from utils import openBulbapediaLink, getDataPath
 from functools import cmp_to_key
 
-# Returns BeautifulSoup object given Bulbapedia link
-def openBulbapediaLink(url, retryCount, retryMax):
-  try:
-    req = urllib.request.Request(url, headers={'User-Agent' : "Magic Browser"}) 
-    html = urllib.request.urlopen( req )
-    bs = BeautifulSoup(html.read(), 'html.parser')
-    return bs
-  except urllib.error.HTTPError:
-    if retryCount < retryMax:
-      openBulbapediaLink(url, retryCount + 1, retryMax)
-  else:
-    return None
-
-def makeContactCSV(fname):
+def makeMainCSV(fname):
   url = 'https://bulbapedia.bulbagarden.net/wiki/Contact'
   bs = openBulbapediaLink(url, 0, 10)
   rows = bs.find('span', {'id': 'Moves_that_make_contact'}).find_next('table').find('table').find_all('tr')
@@ -52,7 +38,8 @@ def makeContactCSV(fname):
   csvFile.close()
   return
 
-makeContactCSV('src/data/movesByContact.csv')
+fname = getDataPath() + 'movesByContact.csv'
+makeMainCSV(fname)
 
 
 # genOfMoveName = moveDict[inverseDict[moveName]]["Gen"]

@@ -1,9 +1,10 @@
 import os
 import csv
-from utils import openBulbapediaLink
+from utils import openBulbapediaLink, removeShadowMoves, getDataPath
 import re
 
-def makeMoveEffectCSV(label, url, writer):
+# columns are effect name and move name
+def makeEffectCSV(label, url, writer):
   bs = openBulbapediaLink(url, 0, 10)
   findSection = bs.find('h2', text=re.compile(r'Pages in category'))
   moves = [link.get_text().rstrip('(move)').replace(' ', '') for link in findSection.find_all_next('a') if '(move)' in link.get_text()]
@@ -12,20 +13,6 @@ def makeMoveEffectCSV(label, url, writer):
 
   for move in moves:
     writer.writerow([label, move])
-
-
-# remove Shadow Moves, which are listed on Bulbapedia
-def removeShadowMovesFromCSV(fname):
-  shadowMoves = ['Blitz', 'Rush', 'Break', 'End', 'Wave', 'Rave', 'Storm', 'Fire', 'Bolt', 'Chill', 'Blast', 'Sky', 'Hold', 'Mist', 'Panic', 'Down', 'Shed', 'Half']
-  shadowMoves = ['Shadow' + move for move in shadowMoves]
-
-  with open(fname, 'r', encoding='utf-8') as oldFile, open(fname.replace('WithShadowMoves', ''), 'w', newline='', encoding='utf-8') as newFile:
-    reader = csv.DictReader(oldFile)
-    writer = csv.writer(newFile, csv.QUOTE_MINIMAL)
-    writer.writerow(['Effect', 'Move Name'])
-    for row in reader:
-      if row["Move Name"] not in shadowMoves:
-        writer.writerow([row['Effect'], row['Move Name']])
 
 labelsAndLinks = [
   ['consecutive',
@@ -138,18 +125,18 @@ labelsAndLinks = [
   'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_have_special_type_effectiveness_properties']
 ]
 
-fname = 'src\data\movesByEffectWithShadowMoves.csv'
+fname = getDataPath() + 'movesByEffectWithShadowMoves.csv'
 csvFile = open(fname, 'w', newline='', encoding='utf-8')
 writer = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
 writer.writerow(['Effect', 'Move Name'])
 
 # 
 for [label, link] in labelsAndLinks:
-  makeMoveEffectCSV(label, link, writer)
+  makeEffectCSV(label, link, writer)
 
 csvFile.close()
 
-removeShadowMovesFromCSV(fname)
+removeShadowMoves(fname, 'Effect')
 os.remove(fname)
 
 

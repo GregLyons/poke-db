@@ -1,9 +1,8 @@
 import csv
 import re
-from utils import openBulbapediaLink, genSymbolToNumber, dexNumberToGen
+from utils import openBulbapediaLink, genSymbolToNumber, dexNumberToGen, getDataPath
 
 # The event Blue-Striped Basculin with Rock Head is not included. My apologies for any inconvenience.
-# The Bulbapedia list scraped here happens to be a convenient location for all the sprites, including the megas, so we grab them here.
 
 # the notes are somewhat inconsistent, so there are a few different exceptions to consider
 def parseNote(note):
@@ -24,7 +23,9 @@ def parseNote(note):
   else:
     return note
 
-def makeCSVandExtractnotes(fname):
+# each row is a Pokemon, and columns are Dex number, sprite URL, name, Ability 1, Ability 2, Hidden, and Gen
+# columns for notes .csv are pokemon name, header (e.g. Ability 1, Ability 2, etc.)
+def makeAbilityCSVandExtractnotes(fname):
   url = 'https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Ability'
   bs = openBulbapediaLink(url, 0, 10)
 
@@ -148,7 +149,5 @@ def makeInitialAbilityDict(fname, unparsedNotes):
     
     return initialAbilityDict
 
-fname = f'src\\data\\pokemonAbilities.csv'
-makeCSVandExtractnotes(fname)
-
-# abilityDict = makeInitialAbilityDict(fname, notes)
+fname = getDataPath() + f'pokemonByAbilities.csv'
+makeAbilityCSVandExtractnotes(fname)

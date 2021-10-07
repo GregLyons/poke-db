@@ -1,21 +1,8 @@
 import csv
-import urllib.request
-from bs4 import BeautifulSoup
+from utils import openBulbapediaLink, getDataPath
 
-# Returns BeautifulSoup object given Bulbapedia link
-def openBulbapediaLink(url, retryCount, retryMax):
-  try:
-    req = urllib.request.Request(url, headers={'User-Agent' : "Magic Browser"}) 
-    html = urllib.request.urlopen( req )
-    bs = BeautifulSoup(html.read(), 'html.parser')
-    return bs
-  except urllib.error.HTTPError:
-    if retryCount < retryMax:
-      openBulbapediaLink(url, retryCount + 1, retryMax)
-  else:
-    return None
-
-def makeMainCSVandExtractNotes(fname):
+# columns are ID, name, Type, Category (physical/special/status), Contest Type, PP, Power, Accuracy, and Gen 
+def makeMoveListCSVandExtractNotes(fname):
   with open((fname), 'w', newline='', encoding='utf-8') as csvFile, open((fname.rstrip('.csv') + 'Notes.csv'), 'w', newline='', encoding='utf-8') as notesCSV:
     writer = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
     notesWriter = csv.writer(notesCSV, quoting=csv.QUOTE_MINIMAL)
@@ -78,8 +65,8 @@ def makeMainCSVandExtractNotes(fname):
   
   return
 
-fname = f'src\data\movesList.csv'
-makeMainCSVandExtractNotes(fname)
+fname = getDataPath() + 'moveList.csv'
+makeMoveListCSVandExtractNotes(fname)
 
 
 

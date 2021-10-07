@@ -1,5 +1,6 @@
 import csv
 from functools import cmp_to_key
+from utils import getDataPath
 
 # Used for a few calculations--need to alter when gen 9 comes
 def numberOfGens():
@@ -29,14 +30,15 @@ def genSymbolToNumber(roman):
     raise ValueError('Not a valid gen.')
 
 # get value(s) and generation(s) from description
-# Flag OHKO moves
-# Flag fixed damage moves
-# Flag LGPE: if 'in LGPE'; refers to move damage/accuracy/type and it takes a specific value; if 'LGPE only' refers to presence of move itself and doesn't take specific value; if 'and LGPE', refers to move value present in LGPE and multiple generations prior to VII
-# For most changes, it'll just be the value and the latest generation for that value (e.g. 40 Power before and in Generation V would be [40, 5])
 def parseMoveListNote(note):
   moveID = note[0]
   header = note[1]
   description = note[2]
+
+  # Flag OHKO moves
+  # Flag fixed damage moves
+  # Flag LGPE: if 'in LGPE'; refers to move damage/accuracy/type and it takes a specific value; if 'LGPE only' refers to presence of move itself and doesn't take specific value; if 'and LGPE', refers to move value present in LGPE and multiple generations prior to VII
+  # For most changes, it'll just be the value and the latest generation for that value (e.g. 40 Power before and in Generation V would be [40, 5])
 
   # Notes about type change are actually given in the 'Name' column
   if header == 'Name':
@@ -141,6 +143,7 @@ def makeInitialMoveDict(fname):
           "Priority": [],
           "Effect": {},
           "Status": {},
+          "Target": [],
         }
 
     # we will make a list of all the parsed notes, then filter them out into several other lists
@@ -414,12 +417,10 @@ def addStatusToMoveDict(fname, moveDict, inverseDict):
 
   # EXCEPTIONS SECTION
   # Fire Blast had 30% to burn in Gen 1
-  print(moveDict[inverseDict["FireBlast"]]["Status"]["Burn"])
   moveDict[inverseDict["FireBlast"]]["Status"]["Burn"] = [
     [30.0, 1], 
     [10.0, 2]
   ]
-  print(moveDict[inverseDict["FireBlast"]]["Status"]["Burn"])
 
   # Tri Attack only applied statuses from Gen 2 on
   for status in ['Burn', 'Freeze', 'Paralysis']:
@@ -461,22 +462,42 @@ def addStatusToMoveDict(fname, moveDict, inverseDict):
 
   return
 
+# read target data and update moveDict
+def addTargetToMoveDict(fname, moveDict, inverseDict):
+  with open(fname, encoding='utf-8') as targetCSV:
+    reader = csv.DictReader(targetCSV)
+
+    # get effects and add them to moveDict with initial value False
+    for row in reader:
+      target = row["Target"]
+      moveName = row["Move Name"]
+
+      # if effect isn't in moveDict, add it and initialize as False
+      if target not in moveDict[1]["Target"]:
+        for key in moveDict.keys():
+          moveDict[key]["Target"] = [['anyAdjacent', moveDict[key]["Gen"]]]
+      
+      key = inverseDict[moveName]
+      moveDict[key]["Target"] = [[True, moveDict[key]["Gen"]]]
+
 # holds moveID, Name, Type, Category, Contest, PP, Power, Accuracy, Gen
-moveList_fname = f'src\data\movesList.csv'
+moveList_fname = getDataPath() + f'moveList.csv'
 moveDict = makeInitialMoveDict(moveList_fname)
 
 # for reverse lookup of Move ID by Move Name
 inverseDict = makeInverseDict(moveList_fname)
 
-priority_fname = f'src\data\movesByPriority.csv'
+priority_fname = getDataPath() + f'movesByPriority.csv'
 addPriorityToMoveDict(priority_fname, moveDict, inverseDict)
 
-contact_fname = f'src\data\movesByContact.csv'
+contact_fname = getDataPath() + f'movesByContact.csv'
 addContactToMoveDict(contact_fname, moveDict, inverseDict)
 
-effect_fname = f'src\data\movesByEffect.csv'
+effect_fname = getDataPath() + f'movesByEffect.csv'
 addEffectToMoveDict(effect_fname, moveDict, inverseDict)
 
-status_fname = f'src\data\movesThatCauseStatus.csv'
+status_fname = getDataPath() + f'movesThatCauseStatus.csv'
 addStatusToMoveDict(status_fname, moveDict, inverseDict)
 
+target_fname = getDataPath() + f'movesByTarget.csv'
+addTargetToMoveDict(target_fname, moveDict, inverseDict)

@@ -1,19 +1,5 @@
 import csv
-import urllib.request
-from bs4 import BeautifulSoup
-
-# Returns BeautifulSoup object given Bulbapedia link
-def openBulbapediaLink(url, retryCount, retryMax):
-  try:
-    req = urllib.request.Request(url, headers={'User-Agent' : "Magic Browser"}) 
-    html = urllib.request.urlopen( req )
-    bs = BeautifulSoup(html.read(), 'html.parser')
-    return bs
-  except urllib.error.HTTPError:
-    if retryCount < retryMax:
-      openBulbapediaLink(url, retryCount + 1, retryMax)
-  else:
-    return None
+from utils import openBulbapediaLink, getDataPath
 
 # converts gen symbol to number
 def genSymbolToNumber(roman):
@@ -96,5 +82,5 @@ def makePriorityCSV(fname):
 
   csvFile.close()
 
-priority_fname = f'src\data\movesByPriority.csv'
+priority_fname = getDataPath() + 'movesByPriority.csv'
 makePriorityCSV(priority_fname)
