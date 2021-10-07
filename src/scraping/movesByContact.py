@@ -1,6 +1,5 @@
 import csv
-from utils import openBulbapediaLink, getDataPath
-from functools import cmp_to_key
+from utils import openBulbapediaLink, getDataPath, titleOrPascalToKebab
 
 def makeMainCSV(fname):
   url = 'https://bulbapedia.bulbagarden.net/wiki/Contact'
@@ -19,21 +18,21 @@ def makeMainCSV(fname):
       # checks if cell describes a move
       if cell.find('a') and cell.find('a').get('title') and '(move)' in cell.find('a').get('title'):
         # if move is in the table, it's a contact move
-        moveName = cell.get_text().rstrip('\n').replace(' ', '')
+        moveName = cell.get_text().rstrip('\n')
 
         # contact moves which were not contact in Gen 3
-        if moveName in ['Covet', 'FeintAttack', 'FakeOut']:
+        if moveName in ['covet', 'feint-attack', 'fake-out']:
           note = 'Gen IV onward'
 
     if moveName:
-      writer.writerow([moveName, note])
+      writer.writerow([titleOrPascalToKebab(moveName), note])
 
   # These exceptions don't show up in the Bulbapedia table, so we add them manually
 
   # moves which were contact in Gen 3 but not after
-  writer.writerow(['AncientPower', 'Only Gen III'])
-  writer.writerow(['Overheat', 'Only Gen III'])
-  writer.writerow(['ShellSideArm', 'If physical'])
+  writer.writerow(['ancient-power', 'Only Gen III'])
+  writer.writerow(['overheat', 'Only Gen III'])
+  writer.writerow(['shell-side-arm', 'If physical'])
 
   csvFile.close()
   return

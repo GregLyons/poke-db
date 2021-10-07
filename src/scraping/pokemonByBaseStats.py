@@ -1,5 +1,5 @@
 import csv
-from utils import openBulbapediaLink, getDataPath
+from utils import openBulbapediaLink, getDataPath, titleOrPascalToKebab
 
 # In gen 1, Sp. Attack and Sp. Defense are merged into one stat, 'Special', which is after Speed rather than before
 def formatGen1(csvRow):
@@ -47,7 +47,7 @@ def makeBaseStatCSVs(fnamePrefix):
         # keep track of columns; we don't need the last two
 
         csvRow = []
-        for cell in row.findAll(['td', 'th']):
+        for cell in row.findAll(['th']):
           value = cell.get_text().rstrip('\n')
           if value != '':
             if value == 'Pokémon':
@@ -56,6 +56,10 @@ def makeBaseStatCSVs(fnamePrefix):
               csvRow.append('Dex Number')
             else:
               csvRow.append(value.lstrip('0'))
+        for cell in row.findAll(['td']):
+          value = titleOrPascalToKebab(cell.get_text().rstrip('\n').replace('♂', ' Male').replace('♀', ' Female'))
+          if value != '':
+            csvRow.append(value.lstrip('0'))
 
         # cut off last two columns, Total and Average
         csvRow = csvRow[:-2]
@@ -69,5 +73,5 @@ def makeBaseStatCSVs(fnamePrefix):
       csvFile.close()
 
 # the function makes multiple CSVs, according to gen, all with this prefix
-fnamePrefix= getDataPath() + 'baseStatsGen'
+fnamePrefix= getDataPath() + 'pokemonByBaseStatsGen'
 makeBaseStatCSVs(fnamePrefix)

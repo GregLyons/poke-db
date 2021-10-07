@@ -1,5 +1,5 @@
 import csv
-from utils import openBulbapediaLink, getDataPath
+from utils import openBulbapediaLink, getDataPath, titleOrPascalToKebab
 
 # Columns are status caused, move name, type, category, probability of inflicting status, power, accuracy, and notes
 
@@ -8,9 +8,9 @@ def addCSVRowsForStatus(statusInfo, writer, wroteHeader, notes):
   status = statusInfo[0]
 
   findId = statusInfo[1]
-  if status == 'BadPoison':
+  if status == 'Bad Poison':
     findId = findId + '_2'
-  if status == 'SemiInvulnerableTurn': 
+  if status == 'Semi Invulnerable Turn': 
     findId = findId + '_with_a_semi-invulnerable_turn'
 
   hasSeparatePage = statusInfo[2]
@@ -19,12 +19,12 @@ def addCSVRowsForStatus(statusInfo, writer, wroteHeader, notes):
   else: 
     url = f'https://bulbapedia.bulbagarden.net/wiki/Status_condition'
 
-  if status == 'BadPoison':
+  if status == 'Bad Poison':
     url = f'https://bulbapedia.bulbagarden.net/wiki/Poison'
-  elif status == 'SemiInvulnerableTurn':
+  elif status == 'Semi Invulnerable Turn':
     url = f'https://bulbapedia.bulbagarden.net/wiki/Semi-invulnerable_turn'
   
-  if hasSeparatePage and (status != 'Flinch' and status != 'SemiInvulnerableTurn'):
+  if hasSeparatePage and (status != 'Flinch' and status != 'Semi Invulnerable Turn'):
     url = url + '_(status_condition)'
 
   bs = openBulbapediaLink(url, 0, 10)
@@ -62,13 +62,12 @@ def addCSVRowsForStatus(statusInfo, writer, wroteHeader, notes):
       value = cell.get_text().rstrip('\n').replace('*', '').replace('—', '--')
 
       if headerIndex == 0:
-        value = value.replace(' ', '')
         currentMove = value
 
       if cell.find('span', {'class': 'explain'}) != None:
         notesInCell = cell.find_all('span', {'class': 'explain'})
         for note in notesInCell:
-          notesFromTable.append([status, currentMove, currentHeader, note.get('title')])
+          notesFromTable.append([titleOrPascalToKebab(status), titleOrPascalToKebab(currentMove), currentHeader, note.get('title')])
 
       csvRow.append(value)
       headerIndex += 1
@@ -90,6 +89,10 @@ def addCSVRowsForStatus(statusInfo, writer, wroteHeader, notes):
       if csvRow[4] != 'Probability':
         csvRow[4] = float(csvRow[4].rstrip('%'))
 
+      # convert everything to kebab case except the header
+      if csvRow[0] != 'Status Caused':
+        for i in range(4):
+          csvRow[i] = titleOrPascalToKebab(csvRow[i])
       writer.writerow(csvRow)
 
   # we already have notes for type, category, power, and accuracy
@@ -98,29 +101,31 @@ def addCSVRowsForStatus(statusInfo, writer, wroteHeader, notes):
 
 # Makes a row for the statuses which do not have tables on Bulbapedia
 def makeCSVRow(status, writer):
-  moveName = status.replace(' ', '')
+  status = titleOrPascalToKebab(status)
+  moveName = status
   note = ''
 
-  if status == 'Curse':
+  if status == 'curse':
     note = 'If user is a Ghost-type Pokemon'
 
+  # Go through exceptions where name of status isn't name of move
   # Center of Attention
-  if status == 'CenterOfAttention':
-    writer.writerow([status, 'FollowMe', '--', '--', '100.0', '--', '--', note])
-    writer.writerow([status, 'RagePowder', '--', '--', '100.0', '--', '--', note])
-    writer.writerow([status, 'Spotlight', '--', '--', '100.0', '--', '--', note])
+  if status == 'center-of-attention':
+    writer.writerow([status, 'follow-me', '--', '--', '100.0', '--', '--', note])
+    writer.writerow([status, 'rage-powder', '--', '--', '100.0', '--', '--', note])
+    writer.writerow([status, 'spotlight', '--', '--', '100.0', '--', '--', note])
   # Rooted
   # Braing
-  elif status == 'Bracing':
-    writer.writerow([status, 'Endure', '--', '--', '100.0', '--', '--', note])
-  elif status == 'Rooted':
-    writer.writerow([status, 'Ingrain', '--', '--', '100.0', '--', '--', note])
+  elif status == 'bracing':
+    writer.writerow([status, 'endure', '--', '--', '100.0', '--', '--', note])
+  elif status == 'rooted':
+    writer.writerow([status, 'ingrain', '--', '--', '100.0', '--', '--', note])
   # Magnetic levitation
-  elif status == 'MagneticLevitation':
-    writer.writerow([status, 'MagnetRise', '--', '--', '100.0', '--', '--', note])
+  elif status == 'magnetic-levitation':
+    writer.writerow([status, 'magnet-rise', '--', '--', '100.0', '--', '--', note])
   # Transformed
-  elif status == 'Transformed':
-    writer.writerow([status, 'Transform', '--', '--', '100.0', '--', '--', note])
+  elif status == 'transformed':
+    writer.writerow([status, 'transform', '--', '--', '100.0', '--', '--', note])
   else: 
     writer.writerow([status, moveName, '--', '--', '100.0', '--', '--', note])
 
@@ -128,12 +133,12 @@ def makeCSVRow(status, writer):
 def makeStatusCSVAndExtractNotes(fname):
   # List of statuses and the HTML "id" attributes for their Bulbapedia tables
   # Some statuses are on separate pages
-  separatePageStatuses = ['Burn', 'Freeze', 'Paralysis', 'Poison', 'BadPoison', 'Sleep', 'Confusion', 'Flinch', 'SemiInvulnerableTurn']
+  separatePageStatuses = ['Burn', 'Freeze', 'Paralysis', 'Poison', 'Bad Poison', 'Sleep', 'Confusion', 'Flinch', 'Semi Invulnerable Turn']
   # Boolean indicates status is on separate page
   separatePageStatuses = [[status, 'Moves', True] for status in separatePageStatuses]
 
   # Other statuses are on a single page, the 'main page'
-  mainPageStatuses = ['Bound', 'Trapped', 'Drowsy', 'Identified', 'Infatuation', 'LeechSeed', 'Torment', 'TypeChange', 'ChargingTurn', 'Protection', 'Recharging', 'TakingAim', 'Thrashing']
+  mainPageStatuses = ['Bound', 'Trapped', 'Drowsy', 'Identified', 'Infatuation', 'Leech Seed', 'Torment', 'Type Change', 'Charging Turn', 'Protection', 'Recharging', 'Taking Aim', 'Thrashing']
   mainPageStatusIDs = ['Bound', 'Can\'t_escape', 'Drowsy', 'Identified', 'Infatuation', 'Leech_Seed', 'Torment', 'Type_change', 'Charging_turn', 'Protection', 'Recharging', 'Taking_aim', 'Thrashing']
   # Boolean indices status is on main page
   mainPageStatuses = [[mainPageStatuses[i], mainPageStatusIDs[i], False] for i in range(len(mainPageStatuses))]
@@ -154,7 +159,7 @@ def makeStatusCSVAndExtractNotes(fname):
     wroteHeader = True
 
   # Now we handle statuses which are caused by single moves
-  statusesWithoutTables = ['Curse', 'Embargo', 'HealBlock', 'Nightmare', 'PerishSong', 'Taunt', 'Telekinesis', 'AquaRing', 'Bracing', 'DefenseCurl', 'MagicCoat', 'Mimic', 'Minimize', 'Substitute', 'CenterOfAttention', 'Rooted', 'MagneticLevitation', 'Transformed']
+  statusesWithoutTables = ['Curse', 'Embargo', 'Heal Block', 'Nightmare', 'Perish Song', 'Taunt', 'Telekinesis', 'Aqua Ring', 'Bracing', 'Defense Curl', 'Magic Coat', 'Mimic', 'Minimize', 'Substitute', 'Center Of Attention', 'Rooted', 'Magnetic Levitation', 'Transformed']
   for status in statusesWithoutTables:
     makeCSVRow(status, writer)
 
@@ -175,9 +180,9 @@ def makeStatusNotesCSV(fname, notes):
   csvFile.close()
 
 # Make main .csv and extract notes
-main_fname = getDataPath() + 'movesThatCauseStatus.csv'
+main_fname = getDataPath() + 'movesByStatus.csv'
 notes = makeStatusCSVAndExtractNotes(main_fname)
 
 # Make notes .csv
-notes_fname = getDataPath() + 'movesThatCauseStatusNotes.csv'
+notes_fname = getDataPath() + 'movesByStatusNotes.csv'
 makeStatusNotesCSV(notes_fname, notes)

@@ -1,0 +1,18 @@
+Status,Move Name,Header of Note,Description
+burn,fire-blast,Probability,30% in Generation I
+burn,tri-attack,Notes,Generation II onwards only
+freeze,blizzard,Probability,"30% in Japanese Generation I handheld games, except in Pokémon Yellow's Colosseum 2"
+freeze,tri-attack,Notes,Generation II onwards only
+paralysis,thunder,Probability,10% in Generation I
+paralysis,tri-attack,Notes,Generation II onwards only
+poison,poison-sting,Probability,20% in Generation I
+poison,sludge,Probability,40% in Generation I
+confusion,chatter,Probability,Varies in Generation IV-V
+charging-turn,razor-wind,Notes,Generation II onwards only
+charging-turn,skull-bash,Notes,Generation II onwards only
+charging-turn,sky-attack,Notes,Generation III onwards only
+charging-turn,sky-attack,Notes,Generation III onwards only
+charging-turn,solar-beam,Notes,Generation II onwards only
+protection,detect,Priority,+3 in Generations II-IV
+protection,kings-shield,Notes,2 stages in Generations VI-VII
+protection,protect,Priority,+3 prior to Generation V

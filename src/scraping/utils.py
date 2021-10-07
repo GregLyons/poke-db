@@ -1,6 +1,7 @@
 import urllib.request
 from bs4 import BeautifulSoup
 import csv
+import re
 
 # Returns BeautifulSoup object given Bulbapedia link
 def openBulbapediaLink(url, retryCount, retryMax):
@@ -17,23 +18,23 @@ def openBulbapediaLink(url, retryCount, retryMax):
 
 # converts roman numeral for gen to arabic numeral
 def genSymbolToNumber(roman):
-  if roman == 'I':
+  if roman.upper() == 'I':
     return 1
-  elif roman == 'II':
+  elif roman.upper() == 'II':
     return 2
-  elif roman == 'III':
+  elif roman.upper() == 'III':
     return 3
-  elif roman == 'IV':
+  elif roman.upper() == 'IV':
     return 4
-  elif roman == 'V':
+  elif roman.upper() == 'V':
     return 5
-  elif roman == 'VI':
+  elif roman.upper() == 'VI':
     return 6
-  elif roman == 'VII':
+  elif roman.upper() == 'VII':
     return 7
-  elif roman == 'VIII':
+  elif roman.upper() == 'VIII':
     return 8
-  elif roman == 'IX':
+  elif roman.upper() == 'IX':
     return 9
   else:
     raise ValueError('Not a valid gen.')
@@ -60,8 +61,8 @@ def dexNumberToGen(dexNumber):
 
 # remove Shadow Moves, which are listed on Bulbapedia
 def removeShadowMoves(fname, firstHeader):
-  shadowMoves = ['Blitz', 'Rush', 'Break', 'End', 'Wave', 'Rave', 'Storm', 'Fire', 'Bolt', 'Chill', 'Blast', 'Sky', 'Hold', 'Mist', 'Panic', 'Down', 'Shed', 'Half']
-  shadowMoves = ['Shadow' + move for move in shadowMoves]
+  shadowMoves = ['blitz', 'rush', 'break', 'end', 'wave', 'rave', 'storm', 'fire', 'bolt', 'chill', 'blast', 'sky', 'hold', 'mist', 'panic', 'down', 'shed', 'half']
+  shadowMoves = ['shadow-' + move for move in shadowMoves]
 
   with open(fname, 'r', encoding='utf-8') as oldFile, open(fname.replace('WithShadowMoves', ''), 'w', newline='', encoding='utf-8') as newFile:
     reader = csv.DictReader(oldFile)
@@ -73,3 +74,11 @@ def removeShadowMoves(fname, firstHeader):
 
 def getDataPath():
   return 'src\data\\'
+
+# adapted top answer at https://stackoverflow.com/questions/1175208/elegant-python-function-to-convert-camelcase-to-snake-case
+def titleOrPascalToKebab(text):
+  # handles Will-O-Wisp, U-turn, King's Shield
+  text = text.replace('-', ' ').replace('\'', '').title()
+  text = re.sub(r'[\s,.()]', '', text)
+  text = re.sub('(.)([A-Z][a-z]+)', r'\1-\2', text)
+  return re.sub('([a-z0-9])([A-Z])', r'\1-\2', text).lower()

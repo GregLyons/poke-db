@@ -1,6 +1,6 @@
 import csv
 import re
-from utils import openBulbapediaLink, genSymbolToNumber, dexNumberToGen, getDataPath
+from utils import openBulbapediaLink, genSymbolToNumber, dexNumberToGen, getDataPath, titleOrPascalToKebab
 
 # The event Blue-Striped Basculin with Rock Head is not included. My apologies for any inconvenience.
 
@@ -25,7 +25,7 @@ def parseNote(note):
 
 # each row is a Pokemon, and columns are Dex number, sprite URL, name, Ability 1, Ability 2, Hidden, and Gen
 # columns for notes .csv are pokemon name, header (e.g. Ability 1, Ability 2, etc.)
-def makeAbilityCSVandExtractnotes(fname):
+def makeAbilityCSVandExtractNotes(fname):
   url = 'https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Ability'
   bs = openBulbapediaLink(url, 0, 10)
 
@@ -76,7 +76,7 @@ def makeAbilityCSVandExtractnotes(fname):
             if cell.find('img') != None:
               csvRow.append(cell.find('img')['src'])
             else: 
-              value = cell.get_text().rstrip('\n').lstrip('0').replace('*', '')
+              value = cell.get_text().rstrip('\n').lstrip('0').replace('*', '').replace('♂', ' Male').replace('♀', ' Female')
               
               # we need dex entry to know that, e.g. Crobat is in a different gen than Golbat
               if headers[headerIndex] == 'Dex Number':
@@ -98,9 +98,9 @@ def makeAbilityCSVandExtractnotes(fname):
               if cell.find('span', {'class': 'explain'}) != None:
                 notesInCell = cell.find_all('span', {'class': 'explain'})
                 for note in notesInCell:
-                  notesWriter.writerow([currentPokemonName, headers[headerIndex], note.get('title')])
+                  notesWriter.writerow([titleOrPascalToKebab(currentPokemonName), headers[headerIndex], note.get('title')])
 
-              csvRow.append(value)
+              csvRow.append(titleOrPascalToKebab(value))
             headerIndex += 1
         if row.find('th') != None:
           csvRow.append('Introduced')
@@ -150,4 +150,4 @@ def makeInitialAbilityDict(fname, unparsedNotes):
     return initialAbilityDict
 
 fname = getDataPath() + f'pokemonByAbilities.csv'
-makeAbilityCSVandExtractnotes(fname)
+makeAbilityCSVandExtractNotes(fname)
