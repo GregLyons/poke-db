@@ -16,33 +16,28 @@ def openBulbapediaLink(url, retryCount, retryMax):
     return None
 
 def makeMainCSVandExtractNotes(fname):
-  csvFile = open((fname), 'w', newline='', encoding='utf-8')
-  writer = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
+  with open((fname), 'w', newline='', encoding='utf-8') as csvFile, open((fname.rstrip('.csv') + 'Notes.csv'), 'w', newline='', encoding='utf-8') as notesCSV:
+    writer = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
+    notesWriter = csv.writer(notesCSV, quoting=csv.QUOTE_MINIMAL)
+    notesWriter.writerow(['Move ID', 'Header', 'Description'])
 
-  url = 'https://bulbapedia.bulbagarden.net/wiki/List_of_moves'
-  bs = openBulbapediaLink(url, 0, 10) 
-  outerTable = bs.find('table', {'class': 'sortable'})
-  moveTable = outerTable.find('table')
-  headerRow = moveTable.find('tr')
-  rows = moveTable.findAll('tr')[1:]
+    url = 'https://bulbapedia.bulbagarden.net/wiki/List_of_moves'
+    bs = openBulbapediaLink(url, 0, 10) 
+    moveTable = bs.find('table', {'class': 'sortable'}).find('table')
+    headerRow = moveTable.find('tr')
+    rows = moveTable.findAll('tr')[1:]
 
-  headers = []
-  for cell in headerRow.findAll(['th']):
-    header = cell.get_text().strip('\n')
-    if header == '#': 
-      headers.append('Move ID')
-    else:
-      headers.append(header)
-  writer.writerow(headers)
+    headers = []
+    for cell in headerRow.findAll(['th']):
+      header = cell.get_text().strip('\n')
+      if header == '#': 
+        headers.append('Move ID')
+      else:
+        headers.append(header)
+    writer.writerow(headers)
 
-  notesCSV = open((fname.rstrip('.csv') + 'Notes.csv'), 'w', newline='', encoding='utf-8')
-  notesWriter = csv.writer(notesCSV, quoting=csv.QUOTE_MINIMAL)
-  notesWriter.writerow(['Move ID', 'Header', 'Description'])
-
-  try:
-    # used for keeping track of notes to be applied to move with id moveID
+    # handle non-G-max moves
     moveID = 0
-
     for row in rows:
       moveID += 1
       csvRow = []
@@ -62,9 +57,24 @@ def makeMainCSVandExtractNotes(fname):
         headerIndex += 1
 
       writer.writerow(csvRow)
-  finally:
-    csvFile.close()
-    notesCSV.close()
+
+    # add G-Max moves
+    finalNonGmaxID = moveID
+
+    gMaxTable = bs.find('span', {'id': 'List_of_G-Max_Moves'}).find_next('table').find('table')
+    gMaxHeaderRow = gMaxTable.find('tr')
+    gMaxRows = gMaxTable.findAll('tr')[1:]
+    for row in gMaxRows:
+      csvRow = []
+
+      for cell in row.findAll('td'):
+        value = cell.get_text().rstrip('\n').replace(' ', '')
+        csvRow.append(value)
+      
+      # the G-max table only contains ID, name, and type, so we add in the other values
+      csvRow[0] = str(int(csvRow[0]) + finalNonGmaxID)
+      csvRow = csvRow + 5*['--'] + ['VIII']
+      writer.writerow(csvRow)
   
   return
 

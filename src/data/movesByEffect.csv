@@ -1,4 +1,4 @@
-Effect,Move
+Effect,Move Name
 consecutive,IceBall
 consecutive,Outrage
 consecutive,PetalDance
@@ -204,7 +204,6 @@ sound,RelicSong
 sound,Roar
 sound,Round
 sound,Screech
-sound,ShadowPanic
 sound,Sing
 sound,Snarl
 sound,Snore
@@ -594,8 +593,6 @@ hasRecoil,FlareBlitz
 hasRecoil,HeadCharge
 hasRecoil,HeadSmash
 hasRecoil,LightofRuin
-hasRecoil,ShadowEnd
-hasRecoil,ShadowRush
 hasRecoil,Struggle
 hasRecoil,Submission
 hasRecoil,TakeDown
@@ -855,7 +852,6 @@ hasHighCritChance,PoisonTail
 hasHighCritChance,PsychoCut
 hasHighCritChance,RazorLeaf
 hasHighCritChance,RazorWind
-hasHighCritChance,ShadowBlast
 hasHighCritChance,ShadowClaw
 hasHighCritChance,SkyAttack
 hasHighCritChance,Slash
@@ -919,7 +915,6 @@ removesScreen,BrickBreak
 removesScreen,Defog
 removesScreen,G-MaxWindRage
 removesScreen,PsychicFangs
-removesScreen,ShadowShed
 changesWeather,Defog
 changesWeather,Hail
 changesWeather,MaxFlare
@@ -928,7 +923,6 @@ changesWeather,MaxHailstorm
 changesWeather,MaxRockfall
 changesWeather,RainDance
 changesWeather,Sandstorm
-changesWeather,ShadowSky
 changesWeather,SunnyDay
 specialTypeEffectiveness,FlyingPress
 specialTypeEffectiveness,Freeze-Dry

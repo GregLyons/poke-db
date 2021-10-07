@@ -1,32 +1,31 @@
+import os
 import csv
-import urllib.request
-import urllib.error
-from bs4 import BeautifulSoup
+from utils import openBulbapediaLink
 import re
-
-# Returns BeautifulSoup object given Bulbapedia link
-def openBulbapediaLink(url, retryCount, retryMax):
-  try:
-    req = urllib.request.Request(url, headers={'User-Agent' : "Magic Browser"}) 
-    html = urllib.request.urlopen( req )
-    bs = BeautifulSoup(html.read(), 'html.parser')
-    return bs
-  except urllib.error.HTTPError:
-    if retryCount < retryMax:
-      openBulbapediaLink(url, retryCount + 1, retryMax)
-  else:
-    return None
 
 def makeMoveEffectCSV(label, url, writer):
   bs = openBulbapediaLink(url, 0, 10)
   findSection = bs.find('h2', text=re.compile(r'Pages in category'))
   moves = [link.get_text().rstrip('(move)').replace(' ', '') for link in findSection.find_all_next('a') if '(move)' in link.get_text()]
 
-
   # the moves are listed after an h2 containing the text 'Pages in category', and they are links whose text has the string '(move)'
 
   for move in moves:
     writer.writerow([label, move])
+
+
+# remove Shadow Moves, which are listed on Bulbapedia
+def removeShadowMovesFromCSV(fname):
+  shadowMoves = ['Blitz', 'Rush', 'Break', 'End', 'Wave', 'Rave', 'Storm', 'Fire', 'Bolt', 'Chill', 'Blast', 'Sky', 'Hold', 'Mist', 'Panic', 'Down', 'Shed', 'Half']
+  shadowMoves = ['Shadow' + move for move in shadowMoves]
+
+  with open(fname, 'r', encoding='utf-8') as oldFile, open(fname.replace('WithShadowMoves', ''), 'w', newline='', encoding='utf-8') as newFile:
+    reader = csv.DictReader(oldFile)
+    writer = csv.writer(newFile, csv.QUOTE_MINIMAL)
+    writer.writerow(['Effect', 'Move Name'])
+    for row in reader:
+      if row["Move Name"] not in shadowMoves:
+        writer.writerow([row['Effect'], row['Move Name']])
 
 labelsAndLinks = [
   ['consecutive',
@@ -139,18 +138,19 @@ labelsAndLinks = [
   'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_have_special_type_effectiveness_properties']
 ]
 
-fname = 'src\data\movesByEffect.csv'
+fname = 'src\data\movesByEffectWithShadowMoves.csv'
 csvFile = open(fname, 'w', newline='', encoding='utf-8')
 writer = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
-writer.writerow(['Effect', 'Move'])
+writer.writerow(['Effect', 'Move Name'])
 
 # 
 for [label, link] in labelsAndLinks:
   makeMoveEffectCSV(label, link, writer)
 
-# 
-
 csvFile.close()
+
+removeShadowMovesFromCSV(fname)
+os.remove(fname)
 
 
 	# ['modifyStat',

@@ -33,7 +33,7 @@ def genSymbolToNumber(roman):
 # Flag fixed damage moves
 # Flag LGPE: if 'in LGPE'; refers to move damage/accuracy/type and it takes a specific value; if 'LGPE only' refers to presence of move itself and doesn't take specific value; if 'and LGPE', refers to move value present in LGPE and multiple generations prior to VII
 # For most changes, it'll just be the value and the latest generation for that value (e.g. 40 Power before and in Generation V would be [40, 5])
-def parseNote(note):
+def parseMoveListNote(note):
   moveID = note[0]
   header = note[1]
   description = note[2]
@@ -121,9 +121,10 @@ def makeInitialMoveDict(fname):
       # Bulbapedia has "Stone Axe" as the last entry with ID "???"--not released yet
       if row["Move ID"] != "???":
         # "Type", "Power", and "Accuracy" are lists since those can potentially change across generations--Bulbapedia lists the latest values for each field, with the past values in notes
-        isMax = row["Move ID"][:4] == "Max "
+        isMax = row["Name"][:3] == "Max"
+        isGMax = row["Name"][:5] == "G-Max"
 
-        moveDict[row["Move ID"]] = {
+        moveDict[int(row["Move ID"])] = {
           "Name": row["Name"],
           "Type": [[row["Type"], 8]],
           "Category": [row["Category"], 8],
@@ -136,7 +137,10 @@ def makeInitialMoveDict(fname):
           "Fixed Damage": None,
           "LGPE Only": False,
           "Max Move": isMax,
+          "G-Max Move": isGMax,
           "Priority": [],
+          "Effect": {},
+          "Status": {},
         }
 
     # we will make a list of all the parsed notes, then filter them out into several other lists
@@ -146,7 +150,7 @@ def makeInitialMoveDict(fname):
 
       parts = description.split(',')
       for part in parts:
-        parsedNote = parseNote([moveID, header, part])
+        parsedNote = parseMoveListNote([moveID, header, part])
         if parsedNote[2] != None:
           parsedNotes.append(parsedNote)
 
@@ -157,41 +161,41 @@ def makeInitialMoveDict(fname):
   for change in changes:
     # Exception is Water Shuriken, moveID = 594
     if change[0] == 594:
-      moveDict[str(moveID)]['Category'] = [['Physical', 6], ['Special', 8]]
+      moveDict[int(moveID)]['Category'] = [['Physical', 6], ['Special', 8]]
       continue
 
     moveID = change[0]
     header = change[1]
     valueAndGen = change[2]
-    moveDict[str(moveID)][header].append(valueAndGen)
+    moveDict[int(moveID)][header].append(valueAndGen)
 
   # OHKO moves [moveID, header, ['OHKO', None]]
   OHKOMoves = [note for note in parsedNotes if note[2][0] == 'OHKO']
   for OHKOMove in OHKOMoves:
     moveID = OHKOMove[0]
-    moveDict[str(moveID)]["OHKO"] = True
+    moveDict[int(moveID)]["OHKO"] = True
 
   # Fixed damage moves [moveID, header, [value + "fixed", Gen]]
   fixedDamageMoves = [note for note in parsedNotes if note[2][0] != None and 'fixed' in note[2][0]]
   for fixedDamageMove in fixedDamageMoves:
     moveID = fixedDamageMove[0]
-    moveDict[str(moveID)]["Fixed Damage"] = fixedDamageMove[2][0].rstrip('fixed')
+    moveDict[int(moveID)]["Fixed Damage"] = fixedDamageMove[2][0].rstrip('fixed')
 
   # Value for move in LGPE [moveID, header, [value, "LGPE"]]
   LGPEMoveValues = [note for note in parsedNotes if note[2][1] == 'LGPE']
   for LGPEMoveValue in LGPEMoveValues:
     moveID = LGPEMoveValue[0]
     header = LGPEMoveValue[1]
-    moveDict[str(moveID)][header].append(LGPEMoveValue[2])
+    moveDict[int(moveID)][header].append(LGPEMoveValue[2])
 
   # LGPE exclusive move [moveID, header, [None, "LGPE only"]]
   LGPEExclusives = [note for note in parsedNotes if note[2][1] == 'LGPE only']
   for LGPEExclusive in LGPEExclusives:
     moveID = LGPEExclusive[0]
     header = LGPEExclusive[1]
-    moveDict[str(moveID)]["LGPE Only"] = True
+    moveDict[int(moveID)]["LGPE Only"] = True
     for header in ['Type', 'PP', 'Power', 'Accuracy']:
-      moveDict[str(moveID)][header][0][1] = "LGPE Only"
+      moveDict[int(moveID)][header][0][1] = "LGPE Only"
 
   # Value for move which holds in LGPE and in other gens [moveID, header, [value, gen, "LGPE"]]
   # only includes Mega Drain 
@@ -201,8 +205,8 @@ def makeInitialMoveDict(fname):
     header = LGPEandGenMove[1]
     valueAndGen = [LGPEandGenMove[2][0], LGPEandGenMove[2][1]]
     valueAndLGPE = [LGPEandGenMove[2][0], LGPEandGenMove[2][2]]
-    moveDict[str(moveID)][header].append(valueAndGen)
-    moveDict[str(moveID)][header].append(valueAndLGPE)
+    moveDict[int(moveID)][header].append(valueAndGen)
+    moveDict[int(moveID)][header].append(valueAndLGPE)
 
   # For each move in initialMoveDict, sort the "Type", "PP", "Power", and "Accuracy" fields by generation
   for key in moveDict:
@@ -253,11 +257,12 @@ def makeInverseDict(fname):
   with open(fname, encoding='utf-8') as movesCSV:
     reader = csv.DictReader(movesCSV)
     for row in reader:
-      inverseDict[row["Name"]] = row["Move ID"]
+      if row["Move ID"] != "???":
+        inverseDict[row["Name"]] = int(row["Move ID"])
 
   return inverseDict
 
-# read priority data at fname and update moveDict
+# read priority data and update moveDict
 def addPriorityToMoveDict(fname, moveDict, inverseDict):
   with open(fname, encoding='utf-8') as priorityCSV:
     reader = csv.DictReader(priorityCSV)
@@ -266,7 +271,7 @@ def addPriorityToMoveDict(fname, moveDict, inverseDict):
       if row["Move Name"] != 'None' and row["Move Name"] != 'fleeing':
         moveID = inverseDict[row["Move Name"]]
         # we add duplicate entries for when moves maintain the same priority across generations--we will handle this in the next loop to account for zero-priority moves
-        moveDict[moveID]["Priority"].append([int(row["Priority"]), int(row["Generation"])])
+        moveDict[int(moveID)]["Priority"].append([int(row["Priority"]), int(row["Generation"])])
 
   # handle priority zero moves
   for key in moveDict.keys():
@@ -302,11 +307,11 @@ def addPriorityToMoveDict(fname, moveDict, inverseDict):
     moveDict[key]["Priority"] = priorities_noDuplicates
   
   # lastly, we add Teleport, ID 100 with -6 priority in LGPE
-  moveDict["100"]["Priority"].append([-6, 'LGPE Only'])
+  moveDict[100]["Priority"].append([-6, 'LGPE Only'])
 
   return
 
-# read contact data from Bulbapedia and update moveDict
+# read contact data and update moveDict
 def addContactToMoveDict(fname, moveDict, inverseDict):
   # initially, no moves make contact
   for key in moveDict.keys():
@@ -330,23 +335,148 @@ def addContactToMoveDict(fname, moveDict, inverseDict):
 
   return
 
-# Read Bulbapedia's table of moves, convert to .csv, and extract any notes
-# Holds moveID, Name, Type, Category, Contest, PP, Power, Accuracy, Gen
-moveList_fname = f'src\data\movesList.csv'
-# moveListNotes = makeMoveListCSVandExtractNotes(moveList_fname)
+# read effect data and update moveDict
+def addEffectToMoveDict(fname, moveDict, inverseDict):
 
-# Store data in initialMoveDict and make inverseDict for reverse lookup of Move ID by Move Name
+  with open(fname, encoding='utf-8') as effectCSV:
+    reader = csv.DictReader(effectCSV)
+
+    # get effects and add them to moveDict with initial value False
+    for row in reader:
+      effect = row["Effect"]
+      moveName = row["Move Name"]
+
+      # if effect isn't in moveDict, add it and initialize as False
+      if effect not in moveDict[1]["Effect"]:
+        for key in moveDict.keys():
+          moveDict[key]["Effect"][effect] = [[False, moveDict[key]["Gen"]]]
+      
+      key = inverseDict[moveName]
+      moveDict[key]["Effect"][effect] = [[True, moveDict[key]["Gen"]]]
+  
+  # EXCEPTIONS SECTION
+  # not covered in the above .csv
+  exceptions = [
+    ['suppressesAbility', ['CoreEnforcer', 'GastroAcid']],
+    ['useDifferentStat', ['BodyPress', 'Psyshock', 'Psystrike', 'SecretSword']],
+    ['canCrash', ['HighJumpKick', 'JumpKick']],
+    ['changesDamageCategory', ['LightThatBurnstheSky', 'PhotonGeyser', 'ShellSideArm']],
+  ]
+  for exception in exceptions:
+    effect = exception[0]
+    
+    # add effect to moveDict
+    for key in moveDict.keys():
+      moveDict[key][effect] = [[False, moveDict[key]["Gen"]]]
+
+    # go through exceptions
+    moveNames = exception[1]
+    for moveName in moveNames:
+      key = inverseDict[moveName]
+      moveDict[key][effect] = [[True, moveDict[key]["Gen"]]]
+
+  # still more exceptions
+  moveDict[inverseDict['Astonish']]["Effect"]['antiMini'] = [[True, 3], [False, 4]]
+  moveDict[inverseDict['Dig']]["Effect"]['hitsSemiInvulnerable'] = [[False, 1], [True, 2]]
+
+  # cannotCrit effect
+  for key in moveDict.keys():
+    moveDict[key]["Effect"]["cannotCrit"] = [[False, moveDict[key]["Gen"]]]
+
+  moveDict[inverseDict['Flail']]["Effect"]['cannotCrit'] = [[True, 2], [False, 3]]
+  moveDict[inverseDict['FutureSight']]["Effect"]['cannotCrit'] = [[True, 2], [False, 5]]
+  moveDict[inverseDict['Reversal']]["Effect"]['cannotCrit'] = [[True, 2], [False, 3]]
+  moveDict[inverseDict['DoomDesire']]["Effect"]['cannotCrit'] = [[True, 3], [False, 5]]
+  moveDict[inverseDict['SpitUp']]["Effect"]['cannotCrit'] = [[True, 3], [False, 4]]
+
+  # high crit ratio
+  moveDict[inverseDict['RazorWind']]['Effect']['hasHighCritChance'] = [[False, 1], [True, 2]]
+  moveDict[inverseDict['SkyAttack']]['Effect']['hasHighCritChance'] = [[False, 1], [True, 3]]
+
+  return
+
+# read status data and update moveDict
+def addStatusToMoveDict(fname, moveDict, inverseDict):
+  with open(fname, encoding='utf-8') as csvFile:
+    reader = csv.DictReader(csvFile)
+
+    for row in reader:
+      status = row["Status Caused"]
+      moveName = row["Move Name"]
+      probability = float(row["Probability"])
+
+      if status not in moveDict[1]["Status"]:
+        for key in moveDict.keys():
+          moveDict[key]["Status"][status] = [0, moveDict[key]["Gen"]]
+      
+      key = inverseDict[moveName]
+      moveDict[key]["Status"][status] = [[probability, moveDict[key]["Gen"]]]
+
+  # EXCEPTIONS SECTION
+  # Fire Blast had 30% to burn in Gen 1
+  print(moveDict[inverseDict["FireBlast"]]["Status"]["Burn"])
+  moveDict[inverseDict["FireBlast"]]["Status"]["Burn"] = [
+    [30.0, 1], 
+    [10.0, 2]
+  ]
+  print(moveDict[inverseDict["FireBlast"]]["Status"]["Burn"])
+
+  # Tri Attack only applied statuses from Gen 2 on
+  for status in ['Burn', 'Freeze', 'Paralysis']:
+    moveDict[inverseDict["TriAttack"]]["Status"][status] = [
+      [0.0, 1],
+      [6.67, 2]
+    ]
+
+  # Thunder had 10% change to paralyze in Gen 1
+  moveDict[inverseDict["Thunder"]]["Status"]["Paralysis"] = [
+    [10.0, 1], 
+    [30.0, 2]
+  ]
+
+  # Poison Sting had 20% chance to poison in Gen 1
+  moveDict[inverseDict["PoisonSting"]]["Status"]["Poison"] = [
+    [20.0, 1], 
+    [30.0, 2]
+  ]
+  moveDict[inverseDict["Sludge"]]["Status"]["Poison"] = [
+    [40.0, 1], 
+    [30.0, 2]
+  ]
+
+  # Chatter has variable chance to confuse in Gens 4 and 5--we choose the highest value in each gen
+  moveDict[inverseDict["Chatter"]]["Status"]["Confusion"] = [
+    [31, 4],
+    [10, 5],
+    [100, 6]
+  ]
+
+  # Sky Attack only causes Flinch starting in Gen 3
+  moveDict[inverseDict["SkyAttack"]]["Status"]["Flinch"] = [
+    [0, 1],
+    [30, 3]
+  ]
+
+  # Other notes in movesThatCauseStatusNotes.csv don't apply to status
+
+  return
+
+# holds moveID, Name, Type, Category, Contest, PP, Power, Accuracy, Gen
+moveList_fname = f'src\data\movesList.csv'
 moveDict = makeInitialMoveDict(moveList_fname)
+
+# for reverse lookup of Move ID by Move Name
 inverseDict = makeInverseDict(moveList_fname)
 
-# Read Bulbapedia's table of move priority and convert to .csv
-# Add priority data to moveDict and store in priorityMoveDict
 priority_fname = f'src\data\movesByPriority.csv'
 addPriorityToMoveDict(priority_fname, moveDict, inverseDict)
 
-# Add contact data to moveDict
 contact_fname = f'src\data\movesByContact.csv'
 addContactToMoveDict(contact_fname, moveDict, inverseDict)
 
-for key in range(15):
-  print(moveDict[str(key + 1)])
+effect_fname = f'src\data\movesByEffect.csv'
+addEffectToMoveDict(effect_fname, moveDict, inverseDict)
+
+status_fname = f'src\data\movesThatCauseStatus.csv'
+addStatusToMoveDict(status_fname, moveDict, inverseDict)
+

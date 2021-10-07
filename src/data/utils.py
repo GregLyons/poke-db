@@ -1,5 +1,6 @@
 import urllib.request
 from bs4 import BeautifulSoup
+import csv
 
 # Returns BeautifulSoup object given Bulbapedia link
 def openBulbapediaLink(url, retryCount, retryMax):

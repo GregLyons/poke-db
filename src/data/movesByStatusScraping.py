@@ -1,19 +1,6 @@
 import csv
-import urllib.request
-from bs4 import BeautifulSoup
+from utils import openBulbapediaLink
 
-# Returns BeautifulSoup object given Bulbapedia link
-def openBulbapediaLink(url, retryCount, retryMax):
-  try:
-    req = urllib.request.Request(url, headers={'User-Agent' : "Magic Browser"}) 
-    html = urllib.request.urlopen( req )
-    bs = BeautifulSoup(html.read(), 'html.parser')
-    return bs
-  except urllib.error.HTTPError:
-    if retryCount < retryMax:
-      openBulbapediaLink(url, retryCount + 1, retryMax)
-  else:
-    return None
 # Used for writing the rows to the main .csv file when the status has a table on Bulbapedia
 def addCSVRowsForStatus(statusInfo, writer, wroteHeader, notes):
   status = statusInfo[0]
@@ -39,7 +26,6 @@ def addCSVRowsForStatus(statusInfo, writer, wroteHeader, notes):
     url = url + '_(status_condition)'
 
   bs = openBulbapediaLink(url, 0, 10)
-
   findSection = bs.find('span', id=findId)
   table = findSection.findNext('table').find('table')
   rows = table.findAll('tr')
@@ -61,16 +47,20 @@ def addCSVRowsForStatus(statusInfo, writer, wroteHeader, notes):
       headers.append(value)
 
       if not wroteHeader:
-        csvRow[0] = 'Status caused'
+        csvRow[0] = 'Status Caused'
+        if value == 'Move':
+          value = 'Move Name'
         csvRow.append(value)
+
       headerIndex += 1
 
-    for cell in row.findAll(['td']):
+    for cell in row.findAll('td'):
       currentHeader = headers[headerIndex]
 
       value = cell.get_text().rstrip('\n').replace('*', '').replace('—', '--')
 
       if headerIndex == 0:
+        value = value.replace(' ', '')
         currentMove = value
 
       if cell.find('span', {'class': 'explain'}) != None:
@@ -85,10 +75,18 @@ def addCSVRowsForStatus(statusInfo, writer, wroteHeader, notes):
     if not hasProbability:
       csvRow = csvRow[:4] + ['--'] + csvRow[4:]
 
-    if len(csvRow) > 2:
+    # exclude shadow moves 
+    if len(csvRow) > 2 and csvRow[2] != 'Shadow':
+
       # One of the tables has a missing <td> in the "Notes" column for Thousand Waves, so we fill it in
       if len(csvRow) == 7:
         csvRow.append('--')
+
+      # convert probability to float, -- to 100.0
+      if csvRow[4] == '--':
+        csvRow[4] = '0'
+      if csvRow[4] != 'Probability':
+        csvRow[4] = float(csvRow[4].rstrip('%'))
 
       writer.writerow(csvRow)
 
@@ -98,29 +96,31 @@ def addCSVRowsForStatus(statusInfo, writer, wroteHeader, notes):
 
 # For the statuses which do not have tables, make a CSV Row for them
 def makeCSVRow(status, writer):
-  statusName = status.replace(' ', '')
-  moveName = status
+  moveName = status.replace(' ', '')
   note = ''
 
   if status == 'Curse':
     note = 'If user is a Ghost-type Pokemon'
 
   # Center of Attention
-  if status == 'Center of Attention':
-    writer.writerow([statusName, 'Follow Me', '--', '--', '100%', '--', '--', note])
-    writer.writerow([statusName, 'Rage Powder', '--', '--', '100%', '--', '--', note])
-    writer.writeRow([statusName, 'Spotlight', '--', '--', '100%', '--', '--', note])
+  if status == 'CenterOfAttention':
+    writer.writerow([status, 'FollowMe', '--', '--', '100.0', '--', '--', note])
+    writer.writerow([status, 'RagePowder', '--', '--', '100.0', '--', '--', note])
+    writer.writerow([status, 'Spotlight', '--', '--', '100.0', '--', '--', note])
   # Rooted
+  # Braing
+  elif status == 'Bracing':
+    writer.writerow([status, 'Endure', '--', '--', '100.0', '--', '--', note])
   elif status == 'Rooted':
-    writer.writerow([statusName, 'Ingrain', '--', '--', '100%', '--', '--', note])
+    writer.writerow([status, 'Ingrain', '--', '--', '100.0', '--', '--', note])
   # Magnetic levitation
-  elif status == 'Magnetic Levitation':
-    writer.writerow([statusName, 'Magnet Rise', '--', '--', '100%', '--', '--', note])
+  elif status == 'MagneticLevitation':
+    writer.writerow([status, 'MagnetRise', '--', '--', '100.0', '--', '--', note])
   # Transformed
   elif status == 'Transformed':
-    writer.writerow([statusName, 'Transform', '--', '--', '100%', '--', '--', note])
+    writer.writerow([status, 'Transform', '--', '--', '100.0', '--', '--', note])
   else: 
-    writer.writerow([statusName, moveName, '--', '--', '100%', '--', '--', note])
+    writer.writerow([status, moveName, '--', '--', '100.0', '--', '--', note])
 
 # Makes the main .csv file and extracts any notes
 def makeMainCSVAndExtractNotes(fname):
@@ -143,6 +143,7 @@ def makeMainCSVAndExtractNotes(fname):
   statuses = separatePageStatuses + mainPageStatuses
 
   # A running track of notes which are embedded in HTML "title" attributes
+  # wroteHeader is used so that everything is in one .csv file. The "Protection" table has different headers, namely Priority instead of Power, but we won't refer to the values in that column at all
   notes = []
   wroteHeader = False
 
@@ -151,7 +152,7 @@ def makeMainCSVAndExtractNotes(fname):
     wroteHeader = True
 
   # Now we handle statuses which are caused by single moves
-  statusesWithoutTables = ['Curse', 'Embargo', 'Heal Block', 'Nightmare', 'Perish Song', 'Taunt', 'Telekinesis', 'Aqua Ring', 'Bracing', 'Defense Curl', 'Magic Coat', 'Mimic', 'Minimize', 'Substitute', 'Center Of Attention', 'Rooted', 'Magnetic Levitation', 'Transformed']
+  statusesWithoutTables = ['Curse', 'Embargo', 'HealBlock', 'Nightmare', 'PerishSong', 'Taunt', 'Telekinesis', 'AquaRing', 'Bracing', 'DefenseCurl', 'MagicCoat', 'Mimic', 'Minimize', 'Substitute', 'CenterOfAttention', 'Rooted', 'MagneticLevitation', 'Transformed']
   for status in statusesWithoutTables:
     makeCSVRow(status, writer)
 
@@ -175,7 +176,6 @@ def makeNotesCSV(fname, notes):
 # Make main .csv and extract notes
 main_fname = 'src\data\movesThatCauseStatus.csv'
 notes = makeMainCSVAndExtractNotes(main_fname)
-print(notes)
 
 # Make notes .csv
 notes_fname = 'src\data\movesThatCauseStatusNotes.csv'
