@@ -1,0 +1,562 @@
+Family,Pokemon 1,1 to 2 Method,Pokemon 2,2 to 3 Method,Pokemon 3
+bulbasaur,bulbasaur,Level 16,ivysaur,Level 32,venusaur
+charmander,charmander,Level 16,charmeleon,Level 36,charizard
+squirtle,squirtle,Level 16,wartortle,Level 36,blastoise
+caterpie,caterpie,Level 7,metapod,Level 10,butterfree
+weedle,weedle,Level 7,kakuna,Level 10,beedrill
+pidgey,pidgey,Level 18,pidgeotto,Level 36,pidgeot
+rattata,rattata,Level 20,raticate,,
+rattata,rattata-alolan,Level 20 (night),raticate-alolan,,
+spearow,spearow,Level 20,fearow,,
+ekans,ekans,Level 22,arbok,,
+pikachu,pichu,Friendship,pikachu,Thunder Stone,raichu
+pikachu,pichu,Friendship,pikachu,Thunder Stone (Alola),raichu-alolan
+sandshrew,sandshrew,Level 22,sandslash,,
+sandshrew,sandshrew-alolan,Ice Stone,sandslash-alolan,,
+nidoran,nidoran♀,Level 16,nidorina,Moon Stone,nidoqueen
+nidoran,nidoran♂,Level 16,nidorino,Moon Stone,nidoking
+clefairy,cleffa,Friendship,clefairy,Moon Stone,clefable
+vulpix,vulpix,Fire Stone,ninetales,,
+vulpix,vulpix-alolan,Ice Stone,ninetales-alolan,,
+jigglypuff,igglybuff,Friendship,jigglypuff,Moon Stone,wigglytuff
+zubat,zubat,Level 22,golbat,Friendship,crobat
+oddish,oddish,Level 21,gloom,Leaf Stone,vileplume
+oddish,oddish,Level 21,gloom,Sun Stone,bellossom
+paras,paras,Level 24,parasect,,
+venonat,venonat,Level 31,venomoth,,
+diglett,diglett,Level 26,dugtrio,,
+diglett,diglett-alolan,Level 26,dugtrio-alolan,,
+meowth,meowth,Level 28,persian,,
+meowth,meowth-alolan,Friendship/Level 28,persian-alolan,,
+meowth,meowth-galarian,Level 28,perrserker,,
+psyduck,psyduck,Level 33,golduck,,
+mankey,mankey,Level 28,primeape,,
+growlithe,growlithe,Fire Stone,arcanine,,
+poliwag,poliwag,Level 25,poliwhirl,Water Stone,poliwrath
+poliwag,poliwag,Level 25,poliwhirl,Trade holding King's Rock,politoed
+abra,abra,Level 16,kadabra,Trade,alakazam
+machop,machop,Level 28,machoke,Trade,machamp
+bellsprout,bellsprout,Level 21,weepinbell,Leaf Stone,victreebel
+tentacool,tentacool,Level 30,tentacruel,,
+geodude,geodude,Level 25,graveler,Trade,golem
+geodude,geodude-alolan,Level 25,graveler-alolan,Trade,golem-alolan
+ponyta,ponyta,Level 40,rapidash,,
+ponyta,ponyta-galarian,Level 40,rapidash-galarian,,
+slowpoke,slowpoke,Level 37,slowbro,,
+slowpoke,slowpoke,Trade holding King's Rock,slowking,,
+slowpoke,slowpoke-galarian,Galarica Cuff,slowbro-galarian,,
+slowpoke,slowpoke-galarian,Galarica Wreath,slowking-galarian,,
+magnemite,magnemite,Level 30,magneton,Level up in a special magnetic fieldThunder StoneSwSh,magnezone
+farfetchd,farfetchd,,,,
+farfetchd,farfetchd-galarian,Land 3 critical hits in a single battle,sirfetchd,,
+doduo,doduo,Level 31,dodrio,,
+seel,seel,Level 34,dewgong,,
+grimer,grimer,Level 38,muk,,
+grimer,grimer-alolan,Level 38,muk-alolan,,
+shellder,shellder,Water Stone,cloyster,,
+gastly,gastly,Level 25,haunter,Trade,gengar
+onix,onix,Trade holding Metal Coat,steelix,,
+drowzee,drowzee,Level 26,hypno,,
+krabby,krabby,Level 28,kingler,,
+voltorb,voltorb,Level 30,electrode,,
+exeggcute,exeggcute,Leaf Stone,exeggutor,,
+exeggcute,exeggcute,Leaf Stone (Alola),exeggutor-alola,,
+cubone,cubone,Level 28,marowak,,
+cubone,cubone,Level 28 (Alola night),marowak-alola,,
+hitmon,tyrogue,Level 20 (Attack > Defense),hitmonlee,,
+hitmon,tyrogue,Level 20 (Attack < Defense),hitmonchan,,
+hitmon,tyrogue,Level 20 (Attack = Defense),hitmontop,,
+lickitung,lickitung,Level up knowing Rollout,lickilicky,,
+koffing,koffing,Level 35,weezing,,
+koffing,koffing,Level 35 (Galar),weezing-galarian,,
+rhyhorn,rhyhorn,Level 42,rhydon,Trade holding Protector,rhyperior
+chansey,happiny,Level up holding Oval Stone (day),chansey,Friendship,blissey
+tangela,tangela,Level up knowing Ancient Power,tangrowth,,
+kangaskhan,kangaskhan,,,,
+horsea,horsea,Level 32,seadra,Trade holding Dragon Scale,kingdra
+goldeen,goldeen,Level 33,seaking,,
+staryu,staryu,Water Stone,starmie,,
+mr-mime,mime-jr,Level up knowing Mimic,mr-mime,,
+mr-mime,mime-jr,Level up knowing Mimic (Galar),mr-mime-galarian,Level 42,mr-rime
+scyther,scyther,Trade holding Metal Coat,scizor,,
+jynx,smoochum,Level 30,jynx,,
+electabuzz,elekid,Level 30,electabuzz,Trade holding Electirizer,electivire
+magmar,magby,Level 30,magmar,Trade holding Magmarizer,magmortar
+pinsir,pinsir,,,,
+tauros,tauros,,,,
+magikarp,magikarp,Level 20,gyarados,,
+lapras,lapras,,,,
+ditto,ditto,,,,
+eeveelution,eevee,Water Stone,vaporeon,,
+eeveelution,eevee,Thunder Stone,jolteon,,
+eeveelution,eevee,Fire Stone,flareon,,
+eeveelution,eevee,Friendship (day)Level up with Sun ShardXD,espeon,,
+eeveelution,eevee,Friendship (night)Level up with Moon ShardXD,umbreon,,
+eeveelution,eevee,Level up near Moss RockLeaf StoneSwSh,leafeon,,
+eeveelution,eevee,Level up near Ice RockIce StoneSwSh,glaceon,,
+eeveelution,eevee,Level up with a Fairy-type moveand either two hearts of Affectionor high friendshipSwSh,sylveon,,
+porygon,porygon,Trade holding Up-Grade,porygon2,Trade holding Dubious Disc,porygon-z
+omanyte,omanyte,Level 40,omastar,,
+kabuto,kabuto,Level 40,kabutops,,
+aerodactyl,aerodactyl,,,,
+snorlax,munchlax,Friendship,snorlax,,
+articuno,articuno,,,,
+articuno,articuno-galarian,,,,
+zapdos,zapdos,,,,
+zapdos,zapdos-galarian,,,,
+moltres,moltres,,,,
+moltres,moltres-galarian,,,,
+dratini,dratini,Level 30,dragonair,Level 55,dragonite
+mewtwo,mewtwo,,,,
+mew,mew,,,,
+chikorita,chikorita,Level 16,bayleef,Level 32,meganium
+cyndaquil,cyndaquil,Level 14,quilava,Level 36,typhlosion
+totodile,totodile,Level 18,croconaw,Level 30,feraligatr
+sentret,sentret,Level 15,furret,,
+hoothoot,hoothoot,Level 20,noctowl,,
+ledyba,ledyba,Level 18,ledian,,
+spinarak,spinarak,Level 22,ariados,,
+chinchou,chinchou,Level 27,lanturn,,
+togepi,togepi,Friendship,togetic,Shiny Stone,togekiss
+natu,natu,Level 25,xatu,,
+mareep,mareep,Level 15,flaaffy,Level 30,ampharos
+marill,azurill,Friendship,marill,Level 18,azumarill
+sudowoodo,bonsly,Level up knowing Mimic,sudowoodo,,
+hoppip,hoppip,Level 18,skiploom,Level 27,jumpluff
+aipom,aipom,Level up knowing Double Hit,ambipom,,
+sunkern,sunkern,Sun Stone,sunflora,,
+yanma,yanma,Level up knowing Ancient Power,yanmega,,
+wooper,wooper,Level 20,quagsire,,
+murkrow,murkrow,Dusk Stone,honchkrow,,
+misdreavus,misdreavus,Dusk Stone,mismagius,,
+wobbuffet,wynaut,Level 15,wobbuffet,,
+girafarig,girafarig,,,,
+pineco,pineco,Level 31,forretress,,
+dunsparce,dunsparce,,,,
+gligar,gligar,Level up holding Razor Fang at night,gliscor,,
+snubbull,snubbull,Level 23,granbull,,
+qwilfish,qwilfish,,,,
+shuckle,shuckle,,,,
+heracross,heracross,,,,
+sneasel,sneasel,Level up holding Razor Claw at night,weavile,,
+teddiursa,teddiursa,Level 30,ursaring,,
+slugma,slugma,Level 38,magcargo,,
+swinub,swinub,Level 33,piloswine,Level up knowing Ancient Power,mamoswine
+corsola,corsola-johtonian,,,,
+corsola,corsola-gararian,Level 38,cursola,,
+remoraid,remoraid,Level 25,octillery,,
+delibird,delibird,,,,
+mantine,mantyke,Level up with Remoraid in party,mantine,,
+skarmory,skarmory,,,,
+houndour,houndour,Level 24,houndoom,,
+phanpy,phanpy,Level 25,donphan,,
+stantler,stantler,,,,
+smeargle,smeargle,,,,
+miltank,miltank,,,,
+raikou,raikou,,,,
+entei,entei,,,,
+suicune,suicune,,,,
+larvitar,larvitar,Level 30,pupitar,Level 55,tyranitar
+lugia,lugia,,,,
+ho-oh,ho-oh,,,,
+celebi,celebi,,,,
+treecko,treecko,Level 16,grovyle,Level 36,sceptile
+torchic,torchic,Level 16,combusken,Level 36,blaziken
+mudkip,mudkip,Level 16,marshtomp,Level 36,swampert
+poochyena,poochyena,Level 18,mightyena,,
+zigzagoon,zigzagoon-hoennian,Level 20,linoone-hoennian,,
+zigzagoon,zigzagoon-galarian,Level 20,linoone-galarian,Level 35 (night),obstagoon
+wurmple,wurmple,Level 7,silcoon,Level 10,beautifly
+wurmple,wurmple,Level 7,cascoon,Level 10,dustox
+lotad,lotad,Level 14,lombre,Water Stone,ludicolo
+seedot,seedot,Level 14,nuzleaf,Leaf Stone,shiftry
+taillow,taillow,Level 22,swellow,,
+wingull,wingull,Level 25,pelipper,,
+ralts,ralts,Level 20,kirlia,Level 30,gardevoir
+ralts,ralts,Level 20,kirlia,Dawn Stone (male),gallade
+surskit,surskit,Level 22,masquerain,,
+shroomish,shroomish,Level 23,breloom,,
+slakoth,slakoth,Level 18,vigoroth,Level 36,slaking
+nincada,nincada,Level 20,ninjask,,
+nincada,nincada,Free spaceAdditional Poké Ball,shedinja,,
+whismur,whismur,Level 20,loudred,Level 40,exploud
+makuhita,makuhita,Level 24,hariyama,,
+nosepass,nosepass,Level up in a special magnetic field,probopass,,
+skitty,skitty,Moon Stone,delcatty,,
+sableye,sableye,,,,
+mawile,mawile,,,,
+aron,aron,Level 32,lairon,Level 42,aggron
+meditite,meditite,Level 37,medicham,,
+electrike,electrike,Level 26,manectric,,
+plusle,plusle,,,,
+minun,minun,,,,
+volbeat-and-illumise,volbeat,,,,
+volbeat-and-illumise,illumise,,,,
+roselia,budew,Friendship (day),roselia,Shiny Stone,roserade
+gulpin,gulpin,Level 26,swalot,,
+carvanha,carvanha,Level 30,sharpedo,,
+wailmer,wailmer,Level 40,wailord,,
+numel,numel,Level 33,camerupt,,
+torkoal,torkoal,,,,
+spoink,spoink,Level 32,grumpig,,
+spinda,spinda,,,,
+trapinch,trapinch,Level 35,vibrava,Level 45,flygon
+cacnea,cacnea,Level 32,cacturne,,
+swablu,swablu,Level 35,altaria,,
+zangoose,zangoose,,,,
+seviper,seviper,,,,
+lunatone,lunatone,,,,
+solrock,solrock,,,,
+barboach,barboach,Level 30,whiscash,,
+corphish,corphish,Level 30,crawdaunt,,
+baltoy,baltoy,Level 36,claydol,,
+lileep,lileep,Level 40,cradily,,
+anorith,anorith,Level 40,armaldo,,
+feebas,feebas,Level up with maximum BeautyTrade holding Prism Scale,milotic,,
+castform,castform,,,,
+kecleon,kecleon,,,,
+shuppet,shuppet,Level 37,banette,,
+duskull,duskull,Level 37,dusclops,Trade holding Reaper Cloth,dusknoir
+tropius,tropius,,,,
+chimecho,chingling,Friendship (night),chimecho,,
+absol,absol,,,,
+snorunt,snorunt,Level 42,glalie,,
+snorunt,snorunt,Dawn Stone (female),froslass,,
+spheal,spheal,Level 32,sealeo,Level 44,walrein
+clamperl,clamperl,Trade holding Deep Sea Tooth,huntail,,
+clamperl,clamperl,Trade holding Deep Sea Scale,gorebyss,,
+relicanth,relicanth,,,,
+luvdisc,luvdisc,,,,
+bagon,bagon,Level 30,shelgon,Level 50,salamence
+beldum,beldum,Level 20,metang,Level 45,metagross
+regirock,regirock,,,,
+regice,regice,,,,
+registeel,registeel,,,,
+latias,latias,,,,
+latios,latios,,,,
+kyogre,kyogre,,,,
+groudon,groudon,,,,
+rayquaza,rayquaza,,,,
+jirachi,jirachi,,,,
+deoxys,deoxys,,,,
+deoxys,deoxys,,,,
+deoxys,deoxys,,,,
+deoxys,deoxys,,,,
+turtwig,turtwig,Level 18,grotle,Level 32,torterra
+chimchar,chimchar,Level 14,monferno,Level 36,infernape
+piplup,piplup,Level 16,prinplup,Level 36,empoleon
+starly,starly,Level 14,staravia,Level 34,staraptor
+bidoof,bidoof,Level 15,bibarel,,
+kricketot,kricketot,Level 10,kricketune,,
+shinx,shinx,Level 15,luxio,Level 30,luxray
+cranidos,cranidos,Level 30,rampardos,,
+shieldon,shieldon,Level 30,bastiodon,,
+burmy,burmy,Level 20 (female Plant Cloak),wormadam,,
+burmy,burmy,Level 20 (female Sandy Cloak),wormadam,,
+burmy,burmy,Level 20 (female Trash Cloak),wormadam,,
+burmy,burmy,Level 20 (male),mothim,,
+combee,combee,Level 21 (female),vespiquen,,
+pachirisu,pachirisu,,,,
+buizel,buizel,Level 26,floatzel,,
+cherubi,cherubi,Level 25,cherrim,,
+shellos,shellos,Level 30,gastrodon,,
+shellos,shellos,Level 30,gastrodon,,
+drifloon,drifloon,Level 28,drifblim,,
+buneary,buneary,Friendship,lopunny,,
+glameow,glameow,Level 38,purugly,,
+stunky,stunky,Level 34,skuntank,,
+bronzor,bronzor,Level 33,bronzong,,
+chatot,chatot,,,,
+spiritomb,spiritomb,,,,
+gible,gible,Level 24,gabite,Level 48,garchomp
+riolu,riolu,Friendship (day),lucario,,
+hippopotas,hippopotas,Level 34,hippowdon,,
+skorupi,skorupi,Level 40,drapion,,
+croagunk,croagunk,Level 37,toxicroak,,
+carnivine,carnivine,,,,
+finneon,finneon,Level 31,lumineon,,
+snover,snover,Level 40,abomasnow,,
+roto,rotom,,,,
+roto,rotom,,,,
+roto,rotom,,,,
+roto,rotom,,,,
+roto,rotom,,,,
+roto,rotom,,,,
+uxie,uxie,,,,
+mesprit,mesprit,,,,
+azelf,azelf,,,,
+dialga,dialga,,,,
+palkia,palkia,,,,
+heatran,heatran,,,,
+regigigas,regigigas,,,,
+giratin,giratina,,,,
+giratin,giratina,,,,
+cresselia,cresselia,,,,
+manaphy,phione,,,,
+manaphy,manaphy,,,,
+darkrai,darkrai,,,,
+shaymin,shaymin,,,,
+shaymin,shaymin,,,,
+arceus,arceus,,,,
+victini,victini,,,,
+snivy,snivy,Level 17,servine,Level 36,serperior
+tepig,tepig,Level 17,pignite,Level 36,emboar
+oshawott,oshawott,Level 17,dewott,Level 36,samurott
+patrat,patrat,Level 20,watchog,,
+lillipup,lillipup,Level 16,herdier,Level 32,stoutland
+purrloin,purrloin,Level 20,liepard,,
+pansage,pansage,Leaf Stone,simisage,,
+pansear,pansear,Fire Stone,simisear,,
+panpour,panpour,Water Stone,simipour,,
+munna,munna,Moon Stone,musharna,,
+pidove,pidove,Level 21,tranquill,Level 32,unfezant
+blitzle,blitzle,Level 27,zebstrika,,
+roggenrola,roggenrola,Level 25,boldore,Trade,gigalith
+woobat,woobat,Friendship,swoobat,,
+drilbur,drilbur,Level 31,excadrill,,
+audino,audino,,,,
+timburr,timburr,Level 25,gurdurr,Trade,conkeldurr
+tympole,tympole,Level 25,palpitoad,Level 36,seismitoad
+throh,throh,,,,
+sawk,sawk,,,,
+sewaddle,sewaddle,Level 20,swadloon,Friendship,leavanny
+venipede,venipede,Level 22,whirlipede,Level 30,scolipede
+cottonee,cottonee,Sun Stone,whimsicott,,
+petilil,petilil,Sun Stone,lilligant,,
+basculin,basculin,,,,
+basculin,basculin,,,,
+sandile,sandile,Level 29,krokorok,Level 40,krookodile
+darumaka,darumaka-unovan,Level 35,darmanitan-unovan,,
+darumaka,darumaka-galarian,Ice Stone,darmanitan-galarian,,
+maractus,maractus,,,,
+dwebble,dwebble,Level 34,crustle,,
+scraggy,scraggy,Level 39,scrafty,,
+sigilyph,sigilyph,,,,
+yamask,yamask-unovan,Level 34,cofagrigus,,
+yamask,yamask-galarian,Under the stone bridge in Dusty Bowl after Yamask takes at least 49 HP in damage in one attack without fainting.,runerigus,,
+tirtouga,tirtouga,Level 37,carracosta,,
+archen,archen,Level 37,archeops,,
+trubbish,trubbish,Level 36,garbodor,,
+zorua,zorua,Level 30,zoroark,,
+minccino,minccino,Shiny Stone,cinccino,,
+gothita,gothita,Level 32,gothorita,Level 41,gothitelle
+solosis,solosis,Level 32,duosion,Level 41,reuniclus
+ducklett,ducklett,Level 35,swanna,,
+vanillite,vanillite,Level 35,vanillish,Level 47,vanilluxe
+deerling,deerling,Level 34,sawsbuck,,
+deerling,deerling,Level 34,sawsbuck,,
+deerling,deerling,Level 34,sawsbuck,,
+deerling,deerling,Level 34,sawsbuck,,
+emolga,emolga,,,,
+karrablast,karrablast,Trade for Shelmet,escavalier,,
+foongus,foongus,Level 39,amoonguss,,
+frillish,frillish,Level 40,jellicent,,
+alomomola,alomomola,,,,
+joltik,joltik,Level 36,galvantula,,
+ferroseed,ferroseed,Level 40,ferrothorn,,
+klink,klink,Level 38,klang,Level 49,klinklang
+tynamo,tynamo,Level 39,eelektrik,Thunder Stone,eelektross
+elgyem,elgyem,Level 42,beheeyem,,
+litwick,litwick,Level 41,lampent,Dusk Stone,chandelure
+axew,axew,Level 38,fraxure,Level 48,haxorus
+cubchoo,cubchoo,Level 37,beartic,,
+cryogonal,cryogonal,,,,
+shelmet,shelmet,Trade for Karrablast,accelgor,,
+stunfisk,stunfisk-unovan,,,,
+stunfisk,stunfisk-galarian,,,,
+mienfoo,mienfoo,Level 50,mienshao,,
+druddigon,druddigon,,,,
+golett,golett,Level 43,golurk,,
+pawniard,pawniard,Level 52,bisharp,,
+bouffalant,bouffalant,,,,
+rufflet,rufflet,Level 54,braviary,,
+vullaby,vullaby,Level 54,mandibuzz,,
+heatmor,heatmor,,,,
+durant,durant,,,,
+deino,deino,Level 50,zweilous,Level 64,hydreigon
+larvesta,larvesta,Level 59,volcarona,,
+cobalion,cobalion,,,,
+terrakion,terrakion,,,,
+virizion,virizion,,,,
+tornadus,tornadus,,,,
+tornadus,tornadus,,,,
+thundurus,thundurus,,,,
+thundurus,thundurus,,,,
+reshiram,reshiram,,,,
+zekrom,zekrom,,,,
+landorus,landorus,,,,
+landorus,landorus,,,,
+kyurem,kyurem,,,,
+kyurem,kyurem,,,,
+kyurem,kyurem,,,,
+keldeo,keldeo,,,,
+keldeo,keldeo,,,,
+meloetta,meloetta,,,,
+meloetta,meloetta,,,,
+genesect,genesect,,,,
+chespin,chespin,Level 16,quilladin,Level 36,chesnaught
+fennekin,fennekin,Level 16,braixen,Level 36,delphox
+froakie,froakie,Level 16,frogadier,Level 36,greninja
+battle-bond-greninja,greninja,,,,
+battle-bond-greninja,greninja,,,,
+bunnelby,bunnelby,Level 20,diggersby,,
+fletchling,fletchling,Level 17,fletchinder,Level 35,talonflame
+scatterbug,scatterbug,Level 9,spewpa,Level 12,vivillon
+litleo,litleo,Level 35,pyroar,,
+flabébé,flabébé,Level 19,floette,Shiny Stone,florges
+skiddo,skiddo,Level 32,gogoat,,
+pancham,pancham,Level 32 with Dark-type in party,pangoro,,
+furfrou,furfrou,,,,
+espurr,espurr,Level 25,meowstic,,
+honedge,honedge,Level 35,doublade,Dusk Stone,aegislash
+spritzee,spritzee,Trade holding Sachet,aromatisse,,
+swirlix,swirlix,Trade holding Whipped Dream,slurpuff,,
+inkay,inkay,Level 30 with game system held upside down,malamar,,
+binacle,binacle,Level 39,barbaracle,,
+skrelp,skrelp,Level 48,dragalge,,
+clauncher,clauncher,Level 37,clawitzer,,
+helioptile,helioptile,Sun Stone,heliolisk,,
+tyrunt,tyrunt,Level 39 (day),tyrantrum,,
+amaura,amaura,Level 39 (night),aurorus,,
+hawlucha,hawlucha,,,,
+dedenne,dedenne,,,,
+carbink,carbink,,,,
+goomy,goomy,Level 40,sliggoo,Level 50 in rain or fog,goodra
+klefki,klefki,,,,
+phantump,phantump,Trade,trevenant,,
+pumpkaboo,pumpkaboo,Trade,gourgeist,,
+bergmite,bergmite,Level 37,avalugg,,
+noibat,noibat,Level 48,noivern,,
+xerneas,xerneas,,,,
+xerneas,xerneas,,,,
+yveltal,yveltal,,,,
+zygarde,zygarde,,,,
+zygarde,zygarde,,,,
+zygarde,zygarde,,,,
+diancie,diancie,,,,
+hoopa,hoopa,,,,
+hoopa,hoopa,,,,
+volcanion,volcanion,,,,
+rowlet,rowlet,Level 17,dartrix,Level 34,decidueye
+litten,litten,Level 17,torracat,Level 34,incineroar
+popplio,popplio,Level 17,brionne,Level 34,primarina
+pikipek,pikipek,Level 14,trumbeak,Level 28,toucannon
+yungoos,yungoos,Level 20 (day),gumshoos,,
+grubbin,grubbin,Level 20,charjabug,Level up in a special magnetic fieldThunder StoneSwSh,vikavolt
+crabrawler,crabrawler,Level up at Mount Lanakila,crabominable,,
+oricorio,oricorio,,,,
+oricorio,oricorio,,,,
+oricorio,oricorio,,,,
+oricorio,oricorio,,,,
+cutiefly,cutiefly,Level 25,ribombee,,
+rockruff,rockruff,Level 25 (Pokémon Sun and Ultra Sun day),lycanroc-midday-form,,
+rockruff,rockruff,Level 25 (Pokémon Moon and Ultra Moon night),lycanroc-midnight-form,,
+rockruff,rockruff-own-tempo,Level 25 (between 5:00 and 5:59 PM),lycanroc-dusk-form,,
+wishiwashi,wishiwashi,,,,
+wishiwashi,wishiwashi,,,,
+mareanie,mareanie,Level 38,toxapex,,
+mudbray,mudbray,Level 30,mudsdale,,
+dewpider,dewpider,Level 22,araquanid,,
+fomantis,fomantis,Level 34 (day),lurantis,,
+morelull,morelull,Level 24,shiinotic,,
+salandit,salandit,Level 33 (female),salazzle,,
+stufful,stufful,Level 27,bewear,,
+bounsweet,bounsweet,Level 18,steenee,Level up knowing Stomp,tsareena
+comfey,comfey,,,,
+oranguru,oranguru,,,,
+passimian,passimian,,,,
+wimpod,wimpod,Level 30,golisopod,,
+sandygast,sandygast,Level 42,palossand,,
+pyukumuku,pyukumuku,,,,
+type:-null,type:-null,Friendship,silvally,,
+minior,minior,,,,
+minior,minior,,,,
+komala,komala,,,,
+turtonator,turtonator,,,,
+togedemaru,togedemaru,,,,
+mimikyu,mimikyu,,,,
+mimikyu,mimikyu,,,,
+bruxish,bruxish,,,,
+drampa,drampa,,,,
+dhelmise,dhelmise,,,,
+jangmo-o,jangmo-o,Level 35,hakamo-o,Level 45,kommo-o
+tapu-koko,tapu-koko,,,,
+tapu-lele,tapu-lele,,,,
+tapu-bulu,tapu-bulu,,,,
+tapu-fini,tapu-fini,,,,
+cosmog,cosmog,Level 43,cosmoem,Level 53 (Pokémon Sun Ultra Sun and Sword),solgaleo
+cosmog,cosmog,Level 43,cosmoem,Level 53 (Pokémon Moon Ultra Moon and Shield),lunala
+nihilego,nihilego,,,,
+buzzwole,buzzwole,,,,
+pheromosa,pheromosa,,,,
+xurkitree,xurkitree,,,,
+celesteela,celesteela,,,,
+kartana,kartana,,,,
+guzzlord,guzzlord,,,,
+necrozma,necrozma,,,,
+necrozma,necrozma,,,,
+necrozma,necrozma,,,,
+necrozma,necrozma,,,,
+magearna,magearna,,,,
+magearna,magearna,,,,
+marshadow,marshadow,,,,
+poipole,poipole,Level up knowing Dragon Pulse,naganadel,,
+stakataka,stakataka,,,,
+blacephalon,blacephalon,,,,
+zeraora,zeraora,,,,
+grookey,grookey,Level 16,thwackey,Level 35,rillaboom
+scorbunny,scorbunny,Level 16,raboot,Level 35,cinderace
+sobble,sobble,Level 16,drizzile,Level 35,inteleon
+skwovet,skwovet,Level 24,greedent,,
+rookidee,rookidee,Level 18,corvisquire,Level 38,corviknight
+blipbug,blipbug,Level 10,dottler,Level 30,orbeetle
+nickit,nickit,Level 18,thievul,,
+gossifleur,gossifleur,Level 20,eldegoss,,
+wooloo,wooloo,Level 24,dubwool,,
+chewtle,chewtle,Level 22,drednaw,,
+yamper,yamper,Level 25,boltund,,
+rolycoly,rolycoly,Level 18,carkol,Level 34,coalossal
+applin,applin,Tart Apple,flapple,,
+applin,applin,Sweet Apple,appletun,,
+silicobra,silicobra,Level 36,sandaconda,,
+cramorant,cramorant,,,,
+arrokuda,arrokuda,Level 26,barraskewda,,
+toxel,toxel,Level 30,toxtricity,,
+sizzlipede,sizzlipede,Level 28,centiskorch,,
+clobbopus,clobbopus,Level up knowing Taunt,grapploct,,
+sinistea,sinistea,Chipped Pot or Cracked Pot,polteageist,,
+hatenna,hatenna,Level 32,hattrem,Level 42,hatterene
+impidimp,impidimp,Level 32,morgrem,Level 42,grimmsnarl
+milcery,milcery,Sweet when its Trainer spins and strikes a pose,alcremie,,
+falinks,falinks,,,,
+pincurchin,pincurchin,,,,
+snom,snom,Friendship (night),frosmoth,,
+stonjourner,stonjourner,,,,
+eiscue,eiscue,,,,
+indeedee,indeedee,,,,
+morpeko,morpeko,,,,
+morpeko,morpeko,,,,
+cufant,cufant,Level 34,copperajah,,
+dracozolt,dracozolt,,,,
+arctozolt,arctozolt,,,,
+dracovish,dracovish,,,,
+arctovish,arctovish,,,,
+duraludon,duraludon,,,,
+dreepy,dreepy,Level 50,drakloak,Level 60,dragapult
+zacian,zacian,,,,
+zacian,zacian,,,,
+zamazenta,zamazenta,,,,
+zamazenta,zamazenta,,,,
+eternatus,eternatus,,,,
+kubfu,kubfu,Train in The Tower of Darkness(Single Strike Style),urshifu,,
+kubfu,kubfu,Train in The Tower of Waters(Rapid Strike Style),urshifu,,
+zarude,zarude,,,,
+zarude,zarude,,,,
+regieleki,regieleki,,,,
+regidrago,regidrago,,,,
+glastrier,glastrier,,,,
+spectrier,spectrier,,,,
+calyrex,calyrex,,,,
+calyrex,calyrex,,,,
+calyrex,calyrex,,,,
+unown,unown,,,,
