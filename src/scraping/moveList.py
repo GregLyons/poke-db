@@ -15,7 +15,7 @@ def makeMoveListCSVandExtractNotes(fname):
     rows = moveTable.findAll('tr')[1:]
 
     headers = []
-    for cell in headerRow.findAll(['th']):
+    for cell in headerRow.findAll('th'):
       header = cell.get_text().strip('\n')
       if header == '#': 
         headers.append('Move ID')

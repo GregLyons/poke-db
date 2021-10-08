@@ -1,0 +1,97 @@
+Entities and attributes
+  Generation
+    PRIMARY KEY: number (1-8)
+
+  Pokemon
+    PRIMARY KEY: name (megas, regional forms, other forms each have their own name)
+    Pokedex entry (string)
+    Sprite URL (string)
+    Base Stat (HP, Attack, Defense, Special Attack, Special Defense, Speed; each an integer)
+    Weight
+    Height
+
+  Type
+    PRIMARY KEY: name (e.g. fire)
+    Double damage from (Types)
+    Neutral damage from (Types)
+    Half damage from (Types)
+    No damage from (Types)
+
+  Move
+    PRIMARY KEY: name
+    Description (string)
+    Power (int)
+    PP (int)
+    Accuracy (int or NULL if always succeeds)
+    Damage category (Physical, Special, or Status)
+    Priority (int)
+    Contact (boolean)
+    Target (one of several possible values)
+
+  Ability
+    PRIMARY KEY: name
+    Description (string)
+
+  Status
+    PRIMARY KEY: name
+
+  Effect
+    PRIMARY KEY: name
+
+  Usage Method
+    PRIMARY KEY: name (e.g. 'dance', 'punch')
+
+  Battle Stat 
+    PRIMARY KEY: name (Attack, Defense, Special Attack, Special Defense, Speed, Accuracy, Evasiveness, Critical Hit Chance)
+
+  Held Item
+    PRIMARY KEY: name
+    Type (e.g. Berry, Scarf, etc.)
+    Sprite URL (string)
+    Consumable (boolean)
+
+
+Requirements
+  Between Generations, the amount of each entity can change (e.g. more Pokemon, more Abilities, more Types), and the relationship between them can change (e.g. Moves can inflict one type of Status in one Generation but not in another)
+
+  Each Pokemon has one or more Type
+  Each Pokemon learns or more Moves
+  Each Pokemon has one or more Abilities
+
+  Each Type has one or more Pokemon of that Type
+  Each Type has one or more Moves of that Type (except ??? Type)
+  Each Type is boosted by zero or more Abilities
+  Each Type resists zero or one Status (e.g. Fire types cannot be burned in later Generations)
+  
+  Each Move can be learned by one or more Pokemon
+  Each Move has one Type
+  Each Move can inflict zero or more Statuses (probability)
+  Each Move has zero or more Effects (probability)
+  Each Move has zero or one Usage Method
+  Each Move can boost or reduce zero or more Battle Stats by stage(-6 through +6)
+
+  Each Ability can be had by one or more Pokemon
+  Each Ability boosts zero or one Type (multiplier)
+  Each Ability resists zero or one Type (multiplier)
+  Each Ability protects against zero or more Statuses
+  Each Ability boosts zero or one Usage Method (multiplier)
+  Each Ability resists zero or one Usage Method (multiplier)
+  Each Ability can boost or reduce zero or more Battle Stats, by stage or by multiplier, under a certain condition (string)
+
+  Each Status can protect against zero or more Types
+  Each Status has one or more Moves which inflict it 
+  Each Status has zero or more Abilities which protect against it
+  Each Status can reduce zero or more Battle Stats by multiplier (some Abilities negate this or even boost Battle Stats)
+
+  Each Effect has one or more Moves which can inflcit it
+  
+  Each Usage Method is possessed by one or more Moves
+  Each Usage Method is boosted by zero or more Abilities
+  Each Usage Method is resisted by zero or more Abilities
+
+  Each Battle Stat can be boosted or reduced by one or more Moves, by stage
+  Each Battle Stat can be boosted or reduced by zero or more Abilities, by stage or by multiplier, under a certain condition
+
+  Each Held Item can grant protection against zero or more Types
+  Each Held Item can grant protection against zero or more Statuses
+  Each Held Item can boost or reduce one or more Battle Stat, by stage or by multiplier, under a certain condition
