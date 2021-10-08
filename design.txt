@@ -1,4 +1,4 @@
-Entities and attributes
+Entities and their attributes
   Generation
     PRIMARY KEY: number (1-8)
 
@@ -9,6 +9,8 @@ Entities and attributes
     Base Stat (HP, Attack, Defense, Special Attack, Special Defense, Speed; each an integer)
     Weight
     Height
+    Has Mega (boolean)
+    Has Gigantamax (boolean)
 
   Type
     PRIMARY KEY: name (e.g. fire)
@@ -51,10 +53,10 @@ Entities and attributes
     Consumable (boolean)
 
 
-Requirements
+Relationships
   Between Generations, the amount of each entity can change (e.g. more Pokemon, more Abilities, more Types), and the relationship between them can change (e.g. Moves can inflict one type of Status in one Generation but not in another)
 
-  Each Pokemon has one or more Type
+  Each Pokemon has one or two Types
   Each Pokemon learns or more Moves
   Each Pokemon has one or more Abilities
 
