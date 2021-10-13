@@ -1,0 +1,68 @@
+Gen,Number,Sprite URL,Name,Effect
+3,1,//cdn2.bulbagarden.net/upload/6/61/Bag_Cheri_Berry_Sprite.png,cheri_berry,Cures paralysis.
+3,2,//cdn2.bulbagarden.net/upload/3/3f/Bag_Chesto_Berry_Sprite.png,chesto_berry,Cures sleep.
+3,3,//cdn2.bulbagarden.net/upload/8/8f/Bag_Pecha_Berry_Sprite.png,pecha_berry,Cures poison.
+3,4,//cdn2.bulbagarden.net/upload/e/e5/Bag_Rawst_Berry_Sprite.png,rawst_berry,Cures burn.
+3,5,//cdn2.bulbagarden.net/upload/1/18/Bag_Aspear_Berry_Sprite.png,aspear_berry,Cures freeze.
+3,6,//cdn2.bulbagarden.net/upload/c/cd/Bag_Leppa_Berry_Sprite.png,leppa_berry,Restores 10 PP.
+3,7,//cdn2.bulbagarden.net/upload/8/86/Bag_Oran_Berry_Sprite.png,oran_berry,Restores 10 HP.
+3,8,//cdn2.bulbagarden.net/upload/0/0b/Bag_Persim_Berry_Sprite.png,persim_berry,Cures confusion.
+3,9,//cdn2.bulbagarden.net/upload/a/a6/Bag_Lum_Berry_Sprite.png,lum_berry,Cures any non-volatile status condition and confusion.
+3,10,//cdn2.bulbagarden.net/upload/3/39/Bag_Sitrus_Berry_Sprite.png,sitrus_berry,Restores 30 HPGen. III/25% HPGen. IV+.
+3,11,//cdn2.bulbagarden.net/upload/3/35/Bag_Figy_Berry_Sprite.png,figy_berry,"Restores 12.5%Gen. III–VI/50%Gen. VII/33%Gen. VIII HP when HP falls below 50%Gen. III–VI/25%Gen. V+, but confuses Pokémon that dislike spicy food."
+3,12,//cdn2.bulbagarden.net/upload/7/73/Bag_Wiki_Berry_Sprite.png,wiki_berry,"Restores 12.5%Gen. III–VI/50%Gen. VII/33%Gen. VIII HP when HP falls below 50%Gen. III–VI/25%Gen. V+, but confuses Pokémon that dislike dry food."
+3,13,//cdn2.bulbagarden.net/upload/7/78/Bag_Mago_Berry_Sprite.png,mago_berry,"Restores 12.5%Gen. III–VI/50%Gen. VII/33%Gen. VIII HP when HP falls below 50%Gen. III–VI/25%Gen. V+, but confuses Pokémon that dislike sweet food."
+3,14,//cdn2.bulbagarden.net/upload/1/1e/Bag_Aguav_Berry_Sprite.png,aguav_berry,"Restores 12.5%Gen. III–VI/50%Gen. VII/33%Gen. VIII HP when HP falls below 50%Gen. III–VI/25%Gen. V+, but confuses Pokémon that dislike bitter food."
+3,15,//cdn2.bulbagarden.net/upload/6/64/Bag_Iapapa_Berry_Sprite.png,iapapa_berry,"Restores 12.5%Gen. III–VI/50%Gen. VII/33%Gen. VIII HP when HP falls below 50%Gen. III–VI/25%Gen. V+, but confuses Pokémon that dislike sour food."
+3,16,//cdn2.bulbagarden.net/upload/3/31/Bag_Razz_Berry_Sprite.png,razz_berry,Makes wild Pokémon easier to capture.PE
+3,17,//cdn2.bulbagarden.net/upload/e/e8/Bag_Bluk_Berry_Sprite.png,bluk_berry,
+3,18,//cdn2.bulbagarden.net/upload/5/53/Bag_Nanab_Berry_Sprite.png,nanab_berry,Makes wild Pokémon move less.PE
+3,19,//cdn2.bulbagarden.net/upload/f/f6/Bag_Wepear_Berry_Sprite.png,wepear_berry,
+3,20,//cdn2.bulbagarden.net/upload/7/78/Bag_Pinap_Berry_Sprite.png,pinap_berry,Makes wild Pokémon more likely to drop items.PE
+3,21,//cdn2.bulbagarden.net/upload/d/dd/Bag_Pomeg_Berry_Sprite.png,pomeg_berry,"Lowers HP EVs, raises friendshipE, Gen. IV+."
+3,22,//cdn2.bulbagarden.net/upload/e/eb/Bag_Kelpsy_Berry_Sprite.png,kelpsy_berry,"Lowers Attack EVs, raises friendshipE, Gen. IV+."
+3,23,//cdn2.bulbagarden.net/upload/9/9e/Bag_Qualot_Berry_Sprite.png,qualot_berry,"Lowers Defense EVs, raises friendshipE, Gen. IV+."
+3,24,//cdn2.bulbagarden.net/upload/3/3b/Bag_Hondew_Berry_Sprite.png,hondew_berry,"Lowers Special Attack EVs, raises friendshipE, Gen. IV+."
+3,25,//cdn2.bulbagarden.net/upload/6/64/Bag_Grepa_Berry_Sprite.png,grepa_berry,"Lowers Special Defense EVs, raises friendshipE, Gen. IV+."
+3,26,//cdn2.bulbagarden.net/upload/9/9a/Bag_Tamato_Berry_Sprite.png,tamato_berry,"Lowers Speed EVs, raises friendshipE, Gen. IV+."
+3,27,//cdn2.bulbagarden.net/upload/5/5f/Bag_Cornn_Berry_Sprite.png,cornn_berry,
+3,28,//cdn2.bulbagarden.net/upload/c/c1/Bag_Magost_Berry_Sprite.png,magost_berry,
+3,29,//cdn2.bulbagarden.net/upload/2/2c/Bag_Rabuta_Berry_Sprite.png,rabuta_berry,
+3,30,//cdn2.bulbagarden.net/upload/9/99/Bag_Nomel_Berry_Sprite.png,nomel_berry,
+3,31,//cdn2.bulbagarden.net/upload/d/dd/Bag_Spelon_Berry_Sprite.png,spelon_berry,
+3,32,//cdn2.bulbagarden.net/upload/3/37/Bag_Pamtre_Berry_Sprite.png,pamtre_berry,
+3,33,//cdn2.bulbagarden.net/upload/0/02/Bag_Watmel_Berry_Sprite.png,watmel_berry,
+3,34,//cdn2.bulbagarden.net/upload/4/45/Bag_Durin_Berry_Sprite.png,durin_berry,
+3,35,//cdn2.bulbagarden.net/upload/0/05/Bag_Belue_Berry_Sprite.png,belue_berry,
+4,36,//cdn2.bulbagarden.net/upload/a/ab/Bag_Occa_Berry_Sprite.png,occa_berry,Halves damage taken from a super effective Fire-type move.
+4,37,//cdn2.bulbagarden.net/upload/6/6a/Bag_Passho_Berry_Sprite.png,passho_berry,Halves damage taken from a super effective Water-type move.
+4,38,//cdn2.bulbagarden.net/upload/2/25/Bag_Wacan_Berry_Sprite.png,wacan_berry,Halves damage taken from a super effective Electric-type move.
+4,39,//cdn2.bulbagarden.net/upload/9/92/Bag_Rindo_Berry_Sprite.png,rindo_berry,Halves damage taken from a super effective Grass-type move.
+4,40,//cdn2.bulbagarden.net/upload/4/4e/Bag_Yache_Berry_Sprite.png,yache_berry,Halves damage taken from a super effective Ice-type move.
+4,41,//cdn2.bulbagarden.net/upload/5/56/Bag_Chople_Berry_Sprite.png,chople_berry,Halves damage taken from a super effective Fighting-type move.
+4,42,//cdn2.bulbagarden.net/upload/4/4e/Bag_Kebia_Berry_Sprite.png,kebia_berry,Halves damage taken from a super effective Poison-type move.
+4,43,//cdn2.bulbagarden.net/upload/c/ca/Bag_Shuca_Berry_Sprite.png,shuca_berry,Halves damage taken from a super effective Ground-type move.
+4,44,//cdn2.bulbagarden.net/upload/f/f6/Bag_Coba_Berry_Sprite.png,coba_berry,Halves damage taken from a super effective Flying-type move.
+4,45,//cdn2.bulbagarden.net/upload/b/be/Bag_Payapa_Berry_Sprite.png,payapa_berry,Halves damage taken from a super effective Psychic-type move.
+4,46,//cdn2.bulbagarden.net/upload/c/ca/Bag_Tanga_Berry_Sprite.png,tanga_berry,Halves damage taken from a super effective Bug-type move.
+4,47,//cdn2.bulbagarden.net/upload/5/53/Bag_Charti_Berry_Sprite.png,charti_berry,Halves damage taken from a super effective Rock-type move.
+4,48,//cdn2.bulbagarden.net/upload/c/c5/Bag_Kasib_Berry_Sprite.png,kasib_berry,Halves damage taken from a super effective Ghost-type move.
+4,49,//cdn2.bulbagarden.net/upload/d/dd/Bag_Haban_Berry_Sprite.png,haban_berry,Halves damage taken from a super effective Dragon-type move.
+4,50,//cdn2.bulbagarden.net/upload/f/f1/Bag_Colbur_Berry_Sprite.png,colbur_berry,Halves damage taken from a super effective Dark-type move.
+4,51,//cdn2.bulbagarden.net/upload/c/cb/Bag_Babiri_Berry_Sprite.png,babiri_berry,Halves damage taken from a super effective Steel-type move.
+4,52,//cdn2.bulbagarden.net/upload/c/c5/Bag_Chilan_Berry_Sprite.png,chilan_berry,Halves damage taken from a Normal-type move.
+3,53*,//cdn2.bulbagarden.net/upload/c/cd/Bag_Liechi_Berry_Sprite.png,liechi_berry,Raises Attack when HP falls below 25%.
+3,54*,//cdn2.bulbagarden.net/upload/d/d3/Bag_Ganlon_Berry_Sprite.png,ganlon_berry,Raises Defense when HP falls below 25%.
+3,55*,//cdn2.bulbagarden.net/upload/a/a6/Bag_Salac_Berry_Sprite.png,salac_berry,Raises Speed when HP falls below 25%.
+3,56*,//cdn2.bulbagarden.net/upload/3/32/Bag_Petaya_Berry_Sprite.png,petaya_berry,Raises Special Attack when HP falls below 25%.
+3,57*,//cdn2.bulbagarden.net/upload/d/d3/Bag_Apicot_Berry_Sprite.png,apicot_berry,Raises Special Defense when HP falls below 25%.
+3,58*,//cdn2.bulbagarden.net/upload/6/61/Bag_Lansat_Berry_Sprite.png,lansat_berry,Raises critical hit ratio when HP falls below 25%.
+3,59*,//cdn2.bulbagarden.net/upload/a/a9/Bag_Starf_Berry_Sprite.png,starf_berry,Sharply raises a random stat when HP falls below 25%.
+3,60*,//cdn2.bulbagarden.net/upload/e/e1/Bag_Enigma_Berry_Sprite.png,enigma_berry,(placeholder for e-Reader Berries)RS.Restores 25% HP when hit with a super effective moveGen. IV+.
+4,61,//cdn2.bulbagarden.net/upload/0/02/Bag_Micle_Berry_Sprite.png,micle_berry,Raises accuracy of next move to 100%Gen. IV/by 20%Gen. V+ when HP falls below 25%.
+4,62,//cdn2.bulbagarden.net/upload/d/d7/Bag_Custap_Berry_Sprite.png,custap_berry,Causes next move to go first in its priority bracket when HP falls below 25%.
+4,63,//cdn2.bulbagarden.net/upload/e/e4/Bag_Jaboca_Berry_Sprite.png,jaboca_berry,Damages attacker for 12.5% HP when hit with a physical move.
+4,64,//cdn2.bulbagarden.net/upload/5/57/Bag_Rowap_Berry_Sprite.png,rowap_berry,Damages attacker for 12.5% HP when hit with a special move.
+6,,//cdn2.bulbagarden.net/upload/0/0b/Bag_Roseli_Berry_Sprite.png,roseli_berry,Halves damage taken from a super effective Fairy-type move.
+6,,//cdn2.bulbagarden.net/upload/4/46/Bag_Kee_Berry_Sprite.png,kee_berry,Raises Defense when hit with a physical move.
+6,,//cdn2.bulbagarden.net/upload/e/ec/Bag_Maranga_Berry_Sprite.png,maranga_berry,Raises Special Defense when hit with a special move.
