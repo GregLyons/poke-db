@@ -1,6 +1,6 @@
 import csv
 import re
-from utils import openBulbapediaLink, genSymbolToNumber, dexNumberToGen, getDataPath, titleOrPascalToKebab
+from utils import openBulbapediaLink, genSymbolToNumber, dexNumberToGen, getDataPath, parseName
 
 # The event Blue-Striped Basculin with Rock Head is not included. My apologies for any inconvenience.
 
@@ -98,9 +98,13 @@ def makeAbilityCSVandExtractNotes(fname):
               if cell.find('span', {'class': 'explain'}) != None:
                 notesInCell = cell.find_all('span', {'class': 'explain'})
                 for note in notesInCell:
-                  notesWriter.writerow([titleOrPascalToKebab(currentPokemonName), headers[headerIndex], note.get('title')])
+                  notesWriter.writerow([parseName(currentPokemonName, 'pokemon'), headers[headerIndex], note.get('title')])
+              
+              if headers[headerIndex == 'Pokemon']:
+                csvRow.append(parseName(value, 'pokemon'))
+              else:
+                csvRow.append(parseName(value))
 
-              csvRow.append(titleOrPascalToKebab(value))
             headerIndex += 1
         if row.find('th') != None:
           csvRow.append('Introduced')
@@ -149,5 +153,9 @@ def makeInitialAbilityDict(fname, unparsedNotes):
     
     return initialAbilityDict
 
-fname = getDataPath() + f'pokemonByAbilities.csv'
-makeAbilityCSVandExtractNotes(fname)
+def main():
+  fname = getDataPath() + f'pokemonByAbilities.csv'
+  makeAbilityCSVandExtractNotes(fname)
+
+if __name__ == '__main__':
+  main()

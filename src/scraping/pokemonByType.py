@@ -1,5 +1,5 @@
 import csv
-from utils import openBulbapediaLink, getDataPath, titleOrPascalToKebab, genSymbolToNumber
+from utils import openBulbapediaLink, getDataPath, parseName, genSymbolToNumber
 
 # Columns are Gen, National Dex number, species name, Pokemon name, type 1, and type 2 (possibly equals type 1)
 def makePokemonTypeCSV(fname):
@@ -31,14 +31,15 @@ def makePokemonTypeCSV(fname):
         # it's easiest to handle Darmanitan separately from all the rest, due to his multiple forms
         if speciesName == 'Darmanitan':
           continue
-
-        formattedSpeciesName = titleOrPascalToKebab(speciesName)
+        
+        # this table doesn't have form names, so we don't use 'pokemon' mode
+        formattedSpeciesName = parseName(speciesName)
 
         type1 = cells[3].get_text().rstrip('\n').lower()
         
         # if Pokemon has two types, then there is an extra cell
         if len(cells) == 4:
-          type2 = '--'
+          type2 = ''
         else:
           type2 = cells[4].get_text().rstrip('\n').lower()
 
@@ -56,10 +57,10 @@ def makePokemonTypeCSV(fname):
     addRegionalForms(writer)
 
     # add Darmanitan
-    writer.writerow([5, 555, 'darmanitan', 'darmanitan-standard', 'fire', '--'])
-    writer.writerow([5, '--', 'darmanitan', 'darmanitan-zen', 'fire', 'psychic'])
-    writer.writerow([8, '--', 'darmanitan', 'darmanitan-standard-galar', 'ice', '--'])
-    writer.writerow([8, '--', 'darmanitan', 'darmanitan-zen-galar', 'ice', 'fire'])
+    writer.writerow([5, 555, 'darmanitan', 'darmanitan_standard', 'fire', ''])
+    writer.writerow([5, '', 'darmanitan', 'darmanitan_zen', 'fire', 'psychic'])
+    writer.writerow([8, '', 'darmanitan', 'darmanitan_standard_galar', 'ice', ''])
+    writer.writerow([8, '', 'darmanitan', 'darmanitan_zen_galar', 'ice', 'fire'])
 
   return
 
@@ -78,12 +79,12 @@ def addMegas(writer):
 
       # two exceptions for Pokemon with two megas
       if speciesName == 'Charizard':
-        writer.writerow([6, '--', titleOrPascalToKebab(speciesName), titleOrPascalToKebab(megaName + ' X'), 'fire', 'dragon'])
-        writer.writerow([6, '--', titleOrPascalToKebab(speciesName), titleOrPascalToKebab(megaName + ' Y'), 'fire', 'flying'])
+        writer.writerow([6, '', parseName(speciesName), parseName(megaName + ' X'), 'fire', 'dragon'])
+        writer.writerow([6, '', parseName(speciesName), parseName(megaName + ' Y'), 'fire', 'flying'])
         continue
       elif speciesName == 'Mewtwo':
-        writer.writerow([6, '--', titleOrPascalToKebab(speciesName), titleOrPascalToKebab(megaName + ' X'), 'psychic', 'fighting'])
-        writer.writerow([6, '--', titleOrPascalToKebab(speciesName), titleOrPascalToKebab(megaName + ' Y'), 'psychic', '--'])
+        writer.writerow([6, '', parseName(speciesName), parseName(megaName + ' X'), 'psychic', 'fighting'])
+        writer.writerow([6, '', parseName(speciesName), parseName(megaName + ' Y'), 'psychic', ''])
         continue
       # each of these two exceptions actually takes up two table rows, which we must skip as well
       elif len(cells) < 5:
@@ -98,11 +99,12 @@ def addMegas(writer):
 
       # Bulbapedia lists each type twice 
       if len(megaTypes) == 2:
-        megaType2 = '--'
+        megaType2 = ''
       else:
         megaType2 = megaTypes[3]
 
-      writer.writerow([6, '--', titleOrPascalToKebab(speciesName), titleOrPascalToKebab(megaName), megaType1.lower(), megaType2.lower()])
+      # this table doesn't have form names, so we don't use 'pokemon' mode
+      writer.writerow([6, '', parseName(speciesName), parseName(megaName), megaType1.lower(), megaType2.lower()])
 
   return
 
@@ -127,8 +129,8 @@ def addRegionalForms(writer):
       if len(cells) == 1:
         continue
 
-      speciesName = cells[0].get_text().rstrip('\n')
-      if speciesName in ['Darmanitan', 'Zen Mode']:
+      speciesName = parseName(cells[0].get_text().rstrip('\n'), 'pokemon')
+      if speciesName in ['darmanitan', 'zen_mode']:
         continue
 
       regionalName = speciesName + ' ' + region
@@ -138,13 +140,17 @@ def addRegionalForms(writer):
 
       # Bulbapedia lists each type twice 
       if len(regionalTypes) == 2:
-        regionalType2 = '--'
+        regionalType2 = ''
       else:
         regionalType2 = regionalTypes[3]
 
-      writer.writerow([gen, '--', speciesName, regionalName, regionalType1, regionalType2])
+      writer.writerow([gen, '', speciesName, regionalName, regionalType1, regionalType2])
 
   return
 
-fname = getDataPath() + 'pokemonByType.csv'
-makePokemonTypeCSV(fname)
+def main():
+  fname = getDataPath() + 'pokemonByType.csv'
+  makePokemonTypeCSV(fname)
+
+if __name__ == '__main__':
+  main()

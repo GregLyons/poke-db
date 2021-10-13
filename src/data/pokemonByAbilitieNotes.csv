@@ -2,10 +2,10 @@ Pokemon Name,Header,Description
 pidgey,Ability 2,Generation IV onwards
 pidgeotto,Ability 2,Generation IV onwards
 pidgeot,Ability 2,Generation IV onwards
-nidoran-female,Ability 2,Generation IV onwards
+nidoran_female,Ability 2,Generation IV onwards
 nidorina,Ability 2,Generation IV onwards
 nidoqueen,Ability 2,Generation IV onwards
-nidoran-male,Ability 2,Generation IV onwards
+nidoran_male,Ability 2,Generation IV onwards
 nidorino,Ability 2,Generation IV onwards
 nidoking,Ability 2,Generation IV onwards
 cleffa,Ability 2,Generation IV onwards
@@ -45,7 +45,7 @@ kangaskhan,Ability 2,Generation IV onwards
 horsea,Ability 2,Generation IV onwards
 seadra,Ability 2,Generation IV onwards
 kingdra,Ability 2,Generation IV onwards
-mr-mime,Ability 2,Generation IV onwards
+mr_mime,Ability 2,Generation IV onwards
 scyther,Ability 2,Generation IV onwards
 scizor,Ability 2,Generation IV onwards
 smoochum,Ability 2,Generation IV onwards
@@ -122,7 +122,7 @@ whirlipede,Pokemon,Hidden Ability is Quick Feet in Generation V
 whirlipede,Hidden,Generation VI onwards
 scolipede,Pokemon,Hidden Ability is Quick Feet in Generation V
 scolipede,Hidden,Generation VI onwards
-basculin-blue-striped-form,Pokemon,"Blue-Striped Basculin in Pokémon Black and White has Reckless as its first Ability, while in Pokémon Black 2 and White 2, it has Rock Head instead. In Pokémon White, the Blue-Striped Basculin obtained through in-game trade in Driftveil City has Rock Head."
+basculin_blue_striped,Pokemon,"Blue-Striped Basculin in Pokémon Black and White has Reckless as its first Ability, while in Pokémon Black 2 and White 2, it has Rock Head instead. In Pokémon White, the Blue-Striped Basculin obtained through in-game trade in Driftveil City has Rock Head."
 gothita,Ability 2,Generation VI onwards
 gothorita,Ability 2,Generation VI onwards
 gothitelle,Ability 2,Generation VI onwards

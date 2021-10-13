@@ -27,10 +27,10 @@ Dex Number,Pokemon,HP,Attack,Defense,Sp. Attack,Sp. Defense,Speed
 26,raichu,60,90,55,90,90,100
 27,sandshrew,50,75,85,30,30,40
 28,sandslash,75,100,110,55,55,65
-29,nidoran-female,55,47,52,40,40,41
+29,nidoran♀,55,47,52,40,40,41
 30,nidorina,70,62,67,55,55,56
 31,nidoqueen,90,82,87,75,75,76
-32,nidoran-male,46,57,40,40,40,50
+32,nidoran♂,46,57,40,40,40,50
 33,nidorino,61,72,57,55,55,65
 34,nidoking,81,92,77,75,75,85
 35,clefairy,70,45,48,60,60,35
@@ -120,7 +120,7 @@ Dex Number,Pokemon,HP,Attack,Defense,Sp. Attack,Sp. Defense,Speed
 119,seaking,80,92,65,80,80,68
 120,staryu,30,45,55,70,70,85
 121,starmie,60,75,85,100,100,115
-122,mr-mime,40,45,65,100,100,90
+122,mr_mime,40,45,65,100,100,90
 123,scyther,70,110,80,55,55,105
 124,jynx,65,50,35,95,95,95
 125,electabuzz,65,83,57,85,85,105

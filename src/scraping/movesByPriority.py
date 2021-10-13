@@ -1,5 +1,5 @@
 import csv
-from utils import openBulbapediaLink, getDataPath, titleOrPascalToKebab
+from utils import openBulbapediaLink, getDataPath, parseName
 
 # converts gen symbol to number
 def genSymbolToNumber(roman):
@@ -74,17 +74,17 @@ def makePriorityCSV(fname):
               # Handle two cases: Zippy Zap and Teleport--handle Teleport in exception later
               if 'PE' in move: 
                 if 'teleport' not in move:
-                  writer.writerow(csvRow + [titleOrPascalToKebab(move.replace('PE', '').rstrip('\n'))])
+                  writer.writerow(csvRow + [parseName(move.replace('PE', '').rstrip('\n'))])
                 else:
                   continue
               else:
-                # Bulbapedia has a typo, where 'Extreme Speed' is instead 'ExtremeSpeed' in some rows
-                if move == 'ExtremeSpeed':
-                  move = 'extreme-speed'
-                  
-                writer.writerow(csvRow + [titleOrPascalToKebab(move.rstrip('\n'))])
+                writer.writerow(csvRow + [parseName(move.rstrip('\n'))])
 
   csvFile.close()
 
-priority_fname = getDataPath() + 'movesByPriority.csv'
-makePriorityCSV(priority_fname)
+def main():
+  priority_fname = getDataPath() + 'movesByPriority.csv'
+  makePriorityCSV(priority_fname)
+
+if __name__ == '__main__':
+  main()

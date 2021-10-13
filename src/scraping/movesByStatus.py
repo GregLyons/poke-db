@@ -1,5 +1,5 @@
 import csv
-from utils import openBulbapediaLink, getDataPath, titleOrPascalToKebab
+from utils import openBulbapediaLink, getDataPath, parseName
 
 # Columns are status caused, move name, type, category, probability of inflicting status, power, accuracy, and notes
 
@@ -59,7 +59,7 @@ def addCSVRowsForStatus(statusInfo, writer, wroteHeader, notes):
     for cell in row.findAll('td'):
       currentHeader = headers[headerIndex]
 
-      value = cell.get_text().rstrip('\n').replace('*', '').replace('—', '--')
+      value = cell.get_text().rstrip('\n').replace('*', '').replace('—', '')
 
       if headerIndex == 0:
         currentMove = value
@@ -67,24 +67,24 @@ def addCSVRowsForStatus(statusInfo, writer, wroteHeader, notes):
       if cell.find('span', {'class': 'explain'}) != None:
         notesInCell = cell.find_all('span', {'class': 'explain'})
         for note in notesInCell:
-          notesFromTable.append([titleOrPascalToKebab(status), titleOrPascalToKebab(currentMove), currentHeader, note.get('title')])
+          notesFromTable.append([parseName(status), parseName(currentMove), currentHeader, note.get('title')])
 
       csvRow.append(value)
       headerIndex += 1
 
     # if row doesn't have probability column, add it in the appropriate spot for consistency
     if not hasProbability:
-      csvRow = csvRow[:4] + ['--'] + csvRow[4:]
+      csvRow = csvRow[:4] + [''] + csvRow[4:]
 
     # exclude shadow moves 
     if len(csvRow) > 2 and csvRow[2] != 'Shadow':
 
       # One of the tables has a missing <td> in the "Notes" column for Thousand Waves, so we fill it in
       if len(csvRow) == 7:
-        csvRow.append('--')
+        csvRow.append('')
 
-      # convert probability to float, -- to 100.0
-      if csvRow[4] == '--':
+      # convert probability to float,  to 100.0
+      if csvRow[4] == '':
         csvRow[4] = '0'
       if csvRow[4] != 'Probability':
         csvRow[4] = float(csvRow[4].rstrip('%'))
@@ -92,7 +92,7 @@ def addCSVRowsForStatus(statusInfo, writer, wroteHeader, notes):
       # convert everything to kebab case except the header
       if csvRow[0] != 'Status Caused':
         for i in range(4):
-          csvRow[i] = titleOrPascalToKebab(csvRow[i])
+          csvRow[i] = parseName(csvRow[i])
       writer.writerow(csvRow)
 
   # we already have notes for type, category, power, and accuracy
@@ -101,7 +101,7 @@ def addCSVRowsForStatus(statusInfo, writer, wroteHeader, notes):
 
 # Makes a row for the statuses which do not have tables on Bulbapedia
 def makeCSVRow(status, writer):
-  status = titleOrPascalToKebab(status)
+  status = parseName(status)
   moveName = status
   note = ''
 
@@ -110,24 +110,24 @@ def makeCSVRow(status, writer):
 
   # Go through exceptions where name of status isn't name of move
   # Center of Attention
-  if status == 'center-of-attention':
-    writer.writerow([status, 'follow-me', '--', '--', '100.0', '--', '--', note])
-    writer.writerow([status, 'rage-powder', '--', '--', '100.0', '--', '--', note])
-    writer.writerow([status, 'spotlight', '--', '--', '100.0', '--', '--', note])
+  if status == 'center_of_attention':
+    writer.writerow([status, 'follow_me', '', '', '100.0', '', '', note])
+    writer.writerow([status, 'rage_powder', '', '', '100.0', '', '', note])
+    writer.writerow([status, 'spotlight', '', '', '100.0', '', '', note])
   # Rooted
   # Braing
   elif status == 'bracing':
-    writer.writerow([status, 'endure', '--', '--', '100.0', '--', '--', note])
+    writer.writerow([status, 'endure', '', '', '100.0', '', '', note])
   elif status == 'rooted':
-    writer.writerow([status, 'ingrain', '--', '--', '100.0', '--', '--', note])
+    writer.writerow([status, 'ingrain', '', '', '100.0', '', '', note])
   # Magnetic levitation
-  elif status == 'magnetic-levitation':
-    writer.writerow([status, 'magnet-rise', '--', '--', '100.0', '--', '--', note])
+  elif status == 'magnetic_levitation':
+    writer.writerow([status, 'magnet_rise', '', '', '100.0', '', '', note])
   # Transformed
   elif status == 'transformed':
-    writer.writerow([status, 'transform', '--', '--', '100.0', '--', '--', note])
+    writer.writerow([status, 'transform', '', '', '100.0', '', '', note])
   else: 
-    writer.writerow([status, moveName, '--', '--', '100.0', '--', '--', note])
+    writer.writerow([status, moveName, '', '', '100.0', '', '', note])
 
 # Makes the main .csv file and extracts any notes
 def makeStatusCSVAndExtractNotes(fname):
@@ -179,10 +179,14 @@ def makeStatusNotesCSV(fname, notes):
 
   csvFile.close()
 
-# Make main .csv and extract notes
-main_fname = getDataPath() + 'movesByStatus.csv'
-notes = makeStatusCSVAndExtractNotes(main_fname)
+def main():
+  # Make main .csv and extract notes
+  main_fname = getDataPath() + 'movesByStatus.csv'
+  notes = makeStatusCSVAndExtractNotes(main_fname)
 
-# Make notes .csv
-notes_fname = getDataPath() + 'movesByStatusNotes.csv'
-makeStatusNotesCSV(notes_fname, notes)
+  # Make notes .csv
+  notes_fname = getDataPath() + 'movesByStatusNotes.csv'
+  makeStatusNotesCSV(notes_fname, notes)
+
+if __name__ == '__main__':
+  main()

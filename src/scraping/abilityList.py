@@ -1,4 +1,4 @@
-from utils import openBulbapediaLink, getDataPath, titleOrPascalToKebab
+from utils import openBulbapediaLink, getDataPath, parseName
 import csv
 
 # Columns are Ability ID, Ability Name, Ability Description, and Gen Introduced
@@ -27,18 +27,20 @@ def makeMainCSV(fname):
           continue
         else:
           if headers[headerIndex] == 'Ability Name':
-            value = titleOrPascalToKebab(value)
+            value = parseName(value)
           csvRow.append(value)
           headerIndex += 1
       
       if not skipRow:
         writer.writerow(csvRow)
 
-    writer.writerow(['266', 'as-one', 'This Ability combines the effects of both Calyrex\'s Unnerve Ability and Glastrier\'s Chilling Neigh Ability', 'VIII'])
-    writer.writerow(['267', 'as-one', 'This Ability combines the effects of both Calyrex\'s Unnerve Ability and Spectrier\'s Grim Neigh Ability', 'VIII'])
-
-
+    writer.writerow(['266', 'as_one', 'This Ability combines the effects of both Calyrex\'s Unnerve Ability and Glastrier\'s Chilling Neigh Ability', 'VIII'])
+    writer.writerow(['267', 'as_one', 'This Ability combines the effects of both Calyrex\'s Unnerve Ability and Spectrier\'s Grim Neigh Ability', 'VIII'])
   return  
 
-ability_fname = getDataPath() + 'abilityList.csv'
-makeMainCSV(ability_fname)
+def main():
+  ability_fname = getDataPath() + 'abilityList.csv'
+  makeMainCSV(ability_fname)
+
+if __name__ == '__main__':
+  main()

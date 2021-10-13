@@ -14,10 +14,6 @@ Entities and their attributes
 
   Type
     PRIMARY KEY: name (e.g. fire)
-    Double damage from (Types)
-    Neutral damage from (Types)
-    Half damage from (Types)
-    No damage from (Types)
 
   Move
     PRIMARY KEY: name

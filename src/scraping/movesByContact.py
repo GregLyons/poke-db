@@ -1,5 +1,5 @@
 import csv
-from utils import openBulbapediaLink, getDataPath, titleOrPascalToKebab
+from utils import openBulbapediaLink, getDataPath, parseName
 
 def makeMainCSV(fname):
   url = 'https://bulbapedia.bulbagarden.net/wiki/Contact'
@@ -11,7 +11,7 @@ def makeMainCSV(fname):
   writer.writerow(['Move Name', 'Note'])
 
   for row in rows:
-    note = '--'
+    note = ''
     moveName = ''
 
     for cell in row.find_all('td'):
@@ -25,7 +25,7 @@ def makeMainCSV(fname):
           note = 'Gen IV onward'
 
     if moveName:
-      writer.writerow([titleOrPascalToKebab(moveName), note])
+      writer.writerow([parseName(moveName), note])
 
   # These exceptions don't show up in the Bulbapedia table, so we add them manually
 
@@ -37,9 +37,12 @@ def makeMainCSV(fname):
   csvFile.close()
   return
 
-fname = getDataPath() + 'movesByContact.csv'
-makeMainCSV(fname)
+def main():
+  fname = getDataPath() + 'movesByContact.csv'
+  makeMainCSV(fname)
 
+if __name__ == '__main__':
+  main()
 
 # genOfMoveName = moveDict[inverseDict[moveName]]["Gen"]
 # # contact was introduced as a mechanic in gen 3

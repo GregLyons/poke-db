@@ -1,7 +1,7 @@
 import csv
 import os
 import re
-from utils import openBulbapediaLink, removeShadowMoves, getDataPath, titleOrPascalToKebab
+from utils import openBulbapediaLink, removeShadowMoves, getDataPath, parseName
 
 def makeMainCSV(label, url, writer):
   bs = openBulbapediaLink(url, 0, 10)
@@ -11,33 +11,37 @@ def makeMainCSV(label, url, writer):
   # the moves are listed after an h2 containing the text 'Pages in category', and they are links whose text has the string '(move)'
 
   for move in moves:
-    writer.writerow([titleOrPascalToKebab(label), titleOrPascalToKebab(move)])
+    writer.writerow([parseName(label), parseName(move)])
 
-labelsAndLinks = [
-  ['user-and-all-allies', 'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_target_the_user_and_all_allies'],
-  ['adjacent-foe', 'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_can_target_any_adjacent_foe_Pok%C3%A9mon'],
-  ['any-other', 'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_can_target_any_Pok%C3%A9mon'],
-  ['all-adjacent-foes', 'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_target_all_adjacent_foes'],
-  ['all-adjacent', 'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_target_all_adjacent_Pok%C3%A9mon'],
-  ['all-allies', 'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_target_all_allies'],
-  ['all-foes', 'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_target_all_foes'],
-  ['all', 'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_target_all_Pok%C3%A9mon']
-]
+def main():
+  labelsAndLinks = [
+    ['user-and-all-allies', 'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_target_the_user_and_all_allies'],
+    ['adjacent-foe', 'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_can_target_any_adjacent_foe_Pok%C3%A9mon'],
+    ['any-other', 'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_can_target_any_Pok%C3%A9mon'],
+    ['all-adjacent-foes', 'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_target_all_adjacent_foes'],
+    ['all-adjacent', 'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_target_all_adjacent_Pok%C3%A9mon'],
+    ['all-allies', 'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_target_all_allies'],
+    ['all-foes', 'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_target_all_foes'],
+    ['all', 'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_target_all_Pok%C3%A9mon']
+  ]
 
-fname = getDataPath() + 'movesByTargetWithShadowMoves.csv'
-csvFile = open(fname, 'w', newline='', encoding='utf-8')
-writer = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
-writer.writerow(['Target', 'Move Name'])
+  fname = getDataPath() + 'movesByTargetWithShadowMoves.csv'
+  csvFile = open(fname, 'w', newline='', encoding='utf-8')
+  writer = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
+  writer.writerow(['Target', 'Move Name'])
 
-# 
-for [label, link] in labelsAndLinks:
-  makeMainCSV(label, link, writer)
+  # 
+  for [label, link] in labelsAndLinks:
+    makeMainCSV(label, link, writer)
 
-csvFile.close()
+  csvFile.close()
 
-removeShadowMoves(fname, 'Target')
-os.remove(fname)
+  removeShadowMoves(fname, 'Target')
+  os.remove(fname)
 
-# acupressure targets user or adjacent ally
+  # acupressure targets user or adjacent ally
 
-# most moves are any adjacent 
+  # most moves are any adjacent 
+
+if __name__ == '__main__':
+  main()

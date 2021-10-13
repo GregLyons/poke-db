@@ -1,5 +1,5 @@
 import csv
-from utils import openBulbapediaLink, getDataPath, titleOrPascalToKebab
+from utils import openBulbapediaLink, getDataPath, parseName
 
 # columns are ID, name, Type, Category (physical/special/status), Contest Type, PP, Power, Accuracy, and Gen 
 def makeMoveListCSVandExtractNotes(fname):
@@ -39,7 +39,7 @@ def makeMoveListCSVandExtractNotes(fname):
           for note in notesInCell:
             notesWriter.writerow([moveID, headers[headerIndex].lower(), note.get('title')])
 
-        value = titleOrPascalToKebab(cell.get_text().strip('\n').rstrip('*').replace('—', '--'))
+        value = parseName(cell.get_text().strip('\n').rstrip('*').replace('—', ''))
         csvRow.append(value)
         headerIndex += 1
 
@@ -54,7 +54,7 @@ def makeMoveListCSVandExtractNotes(fname):
       csvRow = []
 
       for cell in row.findAll('td'):
-        value = titleOrPascalToKebab(cell.get_text().rstrip('\n'))
+        value = parseName(cell.get_text().rstrip('\n'))
         csvRow.append(value)
       
       # the G-max table only contains ID, name, and type, so we add in the other values
@@ -64,8 +64,11 @@ def makeMoveListCSVandExtractNotes(fname):
   
   return
 
-fname = getDataPath() + 'moveList.csv'
-makeMoveListCSVandExtractNotes(fname)
+def main():
+  fname = getDataPath() + 'moveList.csv'
+  makeMoveListCSVandExtractNotes(fname)
 
+if __name__ == '__main__':
+  main()
 
 

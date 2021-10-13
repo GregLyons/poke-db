@@ -65,18 +65,18 @@ def parseMoveListNote(note):
     else: 
       # Note is not one of the above cases, the majority of cases
       return [moveID, header, [value, latestGen, 'Standard']]
-  # except-clause for debugging
+  # except_clause for debugging
   except:
     print('Something went wrong when handling this description:')
     print(description)
     return None
 
-# a patch is of the form [value, gen], where gen is either 1-8 or "LGPE"
+# a patch is of the form [value, gen], where gen is either 1_8 or "LGPE"
 def comparePatches(patch1, patch2):
   # make LGPE last, otherwise sort by gen
-  if patch1[1] == "LGPE" or patch1[1] == "lgpe-only":
+  if patch1[1] == "LGPE" or patch1[1] == "lgpe_only":
     return 1
-  elif patch2[1] == "LGPE" or patch2[1] == "lgpe-only":
+  elif patch2[1] == "LGPE" or patch2[1] == "lgpe_only":
     return -1
   else:
     if patch1[1] > patch2[1]:
@@ -101,7 +101,7 @@ def makeInitialMoveDict(fname):
       if row["Move ID"] != "???":
         # "Type", "Power", and "Accuracy" are lists since those can potentially change across generations--Bulbapedia lists the latest values for each field, with the past values in notes
         isMax = row["Name"][:3] == "Max"
-        isGMax = row["Name"][:5] == "G-Max"
+        isGMax = row["Name"][:5] == "G_Max"
 
         moveDict[int(row["Move ID"])] = {
           "name": row["Name"],
@@ -113,10 +113,10 @@ def makeInitialMoveDict(fname):
           "accuracy": [[row["Accuracy"].rstrip('%'), 8]],
           "gen": genSymbolToNumber(row["Gen"]),
           "ohko": False,
-          "fixed-damage": None,
-          "lgpe-only": False,
-          "max-move": isMax,
-          "g-max-move": isGMax,
+          "fixed_damage": None,
+          "lgpe_only": False,
+          "max_move": isMax,
+          "g_max_move": isGMax,
           "priority": [],
           "effect": {},
           "status": {},
@@ -159,7 +159,7 @@ def makeInitialMoveDict(fname):
   fixedDamageMoves = [note for note in parsedNotes if note[2][0] != None and 'fixed' in note[2][0]]
   for fixedDamageMove in fixedDamageMoves:
     moveID = fixedDamageMove[0]
-    moveDict[int(moveID)]["fixed-damage"] = fixedDamageMove[2][0].rstrip('fixed')
+    moveDict[int(moveID)]["fixed_damage"] = fixedDamageMove[2][0].rstrip('fixed')
 
   # Value for move in LGPE [moveID, header, [value, "LGPE"]]
   LGPEMoveValues = [note for note in parsedNotes if note[2][1] == 'LGPE']
@@ -173,9 +173,9 @@ def makeInitialMoveDict(fname):
   for LGPEExclusive in LGPEExclusives:
     moveID = LGPEExclusive[0]
     header = LGPEExclusive[1]
-    moveDict[int(moveID)]["lgpe-only"] = True
+    moveDict[int(moveID)]["lgpe_only"] = True
     for header in ['type', 'pp', 'power', 'accuracy']:
-      moveDict[int(moveID)][header][0][1] = "lgpe-only"
+      moveDict[int(moveID)][header][0][1] = "lgpe_only"
 
   # Value for move which holds in LGPE and in other gens [moveID, header, [value, gen, "LGPE"]]
   # only includes Mega Drain 
@@ -197,16 +197,16 @@ def makeInitialMoveDict(fname):
   # For each move in initialMoveDict, rewrite the patches in "Type", "PP", "Power", and "Accuracy" fields so that the generation represents the starting gen rather than the ending gen of that value
   for key in moveDict:
     for innerKey in ['type', 'pp', 'power', 'accuracy']:
-      # Split up patch into LGPE-only and other
-      LGPEOnlyPatch = [patch for patch in moveDict[key][innerKey] if patch[1] == 'lgpe-only']
-      noLGPEOnlyPatches = [patch for patch in moveDict[key][innerKey] if patch[1] != 'lgpe-only']
+      # Split up patch into LGPE_only and other
+      LGPEOnlyPatch = [patch for patch in moveDict[key][innerKey] if patch[1] == 'lgpe_only']
+      noLGPEOnlyPatches = [patch for patch in moveDict[key][innerKey] if patch[1] != 'lgpe_only']
 
-      # If the move is LGPE-only, no change required
+      # If the move is LGPE_only, no change required
       if LGPEOnlyPatch == moveDict[key][innerKey]:
         continue
-      # If the move is not LGPE-only, change the non-LGPE-only patches
+      # If the move is not LGPE_only, change the non_LGPE_only patches
       else:
-        # If only one non-LGPE-only patch, set gen equal to when move was introduced
+        # If only one non_LGPE_only patch, set gen equal to when move was introduced
         if len(noLGPEOnlyPatches) == 1:
           patch = moveDict[key][innerKey][0]
           value = patch[0]
@@ -250,7 +250,7 @@ def addPriorityToMoveDict(fname, moveDict, inverseDict):
     for row in reader:
       if row["Move Name"] != 'none' and row["Move Name"] != 'fleeing':
         moveID = inverseDict[row["Move Name"]]
-        # we add duplicate entries for when moves maintain the same priority across generations--we will handle this in the next loop to account for zero-priority moves
+        # we add duplicate entries for when moves maintain the same priority across generations--we will handle this in the next loop to account for zero_priority moves
         moveDict[int(moveID)]["priority"].append([int(row["Priority"]), int(row["Generation"])])
 
   # handle priority zero moves
@@ -287,7 +287,7 @@ def addPriorityToMoveDict(fname, moveDict, inverseDict):
     moveDict[key]["priority"] = priorities_noDuplicates
   
   # lastly, we add Teleport, ID 100 with -6 priority in LGPE
-  moveDict[100]["priority"].append([-6, 'lgpe-only'])
+  moveDict[100]["priority"].append([-6, 'lgpe_only'])
 
   return
 
@@ -337,10 +337,10 @@ def addEffectToMoveDict(fname, moveDict, inverseDict):
   # EXCEPTIONS SECTION
   # not covered in the above .csv
   exceptions = [
-    ['suppresses-ability', ['core-enforcer', 'gastro-acid']],
-    ['use-different-stat', ['body-press', 'psyshock', 'psystrike', 'secret-sword']],
-    ['can-crash', ['high-jump-kick', 'jump-kick']],
-    ['changes-damage-category', ['light-that-burns-the-sky', 'photon-geyser', 'shell-side-arm']],
+    ['suppresses_ability', ['core_enforcer', 'gastro_acid']],
+    ['use_different_stat', ['body_press', 'psyshock', 'psystrike', 'secret_sword']],
+    ['can_crash', ['high_jump_kick', 'jump_kick']],
+    ['changes_damage_category', ['light_that_burns_the_sky', 'photon_geyser', 'shell_side_arm']],
   ]
   for exception in exceptions:
     effect = exception[0]
@@ -356,22 +356,22 @@ def addEffectToMoveDict(fname, moveDict, inverseDict):
       moveDict[key][effect] = [[True, moveDict[key]["gen"]]]
 
   # still more exceptions
-  moveDict[inverseDict['astonish']]["effect"]['anti-mini'] = [[True, 3], [False, 4]]
-  moveDict[inverseDict['dig']]["effect"]['hits-semi-invulnerable'] = [[False, 1], [True, 2]]
+  moveDict[inverseDict['astonish']]["effect"]['anti_mini'] = [[True, 3], [False, 4]]
+  moveDict[inverseDict['dig']]["effect"]['hits_semi_invulnerable'] = [[False, 1], [True, 2]]
 
-  # cannot-crit effect
+  # cannot_crit effect
   for key in moveDict.keys():
-    moveDict[key]["effect"]["cannot-crit"] = [[False, moveDict[key]["gen"]]]
+    moveDict[key]["effect"]["cannot_crit"] = [[False, moveDict[key]["gen"]]]
 
-  moveDict[inverseDict['flail']]["effect"]['cannot-crit'] = [[True, 2], [False, 3]]
-  moveDict[inverseDict['future-sight']]["effect"]['cannot-crit'] = [[True, 2], [False, 5]]
-  moveDict[inverseDict['reversal']]["effect"]['cannot-crit'] = [[True, 2], [False, 3]]
-  moveDict[inverseDict['doom-desire']]["effect"]['cannot-crit'] = [[True, 3], [False, 5]]
-  moveDict[inverseDict['spit-up']]["effect"]['cannot-crit'] = [[True, 3], [False, 4]]
+  moveDict[inverseDict['flail']]["effect"]['cannot_crit'] = [[True, 2], [False, 3]]
+  moveDict[inverseDict['future_sight']]["effect"]['cannot_crit'] = [[True, 2], [False, 5]]
+  moveDict[inverseDict['reversal']]["effect"]['cannot_crit'] = [[True, 2], [False, 3]]
+  moveDict[inverseDict['doom_desire']]["effect"]['cannot_crit'] = [[True, 3], [False, 5]]
+  moveDict[inverseDict['spit_up']]["effect"]['cannot_crit'] = [[True, 3], [False, 4]]
 
   # high crit ratio
-  moveDict[inverseDict['razor-wind']]["effect"]['has-high-crit-chance'] = [[False, 1], [True, 2]]
-  moveDict[inverseDict['sky-attack']]["effect"]['has-high-crit-chance'] = [[False, 1], [True, 3]]
+  moveDict[inverseDict['razor_wind']]["effect"]['high_crit_chance'] = [[False, 1], [True, 2]]
+  moveDict[inverseDict['sky_attack']]["effect"]['high_crit_chance'] = [[False, 1], [True, 3]]
 
   return
 
@@ -394,14 +394,14 @@ def addStatusToMoveDict(fname, moveDict, inverseDict):
 
   # EXCEPTIONS SECTION
   # Fire Blast had 30% to burn in Gen 1
-  moveDict[inverseDict["fire-blast"]]["status"]["burn"] = [
+  moveDict[inverseDict["fire_blast"]]["status"]["burn"] = [
     [30.0, 1], 
     [10.0, 2]
   ]
 
   # Tri Attack only applied statuses from Gen 2 on
   for status in ['burn', 'freeze', 'paralysis']:
-    moveDict[inverseDict["tri-attack"]]["status"][status] = [
+    moveDict[inverseDict["tri_attack"]]["status"][status] = [
       [0.0, 1],
       [6.67, 2]
     ]
@@ -413,7 +413,7 @@ def addStatusToMoveDict(fname, moveDict, inverseDict):
   ]
 
   # Poison Sting had 20% chance to poison in Gen 1
-  moveDict[inverseDict["poison-sting"]]["status"]["poison"] = [
+  moveDict[inverseDict["poison_sting"]]["status"]["poison"] = [
     [20.0, 1], 
     [30.0, 2]
   ]
@@ -430,7 +430,7 @@ def addStatusToMoveDict(fname, moveDict, inverseDict):
   ]
 
   # Sky Attack only causes Flinch starting in Gen 3
-  moveDict[inverseDict["sky-attack"]]["status"]["flinch"] = [
+  moveDict[inverseDict["sky_attack"]]["status"]["flinch"] = [
     [0, 1],
     [30, 3]
   ]
@@ -452,7 +452,7 @@ def addTargetToMoveDict(fname, moveDict, inverseDict):
       # if effect isn't in moveDict, add it and initialize as False
       if target not in moveDict[1]["target"]:
         for key in moveDict.keys():
-          moveDict[key]["target"] = [['any-adjacent', moveDict[key]["gen"]]]
+          moveDict[key]["target"] = [['any_adjacent', moveDict[key]["gen"]]]
       
       key = inverseDict[moveName]
       moveDict[key]["target"] = [[True, moveDict[key]["gen"]]]
