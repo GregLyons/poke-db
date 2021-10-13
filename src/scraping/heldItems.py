@@ -145,7 +145,7 @@ def incenseList(fname, mainWriter):
       spriteURL = cells[0].find('img')['src']
       name = parseName(cells[1].get_text().rstrip('\n'))
       gen = genSymbolToNumber(cells[2].get_text().rstrip('\n'))
-      effect = cells[3].get_text()
+      effect = cells[3].get_text().rstrip('\n')
 
       writer.writerow([gen, spriteURL, name, effect])
       mainWriter.writerow([name, 'incense', gen, spriteURL])
@@ -192,7 +192,7 @@ def statEnhancers(fname, mainWriter):
       for pokemonName in pokemonNames:
         # exception
         if pokemonName == 'Pikachu in a cap':
-          pokemonName = 'Cap Pikachu'
+          pokemonName = 'in-a-cap Pikachu'
 
         # in this table, form names come first, e.g. 'Alolan Marowak'--to parse them, we need to switch the order
         pokemonName = re.sub(r'(.+)\s(.+)', r'\2 (\1)', pokemonName)
@@ -200,7 +200,60 @@ def statEnhancers(fname, mainWriter):
         
         # write a row for each Pokemon
         writer.writerow([gen, spriteURL, itemName, pokemonName, effect, additionalEffect])
+        mainWriter.writerow([itemName, 'stat_enhancer', gen, spriteURL])
   return
+
+# 2 .csv's: one for general Z-moves, one for specific Pokemon
+# Columns for general are Sprite URL, Name, Z-Move, Type
+# Columns for specific are Sprite URL, Name, Pokemon Name, Base Move, Z-Move
+def zCrystals(fname, mainWriter):
+  with open(fname, 'w', newline='', encoding='utf-8') as generalCSV, open(fname.rstrip('.csv') + 'PokemonSpecific.csv', 'w', newline='', encoding='utf-8') as specificCSV:
+    generalWriter, specificWriter = csv.writer(generalCSV), csv.writer(specificCSV)
+
+    bs = openBulbapediaLink('https://bulbapedia.bulbagarden.net/wiki/Z-Crystal', 0, 10)
+
+    # general Z-crystals
+    generalWriter.writerow(['Sprite URL', 'Name', 'Z-Move', 'Type'])
+    dataRows = bs.find('span', {'id': 'For_each_type'}).find_next('table').find('tr').find_next_siblings('tr')
+
+    for row in dataRows:
+      # columns are sprite, name, z-move name, type
+      cells = row.find_all('td')
+
+      # sprite column has two sprites, and we want the second one
+      spriteURL = cells[0].find_all('img')[-1]['src']
+      pokemonName = parseName(cells[1].get_text().rstrip('\n'))
+      zMove = parseName(cells[2].get_text().rstrip('\n'))
+      type = parseName(cells[3].get_text().rstrip('\n'))
+
+      generalWriter.writerow([spriteURL, pokemonName, zMove, type])
+      mainWriter.writerow([pokemonName, 'z_crystal', 7, spriteURL])
+
+    # specific Z-crystals
+    specificWriter.writerow(['Sprite URL', 'Item Name', 'Pokemon Name', 'Base Move', 'Z-Move'])
+    dataRows = bs.find('span', {'id': 'For_specific_Pokémon'}).find_next('table').find('tr').find_next_siblings('tr')
+
+    for row in dataRows:
+      # columns are item sprite, item name, debut games, pokemon sprite (a <th>, so it is not counted), pokemon name, base move, z-move
+      cells = row.find_all('td')
+      spriteURL = cells[0].find_all('img')[-1]['src']
+      itemName = parseName(cells[1].get_text().rstrip('\n'))
+      baseMove = parseName(cells[4].get_text().rstrip('\n'))
+      zMove = parseName(cells[5].get_text().rstrip('\n'))
+
+      pokemonNames = cells[3].get_text().rstrip('\n').split(' or ')
+      for pokemonName in pokemonNames:
+        # Some exceptions for Pokemon name
+        if pokemonName == 'Alolan Raichu':
+          pokemonName == 'Raichu (Alolan)'
+        # Form name comes first, 'Necrozma' comes last
+        elif 'Necrozma' in pokemonName:
+          pokemonName = re.sub(r'(.*)(Necrozma)', r'\2 (\1)', pokemonName)
+        
+        pokemonName = parseName(pokemonName, 'pokemon')
+
+        specificWriter.writerow([spriteURL, itemName, pokemonName, baseMove, zMove])
+        mainWriter.writerow([itemName, 'z_crystal_specific', 7, spriteURL])
 
 # We go through the different types of items individually and collect the relevant data in separate .csv's
 # At the same time, we compile the basic item info in a main .csv file, whose columns are Name, Type, Gen Introduced, Sprite URL
@@ -211,24 +264,28 @@ def main():
 
     # berries
     # main list of berries
-    # berry_fname = getDataPath() + 'berryList.csv'
-    # berryList(berry_fname, mainWriter)
+    berry_fname = getDataPath() + 'berryList.csv'
+    berryList(berry_fname, mainWriter)
 
-    # # elemental type of berry for Natural Gift
-    # berry_type_fname = getDataPath() + 'berriesByType.csv'
-    # berryType(berry_type_fname)
+    # elemental type of berry for Natural Gift
+    berry_type_fname = getDataPath() + 'berriesByType.csv'
+    berryType(berry_type_fname)
 
-    # # memories, plates, and drives
-    # type_items_fname = getDataPath() + 'typeItems.csv'
-    # typeItems(type_items_fname, mainWriter)
+    # memories, plates, and drives
+    type_items_fname = getDataPath() + 'typeItems.csv'
+    typeItems(type_items_fname, mainWriter)
 
-    # # incenses
-    # incense_fname = getDataPath() + 'incenseList.csv'
-    # incenseList(incense_fname, mainWriter)
+    # incenses
+    incense_fname = getDataPath() + 'incenseList.csv'
+    incenseList(incense_fname, mainWriter)
 
-    # # stat-enhancing items
+    # stat-enhancing items
     statEnhancers_fname = getDataPath() + 'statEnhancers.csv'
     statEnhancers(statEnhancers_fname, mainWriter)
+
+    # Z-crystals
+    zCrystals_fname = getDataPath() + 'zCrystals.csv'
+    zCrystals(zCrystals_fname, mainWriter)
 
     # power items
 

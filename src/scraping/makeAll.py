@@ -9,6 +9,7 @@ import movesByTarget
 import pokemonByAbilities
 import pokemonByBaseStats
 import pokemonByType
+import heldItems
 
 # This file is for making all the .csv files at once rather than running each individual script
 if __name__ == '__main__':
@@ -44,3 +45,6 @@ if __name__ == '__main__':
 
   pokemonByType.main()
   print('Pokemon type data complete')
+
+  heldItems.main()
+  print('Held item data complete')
