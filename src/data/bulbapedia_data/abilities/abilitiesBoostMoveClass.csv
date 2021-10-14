@@ -1,0 +1,21 @@
+Ability Name,Boosts,Multiplier,Move Class
+adaptability,other,1.33,other
+iron_fist,punch,1.2,method
+reckless,other,1.2,other
+technician,other,1.5,other
+tinted_lens,other,2.0,other
+mega_launcher,pulse,1.5,method
+strong_jaw,bit,1.5,method
+tough_claws,other,1.3,other
+steelworker,steel,1.5,type
+neuroforce,other,1.25,other
+punk_rock,sound_based,1.3,method
+steely_spirit,steel,1.5,type
+transistor,electric,1.5,type
+dragons_maw,dragon,1.5,type
+blaze,fire,1.5,type
+overgrow,grass,1.5,type
+swarm,bug,1.5,type
+torrent,water,1.5,type
+dark_aura,dark,1.33,type
+fairy_aura,fairy,1.33,type

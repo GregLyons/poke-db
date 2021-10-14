@@ -90,7 +90,7 @@ def parseName(text, mode='normal'):
     text = re.sub(r'([a-z])([A-Z])', r'\1 \2', text)
     
     # replace spaces with underscores and convert to lowercase
-    return text.replace(' ', '_').lower()
+    return text.replace(' ', '_').lower().strip('_')
 
   elif mode == 'pokemon':
     # extract species and form data (latter in parentheses, if present)
