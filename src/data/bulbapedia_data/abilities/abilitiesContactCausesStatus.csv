@@ -1,0 +1,8 @@
+Ability Name,Status,Probability
+cute_charm,infatuation,30.0
+effect_spore,poison,9.0
+effect_spore,paralysis,10.0
+effect_spore,sleep,11.0
+flame_body,burn,30.0
+poison_point,poison,30.0
+static,paralysis,30.0

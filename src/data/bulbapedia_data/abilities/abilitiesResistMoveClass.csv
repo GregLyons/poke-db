@@ -1,0 +1,15 @@
+Ability Name,Resists,Modifier,Move Class
+levitate,ground,0.0,type
+soundproof,sound,0.0,method
+wonder_guard,other,0.0,type
+bulletproof,ball,0.0,method
+thick_fat,fire,0.5,type
+thick_fat,ice,0.5,type
+heatproof,fire,0.5,type
+lightning_rod,electric,0.0,type
+storm_drain,water,0.0,type
+motor_drive,electric,0.0,type
+sap_sipper,grass,0.0,type
+dry_skin,water,0.0,type
+volt_absorb,electric,0.0,type
+water_absorb,water,0.0,type

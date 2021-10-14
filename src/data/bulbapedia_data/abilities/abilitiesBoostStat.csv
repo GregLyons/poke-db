@@ -5,9 +5,9 @@ sand_rush,speed,2.0
 slush_rush,speed,2.0
 dauntless_shield,attack,+1
 intrepid_sword,attack,+1
-guts,attack*,1.5
+guts,attack,1.5
 marvel_scale,defense,1.5
-quick_feet,speed*,1.5
+quick_feet,speed,1.5
 flare_boost,special_attack,1.5
 toxic_boost,attack,1.5
 huge_power,attack,2.0
@@ -16,8 +16,10 @@ fur_coat,defense,2.0
 ice_scales,special_defense,2.0
 defiant,attack,+2
 competitive,special_attack,+2
-defiant,v,+1
-competitive,vi,+1
+justified,attack,+1
+rattled,speed,+1
+water_compaction,defense,+2
+steam_engine,speed,+6
 lightning_rod,special_attack,+1
 storm_drain,special_attack,+1
 minus,special_attack,1.5

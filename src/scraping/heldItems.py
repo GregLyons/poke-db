@@ -3,7 +3,7 @@ from utils import openBulbapediaLink, getDataBasePath, parseName, genSymbolToNum
 import re
 
 # TODO colored orbs for Kyogre and Groudon
-# exceptions to keep in mind: Soul Dew, Eviolite
+# exceptions to keep in mind: Soul Dew, Eviolite, berries which restore HP but may confuse
 
 # Parses effect description for berries
 def parseBerryEffect(berryName, description, statusWriter, typeWriter, statWriter, gen2Writer, gen2 = False):

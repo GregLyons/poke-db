@@ -1,0 +1,22 @@
+Ability Name,Status
+immunity,poison
+inner_focus,flinch
+insomnia,sleep
+vital_spirit,sleep
+limber,paralysis
+magma_armor,freeze
+own_tempo,confusion
+oblivious*,infatuation_taunt*
+water_veil,burn
+natural_cure,all
+aroma_veil,infatuation
+aroma_veil,disable
+aroma_veil,torment
+aroma_veil,encore
+flower_veil,non_volatile
+sweet_veil,non_volatile
+natural_cure,burn
+natural_cure,paralysis
+natural_cure,freeze
+natural_cure,poison
+natural_cure,sleep
