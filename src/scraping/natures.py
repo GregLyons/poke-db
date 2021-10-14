@@ -1,5 +1,5 @@
 import csv
-from utils import openBulbapediaLink, getDataPath, parseName
+from utils import openBulbapediaLink, getDataBasePath, parseName
 
 # Columns are Nature Name, Increased Stat, Decreased Stat, Favorite Flavor, Disliked Flavor
 def natureList(fname):
@@ -24,7 +24,8 @@ def natureList(fname):
   return
 
 def main():
-  nature_fname = getDataPath() + 'natureList.csv'
+  dataPath = getDataBasePath() + 'natures\\'
+  nature_fname = dataPath + 'natureList.csv'
   natureList(nature_fname)
 
   return

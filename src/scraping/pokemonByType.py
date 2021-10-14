@@ -1,5 +1,5 @@
 import csv
-from utils import openBulbapediaLink, getDataPath, parseName, genSymbolToNumber
+from utils import openBulbapediaLink, getDataBasePath, parseName, genSymbolToNumber
 
 # Columns are Gen, National Dex number, species name, Pokemon name, type 1, and type 2 (possibly equals type 1)
 def makePokemonTypeCSV(fname):
@@ -149,7 +149,8 @@ def addRegionalForms(writer):
   return
 
 def main():
-  fname = getDataPath() + 'pokemonByType.csv'
+  dataPath = getDataBasePath() + 'pokemon\\'
+  fname = dataPath + 'pokemonByType.csv'
   makePokemonTypeCSV(fname)
 
 if __name__ == '__main__':

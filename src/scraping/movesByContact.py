@@ -1,5 +1,5 @@
 import csv
-from utils import openBulbapediaLink, getDataPath, parseName
+from utils import openBulbapediaLink, getDataBasePath, parseName
 
 def makeMainCSV(fname):
   url = 'https://bulbapedia.bulbagarden.net/wiki/Contact'
@@ -38,7 +38,8 @@ def makeMainCSV(fname):
   return
 
 def main():
-  fname = getDataPath() + 'movesByContact.csv'
+  dataPath = getDataBasePath() + 'moves\\'
+  fname = dataPath + 'movesByContact.csv'
   makeMainCSV(fname)
 
 if __name__ == '__main__':

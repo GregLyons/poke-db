@@ -1,5 +1,5 @@
 import csv
-from utils import openBulbapediaLink, getDataPath, parseName
+from utils import openBulbapediaLink, getDataBasePath, parseName
 
 # converts gen symbol to number
 def genSymbolToNumber(roman):
@@ -76,7 +76,8 @@ def makePriorityCSV(fname):
   csvFile.close()
 
 def main():
-  priority_fname = getDataPath() + 'movesByPriority.csv'
+  dataPath = getDataBasePath() + 'moves\\'
+  priority_fname = dataPath + 'movesByPriority.csv'
   makePriorityCSV(priority_fname)
 
 if __name__ == '__main__':

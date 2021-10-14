@@ -1,5 +1,5 @@
 import csv
-from utils import openBulbapediaLink, getDataPath, parseName
+from utils import openBulbapediaLink, getDataBasePath, parseName
 
 def makeEvolutionChainCSV(fname):
   with open(fname, 'w', newline='', encoding='utf-8') as evolutionFamilyCSV:
@@ -96,7 +96,8 @@ def makeEvolutionChainCSV(fname):
   return 
 
 def main():
-  fname = getDataPath() + 'evolutionChains.csv'
+  dataPath = getDataBasePath() + 'pokemon\\'
+  fname = dataPath + 'evolutionChains.csv'
   makeEvolutionChainCSV(fname)
 
 if __name__ == '__main__':

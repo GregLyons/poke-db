@@ -1,5 +1,5 @@
 import csv
-from utils import openBulbapediaLink, parseName, getDataPath
+from utils import openBulbapediaLink, parseName, getDataBasePath
 
 # Makes a .csv for each generation's type matchup chart; rows are attacking types, columns are defending types
 def typeMatchups(fnamePrefix):
@@ -32,7 +32,8 @@ def typeMatchups(fnamePrefix):
   return
 
 def main():
-  typeMatchups_fnamePrefix = getDataPath() + 'typeMatchups'
+  dataPath = getDataBasePath() + 'types\\'
+  typeMatchups_fnamePrefix = dataPath + 'typeMatchupsGen'
   typeMatchups(typeMatchups_fnamePrefix)
   return
 

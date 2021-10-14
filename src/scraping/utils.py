@@ -73,8 +73,8 @@ def removeShadowMoves(fname, firstHeader):
       if row["Move Name"] not in shadowMoves:
         writer.writerow([row[firstHeader], row['Move Name']])
 
-def getDataPath():
-  return '..\\data\\'
+def getDataBasePath():
+  return '..\\data\\bulbapedia_data\\'
 
 # parse names in different forms from Bulbapedia and Smogon API to a common, snake_case form
 def parseName(text, mode='normal'):

@@ -1,7 +1,7 @@
 import csv
 import os
 import re
-from utils import openBulbapediaLink, removeShadowMoves, getDataPath, parseName
+from utils import openBulbapediaLink, removeShadowMoves, getDataBasePath, parseName
 
 def makeMainCSV(label, url, writer):
   bs = openBulbapediaLink(url, 0, 10)
@@ -25,7 +25,9 @@ def main():
     ['all', 'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_target_all_Pok%C3%A9mon']
   ]
 
-  fname = getDataPath() + 'movesByTargetWithShadowMoves.csv'
+  dataPath = getDataBasePath() + 'moves\\'
+
+  fname = dataPath + 'movesByTargetWithShadowMoves.csv'
   csvFile = open(fname, 'w', newline='', encoding='utf-8')
   writer = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
   writer.writerow(['Target', 'Move Name'])

@@ -1,6 +1,6 @@
 import os
 import csv
-from utils import openBulbapediaLink, removeShadowMoves, getDataPath, parseName
+from utils import openBulbapediaLink, removeShadowMoves, getDataBasePath, parseName
 import re
 
 # columns are effect name and move name
@@ -126,7 +126,9 @@ def main():
     'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_have_special_type_effectiveness_properties']
   ]
 
-  fname = getDataPath() + 'movesByEffectWithShadowMoves.csv'
+  dataPath = getDataBasePath() + 'moves\\'
+
+  fname = dataPath + 'movesByEffectWithShadowMoves.csv'
   csvFile = open(fname, 'w', newline='', encoding='utf-8')
   writer = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
   writer.writerow(['Effect', 'Move Name'])

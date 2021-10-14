@@ -1,19 +1,65 @@
 import csv
-from utils import openBulbapediaLink, getDataPath, parseName, genSymbolToNumber
+from utils import openBulbapediaLink, getDataBasePath, parseName, genSymbolToNumber
 import re
 
 # TODO colored orbs for Kyogre and Groudon
 # exceptions to keep in mind: Soul Dew, Eviolite
 
-# Columns are Gen Introduced, Number, Sprite URL, Name, Effect (string)
-def berryList(fname, mainWriter):
-  with open(fname, 'w', newline='', encoding='utf-8') as berryCSV:
-    writer = csv.writer(berryCSV)
-    
-    bs = openBulbapediaLink('https://bulbapedia.bulbagarden.net/wiki/Berry', 0, 10)
-    dataRows = bs.find('span', {'id': 'Generation_III_onwards'}).find_next('table').find_next('table').find('tr').find_next_siblings('tr')
+# Parses effect description for berries
+def parseBerryEffect(berryName, description, statusWriter, typeWriter, statWriter, gen2Writer, gen2 = False):
+  if 'Cures' in description:
+    # the Gen 2 berries also cure status, so we have to check for that
+    status = parseName(description.replace('Cures ', ''))
+    if berryName not in ['lum_berry', 'miracle_berry']:
+      if gen2:
+        gen2Writer.writerow([berryName, status])
+      else:
+        statusWriter.writerow([berryName, status])
+    elif gen2:
+      statusWriter.writerow([berryName, 'any'])
+    else:
+      statusWriter.writerow([berryName, 'any'])
+  elif 'Halves' in description:
+    if berryName != 'chilan_berry':
+      # for some reason, stripping '-type' removes an ending letter on some of the types, e.g. 'Fairy-type' -> 'fair', so we do it this weird way instead
+      type = parseName(re.search(r'effective\s.*-type', description).group().lstrip('effective').rstrip('type').lstrip()).rstrip('_')
+      typeWriter.writerow([berryName, type])
+    else:
+      typeWriter.writerow([berryName, 'normal'])
+  elif 'Raises' in description:
+    if berryName not in ['starf_berry', 'micle_berry']:
+      stat = parseName(re.search(r'\s.*\swhen', description).group().rstrip('when').strip())
+      statWriter.writerow([berryName, stat])
+    elif berryName == 'starf_berry':
+      statWriter.writerow([berryName, 'random'])
+    else:
+      statWriter.writerow([berryName, 'accuracy'])
+  else:
+    return 'Not handled'
 
-    writer.writerow(['Gen', 'Number', 'Sprite URL', 'Name', 'Effect'])
+# Writes several .csv files for the different berry properties
+# Columns of the main berry list .csv are Gen Introduced, Number, Sprite URL, Name, Effect (string)
+def berryList(fname, mainWriter):
+  fnamePrefix = fname.rstrip('.csv')
+
+  # we will handle berries which restore HP separately
+  with open(fname, 'w', newline='', encoding='utf-8') as berryCSV, open(fnamePrefix + 'StatusHeal.csv', 'w', newline='', encoding='utf-8') as statusHealCSV, open(fnamePrefix + 'TypeResist.csv', 'w', newline='', encoding='utf-8') as typeResistCSV, open(fnamePrefix + 'StatBoost.csv', 'w', newline='', encoding='utf-8') as statBoostCSV, open(fnamePrefix + 'Gen2.csv', 'w', newline='', encoding='utf-8') as gen2CSV:
+    writer = csv.writer(berryCSV)
+    writer.writerow(['Gen', 'Number', 'Sprite URL', 'Berry Name', 'Effect'])
+
+    # write the headers for the other .csv's
+    statusWriter = csv.writer(statusHealCSV)
+    statusWriter.writerow(['Berry Name', 'Status Healed'])
+    typeWriter = csv.writer(typeResistCSV)
+    typeWriter.writerow(['Berry Name', 'Type Resisted'])
+    statWriter = csv.writer(statBoostCSV)
+    statWriter.writerow(['Berry Name', 'Stat Boosted'])
+    gen2Writer = csv.writer(gen2CSV)
+    gen2Writer.writerow(['Berry Name', 'Heals'])
+
+    bs = openBulbapediaLink('https://bulbapedia.bulbagarden.net/wiki/Berry', 0, 10)
+    dataRows = bs.find('span', {'id': 'Generation_III_onwards'}).find_next('table').find_next('table').find_all('tr')[1:]
+
     
     for row in dataRows:
       # columns are Gen, Number, Sprite, Name, Effects, followed by sprites of the trees
@@ -23,11 +69,39 @@ def berryList(fname, mainWriter):
       gen = genSymbolToNumber(cells[0].get_text().rstrip('\n'))
       number = cells[1].get_text().rstrip('\n').replace('—', '').lstrip('0')
       spriteURL = cells[2].find('img')['src']
-      name = parseName(cells[3].get_text().rstrip('\n'))
+      berryName = parseName(cells[3].get_text().rstrip('\n'))
       effect = cells[4].get_text().rstrip('\n').replace('—', '')
+
+      # write to the other .csv files according to the effect description
+      parseBerryEffect(berryName, effect, statusWriter, typeWriter, statWriter, gen2Writer)
       
-      writer.writerow([gen, number, spriteURL, name, effect])
-      mainWriter.writerow([name, 'berry', gen, spriteURL])
+      writer.writerow([gen, number, spriteURL, berryName, effect])
+      mainWriter.writerow([berryName, 'berry', gen, spriteURL])
+
+    # finally, handle the Gen 2 berries, which are in another table
+
+    dataRows = bs.find(id='Generation_II').find_next('table').find_all('tr')[1:]
+    for row in dataRows:
+      cells = row.find_all('td')
+      # need to do some additional processing on the berry names since some don't have spaces
+      berryName = cells[0].get_text().rstrip('\n')
+
+      # shorter names do have spaces, or they're just 'Berry'
+      if ' ' in berryName or berryName == 'Berry':
+        berryName = parseName(berryName)
+      # if the berry name is 12 letters long, then there are no spaces due to limitations on the Gameboy
+      elif 'PSN' in berryName or 'PRZ' in berryName:
+        berryName = parseName(berryName[:3] + ' ' + berryName[3:7] + ' ' + berryName[7:])
+      else:
+        berryName = parseName(berryName[:7] + ' ' + berryName[7:])
+
+      effect = cells[1].get_text().rstrip('\n')
+      parsedEffect = parseBerryEffect(berryName, effect, statusWriter, typeWriter, statWriter, gen2Writer, True)
+      if parsedEffect == 'Not handled':
+        gen2Writer.writerow([berryName, effect])
+
+      # there are no sprites for the Gen 2 berries
+      mainWriter.writerow([berryName, 'berry', gen, ''])
   return
 
 # Elemental type of Berry for Natural Gift; columns are Name, Type, Power in Gens IV-V, Power in Gen VI
@@ -403,43 +477,44 @@ def powerItems(mainWriter):
 # We go through the different types of items individually and collect the relevant data in separate .csv's
 # At the same time, we compile the basic item info in a main .csv file, whose columns are Name, Type, Gen Introduced, Sprite URL
 def main():
-  main_fname = getDataPath() + 'heldItemList.csv'
+  dataPath = getDataBasePath() + 'items\\'
+  main_fname = dataPath + 'heldItemList.csv'
   with open(main_fname, 'w', newline='', encoding='utf-8') as mainCSV:
     mainWriter = csv.writer(mainCSV)
 
     # berries
     # main list of berries
-    berry_fname = getDataPath() + 'berryList.csv'
+    berry_fname = dataPath + 'berryList.csv'
     berryList(berry_fname, mainWriter)
 
     # elemental type of berry for Natural Gift
-    berry_type_fname = getDataPath() + 'berriesByType.csv'
+    berry_type_fname = dataPath + 'berriesByType.csv'
     berryType(berry_type_fname)
 
     # memories, plates, and drives
-    type_items_fname = getDataPath() + 'typeItems.csv'
+    type_items_fname = dataPath + 'typeItems.csv'
     typeItems(type_items_fname, mainWriter)
 
     # incenses
-    incense_fname = getDataPath() + 'incenseList.csv'
+    incense_fname = dataPath + 'incenseList.csv'
     incenseList(incense_fname, mainWriter)
 
     # stat-enhancing items
-    statEnhancers_fname = getDataPath() + 'statEnhancers.csv'
+    statEnhancers_fname = dataPath + 'statEnhancers.csv'
     statEnhancers(statEnhancers_fname, mainWriter)
 
     # Z-crystals
-    zCrystals_fname = getDataPath() + 'zCrystals.csv'
+    zCrystals_fname = dataPath + 'zCrystals.csv'
     zCrystals(zCrystals_fname, mainWriter)
 
     # Mega stones
-    megaStones_fname = getDataPath() + 'megaStones.csv'
+    megaStones_fname = dataPath + 'megaStones.csv'
     megaStones(megaStones_fname, mainWriter)
 
     # power items
     powerItems(mainWriter)
 
-    typeEnhancers_fname = getDataPath() + 'typeEnhancers.csv'
+    typeEnhancers_fname = dataPath + 'typeEnhancers.csv'
     typeEnhancers(typeEnhancers_fname, mainWriter)
 
   return

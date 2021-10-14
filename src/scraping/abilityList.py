@@ -1,4 +1,4 @@
-from utils import openBulbapediaLink, getDataPath, parseName
+from utils import openBulbapediaLink, getDataBasePath, parseName
 import csv
 
 # Columns are Ability ID, Ability Name, Ability Description, and Gen Introduced
@@ -39,7 +39,8 @@ def makeMainCSV(fname):
   return  
 
 def main():
-  ability_fname = getDataPath() + 'abilityList.csv'
+  dataPath = getDataBasePath() + 'abilities\\'
+  ability_fname = dataPath + 'abilityList.csv'
   makeMainCSV(ability_fname)
 
 if __name__ == '__main__':

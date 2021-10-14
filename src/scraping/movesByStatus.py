@@ -1,5 +1,5 @@
 import csv
-from utils import openBulbapediaLink, getDataPath, parseName
+from utils import openBulbapediaLink, getDataBasePath, parseName
 
 # Columns are status caused, move name, type, category, probability of inflicting status, power, accuracy, and notes
 
@@ -181,11 +181,12 @@ def makeStatusNotesCSV(fname, notes):
 
 def main():
   # Make main .csv and extract notes
-  main_fname = getDataPath() + 'movesByStatus.csv'
+  dataPath = getDataBasePath() + 'moves\\'
+  main_fname = dataPath + 'movesByStatus.csv'
   notes = makeStatusCSVAndExtractNotes(main_fname)
 
   # Make notes .csv
-  notes_fname = getDataPath() + 'movesByStatusNotes.csv'
+  notes_fname = dataPath + 'movesByStatusNotes.csv'
   makeStatusNotesCSV(notes_fname, notes)
 
 if __name__ == '__main__':

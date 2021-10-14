@@ -1,6 +1,6 @@
 import csv
 import re
-from utils import openBulbapediaLink, genSymbolToNumber, dexNumberToGen, getDataPath, parseName
+from utils import openBulbapediaLink, genSymbolToNumber, dexNumberToGen, getDataBasePath, parseName
 
 # The event Blue-Striped Basculin with Rock Head is not included. My apologies for any inconvenience.
 
@@ -114,47 +114,9 @@ def makeAbilityCSVandExtractNotes(fname):
 
   return
 
-def makeInitialAbilityDict(fname, unparsedNotes):
-  initialAbilityDict = {}
-
-  with open(fname, encoding='utf-8') as abilitiesCSV:
-    reader = csv.DictReader(abilitiesCSV)
-
-    for row in reader:
-      if row["Pokemon"] != "Pokemon":
-        initialAbilityDict[row["Pokemon"]] = {
-          "Dex Number": row["Dex Number"],
-          "Sprite URL": row["Sprite URL"],
-          "Ability 1": [row["Ability 1"], max(int(row['Introduced']), 3)],
-          "Ability 2": [row["Ability 2"], max(int(row['Introduced']), 3)],
-          "Hidden": [row["Hidden"], max(int(row['Introduced']), 5)]
-        }
-
-    # Go through majority of notes; handle Gengar
-    for note in unparsedNotes:
-      action = parseNote(note)
-      pokemonName = note[0]
-      header = note[1]
-
-      # action denotes adding a new ability, ['New Ability', gen]
-      if action[0] == 'New ability':
-        startGen = action[1]
-
-        initialAbilityDict[pokemonName][header][1] = startGen
-
-      # action denotes change in hidden ability, ['Changed hidden ability', ability, startGen, endGen]
-      elif action[0] == 'Changed hidden ability':
-        currentHiddenAbility = initialAbilityDict[pokemonName]["Hidden"][0]
-        oldHiddenAbility = action[1]
-        startGen = action[2]
-        endGen = action[3]
-        # the currently listed hidden ability starts in endGen + 1
-        initialAbilityDict[pokemonName]["Hidden"] = [[oldHiddenAbility, startGen], [currentHiddenAbility, endGen + 1]]
-    
-    return initialAbilityDict
-
 def main():
-  fname = getDataPath() + f'pokemonByAbilities.csv'
+  dataPath = getDataBasePath() + 'pokemon\\'
+  fname = dataPath + f'pokemonByAbilities.csv'
   makeAbilityCSVandExtractNotes(fname)
 
 if __name__ == '__main__':
