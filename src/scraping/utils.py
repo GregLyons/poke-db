@@ -18,6 +18,7 @@ def openBulbapediaLink(url, retryCount, retryMax):
 
 # converts roman numeral for gen to arabic numeral
 def genSymbolToNumber(roman):
+  roman = roman.rstrip('\n')
   if roman.upper() == 'I':
     return 1
   elif roman.upper() == 'II':
@@ -77,6 +78,7 @@ def getDataPath():
 
 # parse names in different forms from Bulbapedia and Smogon API to a common, snake_case form
 def parseName(text, mode='normal'):
+  text = text.rstrip('\n')
   if mode == 'normal':
     # hyphens to underscores
     text = text.replace('-', '_')

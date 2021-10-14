@@ -1,17 +1,22 @@
-Gen,Sprite URL,Name,Pokemon,Effect,Additional Effect
-3,//cdn2.bulbagarden.net/upload/a/a9/Bag_Deep_Sea_Scale_Sprite.png,deep_sea_scale,clamperl,Doubles Special Defense.,Evolves Clamperl into Gorebyss when held and traded.
-3,//cdn2.bulbagarden.net/upload/2/28/Bag_Deep_Sea_Tooth_Sprite.png,deep_sea_tooth,clamperl,Doubles Special Attack.,Evolves Clamperl into Huntail when held and traded.
-2,//cdn2.bulbagarden.net/upload/2/20/Bag_Leek_Sprite.png,leek,farfetchd,Increases critical hit ratio by two stages.,
-2,//cdn2.bulbagarden.net/upload/2/20/Bag_Leek_Sprite.png,leek,farfetchd_galar,Increases critical hit ratio by two stages.,
-2,//cdn2.bulbagarden.net/upload/2/20/Bag_Leek_Sprite.png,leek,sirfetchd,Increases critical hit ratio by two stages.,
-2,//cdn2.bulbagarden.net/upload/8/80/Bag_Light_Ball_Sprite.png,light_ball,pikachu,Doubles Attack and Special Attack.,"From Pokémon Emerald onward, if held by either parent of a Pichu when the Egg is produced,the Pichu that hatches will have the move Volt Tackle."
-2,//cdn2.bulbagarden.net/upload/8/80/Bag_Light_Ball_Sprite.png,light_ball,pikachu_cosplay,Doubles Attack and Special Attack.,"From Pokémon Emerald onward, if held by either parent of a Pichu when the Egg is produced,the Pichu that hatches will have the move Volt Tackle."
-2,//cdn2.bulbagarden.net/upload/8/80/Bag_Light_Ball_Sprite.png,light_ball,pikachu_in_a_cap,Doubles Attack and Special Attack.,"From Pokémon Emerald onward, if held by either parent of a Pichu when the Egg is produced,the Pichu that hatches will have the move Volt Tackle."
-2,//cdn2.bulbagarden.net/upload/1/12/Bag_Lucky_Punch_Sprite.png,lucky_punch,chansey,Increases critical hit ratio by two stages.,
-2,//cdn2.bulbagarden.net/upload/2/24/Bag_Metal_Powder_Sprite.png,metal_powder,ditto,Doubles Defense.,"From Generation III onward, does not work when transformed."
-4,//cdn2.bulbagarden.net/upload/8/8f/Bag_Quick_Powder_Sprite.png,quick_powder,ditto,Doubles Speed.,Does not work when transformed.
-3,//cdn2.bulbagarden.net/upload/c/cd/Bag_Soul_Dew_Sprite.png,soul_dew,latias,"Prior to Generation VII, increased both the Special Attack and Special Defense by 50%.","From Generation VII onward, increases the power of Psychic- and Dragon-type moves by 20%."
-3,//cdn2.bulbagarden.net/upload/c/cd/Bag_Soul_Dew_Sprite.png,soul_dew,latios,"Prior to Generation VII, increased both the Special Attack and Special Defense by 50%.","From Generation VII onward, increases the power of Psychic- and Dragon-type moves by 20%."
-2,//cdn2.bulbagarden.net/upload/5/58/Bag_Thick_Club_Sprite.png,thick_club,cubone,Doubles Attack.,
-2,//cdn2.bulbagarden.net/upload/5/58/Bag_Thick_Club_Sprite.png,thick_club,marowak,Doubles Attack.,
-2,//cdn2.bulbagarden.net/upload/5/58/Bag_Thick_Club_Sprite.png,thick_club,marowak_alola,Doubles Attack.,
+Gen,Sprite URL,Name,Pokemon,Effect,Additional Effect,Stat 1,Stat 2,Modifier
+3,//cdn2.bulbagarden.net/upload/a/a9/Bag_Deep_Sea_Scale_Sprite.png,deep_sea_scale,clamperl,Doubles Special Defense.,Evolves Clamperl into Gorebyss when held and traded.,defense,special_defense,2.0
+3,//cdn2.bulbagarden.net/upload/2/28/Bag_Deep_Sea_Tooth_Sprite.png,deep_sea_tooth,clamperl,Doubles Special Attack.,Evolves Clamperl into Huntail when held and traded.,attack,special_attack,2.0
+5,//cdn2.bulbagarden.net/upload/5/5f/Bag_Eviolite_Sprite.png,eviolite,,Raises Defense and Special Defense by 50%.,"Does not affect alternate forms of Pokémon that prevent evolution, such as Cosplay Pikachu.",attack,special_attack,1.5
+2,//cdn2.bulbagarden.net/upload/2/20/Bag_Leek_Sprite.png,leek,farfetchd,Increases critical hit ratio by two stages.,,critical_hit_ratio,,+2
+2,//cdn2.bulbagarden.net/upload/2/20/Bag_Leek_Sprite.png,leek,farfetchd_galar,Increases critical hit ratio by two stages.,,critical_hit_ratio,,+2
+2,//cdn2.bulbagarden.net/upload/2/20/Bag_Leek_Sprite.png,leek,sirfetchd,Increases critical hit ratio by two stages.,,critical_hit_ratio,,+2
+2,//cdn2.bulbagarden.net/upload/8/80/Bag_Light_Ball_Sprite.png,light_ball,pikachu,Doubles Attack and Special Attack.,"From Pokémon Emerald onward, if held by either parent of a Pichu when the Egg is produced,the Pichu that hatches will have the move Volt Tackle.",attack,special_attack,2.0
+2,//cdn2.bulbagarden.net/upload/8/80/Bag_Light_Ball_Sprite.png,light_ball,pikachu_cosplay,Doubles Attack and Special Attack.,"From Pokémon Emerald onward, if held by either parent of a Pichu when the Egg is produced,the Pichu that hatches will have the move Volt Tackle.",attack,special_attack,2.0
+2,//cdn2.bulbagarden.net/upload/8/80/Bag_Light_Ball_Sprite.png,light_ball,pikachu_in_a_cap,Doubles Attack and Special Attack.,"From Pokémon Emerald onward, if held by either parent of a Pichu when the Egg is produced,the Pichu that hatches will have the move Volt Tackle.",attack,special_attack,2.0
+2,//cdn2.bulbagarden.net/upload/1/12/Bag_Lucky_Punch_Sprite.png,lucky_punch,chansey,Increases critical hit ratio by two stages.,,critical_hit_ratio,,+2
+2,//cdn2.bulbagarden.net/upload/2/24/Bag_Metal_Powder_Sprite.png,metal_powder,ditto,Doubles Defense.,"From Generation III onward, does not work when transformed.",defense,,2.0
+4,//cdn2.bulbagarden.net/upload/8/8f/Bag_Quick_Powder_Sprite.png,quick_powder,ditto,Doubles Speed.,Does not work when transformed.,speed,,2.0
+3,//cdn2.bulbagarden.net/upload/c/cd/Bag_Soul_Dew_Sprite.png,soul_dew,latias,"Prior to Generation VII, increased both the Special Attack and Special Defense by 50%.","From Generation VII onward, increases the power of Psychic- and Dragon-type moves by 20%.",attack,,1.5
+3,//cdn2.bulbagarden.net/upload/c/cd/Bag_Soul_Dew_Sprite.png,soul_dew,latios,"Prior to Generation VII, increased both the Special Attack and Special Defense by 50%.","From Generation VII onward, increases the power of Psychic- and Dragon-type moves by 20%.",attack,,1.5
+2,//cdn2.bulbagarden.net/upload/5/58/Bag_Thick_Club_Sprite.png,thick_club,cubone,Doubles Attack.,,attack,,2.0
+2,//cdn2.bulbagarden.net/upload/5/58/Bag_Thick_Club_Sprite.png,thick_club,marowak,Doubles Attack.,,attack,,2.0
+2,//cdn2.bulbagarden.net/upload/5/58/Bag_Thick_Club_Sprite.png,thick_club,marowak_alola,Doubles Attack.,,attack,,2.0
+3,https://cdn2.bulbagarden.net/upload/0/09/Dream_Choice_Band_Sprite.png,choice_band,,An item to be held by a Pokémon. This curious headband boosts Attack but only allows the use of one move.,,attack,,1.5
+4,https://cdn2.bulbagarden.net/upload/6/6a/Dream_Choice_Scarf_Sprite.png,choice_specs,,An item to be held by a Pokémon. This curious scarf boosts Speed but only allows the use of one move.,,special_attack,,1.5
+4,https://cdn2.bulbagarden.net/upload/e/e6/Dream_Choice_Specs_Sprite.png,choice_scarf,,An item to be held by a Pokémon. These curious glasses boost Sp. Atk but only allow the use of one move.,,speed,,1.5
+6,https://cdn2.bulbagarden.net/upload/b/b1/Dream_Assault_Vest_Sprite.png,assault_vest,,An item to be held by a Pokémon. This offensive vest raises Sp. Def but prevents the use of status moves.,,special_defense,,1.5

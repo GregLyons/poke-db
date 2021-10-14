@@ -2,6 +2,9 @@ import csv
 from utils import openBulbapediaLink, getDataPath, parseName, genSymbolToNumber
 import re
 
+# TODO colored orbs for Kyogre and Groudon
+# exceptions to keep in mind: Soul Dew, Eviolite
+
 # Columns are Gen Introduced, Number, Sprite URL, Name, Effect (string)
 def berryList(fname, mainWriter):
   with open(fname, 'w', newline='', encoding='utf-8') as berryCSV:
@@ -151,13 +154,32 @@ def incenseList(fname, mainWriter):
       mainWriter.writerow([name, 'incense', gen, spriteURL])
   return
 
-# Columns are Gen Introduced, Sprite URL, Name, Associated Pokemon, Effect, Additional Effect
+# Parses the description to determine which stats the item increases and by how much
+def parseStatEnhancerEffect(description):
+  if 'Doubles' in description:
+    modifier = '2.0'
+  elif '50%' in description:
+    modifier = '1.5'
+  elif 'two stages' in description:
+    modifier = '+2'
+  else:
+    return '1.0'
+
+  stats = ['attack', 'defense', 'special attack', 'special defense', 'speed', 'critical hit ratio']
+  statsModified = []
+  for stat in stats:
+    if stat in description.lower():
+      statsModified.append(parseName(stat))
+
+  return statsModified, modifier
+
+# Columns are Gen Introduced, Sprite URL, Name, Associated Pokemon, Effect, Additional Effect, Stat 1, Stat 2, Modifier
 def statEnhancers(fname, mainWriter):
   with open(fname, 'w', newline='', encoding='utf-8') as statEnhancerCSV:
     writer = csv.writer(statEnhancerCSV)
 
     # header
-    writer.writerow(['Gen', 'Sprite URL', 'Name', 'Pokemon', 'Effect', 'Additional Effect'])
+    writer.writerow(['Gen', 'Sprite URL', 'Name', 'Pokemon', 'Effect', 'Additional Effect', 'Stat 1', 'Stat 2', 'Modifier'])
 
     bs = openBulbapediaLink('https://bulbapedia.bulbagarden.net/wiki/Stat-enhancing_item', 0, 10)
     # there's a blank row at the end
@@ -170,9 +192,12 @@ def statEnhancers(fname, mainWriter):
       spriteURL = cells[0].find('img')['src']
       itemName = parseName(cells[1].get_text().rstrip('\n').rstrip('*'))
       gen = genSymbolToNumber(cells[2].get_text().rstrip('\n'))
-      # eviolite row has slightly different structure
+      # eviolite row has slightly different structure, so we handle it separately
       if itemName == 'eviolite':
-        # don't add Eviolite to the stat enhancer list, as it doesn't apply to one specific Pokemon
+        effect = cells[4].get_text().rstrip('\n')
+        additionalEffect =cells[5].get_text().rstrip('\n')
+        statsModified, modifier = parseStatEnhancerEffect(effect)
+        writer.writerow([5, spriteURL, 'eviolite', '', effect, additionalEffect, stat1, stat2, modifier])
         mainWriter.writerow([itemName, 'stat_enhancer', gen, spriteURL])
         continue
       else:
@@ -189,6 +214,13 @@ def statEnhancers(fname, mainWriter):
       effect = cells[5].get_text().rstrip('\n')
       additionalEffect = cells[6].get_text().rstrip('\n')
 
+      # parse effect to determine stat modifier
+      statsModified, modifier = parseStatEnhancerEffect(effect)
+      if len(statsModified) == 2:
+        stat1, stat2 = statsModified[0], statsModified[1]
+      else:
+        stat1, stat2 = statsModified[0], ''
+
       for pokemonName in pokemonNames:
         # exception
         if pokemonName == 'Pikachu in a cap':
@@ -199,8 +231,87 @@ def statEnhancers(fname, mainWriter):
         pokemonName = parseName(pokemonName, 'pokemon')
         
         # write a row for each Pokemon
-        writer.writerow([gen, spriteURL, itemName, pokemonName, effect, additionalEffect])
-        mainWriter.writerow([itemName, 'stat_enhancer', gen, spriteURL])
+        writer.writerow([gen, spriteURL, itemName, pokemonName, effect, additionalEffect, stat1, stat2, modifier])
+        mainWriter.writerow([itemName, 'stat_enhancer_specific', gen, spriteURL])
+  
+    # choice items
+    for choiceItem in ['Choice Band', 'Choice Specs', 'Choice Scarf']:
+      itemName = parseName(choiceItem)
+
+      if choiceItem == 'Choice Band':
+        stat1 = 'attack'
+        gen = 3
+        spriteURL = 'https://cdn2.bulbagarden.net/upload/0/09/Dream_Choice_Band_Sprite.png'
+        effect = 'An item to be held by a Pokémon. This curious headband boosts Attack but only allows the use of one move.'
+      elif choiceItem == 'Choice Specs':
+        stat1 = 'special_attack'
+        gen = 4
+        spriteURL = 'https://cdn2.bulbagarden.net/upload/6/6a/Dream_Choice_Scarf_Sprite.png'
+        effect = 'An item to be held by a Pokémon. This curious scarf boosts Speed but only allows the use of one move.'
+      else:
+        stat1 = 'speed'
+        gen = 4
+        spriteURL = 'https://cdn2.bulbagarden.net/upload/e/e6/Dream_Choice_Specs_Sprite.png'
+        effect = 'An item to be held by a Pokémon. These curious glasses boost Sp. Atk but only allow the use of one move.'
+      
+      writer.writerow([gen, spriteURL, itemName, '', effect, '', stat1, '', '1.5'])
+      mainWriter.writerow([itemName, 'choice', gen, spriteURL])
+
+    # assault vest
+    writer.writerow([6, 'https://cdn2.bulbagarden.net/upload/b/b1/Dream_Assault_Vest_Sprite.png', 'assault_vest', '', 'An item to be held by a Pokémon. This offensive vest raises Sp. Def but prevents the use of status moves.', additionalEffect, 'special_defense', '', '1.5'])
+    mainWriter.writerow(['assault_vest', 'stat_enhancer', 6, 'https://cdn2.bulbagarden.net/upload/b/b1/Dream_Assault_Vest_Sprite.png'])
+  return
+
+# 2 .csv's: one for general, and one for specific Pokemon
+# For general .csv, Columns are Gen Introduced, Sprite URL, Name, Type
+# For Pokemon-specific .csv, Columns are Gen Introduced, Sprite URL, Item Name, Pokemon Name (the types are the type of that Pokemon)
+def typeEnhancers(fname, mainWriter):
+  with open(fname, 'w', newline='', encoding='utf-8') as generalCSV, open(fname.rstrip('.csv') + 'Specific.csv', 'w', newline='', encoding='utf-8') as specificCSV:
+    generalWriter = csv.writer(generalCSV)
+    specificWriter = csv.writer(specificCSV)
+
+    # general
+    generalWriter.writerow(['Gen', 'Sprite URL', 'Item Name', 'Type'])
+
+    bs = openBulbapediaLink('https://bulbapedia.bulbagarden.net/wiki/Type-enhancing_item', 0, 10)
+    dataRows = bs.find('span', {'id': 'List_of_type-enhancing_items'}).find_next('table').find_all('tr')[1:]
+
+    for row in dataRows:
+      cells = row.find_all('td')
+      spriteURL = cells[0].find('img')['src']
+      pokemonName = parseName(cells[1].get_text())
+      gen = genSymbolToNumber(cells[2].get_text())
+      type = parseName(cells[3].get_text())
+
+      generalWriter.writerow([gen, spriteURL, pokemonName, type])
+      mainWriter.writerow([pokemonName, 'type_enhancer', gen, spriteURL])
+
+    # Pokemon-specific
+    specificWriter.writerow(['Gen', 'Sprite URL', 'Item Name', 'Pokemon Name'])
+
+    dataRows = bs.find('span', {'id': 'Pok.C3.A9mon-specific_type-enhancing_items'}).find_next('table').find_all('tr')[1:]
+
+    for row in dataRows:
+      cells = row.find_all('td')
+      spriteURL = cells[0].find('img')['src']
+      itemName = parseName(cells[1].get_text())
+      if 'soul_dew' in itemName:
+        itemName = 'soul_dew'
+
+      gen = genSymbolToNumber(cells[2].get_text())
+
+      # a <td> may have multiple Pokemon--we handle the two exceptions here
+      pokemonNamesString = cells[4].get_text().rstrip('\n')
+      if pokemonNamesString == 'LatiasLatios':
+        pokemonNames = ['Latias', 'Latios']
+      elif pokemonNamesString == 'GiratinaOrigin Forme':
+        pokemonNames = ['Giratina (Origin Forme)']
+      else:
+        pokemonNames = [pokemonNamesString]
+
+      for pokemonName in pokemonNames:
+        specificWriter.writerow([gen, spriteURL, itemName, pokemonName])
+      mainWriter.writerow([itemName, 'type_enhancer_specific', gen, spriteURL])  
   return
 
 # 2 .csv's: one for general Z-moves, one for specific Pokemon
@@ -255,6 +366,40 @@ def zCrystals(fname, mainWriter):
         specificWriter.writerow([spriteURL, itemName, pokemonName, baseMove, zMove])
         mainWriter.writerow([itemName, 'z_crystal_specific', 7, spriteURL])
 
+# Columns are Sprite URL, Name, Pokemon Name
+def megaStones(fname, mainWriter):
+  with open(fname, 'w', newline='', encoding='utf-8') as megaStoneCSV:
+    writer = csv.writer(megaStoneCSV)
+
+    writer.writerow(['Sprite URL', 'Item Name', 'Pokemon Name'])
+
+    bs = openBulbapediaLink('https://bulbapedia.bulbagarden.net/wiki/Mega_Stone', 0, 10)
+    dataRows = bs.find('span', {'id': 'List_of_Mega_Stones'}).find_next('table').find('tr').find_next_siblings('tr')
+
+    for row in dataRows:
+      cells = row.find_all('td')
+      spriteURL = cells[0].find('img')['src']
+      itemName = parseName(cells[1].get_text().rstrip('\n'))
+      pokemonName = parseName(cells[4].get_text().rstrip('\n'), 'pokemon')
+
+      writer.writerow([spriteURL, itemName, pokemonName])
+      mainWriter.writerow([itemName, 'mega_stone', 6, spriteURL])
+  return
+
+# No need for separate .csv, as we don't keep track of the corresponding stat; EVs-gained aren't relevant here
+def powerItems(mainWriter):
+  bs = openBulbapediaLink('https://bulbapedia.bulbagarden.net/wiki/Power_item', 0, 10)
+  dataRows = bs.find('span', {'id': 'Types_of_Power_items'}).find_next('table').find_all('tr')[1:]
+
+  for row in dataRows:
+    cells = row.find_all('td')
+
+    spriteURL = cells[0].find('img')['src']
+    name = parseName(cells[1].get_text())
+
+    mainWriter.writerow([name, 'power_item', 4, spriteURL])
+  return
+
 # We go through the different types of items individually and collect the relevant data in separate .csv's
 # At the same time, we compile the basic item info in a main .csv file, whose columns are Name, Type, Gen Introduced, Sprite URL
 def main():
@@ -287,7 +432,15 @@ def main():
     zCrystals_fname = getDataPath() + 'zCrystals.csv'
     zCrystals(zCrystals_fname, mainWriter)
 
+    # Mega stones
+    megaStones_fname = getDataPath() + 'megaStones.csv'
+    megaStones(megaStones_fname, mainWriter)
+
     # power items
+    powerItems(mainWriter)
+
+    typeEnhancers_fname = getDataPath() + 'typeEnhancers.csv'
+    typeEnhancers(typeEnhancers_fname, mainWriter)
 
   return
 
