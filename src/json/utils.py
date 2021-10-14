@@ -1,5 +1,5 @@
 def getDataPath():
-  return 'src\data\\'
+  return '..\data\\'
 
 # converts roman numeral for gen to arabic numeral
 def genSymbolToNumber(roman):

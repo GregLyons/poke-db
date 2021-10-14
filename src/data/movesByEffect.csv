@@ -204,7 +204,6 @@ sound,relic_song
 sound,roar
 sound,round
 sound,screech
-sound,shadow_panic
 sound,sing
 sound,snarl
 sound,snore
@@ -594,8 +593,6 @@ recoil,flare_blitz
 recoil,head_charge
 recoil,head_smash
 recoil,light_of_ruin
-recoil,shadow_end
-recoil,shadow_rush
 recoil,struggle
 recoil,submission
 recoil,take_down
@@ -855,7 +852,6 @@ high_crit_chance,poison_tail
 high_crit_chance,psycho_cut
 high_crit_chance,razor_leaf
 high_crit_chance,razor_wind
-high_crit_chance,shadow_blast
 high_crit_chance,shadow_claw
 high_crit_chance,sky_attack
 high_crit_chance,slash
@@ -919,7 +915,6 @@ removes_screen,brick_break
 removes_screen,defog
 removes_screen,g_max_wind_rage
 removes_screen,psychic_fangs
-removes_screen,shadow_shed
 changes_weather,defog
 changes_weather,hail
 changes_weather,max_flare
@@ -928,7 +923,6 @@ changes_weather,max_hailstorm
 changes_weather,max_rockfall
 changes_weather,rain_dance
 changes_weather,sandstorm
-changes_weather,shadow_sky
 changes_weather,sunny_day
 special_type_effectiveness,flying_press
 special_type_effectiveness,freeze_dry

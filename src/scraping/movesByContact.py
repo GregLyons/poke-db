@@ -21,7 +21,7 @@ def makeMainCSV(fname):
         moveName = cell.get_text().rstrip('\n')
 
         # contact moves which were not contact in Gen 3
-        if moveName in ['covet', 'feint-attack', 'fake-out']:
+        if moveName in ['covet', 'feint_attack', 'fake_out']:
           note = 'Gen IV onward'
 
     if moveName:
@@ -30,9 +30,9 @@ def makeMainCSV(fname):
   # These exceptions don't show up in the Bulbapedia table, so we add them manually
 
   # moves which were contact in Gen 3 but not after
-  writer.writerow(['ancient-power', 'Only Gen III'])
+  writer.writerow(['ancient_power', 'Only Gen III'])
   writer.writerow(['overheat', 'Only Gen III'])
-  writer.writerow(['shell-side-arm', 'If physical'])
+  writer.writerow(['shell_side_arm', 'If physical'])
 
   csvFile.close()
   return

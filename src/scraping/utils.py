@@ -63,7 +63,7 @@ def dexNumberToGen(dexNumber):
 # remove Shadow Moves, which are listed on Bulbapedia
 def removeShadowMoves(fname, firstHeader):
   shadowMoves = ['blitz', 'rush', 'break', 'end', 'wave', 'rave', 'storm', 'fire', 'bolt', 'chill', 'blast', 'sky', 'hold', 'mist', 'panic', 'down', 'shed', 'half']
-  shadowMoves = ['shadow-' + move for move in shadowMoves]
+  shadowMoves = ['shadow_' + move for move in shadowMoves]
 
   with open(fname, 'r', encoding='utf-8') as oldFile, open(fname.replace('WithShadowMoves', ''), 'w', newline='', encoding='utf-8') as newFile:
     reader = csv.DictReader(oldFile)
@@ -74,7 +74,7 @@ def removeShadowMoves(fname, firstHeader):
         writer.writerow([row[firstHeader], row['Move Name']])
 
 def getDataPath():
-  return 'src\data\\'
+  return '..\\data\\'
 
 # parse names in different forms from Bulbapedia and Smogon API to a common, snake_case form
 def parseName(text, mode='normal'):

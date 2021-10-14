@@ -1,0 +1,26 @@
+Nature Name,Increased Stat,Decreased Stat,Favorite Flavor,Disliked Flavor
+hardy,,,,
+lonely,attack,defense,spicy,sour
+brave,attack,speed,spicy,sweet
+adamant,attack,sp_attack,spicy,dry
+naughty,attack,sp_defense,spicy,bitter
+bold,defense,attack,sour,spicy
+docile,,,,
+relaxed,defense,speed,sour,sweet
+impish,defense,sp_attack,sour,dry
+lax,defense,sp_defense,sour,bitter
+timid,speed,attack,sweet,spicy
+hasty,speed,defense,sweet,sour
+serious,,,,
+jolly,speed,sp_attack,sweet,dry
+naive,speed,sp_defense,sweet,bitter
+modest,sp_attack,attack,dry,spicy
+mild,sp_attack,defense,dry,sour
+quiet,sp_attack,speed,dry,sweet
+bashful,,,,
+rash,sp_attack,sp_defense,dry,bitter
+calm,sp_defense,attack,bitter,spicy
+gentle,sp_defense,defense,bitter,sour
+sassy,sp_defense,speed,bitter,sweet
+careful,sp_defense,sp_attack,bitter,dry
+quirky,,,,

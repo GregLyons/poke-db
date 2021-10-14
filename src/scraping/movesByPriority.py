@@ -70,15 +70,8 @@ def makePriorityCSV(fname):
           else:
             moves = cell.get_text().split(',')
             for move in moves:
-              move = move.strip(' ')
-              # Handle two cases: Zippy Zap and Teleport--handle Teleport in exception later
-              if 'PE' in move: 
-                if 'teleport' not in move:
-                  writer.writerow(csvRow + [parseName(move.replace('PE', '').rstrip('\n'))])
-                else:
-                  continue
-              else:
-                writer.writerow(csvRow + [parseName(move.rstrip('\n'))])
+              move = parseName(move.replace('PE', '').strip())
+              writer.writerow(csvRow + [move])
 
   csvFile.close()
 
