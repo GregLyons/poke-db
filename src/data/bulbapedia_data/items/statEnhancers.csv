@@ -1,4 +1,4 @@
-Gen,Sprite URL,Name,Pokemon,Effect,Additional Effect,Stat 1,Stat 2,Modifier
+Gen,Sprite URL,Item Name,Pokemon Name,Description,Additional Description,Stat 1,Stat 2,Modifier
 3,//cdn2.bulbagarden.net/upload/a/a9/Bag_Deep_Sea_Scale_Sprite.png,deep_sea_scale,clamperl,Doubles Special Defense.,Evolves Clamperl into Gorebyss when held and traded.,defense,special_defense,2.0
 3,//cdn2.bulbagarden.net/upload/2/28/Bag_Deep_Sea_Tooth_Sprite.png,deep_sea_tooth,clamperl,Doubles Special Attack.,Evolves Clamperl into Huntail when held and traded.,attack,special_attack,2.0
 5,//cdn2.bulbagarden.net/upload/5/5f/Bag_Eviolite_Sprite.png,eviolite,,Raises Defense and Special Defense by 50%.,"Does not affect alternate forms of Pokémon that prevent evolution, such as Cosplay Pikachu.",attack,special_attack,1.5

@@ -3,7 +3,7 @@ import csv
 from utils import openBulbapediaLink, removeShadowMoves, getDataBasePath, parseName
 import re
 
-# columns are effect name and move name
+# columns are Effect Name, Move Name
 def makeEffectCSV(label, url, writer):
   bs = openBulbapediaLink(url, 0, 10)
   findSection = bs.find('h2', text=re.compile(r'Pages in category'))
@@ -131,7 +131,7 @@ def main():
   fname = dataPath + 'movesByEffectWithShadowMoves.csv'
   csvFile = open(fname, 'w', newline='', encoding='utf-8')
   writer = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
-  writer.writerow(['Effect', 'Move Name'])
+  writer.writerow(['Effect Name', 'Move Name'])
 
   # 
   for [label, link] in labelsAndLinks:
@@ -139,7 +139,7 @@ def main():
 
   csvFile.close()
 
-  removeShadowMoves(fname, 'Effect')
+  removeShadowMoves(fname, 'Effect Name')
   os.remove(fname)
 
   # the following exceptions are handled in moves.py when generating the .json

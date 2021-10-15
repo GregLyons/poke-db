@@ -45,7 +45,7 @@ def berryList(fname, mainWriter):
   # we will handle berries which restore HP separately
   with open(fname, 'w', newline='', encoding='utf-8') as berryCSV, open(fnamePrefix + 'StatusHeal.csv', 'w', newline='', encoding='utf-8') as statusHealCSV, open(fnamePrefix + 'TypeResist.csv', 'w', newline='', encoding='utf-8') as typeResistCSV, open(fnamePrefix + 'StatBoost.csv', 'w', newline='', encoding='utf-8') as statBoostCSV, open(fnamePrefix + 'Gen2.csv', 'w', newline='', encoding='utf-8') as gen2CSV:
     writer = csv.writer(berryCSV)
-    writer.writerow(['Gen', 'Number', 'Sprite URL', 'Berry Name', 'Effect'])
+    writer.writerow(['Gen', 'Number', 'Sprite URL', 'Berry Name', 'Description'])
 
     # write the headers for the other .csv's
     statusWriter = csv.writer(statusHealCSV)
@@ -104,7 +104,7 @@ def berryList(fname, mainWriter):
       mainWriter.writerow([berryName, 'berry', gen, ''])
   return
 
-# Elemental type of Berry for Natural Gift; columns are Name, Type, Power in Gens IV-V, Power in Gen VI
+# Elemental type of Berry for Natural Gift; columns are Name, Type, Power in Gen IV-V, Power in Gen VI
 def berryType(fname):
   with open(fname, 'w', newline='', encoding='utf-8') as berryCSV:
     writer = csv.writer(berryCSV)
@@ -114,7 +114,7 @@ def berryType(fname):
     # there's a blank row at the end
     dataRows = bs.find('span', {'id': 'Power'}).find_next('table').find('tr').find_next_sibling('tr').find_next_siblings('tr')[:-1]
 
-    writer.writerow(['Name', 'Type', 'Power IV-V', 'Power VI'])
+    writer.writerow(['Berry Name', 'Type', 'Power in Gen IV-V', 'Power in Gen VI'])
 
     for row in dataRows:
       # there is a number and a sprite column before the berry name; the number is a <th>
@@ -128,13 +128,13 @@ def berryType(fname):
   return
 
 # Memories for Silvally, Plates for Arceus, Drives for Genesect, and Gems
-# Columns are Item Type, Sprite URL, Name, Elemental Type
+# Columns are Item Type, Sprite URL, Item Name, Elemental Type
 def typeItems(fname, mainWriter):
   with open(fname, 'w', newline='', encoding='utf-8') as berryCSV:
     writer = csv.writer(berryCSV)
 
     # header
-    writer.writerow(['Item Type', 'Sprite URL', 'Name', 'Elemental Type'])
+    writer.writerow(['Item Type', 'Sprite URL', 'Item Name', 'Elemental Type'])
 
     # memories
     bs = openBulbapediaLink('https://bulbapedia.bulbagarden.net/wiki/Memory', 0, 10)
@@ -210,7 +210,7 @@ def incenseList(fname, mainWriter):
     writer = csv.writer(incenseCSV)
 
     # header
-    writer.writerow(['Gen', 'Sprite URL', 'Name', 'Effect'])
+    writer.writerow(['Gen', 'Sprite URL', 'Item Name', 'Description'])
 
     bs = openBulbapediaLink('https://bulbapedia.bulbagarden.net/wiki/Incense', 0, 10)
     dataRows = bs.find('span', {'id': 'List_of_incenses'}).find_next('table').find('tr').find_next_siblings('tr')
@@ -247,13 +247,13 @@ def parseStatEnhancerEffect(description):
 
   return statsModified, modifier
 
-# Columns are Gen Introduced, Sprite URL, Name, Associated Pokemon, Effect, Additional Effect, Stat 1, Stat 2, Modifier
+# Columns are Gen Introduced, Sprite URL, Name, Pokemon Name (if Pokemon specific), Description, Additional Description, Stat 1, Stat 2, Modifier
 def statEnhancers(fname, mainWriter):
   with open(fname, 'w', newline='', encoding='utf-8') as statEnhancerCSV:
     writer = csv.writer(statEnhancerCSV)
 
     # header
-    writer.writerow(['Gen', 'Sprite URL', 'Name', 'Pokemon', 'Effect', 'Additional Effect', 'Stat 1', 'Stat 2', 'Modifier'])
+    writer.writerow(['Gen', 'Sprite URL', 'Item Name', 'Pokemon Name', 'Description', 'Additional Description', 'Stat 1', 'Stat 2', 'Modifier'])
 
     bs = openBulbapediaLink('https://bulbapedia.bulbagarden.net/wiki/Stat-enhancing_item', 0, 10)
     # there's a blank row at the end
@@ -398,7 +398,7 @@ def zCrystals(fname, mainWriter):
     bs = openBulbapediaLink('https://bulbapedia.bulbagarden.net/wiki/Z-Crystal', 0, 10)
 
     # general Z-crystals
-    generalWriter.writerow(['Sprite URL', 'Name', 'Z-Move', 'Type'])
+    generalWriter.writerow(['Sprite URL', 'Item Name', 'Z-Move', 'Type'])
     dataRows = bs.find('span', {'id': 'For_each_type'}).find_next('table').find('tr').find_next_siblings('tr')
 
     for row in dataRows:
@@ -475,12 +475,13 @@ def powerItems(mainWriter):
   return
 
 # We go through the different types of items individually and collect the relevant data in separate .csv's
-# At the same time, we compile the basic item info in a main .csv file, whose columns are Name, Type, Gen Introduced, Sprite URL
+# At the same time, we compile the basic item info in a main .csv file, whose columns are Item Name, Item Type, Gen, Sprite URL
 def main():
   dataPath = getDataBasePath() + 'items\\'
   main_fname = dataPath + 'heldItemList.csv'
   with open(main_fname, 'w', newline='', encoding='utf-8') as mainCSV:
     mainWriter = csv.writer(mainCSV)
+    mainWriter.writerow(['Item Name', 'Item Type', 'Gen', 'Sprite URL'])
 
     # berries
     # main list of berries

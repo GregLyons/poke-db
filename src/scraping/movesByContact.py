@@ -1,6 +1,7 @@
 import csv
 from utils import openBulbapediaLink, getDataBasePath, parseName
 
+# Columns are Move Name, Note
 def makeMainCSV(fname):
   url = 'https://bulbapedia.bulbagarden.net/wiki/Contact'
   bs = openBulbapediaLink(url, 0, 10)

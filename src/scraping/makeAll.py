@@ -1,16 +1,18 @@
 import abilityList
+import abilityEffects
 import evolutionChains
+import heldItems
 import moveList
 import movesByContact
 import movesByEffect
 import movesByPriority
 import movesByStatus
 import movesByTarget
+import movesRemovedFromGen8
+import natures
 import pokemonByAbilities
 import pokemonByBaseStats
 import pokemonByType
-import heldItems
-import natures
 import typeMatchups
 
 # This file is for making all the .csv files at once rather than running each individual script
@@ -18,8 +20,14 @@ if __name__ == '__main__':
   abilityList.main()
   print('Ability list complete')
 
+  abilityEffects.main()
+  print('Ability effects complete')
+
   evolutionChains.main()
   print('Evolution chains complete')
+
+  heldItems.main()
+  print('Held item data complete')
 
   moveList.main()
   print('Moves list complete')
@@ -39,6 +47,12 @@ if __name__ == '__main__':
   movesByTarget.main()
   print('Move target data complete')
 
+  movesRemovedFromGen8.main()
+  print('Removed moves data complete')
+
+  natures.main()
+  print('Nature data complete')
+
   pokemonByAbilities.main()
   print('Pokemon ability data complete')
 
@@ -48,11 +62,7 @@ if __name__ == '__main__':
   pokemonByType.main()
   print('Pokemon type data complete')
 
-  heldItems.main()
-  print('Held item data complete')
-
-  natures.main()
-  print('Nature data complete')
-
   typeMatchups.main()
   print('Type matchup data complete')
+
+

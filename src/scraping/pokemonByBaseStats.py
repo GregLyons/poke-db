@@ -17,6 +17,7 @@ def formatGen1(csvRow):
   return csvRow
 
 # Makes .csv files for base stats in Gens 1, 5, 6, 7, and 8
+# Columns are Dex Number, Pokemon Name, HP, Attack, Sp. Attack, Sp. Defense, Speed
 def makeBaseStatCSVs(fnamePrefix):
   urls = [
     'https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_base_stats_(Generation_I)', 
@@ -52,7 +53,7 @@ def makeBaseStatCSVs(fnamePrefix):
           # there's a column with no text in its rows
           if value != '':
             if value == 'Pokémon':
-              csvRow.append('Pokemon')
+              csvRow.append('Pokemon Name')
             elif value == '#':
               csvRow.append('Dex Number')
             else:

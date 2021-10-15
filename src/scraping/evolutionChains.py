@@ -1,6 +1,7 @@
 import csv
 from utils import openBulbapediaLink, getDataBasePath, parseName
 
+# columns are Family Name, Pokemon 1 Name, 1 to 2 Method, Pokemon 2 Name, 2 to 3 Method, Pokemon 3 Name
 def makeEvolutionChainCSV(fname):
   with open(fname, 'w', newline='', encoding='utf-8') as evolutionFamilyCSV:
     writer = csv.writer(evolutionFamilyCSV)
@@ -10,7 +11,7 @@ def makeEvolutionChainCSV(fname):
     tables = [bs.find('span', {'id': f'{region}-based_evolution_families'}).find_next('table') for region in regions]
 
     # write the header
-    writer.writerow(['Family', 'Pokemon 1', '1 to 2 Method', 'Pokemon 2', '2 to 3 Method', 'Pokemon 3'])
+    writer.writerow(['Family Name', 'Pokemon 1 Name', '1 to 2 Method', 'Pokemon 2 Name', '2 to 3 Method', 'Pokemon 3 Name'])
 
     currentFamily = ''
 

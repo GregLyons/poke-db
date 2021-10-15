@@ -1,4 +1,4 @@
-Move ID,Name,Type,Category,Contest,PP,Power,Accuracy,Gen
+Move ID,Move Name,Type,Category,Contest,PP,Power,Accuracy,Gen
 1,pound,normal,physical,tough,35,40,100%,i
 2,karate_chop,fighting,physical,tough,25,50,100%,i
 3,double_slap,normal,physical,cute,10,15,85%,i

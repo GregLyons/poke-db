@@ -168,11 +168,12 @@ def makeStatusCSVAndExtractNotes(fname):
   return notes
 
 # Makes the .csv file of notes, which won't be called by another file
+# Columns are Status Name, Move Name, Header of Note, Description
 def makeStatusNotesCSV(fname, notes):
   csvFile = open(fname, 'w', newline='', encoding='utf-8')
   writer = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
 
-  writer.writerow(['Status', 'Move Name', 'Header of Note', 'Description'])
+  writer.writerow(['Status Name', 'Move Name', 'Header of Note', 'Description'])
 
   for note in notes:
     writer.writerow(note)

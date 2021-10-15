@@ -1,9 +1,9 @@
 Move ID,Header,Description
-2,name,Normal-type move in Generation I
+2,move name,Normal-type move in Generation I
 12,accuracy,Success is calculated using a custom formula.
 13,accuracy,75% in Generations I-II
 14,pp,30 in Generations I-V
-16,name,Normal-type move in Generation I
+16,move name,Normal-type move in Generation I
 17,power,35 in Generation I
 18,accuracy,"85% in Generation I, 100% in Generations II-V"
 19,power,70 in Generations I-III
@@ -12,7 +12,7 @@ Move ID,Header,Description
 22,power,35 in Generations I-V
 26,pp,25 in Generations I-IV
 26,power,"70 in Generations I-III, 85 in Generation IV"
-28,name,Normal-type move in Generation I
+28,move name,Normal-type move in Generation I
 32,accuracy,Success is calculated using a custom formula.
 33,power,"35 in Generations I-IV, 50 in Generations V-VI"
 33,accuracy,95% in Generations I-IV
@@ -22,7 +22,7 @@ Move ID,Header,Description
 38,power,100 in Generation I
 42,power,14 in Generations I-V
 42,accuracy,85% in Generations I-V
-44,name,Normal-type move in Generation I
+44,move name,Normal-type move in Generation I
 46,accuracy,100% in Generations I-V
 49,power,Always deals 20 HP damage
 50,accuracy,"55% in Generations I-III, 80% in Generation IV"
@@ -87,10 +87,10 @@ Move ID,Header,Description
 168,power,40 in Generations II-V
 170,accuracy,100% in Generations II-III
 173,power,40 in Generations II-V
-174,name,???-type move in Generations II-IV
+174,move name,???-type move in Generations II-IV
 178,accuracy,85% in Generations II-IV
 184,accuracy,90% in Generations II-IV
-186,name,Normal-type move prior to Gen VI
+186,move name,Normal-type move prior to Gen VI
 192,power,100 in Generations II-III
 193,accuracy,100% in Generations II-III
 198,accuracy,80% in Generations II-IV
@@ -99,12 +99,12 @@ Move ID,Header,Description
 200,power,90 in Generations II-III
 202,pp,5 in Generations II-III
 202,power,60 in Generations II-IV
-204,name,Normal-type move prior to Gen VI
+204,move name,Normal-type move prior to Gen VI
 207,accuracy,90% in Generations II-VI
 210,power,"10 in Generations II-IV, 20 in Generation V"
 220,accuracy,100% in Generation II
 229,power,20 in Generations II-VII
-236,name,Normal-type move prior to Gen VI
+236,move name,Normal-type move prior to Gen VI
 237,power,— in Generations II-V
 248,pp,15 in Generations II-IV
 248,power,"80 in Generations II-IV, 100 in Generation V"
@@ -180,7 +180,7 @@ Move ID,Header,Description
 565,power,30 in Generation VI
 570,power,50 in Generation VI
 576,accuracy,100% in Generation VI
-594,name,Physical move in Generation VI
+594,move name,Physical move in Generation VI
 595,power,65 in Generation VI
 618,gen,ORAS only
 619,gen,ORAS only

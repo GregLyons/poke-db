@@ -1,7 +1,8 @@
 import csv
 from utils import openBulbapediaLink, getDataBasePath, parseName, genSymbolToNumber
 
-# Columns are Gen, National Dex number, species name, Pokemon name, type 1, and type 2 (possibly equals type 1)
+# Columns are Gen, Dex Number, Species Name, Pokemon Name, Type 1, and Type 2
+# Type 2 possibly equals Type 1
 def makePokemonTypeCSV(fname):
   bs = openBulbapediaLink('https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number', 0, 10)
 

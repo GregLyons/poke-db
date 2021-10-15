@@ -25,13 +25,14 @@ def genSymbolToNumber(roman):
     raise ValueError('Not a valid gen.')
 
 # creates .csv file for priority Bulbapedia tables
+# Columns are Gen, Priority, Move Name
 def makePriorityCSV(fname):
 
   csvFile = open((fname), 'w', newline='', encoding='utf-8')
   writer = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
 
   # Write the headers
-  writer.writerow(['Generation', 'Priority', 'Move Name'])
+  writer.writerow(['Gen', 'Priority', 'Move Name'])
 
   url = 'https://bulbapedia.bulbagarden.net/wiki/Priority'
 

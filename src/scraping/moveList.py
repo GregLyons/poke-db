@@ -1,7 +1,7 @@
 import csv
 from utils import openBulbapediaLink, getDataBasePath, parseName
 
-# columns are ID, name, Type, Category (physical/special/status), Contest Type, PP, Power, Accuracy, and Gen 
+# columns are Move ID, Move Name, Type, Category (physical/special/status), Contest Type, PP, Power, Accuracy, and Gen 
 def makeMoveListCSVandExtractNotes(fname):
   with open((fname), 'w', newline='', encoding='utf-8') as csvFile, open((fname.rstrip('.csv') + 'Notes.csv'), 'w', newline='', encoding='utf-8') as notesCSV:
     writer = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
@@ -19,6 +19,8 @@ def makeMoveListCSVandExtractNotes(fname):
       header = cell.get_text().strip('\n')
       if header == '#': 
         headers.append('Move ID')
+      elif header == 'Name':
+        headers.append('Move Name')
       else:
         headers.append(header)
     writer.writerow(headers)

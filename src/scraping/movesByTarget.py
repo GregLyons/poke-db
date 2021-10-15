@@ -3,6 +3,7 @@ import os
 import re
 from utils import openBulbapediaLink, removeShadowMoves, getDataBasePath, parseName
 
+# Columns are Targets, Move Name
 def makeMainCSV(label, url, writer):
   bs = openBulbapediaLink(url, 0, 10)
   findSection = bs.find('h2', text=re.compile(r'Pages in category'))
@@ -30,7 +31,7 @@ def main():
   fname = dataPath + 'movesByTargetWithShadowMoves.csv'
   csvFile = open(fname, 'w', newline='', encoding='utf-8')
   writer = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
-  writer.writerow(['Target', 'Move Name'])
+  writer.writerow(['Targets', 'Move Name'])
 
   # 
   for [label, link] in labelsAndLinks:
@@ -38,7 +39,7 @@ def main():
 
   csvFile.close()
 
-  removeShadowMoves(fname, 'Target')
+  removeShadowMoves(fname, 'Targets')
   os.remove(fname)
 
   # acupressure targets user or adjacent ally

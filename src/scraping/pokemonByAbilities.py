@@ -23,7 +23,7 @@ def parseNote(note):
   else:
     return note
 
-# each row is a Pokemon, and columns are Dex number, sprite URL, name, Ability 1, Ability 2, Hidden, and Gen
+# each row is a Pokemon, and columns are Dex Number, Sprite URL, Pokemon Name, Ability 1, Ability 2, Hidden
 # columns for notes .csv are pokemon name, header (e.g. Ability 1, Ability 2, etc.)
 def makeAbilityCSVandExtractNotes(fname):
   url = 'https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Ability'
@@ -43,7 +43,7 @@ def makeAbilityCSVandExtractNotes(fname):
       rows = table.findAll('tr')
 
 
-      headers = ['Dex Number', 'Sprite URL', 'Pokemon', 'Ability 1', 'Ability 2', 'Hidden']
+      headers = ['Dex Number', 'Sprite URL', 'Pokemon Name', 'Ability 1', 'Ability 2', 'Hidden']
 
       for row in rows:
         csvRow = []
@@ -67,7 +67,7 @@ def makeAbilityCSVandExtractNotes(fname):
             elif value == '#':
               csvRow.append('Dex Number')
             elif value == 'Pokémon':
-              csvRow.append('Pokemon')
+              csvRow.append('Pokemon Name')
             else:
               csvRow.append(value)
           # table data
@@ -107,7 +107,7 @@ def makeAbilityCSVandExtractNotes(fname):
 
             headerIndex += 1
         if row.find('th') != None:
-          csvRow.append('Introduced')
+          csvRow.append('Gen')
         else: 
           csvRow.append(currentGen)
         writer.writerow(csvRow)
