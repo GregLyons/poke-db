@@ -29,7 +29,7 @@ def makeAbilityCSVandExtractNotes(fname):
   url = 'https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Ability'
   bs = openBulbapediaLink(url, 0, 10)
 
-  with open(fname, 'w', newline='', encoding='utf-8') as csvFile, open(fname.rstrip('.csv') + 'Notes.csv', 'w', newline='', encoding='utf-8') as notesCSV:
+  with open(fname, 'w', newline='', encoding='utf-8') as csvFile, open(fname.removesuffix('.csv') + 'Notes.csv', 'w', newline='', encoding='utf-8') as notesCSV:
     writer = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
     notesWriter = csv.writer(notesCSV, quoting=csv.QUOTE_MINIMAL)
     notesWriter.writerow(['Pokemon Name', 'Header', 'Description'])
@@ -83,7 +83,7 @@ def makeAbilityCSVandExtractNotes(fname):
                 currentGen = dexNumberToGen(value)
 
               # keep track of Pokemon name for notes--dex entry won't suffice since Megas share dex entry
-              if headers[headerIndex] == 'Pokemon':
+              if headers[headerIndex] == 'Pokemon Name':
                 currentPokemonName = value
 
                 # once we know the name, we can determine the current gen of the given Pokemon, if different from default
@@ -100,7 +100,7 @@ def makeAbilityCSVandExtractNotes(fname):
                 for note in notesInCell:
                   notesWriter.writerow([parseName(currentPokemonName, 'pokemon'), headers[headerIndex], note.get('title')])
               
-              if headers[headerIndex == 'Pokemon']:
+              if headers[headerIndex] == 'Pokemon Name':
                 csvRow.append(parseName(value, 'pokemon'))
               else:
                 csvRow.append(parseName(value))

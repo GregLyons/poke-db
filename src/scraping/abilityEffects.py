@@ -484,7 +484,7 @@ def abilityEffects(fnamePrefix):
   return
 
 def main():
-  dataPath = getDataBasePath() + 'abilities\\'
+  dataPath = getDataBasePath() + 'abilities/'
   abilityEffects_fnamePrefix = dataPath + 'abilities'
   abilityEffects(abilityEffects_fnamePrefix)
   return

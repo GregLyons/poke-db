@@ -1,5 +1,6 @@
 import csv
 import re
+import os
 
 # converts roman numeral for gen to arabic numeral
 def genSymbolToNumber(roman):
@@ -64,18 +65,18 @@ def parseNote(description):
 def makeInitialAbilityDict(fname):
   abilityDict = {}
 
-  with open(fname, encoding='utf-8') as abilitiesCSV, open(fname.rstrip('.csv') + 'Notes.csv', encoding='utf-8') as notesCSV:
+  with open(fname, encoding='utf-8') as abilitiesCSV, open(fname.removesuffix('.csv') + 'Notes.csv', encoding='utf-8') as notesCSV:
     reader = csv.DictReader(abilitiesCSV)
     notesReader = csv.DictReader(notesCSV)
 
     for row in reader:
-      if row["Pokemon"] != "Pokemon":
-        abilityDict[row["Pokemon"]] = {
+      if row["Pokemon Name"] != "Pokemon Name":
+        abilityDict[row["Pokemon Name"]] = {
           "Dex Number": row["Dex Number"],
           "Sprite URL": row["Sprite URL"],
-          "Ability 1": [[row["Ability 1"], max(int(row['Introduced']), 3)]],
-          "Ability 2": [[row["Ability 2"], max(int(row['Introduced']), 3)]],
-          "Hidden": [[row["Hidden"], max(int(row['Introduced']), 5)]]
+          "Ability 1": [[row["Ability 1"], max(int(row['Gen']), 3)]],
+          "Ability 2": [[row["Ability 2"], max(int(row['Gen']), 3)]],
+          "Hidden": [[row["Hidden"], max(int(row['Gen']), 5)]]
         }
 
     # Go through majority of notes; handle Gengar
@@ -101,9 +102,13 @@ def makeInitialAbilityDict(fname):
         abilityDict[pokemonName]["Hidden"] = [[oldHiddenAbility, startGen], [currentHiddenAbility, endGen + 1]]
 
   # Exception for Gengar sinec his note is unique
-  abilityDict["Gengar"]["Ability 1"] = [["Levitate", 3], ["Cursed Body", 7]]
+  abilityDict["gengar"]["Ability 1"] = [["levitate", 3], ["cursed_body", 7]]
   
   return abilityDict
 
-fname = f'src\\data\\pokemonAbilities.csv'
+
+fname = f'src\\data\\bulbapedia_data\\pokemon\\pokemonByAbilities.csv'
 abilityDict = makeInitialAbilityDict(fname)
+
+print(abilityDict["gengar"])
+print(abilityDict["chandelure"])

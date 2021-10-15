@@ -74,7 +74,7 @@ def removeShadowMoves(fname, firstHeader):
         writer.writerow([row[firstHeader], row['Move Name']])
 
 def getDataBasePath():
-  return '..\\data\\bulbapedia_data\\'
+  return 'src\\data\\bulbapedia_data\\'
 
 # parse names in different forms from Bulbapedia and Smogon API to a common, snake_case form
 def parseName(text, mode='normal'):
