@@ -1,6 +1,6 @@
 import csv
 import re
-from utils import openBulbapediaLink, genSymbolToNumber, dexNumberToGen, getDataBasePath, parseName
+from utils import openLink, genSymbolToNumber, dexNumberToGen, getBulbapediaDataPath, parseName
 
 # The event Blue-Striped Basculin with Rock Head is not included. My apologies for any inconvenience.
 
@@ -27,7 +27,7 @@ def parseNote(note):
 # columns for notes .csv are pokemon name, header (e.g. Ability 1, Ability 2, etc.)
 def makeAbilityCSVandExtractNotes(fname):
   url = 'https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Ability'
-  bs = openBulbapediaLink(url, 0, 10)
+  bs = openLink(url, 0, 10)
 
   with open(fname, 'w', newline='', encoding='utf-8') as csvFile, open(fname.removesuffix('.csv') + 'Notes.csv', 'w', newline='', encoding='utf-8') as notesCSV:
     writer = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
@@ -115,7 +115,7 @@ def makeAbilityCSVandExtractNotes(fname):
   return
 
 def main():
-  dataPath = getDataBasePath() + 'pokemon\\'
+  dataPath = getBulbapediaDataPath() + 'pokemon\\'
   fname = dataPath + f'pokemonByAbilities.csv'
   makeAbilityCSVandExtractNotes(fname)
 

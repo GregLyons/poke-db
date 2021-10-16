@@ -1,10 +1,10 @@
 import csv
-from utils import openBulbapediaLink, getDataBasePath, parseName, genSymbolToNumber
+from utils import openLink, getBulbapediaDataPath, parseName, genSymbolToNumber
 
 # Columns are Gen, Dex Number, Species Name, Pokemon Name, Type 1, and Type 2
 # Type 2 possibly equals Type 1
 def makePokemonTypeCSV(fname):
-  bs = openBulbapediaLink('https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number', 0, 10)
+  bs = openLink('https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number', 0, 10)
 
   with open(fname, 'w', newline='', encoding='utf-8') as speciesCSV:
     writer = csv.writer(speciesCSV)
@@ -66,7 +66,7 @@ def makePokemonTypeCSV(fname):
   return
 
 def addMegas(writer):
-  bs = openBulbapediaLink('https://bulbapedia.bulbagarden.net/wiki/Mega_Evolution', 0, 10)
+  bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Mega_Evolution', 0, 10)
 
   xyTable = bs.find('span', {'id': 'Introduced_in_X_and_Y'}).find_next('table')
   orasTable = bs.find('span', {'id': 'Introduced_in_Omega_Ruby_and_Alpha_Sapphire'}).find_next('table')
@@ -110,7 +110,7 @@ def addMegas(writer):
   return
 
 def addRegionalForms(writer):
-  bs = openBulbapediaLink('https://bulbapedia.bulbagarden.net/wiki/Regional_form', 0, 10)
+  bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Regional_form', 0, 10)
 
   alolaTable = [bs.find('span', {'id': 'List_of_Alolan_Forms'}).find_next('table'), 'Alola']
   galarTable = [bs.find('span', {'id': 'List_of_Galarian_Forms'}).find_next('table'), 'Galar']
@@ -150,7 +150,7 @@ def addRegionalForms(writer):
   return
 
 def main():
-  dataPath = getDataBasePath() + 'pokemon\\'
+  dataPath = getBulbapediaDataPath() + 'pokemon\\'
   fname = dataPath + 'pokemonByType.csv'
   makePokemonTypeCSV(fname)
 

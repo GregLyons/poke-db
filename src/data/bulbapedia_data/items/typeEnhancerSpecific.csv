@@ -1,6 +1,6 @@
-Gen,Sprite URL,Item Name,Pokemon Name
-3,//cdn2.bulbagarden.net/upload/c/cd/Bag_Soul_Dew_Sprite.png,soul_dew,Latias
-3,//cdn2.bulbagarden.net/upload/c/cd/Bag_Soul_Dew_Sprite.png,soul_dew,Latios
-4,//cdn2.bulbagarden.net/upload/f/f9/Bag_Adamant_Orb_Sprite.png,adamant_orb,Dialga
-4,//cdn2.bulbagarden.net/upload/a/ae/Bag_Lustrous_Orb_Sprite.png,lustrous_orb,Palkia
-4,//cdn2.bulbagarden.net/upload/5/57/Bag_Griseous_Orb_Sprite.png,griseous_orb,Giratina (Origin Forme)
+Gen,Item Name,Pokemon Name
+3,soul_dew,Latias
+3,soul_dew,Latios
+4,adamant_orb,Dialga
+4,lustrous_orb,Palkia
+4,griseous_orb,Giratina (Origin Forme)

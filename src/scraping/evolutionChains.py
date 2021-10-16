@@ -1,12 +1,12 @@
 import csv
-from utils import openBulbapediaLink, getDataBasePath, parseName
+from utils import openLink, getBulbapediaDataPath, parseName
 
 # columns are Family Name, Pokemon 1 Name, 1 to 2 Method, Pokemon 2 Name, 2 to 3 Method, Pokemon 3 Name
 def makeEvolutionChainCSV(fname):
   with open(fname, 'w', newline='', encoding='utf-8') as evolutionFamilyCSV:
     writer = csv.writer(evolutionFamilyCSV)
 
-    bs = openBulbapediaLink('https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_evolution_family', 0, 10)
+    bs = openLink('https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_evolution_family', 0, 10)
     regions = ['Kanto', 'Johto', 'Hoenn', 'Sinnoh', 'Unova', 'Kalos', 'Alola', 'Galar']
     tables = [bs.find('span', {'id': f'{region}-based_evolution_families'}).find_next('table') for region in regions]
 
@@ -97,7 +97,7 @@ def makeEvolutionChainCSV(fname):
   return 
 
 def main():
-  dataPath = getDataBasePath() + 'pokemon\\'
+  dataPath = getBulbapediaDataPath() + 'pokemon\\'
   fname = dataPath + 'evolutionChains.csv'
   makeEvolutionChainCSV(fname)
 

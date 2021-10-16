@@ -1,11 +1,11 @@
 import csv
 import os
 import re
-from utils import openBulbapediaLink, removeShadowMoves, getDataBasePath, parseName
+from utils import openLink, removeShadowMoves, getBulbapediaDataPath, parseName
 
 # Columns are Targets, Move Name
 def makeMainCSV(label, url, writer):
-  bs = openBulbapediaLink(url, 0, 10)
+  bs = openLink(url, 0, 10)
   findSection = bs.find('h2', text=re.compile(r'Pages in category'))
   moves = [link.get_text().rstrip('(move)').strip() for link in findSection.find_all_next('a') if '(move)' in link.get_text()]
 
@@ -26,7 +26,7 @@ def main():
     ['all', 'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_target_all_Pok%C3%A9mon']
   ]
 
-  dataPath = getDataBasePath() + 'moves\\'
+  dataPath = getBulbapediaDataPath() + 'moves\\'
 
   fname = dataPath + 'movesByTargetWithShadowMoves.csv'
   csvFile = open(fname, 'w', newline='', encoding='utf-8')

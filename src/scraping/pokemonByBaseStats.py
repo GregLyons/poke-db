@@ -1,5 +1,5 @@
 import csv
-from utils import openBulbapediaLink, getDataBasePath, parseName
+from utils import openLink, getBulbapediaDataPath, parseName
 
 # In gen 1, Sp. Attack and Sp. Defense are merged into one stat, 'Special', which is after Speed rather than before
 def formatGen1(csvRow):
@@ -34,7 +34,7 @@ def makeBaseStatCSVs(fnamePrefix):
     url = urls[i]
     gen = genMap[i]
 
-    bs = openBulbapediaLink(url, 0, 10)
+    bs = openLink(url, 0, 10)
     table = bs.find('table', {'class':'sortable'})
     rows = table.findAll('tr')
 
@@ -82,7 +82,7 @@ def makeBaseStatCSVs(fnamePrefix):
 
 def main():
   # the function makes multiple CSVs, according to gen, all with this prefix
-  dataPath = getDataBasePath() + 'pokemon\\'
+  dataPath = getBulbapediaDataPath() + 'pokemon\\'
   fnamePrefix= dataPath + 'pokemonByBaseStatsGen'
   makeBaseStatCSVs(fnamePrefix)
 

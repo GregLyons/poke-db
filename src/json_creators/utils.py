@@ -1,5 +1,8 @@
-def getDataPath():
-  return '..\data\\'
+def getBulbapediaDataPath():
+  return 'src\\data\\bulbapedia_data\\'
+
+def getSerebiiDataPath():
+  return 'src\\data\\serebii_data\\'
 
 # converts roman numeral for gen to arabic numeral
 def genSymbolToNumber(roman):

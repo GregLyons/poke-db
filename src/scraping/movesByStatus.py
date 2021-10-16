@@ -1,5 +1,5 @@
 import csv
-from utils import openBulbapediaLink, getDataBasePath, parseName
+from utils import openLink, getBulbapediaDataPath, parseName
 
 # Columns are status caused, move name, type, category, probability of inflicting status, power, accuracy, and notes
 
@@ -27,7 +27,7 @@ def addCSVRowsForStatus(statusInfo, writer, wroteHeader, notes):
   if hasSeparatePage and (status != 'Flinch' and status != 'Semi Invulnerable Turn'):
     url = url + '_(status_condition)'
 
-  bs = openBulbapediaLink(url, 0, 10)
+  bs = openLink(url, 0, 10)
   findSection = bs.find('span', id=findId)
   table = findSection.findNext('table').find('table')
   rows = table.findAll('tr')
@@ -182,7 +182,7 @@ def makeStatusNotesCSV(fname, notes):
 
 def main():
   # Make main .csv and extract notes
-  dataPath = getDataBasePath() + 'moves\\'
+  dataPath = getBulbapediaDataPath() + 'moves\\'
   main_fname = dataPath + 'movesByStatus.csv'
   notes = makeStatusCSVAndExtractNotes(main_fname)
 

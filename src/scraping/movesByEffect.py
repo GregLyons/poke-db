@@ -1,11 +1,11 @@
 import os
 import csv
-from utils import openBulbapediaLink, removeShadowMoves, getDataBasePath, parseName
+from utils import openLink, removeShadowMoves, getBulbapediaDataPath, parseName
 import re
 
 # columns are Effect Name, Move Name
 def makeEffectCSV(label, url, writer):
-  bs = openBulbapediaLink(url, 0, 10)
+  bs = openLink(url, 0, 10)
   findSection = bs.find('h2', text=re.compile(r'Pages in category'))
   moves = [link.get_text().rstrip('(move)').strip() for link in findSection.find_all_next('a') if '(move)' in link.get_text()]
 
@@ -94,7 +94,7 @@ def main():
     'https://bulbapedia.bulbagarden.net/wiki/Category:Status_moves_that_heal_the_user_immediately'],
     ['restores-hp',
     'https://bulbapedia.bulbagarden.net/wiki/Category:HP-draining_moves'],
-    ['heals-userimmediately',
+    ['heals-user-immediately',
     'https://bulbapedia.bulbagarden.net/wiki/Category:Status_moves_that_heal_the_user_immediately'],
     ['switches-out-target',
     'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_switch_the_target_out'],
@@ -126,7 +126,7 @@ def main():
     'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_have_special_type_effectiveness_properties']
   ]
 
-  dataPath = getDataBasePath() + 'moves\\'
+  dataPath = getBulbapediaDataPath() + 'moves\\'
 
   fname = dataPath + 'movesByEffectWithShadowMoves.csv'
   csvFile = open(fname, 'w', newline='', encoding='utf-8')

@@ -1,5 +1,5 @@
 import csv
-from utils import openBulbapediaLink, getDataBasePath, parseName
+from utils import openLink, getBulbapediaDataPath, parseName
 
 # columns are Move ID, Move Name, Type, Category (physical/special/status), Contest Type, PP, Power, Accuracy, and Gen 
 def makeMoveListCSVandExtractNotes(fname):
@@ -9,7 +9,7 @@ def makeMoveListCSVandExtractNotes(fname):
     notesWriter.writerow(['Move ID', 'Header', 'Description'])
 
     url = 'https://bulbapedia.bulbagarden.net/wiki/List_of_moves'
-    bs = openBulbapediaLink(url, 0, 10) 
+    bs = openLink(url, 0, 10) 
     moveTable = bs.find('table', {'class': 'sortable'}).find('table')
     headerRow = moveTable.find('tr')
     rows = moveTable.findAll('tr')[1:]
@@ -67,7 +67,7 @@ def makeMoveListCSVandExtractNotes(fname):
   return
 
 def main():
-  dataPath = getDataBasePath() + 'moves\\'
+  dataPath = getBulbapediaDataPath() + 'moves\\'
   fname = dataPath + 'moveList.csv'
   makeMoveListCSVandExtractNotes(fname)
 

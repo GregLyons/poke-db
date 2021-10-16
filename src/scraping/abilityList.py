@@ -1,4 +1,4 @@
-from utils import openBulbapediaLink, getDataBasePath, parseName
+from utils import openLink, getBulbapediaDataPath, parseName
 import csv
 
 # Columns are Ability ID, Ability Name, Ability Description, and Gen Introduced
@@ -7,7 +7,7 @@ def makeMainCSV(fname):
     writer = csv.writer(abilityCSV, quoting=csv.QUOTE_MINIMAL)
 
     # Create basic list of abilities
-    bs = openBulbapediaLink('https://bulbapedia.bulbagarden.net/wiki/Ability', 0, 10)
+    bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Ability', 0, 10)
     rows = bs.find('span', {'id': 'List_of_Abilities'}).find_next('table').find('table').find_all('tr')
 
     headers = ['Ability ID', 'Ability Name', 'Description', 'Gen']
@@ -39,7 +39,7 @@ def makeMainCSV(fname):
   return  
 
 def main():
-  dataPath = getDataBasePath() + 'abilities\\'
+  dataPath = getBulbapediaDataPath() + 'abilities\\'
   ability_fname = dataPath + 'abilityList.csv'
   makeMainCSV(ability_fname)
 

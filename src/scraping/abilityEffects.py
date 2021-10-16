@@ -1,6 +1,6 @@
 import csv
 import re
-from utils import openBulbapediaLink, getDataBasePath, parseName
+from utils import openLink, getBulbapediaDataPath, parseName
 
 # TODO Lightning rod and variants only draw moves gen 5 onward
 
@@ -13,7 +13,7 @@ def abilityEffects(fnamePrefix):
     notesWriter = csv.writer(notesCSV)
     notesWriter.writerow(['Ability Name', 'Note'])
 
-    bs = openBulbapediaLink('https://bulbapedia.bulbagarden.net/wiki/Ability_variations', 0, 10)
+    bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Ability_variations', 0, 10)
 
     # boost moves of type or effect
     #region
@@ -484,7 +484,7 @@ def abilityEffects(fnamePrefix):
   return
 
 def main():
-  dataPath = getDataBasePath() + 'abilities/'
+  dataPath = getBulbapediaDataPath() + 'abilities/'
   abilityEffects_fnamePrefix = dataPath + 'abilities'
   abilityEffects(abilityEffects_fnamePrefix)
   return

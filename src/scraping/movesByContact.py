@@ -1,10 +1,10 @@
 import csv
-from utils import openBulbapediaLink, getDataBasePath, parseName
+from utils import openLink, getBulbapediaDataPath, parseName
 
 # Columns are Move Name, Note
 def makeMainCSV(fname):
   url = 'https://bulbapedia.bulbagarden.net/wiki/Contact'
-  bs = openBulbapediaLink(url, 0, 10)
+  bs = openLink(url, 0, 10)
   rows = bs.find('span', {'id': 'Moves_that_make_contact'}).find_next('table').find('table').find_all('tr')
 
   csvFile = open(fname, 'w', newline='', encoding='utf-8')
@@ -39,7 +39,7 @@ def makeMainCSV(fname):
   return
 
 def main():
-  dataPath = getDataBasePath() + 'moves\\'
+  dataPath = getBulbapediaDataPath() + 'moves\\'
   fname = dataPath + 'movesByContact.csv'
   makeMainCSV(fname)
 

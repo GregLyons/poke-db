@@ -4,7 +4,7 @@ import csv
 import re
 
 # Returns BeautifulSoup object given Bulbapedia link
-def openBulbapediaLink(url, retryCount, retryMax):
+def openLink(url, retryCount, retryMax):
   try:
     req = urllib.request.Request(url, headers={'User-Agent' : "Magic Browser"}) 
     html = urllib.request.urlopen( req )
@@ -12,7 +12,7 @@ def openBulbapediaLink(url, retryCount, retryMax):
     return bs
   except urllib.error.HTTPError:
     if retryCount < retryMax:
-      openBulbapediaLink(url, retryCount + 1, retryMax)
+      openLink(url, retryCount + 1, retryMax)
   else:
     return None
 
@@ -73,12 +73,15 @@ def removeShadowMoves(fname, firstHeader):
       if row["Move Name"] not in shadowMoves:
         writer.writerow([row[firstHeader], row['Move Name']])
 
-def getDataBasePath():
+def getBulbapediaDataPath():
   return 'src\\data\\bulbapedia_data\\'
+
+def getSerebiiDataPath():
+  return 'src\\data\\serebii_data\\'
 
 # parse names in different forms from Bulbapedia and Smogon API to a common, snake_case form
 def parseName(text, mode='normal'):
-  text = text.rstrip('\n')
+  text = text.strip('\n')
   if mode == 'normal':
     # hyphens to underscores
     text = text.replace('-', '_')

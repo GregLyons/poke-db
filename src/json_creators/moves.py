@@ -1,6 +1,14 @@
 import csv
 from functools import cmp_to_key
-from utils import getDataPath, genSymbolToNumber
+from utils import getBulbapediaDataPath, genSymbolToNumber, getSerebiiDataPath
+
+# Create move .json file with the following data:
+# name, description, power, PP, accuracy, category, priority, contact, target, type, gen introduced, where it affects item
+# also include whether the move affects stats, and whose stats it affects
+# also include whether the move inflicts status, and the probability of inflicting status
+# also include any effects the move has
+# also include any usage methods the move has
+
 
 # Used for a few calculations--need to alter when gen 9 comes
 def numberOfGens():
@@ -100,11 +108,12 @@ def makeInitialMoveDict(fname):
       # Bulbapedia has "Stone Axe" as the last entry with ID "???"--not released yet
       if row["Move ID"] != "???":
         # "Type", "Power", and "Accuracy" are lists since those can potentially change across generations--Bulbapedia lists the latest values for each field, with the past values in notes
-        isMax = row["Name"][:3] == "Max"
-        isGMax = row["Name"][:5] == "G_Max"
+        isMax = row["Move Name"][:3] == "Max"
+        isGMax = row["Move Name"][:5] == "g_max"
 
         moveDict[int(row["Move ID"])] = {
-          "name": row["Name"],
+          "move_name": row["Move Name"],
+          "move_description": "",
           "type": [[row["Type"], 8]],
           "category": [row["Category"], 8],
           "contest": row["Contest"],
@@ -120,6 +129,7 @@ def makeInitialMoveDict(fname):
           "priority": [],
           "effect": {},
           "status": {},
+          "usage_method": {},
           "target": [],
         }
 
@@ -145,8 +155,12 @@ def makeInitialMoveDict(fname):
       continue
 
     moveID = change[0]
+    # type data is under 'move name' header
     header = change[1]
+    if header == 'move name':
+      header = 'type'
     valueAndGen = change[2]
+    
     moveDict[int(moveID)][header].append(valueAndGen)
 
   # ohko moves [moveID, header, ['ohko', None]]
@@ -238,7 +252,7 @@ def makeInverseDict(fname):
     reader = csv.DictReader(movesCSV)
     for row in reader:
       if row["Move ID"] != "???":
-        inverseDict[row["Name"]] = int(row["Move ID"])
+        inverseDict[row["Move Name"]] = int(row["Move ID"])
 
   return inverseDict
 
@@ -251,7 +265,7 @@ def addPriorityToMoveDict(fname, moveDict, inverseDict):
       if row["Move Name"] != 'none' and row["Move Name"] != 'fleeing':
         moveID = inverseDict[row["Move Name"]]
         # we add duplicate entries for when moves maintain the same priority across generations--we will handle this in the next loop to account for zero_priority moves
-        moveDict[int(moveID)]["priority"].append([int(row["Priority"]), int(row["Generation"])])
+        moveDict[int(moveID)]["priority"].append([int(row["Priority"]), int(row["Gen"])])
 
   # handle priority zero moves
   for key in moveDict.keys():
@@ -323,17 +337,28 @@ def addEffectToMoveDict(fname, moveDict, inverseDict):
 
     # get effects and add them to moveDict with initial value False
     for row in reader:
-      effect = row["Effect"]
+      effect = row["Effect Name"]
       moveName = row["Move Name"]
-
-      # if effect isn't in moveDict, add it and initialize as False
-      if effect not in moveDict[1]["effect"]:
-        for key in moveDict.keys():
-          moveDict[key]["effect"][effect] = [[False, moveDict[key]["gen"]]]
       
-      key = inverseDict[moveName]
-      moveDict[key]["effect"][effect] = [[True, moveDict[key]["gen"]]]
-  
+      currentKey = inverseDict[moveName]
+
+      # distinguish between usage method and other effects
+      if effect in ['pulse', 'ball', 'bite', 'dance', 'explosive', 'mouth', 'powder', 'punch', 'sound']:
+        # if usage_method isn't in moveDict, add it and initialize as False
+        if effect not in moveDict[1]["usage_method"]:
+          for key in moveDict.keys():
+            moveDict[key]["usage_method"][effect] = [[False, moveDict[key]["gen"]]]
+
+        moveDict[currentKey]["usage_method"][effect] = [[True, moveDict[currentKey]["gen"]]]
+      else:
+      # if effect isn't in moveDict, add it and initialize as False
+        if effect not in moveDict[1]["effect"] :
+            for key in moveDict.keys():
+              moveDict[key]["effect"][effect] = [[False, moveDict[key]["gen"]]]
+
+        moveDict[currentKey]["effect"][effect] = [[True, moveDict[currentKey]["gen"]]]
+      
+
   # EXCEPTIONS SECTION
   # not covered in the above .csv
   exceptions = [
@@ -446,7 +471,7 @@ def addTargetToMoveDict(fname, moveDict, inverseDict):
 
     # get effects and add them to moveDict with initial value False
     for row in reader:
-      target = row["Target"]
+      target = row["Targets"]
       moveName = row["Move Name"]
 
       # if effect isn't in moveDict, add it and initialize as False
@@ -456,27 +481,48 @@ def addTargetToMoveDict(fname, moveDict, inverseDict):
       
       key = inverseDict[moveName]
       moveDict[key]["target"] = [[True, moveDict[key]["gen"]]]
+  return
 
-# holds moveID, Name, Type, Category, Contest, PP, Power, Accuracy, Gen
-moveList_fname = getDataPath() + f'moveList.csv'
-moveDict = makeInitialMoveDict(moveList_fname)
+# read description data and update moveDict
+def addDescriptionToMoveDict(fname, moveDict, inverseDict):
+  with open(fname, encoding='utf-8') as descriptionCSV:
+    reader = csv.DictReader(descriptionCSV)
+    
+    for row in reader:
+      moveName, moveDescription = row["Move Name"], row["Move Description"]
+      key = inverseDict[moveName]
+      moveDict[key]["move_description"] = moveDescription
+  return
 
-# for reverse lookup of Move ID by Move Name
-inverseDict = makeInverseDict(moveList_fname)
+def main():
+  # holds moveID, Name, Type, Category, Contest, PP, Power, Accuracy, Gen
+  bulbapediaDataPath = getBulbapediaDataPath() + '/moves/'
+  serebiiDataPath = getSerebiiDataPath() + '\\moves\\'
+  moveList_fname = bulbapediaDataPath + 'moveList.csv'
+  moveDict = makeInitialMoveDict(moveList_fname)
 
-priority_fname = getDataPath() + f'movesByPriority.csv'
-addPriorityToMoveDict(priority_fname, moveDict, inverseDict)
+  # for reverse lookup of Move ID by Move Name
+  inverseDict = makeInverseDict(moveList_fname)
 
-contact_fname = getDataPath() + f'movesByContact.csv'
-addContactToMoveDict(contact_fname, moveDict, inverseDict)
+  priority_fname = bulbapediaDataPath + 'movesByPriority.csv'
+  addPriorityToMoveDict(priority_fname, moveDict, inverseDict)
 
-effect_fname = getDataPath() + f'movesByEffect.csv'
-addEffectToMoveDict(effect_fname, moveDict, inverseDict)
+  contact_fname = bulbapediaDataPath + f'movesByContact.csv'
+  addContactToMoveDict(contact_fname, moveDict, inverseDict)
 
-status_fname = getDataPath() + f'movesByStatus.csv'
-addStatusToMoveDict(status_fname, moveDict, inverseDict)
+  effect_fname = bulbapediaDataPath + f'movesByEffect.csv'
+  addEffectToMoveDict(effect_fname, moveDict, inverseDict)
 
-target_fname = getDataPath() + f'movesByTarget.csv'
-addTargetToMoveDict(target_fname, moveDict, inverseDict)
+  status_fname = bulbapediaDataPath + f'movesByStatus.csv'
+  addStatusToMoveDict(status_fname, moveDict, inverseDict)
 
-print(moveDict[12])
+  target_fname = bulbapediaDataPath + f'movesByTarget.csv'
+  addTargetToMoveDict(target_fname, moveDict, inverseDict)
+
+  descriptions_fname = serebiiDataPath + 'moveDescriptions.csv'
+  addDescriptionToMoveDict(descriptions_fname, moveDict, inverseDict)
+
+  return
+
+if __name__ == '__main__':
+  main()

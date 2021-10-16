@@ -1,5 +1,5 @@
 import csv
-from utils import openBulbapediaLink, parseName, getDataBasePath
+from utils import openLink, parseName, getBulbapediaDataPath
 
 # Makes a .csv for each generation's type matchup chart; rows are attacking types, columns are defending types
 def typeMatchups(fnamePrefix):
@@ -7,7 +7,7 @@ def typeMatchups(fnamePrefix):
     with open(fnamePrefix + f'{gen[0]}.csv', 'w', newline='', encoding='utf-8') as typeMatchupCSV:
       writer = csv.writer(typeMatchupCSV)
 
-      bs = openBulbapediaLink('https://bulbapedia.bulbagarden.net/wiki/Type/Type_chart', 0, 10)
+      bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Type/Type_chart', 0, 10)
       rows = bs.find(id=gen[1]).find_next('table').find_all('tr')[1:-1]
       headerRow, dataRows = rows[0], rows[1:]
 
@@ -32,7 +32,7 @@ def typeMatchups(fnamePrefix):
   return
 
 def main():
-  dataPath = getDataBasePath() + 'types\\'
+  dataPath = getBulbapediaDataPath() + 'types\\'
   typeMatchups_fnamePrefix = dataPath + 'typeMatchupsGen'
   typeMatchups(typeMatchups_fnamePrefix)
   return

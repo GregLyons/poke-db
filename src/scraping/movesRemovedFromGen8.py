@@ -1,12 +1,12 @@
 import csv
-from utils import openBulbapediaLink, parseName, getDataBasePath
+from utils import openLink, parseName, getBulbapediaDataPath
 
 def makeMainCSV(fname):
   with open(fname, 'w', newline='', encoding='utf-8') as csvFile:
     writer = csv.writer(csvFile)
     writer.writerow(['Move ID', 'Move Name'])
     
-    bs = openBulbapediaLink('https://bulbapedia.bulbagarden.net/wiki/List_of_moves_by_availability_(Generation_VIII)', 0, 10)
+    bs = openLink('https://bulbapedia.bulbagarden.net/wiki/List_of_moves_by_availability_(Generation_VIII)', 0, 10)
     dataRows = bs.find(id='bodyContent').find_next('table').find_next('table').find_all('tr')[1:]
     for row in dataRows:
       cells = row.find_all(['td', 'th'])
@@ -20,7 +20,7 @@ def makeMainCSV(fname):
   return
 
 def main():
-  dataPath = getDataBasePath() + 'moves\\'
+  dataPath = getBulbapediaDataPath() + 'moves\\'
   fname = dataPath + 'movesRemovedFromGen8.csv'
   makeMainCSV(fname)
   return

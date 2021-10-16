@@ -1,5 +1,5 @@
 import csv
-from utils import openBulbapediaLink, getDataBasePath, parseName
+from utils import openLink, getBulbapediaDataPath, parseName
 
 # Columns are Nature Name, Increased Stat, Decreased Stat, Favorite Flavor, Disliked Flavor
 def natureList(fname):
@@ -7,7 +7,7 @@ def natureList(fname):
     writer = csv.writer(natureCSV)
     writer.writerow(['Nature Name', 'Increased Stat', 'Decreased Stat', 'Favorite Flavor', 'Disliked Flavor'])
 
-    bs = openBulbapediaLink('https://bulbapedia.bulbagarden.net/wiki/Nature', 0, 10)
+    bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Nature', 0, 10)
     dataRows = bs.find(id='List_of_Natures').find_next('table').find_all('tr')[1:-1]
 
     for row in dataRows:
@@ -24,7 +24,7 @@ def natureList(fname):
   return
 
 def main():
-  dataPath = getDataBasePath() + 'natures\\'
+  dataPath = getBulbapediaDataPath() + 'natures\\'
   nature_fname = dataPath + 'natureList.csv'
   natureList(nature_fname)
 
