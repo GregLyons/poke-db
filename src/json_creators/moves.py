@@ -108,7 +108,7 @@ def makeInitialMoveDict(fname):
       # Bulbapedia has "Stone Axe" as the last entry with ID "???"--not released yet
       if row["Move ID"] != "???":
         # "Type", "Power", and "Accuracy" are lists since those can potentially change across generations--Bulbapedia lists the latest values for each field, with the past values in notes
-        isMax = row["Move Name"][:3] == "Max"
+        isMax = row["Move Name"][:3] == "max"
         isGMax = row["Move Name"][:5] == "g_max"
 
         moveDict[int(row["Move ID"])] = {
@@ -131,6 +131,7 @@ def makeInitialMoveDict(fname):
           "status": {},
           "usage_method": {},
           "target": [],
+          "stat_modifications": {}
         }
 
     # we will make a list of all the parsed notes, then filter them out into several other lists
@@ -494,10 +495,41 @@ def addDescriptionToMoveDict(fname, moveDict, inverseDict):
       moveDict[key]["move_description"] = moveDescription
   return
 
+# read stat modification data and update moveDict
+def addStatModToMoveDict(fname, moveDict, inverseDict):
+  with open(fname, encoding='utf-8') as statModCSV:
+    reader = csv.reader(statModCSV)
+    next(reader)
+
+    for row in reader:
+      moveName, gen, stat, modifier, sign, recipient = row
+      moveKey = inverseDict[moveName]
+
+      # for belly drum--it always sets attack stage to +6, even if it's negative beforehand
+      if modifier == 'max':
+        modifier = 12
+
+      if stat not in moveDict[1]["stat_modifications"]:
+        for key in moveDict:
+          moveDict[key]["stat_modifications"][stat] = [[stat, 0, '', moveDict[key]["gen"]]]
+      
+      # indicates move has always modified that stat as described
+      if gen == moveDict[moveKey]["gen"]:
+        moveDict[moveKey]["stat_modifications"][stat] = [[stat, sign, modifier, recipient, gen]]
+      # indicate move's stat modification was introduced in a later gen
+      else:
+        moveDict[moveKey]["stat_modifications"][stat].append([stat, sign, modifier, recipient, gen])
+
+      print(moveDict[moveKey]["stat_modifications"])
+
+  return
+
+
 def main():
   # holds moveID, Name, Type, Category, Contest, PP, Power, Accuracy, Gen
   bulbapediaDataPath = getBulbapediaDataPath() + '/moves/'
   serebiiDataPath = getSerebiiDataPath() + '\\moves\\'
+
   moveList_fname = bulbapediaDataPath + 'moveList.csv'
   moveDict = makeInitialMoveDict(moveList_fname)
 
@@ -521,6 +553,9 @@ def main():
 
   descriptions_fname = serebiiDataPath + 'moveDescriptions.csv'
   addDescriptionToMoveDict(descriptions_fname, moveDict, inverseDict)
+
+  statMod_fname = bulbapediaDataPath + 'statModifyingMoves.csv'
+  addStatModToMoveDict(statMod_fname, moveDict, inverseDict)
 
   return
 

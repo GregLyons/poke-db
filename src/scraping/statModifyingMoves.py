@@ -148,7 +148,7 @@ def handleMoveLink(link, stat):
 def statModifyingMoves(fname):
   with open(fname, 'w', newline='', encoding='utf-8') as csvFile:
     writer = csv.writer(csvFile)
-    writer.writerow(['Move Name', 'Gen', 'Stat Name', 'Modifier', 'Recipient'])
+    writer.writerow(['Move Name', 'Gen', 'Stat Name', 'Modifier', 'Sign', 'Recipient'])
 
     bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Category:Moves_by_stat_modification', 0, 10)
 
@@ -156,16 +156,130 @@ def statModifyingMoves(fname):
     for categoryLink in categoryList:
       handleCategoryLink(categoryLink.find('a'), writer)
     
-    # critical hit rate
-    for moveName in ['z_foresight', 'z_sleep_talk', 'z_tailwind', 'z_acupressure', 'z_heart_swap']:
-      writer.writerow([moveName, 7, 'critical_hit_ratio', 2, '+', 'user'])
+    # # critical hit rate
+    # for moveName in ['z_foresight', 'z_sleep_talk', 'z_tailwind', 'z_acupressure', 'z_heart_swap']:
+    #   writer.writerow([moveName, 7, 'critical_hit_ratio', 2, '+', 'user'])
 
+  return
+
+# adds Z-move data; 
+def addZMoves(fname):
+  # a Z-move's stat boosts are added onto the original move's stat boosts, so we keep track of the original stat boosts via statModMoveDict
+  with open(fname, 'r', encoding='utf-8') as originalCSV:
+    reader = csv.DictReader(originalCSV)
+    statModMoveDict = {}
+
+    for row in reader:
+      moveName, gen, stat_name, modifier, sign, recipient = row["Move Name"], int(row["Gen"]), row["Stat Name"], row["Modifier"], row["Sign"], row["Recipient"]
+
+      if gen == 8 or gen == 1 and stat_name == 'special':
+        continue
+      if modifier == 'max':
+        modifier = 12
+
+      # if the move is not already in the dictionary, a
+      if moveName not in statModMoveDict:
+        statModMoveDict[moveName] = []
+
+      statModMoveDict[moveName] = statModMoveDict[moveName] + [{
+        "gen": gen, 
+        "stat_name": stat_name, 
+        "modifier": modifier, 
+        "sign": sign,
+        "recipient": recipient
+      }]
+
+  with open(fname, 'a', newline = '', encoding='utf-8') as newCSV:
+    writer = csv.writer(newCSV)
+
+    bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Z-Move', 0, 10)
+    dataRows = bs.find(id='Z-Power_effects_of_status_moves').find_next('table').find('table').find_all('tr')[1:]
+    
+
+    for row in dataRows:
+      cells = row.find_all('td')
+      baseMoveName = parseName(cells[0].get_text())
+      effect = cells[2].get_text().rstrip('\n')
+
+      # the stat modifications from Z-moves always affect the user and raise stats
+      gen = 7
+      sign = '+'
+      recipient = 'user'
+      
+      # keep track of stat modifications from Z-move
+      statModDict = {
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0,
+        "accuracy": 0,
+        "evasion": 0,
+        "critical_hit_ratio": 0
+      }
+
+      # Curse raises attack if user is not Ghost type; its description in Bulbapedia therefore has a different structure, so we manually add this boost
+      if baseMoveName == 'curse':
+        statModDict["attack"] = 1
+
+      # add single stat boosts
+      stats = ['Attack', 'Defense', 'Special Attack', 'Special Defense', 'Speed', 'Evasiveness']
+      for stat in stats:
+        if stat == ' '.join(effect.split()[:-1]):
+          modifier = effect.count('↑')
+          stat = parseName(stat).replace('evasiveness', 'evasion')
+          statModDict[stat] = statModDict[stat] + modifier
+
+      # indicates all stats are boosted
+      if effect.split()[0] == 'Stats':
+        modifier = effect.count('↑')
+        for stat in ['attack', 'defense', 'special_attack', 'special_defense', 'speed']:
+          statModDict[stat] = statModDict[stat] + modifier
+      
+      # crit boosts
+      if 'critical-hit ratio' in effect:
+        # always boosts 2 stages
+        statModDict["critical_hit_ratio"] = statModDict["critical_hit_ratio"] + 2
+
+      # add Z-move boosts to stat changes of regular move, if any; Z-moves always boost the user's stats
+      if baseMoveName in statModMoveDict:
+        # recall that statModMoveDict[baseMoveName] is a list of stat changes which baseMoveName applies
+        # note that Z-move stat resets are applied BEFORE the base move stat changes, so e.g. Shell Smash resets stats BEFORE lowering defense and special defense
+        for statChange in statModMoveDict[baseMoveName]:
+          baseMoveStat, baseMoveModifier, baseMoveSign, baseMoveRecipient = statChange["stat_name"], int(statChange["modifier"]), statChange["sign"], statChange["recipient"]
+
+          # in this case, the Z-move does not affect the base move's stat modifier applied to the target, as it only affects stat modifications for the user
+          if baseMoveRecipient == 'target':
+            writer.writerow(['z_' + baseMoveName, 7, baseMoveStat, baseMoveModifier, baseMoveSign, 'target'])
+            break
+
+          if baseMoveSign == '+':
+            sign = 1
+          else:
+            sign = -1
+
+          statModDict[baseMoveStat] = statModDict[baseMoveStat] + sign * baseMoveModifier
+
+      # write a row to the .csv for each changed stat
+      for stat_name in statModDict:
+        modifier = statModDict[stat_name]
+        if modifier == 0:
+          continue
+        elif modifier > 0:
+          sign = '+'
+        else:
+          sign = '-'
+
+        writer.writerow(['z_' + baseMoveName, 7, stat_name, modifier, sign, 'user'])
   return
 
 def main():
   dataPath = getBulbapediaDataPath() + '\\moves\\'
   fname = dataPath + 'statModifyingMoves.csv'
   statModifyingMoves(fname)
+
+  # add in Z-move data
+  addZMoves(fname)
 
   return
 
