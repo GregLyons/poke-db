@@ -14,6 +14,48 @@ def makeEffectCSV(label, url, writer):
   for move in moves:
     writer.writerow([parseName(label), parseName(move)])
 
+# add Z-move data to .csv
+def addZMoves(fname):
+  # create dictionary of base moves--z-move's add an additional effect onto the base move's effect
+  with open(fname, 'r', encoding='utf-8') as originalCSV:
+    reader = csv.DictReader(originalCSV)
+
+    moveEffectDict = {}
+
+    for row in reader:
+      effectName, moveName = row["Effect Name"], row["Move Name"]
+
+      if moveName not in moveEffectDict:
+        moveEffectDict[moveName] = []
+      
+      moveEffectDict[moveName].append(effectName)
+
+
+  with open(fname, 'a', newline='', encoding='utf-8') as newCSV:
+    writer = csv.writer(newCSV)
+    bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Z-Move', 0, 10)
+    dataRows = bs.find(id='Z-Power_effects_of_status_moves').find_next('table').find('table').find_all('tr')[1:]
+
+    for row in dataRows:
+      cells = row.find_all('td')
+      baseMoveName = parseName(cells[0].get_text())
+      effect = cells[2].get_text().rstrip('\n')
+
+      # the two effects which Z-moves add on are restoring HP, or resetting stats (other consequences, such as stat modifications/statuses, are added elsewhere)
+      # move resets stats
+      if 'Reset' in effect:
+        writer.writerow(['resets_stats', 'z_' + baseMoveName])
+      # Z-curse restores HP if user is a Ghost-type
+      elif 'Restores' in effect or baseMoveName == 'curse':
+        writer.writerow(['restores_hp', 'z_' + baseMoveName])
+      
+      # add effects for base moves
+      if baseMoveName in moveEffectDict:
+        for effect in moveEffectDict[baseMoveName]:
+          writer.writerow([effect, 'z_' + baseMoveName])
+
+  return
+
 def main():
   labelsAndLinks = [
     ['consecutive',
@@ -133,14 +175,19 @@ def main():
   writer = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
   writer.writerow(['Effect Name', 'Move Name'])
 
-  # 
+  # make main .csv 
   for [label, link] in labelsAndLinks:
     makeEffectCSV(label, link, writer)
 
   csvFile.close()
 
+  # remove Shadow Moves from .csv 
   removeShadowMoves(fname, 'Effect Name')
   os.remove(fname)
+
+  # add Z-move data to .csv
+  fname = dataPath + 'movesByEffect.csv'
+  addZMoves(fname)
 
   # the following exceptions are handled in moves.py when generating the .json
   #region

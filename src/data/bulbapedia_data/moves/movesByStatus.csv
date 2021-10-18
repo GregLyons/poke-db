@@ -158,94 +158,94 @@ flinch,twister,dragon,special,20.0,40,100%,"Can hit targets using Fly, Bounce, o
 flinch,waterfall,water,physical,20.0,80,100%,Generation IV onward
 flinch,zen_headbutt,psychic,physical,20.0,80,90%,
 flinch,zing_zap,electric,physical,30.0,80,100%,
-semi_invulnerable_turn,bounce,flying,physical,0.0,85,85%,30% chance of paralyzing the target
-semi_invulnerable_turn,dig,ground,physical,0.0,80,100%,
-semi_invulnerable_turn,dive,water,physical,0.0,80,100%,
-semi_invulnerable_turn,fly,flying,physical,0.0,90,95%,
-semi_invulnerable_turn,phantom_force,ghost,physical,0.0,90,100%,"Ignores protection moves, except Max Guard"
-semi_invulnerable_turn,shadow_force,ghost,physical,0.0,120,100%,"Ignores protection moves, except Max Guard"
-semi_invulnerable_turn,sky_drop,flying,physical,0.0,60,100%,"User and target become semi-invulnerable. Since Generation VI, only targets that weigh less than 440.9 lbs. (200 kg) can be lifted."
-bound,bind,normal,physical,0.0,15,85%,
-bound,clamp,water,physical,0.0,35,85%,
-bound,fire_spin,fire,special,0.0,35,85%,
-bound,g_max_centiferno,fire,varies,0.0,,%,Exclusive G-Max Move of Gigantamax Centiskorch
-bound,g_max_sandblast,ground,varies,0.0,,%,Exclusive G-Max Move of Gigantamax Sandaconda
-bound,infestation,bug,special,0.0,20,100%,
-bound,magma_storm,fire,special,0.0,100,75%,
-bound,sand_tomb,ground,physical,0.0,35,85%,
-bound,snap_trap,grass,physical,0.0,35,100%,
-bound,thunder_cage,electric,special,0.0,80,90%,
-bound,whirlpool,water,special,0.0,35,85%,
-bound,wrap,normal,physical,0.0,15,90%,
-trapped,anchor_shot,steel,physical,0.0,80,100%,
-trapped,block,normal,status,0.0,,%,
-trapped,fairy_lock,fairy,status,0.0,,%,Prevents all Pokémon on the field from switching out or fleeing during their next turn
-trapped,g_max_terror,ghost,varies,0.0,,%,Exclusive G-Max Move of Gigantamax Gengar
-trapped,jaw_lock,dark,physical,0.0,80,100%,Prevents the user and the target from switching out or fleeing
-trapped,mean_look,normal,status,0.0,,%,
-trapped,no_retreat,fighting,status,0.0,,%,"Raises the user's Attack, Defense, Special Attack, Special Defense, and Speed by one stage each. Prevents the user from switching out or fleeing"
-trapped,octolock,fighting,status,0.0,,100%,"At the end of each turn, the target's Defense and Special Defense are lowered by one stage each"
-trapped,spider_web,bug,status,0.0,,%,
-trapped,spirit_shackle,ghost,physical,0.0,80,100%,
-trapped,thousand_waves,ground,physical,0.0,90,100%,
-drowsy,yawn,normal,status,0.0,,100%,
-drowsy,g_max_snooze,dark,varies,0.0,,%,
-identified,foresight,normal,status,0.0,%,Removes Ghost-type Pokémon's immunity to Fighting-type and Normal-type moves,
-identified,odor_sleuth,normal,status,0.0,%,Removes Ghost-type Pokémon's immunity to Fighting-type and Normal-type moves,
-identified,miracle_eye,psychic,status,0.0,%,Removes Dark-type Pokémon's immunity to Psychic-type moves,
+semi_invulnerable_turn,bounce,flying,physical,100.0,85,85%,30% chance of paralyzing the target
+semi_invulnerable_turn,dig,ground,physical,100.0,80,100%,
+semi_invulnerable_turn,dive,water,physical,100.0,80,100%,
+semi_invulnerable_turn,fly,flying,physical,100.0,90,95%,
+semi_invulnerable_turn,phantom_force,ghost,physical,100.0,90,100%,"Ignores protection moves, except Max Guard"
+semi_invulnerable_turn,shadow_force,ghost,physical,100.0,120,100%,"Ignores protection moves, except Max Guard"
+semi_invulnerable_turn,sky_drop,flying,physical,100.0,60,100%,"User and target become semi-invulnerable. Since Generation VI, only targets that weigh less than 440.9 lbs. (200 kg) can be lifted."
+bound,bind,normal,physical,100.0,15,85%,
+bound,clamp,water,physical,100.0,35,85%,
+bound,fire_spin,fire,special,100.0,35,85%,
+bound,g_max_centiferno,fire,varies,100.0,,%,Exclusive G-Max Move of Gigantamax Centiskorch
+bound,g_max_sandblast,ground,varies,100.0,,%,Exclusive G-Max Move of Gigantamax Sandaconda
+bound,infestation,bug,special,100.0,20,100%,
+bound,magma_storm,fire,special,100.0,100,75%,
+bound,sand_tomb,ground,physical,100.0,35,85%,
+bound,snap_trap,grass,physical,100.0,35,100%,
+bound,thunder_cage,electric,special,100.0,80,90%,
+bound,whirlpool,water,special,100.0,35,85%,
+bound,wrap,normal,physical,100.0,15,90%,
+trapped,anchor_shot,steel,physical,100.0,80,100%,
+trapped,block,normal,status,100.0,,%,
+trapped,fairy_lock,fairy,status,100.0,,%,Prevents all Pokémon on the field from switching out or fleeing during their next turn
+trapped,g_max_terror,ghost,varies,100.0,,%,Exclusive G-Max Move of Gigantamax Gengar
+trapped,jaw_lock,dark,physical,100.0,80,100%,Prevents the user and the target from switching out or fleeing
+trapped,mean_look,normal,status,100.0,,%,
+trapped,no_retreat,fighting,status,100.0,,%,"Raises the user's Attack, Defense, Special Attack, Special Defense, and Speed by one stage each. Prevents the user from switching out or fleeing"
+trapped,octolock,fighting,status,100.0,,100%,"At the end of each turn, the target's Defense and Special Defense are lowered by one stage each"
+trapped,spider_web,bug,status,100.0,,%,
+trapped,spirit_shackle,ghost,physical,100.0,80,100%,
+trapped,thousand_waves,ground,physical,100.0,90,100%,
+drowsy,yawn,normal,status,100.0,,100%,
+drowsy,g_max_snooze,dark,varies,100.0,,%,
+identified,foresight,normal,status,100.0,%,Removes Ghost-type Pokémon's immunity to Fighting-type and Normal-type moves,
+identified,odor_sleuth,normal,status,100.0,%,Removes Ghost-type Pokémon's immunity to Fighting-type and Normal-type moves,
+identified,miracle_eye,psychic,status,100.0,%,Removes Dark-type Pokémon's immunity to Psychic-type moves,
 infatuation,attract,normal,status,100.0,,100%,Opponent of the opposite gender of the user become infatuated
 infatuation,g_max_cuddle,normal,varies,100.0,,%,Exclusive G-Max Move of Gigantamax EeveeAll opponents of the opposite gender of the user become infatuated
-leech_seed,leech_seed,grass,status,0.0,,90%,
-leech_seed,sappy_seed,grass,physical,0.0,90,100%,
+leech_seed,leech_seed,grass,status,100.0,,90%,
+leech_seed,sappy_seed,grass,physical,100.0,90,100%,
 torment,torment,dark,status,100.0,,100%,
 torment,g_max_meltdown,steel,varies,100.0,,%,Exclusive G-Max Move of Gigantamax MelmetalAffects all opponents on the field
-type_change,forests_curse,grass,status,0.0,100%,,
-type_change,trick_or_treat,ghost,status,0.0,100%,,
-type_change,magic_powder,psychic,status,0.0,100%,,
-type_change,soak,water,status,0.0,100%,,
-charging_turn,bounce,flying,physical,0.0,85,85%,User becomes semi-invulnerable. 30% chance of paralyzing the target
-charging_turn,dig,ground,physical,0.0,80,100%,User becomes semi-invulnerable
-charging_turn,dive,water,physical,0.0,80,100%,User becomes semi-invulnerable
-charging_turn,fly,flying,physical,0.0,90,95%,User becomes semi-invulnerable
-charging_turn,freeze_shock,ice,physical,0.0,140,90%,30% chance of paralyzing the target
-charging_turn,geomancy,fairy,status,0.0,,%,"Raises the user's Special Attack, Special Defense, and Speed by two stages"
-charging_turn,ice_burn,ice,special,0.0,140,90%,30% chance of burning the target
-charging_turn,meteor_beam,rock,special,0.0,120,90%,Raises the user's Special Attack by one level on the first turn
-charging_turn,phantom_force,ghost,physical,0.0,90,100%,User becomes semi-invulnerable
-charging_turn,razor_wind,normal,special,0.0,80,100%,Has an increased critical hit ratio
-charging_turn,shadow_force,ghost,physical,0.0,120,100%,User becomes semi-invulnerable
-charging_turn,skull_bash,normal,physical,0.0,130,100%,Raises the user's Defense by one level on the first turn
-charging_turn,sky_attack,flying,physical,0.0,140,90%,Has an increased critical hit ratioHas a 30% chance of causing the target to flinch
-charging_turn,sky_drop,flying,physical,0.0,60,100%,User and target become semi-invulnerable
-charging_turn,solar_beam,grass,special,0.0,120,100%,Will not need a turn to charge if used during harsh sunlight
-charging_turn,solar_blade,grass,physical,0.0,125,100%,Will not need a turn to charge if used during harsh sunlight
-protection,baneful_bunker,poison,status,0.0,+4,%,Will poison a Pokémon that attempts to use a contact move on the user
-protection,crafty_shield,fairy,status,0.0,+3,%,Protects the user's side of the field from status moves
-protection,detect,fighting,status,0.0,+4,%,
-protection,kings_shield,steel,status,0.0,+4,%,Will drop the Attack stat by 1 stage of a Pokémon that attempts to use a contact move on the user.Protects the user from any moves except status moves
-protection,mat_block,fighting,status,0.0,0,%,Always goes first; only works if it is the user's first turn
-protection,max_guard,normal,status,0.0,+4,%,"User must be Dynamaxed and know a status moveFully protects the user from Max MovesProtects the user from Block, Flower Shield, Gear Up, Magnetic Flux, Phantom Force, Psych Up, Teatime, and Transform"
-protection,obstruct,dark,status,0.0,+4,%,Will drop the Defense stat by 2 stages of a Pokémon that attempts to use a contact move on the user.
-protection,protect,normal,status,0.0,+4,%,
-protection,quick_guard,fighting,status,0.0,+3,%,Protects the user's side of the field from moves that have increased priority
-protection,spiky_shield,grass,status,0.0,+4,%,Will deal damage equal to 1/8 of its maximum HP of a Pokémon that attempts to use a contact move on the user
-protection,wide_guard,rock,status,0.0,+3,%,Protects the user's side of the field from damaging moves that can target multiple Pokémon
-recharging,blast_burn,fire,special,0.0,150,90%,
-recharging,eternabeam,dragon,special,0.0,160,90%,
-recharging,frenzy_plant,grass,special,0.0,150,90%,
-recharging,giga_impact,normal,physical,0.0,150,90%,
-recharging,hydro_cannon,water,special,0.0,150,90%,
-recharging,hyper_beam,normal,special,0.0,150,90%,
-recharging,meteor_assault,fighting,physical,0.0,150,100%,
-recharging,prismatic_laser,psychic,special,0.0,160,100%,
-recharging,roar_of_time,dragon,special,0.0,150,90%,
-recharging,rock_wrecker,rock,physical,0.0,150,90%,
-taking_aim,mind_reader,normal,status,0.0,,%,
-taking_aim,lock_on,normal,status,0.0,,%,
-thrashing,rage,normal,physical,0.0,20,100%,Only in generation I
-thrashing,thrash,normal,physical,0.0,120,100%,
-thrashing,outrage,dragon,physical,0.0,120,100%,
-thrashing,petal_dance,grass,special,0.0,120,100%,
+type_change,forests_curse,grass,status,100.0,100%,,
+type_change,trick_or_treat,ghost,status,100.0,100%,,
+type_change,magic_powder,psychic,status,100.0,100%,,
+type_change,soak,water,status,100.0,100%,,
+charging_turn,bounce,flying,physical,100.0,85,85%,User becomes semi-invulnerable. 30% chance of paralyzing the target
+charging_turn,dig,ground,physical,100.0,80,100%,User becomes semi-invulnerable
+charging_turn,dive,water,physical,100.0,80,100%,User becomes semi-invulnerable
+charging_turn,fly,flying,physical,100.0,90,95%,User becomes semi-invulnerable
+charging_turn,freeze_shock,ice,physical,100.0,140,90%,30% chance of paralyzing the target
+charging_turn,geomancy,fairy,status,100.0,,%,"Raises the user's Special Attack, Special Defense, and Speed by two stages"
+charging_turn,ice_burn,ice,special,100.0,140,90%,30% chance of burning the target
+charging_turn,meteor_beam,rock,special,100.0,120,90%,Raises the user's Special Attack by one level on the first turn
+charging_turn,phantom_force,ghost,physical,100.0,90,100%,User becomes semi-invulnerable
+charging_turn,razor_wind,normal,special,100.0,80,100%,Has an increased critical hit ratio
+charging_turn,shadow_force,ghost,physical,100.0,120,100%,User becomes semi-invulnerable
+charging_turn,skull_bash,normal,physical,100.0,130,100%,Raises the user's Defense by one level on the first turn
+charging_turn,sky_attack,flying,physical,100.0,140,90%,Has an increased critical hit ratioHas a 30% chance of causing the target to flinch
+charging_turn,sky_drop,flying,physical,100.0,60,100%,User and target become semi-invulnerable
+charging_turn,solar_beam,grass,special,100.0,120,100%,Will not need a turn to charge if used during harsh sunlight
+charging_turn,solar_blade,grass,physical,100.0,125,100%,Will not need a turn to charge if used during harsh sunlight
+protection,baneful_bunker,poison,status,100.0,+4,%,Will poison a Pokémon that attempts to use a contact move on the user
+protection,crafty_shield,fairy,status,100.0,+3,%,Protects the user's side of the field from status moves
+protection,detect,fighting,status,100.0,+4,%,
+protection,kings_shield,steel,status,100.0,+4,%,Will drop the Attack stat by 1 stage of a Pokémon that attempts to use a contact move on the user.Protects the user from any moves except status moves
+protection,mat_block,fighting,status,100.0,0,%,Always goes first; only works if it is the user's first turn
+protection,max_guard,normal,status,100.0,+4,%,"User must be Dynamaxed and know a status moveFully protects the user from Max MovesProtects the user from Block, Flower Shield, Gear Up, Magnetic Flux, Phantom Force, Psych Up, Teatime, and Transform"
+protection,obstruct,dark,status,100.0,+4,%,Will drop the Defense stat by 2 stages of a Pokémon that attempts to use a contact move on the user.
+protection,protect,normal,status,100.0,+4,%,
+protection,quick_guard,fighting,status,100.0,+3,%,Protects the user's side of the field from moves that have increased priority
+protection,spiky_shield,grass,status,100.0,+4,%,Will deal damage equal to 1/8 of its maximum HP of a Pokémon that attempts to use a contact move on the user
+protection,wide_guard,rock,status,100.0,+3,%,Protects the user's side of the field from damaging moves that can target multiple Pokémon
+recharging,blast_burn,fire,special,100.0,150,90%,
+recharging,eternabeam,dragon,special,100.0,160,90%,
+recharging,frenzy_plant,grass,special,100.0,150,90%,
+recharging,giga_impact,normal,physical,100.0,150,90%,
+recharging,hydro_cannon,water,special,100.0,150,90%,
+recharging,hyper_beam,normal,special,100.0,150,90%,
+recharging,meteor_assault,fighting,physical,100.0,150,100%,
+recharging,prismatic_laser,psychic,special,100.0,160,100%,
+recharging,roar_of_time,dragon,special,100.0,150,90%,
+recharging,rock_wrecker,rock,physical,100.0,150,90%,
+taking_aim,mind_reader,normal,status,100.0,,%,
+taking_aim,lock_on,normal,status,100.0,,%,
+thrashing,rage,normal,physical,100.0,20,100%,Only in generation I
+thrashing,thrash,normal,physical,100.0,120,100%,
+thrashing,outrage,dragon,physical,100.0,120,100%,
+thrashing,petal_dance,grass,special,100.0,120,100%,
 curse,curse,,,100.0,,,If user is a Ghost-type Pokemon
 embargo,embargo,,,100.0,,,
 heal_block,heal_block,,,100.0,,,
@@ -266,3 +266,62 @@ center_of_attention,spotlight,,,100.0,,,
 rooted,ingrain,,,100.0,,,
 magnetic_levitation,magnet_rise,,,100.0,,,
 transformed,transform,,,100.0,,,
+sleep,z_sing,,,100.0,,,
+confusion,z_supersonic,,,100.0,,,
+leech_seed,z_leech_seed,,,100.0,,,
+poison,z_poison_powder,,,100.0,,,
+paralysis,z_stun_spore,,,100.0,,,
+sleep,z_sleep_powder,,,100.0,,,
+paralysis,z_thunder_wave,,,100.0,,,
+bad_poison,z_toxic,,,100.0,,,
+sleep,z_hypnosis,,,100.0,,,
+confusion,z_confuse_ray,,,100.0,,,
+paralysis,z_glare,,,100.0,,,
+poison,z_poison_gas,,,100.0,,,
+sleep,z_lovely_kiss,,,100.0,,,
+sleep,z_spore,,,100.0,,,
+sleep,z_rest,,,100.0,,,
+trapped,z_spider_web,,,100.0,,,
+taking_aim,z_mind_reader,,,100.0,,,
+protection,z_protect,,,100.0,,,
+confusion,z_sweet_kiss,,,100.0,,,
+identified,z_foresight,,,100.0,,,
+protection,z_detect,,,100.0,,,
+taking_aim,z_lock_on,,,100.0,,,
+confusion,z_swagger,,,100.0,,,
+trapped,z_mean_look,,,100.0,,,
+infatuation,z_attract,,,100.0,,,
+torment,z_torment,,,100.0,,,
+confusion,z_flatter,,,100.0,,,
+burn,z_will_o_wisp,,,100.0,,,
+sleep,z_yawn,,,100.0,,,
+drowsy,z_yawn,,,100.0,,,
+confusion,z_teeter_dance,,,100.0,,,
+identified,z_odor_sleuth,,,100.0,,,
+sleep,z_grass_whistle,,,100.0,,,
+trapped,z_block,,,100.0,,,
+identified,z_miracle_eye,,,100.0,,,
+burn,z_psycho_shift,,,100.0,,,
+paralysis,z_psycho_shift,,,100.0,,,
+poison,z_psycho_shift,,,100.0,,,
+bad_poison,z_psycho_shift,,,100.0,,,
+sleep,z_psycho_shift,,,100.0,,,
+poison,z_toxic_spikes,,,100.0,,,
+bad_poison,z_toxic_spikes,,,100.0,,,
+sleep,z_dark_void,,,100.0,,,
+protection,z_wide_guard,,,100.0,,,
+type_change,z_soak,,,100.0,,,
+protection,z_quick_guard,,,100.0,,,
+protection,z_mat_block,,,100.0,,,
+type_change,z_trick_or_treat,,,100.0,,,
+type_change,z_forests_curse,,,100.0,,,
+protection,z_crafty_shield,,,100.0,,,
+trapped,z_fairy_lock,,,100.0,,,
+protection,z_kings_shield,,,100.0,,,
+protection,z_spiky_shield,,,100.0,,,
+charging_turn,z_geomancy,,,100.0,,,
+poison,z_baneful_bunker,,,100.0,,,
+protection,z_baneful_bunker,,,100.0,,,
+poison,z_toxic_thread,,,100.0,,,
+center_of_attention,z_grudge,,,100.0,,,
+center_of_attention,z_destiny_bond,,,100.0,,,

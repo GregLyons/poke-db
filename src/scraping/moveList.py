@@ -66,10 +66,43 @@ def makeMoveListCSVandExtractNotes(fname):
   
   return
 
+# add Z-move data to .csv
+def addZMoves(fname):
+  with open(fname, 'r', encoding='utf-8') as oldCSV:
+    reader = csv.DictReader(oldCSV)
+    statusMoveDict = {}
+    for row in reader: 
+      if row["Category"] == "status":
+        statusMoveDict[row["Move Name"]] = ['', row["Move Name"], row["Type"], row["Category"], '???', '', '', '', 'vii']
+    
+    # get moveID of last row and add 1, 
+    moveID = int(row["Move ID"]) + 1
+
+  with open(fname, 'a', newline='', encoding='utf-8') as newCSV:
+    writer = csv.writer(newCSV)
+
+    # the main purpose of referring to the table on the Bulbapedia page is to filter out moves which are introduced in Gen 8, and hence don't have Z- counterparts, e.g. Octolock; the original status table does not have gen data, so if we were to just append 'z_' to all the names, we would get 'z_octolock' in our .csv.
+    bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Z-Move', 0, 10)
+    dataRows = bs.find(id='Z-Power_effects_of_status_moves').find_next('table').find('table').find_all('tr')[1:]
+
+    for row in dataRows:
+      cells = row.find_all('td')
+      moveName = parseName(cells[0].get_text())
+      if moveName in statusMoveDict:
+        writer.writerow([moveID, 'z_' + moveName] + statusMoveDict[moveName][2:])
+        moveID += 1
+      # for catching any exceptions
+      else:
+        print(moveName)
+  return
+
 def main():
   dataPath = getBulbapediaDataPath() + 'moves\\'
   fname = dataPath + 'moveList.csv'
   makeMoveListCSVandExtractNotes(fname)
+
+  # add Z-move data for status moves, which aren't listed on the main move list page
+  addZMoves(fname)
 
 if __name__ == '__main__':
   main()

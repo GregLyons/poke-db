@@ -31,8 +31,10 @@ def addCSVRowsForStatus(statusInfo, writer, wroteHeader, notes):
   findSection = bs.find('span', id=findId)
   table = findSection.findNext('table').find('table')
   rows = table.findAll('tr')
-
+  
+  # since the tables may have different structure, we need to keep track of the headers of the table
   headers = []
+  # assume from the start that the table lacks a probability column
   hasProbability = False
   notesFromTable = []
 
@@ -43,6 +45,8 @@ def addCSVRowsForStatus(statusInfo, writer, wroteHeader, notes):
   
     for cell in row.findAll(['th']):
       value = cell.get_text().rstrip('\n')
+
+      # the table has a probability column
       if value == 'Probability':
         hasProbability = True
 
@@ -74,7 +78,7 @@ def addCSVRowsForStatus(statusInfo, writer, wroteHeader, notes):
 
     # if row doesn't have probability column, add it in the appropriate spot for consistency
     if not hasProbability:
-      csvRow = csvRow[:4] + [''] + csvRow[4:]
+      csvRow = csvRow[:4] + ['100.0'] + csvRow[4:]
 
     # exclude shadow moves 
     if len(csvRow) > 2 and csvRow[2] != 'Shadow':
@@ -85,7 +89,7 @@ def addCSVRowsForStatus(statusInfo, writer, wroteHeader, notes):
 
       # convert probability to float,  to 100.0
       if csvRow[4] == '':
-        csvRow[4] = '0'
+        csvRow[4] = '100.0'
       if csvRow[4] != 'Probability':
         csvRow[4] = float(csvRow[4].rstrip('%'))
 
@@ -180,6 +184,47 @@ def makeStatusNotesCSV(fname, notes):
 
   csvFile.close()
 
+# add Z-move data to .csv
+def addZMoves(fname):
+  with open(fname, 'r', encoding='utf-8') as oldCSV:
+    reader = csv.DictReader(oldCSV)
+    moveStatusDict = {}
+    for row in reader:  
+      # physical and special moves do not apply status effects when turned into Z-moves; as a consequence, the probability of a status being applied is always 100.0
+      if row["Category"] == 'status':
+        moveName, status = row["Move Name"], row["Status Caused"]
+        if row["Probability"] != '100.0':
+          print(moveName)
+
+        if moveName not in moveStatusDict:
+          moveStatusDict[moveName] = []
+        
+        moveStatusDict[moveName].append(status)
+      else:
+        continue
+
+
+  with open(fname, 'a', newline='', encoding='utf-8') as newCSV:
+    writer = csv.writer(newCSV)
+
+    # the main purpose of referring to the table on the Bulbapedia page is to filter out moves which are introduced in Gen 8, and hence don't have Z- counterparts, e.g. Octolock; the original status table does not have gen data, so if we were to just append 'z_' to all the names, we would get 'z_octolock' in our .csv.
+    bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Z-Move', 0, 10)
+    dataRows = bs.find(id='Z-Power_effects_of_status_moves').find_next('table').find('table').find_all('tr')[1:]
+
+    for row in dataRows:
+      cells = row.find_all('td')
+      moveName = parseName(cells[0].get_text())
+
+      if moveName in moveStatusDict:
+        for status in moveStatusDict[moveName]:
+          writer.writerow([status, 'z_' + moveName, '', '', '100.0', '', '', ''])
+
+    # two exceptions: Z-moves which add status effects
+    writer.writerow(['center_of_attention', 'z_grudge', '', '', '100.0', '', '', ''])
+    writer.writerow(['center_of_attention', 'z_destiny_bond', '', '', '100.0', '', '', ''])
+
+  return
+
 def main():
   # Make main .csv and extract notes
   dataPath = getBulbapediaDataPath() + 'moves\\'
@@ -189,6 +234,9 @@ def main():
   # Make notes .csv
   notes_fname = dataPath + 'movesByStatusNotes.csv'
   makeStatusNotesCSV(notes_fname, notes)
+
+  # add Z-move data
+  addZMoves(main_fname)
 
 if __name__ == '__main__':
   main()
