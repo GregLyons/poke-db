@@ -10,6 +10,7 @@ night_daze,5,accuracy,1,-,target,40.0
 octazooka,2,accuracy,1,-,target,50.0
 sand_attack,1,accuracy,1,-,target,100.0
 smokescreen,1,accuracy,1,-,target,100.0
+aurora_beam,1,attack,1,-,target,100.0
 baby_doll_eyes,6,attack,1,-,target,100.0
 breaking_swipe,8,attack,1,-,target,100.0
 charm,2,attack,2,-,target,100.0
@@ -27,6 +28,8 @@ tearful_look,7,attack,1,-,target,100.0
 tickle,3,attack,1,-,target,100.0
 trop_kick,7,attack,1,-,target,100.0
 venom_drench,6,attack,1,-,target,100.0
+acid,1,defense,1,-,target,100.0
+crunch,2,defense,1,-,target,20.0
 crush_claw,3,defense,1,-,target,50.0
 fire_lash,7,defense,1,-,target,100.0
 grav_apple,8,defense,1,-,target,100.0
@@ -61,9 +64,11 @@ spirit_break,8,special_attack,1,-,target,100.0
 struggle_bug,5,special_attack,1,-,target,100.0
 tearful_look,7,special_attack,1,-,target,100.0
 venom_drench,6,special_attack,1,-,target,100.0
+acid,4,special_defense,1,-,target,10.0
 acid_spray,5,special_defense,2,-,target,100.0
 apple_acid,8,special_defense,1,-,target,100.0
 bug_buzz,4,special_defense,1,-,target,10.0
+crunch,2,special_defense,1,-,target,20.0
 earth_power,4,special_defense,1,-,target,10.0
 energy_ball,4,special_defense,1,-,target,10.0
 fake_tears,3,special_defense,2,-,target,100.0
@@ -75,7 +80,10 @@ metal_sound,3,special_defense,2,-,target,100.0
 octolock,8,special_defense,1,-,target,100.0
 seed_flare,4,special_defense,2,-,target,40.0
 shadow_ball,2,special_defense,1,-,target,20.0
+bubble,1,speed,1,-,target,100.0
+bubble_beam,1,speed,1,-,target,100.0
 bulldoze,5,speed,1,-,target,100.0
+constrict,1,speed,1,-,target,100.0
 cotton_spore,2,speed,2,-,target,100.0
 drum_beating,8,speed,1,-,target,100.0
 electroweb,5,speed,1,-,target,100.0
@@ -180,6 +188,7 @@ cotton_guard,5,defense,3,+,user,100.0
 curse,2,defense,1,+,user,100.0
 defend_order,4,defense,1,+,user,100.0
 defense_curl,1,defense,1,+,user,100.0
+diamond_storm,6,defense,1,+,user,50.0
 extreme_evoboost,7,defense,2,+,user,100.0
 flower_shield,6,defense,1,+,user,100.0
 harden,1,defense,1,+,user,100.0

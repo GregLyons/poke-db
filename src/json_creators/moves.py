@@ -107,18 +107,19 @@ def makeInitialMoveDict(fname):
     for row in reader:
       # Bulbapedia has "Stone Axe" as the last entry with ID "???"--not released yet
       if row["Move ID"] != "???":
+        moveID = int(row["Move ID"])
+
         isMax = row["Move Name"][:3] == "max"
         isGMax = row["Move Name"][:5] == "g_max"
         # the extra checks are for the attacking Z_moves, e.g. 'Breakneck Blitz'
-        isZMove = row["Move Name"][:2] == "z_" or (row["PP"] == '1' and row["Power"] == row["Accuracy"] == '' and genSymbolToNumber(row["Gen"]) == 7)
+        isZMove = row["Move Name"][:2] == "z_" or (row["PP"] == '1' and row["Accuracy"] == '' and genSymbolToNumber(row["Gen"]) == 7)
 
-        # "Type", "Power", and "Accuracy" are lists since those can potentially change across generations--Bulbapedia lists the latest values for each field, with the past values in notes
-        moveDict[int(row["Move ID"])] = {
+        # Many values are lists since they can potentially change across generations--Bulbapedia lists the latest values for each field, with the past values in notes
+        moveDict[moveID] = {
           "move_name": row["Move Name"],
           "move_description": "",
           "type": [[row["Type"], 8]],
-          "category": [row["Category"], 8],
-          "contest": row["Contest"],
+          "category": [[row["Category"], 8]],
           "pp": [[row["PP"], 8]],
           "power": [[row["Power"], 8]],
           "accuracy": [[row["Accuracy"].rstrip('%'), 8]],
@@ -127,14 +128,15 @@ def makeInitialMoveDict(fname):
           "fixed_damage": None,
           "lgpe_only": False,
           "max_move": isMax,
-          "g_max_move": isGMax,
+          "gmax_move": isGMax,
           "z_move": isZMove,
           "priority": [],
           "effect": {},
           "status": {},
           "usage_method": {},
           "target": [],
-          "stat_modifications": {}
+          "stat_modifications": {},
+          "removed_from_gen8": False,
         }
 
     # we will make a list of all the parsed notes, then filter them out into several other lists
@@ -155,7 +157,7 @@ def makeInitialMoveDict(fname):
   for change in changes:
     # Exception is Water Shuriken, moveID = 594
     if change[0] == 594:
-      moveDict[int(moveID)]['Category'] = [['Physical', 6], ['Special', 8]]
+      moveDict[int(moveID)]["category"] = [['physical', 6], ['special', 8]]
       continue
 
     moveID = change[0]
@@ -163,6 +165,7 @@ def makeInitialMoveDict(fname):
     header = change[1]
     if header == 'move name':
       header = 'type'
+      change[2][0] = change[2][0].lower()
     valueAndGen = change[2]
     
     moveDict[int(moveID)][header].append(valueAndGen)
@@ -214,7 +217,7 @@ def makeInitialMoveDict(fname):
 
   # For each move in initialMoveDict, rewrite the patches in "Type", "PP", "Power", and "Accuracy" fields so that the generation represents the starting gen rather than the ending gen of that value
   for key in moveDict:
-    for innerKey in ['type', 'pp', 'power', 'accuracy']:
+    for innerKey in ['type', 'pp', 'power', 'accuracy', 'category']:
       # Split up patch into LGPE_only and other
       LGPEOnlyPatch = [patch for patch in moveDict[key][innerKey] if patch[1] == 'lgpe_only']
       noLGPEOnlyPatches = [patch for patch in moveDict[key][innerKey] if patch[1] != 'lgpe_only']
@@ -245,7 +248,11 @@ def makeInitialMoveDict(fname):
           moveDict[key][innerKey] = modifiedPatchList
       if LGPEOnlyPatch:
         moveDict[key][innerKey].append(LGPEOnlyPatch[0])
-     
+
+  # hard code water shuriken type
+  moveDict[594]['category'] = [['physical', 6], ['special', 8]]
+  moveDict[594]['type'] = [['water', 6]]
+
   return moveDict
 
 # Uses move list located at fname to make inverse lookup of moveID from moveName possible
@@ -606,7 +613,7 @@ def addStatModToMoveDict(fname, moveDict, inverseDict):
 
   # focus_energy
   focusEnergyKey = inverseDict["focus_energy"]
-  moveDict[focusEnergyKey]["stat_modification"]["critical_hit_ratio"] = [[1, 'user', 100.0, 2], [2, 'user', 100.0, 3]]
+  moveDict[focusEnergyKey]["stat_modifications"]["critical_hit_ratio"] = [[1, 'user', 100.0, 2], [2, 'user', 100.0, 3]]
 
   #endregion
 
@@ -617,6 +624,45 @@ def addStatModToMoveDict(fname, moveDict, inverseDict):
   # Psychic and Amnesia have also changed their stat modifications if you count the Special split
   # Shadow Down doesn't exist
 
+# update types to account for physical/special split, and add other exceptions
+def updateMoveCategory(moveDict, inverseDict):
+  for key in moveDict.keys():
+    # compute type for move to account for physical/special split
+    type = moveDict[key]["type"][-1][0]
+    gen = moveDict[key]["gen"]
+    category = moveDict[key]["category"][0][0]
+
+    if category == 'status':
+      moveDict[key]["category"] = [["status", gen]]
+      continue
+    elif category == '???':
+      moveDict[key]["category"] == [["varies", gen]]
+    elif gen < 4:
+      # special moves which were physical prior to gen 4 due to their type
+      if type in ['normal', 'fighting', 'flying', 'poison', 'ground', 'rock', 'bug', 'ghost', 'steel'] and category == 'special':
+         moveDict[key]["category"] = [['physical', gen]] + [[category, 4]]
+      # physical moves which were special prior to gen 4 due to their type
+      elif type in ['fire', 'water', 'grass', 'electric', 'psychic', 'ice', 'dragon', 'dark'] and category == 'physical':
+        moveDict[key]["category"] = [['special', gen]] + [[category, 4]]
+
+  # hard-code exceptions; moves whose type varies
+  hiddenPowerKey = inverseDict['hidden_power']
+  moveDict[hiddenPowerKey]["category"] = [['varies', 3], ['special', 4]]
+
+  weatherBallKey = inverseDict['weather_ball']
+  moveDict[weatherBallKey]["category"] = [['varies', 3], ['special', 4]]
+
+  return
+
+# add flag for moves removed from gen 8
+def removedFromGen8(fname, moveDict):
+  with open(fname, 'r', encoding='utf-8') as removedCSV:
+    reader = csv.DictReader(removedCSV)
+    for row in reader:
+      moveDict[row["Move ID"]] = True
+      print(row["Move Name"])
+
+  return
 
 def main():
   # holds moveID, Name, Type, Category, Contest, PP, Power, Accuracy, Gen
@@ -649,6 +695,11 @@ def main():
 
   statMod_fname = bulbapediaDataPath + 'statModifyingMoves.csv'
   addStatModToMoveDict(statMod_fname, moveDict, inverseDict)
+
+  updateMoveCategory(moveDict, inverseDict)
+
+  removedFromGen8_fname = bulbapediaDataPath + 'movesRemovedFromGen8.csv'
+  removedFromGen8(removedFromGen8_fname, moveDict)
 
   return
 
