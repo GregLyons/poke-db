@@ -485,6 +485,37 @@ def addTargetToMoveDict(fname, moveDict, inverseDict):
       
       key = inverseDict[moveName]
       moveDict[key]["target"] = [[target, moveDict[key]["gen"]]]
+
+    # hard code exceptions
+    #region
+    # helping_hand
+    helpingHandKey = inverseDict["helping_hand"]
+    moveDict[helpingHandKey]["target"] = [["self", 3], ["adjacent_ally", 4]]
+
+    # surf
+    surfKey = inverseDict["surf"]
+    moveDict[surfKey]["target"] = [["all_foes", 3], ["all_adjacent"], 4]
+
+    # conversion_2
+    conversion2Key = inverseDict["conversion_2"]
+    moveDict[conversion2Key]["target"] = [["user", 2], ["any_adjacent", 5]]
+
+    # poison_gas
+    poisonGasKey = inverseDict["poison_gas"]
+    moveDict[poisonGasKey]["target"] = [["any_adjacent", 1], ["all_adjacent_foes", 5]]
+
+    # cotton_spore
+    cottonSporeKey = inverseDict["cotton_spore"]
+    moveDict[cottonSporeKey]["target"] = [["adjacent", 2], ["all_adjacent_foes", 6]]
+
+    # nature_power
+    naturePowerKey = inverseDict["nature_power"]
+    moveDict[naturePowerKey]["target"] = [["user", 5], ["adjacent", 6]]
+
+    # howl
+    howlKey = inverseDict["howl"]
+    moveDict[howlKey]["target"] = [["user", 3], ["user_and_all_allies", 8]]
+    #endregion
   return
 
 # read description data and update moveDict

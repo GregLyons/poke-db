@@ -73,6 +73,10 @@ def removeShadowMoves(fname, firstHeader):
       if row["Move Name"] not in shadowMoves:
         writer.writerow([row[firstHeader], row['Move Name']])
 
+# list of shadow moves
+def isShadowMove(moveName):
+  return moveName in ['shadow_blitz', 'shadow_rush', 'shadow_break', 'shadow_end', 'shadow_wave', 'shadow_rave', 'shadow_storm', 'shadow_fire', 'shadow_bolt', 'shadow_chill', 'shadow_blast', 'shadow_sky', 'shadow_hold', 'shadow_mist', 'shadow_panic', 'shadow_down', 'shadow_shed', 'shadow_half']
+
 def getBulbapediaDataPath():
   return 'src\\data\\bulbapedia_data\\'
 

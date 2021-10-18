@@ -152,7 +152,7 @@ def handleMoveLink(link, stat):
 
   return 
 
-def statModifyingMoves(fname):
+def makeCSV(fname):
   with open(fname, 'w', newline='', encoding='utf-8') as csvFile:
     writer = csv.writer(csvFile)
     writer.writerow(['Move Name', 'Gen', 'Stat Name', 'Modifier', 'Sign', 'Recipient'])
@@ -283,7 +283,7 @@ def addZMoves(fname):
 def main():
   dataPath = getBulbapediaDataPath() + '\\moves\\'
   fname = dataPath + 'statModifyingMoves.csv'
-  statModifyingMoves(fname)
+  makeCSV(fname)
 
   # add in Z-move data
   addZMoves(fname)
