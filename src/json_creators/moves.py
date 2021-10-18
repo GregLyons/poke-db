@@ -107,10 +107,12 @@ def makeInitialMoveDict(fname):
     for row in reader:
       # Bulbapedia has "Stone Axe" as the last entry with ID "???"--not released yet
       if row["Move ID"] != "???":
-        # "Type", "Power", and "Accuracy" are lists since those can potentially change across generations--Bulbapedia lists the latest values for each field, with the past values in notes
         isMax = row["Move Name"][:3] == "max"
         isGMax = row["Move Name"][:5] == "g_max"
+        # the extra checks are for the attacking Z_moves, e.g. 'Breakneck Blitz'
+        isZMove = row["Move Name"][:2] == "z_" or (row["PP"] == '1' and row["Power"] == row["Accuracy"] == '' and genSymbolToNumber(row["Gen"]) == 7)
 
+        # "Type", "Power", and "Accuracy" are lists since those can potentially change across generations--Bulbapedia lists the latest values for each field, with the past values in notes
         moveDict[int(row["Move ID"])] = {
           "move_name": row["Move Name"],
           "move_description": "",
@@ -126,6 +128,7 @@ def makeInitialMoveDict(fname):
           "lgpe_only": False,
           "max_move": isMax,
           "g_max_move": isGMax,
+          "z_move": isZMove,
           "priority": [],
           "effect": {},
           "status": {},
@@ -481,7 +484,7 @@ def addTargetToMoveDict(fname, moveDict, inverseDict):
           moveDict[key]["target"] = [['any_adjacent', moveDict[key]["gen"]]]
       
       key = inverseDict[moveName]
-      moveDict[key]["target"] = [[True, moveDict[key]["gen"]]]
+      moveDict[key]["target"] = [[target, moveDict[key]["gen"]]]
   return
 
 # read description data and update moveDict
@@ -502,27 +505,86 @@ def addStatModToMoveDict(fname, moveDict, inverseDict):
     next(reader)
 
     for row in reader:
-      moveName, gen, stat, modifier, sign, recipient = row
+      moveName, gen, stat, modifier, sign, recipient, probability = row
       moveKey = inverseDict[moveName]
 
       # for belly drum--it always sets attack stage to +6, even if it's negative beforehand
       if modifier == 'max':
         modifier = 12
+      gen, modifier, probability = int(gen), int(modifier), float(probability)
+
+      if sign == '-':
+        modifier = -modifier
 
       if stat not in moveDict[1]["stat_modifications"]:
         for key in moveDict:
-          moveDict[key]["stat_modifications"][stat] = [[stat, 0, '', moveDict[key]["gen"]]]
+          moveDict[key]["stat_modifications"][stat] = [[0, '', moveDict[key], 0.0, ["gen"]]]
       
       # indicates move has always modified that stat as described
       if gen == moveDict[moveKey]["gen"]:
-        moveDict[moveKey]["stat_modifications"][stat] = [[stat, sign, modifier, recipient, gen]]
+        moveDict[moveKey]["stat_modifications"][stat] = [[modifier, recipient, probability, gen]]
       # indicate move's stat modification was introduced in a later gen
       else:
-        moveDict[moveKey]["stat_modifications"][stat].append([stat, sign, modifier, recipient, gen])
+        moveDict[moveKey]["stat_modifications"][stat].append([modifier, recipient, probability, gen])
+  
+  # hard code exceptions
+  #region
+  # acid
+  acidKey = inverseDict["acid"]
+  moveDict[acidKey]["stat_modifications"]["defense"] = [[-1, 'target', 33.2, 1], [-1, 'target', 10.0, 2], [0, 'target', 0.0, 4]]
+  moveDict[acidKey]["stat_modifications"]["special_defense"] = [[0, 'target', 0.0, 1], [-1, 'target', 10.0, 4]]
 
-      print(moveDict[moveKey]["stat_modifications"])
+  # aurora beam
+  auroraBeamKey = inverseDict["aurora_beam"]
+  moveDict[auroraBeamKey]["attack"] = [[-1, 'target', 33.2, 1], [-1, 'target', 10.0, 2]]
+
+  # bubble
+  bubbleKey = inverseDict["bubble"]
+  moveDict[bubbleKey]["speed"] = [[-1, 'target', 33.2, 1], [-1, 'target', 10.0, 2]]
+  
+  # bubble beam
+  bubbleBeamKey = inverseDict["bubble_beam"]
+  moveDict[bubbleBeamKey]["speed"] = [[-1, 'target', 33.2, 1], [-1, 'target', 10.0, 2]]
+
+  # constrict
+  constrictKey = inverseDict["constrict"]
+  moveDict[constrictKey]["speed"] = [[-1, 'target', 33.2, 1], [-1, 'target', 10.0, 2]]
+
+  # psychic
+  psychicKey = inverseDict["psychic"]
+  moveDict[psychicKey]["special_attack"] = [[-1, 'target', 33.2, 1], [0, 'target', 0.0, 2]]
+  moveDict[psychicKey]["special_defense"] = [[-1, 'target', 33.2, 1], [-1, 'target', 10.0, 2]]
+
+  # amnesia
+  amnesiaKey = inverseDict["amnesia"]
+  moveDict[amnesiaKey]["special_attack"] = [[2, 'user', 100.0, 1], [0, 'user', 0.0, 2]]
+  moveDict[amnesiaKey]["special_defense"] = [[2, 'user', 100.0, 1], [2, 'user', 100.0, 2]]
+
+  # crunch
+  crunchKey = inverseDict["crunch"]
+  moveDict[crunchKey]["stat_modifications"]["defense"] = [[-1, 'target', 20.0, 2], [0, 'target', 0.0, 4]]
+  moveDict[crunchKey]["stat_modifications"]["special_defense"] = [[0, 'target', 0.0, 2], [-1, 'target', 20.0, 4]]
+
+  # diamond_storm
+  diamondStormKey = inverseDict["diamond_storm"]
+  moveDict[diamondStormKey]["stat_modifications"]["defense"] = [[1, 'user', 50.0, 6], [2, 'user', 50.0, 7]]
+
+  # fell_stinger
+  fellStingerKey = inverseDict["fell_stinger"]
+  moveDict[fellStingerKey]["stat_modifications"]["attack"] = [[2, 'user', 100.0, 6], [3, 'user', 100.0, 7]]
+
+  # focus_energy
+  focusEnergyKey = inverseDict["focus_energy"]
+  moveDict[focusEnergyKey]["stat_modification"]["critical_hit_ratio"] = [[1, 'user', 100.0, 2], [2, 'user', 100.0, 3]]
+
+  #endregion
 
   return
+  # EXCEPTIONS: ['secret_power', 'crunch', 'diamond_storm', 'acid', 'psychic', 'amnesia', 'shadow_down', 'focus_energy', 'aurora_beam', 'bubble', 'bubble_beam', 'constrict']
+  # Secret Power has a complicated Bulbapedia description to parse, with tables
+  # Crunch, Acid, Focus Energy, and Diamond Storm have changed their stat modifications between generations
+  # Psychic and Amnesia have also changed their stat modifications if you count the Special split
+  # Shadow Down doesn't exist
 
 
 def main():

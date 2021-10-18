@@ -28,7 +28,8 @@ def addZMoves(fname):
       if moveName not in moveEffectDict:
         moveEffectDict[moveName] = []
       
-      moveEffectDict[moveName].append(effectName)
+      if effectName != 'no_effect':
+        moveEffectDict[moveName].append(effectName)
 
 
   with open(fname, 'a', newline='', encoding='utf-8') as newCSV:

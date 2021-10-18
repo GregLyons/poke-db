@@ -5,7 +5,7 @@ from bs4.element import Tag
 from utils import openLink, getBulbapediaDataPath, parseName, genSymbolToNumber
 
 
-# EXCEPTIONS: ['secret_power', 'crunch', 'diamond_storm', 'acid', 'psychic', 'amnesia', 'shadow_down', 'focus_energy']
+# EXCEPTIONS: ['secret_power', 'crunch', 'diamond_storm', 'acid', 'psychic', 'amnesia', 'shadow_down', 'focus_energy', 'aurora_beam', 'bubble', 'bubble_beam', 'constrict' 'fell_stinger']
 # Secret Power has a complicated Bulbapedia description to parse, with tables
 # Crunch, Acid, Focus Energy, and Diamond Storm have changed their stat modifications between generations
 # Psychic and Amnesia have also changed their stat modifications if you count the Special split
@@ -38,12 +38,12 @@ def handleCategoryLink(link, writer):
     for moveList in moveLists:
       for move in moveList.find_all('li'):
         moveLink = move.find('a')
-        moveName, gen, modifier = handleMoveLink(moveLink, stat)
+        moveName, gen, modifier, probability = handleMoveLink(moveLink, stat)
         if modifier != 'exception':
           if stat == 'evasiveness':
             stat = 'evasion'
 
-          writer.writerow([moveName, gen, parseName(stat), modifier, sign, recipient])
+          writer.writerow([moveName, gen, parseName(stat), modifier, sign, recipient, probability])
         else: 
           continue
 
@@ -58,20 +58,20 @@ def handleMoveLink(link, stat):
   moveLink = 'https://bulbapedia.bulbagarden.net' + link['href']
   moveName = parseName(link.get_text().removesuffix('(move)'))
 
-  # handle these moves separately, due to either their complicated nature (Secret Power) or their change between generations (the rest)
-  if moveName in ['secret_power', 'crunch', 'diamond_storm', 'acid', 'psychic', 'amnesia', 'shadow_down', 'shadow_mist']:
-    return moveName, 'exception', 'exception'
+  # handle these moves separately; some more moves which changed between generations (e.g. bubble) will be overwritten when making the move dictionary .json file
+  if moveName in ['secret_power', 'psychic', 'amnesia', 'shadow_down', 'shadow_mist', 'focus_energy']:
+    return moveName, 'exception', 'exception', 'exception'
   # moves with descriptions not covered by the regex defined below
   elif moveName in ['mist_ball', 'luster_purge']:
-    return moveName, 3, 1
+    return moveName, 3, 1, 50.0
   elif moveName in ['dragon_ascent', 'hyperspace_fury']:
-    return moveName, 6, 1
+    return moveName, 6, 1, 100.0
   elif moveName == 'thunderous_kick':
-    return moveName, 8, 1
+    return moveName, 8, 1, 100.0
   elif moveName == 'acupressure':
-    return moveName, 4, 2
+    return moveName, 4, 2, 100.0
   elif moveName == 'belly_drum':
-    return moveName, 2, 'max'
+    return moveName, 2, 12, 100.0
 
   bs = openLink(moveLink, 0, 10)
   descriptionStart = bs.find(id='Effect').parent
@@ -120,6 +120,13 @@ def handleMoveLink(link, stat):
     paragraphs = description[1:]
 
     for paragraph in paragraphs:
+      probability_regex = rf"has a (\d*)% chance"
+      findProbability = re.search(probability_regex, paragraph)
+      if findProbability:
+        probability = float(findProbability.group(1))
+      else:
+        probability = 100.0
+
       findStage_regex = rf"{stat}[\w\s,()-é]* (one|two|1|2|three) [stat ]*(stage|level)"
       other_regex = rf"evasiveness."
 
@@ -136,9 +143,9 @@ def handleMoveLink(link, stat):
         else:
           modifier = findStage.group(1)
         
-        return moveName, gen, modifier
+        return moveName, gen, modifier, probability
       elif re.search(other_regex, paragraph):
-        return moveName, gen, 1
+        return moveName, gen, 1, probability
 
   # shouldn't be reached unless Bulbapedia changes its descriptions
   print('couldn\'t handle', moveName)
@@ -250,7 +257,7 @@ def addZMoves(fname):
 
           # in this case, the Z-move does not affect the base move's stat modifier applied to the target, as it only affects stat modifications for the user
           if baseMoveRecipient == 'target':
-            writer.writerow(['z_' + baseMoveName, 7, baseMoveStat, baseMoveModifier, baseMoveSign, 'target'])
+            writer.writerow(['z_' + baseMoveName, 7, baseMoveStat, baseMoveModifier, baseMoveSign, 'target', 100.0])
             break
 
           if baseMoveSign == '+':
@@ -270,7 +277,7 @@ def addZMoves(fname):
         else:
           sign = '-'
 
-        writer.writerow(['z_' + baseMoveName, 7, stat_name, modifier, sign, 'user'])
+        writer.writerow(['z_' + baseMoveName, 7, stat_name, modifier, sign, 'user', 100.0])
   return
 
 def main():
