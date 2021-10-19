@@ -91,7 +91,7 @@ def abilityEffects(fnamePrefix):
             method = method.replace('punching', 'punch').replace('biting', 'bite').replace('sound_based', 'sound')
 
             currentWriter.writerow([abilityName, method, multiplier, 'method'])
-            mainWriter.writerow([abilityName, 'boost_method'])
+            mainWriter.writerow([abilityName, 'boost_usage_method'])
     #endregion
 
 
@@ -134,7 +134,7 @@ def abilityEffects(fnamePrefix):
 
       for row in createWeatherRows:
         currentWriter.writerow(row)
-        mainWriter.writerow([row[0], 'create_weather'])
+        mainWriter.writerow([row[0], 'creates_weather'])
     #endregion
     
     # create terrain
@@ -161,7 +161,7 @@ def abilityEffects(fnamePrefix):
 
       for row in createTerrainRows:
         currentWriter.writerow(row)
-        mainWriter.writerow([row[0], 'create_terrain'])
+        mainWriter.writerow([row[0], 'creates_terrain'])
     #endregion
 
     # protect against type or method
@@ -291,7 +291,7 @@ def abilityEffects(fnamePrefix):
     # recover HP
     #region
     for abilityName in ['dry_skin', 'volt_absorb', 'water_absorb', 'ice_body', 'rain_dish']:
-      mainWriter.writerow([abilityName, 'restore_hp'])
+      mainWriter.writerow([abilityName, 'restores_hp'])
     #endregion
 
     # trapping abilities
@@ -306,7 +306,7 @@ def abilityEffects(fnamePrefix):
     
     with open(fnamePrefix + 'ModifyStat.csv', 'w', newline='', encoding='utf-8') as currentCSV:
       currentWriter = csv.writer(currentCSV)
-      currentWriter.writerow(['Ability Name', 'Stat', 'Modifier'])
+      currentWriter.writerow(['Ability Name', 'Stat Name', 'Modifier', 'Recipient'])
 
       bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Stat', 0, 10)
       dataRows = bs.find(id='In-battle_modification').find_next('table').find('tr').find_next_siblings('tr')[1:]
@@ -320,19 +320,21 @@ def abilityEffects(fnamePrefix):
         # Then, we join the list into a string. 
         # Then, we match the ability names with spaces. e.g. 'Beast BoostBerserk' is sent to 'Beast   Boost  Berserk', where the ability name has 3 spaces between its words, and separate abilities have 2 spaces between them; If we replace the instances of 3 spaces with 1 space, then distinct abilities will have 2 spaces between them, and the ability names will be correctly formatted
         # Then, we replace the stage modifiers and 'other' with numeric codes
-        boosters = ''.join(['  ' + ch if (ch.isupper() or ch.isnumeric()) else ch for ch in cells[2].get_text().replace('*', '').replace('≥', '')]).replace('   ', ' ').replace('1 stage', '1').replace('2 stages', '2').replace('3 stages', '3').replace('Other', '9')
-        reducers = ''.join(['  ' + ch if (ch.isupper() or ch.isnumeric()) else ch for ch in cells[-1].get_text().replace('*', '').replace('≥', '')]).replace('   ', ' ').replace('1 stage', '1').replace('2 stages', '2').replace('3 stages', '3').replace('Other', '9')
-
+        # Lastly, to account for abilities with hyphens, we use a replace() to glue them back together
+        boosters = ''.join(['  ' + ch if (ch.isupper() or ch.isnumeric()) else ch for ch in cells[2].get_text().replace('*', '').replace('≥', '')]).replace('   ', ' ').replace('1 stage', '1').replace('2 stages', '2').replace('3 stages', '3').replace('Other', '9').replace('-  ', '-')
+        reducers = ''.join(['  ' + ch if (ch.isupper() or ch.isnumeric()) else ch for ch in cells[-1].get_text().replace('*', '').replace('≥', '')]).replace('   ', ' ').replace('1 stage', '1').replace('2 stages', '2').replace('3 stages', '3').replace('Other', '9').replace('-  ', '-')
+        
+       
 
         # split up the boosters and reducers according to stage/modifier
-        oneStageBoosters = re.search(r'1 ([A-Za-z\s]*) [\d]', boosters)
-        twoStageBoosters = re.search(r'2 ([A-Za-z\s]*) [\d]', boosters)
-        moreStageBoosters = re.search(r'3 ([A-Za-z\s]*) [\d]', boosters)
-        otherBoosters = re.search(r'9 ([A-Za-z\s]*)', boosters)
-        oneStageReducers = re.search(r'1 ([A-Za-z\s]*) [\d]', reducers)
-        twoStageReducers = re.search(r'2 ([A-Za-z\s]*) [\d]', reducers)
-        moreStageReducers = re.search(r'3 ([A-Za-z\s]*) [\d]', reducers)
-        otherReducers = re.search(r'9 ([A-Za-z\s]*)', reducers)
+        oneStageBoosters = re.search(r'1 ([A-Za-z\s-]*) [\d]', boosters)
+        twoStageBoosters = re.search(r'2 ([A-Za-z\s-]*) [\d]', boosters)
+        moreStageBoosters = re.search(r'3 ([A-Za-z\s-]*) [\d]', boosters)
+        otherBoosters = re.search(r'9 ([A-Za-z\s-]*)', boosters)
+        oneStageReducers = re.search(r'1 ([A-Za-z\s-]*) [\d]', reducers)
+        twoStageReducers = re.search(r'2 ([A-Za-z\s-]*) [\d]', reducers)
+        moreStageReducers = re.search(r'3 ([A-Za-z\s-]*) [\d]', reducers)
+        otherReducers = re.search(r'9 ([A-Za-z\s-]*)', reducers)
         if oneStageBoosters != None:
           oneStageBoosters = oneStageBoosters.group(1).strip().split('  ')
         if twoStageBoosters != None:
@@ -353,17 +355,19 @@ def abilityEffects(fnamePrefix):
         modifiers = [['1', oneStageBoosters], ['2', twoStageBoosters], ['more+', moreStageBoosters], ['other+', otherBoosters], ['-1', oneStageReducers], ['-2', twoStageReducers], ['more-', moreStageReducers], ['other-', otherReducers]]
 
         # one- and two-stage modifiers
-        for modifier in [modifier for modifier in modifiers if modifier[0].isnumeric() and modifier[1] != None]:
+        for modifier in [modifier for modifier in modifiers if modifier[0][-1].isnumeric() and modifier[1] != None]:
           stage, abilities = modifier
           for abilityName in abilities:
             recipient = 'user'
             abilityName = parseName(abilityName)
-            if int(stage) > 0:
-              sign = '+'
-            else:
-              sign = '-'
+            if '-' in stage:
+              # minus sign already in stage, so no need to add anything
+              sign = '' 
               if abilityName in ['intimidate', 'gulp_missile']:
-                recipient = 'foe'
+                recipient = 'all_foes'
+            else:
+              # indicates stage change rather than multiplier
+              sign = '+'
 
             currentWriter.writerow([abilityName, statName, sign + stage, recipient])
             mainWriter.writerow([abilityName, 'modify_stat'])
@@ -379,7 +383,7 @@ def abilityEffects(fnamePrefix):
               recipient = 'user'
             elif abilityName == 'steam_engine':
               sign = '+'
-              stage = '+6'
+              stage = '6'
               recipient = 'user'
             else:
               print(abilityName, 'not handled')

@@ -1,16 +1,9 @@
 import csv
 import re
 import os
-from utils import getBulbapediaDataPath, genSymbolToNumber
-
+from utils import getBulbapediaDataPath, genSymbolToNumber, effectList, statusList, initializeKeyValue, usageMethodList, statList, typeList
 # for the dictionary-valued entries in abilityDict (with key outerKeyName), add a key (innerKeyName) with a default value, for every entry in abilityDict
-def initializeKeyValue(abilityDict, outerKeyName, innerKeyName, defaultValue):
-  for key in abilityDict.keys():
-    if not isinstance(defaultValue, list):
-      defaultValue = [defaultValue]
 
-    abilityDict[key][outerKeyName][innerKeyName] = [defaultValue + [abilityDict[key]["gen"]]]
-  return
 
 # initialize abilityDict with name, description, and gen; key is Ability ID
 def makeInitialAbilityDict(fname):
@@ -33,9 +26,30 @@ def makeInitialAbilityDict(fname):
         "stat_modifications": {},
       }
 
+  # initialize fields in abilityDict
+  # initialize statuses
+  # for status in statusList():
+  #   # ability has a chance of causing a status--if it can't cause it, chance is 0
+  #   initializeKeyValue(abilityDict, "causes_status", status, 0.0)
+  #   # ability does not resist status
+  #   initializeKeyValue(abilityDict, "resists_status", status, False)
+  # # initialize effects
+  # for effect in effectList():
+  #   # ability has effect or it does not
+  #   initializeKeyValue(abilityDict, "effects", effect, False)
+  # # initialize usage methods
+  # # for usageMethod in usageMethodList():
+  # #   # ability multiplies damage of move of usageMethod by multiplier
+  # #   initializeKeyValue(abilityDict, "boosts_usage_method", usageMethod, 1.0)
+  # #   # ability multiplies damage taken from move of usageMethod by multiplier
+  # #   initializeKeyValue(abilityDict, "resists_usage_method", usageMethod, 1.0)
+  # for stat in statList():
+  #   # ability changes stat by 0 stages--0 being an int indicates that multiplier is 1
+  #   initializeKeyValue(abilityDict, "stat_modifications", stat, [0, 'user'])
+  
   return abilityDict
 
-# def 
+# allows lookup of ability by abilityName, not just abilityID
 def makeInverseDict(fname):
   inverseDict = {}
 
@@ -46,36 +60,35 @@ def makeInverseDict(fname):
 
   return inverseDict
 
-# 
+# various data about abilities, e.g. stat modifications, interactions with types and usage methods, etc.
 def addEffectData(fpath, abilityDict, inverseDict):
   # general effect headers for abilities
   with open(fpath + 'abilitiesByEffect.csv', 'r', encoding='utf-8') as effectCSV:
     reader = csv.DictReader(effectCSV)
     for row in reader:
       abilityName, effect = row["Ability Name"], row["Effect Type"]
-      if effect not in abilityDict[1]["effects"]:
-        initializeKeyValue(abilityDict, "effects", effect, False)
-      
       abilityKey = inverseDict[abilityName]
       gen = abilityDict[abilityKey]["gen"]
-      abilityDict[abilityKey]["effects"][effect] = [[True, gen]]
 
-    # hard-code exceptions
-    # lightning_rod
-    lightningRodKey = inverseDict["lightning_rod"]
-    abilityDict[lightningRodKey]["effects"]["resists_type"] = [[False, 3], [True, 5]]
-
-    # storm_drain
-    stormDrainKey = inverseDict["storm_drain"]
-    abilityDict[stormDrainKey]["effects"]["resists_type"] = [[False, 4], [True, 5]]
-
+      # actually belongs in status
+      if effect == 'trapped':
+        abilityDict[abilityKey]["causes_status"]["trapped"] = [[True, gen]]
+      # some effects in the abilitiesByEffect.csv do not match with effectList(), so we ignore them
+      elif effect not in effectList():
+        # print(abilityName, effect)
+        continue
+      else:
+        abilityDict[abilityKey]["effects"][effect] = [[True, gen]]
+    
   # abilities which can cause status--mainly through contact
   with open(fpath + 'abilitiesContactCausesStatus.csv', 'r', encoding='utf-8') as contactStatusCSV:
     reader = csv.DictReader(contactStatusCSV)
     for row in reader:
       abilityName, status, probability = row["Ability Name"], row["Status"], float(row["Probability"])
-      if status not in abilityDict[1]["causes_status"]:
-        initializeKeyValue(abilityDict, "causes_status", status, 0.0)
+      
+      if status not in statusList():
+        # print(abilityName, status)
+        continue
 
       abilityKey = inverseDict[abilityName]
       gen = abilityDict[abilityKey]["gen"]
@@ -99,15 +112,17 @@ def addEffectData(fpath, abilityDict, inverseDict):
     reader = csv.DictReader(boostMoveClassCSV)
     for row in reader:
       abilityName, status = row["Ability Name"], row["Status Name"]
-      if status not in abilityDict[1]["resists_status"] and status != 'non_volatile':
-        initializeKeyValue(abilityDict, "resists_status", status, False)
+
+      if status == 'non_volatile' or status not in statusList():
+        print(abilityName, status)
+        continue
       
       abilityKey = inverseDict[abilityName]
       gen = abilityDict[abilityKey]["gen"]
       abilityDict[abilityKey]["resists_status"][status] = [[True, gen]]
     
     # hardcode abilities which protect against non_volatile status
-    for abilityName in ['flower_veil', 'sweet_veil']:
+    for abilityName in ['flower_veil', 'sweet_veil', 'natural_cure']:
       for status in ['poison', 'bad_poison', 'burn', 'paralysis', 'freeze', 'sleep']:
         abilityKey = inverseDict[abilityName]
         gen = abilityDict[abilityKey]["gen"]
@@ -116,7 +131,7 @@ def addEffectData(fpath, abilityDict, inverseDict):
     # hardcode exceptions
     exceptions = [
       ['sleep', ['early_bird']],
-      ['burn', ['water bubble']],
+      ['burn', ['water_bubble']],
       ['poison', ['pastel_veil', 'poison_heal']]
     ]
 
@@ -133,48 +148,66 @@ def addEffectData(fpath, abilityDict, inverseDict):
     reader = csv.DictReader(boostMoveClassCSV)
     for row in reader:
       abilityName, boosts, multiplier, moveClass = row["Ability Name"], row["Boosts"], row["Multiplier"], row["Move Class"]
+      abilityKey = inverseDict[abilityName]
+      gen = abilityDict[abilityKey]["gen"]
+
       if moveClass == 'method':
-        abilityKey = inverseDict[abilityName]
-        gen = abilityDict[abilityKey]["gen"]
+        if boosts not in usageMethodList():
+          print(abilityName, boosts)
+          continue
 
-        abilityDict[abilityKey]["boosts_usage_method"][boosts] = [[boosts, multiplier, gen]]
+        abilityDict[abilityKey]["boosts_usage_method"][boosts] = [[multiplier, gen]]
+
       elif moveClass == 'type':
-        abilityKey = inverseDict[abilityName]
-        gen = abilityDict[abilityKey]["gen"]
+        if boosts not in typeList():
+          print(abilityName, boosts)
+          continue
 
-        abilityDict[abilityKey]["boosts_type"][boosts] = [[boosts, multiplier, gen]]
+        abilityDict[abilityKey]["boosts_type"][boosts] = [[multiplier, gen]]
 
   # abilities which resist types and usage methods
   with open(fpath + 'abilitiesResistMoveClass.csv', 'r', encoding='utf-8') as resistMoveClassCSV:
     reader = csv.DictReader(resistMoveClassCSV)
     for row in reader:
-      abilityName, boosts, multiplier, moveClass = row["Ability Name"], row["Boosts"], row["Multiplier"], row["Move Class"]
+      abilityName, resists, multiplier, moveClass = row["Ability Name"], row["Resists"], row["Multiplier"], row["Move Class"]
+      abilityKey = inverseDict[abilityName]
+      gen = abilityDict[abilityKey]["gen"]
+
+      # these abilities only got their type-resisting effects in Gen 5
+      if abilityName in ['lightning_rod', 'storm_drain']:
+        gen = 5
+
       if moveClass == 'method':
-        abilityKey = inverseDict[abilityName]
-        gen = abilityDict[abilityKey]["gen"]
+        if resists not in usageMethodList():
+          print(abilityName, resists)
+          continue
 
-        abilityDict[abilityKey]["boosts_usage_method"][boosts] = [[boosts, multiplier, gen]]
+        abilityDict[abilityKey]["resists_usage_method"][resists] = [[multiplier, gen]]
+
       elif moveClass == 'type':
-        abilityKey = inverseDict[abilityName]
-        gen = abilityDict[abilityKey]["gen"]
+        if resists not in typeList():
+          print(abilityName, resists)
+          continue
 
-        abilityDict[abilityKey]["boosts_type"][boosts] = [[boosts, multiplier, gen]]
+        abilityDict[abilityKey]["resists_type"][resists] = [[multiplier, gen]]
 
   # abilities which modify stats
-  with open(fpath + 'abilitiesBoostStat.csv', 'r', encoding='utf-8') as resistMoveClassCSV:
+  with open(fpath + 'abilitiesModifyStat.csv', 'r', encoding='utf-8') as resistMoveClassCSV:
     reader = csv.DictReader(resistMoveClassCSV)
     for row in reader:
-      abilityName, boosts, multiplier, moveClass = row["Ability Name"], row["Boosts"], row["Multiplier"], row["Move Class"]
-      if moveClass == 'method':
-        abilityKey = inverseDict[abilityName]
-        gen = abilityDict[abilityKey]["gen"]
+      abilityName, stat, modifier, recipient = row["Ability Name"], row["Stat Name"], row["Modifier"], row["Recipient"]
+      abilityKey = inverseDict[abilityName]
+      gen = abilityDict[abilityKey]["gen"]
 
-        abilityDict[abilityKey]["boosts_usage_method"][boosts] = [[boosts, multiplier, gen]]
-      elif moveClass == 'type':
-        abilityKey = inverseDict[abilityName]
-        gen = abilityDict[abilityKey]["gen"]
+      if stat not in statList():
+        print(abilityName, stat)
+        continue
+      # only gained stat-modifying properties in Gen 5
+      elif abilityName in ['lightning_rod', 'storm_drain']:
+        abilityDict[abilityKey]["stat_modifications"][stat] = [[0, recipient, gen], ['+1', recipient, gen]]
+        continue
 
-        abilityDict[abilityKey]["boosts_type"][boosts] = [[boosts, multiplier, gen]]
+      abilityDict[abilityKey]["stat_modifications"][stat] = [[modifier, recipient, gen]]
   return
 
 def main():
@@ -184,7 +217,6 @@ def main():
   inverseDict = makeInverseDict(fname)
 
   addEffectData(dataPath, abilityDict, inverseDict)
-
   return
 
   

@@ -2,6 +2,9 @@ import csv
 from functools import cmp_to_key
 from utils import getBulbapediaDataPath, genSymbolToNumber, getSerebiiDataPath
 
+# TODO defog only removes terrain in gen8
+# TODO 
+
 # Create move .json file with the following data:
 # name, description, power, PP, accuracy, category, priority, contact, target, type, gen introduced, where it affects item
 # also include whether the move affects stats, and whose stats it affects
@@ -124,19 +127,19 @@ def makeInitialMoveDict(fname):
           "power": [[row["Power"], 8]],
           "accuracy": [[row["Accuracy"].rstrip('%'), 8]],
           "gen": genSymbolToNumber(row["Gen"]),
-          "ohko": False,
+          "removed_from_gen8": False,
           "fixed_damage": None,
+          "z_move": isZMove,
           "lgpe_only": False,
           "max_move": isMax,
-          "gmax_move": isGMax,
-          "z_move": isZMove,
-          "priority": [],
-          "effect": {},
+          "g_max_move": isGMax,
+          "effects": {},
           "status": {},
-          "usage_method": {},
-          "target": [],
           "stat_modifications": {},
-          "removed_from_gen8": False,
+          "usage_method": {},
+          "contact": [],
+          "priority": [],
+          "target": [],
         }
 
     # we will make a list of all the parsed notes, then filter them out into several other lists
@@ -173,8 +176,9 @@ def makeInitialMoveDict(fname):
   # ohko moves [moveID, header, ['ohko', None]]
   ohkoMoves = [note for note in parsedNotes if note[2][0] == 'ohko']
   for ohkoMove in ohkoMoves:
-    moveID = ohkoMove[0]
-    moveDict[int(moveID)]["ohko"] = True
+    moveID = int(ohkoMove[0])
+    gen = moveDict[moveID]["gen"]
+    moveDict[moveID]["effects"]["ohko"] = [[True, gen]]
 
   # Fixed damage moves [moveID, header, [value + "fixed", Gen]]
   fixedDamageMoves = [note for note in parsedNotes if note[2][0] != None and 'fixed' in note[2][0]]
@@ -355,19 +359,18 @@ def addEffectToMoveDict(fname, moveDict, inverseDict):
 
       # distinguish between usage method and other effects
       if effect in ['pulse', 'ball', 'bite', 'dance', 'explosive', 'mouth', 'powder', 'punch', 'sound']:
-        # if usage_method isn't in moveDict, add it and initialize as False
-        if effect not in moveDict[1]["usage_method"]:
-          for key in moveDict.keys():
-            moveDict[key]["usage_method"][effect] = [[False, moveDict[key]["gen"]]]
-
+        # # if usage_method isn't in moveDict, add it and initialize as False
+        # if effect not in moveDict[1]["usage_method"]:
+        #   for key in moveDict.keys():
+        #     moveDict[key]["usage_method"][effect] = [[False, moveDict[key]["gen"]]]
         moveDict[currentKey]["usage_method"][effect] = [[True, moveDict[currentKey]["gen"]]]
       else:
-      # if effect isn't in moveDict, add it and initialize as False
-        if effect not in moveDict[1]["effect"] :
-            for key in moveDict.keys():
-              moveDict[key]["effect"][effect] = [[False, moveDict[key]["gen"]]]
+      # # if effect isn't in moveDict, add it and initialize as False
+      #   if effect not in moveDict[1]["effects"] :
+      #       for key in moveDict.keys():
+      #         moveDict[key]["effects"][effect] = [[False, moveDict[key]["gen"]]]
 
-        moveDict[currentKey]["effect"][effect] = [[True, moveDict[currentKey]["gen"]]]
+        moveDict[currentKey]["effects"][effect] = [[True, moveDict[currentKey]["gen"]]]
       
 
   # EXCEPTIONS SECTION
@@ -380,11 +383,6 @@ def addEffectToMoveDict(fname, moveDict, inverseDict):
   ]
   for exception in exceptions:
     effect = exception[0]
-    
-    # add effect to moveDict
-    for key in moveDict.keys():
-      moveDict[key][effect] = [[False, moveDict[key]["gen"]]]
-
     # go through exceptions
     moveNames = exception[1]
     for moveName in moveNames:
@@ -392,22 +390,22 @@ def addEffectToMoveDict(fname, moveDict, inverseDict):
       moveDict[key][effect] = [[True, moveDict[key]["gen"]]]
 
   # still more exceptions
-  moveDict[inverseDict['astonish']]["effect"]['anti_mini'] = [[True, 3], [False, 4]]
-  moveDict[inverseDict['dig']]["effect"]['hits_semi_invulnerable'] = [[False, 1], [True, 2]]
+  moveDict[inverseDict["astonish"]]["effects"]['anti_mini'] = [[True, 3], [False, 4]]
+  moveDict[inverseDict["earthquake"]]["effects"]['hits_semi_invulnerable'] = [[False, 1], [True, 2]]
 
   # cannot_crit effect
   for key in moveDict.keys():
-    moveDict[key]["effect"]["cannot_crit"] = [[False, moveDict[key]["gen"]]]
+    moveDict[key]["effects"]["cannot_crit"] = [[False, moveDict[key]["gen"]]]
 
-  moveDict[inverseDict['flail']]["effect"]['cannot_crit'] = [[True, 2], [False, 3]]
-  moveDict[inverseDict['future_sight']]["effect"]['cannot_crit'] = [[True, 2], [False, 5]]
-  moveDict[inverseDict['reversal']]["effect"]['cannot_crit'] = [[True, 2], [False, 3]]
-  moveDict[inverseDict['doom_desire']]["effect"]['cannot_crit'] = [[True, 3], [False, 5]]
-  moveDict[inverseDict['spit_up']]["effect"]['cannot_crit'] = [[True, 3], [False, 4]]
+  moveDict[inverseDict['flail']]["effects"]['cannot_crit'] = [[True, 2], [False, 3]]
+  moveDict[inverseDict['future_sight']]["effects"]['cannot_crit'] = [[True, 2], [False, 5]]
+  moveDict[inverseDict['reversal']]["effects"]['cannot_crit'] = [[True, 2], [False, 3]]
+  moveDict[inverseDict['doom_desire']]["effects"]['cannot_crit'] = [[True, 3], [False, 5]]
+  moveDict[inverseDict['spit_up']]["effects"]['cannot_crit'] = [[True, 3], [False, 4]]
 
   # high crit ratio
-  moveDict[inverseDict['razor_wind']]["effect"]['high_crit_chance'] = [[False, 1], [True, 2]]
-  moveDict[inverseDict['sky_attack']]["effect"]['high_crit_chance'] = [[False, 1], [True, 3]]
+  moveDict[inverseDict['razor_wind']]["effects"]['high_crit_chance'] = [[False, 1], [True, 2]]
+  moveDict[inverseDict['sky_attack']]["effects"]['high_crit_chance'] = [[False, 1], [True, 3]]
 
   return
 
@@ -421,9 +419,9 @@ def addStatusToMoveDict(fname, moveDict, inverseDict):
       moveName = row["Move Name"]
       probability = float(row["Probability"])
 
-      if status not in moveDict[1]["status"]:
-        for key in moveDict.keys():
-          moveDict[key]["status"][status] = [[0, moveDict[key]["gen"]]]
+      # if status not in moveDict[1]["status"]:
+      #   for key in moveDict.keys():
+      #     moveDict[key]["status"][status] = [[0, moveDict[key]["gen"]]]
       
       key = inverseDict[moveName]
       moveDict[key]["status"][status] = [[probability, moveDict[key]["gen"]]]
@@ -460,15 +458,15 @@ def addStatusToMoveDict(fname, moveDict, inverseDict):
 
   # Chatter has variable chance to confuse in Gens 4 and 5--we choose the highest value in each gen
   moveDict[inverseDict["chatter"]]["status"]["confusion"] = [
-    [31, 4],
-    [10, 5],
-    [100, 6]
+    [31.0, 4],
+    [10.0, 5],
+    [100.0, 6]
   ]
 
   # Sky Attack only causes Flinch starting in Gen 3
   moveDict[inverseDict["sky_attack"]]["status"]["flinch"] = [
-    [0, 1],
-    [30, 3]
+    [0.0, 1],
+    [30.0, 3]
   ]
 
   # Other notes in movesThatCauseStatusNotes.csv don't apply to status
@@ -480,15 +478,13 @@ def addTargetToMoveDict(fname, moveDict, inverseDict):
   with open(fname, encoding='utf-8') as targetCSV:
     reader = csv.DictReader(targetCSV)
 
-    # get effects and add them to moveDict with initial value False
+    # 'any_adjacent' is the most common targetting class
+    for key in moveDict.keys():
+      moveDict[key]["target"] = [['any_adjacent', moveDict[key]["gen"]]]
+
     for row in reader:
       target = row["Targets"]
       moveName = row["Move Name"]
-
-      # if effect isn't in moveDict, add it and initialize as False
-      if target not in moveDict[1]["target"]:
-        for key in moveDict.keys():
-          moveDict[key]["target"] = [['any_adjacent', moveDict[key]["gen"]]]
       
       key = inverseDict[moveName]
       moveDict[key]["target"] = [[target, moveDict[key]["gen"]]]
@@ -554,15 +550,18 @@ def addStatModToMoveDict(fname, moveDict, inverseDict):
       if sign == '-':
         modifier = -modifier
 
-      if stat not in moveDict[1]["stat_modifications"]:
-        for key in moveDict:
-          moveDict[key]["stat_modifications"][stat] = [[0, '', moveDict[key], 0.0, ["gen"]]]
+      # if stat not in moveDict[1]["stat_modifications"]:
+      #   for key in moveDict:
+      #     moveDict[key]["stat_modifications"][stat] = [[0, '', moveDict[key], 0.0, ["gen"]]]
       
       # indicates move has always modified that stat as described
       if gen == moveDict[moveKey]["gen"]:
         moveDict[moveKey]["stat_modifications"][stat] = [[modifier, recipient, probability, gen]]
       # indicate move's stat modification was introduced in a later gen
       else:
+        if stat not in moveDict[moveKey]["stat_modifications"]:
+          moveDict[moveKey]["stat_modifications"][stat] = []
+
         moveDict[moveKey]["stat_modifications"][stat].append([modifier, recipient, probability, gen])
   
   # hard code exceptions
@@ -660,7 +659,6 @@ def removedFromGen8(fname, moveDict):
     reader = csv.DictReader(removedCSV)
     for row in reader:
       moveDict[row["Move ID"]] = True
-      print(row["Move Name"])
 
   return
 
@@ -693,13 +691,17 @@ def main():
   descriptions_fname = serebiiDataPath + 'moveDescriptions.csv'
   addDescriptionToMoveDict(descriptions_fname, moveDict, inverseDict)
 
-  statMod_fname = bulbapediaDataPath + 'statModifyingMoves.csv'
+  statMod_fname = bulbapediaDataPath + 'movesModifyStat.csv'
   addStatModToMoveDict(statMod_fname, moveDict, inverseDict)
 
   updateMoveCategory(moveDict, inverseDict)
 
   removedFromGen8_fname = bulbapediaDataPath + 'movesRemovedFromGen8.csv'
   removedFromGen8(removedFromGen8_fname, moveDict)
+
+  print(moveDict[860])
+  print(moveDict[inverseDict['sonic_boom']])
+  print(moveDict[inverseDict['fire_blast']])
 
   return
 

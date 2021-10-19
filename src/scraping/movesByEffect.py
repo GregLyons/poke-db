@@ -12,7 +12,21 @@ def makeEffectCSV(label, url, writer):
   # the moves are listed after an h2 containing the text 'Pages in category', and they are links whose text has the string '(move)'
 
   for move in moves:
-    writer.writerow([parseName(label), parseName(move)])
+    moveName = parseName(move)
+    effect = parseName(label)
+    if label == 'changes_terrain':
+      if moveName in ['splintered_stormshards', 'defog', 'g_max_wind_rage', 'steel_roller', ]:
+        effect = 'removes_terrain'
+      else:
+        effect = 'creates_terrain'
+    elif label == 'changes_weather':
+      if moveName in ['defog', ]:
+        effect = 'removes_weather'
+      else:
+        effect = 'creates_weather'
+
+
+    writer.writerow([effect, parseName(move)])
 
 # add Z-move data to .csv
 def addZMoves(fname):
@@ -125,7 +139,7 @@ def main():
     'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_have_recoil'],
     ['variable-power',
     'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_have_variable_power'],
-    ['ignores-ability-of-target',
+    ['ignores-ability',
     'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_ignore_Abilities'],
     ['powers-up',
     'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_power_up'],

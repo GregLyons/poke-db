@@ -282,7 +282,7 @@ def addZMoves(fname):
 
 def main():
   dataPath = getBulbapediaDataPath() + '\\moves\\'
-  fname = dataPath + 'statModifyingMoves.csv'
+  fname = dataPath + 'movesModifyStat.csv'
   makeCSV(fname)
 
   # add in Z-move data

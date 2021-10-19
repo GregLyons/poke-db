@@ -1,4 +1,5 @@
 import re
+import types
 
 def getBulbapediaDataPath():
   return 'src\\data\\bulbapedia_data\\'
@@ -48,6 +49,102 @@ def genSymbolToNumber(roman):
     return 9
   else:
     raise ValueError('Not a valid gen.')
+
+# given a dictionary for a certain entity (move, ability, etc.) with a "gen" key, initialize a nested dictionary, with name outerKeyName, by setting outerKeyName[innerKeyName] = [defaultValue, gen]
+# e.g. for any ability status dictionary, entityDict would be abilityDict, outerKeyName would be "causes_status", and innerKeyName would be an individual status
+# defaultValue can be a list of default values
+def initializeKeyValue(entityDict, outerKeyName, innerKeyName, defaultValue):
+  for key in entityDict.keys():
+    if not isinstance(defaultValue, list):
+      defaultValue = [defaultValue]
+
+    entityDict[key][outerKeyName][innerKeyName] = [defaultValue + [entityDict[key]["gen"]]]
+  return
+
+
+# lists of various mechanics to ensure consistent naming
+# stats which can be modified during battle
+def statList():
+  stats = [
+    'attack', 'defense', 'special_attack', 'special_defense', 'speed', 'accuracy', 'evasion', 'critical_hit_ratio'
+  ]
+  return stats
+
+# weather
+def weatherList():
+  weathers = [
+    'rain', 'hail', 'sandstorm', 'harsh_sunlight', 'extremely_harsh_sunlight', 'heavy_rain', 'strong_winds'
+  ]
+  return weathers
+
+# terrain
+def terrainList():
+  terrains = [
+    'electric', 'grassy', 'misty', 'psychic', 
+  ]
+  return terrains
+
+# various effects that don't qualify as statuses
+def effectList():
+  effects = [
+    # creators and removers
+    'creates_hazard', 'removes_hazard', 
+    'creates_terrain', 'removes_terrain', 
+    'creates_screen', 'removes_screen', 
+    'creates_weather', 'removes_weather', 
+    # crit
+    'high_crit_chance', 'always_crits', 'cannot_crit',
+    # protect
+    'bypasses_protect', 'protection', 
+    # heal status
+    'thaws_user', 'heals_nonvolatile', 
+    # restore hp
+    'restores_hp', 'heals_user_immediately', 
+    # cost hp
+    'recoil', 'costs_hp', 'can_crash',
+    'changes_form', 'drains', 'manipulates_items', 'depends_on_weight', 'activates_gulp_missile', 
+    # ability-related
+    'changes_ability', 'ignores_ability', 'suppresses_ability'
+    'anti_mini', 
+    # changes type or damage category mechanics
+    'changes_pokemon_type', 'changes_move_type', 'changes_damage_category', 'removes_type_immunity', 'special_type_effectiveness',
+    # switchers
+    'switches_out_target', 'switches_out_user', 
+    # special accuracy properties
+    'hits_semi_invulnerable', 'cannot_miss', 'faints_user',
+    # different way of calculating power
+    'variable_power', 'deals_direct_damage', 'powers_up', 'consecutive', 'counterattack', 
+    # miscellaneous
+    'calls_other_move', 'depends_on_environment', 'multi_hit', 'ohko',
+  ]
+  return effects
+
+# status effects, non-volatile and volatile (as classified by Bulbapedia)
+def statusList():
+  statuses = [
+    # non-volatile status
+    'burn', 'freeze', 'paralysis', 'poison', 'bad_poison', 'sleep', 'confusion', 
+    # volatile status
+    'curse','embargo', 'encore', 'heal_block', 'nightmare', 'perish_song', 'taunt', 'telekinesis', 'flinch', 'semi_invulnerable_turn', 'bound', 'trapped', 'drowsy', 'identified', 'infatuation', 'leech_seed', 'torment', 'type_change', 'disable',
+    # volatile battle status
+    'charging_turn', 'protection', 'recharging', 'taking_aim', 'thrashing', 'aqua_ring', 'bracing', 'defense_curl', 'magic_coat', 'mimic', 'minimize', 'substitute', 'center_of_attention', 'rooted', 'magnetic_levitation', 'transformed', 
+  ]
+  return statuses
+
+# usage methods which interact with abilities, e.g. sound, bite
+def usageMethodList():
+  usageMethods = [
+    'pulse', 'ball', 'bite', 'dance', 'explosive', 'mouth', 'powder', 'punch', 'sound',
+  ]
+  return usageMethods
+
+# elemental types
+def typeList():
+  types = [
+    'normal', 'fighting', 'flying', 'poison', 'ground', 'rock', 'bug', 'ghost', 'steel', '???', 'fire', 'water', 'grass', 'electric', 'psychic', 'ice', 'dragon', 'dark', 'fairy',
+  ]
+  return types
+
 
 # parse names in different forms from Bulbapedia and Smogon API to a common, snake_case form
 def parseName(text, mode='normal'):

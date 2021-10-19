@@ -1,4 +1,4 @@
-Ability Name,Stat,Modifier
+Ability Name,Stat Name,Modifier,Recipient
 beast_boost,attack,+1,user
 download,attack,+1,user
 intrepid_sword,attack,+1,user
@@ -7,6 +7,8 @@ moxie,attack,+1,user
 sap_sipper,attack,+1,user
 defiant,attack,+2,user
 moody,attack,+2,user
+intimidate,attack,-1,all_foes
+moody,attack,-1,user
 anger_point,attack,+12,user
 flower_gift,attack,1.5,user
 gorilla_tactics,attack,1.5,user
@@ -24,8 +26,15 @@ water_compaction,defense,+2,user
 grass_pelt,defense,1.5,user
 marvel_scale,defense,1.5,user
 fur_coat,defense,2.0,user
+beast_boost,special_attack,+1,user
+berserk,special_attack,+1,user
+download,special_attack,+1,user
+lightning_rod,special_attack,+1,user
+storm_drain,special_attack,+1,user
+soul_heart,special_attack,+1,user
 competitive,special_attack,+2,user
 moody,special_attack,+2,user
+moody,special_attack,-1,user
 minus,special_attack,1.5,user
 plus,special_attack,1.5,user
 solar_power,special_attack,1.5,user
@@ -41,7 +50,11 @@ speed_boost,speed,+1,user
 steadfast,speed,+1,user
 weak_armor,speed,+1,user
 moody,speed,+2,user
-steam_engine,speed,++6,user
+cotton_down,speed,-1,user
+gooey,speed,-1,user
+moody,speed,-1,user
+tangling_hair,speed,-1,user
+steam_engine,speed,+6,user
 chlorophyll,speed,2.0,user
 quick_feet,speed,1.5,user
 sand_rush,speed,2.0,user
@@ -55,6 +68,7 @@ sand_veil,evasion,1.25,user
 snow_cloak,evasion,1.25,user
 tangled_feet,evasion,2.0,user
 moody,accuracy,+2,user
+moody,accuracy,-1,user
 compound_eyes,accuracy,1.3,user
 victory_star,accuracy,1.1,user
 hustle,accuracy,0.8,user
