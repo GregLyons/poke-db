@@ -98,11 +98,10 @@ def effectList():
     'bypasses_protect', 'protection', 
     # heal status
     'thaws_user', 'heals_nonvolatile', 
-    # restore hp
-    'restores_hp', 'heals_user_immediately', 
+    # restore hp or pp
+    'restores_hp', 'heals_user_immediately', 'restores_pp'
     # cost hp
     'recoil', 'costs_hp', 'can_crash',
-    'changes_form', 'drains', 'manipulates_items', 'depends_on_weight', 'activates_gulp_missile', 
     # ability-related
     'changes_ability', 'ignores_ability', 'suppresses_ability'
     'anti_mini', 
@@ -114,8 +113,10 @@ def effectList():
     'hits_semi_invulnerable', 'cannot_miss', 'faints_user',
     # different way of calculating power
     'variable_power', 'deals_direct_damage', 'powers_up', 'consecutive', 'counterattack', 
+    # weight-related
+    'depends_on_weight', 'affects_weight'
     # miscellaneous
-    'calls_other_move', 'depends_on_environment', 'multi_hit', 'ohko',
+    'calls_other_move', 'depends_on_environment', 'multi_hit', 'ohko','changes_form', 'drains', 'manipulates_items' 'activates_gulp_missile', 'punishes_contact', 'extends_duration', 'other_move_enhancement', 'move_last_in_priority', 'move_first_in_priority', 'ignore_hazards', 'ignores_contact', 'ignores_weather'
   ]
   return effects
 
@@ -127,7 +128,7 @@ def statusList():
     # volatile status
     'curse','embargo', 'encore', 'heal_block', 'nightmare', 'perish_song', 'taunt', 'telekinesis', 'flinch', 'semi_invulnerable_turn', 'bound', 'trapped', 'drowsy', 'identified', 'infatuation', 'leech_seed', 'torment', 'type_change', 'disable',
     # volatile battle status
-    'charging_turn', 'protection', 'recharging', 'taking_aim', 'thrashing', 'aqua_ring', 'bracing', 'defense_curl', 'magic_coat', 'mimic', 'minimize', 'substitute', 'center_of_attention', 'rooted', 'magnetic_levitation', 'transformed', 
+    'charging_turn', 'protection', 'recharging', 'taking_aim', 'thrashing', 'aqua_ring', 'bracing', 'defense_curl', 'magic_coat', 'mimic', 'minimize', 'substitute', 'center_of_attention', 'rooted', 'magnetic_levitation', 'transformed', 'resets_stats'
   ]
   return statuses
 

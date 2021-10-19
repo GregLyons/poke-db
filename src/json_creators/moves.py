@@ -380,6 +380,8 @@ def addEffectToMoveDict(fname, moveDict, inverseDict):
     ['use_different_stat', ['body_press', 'psyshock', 'psystrike', 'secret_sword']],
     ['can_crash', ['high_jump_kick', 'jump_kick']],
     ['changes_damage_category', ['light_that_burns_the_sky', 'photon_geyser', 'shell_side_arm']],
+    ['punishes_contact', ['baneful_bunker', 'beak_blast', 'kings_shield', 'obstruct', 'spiky_shield']],
+    ['affects_weight', ['autotomize']]
   ]
   for exception in exceptions:
     effect = exception[0]
@@ -406,6 +408,9 @@ def addEffectToMoveDict(fname, moveDict, inverseDict):
   # high crit ratio
   moveDict[inverseDict['razor_wind']]["effects"]['high_crit_chance'] = [[False, 1], [True, 2]]
   moveDict[inverseDict['sky_attack']]["effects"]['high_crit_chance'] = [[False, 1], [True, 3]]
+
+  # reset stats
+  moveDict[inverseDict['haze']]["effects"]['resets_stats'] = [[True, 1]]
 
   return
 
@@ -658,7 +663,7 @@ def removedFromGen8(fname, moveDict):
   with open(fname, 'r', encoding='utf-8') as removedCSV:
     reader = csv.DictReader(removedCSV)
     for row in reader:
-      moveDict[row["Move ID"]] = True
+      moveDict[int(row["Move ID"])]["removed_from_gen8"] = True
 
   return
 
@@ -698,10 +703,6 @@ def main():
 
   removedFromGen8_fname = bulbapediaDataPath + 'movesRemovedFromGen8.csv'
   removedFromGen8(removedFromGen8_fname, moveDict)
-
-  print(moveDict[860])
-  print(moveDict[inverseDict['sonic_boom']])
-  print(moveDict[inverseDict['fire_blast']])
 
   return
 

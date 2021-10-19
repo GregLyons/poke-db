@@ -1,9 +1,5 @@
 import csv
-import re
-import os
-from utils import getBulbapediaDataPath, genSymbolToNumber, effectList, statusList, initializeKeyValue, usageMethodList, statList, typeList
-# for the dictionary-valued entries in abilityDict (with key outerKeyName), add a key (innerKeyName) with a default value, for every entry in abilityDict
-
+from utils import getBulbapediaDataPath, genSymbolToNumber, effectList, statusList, usageMethodList, statList, typeList
 
 # initialize abilityDict with name, description, and gen; key is Ability ID
 def makeInitialAbilityDict(fname):
@@ -80,6 +76,18 @@ def addEffectData(fpath, abilityDict, inverseDict):
       else:
         abilityDict[abilityKey]["effects"][effect] = [[True, gen]]
     
+    exceptions = [
+      ['affects_weight', ['heavy_metal', 'light_metal']],
+      ['moves_last_in_priority', ['stall']],
+      ['ignores_contact', ['long_reach']]
+    ]
+    for exception in exceptions:
+      effect, abilities = exception
+      for abilityName in abilities:
+        abilityKey = inverseDict[abilityName]
+        gen = abilityDict[abilityKey]["gen"]
+        abilityDict[abilityKey]["effects"][effect] = [[True, gen]]
+
   # abilities which can cause status--mainly through contact
   with open(fpath + 'abilitiesContactCausesStatus.csv', 'r', encoding='utf-8') as contactStatusCSV:
     reader = csv.DictReader(contactStatusCSV)
@@ -93,19 +101,30 @@ def addEffectData(fpath, abilityDict, inverseDict):
       abilityKey = inverseDict[abilityName]
       gen = abilityDict[abilityKey]["gen"]
       abilityDict[abilityKey]["causes_status"][status] = [[probability, gen]]
+      abilityDict[abilityKey]["effects"]["punishes_contact"] = [[True, gen]]
 
-      # hardcode exceptions
-      # poison_touch
-      poisonTouchKey = inverseDict["poison_touch"]
-      abilityDict[poisonTouchKey]["causes_status"]["poison"] = [[30.0, gen]]
+    # hardcode exceptions
+    # poison_touch
+    poisonTouchKey = inverseDict["poison_touch"]
+    abilityDict[poisonTouchKey]["causes_status"]["poison"] = [[30.0, 5]]
+    abilityDict[poisonTouchKey]["effects"]["punishes_contact"] = [[True, 5]]
 
-      # synchronize
-      synchronizeKey = inverseDict["synchronize"]
-      abilityDict[synchronizeKey]["causes_status"]["burn"] = [[100.0, 3]]
-      abilityDict[synchronizeKey]["causes_status"]["poison"] = [[100.0, 3]]
-      # only inflicts bad_poison from gen 5 onward
-      abilityDict[synchronizeKey]["causes_status"]["bad_poison"] = [[0.0, 3], [100.0, 5]]
-      abilityDict[synchronizeKey]["causes_status"]["paralysis"] = [[100.0, 3]]
+    # synchronize
+    synchronizeKey = inverseDict["synchronize"]
+    abilityDict[synchronizeKey]["causes_status"]["burn"] = [[100.0, 3]]
+    abilityDict[synchronizeKey]["causes_status"]["poison"] = [[100.0, 3]]
+    # only inflicts bad_poison from gen 5 onward
+    abilityDict[synchronizeKey]["causes_status"]["bad_poison"] = [[0.0, 3], [100.0, 5]]
+    abilityDict[synchronizeKey]["causes_status"]["paralysis"] = [[100.0, 3]]
+
+    # perish body
+    perishBodyKey = inverseDict["perish_body"]
+    abilityDict[perishBodyKey]["causes_status"]["perish_song"] = [[True, 8]]
+    abilityDict[perishBodyKey]["effects"]["punishes_contact"] = [[True, 8]]
+
+    # more abilities which punish contact not handled above
+    for abilityName in ['aftermath', 'gooey', 'mummy', 'iron_barbs', 'rough_skin', 'tangling_hair', 'wandering_spirit', 'pickpocket']:
+      abilityDict[abilityKey]["effects"]["punishes_contact"] = [[True, gen]]
 
   # abilities which protect against status
   with open(fpath + 'abilitiesProtectAgainstStatus.csv', 'r', encoding='utf-8') as boostMoveClassCSV:

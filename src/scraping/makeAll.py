@@ -14,7 +14,7 @@ import natures
 import pokemonByAbilities
 import pokemonByBaseStats
 import pokemonByType
-import statModifyingMoves
+import movesModifyStat
 import typeMatchups
 
 # This file is for making all the .csv files at once rather than running each individual script
@@ -67,7 +67,7 @@ if __name__ == '__main__':
   pokemonByType.main()
   print('Pokemon type data complete')
 
-  statModifyingMoves.main()
+  movesModifyStat.main()
   print('Stat modificatin data complete')
 
   typeMatchups.main()

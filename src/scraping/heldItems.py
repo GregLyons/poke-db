@@ -201,7 +201,7 @@ def parseBerryEffect(berryName, description, statusWriter, typeWriter, statWrite
   elif 'Halves' in description:
     if berryName != 'chilan_berry':
       # for some reason, stripping '-type' removes an ending letter on some of the types, e.g. 'Fairy-type' -> 'fair', so we do it this weird way instead
-      type = parseName(re.search(r'effective\s.*-type', description).group().lstrip('effective').rstrip('type').lstrip()).rstrip('_')
+      type = parseName(re.search(r'effective\s.*-type', description).group().lstrip('effective').removesuffix('type').lstrip()).rstrip('_')
       typeWriter.writerow([berryName, type])
     else:
       typeWriter.writerow([berryName, 'normal'])
@@ -219,10 +219,10 @@ def parseBerryEffect(berryName, description, statusWriter, typeWriter, statWrite
 # Writes several .csv files for the different berry properties
 # Columns of the main berry list .csv are Gen Introduced, Number, Name, Effect (string)
 def berryList(fname):
-  fnamePrefix = fname.rstrip('.csv')
+  fnamePrefix = fname.removesuffix('.csv')
 
   # we will handle berries which restore HP separately
-  with open(fname, 'w', newline='', encoding='utf-8') as berryCSV, open(fnamePrefix + 'StatusHeal.csv', 'w', newline='', encoding='utf-8') as statusHealCSV, open(fnamePrefix + 'TypeResist.csv', 'w', newline='', encoding='utf-8') as typeResistCSV, open(fnamePrefix + 'StatBoost.csv', 'w', newline='', encoding='utf-8') as statBoostCSV, open(fnamePrefix + 'Gen2.csv', 'w', newline='', encoding='utf-8') as gen2CSV:
+  with open(fname, 'w', newline='', encoding='utf-8') as berryCSV, open(fnamePrefix + 'StatusHeal.csv', 'w', newline='', encoding='utf-8') as statusHealCSV, open(fnamePrefix + 'TypeResist.csv', 'w', newline='', encoding='utf-8') as typeResistCSV, open(fnamePrefix + 'ModifyStat.csv', 'w', newline='', encoding='utf-8') as statBoostCSV, open(fnamePrefix + 'Gen2.csv', 'w', newline='', encoding='utf-8') as gen2CSV:
     writer = csv.writer(berryCSV)
     writer.writerow(['Gen', 'Number', 'Berry Name', 'Description'])
 
@@ -340,7 +340,7 @@ def typeItems(fname):
 
       
       name = parseName(cells[1].get_text().rstrip('\n'))
-      type = parseName(cells[2].get_text().rstrip('\n'))
+      type = parseName(cells[3].get_text().rstrip('\n'))
 
       writer.writerow(['plate', name, type])
 
@@ -519,7 +519,7 @@ def statEnhancers(fname):
 # For general .csv, Columns are Gen Introduced, Name, Type
 # For Pokemon-specific .csv, Columns are Gen Introduced, Item Name, Pokemon Name (the types are the type of that Pokemon)
 def typeEnhancers(fname):
-  with open(fname, 'w', newline='', encoding='utf-8') as generalCSV, open(fname.rstrip('.csv') + 'Specific.csv', 'w', newline='', encoding='utf-8') as specificCSV:
+  with open(fname, 'w', newline='', encoding='utf-8') as generalCSV, open(fname.removesuffix('.csv') + 'Specific.csv', 'w', newline='', encoding='utf-8') as specificCSV:
     generalWriter = csv.writer(generalCSV)
     specificWriter = csv.writer(specificCSV)
 
@@ -563,7 +563,7 @@ def typeEnhancers(fname):
         pokemonNames = [pokemonNamesString]
 
       for pokemonName in pokemonNames:
-        specificWriter.writerow([gen, itemName, pokemonName])
+        specificWriter.writerow([gen, itemName, parseName(pokemonName, 'pokemon')])
       
   return
 
@@ -571,7 +571,7 @@ def typeEnhancers(fname):
 # Columns for general are Name, Z-Move, Type
 # Columns for specific are Name, Pokemon Name, Base Move, Z-Move
 def zCrystals(fname):
-  with open(fname, 'w', newline='', encoding='utf-8') as generalCSV, open(fname.rstrip('.csv') + 'PokemonSpecific.csv', 'w', newline='', encoding='utf-8') as specificCSV:
+  with open(fname, 'w', newline='', encoding='utf-8') as generalCSV, open(fname.removesuffix('.csv') + 'PokemonSpecific.csv', 'w', newline='', encoding='utf-8') as specificCSV:
     generalWriter, specificWriter = csv.writer(generalCSV), csv.writer(specificCSV)
 
     bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Z-Crystal', 0, 10)
@@ -615,15 +615,20 @@ def zCrystals(fname):
           pokemonName = re.sub(r'(.*)(Necrozma)', r'\2 (\1)', pokemonName)
         
         pokemonName = parseName(pokemonName, 'pokemon')
-
-        specificWriter.writerow([itemName, pokemonName, baseMove, zMove])
+        
+        # hard to parse string in such a way so as to handle the Tapus and Necrozma
+        if pokemonName == 'tapu_koko_tapu_lele_tapu_bulu':
+          for tapu in ['tapu_koko', 'tapu_lele', 'tapu_bulu']:
+            specificWriter.writerow([itemName, tapu, baseMove, zMove])
+        else:
+          specificWriter.writerow([itemName, pokemonName, baseMove, zMove])
         
 # Columns are Name, Pokemon Name
 def megaStones(fname):
   with open(fname, 'w', newline='', encoding='utf-8') as megaStoneCSV:
     writer = csv.writer(megaStoneCSV)
 
-    writer.writerow(['Item Name', 'Pokemon Name'])
+    writer.writerow(['Item Name', 'Pokemon Name', 'Description', 'Sprite URL'])
 
     bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Mega_Stone', 0, 10)
     dataRows = bs.find('span', {'id': 'List_of_Mega_Stones'}).find_next('table').find('tr').find_next_siblings('tr')
@@ -631,10 +636,12 @@ def megaStones(fname):
     for row in dataRows:
       cells = row.find_all('td')
       
+      spriteURL = cells[0].find('img')['src']
       itemName = parseName(cells[1].get_text().rstrip('\n'))
       pokemonName = parseName(cells[4].get_text().rstrip('\n'), 'pokemon')
+      description = 'Mega stone for ' + cells[4].get_text().rstrip('\n') + '.'
 
-      writer.writerow([itemName, pokemonName])
+      writer.writerow([itemName, pokemonName, spriteURL, description])
       
   return
 
@@ -646,8 +653,8 @@ def main():
 
   # main list
   # Serebii has a more comprehensive list of held items than I could find on Bulbapedia
-  # main_fname = serebiiDataPath + 'heldItemList.csv'
-  # mainList(main_fname)
+  main_fname = serebiiDataPath + 'heldItemList.csv'
+  mainList(main_fname)
 
   # Serebii doesn't list the Gen that the item was introduced--the only place I could find was Bulbapedia, which lists ALL items, not just held items
   itemGen_fname = bulbapediaDataPath + 'heldItemGen.csv'
@@ -655,36 +662,36 @@ def main():
 
   # berries
   # main list of berries
-  # berry_fname = dataPath + 'berryList.csv'
-  # berryList(berry_fname)
+  berry_fname = bulbapediaDataPath + 'berries.csv'
+  berryList(berry_fname)
 
-  # # elemental type of berry for Natural Gift
-  # berry_type_fname = dataPath + 'berriesByType.csv'
-  # berryType(berry_type_fname)
+  # elemental type of berry for Natural Gift
+  berry_type_fname = bulbapediaDataPath + 'berriesByType.csv'
+  berryType(berry_type_fname)
 
-  # # memories, plates, and drives
-  # type_items_fname = dataPath + 'typeItems.csv'
-  # typeItems(type_items_fname)
+  # memories, plates, and drives
+  type_items_fname = bulbapediaDataPath + 'typeItems.csv'
+  typeItems(type_items_fname)
 
-  # # incenses
-  # incense_fname = dataPath + 'incenseList.csv'
-  # incenseList(incense_fname)
+  # incenses
+  incense_fname = bulbapediaDataPath + 'incenseList.csv'
+  incenseList(incense_fname)
 
-  # # stat-enhancing items
-  # statEnhancers_fname = dataPath + 'statEnhancers.csv'
-  # statEnhancers(statEnhancers_fname)
+  # stat-enhancing items
+  statEnhancers_fname = bulbapediaDataPath + 'statEnhancers.csv'
+  statEnhancers(statEnhancers_fname)
 
-  # # Z-crystals
-  # zCrystals_fname = dataPath + 'zCrystals.csv'
-  # zCrystals(zCrystals_fname)
+  # Z-crystals
+  zCrystals_fname = bulbapediaDataPath + 'zCrystals.csv'
+  zCrystals(zCrystals_fname)
 
-  # # Mega stones
-  # megaStones_fname = dataPath + 'megaStones.csv'
-  # megaStones(megaStones_fname)
+  # Mega stones
+  megaStones_fname = bulbapediaDataPath + 'megaStones.csv'
+  megaStones(megaStones_fname)
 
-  # # type enhancers
-  # typeEnhancers_fname = dataPath + 'typeEnhancers.csv'
-  # typeEnhancers(typeEnhancers_fname)
+  # type enhancers
+  typeEnhancers_fname = bulbapediaDataPath + 'typeEnhancers.csv'
+  typeEnhancers(typeEnhancers_fname)
 
   return
 

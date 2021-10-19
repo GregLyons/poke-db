@@ -161,7 +161,7 @@ thick_club,stat_enhancer_specific,2
 choice_band,choice,3
 choice_specs,choice,4
 choice_scarf,choice,4
-assault_vest,stat_enhancer,6,https://cdn2.bulbagarden.net/upload/b/b1/Dream_Assault_Vest_Sprite.png
+assault_vest,stat_enhancer,6
 buginium_z,z_crystal,7
 darkinium_z,z_crystal,7
 dragonium_z,z_crystal,7
