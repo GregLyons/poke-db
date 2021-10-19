@@ -41,7 +41,7 @@ def abilityEffects(fnamePrefix):
     for row in blazeTableRows:
       cells = row.find_all('td')
 
-      abilityName = parseName(cells[0].get_text())
+      abilityName = parseName(cells[0].get_text().replace('*',''))
       multiplier = 1.5
       description = cells[1].get_text().rstrip('\n') + '-type'
 
@@ -57,7 +57,7 @@ def abilityEffects(fnamePrefix):
     for row in darkAuraRows:
       cells = row.find_all('td')
 
-      abilityName = parseName(cells[0].get_text())
+      abilityName = parseName(cells[0].get_text().replace('*',''))
       multiplier = 1.33
       description = cells[1].get_text().rstrip('\n') + '-type'
 
@@ -77,7 +77,7 @@ def abilityEffects(fnamePrefix):
         abilityName, multiplier, description = row[0], row[1], row[2] 
 
         if '-type' in description and 'same' not in description:
-          type = parseName(re.search(r'.*-type', description).group().split()[-1].rstrip('type'))
+          type = parseName(re.search(r'.*-type', description).group().split()[-1].removesuffix('type'))
           currentWriter.writerow([abilityName, type, multiplier, 'type'])
           mainWriter.writerow([abilityName, 'boost_type'])
         else:
@@ -85,201 +85,15 @@ def abilityEffects(fnamePrefix):
             currentWriter.writerow([abilityName, 'other', multiplier, 'other'])
             mainWriter.writerow([abilityName, 'boost_other'])
           else:
-            method = parseName(description.split()[-2].rstrip('ing'))
+            method = parseName(description.split()[-2])
+
+            # change method name for consistency
+            method = method.replace('punching', 'punch').replace('biting', 'bite').replace('sound_based', 'sound')
+
             currentWriter.writerow([abilityName, method, multiplier, 'method'])
             mainWriter.writerow([abilityName, 'boost_method'])
     #endregion
 
-    # boost stat
-    #region
-    boostStatRows = []
-
-    chlorophyllTableRows = bs.find(id='Variations_of_Chlorophyll').find_next('table').find_all('tr')[2:]
-    for row in chlorophyllTableRows:
-      cells = row.find_all(['td', 'th'])
-      abilityName = parseName(cells[0].get_text())
-      stat = 'speed'
-      modifier = 2.0
-
-      for cell in cells:
-        if cell.find('span', {'class': 'explain'}) != None:
-            notesInCell = cell.find_all('span', {'class': 'explain'})
-            for note in notesInCell:
-              notesWriter.writerow([abilityName, note.get('title')])
-      
-      boostStatRows.append([abilityName, stat, modifier])
-
-    dauntlessShieldTableRows = bs.find(id='Variations_of_Dauntless_Shield').find_next('table').find_all('tr')[2:]
-    for row in dauntlessShieldTableRows:
-      cells = row.find_all(['td', 'th'])
-      abilityName = parseName(cells[0].get_text())
-      stat = 'attack'
-      modifier = '+1'
-
-      for cell in cells:
-        if cell.find('span', {'class': 'explain'}) != None:
-            notesInCell = cell.find_all('span', {'class': 'explain'})
-            for note in notesInCell:
-              notesWriter.writerow([abilityName, note.get('title')])
-     
-      boostStatRows.append([abilityName, stat, modifier])
-
-    gutsTableRows = bs.find(id='Variations_of_Guts').find_next('table').find_all('tr')[2:]
-    for row in gutsTableRows:
-      cells = row.find_all(['td', 'th'])
-      abilityName = parseName(cells[0].get_text())
-      stat = parseName(cells[1].get_text().replace('*', ''))
-      modifier = 1.5
-
-      for cell in cells:
-        if cell.find('span', {'class': 'explain'}) != None:
-            notesInCell = cell.find_all('span', {'class': 'explain'})
-            for note in notesInCell:
-              notesWriter.writerow([abilityName, note.get('title')])
-      
-      boostStatRows.append([abilityName, stat, modifier])
-
-    hugePowerTableRows = bs.find(id='Variations_of_Huge_Power').find_next('table').find_all('tr')[2:]
-    for row in hugePowerTableRows:
-      cells = row.find_all(['td', 'th'])
-      abilityName = parseName(cells[0].get_text())
-      stat = parseName(cells[1].get_text())
-      modifier = 2.0
-
-      for cell in cells:
-        if cell.find('span', {'class': 'explain'}) != None:
-            notesInCell = cell.find_all('span', {'class': 'explain'})
-            for note in notesInCell:
-              notesWriter.writerow([abilityName, note.get('title')])
-      
-      boostStatRows.append([abilityName, stat, modifier])
-
-    defiantTableRows = bs.find(id='Variations_of_Defiant').find_next('table').find_all('tr')[2:]
-    for row in defiantTableRows:
-      cells = row.find_all(['td', 'th'])
-      abilityName = parseName(cells[0].get_text())
-      stat = parseName(cells[1].get_text())
-      modifier = '+2'
-      
-      for cell in cells:
-        if cell.find('span', {'class': 'explain'}) != None:
-            notesInCell = cell.find_all('span', {'class': 'explain'})
-            for note in notesInCell:
-              notesWriter.writerow([abilityName, note.get('title')])
-      
-      boostStatRows.append([abilityName, stat, modifier])
-
-    justifiedTableRows =  bs.find(id='Variations_of_Justified').find_next('table').find_all('tr')[2:]
-    for row in justifiedTableRows:
-      cells = row.find_all(['td', 'th'])
-      abilityName = parseName(cells[0].get_text().replace('*', ''))
-      stat = parseName(cells[2].get_text())
-      if abilityName == 'water_compaction':
-        modifier = '+2'
-      elif abilityName == 'steam_engine':
-        modifier = '+6'
-      else:
-        modifier = '+1'
-
-      for cell in cells:
-        if cell.find('span', {'class': 'explain'}) != None:
-            notesInCell = cell.find_all('span', {'class': 'explain'})
-            for note in notesInCell:
-              notesWriter.writerow([abilityName, note.get('title')])
-      
-      boostStatRows.append([abilityName, stat, modifier])
-
-    lightningRodTableRows =  bs.find(id='Variations_of_Lightning_Rod').find_next('table').find_all('tr')[2:]
-
-    for row in lightningRodTableRows:
-      cells = row.find_all(['td', 'th'])
-      abilityName = parseName(cells[0].get_text())
-      stat = 'special_attack'
-      modifier = '+1'
-
-      notesWriter.writerow([abilityName, 'Does not raise Special Attack or provide immunity prior to Generation V.'])
-      
-      for cell in cells:
-        if cell.find('span', {'class': 'explain'}) != None:
-            notesInCell = cell.find_all('span', {'class': 'explain'})
-            for note in notesInCell:
-              notesWriter.writerow([abilityName, note.get('title')])
-      
-      boostStatRows.append([abilityName, stat, modifier])
-
-    minusTableRows =  bs.find(id='Variations_of_Minus').find_next('table').find_all('tr')[2:]
-    for row in minusTableRows:
-      cells = row.find_all(['td', 'th'])
-      abilityName = parseName(cells[0].get_text())
-      stat = 'special_attack'
-      modifier = 1.5
-      
-      for cell in cells:
-        if cell.find('span', {'class': 'explain'}) != None:
-            notesInCell = cell.find_all('span', {'class': 'explain'})
-            for note in notesInCell:
-              notesWriter.writerow([abilityName, note.get('title')])
-      
-      boostStatRows.append([abilityName, stat, modifier])
-
-    motorDriveTableRows =  bs.find(id='Variations_of_Motor_Drive').find_next('table').find_all('tr')[2:]
-    for row in motorDriveTableRows:
-      cells = row.find_all(['td', 'th'])
-      abilityName = parseName(cells[0].get_text())
-      stat = parseName(cells[2].get_text())
-      modifier = '+1'
-      
-      for cell in cells:
-        if cell.find('span', {'class': 'explain'}) != None:
-            notesInCell = cell.find_all('span', {'class': 'explain'})
-            for note in notesInCell:
-              notesWriter.writerow([abilityName, note.get('title')])
-      
-      boostStatRows.append([abilityName, stat, modifier])
-
-    moxieTableRows =  bs.find(id='Variations_of_Motor_Drive').find_next('table').find_all('tr')[2:]
-    for row in moxieTableRows:
-      cells = row.find_all(['td', 'th'])
-      abilityName = parseName(cells[0].get_text())
-      if abilityName == 'beast_boost':
-        stat = 'highest'
-      else:
-        stat = parseName(cells[1].get_text())
-      modifier = '+1'
-      
-      for cell in cells:
-        if cell.find('span', {'class': 'explain'}) != None:
-            notesInCell = cell.find_all('span', {'class': 'explain'})
-            for note in notesInCell:
-              notesWriter.writerow([abilityName, note.get('title')])
-      
-      boostStatRows.append([abilityName, stat, modifier])
-
-    sandVeilTableRows =  bs.find(id='Variations_of_Sand_Veil').find_next('table').find_all('tr')[2:]
-    for row in sandVeilTableRows:
-      cells = row.find_all(['td', 'th'])
-      abilityName = parseName(cells[0].get_text())
-      stat = 'evasion'
-      modifier = 0.8
-      
-      for cell in cells:
-        if cell.find('span', {'class': 'explain'}) != None:
-            notesInCell = cell.find_all('span', {'class': 'explain'})
-            for note in notesInCell:
-              notesWriter.writerow([abilityName, note.get('title')])
-      
-      boostStatRows.append([abilityName, stat, modifier])
-
-    boostStatRows.append(['super_luck', 'critical_hit_ratio', '+1'])
-
-    with open(fnamePrefix + 'BoostStat.csv', 'w', newline='', encoding='utf-8') as currentCSV:
-      currentWriter = csv.writer(currentCSV)
-      currentWriter.writerow(['Ability Name', 'Stat', 'Modifier'])
-
-      for row in boostStatRows:
-        currentWriter.writerow([row[0], row[1], row[2]])
-        mainWriter.writerow([row[0], 'boost_stat'])
-    #endregion
 
     # create weather
     #region
@@ -303,7 +117,7 @@ def abilityEffects(fnamePrefix):
     primordialSeaTableRows = bs.find(id='Variations_of_Primordial_Sea').find_next('table').find_all('tr')[2:]
     for row in primordialSeaTableRows:
       cells = row.find_all(['td', 'th'])
-      abilityName = parseName(cells[0].get_text())
+      abilityName = parseName(cells[0].get_text().replace('*',''))
       weather = parseName(cells[1].get_text())
       
       for cell in cells:
@@ -330,7 +144,7 @@ def abilityEffects(fnamePrefix):
     electricSurgeTableRows = bs.find(id='Variations_of_Electric_Surge').find_next('table').find_all('tr')[2:]
     for row in electricSurgeTableRows:
       cells = row.find_all(['td', 'th'])
-      abilityName = parseName(cells[0].get_text())
+      abilityName = parseName(cells[0].get_text().replace('*',''))
       terrain = parseName(cells[1].get_text())
       
       for cell in cells:
@@ -352,7 +166,7 @@ def abilityEffects(fnamePrefix):
 
     # protect against type or method
     #region
-    # columns are Ability Name, Type/Method, Modifier, Class
+    # columns are Ability Name, Type/Method, Multiplier, Class
     resistMoveClassRows = []
 
     # it's not worth trying to parse the description for the variations of levitate or of thick fat, so we hardcode them
@@ -370,7 +184,7 @@ def abilityEffects(fnamePrefix):
       cells = row.find_all(['td', 'th'])
       abilityName = parseName(cells[0].get_text().replace('*', ''))
       description = cells[1].get_text()
-      type = parseName(re.search(r'.*-type', description).group().rstrip('type'))
+      type = parseName(re.search(r'.*-type', description).group().removesuffix('type'))
       
       for cell in cells:
         if cell.find('span', {'class': 'explain'}) != None:
@@ -382,7 +196,7 @@ def abilityEffects(fnamePrefix):
       
     with open(fnamePrefix + 'ResistMoveClass.csv', 'w', newline='', encoding='utf-8') as currentCSV:
       currentWriter = csv.writer(currentCSV)
-      currentWriter.writerow(['Ability Name', 'Resists', 'Modifier', 'Move Class'])
+      currentWriter.writerow(['Ability Name', 'Resists', 'Multiplier', 'Move Class'])
       
       for row in resistMoveClassRows:
         currentWriter.writerow(row)
@@ -421,7 +235,7 @@ def abilityEffects(fnamePrefix):
     immunityTableRows = bs.find(id='Variations_of_Immunity').find_next('table').find_all('tr')[2:]
     for row in immunityTableRows:
       cells = row.find_all(['td', 'th'])
-      abilityName = parseName(cells[0].get_text())
+      abilityName = parseName(cells[0].get_text().replace('*',''))
       if abilityName == 'oblivious':
         protectAgainstStatusRows.append(['oblivious', 'infatuation'])
         protectAgainstStatusRows.append(['oblivious', 'taunt'])
@@ -439,6 +253,9 @@ def abilityEffects(fnamePrefix):
         protectAgainstStatusRows.append([abilityName, status])
 
     # entries which are easier to hard code
+    protectAgainstStatusRows.append(['immunity', 'bad_poison'])
+    protectAgainstStatusRows.append(['pastel_veil', 'poison'])
+    protectAgainstStatusRows.append(['pastel_veil', 'bad_poison'])
     protectAgainstStatusRows.append(['natural_cure', 'all'])
     protectAgainstStatusRows.append(['aroma_veil', 'infatuation'])
     protectAgainstStatusRows.append(['aroma_veil', 'disable'])
@@ -451,11 +268,12 @@ def abilityEffects(fnamePrefix):
     protectAgainstStatusRows.append(['natural_cure', 'paralysis'])
     protectAgainstStatusRows.append(['natural_cure', 'freeze'])
     protectAgainstStatusRows.append(['natural_cure', 'poison'])
+    protectAgainstStatusRows.append(['natural_cure', 'bad_poison'])
     protectAgainstStatusRows.append(['natural_cure', 'sleep'])
 
-    with open(fnamePrefix + 'ProtectsAgainstStatus.csv', 'w', newline='', encoding='utf-8') as currentCSV:
+    with open(fnamePrefix + 'ProtectAgainstStatus.csv', 'w', newline='', encoding='utf-8') as currentCSV:
       currentWriter = csv.writer(currentCSV)
-      currentWriter.writerow(['Ability Name', 'Status'])
+      currentWriter.writerow(['Ability Name', 'Status Name'])
 
       for row in protectAgainstStatusRows:
         currentWriter.writerow([row[0], row[1]])
@@ -480,6 +298,137 @@ def abilityEffects(fnamePrefix):
     #region
     for abilityName in ['arena_trap', 'magnet_pull', 'shadow_tag']:
       mainWriter.writerow([abilityName, 'trapped'])
+    #endregion
+
+    # modify stat
+    # we use a different page, which has a table that lists all the changes more concisely
+    #region
+    
+    with open(fnamePrefix + 'ModifyStat.csv', 'w', newline='', encoding='utf-8') as currentCSV:
+      currentWriter = csv.writer(currentCSV)
+      currentWriter.writerow(['Ability Name', 'Stat', 'Modifier'])
+
+      bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Stat', 0, 10)
+      dataRows = bs.find(id='In-battle_modification').find_next('table').find('tr').find_next_siblings('tr')[1:]
+      
+      for row in dataRows:
+        statName = parseName(row.find('th').get_text())
+        cells = row.find('th').find_next_siblings('td')
+        
+        # the table data is returned such that the stage modifiers and ability names are glued together. 
+        # The list comprehension separates sequences like 'asdFgh' into 'asd  Fgh'. 
+        # Then, we join the list into a string. 
+        # Then, we match the ability names with spaces. e.g. 'Beast BoostBerserk' is sent to 'Beast   Boost  Berserk', where the ability name has 3 spaces between its words, and separate abilities have 2 spaces between them; If we replace the instances of 3 spaces with 1 space, then distinct abilities will have 2 spaces between them, and the ability names will be correctly formatted
+        # Then, we replace the stage modifiers and 'other' with numeric codes
+        boosters = ''.join(['  ' + ch if (ch.isupper() or ch.isnumeric()) else ch for ch in cells[2].get_text().replace('*', '').replace('≥', '')]).replace('   ', ' ').replace('1 stage', '1').replace('2 stages', '2').replace('3 stages', '3').replace('Other', '9')
+        reducers = ''.join(['  ' + ch if (ch.isupper() or ch.isnumeric()) else ch for ch in cells[-1].get_text().replace('*', '').replace('≥', '')]).replace('   ', ' ').replace('1 stage', '1').replace('2 stages', '2').replace('3 stages', '3').replace('Other', '9')
+
+
+        # split up the boosters and reducers according to stage/modifier
+        oneStageBoosters = re.search(r'1 ([A-Za-z\s]*) [\d]', boosters)
+        twoStageBoosters = re.search(r'2 ([A-Za-z\s]*) [\d]', boosters)
+        moreStageBoosters = re.search(r'3 ([A-Za-z\s]*) [\d]', boosters)
+        otherBoosters = re.search(r'9 ([A-Za-z\s]*)', boosters)
+        oneStageReducers = re.search(r'1 ([A-Za-z\s]*) [\d]', reducers)
+        twoStageReducers = re.search(r'2 ([A-Za-z\s]*) [\d]', reducers)
+        moreStageReducers = re.search(r'3 ([A-Za-z\s]*) [\d]', reducers)
+        otherReducers = re.search(r'9 ([A-Za-z\s]*)', reducers)
+        if oneStageBoosters != None:
+          oneStageBoosters = oneStageBoosters.group(1).strip().split('  ')
+        if twoStageBoosters != None:
+          twoStageBoosters = twoStageBoosters.group(1).strip().split('  ')
+        if moreStageBoosters != None:
+          moreStageBoosters = moreStageBoosters.group(1).strip().split('  ')
+        if otherBoosters != None:
+          otherBoosters = otherBoosters.group(1).strip().split('  ')
+        if oneStageReducers != None:
+          oneStageReducers = oneStageReducers.group(1).strip().split('  ')
+        if twoStageReducers != None:
+          twoStageReducers = twoStageReducers.group(1).strip().split('  ')
+        if moreStageReducers != None:
+          moreStageReducers = moreStageReducers.group(1).strip().split('  ')
+        if otherReducers != None:
+          otherReducers = otherReducers.group(1).strip().split('  ')
+
+        modifiers = [['1', oneStageBoosters], ['2', twoStageBoosters], ['more+', moreStageBoosters], ['other+', otherBoosters], ['-1', oneStageReducers], ['-2', twoStageReducers], ['more-', moreStageReducers], ['other-', otherReducers]]
+
+        # one- and two-stage modifiers
+        for modifier in [modifier for modifier in modifiers if modifier[0].isnumeric() and modifier[1] != None]:
+          stage, abilities = modifier
+          for abilityName in abilities:
+            recipient = 'user'
+            abilityName = parseName(abilityName)
+            if int(stage) > 0:
+              sign = '+'
+            else:
+              sign = '-'
+              if abilityName in ['intimidate', 'gulp_missile']:
+                recipient = 'foe'
+
+            currentWriter.writerow([abilityName, statName, sign + stage, recipient])
+            mainWriter.writerow([abilityName, 'modify_stat'])
+
+        # more-stage modifiers
+        for modifier in [modifier for modifier in modifiers if modifier[1] != None and 'more' in modifier[0]]:
+          abilities = modifier[1]
+          for abilityName in abilities:
+            abilityName = parseName(abilityName)
+            if abilityName == 'anger_point':
+              sign = '+'
+              stage = '12'
+              recipient = 'user'
+            elif abilityName == 'steam_engine':
+              sign = '+'
+              stage = '+6'
+              recipient = 'user'
+            else:
+              print(abilityName, 'not handled')
+
+            currentWriter.writerow([abilityName, statName, sign + stage, recipient])
+            mainWriter.writerow([abilityName, 'modify_stat'])
+
+        # other modifiers (i.e. multipliers)
+        for modifier in [modifier for modifier in modifiers if modifier[1] != None and 'other' in modifier[0]]:
+          abilities = modifier[1]
+          for abilityName in abilities:
+            abilityName = parseName(abilityName)
+            recipient = 'user'
+            if abilityName in ['defeatist', 'slow_start']:
+              multiplier = 0.5
+            elif abilityName in ['victory_star']:
+              multiplier = 1.1
+            elif abilityName in ['sand_veil', 'snow_cloak']:
+              multiplier = 1.25
+            elif abilityName in ['battery', 'compound_eyes']:
+              multiplier = 1.3
+            elif abilityName in ['flower_gift', 'gorilla_tactics', 'guts','grass_pelt', 'marvel_scale', 'plus', 'minus', 'solar_power', 'quick_feet']:
+              multiplier = 1.5
+            elif abilityName in ['huge_power', 'pure_power', 'fur_coat', 'chlorophyll', 'sand_rush', 'swift_swim', 'unburden', 'slush_rush', 'surge_surfer', 'tangled_feet']:
+              multiplier = 2.0
+            elif abilityName == 'hustle':
+              if statName == 'attack':
+                multiplier = 0.5
+              # accuracy
+              else:
+                multiplier = 0.8
+            # sets accuracy of status moves against Pokemon to 50%--too compliated to add to .csv, and it doesn't even affect all moves
+            elif abilityName == 'wonder_skin':
+              continue
+            else:
+              print('Other', statName, parseName(abilityName))
+
+            currentWriter.writerow([abilityName, statName, multiplier, recipient])
+            mainWriter.writerow([abilityName, 'modify_stat'])
+      
+      
+      # currentWriter.writerow(['Ability Name', 'Stat', 'Modifier'])
+
+
+        
+
+        
+
+
     #endregion
   return
 

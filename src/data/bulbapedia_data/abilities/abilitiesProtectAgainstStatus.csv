@@ -1,4 +1,4 @@
-Ability Name,Status
+Ability Name,Status Name
 immunity,poison
 inner_focus,flinch
 insomnia,sleep
@@ -6,8 +6,12 @@ vital_spirit,sleep
 limber,paralysis
 magma_armor,freeze
 own_tempo,confusion
-oblivious*,infatuation_taunt*
+oblivious,infatuation
+oblivious,taunt
 water_veil,burn
+immunity,bad_poison
+pastel_veil,poison
+pastel_veil,bad_poison
 natural_cure,all
 aroma_veil,infatuation
 aroma_veil,disable
@@ -19,4 +23,5 @@ natural_cure,burn
 natural_cure,paralysis
 natural_cure,freeze
 natural_cure,poison
+natural_cure,bad_poison
 natural_cure,sleep

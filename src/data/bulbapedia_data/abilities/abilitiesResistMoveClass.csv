@@ -1,4 +1,4 @@
-Ability Name,Resists,Modifier,Move Class
+Ability Name,Resists,Multiplier,Move Class
 levitate,ground,0.0,type
 soundproof,sound,0.0,method
 wonder_guard,other,0.0,type

@@ -98,7 +98,7 @@ def makeAbilityCSVandExtractNotes(fname):
               if cell.find('span', {'class': 'explain'}) != None:
                 notesInCell = cell.find_all('span', {'class': 'explain'})
                 for note in notesInCell:
-                  notesWriter.writerow([parseName(currentPokemonName, 'pokemon'), headers[headerIndex], note.get('title')])
+                  notesWriter.writerow([parseName(currentPokemonName, 'pokemon'), parseName(headers[headerIndex]), note.get('title')])
               
               if headers[headerIndex] == 'Pokemon Name':
                 csvRow.append(parseName(value, 'pokemon'))

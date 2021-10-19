@@ -1,114 +1,193 @@
 import csv
 import re
 import os
+from utils import getBulbapediaDataPath, genSymbolToNumber
 
-# converts roman numeral for gen to arabic numeral
-def genSymbolToNumber(roman):
-  if roman == 'I':
-    return 1
-  elif roman == 'II':
-    return 2
-  elif roman == 'III':
-    return 3
-  elif roman == 'IV':
-    return 4
-  elif roman == 'V':
-    return 5
-  elif roman == 'VI':
-    return 6
-  elif roman == 'VII':
-    return 7
-  elif roman == 'VIII':
-    return 8
-  elif roman == 'IX':
-    return 9
-  else:
-    raise ValueError('Not a valid gen.')
+# for the dictionary-valued entries in abilityDict (with key outerKeyName), add a key (innerKeyName) with a default value, for every entry in abilityDict
+def initializeKeyValue(abilityDict, outerKeyName, innerKeyName, defaultValue):
+  for key in abilityDict.keys():
+    if not isinstance(defaultValue, list):
+      defaultValue = [defaultValue]
 
-# converts dex number to gen
-def dexNumberToGen(dexNumber):
-  dexNumber = int(dexNumber)
-  if dexNumber <= 151:
-    return 1
-  elif dexNumber <= 251:
-    return 2
-  elif dexNumber <= 386:
-    return 3
-  elif dexNumber <= 493: 
-    return 4
-  elif dexNumber <= 649:
-    return 5
-  elif dexNumber <= 721:
-    return 6
-  elif dexNumber <= 809:
-    return 7
-  else:
-    return 8
+    abilityDict[key][outerKeyName][innerKeyName] = [defaultValue + [abilityDict[key]["gen"]]]
+  return
 
-# the notes are somewhat inconsistent, so there are a few different exceptions to consider
-def parseNote(description):
-  # Notes of the form 'Generation {gen} onwards', indicating a Pokemon gained a new ability
-  if re.search(r'Generation (IV|V|VI|VII|VIII) onwards', description):
-    gen = genSymbolToNumber(description.split()[1])
-    return ['New ability', gen]
-  # Notes of the form 'Hidden Ability is {ability} in Generation(s) {gen}'
-  elif re.search(r'Hidden Ability is (\w+(\s\w+)*) in Generation(s*) (\w+)(-\w+)*', description):
-    words = description.split()
-    ability = ' '.join(words[3:-3:])
-    generations = words[-1].split('-')
-    startGen, endGen = genSymbolToNumber(generations[0]), genSymbolToNumber(generations[-1])
-    return ['Changed hidden ability', ability, startGen, endGen]
-  # Only other cases are Gengar and Basculin, which we will handle outside this code
-  else:
-    return description
-
+# initialize abilityDict with name, description, and gen; key is Ability ID
 def makeInitialAbilityDict(fname):
-  abilityDict = {}
-
-  with open(fname, encoding='utf-8') as abilitiesCSV, open(fname.removesuffix('.csv') + 'Notes.csv', encoding='utf-8') as notesCSV:
-    reader = csv.DictReader(abilitiesCSV)
-    notesReader = csv.DictReader(notesCSV)
-
+  with open(fname, 'r', encoding='utf-8') as abilityListCSV:
+    reader = csv.DictReader(abilityListCSV)
+    abilityDict = {}
     for row in reader:
-      if row["Pokemon Name"] != "Pokemon Name":
-        abilityDict[row["Pokemon Name"]] = {
-          "Dex Number": row["Dex Number"],
-          "Sprite URL": row["Sprite URL"],
-          "Ability 1": [[row["Ability 1"], max(int(row['Gen']), 3)]],
-          "Ability 2": [[row["Ability 2"], max(int(row['Gen']), 3)]],
-          "Hidden": [[row["Hidden"], max(int(row['Gen']), 5)]]
-        }
+      abilityID, abilityName, description, gen = int(row["Ability ID"]), row["Ability Name"].replace('*', ''), row["Description"], row["Gen"]
+      abilityDict[abilityID] = {
+        "name": abilityName,
+        "description": description,
+        "gen": genSymbolToNumber(gen),
+        "effects": {},
+        "causes_status": {},
+        "resists_status": {},
+        "boosts_type": {},
+        "resists_type": {},
+        "boosts_usage_method": {},
+        "resists_usage_method": {},
+        "stat_modifications": {},
+      }
 
-    # Go through majority of notes; handle Gengar
-    for note in notesReader:
-      action = parseNote(note["Description"])
-      pokemonName = note["Pokemon Name"]
-      header = note["Header"]
-
-      # action denotes adding a new ability, ['New Ability', gen]
-      if action[0] == 'New ability':
-        startGen = action[1]
-        # This -1 is due to the structure of the Bulbapedia table: the notes for 'Changed hidden ability' come before those for 'New ability'. The former note moves the ability described by 'New Ability' to the end of the array, so the index of -1 refers to that
-        # If the 'Changed hidden ability' did not occur, then the length of the list is 1, so the indices 0 and -1 refer to the same value
-        abilityDict[pokemonName][header][-1][1] = startGen
-
-      # action denotes change in hidden ability, ['Changed hidden ability', ability, startGen, endGen]
-      elif action[0] == 'Changed hidden ability':
-        currentHiddenAbility = abilityDict[pokemonName]["Hidden"][0][0]
-        oldHiddenAbility = action[1]
-        startGen = action[2]
-        endGen = action[3]
-        # the currently listed hidden ability starts in endGen + 1
-        abilityDict[pokemonName]["Hidden"] = [[oldHiddenAbility, startGen], [currentHiddenAbility, endGen + 1]]
-
-  # Exception for Gengar sinec his note is unique
-  abilityDict["gengar"]["Ability 1"] = [["levitate", 3], ["cursed_body", 7]]
-  
   return abilityDict
 
+# def 
+def makeInverseDict(fname):
+  inverseDict = {}
 
-fname = f'src\\data\\bulbapedia_data\\pokemon\\pokemonByAbilities.csv'
-abilityDict = makeInitialAbilityDict(fname)
+  with open(fname, encoding='utf-8') as abilitiesCSV:
+    reader = csv.DictReader(abilitiesCSV)
+    for row in reader:
+      inverseDict[row["Ability Name"]] = int(row["Ability ID"])
 
-print(abilityDict["gengar"])
-print(abilityDict["chandelure"])
+  return inverseDict
+
+# 
+def addEffectData(fpath, abilityDict, inverseDict):
+  # general effect headers for abilities
+  with open(fpath + 'abilitiesByEffect.csv', 'r', encoding='utf-8') as effectCSV:
+    reader = csv.DictReader(effectCSV)
+    for row in reader:
+      abilityName, effect = row["Ability Name"], row["Effect Type"]
+      if effect not in abilityDict[1]["effects"]:
+        initializeKeyValue(abilityDict, "effects", effect, False)
+      
+      abilityKey = inverseDict[abilityName]
+      gen = abilityDict[abilityKey]["gen"]
+      abilityDict[abilityKey]["effects"][effect] = [[True, gen]]
+
+    # hard-code exceptions
+    # lightning_rod
+    lightningRodKey = inverseDict["lightning_rod"]
+    abilityDict[lightningRodKey]["effects"]["resists_type"] = [[False, 3], [True, 5]]
+
+    # storm_drain
+    stormDrainKey = inverseDict["storm_drain"]
+    abilityDict[stormDrainKey]["effects"]["resists_type"] = [[False, 4], [True, 5]]
+
+  # abilities which can cause status--mainly through contact
+  with open(fpath + 'abilitiesContactCausesStatus.csv', 'r', encoding='utf-8') as contactStatusCSV:
+    reader = csv.DictReader(contactStatusCSV)
+    for row in reader:
+      abilityName, status, probability = row["Ability Name"], row["Status"], float(row["Probability"])
+      if status not in abilityDict[1]["causes_status"]:
+        initializeKeyValue(abilityDict, "causes_status", status, 0.0)
+
+      abilityKey = inverseDict[abilityName]
+      gen = abilityDict[abilityKey]["gen"]
+      abilityDict[abilityKey]["causes_status"][status] = [[probability, gen]]
+
+      # hardcode exceptions
+      # poison_touch
+      poisonTouchKey = inverseDict["poison_touch"]
+      abilityDict[poisonTouchKey]["causes_status"]["poison"] = [[30.0, gen]]
+
+      # synchronize
+      synchronizeKey = inverseDict["synchronize"]
+      abilityDict[synchronizeKey]["causes_status"]["burn"] = [[100.0, 3]]
+      abilityDict[synchronizeKey]["causes_status"]["poison"] = [[100.0, 3]]
+      # only inflicts bad_poison from gen 5 onward
+      abilityDict[synchronizeKey]["causes_status"]["bad_poison"] = [[0.0, 3], [100.0, 5]]
+      abilityDict[synchronizeKey]["causes_status"]["paralysis"] = [[100.0, 3]]
+
+  # abilities which protect against status
+  with open(fpath + 'abilitiesProtectAgainstStatus.csv', 'r', encoding='utf-8') as boostMoveClassCSV:
+    reader = csv.DictReader(boostMoveClassCSV)
+    for row in reader:
+      abilityName, status = row["Ability Name"], row["Status Name"]
+      if status not in abilityDict[1]["resists_status"] and status != 'non_volatile':
+        initializeKeyValue(abilityDict, "resists_status", status, False)
+      
+      abilityKey = inverseDict[abilityName]
+      gen = abilityDict[abilityKey]["gen"]
+      abilityDict[abilityKey]["resists_status"][status] = [[True, gen]]
+    
+    # hardcode abilities which protect against non_volatile status
+    for abilityName in ['flower_veil', 'sweet_veil']:
+      for status in ['poison', 'bad_poison', 'burn', 'paralysis', 'freeze', 'sleep']:
+        abilityKey = inverseDict[abilityName]
+        gen = abilityDict[abilityKey]["gen"]
+        abilityDict[abilityKey]["resists_status"][status] = [[True, gen]]
+
+    # hardcode exceptions
+    exceptions = [
+      ['sleep', ['early_bird']],
+      ['burn', ['water bubble']],
+      ['poison', ['pastel_veil', 'poison_heal']]
+    ]
+
+    for exception in exceptions:
+      status = exception[0]
+      abilities = exception[1]
+      for abilityName in abilities:
+        abilityKey = inverseDict[abilityName]
+        gen = abilityDict[abilityKey]["gen"]
+        abilityDict[abilityKey]["resists_status"][status] = [[True, gen]]
+
+  # abilities which boost types and usage methods
+  with open(fpath + 'abilitiesBoostMoveClass.csv', 'r', encoding='utf-8') as boostMoveClassCSV:
+    reader = csv.DictReader(boostMoveClassCSV)
+    for row in reader:
+      abilityName, boosts, multiplier, moveClass = row["Ability Name"], row["Boosts"], row["Multiplier"], row["Move Class"]
+      if moveClass == 'method':
+        abilityKey = inverseDict[abilityName]
+        gen = abilityDict[abilityKey]["gen"]
+
+        abilityDict[abilityKey]["boosts_usage_method"][boosts] = [[boosts, multiplier, gen]]
+      elif moveClass == 'type':
+        abilityKey = inverseDict[abilityName]
+        gen = abilityDict[abilityKey]["gen"]
+
+        abilityDict[abilityKey]["boosts_type"][boosts] = [[boosts, multiplier, gen]]
+
+  # abilities which resist types and usage methods
+  with open(fpath + 'abilitiesResistMoveClass.csv', 'r', encoding='utf-8') as resistMoveClassCSV:
+    reader = csv.DictReader(resistMoveClassCSV)
+    for row in reader:
+      abilityName, boosts, multiplier, moveClass = row["Ability Name"], row["Boosts"], row["Multiplier"], row["Move Class"]
+      if moveClass == 'method':
+        abilityKey = inverseDict[abilityName]
+        gen = abilityDict[abilityKey]["gen"]
+
+        abilityDict[abilityKey]["boosts_usage_method"][boosts] = [[boosts, multiplier, gen]]
+      elif moveClass == 'type':
+        abilityKey = inverseDict[abilityName]
+        gen = abilityDict[abilityKey]["gen"]
+
+        abilityDict[abilityKey]["boosts_type"][boosts] = [[boosts, multiplier, gen]]
+
+  # abilities which modify stats
+  with open(fpath + 'abilitiesBoostStat.csv', 'r', encoding='utf-8') as resistMoveClassCSV:
+    reader = csv.DictReader(resistMoveClassCSV)
+    for row in reader:
+      abilityName, boosts, multiplier, moveClass = row["Ability Name"], row["Boosts"], row["Multiplier"], row["Move Class"]
+      if moveClass == 'method':
+        abilityKey = inverseDict[abilityName]
+        gen = abilityDict[abilityKey]["gen"]
+
+        abilityDict[abilityKey]["boosts_usage_method"][boosts] = [[boosts, multiplier, gen]]
+      elif moveClass == 'type':
+        abilityKey = inverseDict[abilityName]
+        gen = abilityDict[abilityKey]["gen"]
+
+        abilityDict[abilityKey]["boosts_type"][boosts] = [[boosts, multiplier, gen]]
+  return
+
+def main():
+  dataPath = getBulbapediaDataPath() + '\\abilities\\'
+  fname = dataPath + 'abilityList.csv'
+  abilityDict = makeInitialAbilityDict(fname)
+  inverseDict = makeInverseDict(fname)
+
+  addEffectData(dataPath, abilityDict, inverseDict)
+
+  return
+
+  
+
+if __name__ == '__main__':
+  main()
