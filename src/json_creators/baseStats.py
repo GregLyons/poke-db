@@ -15,7 +15,7 @@ def makeBaseStatDict():
 
     for reader in readerList:
       for row in reader:
-        # If Pokemon is new, add it to patchDict
+        # If Pokemon is new, add it to baseStatDict
         if row["Pokemon"] not in baseStatDict.keys():
           baseStatDict[row["Pokemon"]] = {
             "Dex Number": row["Dex Number"],

@@ -27,10 +27,10 @@ Gen,Dex Number,Species Name,Pokemon Name,Type 1,Type 2
 1,26,raichu,raichu,electric,
 1,27,sandshrew,sandshrew,ground,
 1,28,sandslash,sandslash,ground,
-1,29,nidoran♀,nidoran♀,poison,
+1,29,nidoran_f,nidoran_f,poison,
 1,30,nidorina,nidorina,poison,
 1,31,nidoqueen,nidoqueen,poison,ground
-1,32,nidoran♂,nidoran♂,poison,
+1,32,nidoran_m,nidoran_m,poison,
 1,33,nidorino,nidorino,poison,
 1,34,nidoking,nidoking,poison,ground
 1,35,clefairy,clefairy,fairy,
@@ -349,7 +349,10 @@ Gen,Dex Number,Species Name,Pokemon Name,Type 1,Type 2
 3,348,armaldo,armaldo,rock,bug
 3,349,feebas,feebas,water,
 3,350,milotic,milotic,water,
-3,351,castform,castform,normal,
+3,351,castform,castform_normal,normal,
+3,351,castform,castform_sunny,fire,
+3,351,castform,castform__sunny,water,
+3,351,castform,castform_snowy,ice,
 3,352,kecleon,kecleon,normal,
 3,353,shuppet,shuppet,ghost,
 3,354,banette,banette,ghost,
@@ -385,6 +388,9 @@ Gen,Dex Number,Species Name,Pokemon Name,Type 1,Type 2
 3,384,rayquaza,rayquaza,dragon,flying
 3,385,jirachi,jirachi,steel,psychic
 3,386,deoxys,deoxys,psychic,
+3,386,deoxys,deoxys,psychic,
+3,386,deoxys,deoxys,psychic,
+3,386,deoxys,deoxys,psychic,
 4,387,turtwig,turtwig,grass,
 4,388,grotle,grotle,grass,
 4,389,torterra,torterra,grass,ground
@@ -411,7 +417,11 @@ Gen,Dex Number,Species Name,Pokemon Name,Type 1,Type 2
 4,410,shieldon,shieldon,rock,steel
 4,411,bastiodon,bastiodon,rock,steel
 4,412,burmy,burmy,bug,
-4,413,wormadam,wormadam,bug,grass
+4,412,burmy,burmy,bug,
+4,412,burmy,burmy,bug,
+4,413,wormadam,wormadam_plant,bug,grass
+4,413,wormadam,wormadam_sandy,bug,ground
+4,413,wormadam,wormadam_trash,bug,steel
 4,414,mothim,mothim,bug,flying
 4,415,combee,combee,bug,flying
 4,416,vespiquen,vespiquen,bug,flying
@@ -421,6 +431,8 @@ Gen,Dex Number,Species Name,Pokemon Name,Type 1,Type 2
 4,420,cherubi,cherubi,grass,
 4,421,cherrim,cherrim,grass,
 4,422,shellos,shellos,water,
+4,422,shellos,shellos,water,
+4,423,gastrodon,gastrodon,water,ground
 4,423,gastrodon,gastrodon,water,ground
 4,424,ambipom,ambipom,normal,
 4,425,drifloon,drifloon,ghost,flying
@@ -478,20 +490,19 @@ Gen,Dex Number,Species Name,Pokemon Name,Type 1,Type 2
 4,477,dusknoir,dusknoir,ghost,
 4,478,froslass,froslass,ice,ghost
 4,479,rotom,rotom,electric,ghost
+4,479,rotom,rotom_heat,electric,fire
+4,479,rotom,rotom_wash,electric,water
+4,479,rotom,rotom_frost,electric,ice
+4,479,rotom,rotom_fan,electric,flying
+4,479,rotom,rotom_mow,electric,grass
 4,480,uxie,uxie,psychic,
 4,481,mesprit,mesprit,psychic,
 4,482,azelf,azelf,psychic,
 4,483,dialga,dialga,steel,dragon
 4,484,palkia,palkia,water,dragon
-4,485,heatran,heatran,fire,steel
-4,486,regigigas,regigigas,normal,
 4,487,giratina,giratina,ghost,dragon
-4,488,cresselia,cresselia,psychic,
-4,489,phione,phione,water,
+4,487,giratina,giratina,ghost,dragon
 4,490,manaphy,manaphy,water,
-4,491,darkrai,darkrai,dark,
-4,492,shaymin,shaymin,grass,
-4,493,arceus,arceus,normal,
 5,494,victini,victini,psychic,fire
 5,495,snivy,snivy,grass,
 5,496,servine,servine,grass,
@@ -519,6 +530,7 @@ Gen,Dex Number,Species Name,Pokemon Name,Type 1,Type 2
 5,518,musharna,musharna,psychic,
 5,519,pidove,pidove,normal,flying
 5,520,tranquill,tranquill,normal,flying
+5,521,unfezant,unfezant,normal,flying
 5,521,unfezant,unfezant,normal,flying
 5,522,blitzle,blitzle,electric,
 5,523,zebstrika,zebstrika,electric,
@@ -548,6 +560,7 @@ Gen,Dex Number,Species Name,Pokemon Name,Type 1,Type 2
 5,547,whimsicott,whimsicott,grass,fairy
 5,548,petilil,petilil,grass,
 5,549,lilligant,lilligant,grass,
+5,550,basculin,basculin,water,
 5,550,basculin,basculin,water,
 5,551,sandile,sandile,ground,dark
 5,552,krokorok,krokorok,ground,dark
@@ -590,6 +603,8 @@ Gen,Dex Number,Species Name,Pokemon Name,Type 1,Type 2
 5,590,foongus,foongus,grass,poison
 5,591,amoonguss,amoonguss,grass,poison
 5,592,frillish,frillish,water,ghost
+5,592,frillish,frillish,water,ghost
+5,593,jellicent,jellicent,water,ghost
 5,593,jellicent,jellicent,water,ghost
 5,594,alomomola,alomomola,water,
 5,595,joltik,joltik,bug,electric
@@ -645,7 +660,8 @@ Gen,Dex Number,Species Name,Pokemon Name,Type 1,Type 2
 5,645,landorus,landorus,ground,flying
 5,646,kyurem,kyurem,dragon,ice
 5,647,keldeo,keldeo,water,fighting
-5,648,meloetta,meloetta,normal,psychic
+5,648,meloetta,meloetta_aria,normal,psychic
+5,648,meloetta,meloetta_pirouette,normal,fighting
 5,649,genesect,genesect,bug,steel
 6,650,chespin,chespin,grass,
 6,651,quilladin,quilladin,grass,
@@ -717,7 +733,8 @@ Gen,Dex Number,Species Name,Pokemon Name,Type 1,Type 2
 6,717,yveltal,yveltal,dark,flying
 6,718,zygarde,zygarde,dragon,ground
 6,719,diancie,diancie,rock,fairy
-6,720,hoopa,hoopa,psychic,ghost
+6,720,hoopa,hoopa_confined,psychic,ghost
+6,720,hoopa,hoopa_unbound,psychic,dark
 6,721,volcanion,volcanion,fire,water
 7,722,rowlet,rowlet,grass,flying
 7,723,dartrix,dartrix,grass,flying
@@ -738,7 +755,10 @@ Gen,Dex Number,Species Name,Pokemon Name,Type 1,Type 2
 7,738,vikavolt,vikavolt,bug,electric
 7,739,crabrawler,crabrawler,fighting,
 7,740,crabominable,crabominable,fighting,ice
-7,741,oricorio,oricorio,fire,flying
+7,741,oricorio,oricorio_baile,fire,flying
+7,741,oricorio,oricorio_pom_pom,electric,flying
+7,741,oricorio,oricorio_pau,psychic,flying
+7,741,oricorio,oricorio_sensu,ghost,flying
 7,742,cutiefly,cutiefly,bug,fairy
 7,743,ribombee,ribombee,bug,fairy
 7,744,rockruff,rockruff,rock,
@@ -886,19 +906,24 @@ Gen,Dex Number,Species Name,Pokemon Name,Type 1,Type 2
 8,886,drakloak,drakloak,dragon,ghost
 8,887,dragapult,dragapult,dragon,ghost
 8,888,zacian,zacian,fairy,
+8,888,zacian,zacian,fairy,steel
 8,889,zamazenta,zamazenta,fighting,
+8,889,zamazenta,zamazenta,fighting,steel
 8,890,eternatus,eternatus,poison,dragon
 8,891,kubfu,kubfu,fighting,
 8,892,urshifu,urshifu,fighting,dark
+8,892,urshifu,urshifu,fighting,water
 8,893,zarude,zarude,dark,grass
 8,894,regieleki,regieleki,electric,
 8,895,regidrago,regidrago,dragon,
 8,896,glastrier,glastrier,ice,
 8,897,spectrier,spectrier,ghost,
 8,898,calyrex,calyrex,psychic,grass
+8,898,calyrex,calyrex,psychic,ice
+8,898,calyrex,calyrex,psychic,ghost
 6,,venusaur,venusaur_mega,grass,poison
-6,,charizard,venusaur_mega_x,fire,dragon
-6,,charizard,venusaur_mega_y,fire,flying
+6,,charizard,charizard_mega_x,fire,dragon
+6,,charizard,charizard_mega_y,fire,flying
 6,,blastoise,blastoise_mega,water,
 6,,alakazam,alakazam_mega,psychic,
 6,,gengar,gengar_mega,ghost,poison
@@ -906,8 +931,8 @@ Gen,Dex Number,Species Name,Pokemon Name,Type 1,Type 2
 6,,pinsir,pinsir_mega,bug,flying
 6,,gyarados,gyarados_mega,water,dark
 6,,aerodactyl,aerodactyl_mega,rock,flying
-6,,mewtwo,aerodactyl_mega_x,psychic,fighting
-6,,mewtwo,aerodactyl_mega_y,psychic,
+6,,mewtwo,mewtwo_mega_x,psychic,fighting
+6,,mewtwo,mewtwo_mega_y,psychic,
 6,,ampharos,ampharos_mega,electric,dragon
 6,,scizor,scizor_mega,bug,steel
 6,,heracross,heracross_mega,bug,fighting
@@ -944,42 +969,42 @@ Gen,Dex Number,Species Name,Pokemon Name,Type 1,Type 2
 6,,gallade,gallade_mega,psychic,fighting
 6,,audino,audino_mega,normal,fairy
 6,,diancie,diancie_mega,rock,fairy
-7,,rattata,rattata Alola,Dark,Normal
-7,,raticate,raticate Alola,Dark,Normal
-7,,raichu,raichu Alola,Electric,Psychic
-7,,sandshrew,sandshrew Alola,Ice,Steel
-7,,sandslash,sandslash Alola,Ice,Steel
-7,,vulpix,vulpix Alola,Ice,
-7,,ninetales,ninetales Alola,Ice,Fairy
-7,,diglett,diglett Alola,Ground,Steel
-7,,dugtrio,dugtrio Alola,Ground,Steel
-7,,meowth,meowth Alola,Dark,
-7,,persian,persian Alola,Dark,
-7,,geodude,geodude Alola,Rock,Electric
-7,,graveler,graveler Alola,Rock,Electric
-7,,golem,golem Alola,Rock,Electric
-7,,grimer,grimer Alola,Poison,Dark
-7,,muk,muk Alola,Poison,Dark
-7,,exeggutor,exeggutor Alola,Grass,Dragon
-7,,marowak,marowak Alola,Fire,Ghost
-8,,meowth,meowth Galar,Steel,
-8,,ponyta,ponyta Galar,Psychic,
-8,,rapidash,rapidash Galar,Psychic,Fairy
-8,,farfetchd,farfetchd Galar,Fighting,
-8,,weezing,weezing Galar,Poison,Fairy
-8,,mr_mime,mr_mime Galar,Ice,Psychic
-8,,corsola,corsola Galar,Ghost,
-8,,zigzagoon,zigzagoon Galar,Dark,Normal
-8,,linoone,linoone Galar,Dark,Normal
-8,,darumaka,darumaka Galar,Ice,
-8,,yamask,yamask Galar,Ground,Ghost
-8,,stunfisk,stunfisk Galar,Ground,Steel
-8,,slowpoke,slowpoke Galar,Psychic,
-8,,slowbro,slowbro Galar,Poison,Psychic
-8,,articuno,articuno Galar,Psychic,Flying
-8,,zapdos,zapdos Galar,Fighting,Flying
-8,,moltres,moltres Galar,Dark,Flying
-8,,slowking,slowking Galar,Poison,Psychic
+7,,rattata,rattata_alola,dark,normal
+7,,raticate,raticate_alola,dark,normal
+7,,raichu,raichu_alola,electric,psychic
+7,,sandshrew,sandshrew_alola,ice,steel
+7,,sandslash,sandslash_alola,ice,steel
+7,,vulpix,vulpix_alola,ice,
+7,,ninetales,ninetales_alola,ice,fairy
+7,,diglett,diglett_alola,ground,steel
+7,,dugtrio,dugtrio_alola,ground,steel
+7,,meowth,meowth_alola,dark,
+7,,persian,persian_alola,dark,
+7,,geodude,geodude_alola,rock,electric
+7,,graveler,graveler_alola,rock,electric
+7,,golem,golem_alola,rock,electric
+7,,grimer,grimer_alola,poison,dark
+7,,muk,muk_alola,poison,dark
+7,,exeggutor,exeggutor_alola,grass,dragon
+7,,marowak,marowak_alola,fire,ghost
+8,,meowth,meowth_galar,steel,
+8,,ponyta,ponyta_galar,psychic,
+8,,rapidash,rapidash_galar,psychic,fairy
+8,,farfetchd,farfetchd_galar,fighting,
+8,,weezing,weezing_galar,poison,fairy
+8,,mr_mime,mr_mime_galar,ice,psychic
+8,,corsola,corsola_galar,ghost,
+8,,zigzagoon,zigzagoon_galar,dark,normal
+8,,linoone,linoone_galar,dark,normal
+8,,darumaka,darumaka_galar,ice,
+8,,yamask,yamask_galar,ground,ghost
+8,,stunfisk,stunfisk_galar,ground,steel
+8,,slowpoke,slowpoke_galar,psychic,
+8,,slowbro,slowbro_galar,poison,psychic
+8,,articuno,articuno_galar,psychic,flying
+8,,zapdos,zapdos_galar,fighting,flying
+8,,moltres,moltres_galar,dark,flying
+8,,slowking,slowking_galar,poison,psychic
 5,555,darmanitan,darmanitan_standard,fire,
 5,,darmanitan,darmanitan_zen,fire,psychic
 8,,darmanitan,darmanitan_standard_galar,ice,

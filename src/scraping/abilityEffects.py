@@ -308,7 +308,18 @@ def abilityEffects(fnamePrefix):
       mainWriter.writerow([abilityName, 'trapped'])
     #endregion
 
-    # abilities which change form
+    # item-maniuplating abilities
+    #region
+    bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Held_item', 0, 10)
+    dataRows = bs.find(id='Abilities').find_next('table').find('table').find_all('tr')[1:]
+    for row in dataRows: 
+      cells = row.find_all('td')
+      abilityName = parseName(cells[0].get_text())
+      mainWriter.writerow([abilityName, 'manipulates_item'])
+    #endregion
+
+    # other ability effects not in a table
+    #region
     for exception in [
       ["changes_form", ["forecast", "hunger_switch", "imposter", "power_construct", "schooling", "shields_down", "stance_change", "zen_mode", "battle_bond", "disguise", "ice_face"]],
       ["changes_pokemon_type", ["protean", "rks_system", "color_change", "libero", "mimicry", "multitype"]],
@@ -332,12 +343,12 @@ def abilityEffects(fnamePrefix):
       ['prevents_stat_drop', ['clear_body', 'white_smoke', "full_metal_body"]],
       ['other_move_resistance', ['wonder_guard', 'filter', 'solid_rock', 'prism_armor', 'multiscale', 'shadow_shield']],
       ['adds_priority', ['prankster', 'gale_wings', 'triage']],
-      ['protect_against_priority', ['dazzling', 'queenly_majesty']]
+      ['protect_against_priority', ['dazzling', 'queenly_majesty']],
     ]:
       effect, abilities = exception
       for abilityName in abilities:
         mainWriter.writerow([abilityName, effect])
-
+    #endregion
 
     # modify stat
     # we use a different page, which has a table that lists all the changes more concisely

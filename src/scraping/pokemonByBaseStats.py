@@ -9,8 +9,8 @@ def formatGen1(csvRow):
 
   # check for top 
   if specialA == 'Special':
-    specialA = 'Sp. Attack'
-    specialD = 'Sp. Defense'
+    specialA = 'special_attack'
+    specialD = 'special_defense'
   csvRow = csvRow[:5]
   csvRow.extend([specialA, specialD, speed])
 
@@ -36,15 +36,16 @@ def makeBaseStatCSVs(fnamePrefix):
 
     bs = openLink(url, 0, 10)
     table = bs.find('table', {'class':'sortable'})
-    rows = table.findAll('tr')
+    dataRows = table.findAll('tr')[1:]
 
     # Make CSV file
     csvFile = open((f'{fnamePrefix + str(gen)}.csv'), 'w', newline='', encoding='utf-8')
     writer = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
+    writer.writerow(['Dex Number', 'Pokemon Name', 'hp', 'attack', 'defense', 'special_attack', 'special_defense', 'speed'])
 
     # Write data to file
     try: 
-      for row in rows:
+      for row in dataRows:
         # keep track of columns; we don't need the last two
 
         csvRow = []
@@ -63,7 +64,7 @@ def makeBaseStatCSVs(fnamePrefix):
           # there's a column with no text in its rows
           if value != '':
             # if value is stat or dex entry, add it
-            if value.isnumeric():
+            if value.replace('.', '').isnumeric():
               csvRow.append(value.lstrip('0'))
             # otherwise, it's a Pokemon name
             else:

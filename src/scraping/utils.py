@@ -132,10 +132,6 @@ def parseName(text, mode='normal'):
         form = form.replace('Female', 'f').replace('Male', 'm')
       elif speciesName == 'Calyrex':
         form = form.replace('Rider', '')
-      elif speciesName == 'Nidoran':
-        # sometimes Nidoran will have the gender symbol (Bulbapedia)
-        form = form.replace('♀', ' Female').replace('Female', 'f')
-        form = form.replace('♂', ' Male').replace('Male', 'f')
 
       # sometimes on Bulbapedia the form has the species name again
       form = form.replace(speciesName, '')
@@ -146,6 +142,11 @@ def parseName(text, mode='normal'):
     else:
       speciesName = text
       form = ''
+
+    if 'Nidoran' in speciesName:
+      # sometimes Nidoran will have the gender symbol (Bulbapedia)
+      speciesName = speciesName.replace('♀', ' Female').replace('Female', 'f')
+      speciesName = speciesName.replace('♂', ' Male').replace('Male', 'm')
 
     # combine species and form name after parsing
     text = (speciesName + ' ' + form).strip().replace('  ', ' ')
@@ -228,7 +229,9 @@ if __name__ == '__main__':
     ['Zacian (Hero of Many Battles)', 'zacian'],
     ['Zacian (Crowned Sword)', 'zacian_crowned'],
     ['Diancie (Mega Diancie)', 'diancie_mega'],
-    ['Calyrex (Ice Rider Calyrex)', 'calyrex_ice']
+    ['Calyrex (Ice Rider Calyrex)', 'calyrex_ice'],
+    ['Nidoran♀', 'nidoran_f'],
+    ['Nidoran♂', 'nidoran_m'],
   ]
 
   for test in pokemonTests:

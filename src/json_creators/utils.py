@@ -201,10 +201,6 @@ def parseName(text, mode='normal'):
         form = form.replace('Female', 'f').replace('Male', 'm')
       elif speciesName == 'Calyrex':
         form = form.replace('Rider', '')
-      elif speciesName == 'Nidoran':
-        # sometimes Nidoran will have the gender symbol (Bulbapedia)
-        form = form.replace('♀', ' Female').replace('Female', 'f')
-        form = form.replace('♂', ' Male').replace('Male', 'f')
 
       # sometimes on Bulbapedia the form has the species name again
       form = form.replace(speciesName, '')
@@ -216,6 +212,11 @@ def parseName(text, mode='normal'):
       speciesName = text
       form = ''
 
+    if 'Nidoran' in speciesName:
+      # sometimes Nidoran will have the gender symbol (Bulbapedia)
+      speciesName = speciesName.replace('♀', ' Female').replace('Female', 'f')
+      speciesName = speciesName.replace('♂', ' Male').replace('Male', 'm')
+      
     # combine species and form name after parsing
     text = (speciesName + ' ' + form).strip().replace('  ', ' ')
 

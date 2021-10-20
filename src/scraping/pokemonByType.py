@@ -1,4 +1,5 @@
 import csv
+import re
 from utils import openLink, getBulbapediaDataPath, parseName, genSymbolToNumber
 
 # Columns are Gen, Dex Number, Species Name, Pokemon Name, Type 1, and Type 2
@@ -17,41 +18,120 @@ def makePokemonTypeCSV(fname):
 
       speciesName = ''
 
+      # use to keep track of when a Pokemon has multiple forms
+      previousSpeciesName = ''
+
       for row in dataRows:
         # for some reason, the MS (menu sprite) column is actually a <th>, not a <td>, so we must keep this in mind when indexing
-        cells = row.find_all('td')
+        cells = row.find_all(['td', 'th'])
 
-        # if Pokemon is Alolan or Galarian form, then they will have the same name as the Pokemon before it; we will handle such forms later, so remove them for now
-        isDefault = cells[2].get_text().rstrip('\n') != speciesName
+        # if Pokemon is Alolan or Galarian form, then their dex number will be missing
+        isRegional = '#' not in cells[0].get_text()
+        if isRegional:
+          continue
 
         dexNumber = cells[1].get_text().rstrip('\n').lstrip('#').lstrip('0')
 
 
-        speciesName = cells[2].get_text().rstrip('\n')
+        speciesName = cells[3].get_text().rstrip('\n')
 
         # it's easiest to handle Darmanitan separately from all the rest, due to his multiple forms
         if speciesName == 'Darmanitan':
           continue
         
         # this table doesn't have form names, so we don't use 'pokemon' mode
-        formattedSpeciesName = parseName(speciesName)
+        formattedSpeciesName = parseName(speciesName, 'pokemon')
 
-        type1 = cells[3].get_text().rstrip('\n').lower()
+        type1 = parseName(cells[4].get_text())
         
         # if Pokemon has two types, then there is an extra cell
-        if len(cells) == 4:
+        if len(cells) == 5:
           type2 = ''
         else:
-          type2 = cells[4].get_text().rstrip('\n').lower()
+          type2 = parseName(cells[5].get_text())
 
         # Bulbapedia also lists unreleased Pokemon, like Basculegion
         released = dexNumber != ''
-
-        if isDefault and released:
-        
-          writer.writerow([genSymbolToNumber(genSymbol), dexNumber, formattedSpeciesName, formattedSpeciesName, type1, type2])
-        else:
+        if not released:
           continue
+
+        # need to handle Pokemon forms with different types
+        if formattedSpeciesName == 'rotom':
+          if type2 == 'fire':
+            formName = 'heat'
+          elif type2 == 'water':
+            formName = 'wash'
+          elif type2 == 'ice':
+            formName = 'frost'
+          elif type2 == 'flying':
+            formName = 'fan'
+          elif type2 == 'grass':
+            formName = 'mow'
+          elif type2 == 'ghost':
+            formName = ''
+          else:
+            print("Couldn't handle", formattedSpeciesName, type2)
+        elif formattedSpeciesName == 'wormadam':
+          if type2 == 'grass':
+            formName = 'plant'
+          elif type2 == 'ground':
+            formName = 'sandy'
+          elif type2 == 'steel':
+            formName = 'trash'
+          else:
+            print("Couldn't handle", formattedSpeciesName, type2)
+        elif formattedSpeciesName == 'meloetta':
+          if type2 == 'psychic':
+            formName = 'aria'
+          elif type2 == 'fighting':
+            formName = 'pirouette'
+          else:
+            print("Couldn't handle", formattedSpeciesName, type2)
+        elif formattedSpeciesName == 'hoopa':
+          if type2 == 'ghost':
+            formName = 'confined'
+          elif type2 == 'dark':
+            formName = 'unbound'
+          else:
+            print("Couldn't handle", formattedSpeciesName, type2)
+        elif formattedSpeciesName == 'castform':
+          if type1 == 'normal':
+            formName = 'normal'
+          elif type1 == 'fire':
+            formName = 'sunny'
+          elif type1 == 'water':
+            formName == 'rainy'
+          elif type1 == 'ice':
+            formName = 'snowy'
+          else:
+            print("Couldn't handle", formattedSpeciesName, type1)
+        elif formattedSpeciesName == 'oricorio':
+          if type1 == 'fire':
+            formName = 'baile'
+          elif type1 == 'electric':
+            formName = 'pom_pom'
+          elif type1 == 'psychic':
+            formName = 'pau'
+          elif type1 == 'ghost':
+            formName = 'sensu'
+          else:
+            print("Couldn't handle", formattedSpeciesName, type1)
+        else:
+          formName = ''
+
+        if formName != '':
+          formName = '_' + formName
+
+        writer.writerow([
+          genSymbolToNumber(genSymbol), 
+          dexNumber, 
+          formattedSpeciesName, 
+          formattedSpeciesName + formName, 
+          type1, 
+          type2
+        ])
+
+        previousSpeciesName = speciesName
   
     # Add mega forms and regional forms, which are located at different links, to the .csv
     addMegas(writer)
@@ -80,10 +160,12 @@ def addMegas(writer):
 
       # two exceptions for Pokemon with two megas
       if speciesName == 'Charizard':
+        megaName = speciesName + ' Mega'
         writer.writerow([6, '', parseName(speciesName), parseName(megaName + ' X'), 'fire', 'dragon'])
         writer.writerow([6, '', parseName(speciesName), parseName(megaName + ' Y'), 'fire', 'flying'])
         continue
       elif speciesName == 'Mewtwo':
+        megaName = speciesName + ' Mega'
         writer.writerow([6, '', parseName(speciesName), parseName(megaName + ' X'), 'psychic', 'fighting'])
         writer.writerow([6, '', parseName(speciesName), parseName(megaName + ' Y'), 'psychic', ''])
         continue
@@ -130,7 +212,7 @@ def addRegionalForms(writer):
       if len(cells) == 1:
         continue
 
-      speciesName = parseName(cells[0].get_text().rstrip('\n'), 'pokemon')
+      speciesName = parseName(cells[0].get_text(), 'pokemon')
       if speciesName in ['darmanitan', 'zen_mode']:
         continue
 
@@ -145,14 +227,61 @@ def addRegionalForms(writer):
       else:
         regionalType2 = regionalTypes[3]
 
-      writer.writerow([gen, '', speciesName, regionalName, regionalType1, regionalType2])
+      writer.writerow([gen, '', speciesName, regionalName.replace(' Alola', '_alola').replace(' Galar', '_galar'), parseName(regionalType1), parseName(regionalType2)])
+
+  return
+
+# columns are Pokemon Name, Old Typing, Gen (of type change)
+def pokemonTypeChanges(fname):
+  with open(fname, 'w', newline='', encoding='utf-8') as changeCSV:
+    writer = csv.writer(changeCSV)
+    writer.writerow(["Pokemon Name", "Old Type 1", "Old Type 2", "Gen"])
+
+    bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Category:Pok%C3%A9mon_that_have_had_their_type_changed', 0, 10)
+    pokemonLinkGroups = bs.find_all('div', {'class': 'mw-category-group'})
+
+    for linkGroup in pokemonLinkGroups:
+      pokemonLinks = linkGroup.find('ul').find_all('li')
+
+      for pokemonLink in pokemonLinks:
+        pokemonLink = pokemonLink.find('a')
+        pokemonName = parseName(pokemonLink.get_text().rstrip('\n').removesuffix(' (Pokémon)'), 'pokemon')
+        
+        # handle rotom form separately since its page description is more complicated
+        if pokemonName == 'rotom':
+          writer.writerow(['rotom_fan', 'electric', 'ghost', '5'])
+          writer.writerow(['rotom_heat', 'electric', 'ghost', '5'])
+          writer.writerow(['rotom_mow', 'electric', 'ghost', '5'])
+          writer.writerow(['rotom_frost', 'electric', 'ghost', '5'])
+          writer.writerow(['rotom_wash', 'electric', 'ghost', '5'])
+          continue
+
+        # open link and check first paragraph for type change information
+        description = openLink('https://bulbapedia.bulbagarden.net' + pokemonLink['href'], 0, 10).find(id='mw-content-text').find('p').get_text()
+        
+        # type change is in a sentence of the form "Prior to [<a> element with generaton number in its text], it was a pure [type name]-type"
+        genChange, previousType = re.search(r'Prior to Generation (I,|II,|III,|IV,|V,|VI,|VII,|VIII,|IX,) it was a [pure ]*([A-Za-z]*)-type', description).group(1, 2)
+        
+        # indicates Pokemon had two types in the past
+        if previousType == 'dual':
+          previousType1, previousType2 = re.search(r'Prior to Generation [IXV]*, it was a dual-type ([A-Za-z]*)/([A-Za-z]*) ', description).group(1, 2)
+        else:
+          previousType1, previousType2 = previousType, ''
+
+        previousType1, previousType2, genChange = parseName(previousType1), parseName(previousType2), genSymbolToNumber(genChange.rstrip(','))
+
+        writer.writerow([pokemonName, previousType1, previousType2, genChange])
+
 
   return
 
 def main():
-  dataPath = getBulbapediaDataPath() + 'pokemon\\'
-  fname = dataPath + 'pokemonByType.csv'
-  makePokemonTypeCSV(fname)
+  dataPath = getBulbapediaDataPath() + '\\pokemon\\'
+  main_fname = dataPath + 'pokemonByType.csv'
+  makePokemonTypeCSV(main_fname)
+
+  # change_fname = dataPath + 'pokemonTypeChanges.csv'
+  # pokemonTypeChanges(change_fname)
 
 if __name__ == '__main__':
   main()
