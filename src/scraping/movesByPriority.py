@@ -74,6 +74,9 @@ def makePriorityCSV(fname):
               move = parseName(move.replace('PE', '').strip())
               writer.writerow(csvRow + [move])
 
+  # exception for grassy glide, not included in table
+  writer.writerow([8, '1', 'grassy_glide'])
+
   csvFile.close()
 
 def main():

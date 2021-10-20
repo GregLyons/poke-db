@@ -60,9 +60,9 @@ def makeStatusDict():
   return statusDict
 
 def main():
-  makeStatusDict()
+  statusDict = makeStatusDict()
 
-  return
+  return statusDict
 
 if __name__ == '__main__':
   main()

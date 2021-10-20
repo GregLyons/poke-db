@@ -74,18 +74,9 @@ def addEffectData(fpath, abilityDict, inverseDict):
         # print(abilityName, effect)
         continue
       else:
-        abilityDict[abilityKey]["effects"][effect] = [[True, gen]]
-    
-    exceptions = [
-      ['affects_weight', ['heavy_metal', 'light_metal']],
-      ['moves_last_in_priority', ['stall']],
-      ['ignores_contact', ['long_reach']]
-    ]
-    for exception in exceptions:
-      effect, abilities = exception
-      for abilityName in abilities:
-        abilityKey = inverseDict[abilityName]
-        gen = abilityDict[abilityKey]["gen"]
+        if abilityName == 'disguise' and effect == 'costs_hp':
+          gen = 8
+
         abilityDict[abilityKey]["effects"][effect] = [[True, gen]]
 
   # abilities which can cause status--mainly through contact
@@ -119,8 +110,24 @@ def addEffectData(fpath, abilityDict, inverseDict):
 
     # perish body
     perishBodyKey = inverseDict["perish_body"]
-    abilityDict[perishBodyKey]["causes_status"]["perish_song"] = [[True, 8]]
+    abilityDict[perishBodyKey]["causes_status"]["perish_song"] = [[100.0, 8]]
     abilityDict[perishBodyKey]["effects"]["punishes_contact"] = [[True, 8]]
+
+    # scrappy
+    scrappyKey = inverseDict["scrappy"]
+    abilityDict[scrappyKey]["causes_status"]["identified"] = [[100.0, 4]]
+
+    # stench
+    stenchKey = inverseDict["stench"]
+    abilityDict[stenchKey]["causes_status"]["flinch"] = [[10.0, 5]]
+
+    # sturdy
+    sturdyKey = inverseDict["sturdy"]
+    abilityDict[sturdyKey]["causes_status"]["bracing"] = [[100.0, 3]]
+
+    # truant
+    truantKey = inverseDict["truant"]
+    abilityDict[truantKey]["causes_status"]["recharging"] = [[100.0, 3]]
 
     # more abilities which punish contact not handled above
     for abilityName in ['aftermath', 'gooey', 'mummy', 'iron_barbs', 'rough_skin', 'tangling_hair', 'wandering_spirit', 'pickpocket']:
@@ -141,25 +148,29 @@ def addEffectData(fpath, abilityDict, inverseDict):
       abilityDict[abilityKey]["resists_status"][status] = [[True, gen]]
     
     # hardcode abilities which protect against non_volatile status
-    for abilityName in ['flower_veil', 'sweet_veil', 'natural_cure']:
+    for abilityName in ['flower_veil', 'sweet_veil', 'natural_cure', 'shed_skin', 'hydration']:
       for status in ['poison', 'bad_poison', 'burn', 'paralysis', 'freeze', 'sleep']:
         abilityKey = inverseDict[abilityName]
         gen = abilityDict[abilityKey]["gen"]
         abilityDict[abilityKey]["resists_status"][status] = [[True, gen]]
 
     # hardcode exceptions
-    exceptions = [
+    for exception in [
       ['sleep', ['early_bird']],
       ['burn', ['water_bubble']],
-      ['poison', ['pastel_veil', 'poison_heal']]
-    ]
-
-    for exception in exceptions:
-      status = exception[0]
-      abilities = exception[1]
+      ['poison', ['pastel_veil', 'poison_heal']],
+      ['trapped', ['shadow_tag']]
+    ]: 
+      status, abilities = exception
       for abilityName in abilities:
         abilityKey = inverseDict[abilityName]
-        gen = abilityDict[abilityKey]["gen"]
+
+        # shadow tag only provides immunity to shadow tag from gen 4 on
+        if abilityName == 'shadow_tag':
+          gen = 4
+        else:
+          gen = abilityDict[abilityKey]["gen"]
+
         abilityDict[abilityKey]["resists_status"][status] = [[True, gen]]
 
   # abilities which boost types and usage methods
@@ -236,9 +247,8 @@ def main():
   inverseDict = makeInverseDict(fname)
 
   addEffectData(dataPath, abilityDict, inverseDict)
-  return
 
-  
+  return abilityDict
 
 if __name__ == '__main__':
   main()

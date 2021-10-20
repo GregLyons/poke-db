@@ -2,8 +2,6 @@ import csv
 import re
 from utils import openLink, getBulbapediaDataPath, parseName
 
-# TODO Lightning rod and variants only draw moves gen 5 onward
-
 # The table-parsing code in this function is very repetitive, but due to many of the tables being slightly different in terms of number/placement of columns, I couldn't think of a more elegant solution 
 # columns are Ability Name, Effect Type
 def abilityEffects(fnamePrefix):
@@ -92,6 +90,11 @@ def abilityEffects(fnamePrefix):
 
             currentWriter.writerow([abilityName, method, multiplier, 'method'])
             mainWriter.writerow([abilityName, 'boost_usage_method'])
+      
+      currentWriter.writerow(['flash_fire', 'fire', '1.5', 'type'])
+      mainWriter.writerow(['flash_fire', 'boost_type'])
+
+      # exceptions
     #endregion
 
 
@@ -174,9 +177,14 @@ def abilityEffects(fnamePrefix):
     resistMoveClassRows.append(['soundproof', 'sound', '0.0', 'method'])
     resistMoveClassRows.append(['wonder_guard', 'other', '0.0', 'type'])
     resistMoveClassRows.append(['bulletproof', 'ball', '0.0', 'method'])
+    resistMoveClassRows.append(['flash_fire', 'fire', '0.0', 'type'])
     resistMoveClassRows.append(['thick_fat', 'fire', '0.5', 'type'])
     resistMoveClassRows.append(['thick_fat', 'ice', '0.5', 'type'])
     resistMoveClassRows.append(['heatproof', 'fire', '0.5', 'type'])
+    # also include abilities which INCREASE damage from elemental types
+    resistMoveClassRows.append(['dry_skin', 'fire', '1.25', 'type'])
+    resistMoveClassRows.append(['fluffy', 'fire', '2.0', 'type'])
+
 
     # the rows are so similar that we just combine the tables
     typeImmunityRows = bs.find(id='Variations_of_Lightning_Rod').find_next('table').find_all('tr')[2:] + bs.find(id='Variations_of_Motor_Drive').find_next('table').find_all('tr')[2:] + bs.find(id='Variations_of_Volt_Absorb').find_next('table').find_all('tr')[2:]
@@ -300,8 +308,40 @@ def abilityEffects(fnamePrefix):
       mainWriter.writerow([abilityName, 'trapped'])
     #endregion
 
-    # sturdy has similar effect to endure
-    mainWriter.writerow(["stury", "bracing"])
+
+    # 
+    mainWriter.writerow()
+
+    # abilities which change form
+    for exception in [
+      ["changes_form", ["forecast", "hunger_switch", "imposter", "power_construct", "schooling", "shields_down", "stance_change", "zen_mode", "battle_bond", "disguise", "ice_face"]],
+      ["changes_pokemon_type", ["protean", "rks_system", "color_change", "libero", "mimicry", "multitype"]],
+      ["changes_move_type", ["aerilate", 'normalize', 'galvanize', 'pixilate', 'refrigerate', 'liquid_voice']],
+      ["ignores_ability", ["teravolt", "turbo_blaze", "mold_breaker"]],
+      ["changes_ability", ["receiver"]],
+      ["suppresses_ability", ["neutralizing_gas"]]
+      ["move_first_in_priority", ["quick_draw"]],
+      ["other_move_enhancement", ["sheer_force", "adaptability", "analytic", "battery", "flare_boost", "aerilate", 'normalize', 'galvanize', 'pixilate', "refrigerate", 'reckless', 'technician', 'neuroforce', 'tough_claws', 'tinted_lens']],
+      ["bypasses_protect", ["unseen_fist"]],
+      ["switches_out_user", ["wimp_out", "emergency_exit"]],
+      ["ignores_weather", ["air_lock", "cloud_nine"]],
+      ["restores_hp", ["cheek_pouch", "ice_body", "rain_dish", "poison_heal", "regenerator", 'dry_skin']],
+      ["resets_stats", ["curious_medicine"]], 
+      ['affects_weight', ['heavy_metal', 'light_metal']],
+      ['moves_last_in_priority', ['stall']],
+      ['ignores_contact', ['long_reach']],
+      ['cannot_miss', ['no_guard']],
+      ["costs_hp", ['solar_power', 'disguise', 'dry_skin']],
+      ['prevents_crit', ['battle_armor', 'shell_armor']],
+      ['prevents_stat_drop', ['clear_body', 'white_smoke', "full_metal_body"]],
+      ['other_move_resistance', ['wonder_guard', 'filter', 'solid_rock', 'prism_armor', 'multiscale', 'shadow_shield']],
+      ['adds_priority', ['prankster', 'gale_wings', 'triage']],
+      ['protect_against_priority', ['dazzling', 'queenly_majesty']]
+    ]:
+      effect, abilities = exception
+      for abilityName in abilities:
+        mainWriter.writerow([abilityName, effect])
+
 
     # modify stat
     # we use a different page, which has a table that lists all the changes more concisely
@@ -427,6 +467,11 @@ def abilityEffects(fnamePrefix):
             currentWriter.writerow([abilityName, statName, multiplier, recipient])
             mainWriter.writerow([abilityName, 'modify_stat'])
       
+      # exceptions
+      currentWriter.writerow(["flare_boost", "special_attack", 1.5, "user"])
+      mainWriter.writerow([abilityName, 'modify_stat'])
+      currentWriter.writerow(["ice_scales", "special_defense", 0.5, "user"])
+      mainWriter.writerow([abilityName, 'modify_stat'])
       
       # currentWriter.writerow(['Ability Name', 'Stat', 'Modifier'])
 

@@ -134,7 +134,7 @@ def main():
     'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_change_a_Pok%C3%A9mon\'s_type'],
     ['changes-terrain',
     'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_change_terrain'],
-    ['changes-move-type',
+    ['type-varies',
     'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_change_type'],
     ['costsHP',
     'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_cost_HP_to_use'],
@@ -185,7 +185,9 @@ def main():
     ['changes-weather',
     'https://bulbapedia.bulbagarden.net/wiki/Category:Weather-changing_moves'],
     ['special-type-effectiveness',
-    'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_have_special_type_effectiveness_properties']
+    'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_have_special_type_effectiveness_properties'],
+    ['changes_move_type',
+    'https://bulbapedia.bulbagarden.net/wiki/Category:Effects_that_can_modify_move_types']
   ]
 
   dataPath = getBulbapediaDataPath() + 'moves\\'
@@ -200,7 +202,18 @@ def main():
     makeEffectCSV(label, link, writer)
   
   # exceptions
-  writer.writerow(['restores_pp', 'lunar_dance'])
+  for exception in [
+    ['restores_pp', ['lunar_dance']],
+    ['protects_against_priority', ['quick_guard']],
+    ['prevents_stat_drop', ['mist']],
+    ['resets_stats', ['clear_smog', 'haze']],
+    ['prevents_crit', ['lucky_chant']],
+    ['other_move_enhancement', ['me_first']],
+    ['other_move_order_change', ['quash', 'after_you']]
+  ]:
+    effect, moves = exception
+    for moveName in moves:
+      writer.writerow([effect, moveName])
 
   csvFile.close()
 

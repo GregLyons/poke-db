@@ -419,7 +419,7 @@ def addOtherItemData(fpath, itemDict):
     ['other_move_enhancement', ['big_root', 'binding_band', 'expert_belt', 'metronome', 'muscle_band', 'wise_glasses']],
     ['affects_weight', ['float_stone']],
     ['move_last_in_priority', ['lagging_tail', 'full_incense']],
-    ['move_first_in_priority', ['quick_claw']],
+    ['move_first_in_priority', ['quick_claw', 'custap_berry']],
     ['ignores_hazards', ['heavy_duty_boots']],
     ['ignores_contact', ['protective_pads']],
     ['ignores_weather', ['utility_umbrella', 'safety_goggles']],
@@ -545,7 +545,7 @@ def main():
   
   addOtherItemData(bulbapediaDataPath, itemDict)
 
-  return
+  return itemDict
 
 if __name__ == '__main__':
   main()

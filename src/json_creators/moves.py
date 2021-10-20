@@ -705,7 +705,7 @@ def main():
   removedFromGen8_fname = bulbapediaDataPath + 'movesRemovedFromGen8.csv'
   removedFromGen8(removedFromGen8_fname, moveDict)
 
-  return
+  return moveDict
 
 if __name__ == '__main__':
   main()

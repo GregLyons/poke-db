@@ -13,7 +13,6 @@ def makeEffectDict():
     "cannot_crit": 2,
     "always_crits": 5,
     "bypasses_protect": 2,
-    "protection": 2,
     "thaws_user": 2,
     "heals_nonvolatile": 2,
     "restores_hp": 1,
@@ -59,7 +58,14 @@ def makeEffectDict():
     "ignores_contact": 7,
     "ignores_weather": 6,
     "anti_mini": 2,
-    "resets_stats": 1
+    "resets_stats": 1,
+    "prevents_crit": 3,
+    "prevents_stat_drop": 1,
+    "adds_priority": 5,
+    "other_move_order_change": 5,
+    "protects_against_priority": 5,
+    "other_move_resistance": 3,
+    "type_varies": 1,
   }
 
   # make sure all effects are accounted for
@@ -71,14 +77,13 @@ def makeEffectDict():
   for key in effectDict.keys():
     if key not in effectList():
       print(key, 'not in effectList')
-
   
   return effectDict
 
 def main():
-  makeEffectDict()
+  effectDict = makeEffectDict()
 
-  return
+  return effectDict
 
 if __name__ == '__main__':
   main()
