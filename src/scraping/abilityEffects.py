@@ -300,6 +300,9 @@ def abilityEffects(fnamePrefix):
       mainWriter.writerow([abilityName, 'trapped'])
     #endregion
 
+    # sturdy has similar effect to endure
+    mainWriter.writerow(["stury", "bracing"])
+
     # modify stat
     # we use a different page, which has a table that lists all the changes more concisely
     #region

@@ -91,7 +91,7 @@ def effectList():
     'creates_hazard', 'removes_hazard', 
     'creates_terrain', 'removes_terrain', 
     'creates_screen', 'removes_screen', 
-    'creates_weather', 'removes_weather', 
+    'creates_weather',
     # crit
     'high_crit_chance', 'always_crits', 'cannot_crit',
     # protect
@@ -99,12 +99,11 @@ def effectList():
     # heal status
     'thaws_user', 'heals_nonvolatile', 
     # restore hp or pp
-    'restores_hp', 'heals_user_immediately', 'restores_pp'
+    'restores_hp', 'heals_user_immediately', 'restores_pp',
     # cost hp
     'recoil', 'costs_hp', 'can_crash',
     # ability-related
-    'changes_ability', 'ignores_ability', 'suppresses_ability'
-    'anti_mini', 
+    'changes_ability', 'ignores_ability', 'suppresses_ability',
     # changes type or damage category mechanics
     'changes_pokemon_type', 'changes_move_type', 'changes_damage_category', 'removes_type_immunity', 'special_type_effectiveness',
     # switchers
@@ -114,9 +113,9 @@ def effectList():
     # different way of calculating power
     'variable_power', 'deals_direct_damage', 'powers_up', 'consecutive', 'counterattack', 
     # weight-related
-    'depends_on_weight', 'affects_weight'
+    'depends_on_weight', 'affects_weight',
     # miscellaneous
-    'calls_other_move', 'depends_on_environment', 'multi_hit', 'ohko','changes_form', 'drains', 'manipulates_items' 'activates_gulp_missile', 'punishes_contact', 'extends_duration', 'other_move_enhancement', 'move_last_in_priority', 'move_first_in_priority', 'ignore_hazards', 'ignores_contact', 'ignores_weather'
+    'calls_other_move', 'depends_on_environment', 'multi_hit', 'ohko','changes_form', 'drains', 'manipulates_items', 'activates_gulp_missile', 'punishes_contact', 'extends_duration', 'other_move_enhancement', 'move_last_in_priority', 'move_first_in_priority', 'ignores_hazards', 'ignores_contact', 'ignores_weather', 'anti_mini', 'resets_stats'
   ]
   return effects
 
@@ -128,7 +127,7 @@ def statusList():
     # volatile status
     'curse','embargo', 'encore', 'heal_block', 'nightmare', 'perish_song', 'taunt', 'telekinesis', 'flinch', 'semi_invulnerable_turn', 'bound', 'trapped', 'drowsy', 'identified', 'infatuation', 'leech_seed', 'torment', 'type_change', 'disable',
     # volatile battle status
-    'charging_turn', 'protection', 'recharging', 'taking_aim', 'thrashing', 'aqua_ring', 'bracing', 'defense_curl', 'magic_coat', 'mimic', 'minimize', 'substitute', 'center_of_attention', 'rooted', 'magnetic_levitation', 'transformed', 'resets_stats'
+    'charging_turn', 'protection', 'recharging', 'taking_aim', 'thrashing', 'aqua_ring', 'bracing', 'defense_curl', 'magic_coat', 'mimic', 'minimize', 'substitute', 'center_of_attention', 'rooted', 'magnetic_levitation', 'transformed'
   ]
   return statuses
 

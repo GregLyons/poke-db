@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 /* imported from https://github.com/smogon/pokemon-showdown/blob/master/data/learnsets.ts, with hackmons and missingno deleted */
 
-export const Learnsets = {
+const Learnsets = {
 	bulbasaur: {
 		learnset: {
 			amnesia: ["8M", "7E", "6E", "5E", "4E"],

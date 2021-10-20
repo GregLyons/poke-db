@@ -409,8 +409,9 @@ def addEffectToMoveDict(fname, moveDict, inverseDict):
   moveDict[inverseDict['razor_wind']]["effects"]['high_crit_chance'] = [[False, 1], [True, 2]]
   moveDict[inverseDict['sky_attack']]["effects"]['high_crit_chance'] = [[False, 1], [True, 3]]
 
-  # reset stats
+  # haze
   moveDict[inverseDict['haze']]["effects"]['resets_stats'] = [[True, 1]]
+  moveDict[inverseDict['haze']]["effects"]['removes_screens'] = [[True, 1], [False, 2]]
 
   return
 

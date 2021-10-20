@@ -927,6 +927,7 @@ changes_weather,sunny_day
 special_type_effectiveness,flying_press
 special_type_effectiveness,freeze_dry
 special_type_effectiveness,thousand_arrows
+restores_pp,lunar_dance
 resets_stats,z_swords_dance
 dance,z_swords_dance
 hits_semi_invulnerable,z_whirlwind
@@ -1134,6 +1135,7 @@ heals_user_immediately,z_heal_order
 dance,z_lunar_dance
 faints_user,z_lunar_dance
 restores_hp,z_lunar_dance
+restores_pp,z_lunar_dance
 resets_stats,z_dark_void
 protection,z_wide_guard
 cannot_miss,z_guard_split

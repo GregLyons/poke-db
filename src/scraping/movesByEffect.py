@@ -1,6 +1,6 @@
 import os
 import csv
-from utils import openLink, removeShadowMoves, getBulbapediaDataPath, parseName
+from utils import openLink, removeShadowMoves, getBulbapediaDataPath, parseName, isShadowMove
 import re
 
 # columns are Effect Name, Move Name
@@ -13,6 +13,11 @@ def makeEffectCSV(label, url, writer):
 
   for move in moves:
     moveName = parseName(move)
+
+    # ignore shadow moves
+    if isShadowMove(moveName):
+      continue
+
     effect = parseName(label)
     if label == 'changes_terrain':
       if moveName in ['splintered_stormshards', 'defog', 'g_max_wind_rage', 'steel_roller', ]:
@@ -185,7 +190,7 @@ def main():
 
   dataPath = getBulbapediaDataPath() + 'moves\\'
 
-  fname = dataPath + 'movesByEffectWithShadowMoves.csv'
+  fname = dataPath + 'movesByEffect.csv'
   csvFile = open(fname, 'w', newline='', encoding='utf-8')
   writer = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
   writer.writerow(['Effect Name', 'Move Name'])
@@ -193,12 +198,11 @@ def main():
   # make main .csv 
   for [label, link] in labelsAndLinks:
     makeEffectCSV(label, link, writer)
+  
+  # exceptions
+  writer.writerow(['restores_pp', 'lunar_dance'])
 
   csvFile.close()
-
-  # remove Shadow Moves from .csv 
-  removeShadowMoves(fname, 'Effect Name')
-  os.remove(fname)
 
   # add Z-move data to .csv
   fname = dataPath + 'movesByEffect.csv'
@@ -245,6 +249,8 @@ def main():
     # ['cannotCrit',
     # 'https://bulbapedia.bulbagarden.net/wiki/Critical_hit'],
   #/region
+
+
 
 if __name__ == '__main__':
   main()

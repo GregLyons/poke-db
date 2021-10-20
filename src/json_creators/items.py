@@ -420,7 +420,7 @@ def addOtherItemData(fpath, itemDict):
     ['affects_weight', ['float_stone']],
     ['move_last_in_priority', ['lagging_tail', 'full_incense']],
     ['move_first_in_priority', ['quick_claw']],
-    ['ignore_hazards', ['heavy_duty_boots']],
+    ['ignores_hazards', ['heavy_duty_boots']],
     ['ignores_contact', ['protective_pads']],
     ['ignores_weather', ['utility_umbrella', 'safety_goggles']],
     ['changes_form', ['rusted_sword', 'rusted_shield']],
@@ -428,6 +428,9 @@ def addOtherItemData(fpath, itemDict):
   ]:
     effect, items = exception
     for itemName in items:
+      if effect not in effectList():
+        print(itemName, effect)
+
       gen = itemDict[itemName]["gen"]
       itemDict[itemName]["effects"][effect] = [[True, gen]]
 
