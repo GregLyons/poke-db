@@ -1,6 +1,6 @@
 import csv
 from functools import cmp_to_key
-from utils import getBulbapediaDataPath, genSymbolToNumber, getSerebiiDataPath
+from utils import getBulbapediaDataPath, genSymbolToNumber, getSerebiiDataPath, effectList, statList, statusList, typeList, usageMethodList
 
 # TODO defog only removes terrain in gen8
 # TODO 
@@ -119,8 +119,8 @@ def makeInitialMoveDict(fname):
 
         # Many values are lists since they can potentially change across generations--Bulbapedia lists the latest values for each field, with the past values in notes
         moveDict[moveID] = {
-          "move_name": row["Move Name"],
-          "move_description": "",
+          "name": row["Move Name"],
+          "description": "",
           "type": [[row["Type"], 8]],
           "category": [[row["Category"], 8]],
           "pp": [[row["PP"], 8]],
@@ -134,7 +134,8 @@ def makeInitialMoveDict(fname):
           "max_move": isMax,
           "g_max_move": isGMax,
           "effects": {},
-          "status": {},
+          "causes_status": {},
+          "resists_status": {},
           "stat_modifications": {},
           "usage_method": {},
           "contact": [],
@@ -411,7 +412,7 @@ def addEffectToMoveDict(fname, moveDict, inverseDict):
 
   # haze
   moveDict[inverseDict['haze']]["effects"]['resets_stats'] = [[True, 1]]
-  moveDict[inverseDict['haze']]["effects"]['removes_screens'] = [[True, 1], [False, 2]]
+  moveDict[inverseDict['haze']]["effects"]['removes_screen'] = [[True, 1], [False, 2]]
 
   return
 
@@ -425,55 +426,70 @@ def addStatusToMoveDict(fname, moveDict, inverseDict):
       moveName = row["Move Name"]
       probability = float(row["Probability"])
 
-      # if status not in moveDict[1]["status"]:
+      # if status not in moveDict[1]["causes_status"]:
       #   for key in moveDict.keys():
-      #     moveDict[key]["status"][status] = [[0, moveDict[key]["gen"]]]
+      #     moveDict[key]["causes_status"][status] = [[0, moveDict[key]["gen"]]]
       
       key = inverseDict[moveName]
-      moveDict[key]["status"][status] = [[probability, moveDict[key]["gen"]]]
+      moveDict[key]["causes_status"][status] = [[probability, moveDict[key]["gen"]]]
 
   # EXCEPTIONS SECTION
   # Fire Blast had 30% to burn in Gen 1
-  moveDict[inverseDict["fire_blast"]]["status"]["burn"] = [
+  moveDict[inverseDict["fire_blast"]]["causes_status"]["burn"] = [
     [30.0, 1], 
     [10.0, 2]
   ]
 
   # Tri Attack only applied statuses from Gen 2 on
   for status in ['burn', 'freeze', 'paralysis']:
-    moveDict[inverseDict["tri_attack"]]["status"][status] = [
+    moveDict[inverseDict["tri_attack"]]["causes_status"][status] = [
       [0.0, 1],
       [6.67, 2]
     ]
 
   # Thunder had 10% change to paralyze in Gen 1
-  moveDict[inverseDict["thunder"]]["status"]["paralysis"] = [
+  moveDict[inverseDict["thunder"]]["causes_status"]["paralysis"] = [
     [10.0, 1], 
     [30.0, 2]
   ]
 
   # Poison Sting had 20% chance to poison in Gen 1
-  moveDict[inverseDict["poison_sting"]]["status"]["poison"] = [
+  moveDict[inverseDict["poison_sting"]]["causes_status"]["poison"] = [
     [20.0, 1], 
     [30.0, 2]
   ]
-  moveDict[inverseDict["sludge"]]["status"]["poison"] = [
+  moveDict[inverseDict["sludge"]]["causes_status"]["poison"] = [
     [40.0, 1], 
     [30.0, 2]
   ]
 
   # Chatter has variable chance to confuse in Gens 4 and 5--we choose the highest value in each gen
-  moveDict[inverseDict["chatter"]]["status"]["confusion"] = [
+  moveDict[inverseDict["chatter"]]["causes_status"]["confusion"] = [
     [31.0, 4],
     [10.0, 5],
     [100.0, 6]
   ]
 
   # Sky Attack only causes Flinch starting in Gen 3
-  moveDict[inverseDict["sky_attack"]]["status"]["flinch"] = [
+  moveDict[inverseDict["sky_attack"]]["causes_status"]["flinch"] = [
     [0.0, 1],
     [30.0, 3]
   ]
+
+  # add status resistors/healers
+  for exception in [
+    ['burn', ['refresh', 'heal_bell', 'aromatherapy', 'jungle_healing', 'g_max_sweetness', 'psycho_shift']],
+    ['poison', ['refresh', 'heal_bell', 'aromatherapy', 'jungle_healing', 'g_max_sweetness', 'psycho_shift']],
+    ['bad_poison', ['refresh', 'heal_bell', 'aromatherapy', 'jungle_healing', 'g_max_sweetness', 'psycho_shift']],
+    ['paralysis', ['refresh', 'heal_bell', 'aromatherapy', 'jungle_healing', 'g_max_sweetness', 'psycho_shift']],
+    ['freeze', ['heal_bell', 'aromatherapy', 'jungle_healing', 'g_max_sweetness', 'psycho_shift']],
+    ['sleep', ['heal_bell', 'aromatherapy', 'jungle_healing', 'g_max_sweetness', 'psycho_shift']]
+  ]:
+    status, moves = exception
+    for moveName in moves:
+      moveKey = inverseDict[moveName]
+      gen = moveDict[moveKey]["gen"]
+      moveDict[moveKey]["resists_status"][status] = [[True, gen]]
 
   # Other notes in movesThatCauseStatusNotes.csv don't apply to status
 
@@ -535,7 +551,7 @@ def addDescriptionToMoveDict(fname, moveDict, inverseDict):
     for row in reader:
       moveName, moveDescription = row["Move Name"], row["Move Description"]
       key = inverseDict[moveName]
-      moveDict[key]["move_description"] = moveDescription
+      moveDict[key]["description"] = moveDescription
   return
 
 # read stat modification data and update moveDict
@@ -570,7 +586,8 @@ def addStatModToMoveDict(fname, moveDict, inverseDict):
 
         moveDict[moveKey]["stat_modifications"][stat].append([modifier, recipient, probability, gen])
   
-  # hard code exceptions
+  # hard code exceptions 
+  # note that since we leave these out of the original .csv, the z-move counterparts aren't added either since the addZMoves method in the .csv creator file goes based on moves already present in the .csv
   #region
   # acid
   acidKey = inverseDict["acid"]
@@ -602,6 +619,8 @@ def addStatModToMoveDict(fname, moveDict, inverseDict):
   amnesiaKey = inverseDict["amnesia"]
   moveDict[amnesiaKey]["special_attack"] = [[2, 'user', 100.0, 1], [0, 'user', 0.0, 2]]
   moveDict[amnesiaKey]["special_defense"] = [[2, 'user', 100.0, 1], [2, 'user', 100.0, 2]]
+  zAmnesiaKey = inverseDict["z_amnesia"]
+  moveDict[zAmnesiaKey]["special_defense"] = [[7, 'user', 100.0, 1], [2, 'user', 100.0, 2]]
 
   # crunch
   crunchKey = inverseDict["crunch"]
@@ -619,11 +638,21 @@ def addStatModToMoveDict(fname, moveDict, inverseDict):
   # focus_energy
   focusEnergyKey = inverseDict["focus_energy"]
   moveDict[focusEnergyKey]["stat_modifications"]["critical_hit_ratio"] = [[1, 'user', 100.0, 2], [2, 'user', 100.0, 3]]
+  zFocusEnergyKey = inverseDict["z_focus_energy"]
+  moveDict[zFocusEnergyKey]["stat_modifications"]["critical_hit_ratio"] = [[7, 'user', 100.0, 7]]
+  moveDict[zFocusEnergyKey]["stat_modifications"]["accuracy"] = [[1, 'user', 100.0, 7]]
 
+  # growth
+  growthKey = inverseDict["growth"]
+  moveDict[growthKey]["stat_modifications"]["special_attack"] = [[1, 'user', 100.0, 1]]
+  moveDict[growthKey]["stat_modifications"]["attack"] = [[2, 'user', 100.0, 1]]
+  moveDict[growthKey]["stat_modifications"]["special_defense"] = [[1, 'user', 100.0, 1], [0, 'user', 0.0, 2]]
+  zGrowthKey = inverseDict["z_growth"]
+  moveDict[zGrowthKey]["stat_modifications"]["special_attack"] = [[2, 'user', 100.0, 1]]
   #endregion
 
   return
-  # EXCEPTIONS: ['secret_power', 'crunch', 'diamond_storm', 'acid', 'psychic', 'amnesia', 'shadow_down', 'focus_energy', 'aurora_beam', 'bubble', 'bubble_beam', 'constrict']
+  # EXCEPTIONS: ['secret_power', 'crunch', 'diamond_storm', 'acid', 'psychic', 'amnesia', 'shadow_down', 'focus_energy', 'aurora_beam', 'bubble', 'bubble_beam', 'constrict', 'growth']
   # Secret Power has a complicated Bulbapedia description to parse, with tables
   # Crunch, Acid, Focus Energy, and Diamond Storm have changed their stat modifications between generations
   # Psychic and Amnesia have also changed their stat modifications if you count the Special split
@@ -638,7 +667,7 @@ def updateMoveCategory(moveDict, inverseDict):
     category = moveDict[key]["category"][0][0]
 
     if category == 'status':
-      moveDict[key]["category"] = [["status", gen]]
+      moveDict[key]["category"] = [["causes_status", gen]]
       continue
     elif category == '???':
       moveDict[key]["category"] == [["varies", gen]]
@@ -708,4 +737,31 @@ def main():
   return moveDict
 
 if __name__ == '__main__':
-  main()
+  moveDict = main()
+
+  #  check name consistency in moveDict
+  print()
+  print('Checking name consistency...')
+  for key in moveDict.keys():
+    moveName = moveDict[key]["name"]
+    for effect in moveDict[key]["effects"]:
+      if effect not in effectList():
+        print('Inconsistent effect name:', moveName, effect)
+    for status in moveDict[key]["causes_status"]:
+      if status not in statusList():
+        print('Inconsistent cause-status name:', moveName, status)
+    for status in moveDict[key]["resists_status"]:
+      if status not in statusList():
+        print('Inconsistent resist-status name:', moveName, status)
+    for type in [typePatch[0] for typePatch in moveDict[key]["type"]]:
+      if type not in typeList():
+        print('Inconsistent type name:', moveName, type)
+    for usageMethod in moveDict[key]["usage_method"]:
+      if usageMethod not in usageMethodList():
+        print('Inconsistent usage method name:', moveName, usageMethod)
+    for stat in moveDict[key]["stat_modifications"]:
+      if stat not in statList():
+        print('Inconsistent stat name', moveName, stat)
+    
+  print()
+  print('Checked name consistency.')

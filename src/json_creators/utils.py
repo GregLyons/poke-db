@@ -121,7 +121,7 @@ def effectList():
     # contact-related
     'ignores_contact', 'punishes_contact',
     # miscellaneous
-    'calls_other_move', 'depends_on_environment', 'multi_hit', 'ohko','changes_form', 'manipulates_items', 'activates_gulp_missile',  'extends_duration', 'other_move_enhancement', 'other_move_resistance',  'anti_mini', 'type_varies', 'other_move_order_change'
+    'calls_other_move', 'depends_on_environment', 'multi_hit', 'ohko','changes_form', 'manipulates_items', 'activates_gulp_missile',  'extends_duration', 'other_move_enhancement', 'other_move_resistance',  'anti_mini', 'type_varies', 'other_move_order_change', 'no_effect'
   ]
   return effects
 

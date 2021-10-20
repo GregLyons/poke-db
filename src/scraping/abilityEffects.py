@@ -308,18 +308,14 @@ def abilityEffects(fnamePrefix):
       mainWriter.writerow([abilityName, 'trapped'])
     #endregion
 
-
-    # 
-    mainWriter.writerow()
-
     # abilities which change form
     for exception in [
       ["changes_form", ["forecast", "hunger_switch", "imposter", "power_construct", "schooling", "shields_down", "stance_change", "zen_mode", "battle_bond", "disguise", "ice_face"]],
       ["changes_pokemon_type", ["protean", "rks_system", "color_change", "libero", "mimicry", "multitype"]],
       ["changes_move_type", ["aerilate", 'normalize', 'galvanize', 'pixilate', 'refrigerate', 'liquid_voice']],
-      ["ignores_ability", ["teravolt", "turbo_blaze", "mold_breaker"]],
+      ["ignores_ability", ["teravolt", "turboblaze", "mold_breaker"]],
       ["changes_ability", ["receiver"]],
-      ["suppresses_ability", ["neutralizing_gas"]]
+      ["suppresses_ability", ["neutralizing_gas"]],
       ["move_first_in_priority", ["quick_draw"]],
       ["other_move_enhancement", ["sheer_force", "adaptability", "analytic", "battery", "flare_boost", "aerilate", 'normalize', 'galvanize', 'pixilate', "refrigerate", 'reckless', 'technician', 'neuroforce', 'tough_claws', 'tinted_lens']],
       ["bypasses_protect", ["unseen_fist"]],

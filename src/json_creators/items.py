@@ -159,11 +159,11 @@ def addBerryData(fpath, itemDict):
           print(berryName, status)
           continue
 
-        itemDict[berryName]["resists_status"] = [[status, gen]]
+        itemDict[berryName]["resists_status"][status] = [[True, gen]]
       # lum and miracle
       else:
         for anyStatus in ['burn', 'freeze', 'paralysis', 'poison', 'bad_poison', 'sleep', 'confusion']:
-          itemDict[berryName]["resists_status"] = [[anyStatus, gen]]
+          itemDict[berryName]["resists_status"][anyStatus] = [[True, gen]]
 
   # type resisting berries
   with open(fpath + 'berriesTypeResist.csv', 'r', encoding='utf-8') as typeResistBerriesCSV:
@@ -176,7 +176,7 @@ def addBerryData(fpath, itemDict):
       if type not in typeList():
         print(berryName, type)
       
-      itemDict[berryName]["resists_type"] = [[0.5, gen]]
+      itemDict[berryName]["resists_type"][type] = [[0.5, gen]]
 
   # berries which cause confusion if Pokemon doesn't like taste
   for berryName in ['figy_berry', 'wiki_berry', 'mago_berry', 'aguav_berry', 'iapapa_berry']:
@@ -488,7 +488,7 @@ def addOtherItemData(fpath, itemDict):
     type, items = exception
     for itemName in items:
       gen = itemDict[itemName]["gen"]
-      itemDict[itemName]["causes_status"][type] = [[0, gen]]
+      itemDict[itemName]["resists_type"][type] = [[0, gen]]
 
       handledItems.add(itemName)
 
@@ -532,7 +532,6 @@ def addOtherItemData(fpath, itemDict):
       print(key)
   return
 
-
 def main():
   bulbapediaDataPath = getBulbapediaDataPath() + '\\items\\'
   serebiiDataPath = getSerebiiDataPath() + '\\items\\'
@@ -548,4 +547,30 @@ def main():
   return itemDict
 
 if __name__ == '__main__':
-  main()
+  itemDict = main()
+
+  # check name consistency in itemDict
+  print()
+  print('Checking name consistency...')
+  for itemName in itemDict.keys():
+    for effect in itemDict[itemName]["effects"]:
+      if effect not in effectList():
+        print('Inconsistent effect name:', itemName, effect)
+    for status in itemDict[itemName]["causes_status"]:
+      if status not in statusList():
+        print('Inconsistent cause-status name:', itemName, status)
+    for status in itemDict[itemName]["resists_status"]:
+      if status not in statusList():
+        print('Inconsistent resist-status name:', itemName, status)
+    for type in itemDict[itemName]["boosts_type"]:
+      if type not in typeList():
+        print('Inconsistent boost-type name:', itemName, type)
+    for type in itemDict[itemName]["resists_type"]:
+      if type not in typeList():
+        print('Inconsistent resist-type name:', itemName, type)
+    for stat in itemDict[itemName]["stat_modifications"]:
+      if stat not in statList():
+        print('Inconsistent stat name', itemName, stat)
+    
+  print()
+  print('Checked name consistency.')

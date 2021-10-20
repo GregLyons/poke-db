@@ -3,9 +3,12 @@ levitate,ground,0.0,type
 soundproof,sound,0.0,method
 wonder_guard,other,0.0,type
 bulletproof,ball,0.0,method
+flash_fire,fire,0.0,type
 thick_fat,fire,0.5,type
 thick_fat,ice,0.5,type
 heatproof,fire,0.5,type
+dry_skin,fire,1.25,type
+fluffy,fire,2.0,type
 lightning_rod,electric,0.0,type
 storm_drain,water,0.0,type
 motor_drive,electric,0.0,type

@@ -98,7 +98,6 @@ def addEffectData(fpath, abilityDict, inverseDict):
     # poison_touch
     poisonTouchKey = inverseDict["poison_touch"]
     abilityDict[poisonTouchKey]["causes_status"]["poison"] = [[30.0, 5]]
-    abilityDict[poisonTouchKey]["effects"]["punishes_contact"] = [[True, 5]]
 
     # synchronize
     synchronizeKey = inverseDict["synchronize"]
@@ -140,7 +139,6 @@ def addEffectData(fpath, abilityDict, inverseDict):
       abilityName, status = row["Ability Name"], row["Status Name"]
 
       if status == 'non_volatile' or status not in statusList():
-        print(abilityName, status)
         continue
       
       abilityKey = inverseDict[abilityName]
@@ -148,7 +146,7 @@ def addEffectData(fpath, abilityDict, inverseDict):
       abilityDict[abilityKey]["resists_status"][status] = [[True, gen]]
     
     # hardcode abilities which protect against non_volatile status
-    for abilityName in ['flower_veil', 'sweet_veil', 'natural_cure', 'shed_skin', 'hydration']:
+    for abilityName in ['flower_veil', 'sweet_veil', 'natural_cure', 'shed_skin', 'hydration', 'comatose']:
       for status in ['poison', 'bad_poison', 'burn', 'paralysis', 'freeze', 'sleep']:
         abilityKey = inverseDict[abilityName]
         gen = abilityDict[abilityKey]["gen"]
@@ -209,14 +207,12 @@ def addEffectData(fpath, abilityDict, inverseDict):
 
       if moveClass == 'method':
         if resists not in usageMethodList():
-          print(abilityName, resists)
           continue
 
         abilityDict[abilityKey]["resists_usage_method"][resists] = [[multiplier, gen]]
 
       elif moveClass == 'type':
         if resists not in typeList():
-          print(abilityName, resists)
           continue
 
         abilityDict[abilityKey]["resists_type"][resists] = [[multiplier, gen]]
@@ -251,4 +247,37 @@ def main():
   return abilityDict
 
 if __name__ == '__main__':
-  main()
+  abilityDict = main()
+
+  # check name consistency in abilityDict
+  print()
+  print('Checking name consistency...')
+  for key in abilityDict.keys():
+    abilityName = abilityDict[key]["name"]
+    for effect in abilityDict[key]["effects"]:
+      if effect not in effectList():
+        print('Inconsistent effect name:', abilityName, effect)
+    for status in abilityDict[key]["causes_status"]:
+      if status not in statusList():
+        print('Inconsistent cause-status name:', abilityName, status)
+    for status in abilityDict[key]["resists_status"]:
+      if status not in statusList():
+        print('Inconsistent resist-status name:', abilityName, status)
+    for type in abilityDict[key]["boosts_type"]:
+      if type not in typeList():
+        print('Inconsistent boost-type name:', abilityName, type)
+    for type in abilityDict[key]["resists_type"]:
+      if type not in typeList():
+        print('Inconsistent resist-type name:', abilityName, type)
+    for usageMethod in abilityDict[key]["boosts_usage_method"]:
+      if usageMethod not in usageMethodList():
+        print('Inconsistent boost-usage method name:', abilityName, usageMethod)
+    for usageMethod in abilityDict[key]["resists_usage_method"]:
+      if usageMethod not in usageMethodList():
+        print('Inconsistent resist-usage method name:', abilityName, usageMethod)
+    for stat in abilityDict[key]["stat_modifications"]:
+      if stat not in statList():
+        print('Inconsistent stat name', abilityName, stat)
+    
+  print()
+  print('Checked name consistency.')

@@ -5,7 +5,7 @@ from bs4.element import Tag
 from utils import openLink, getBulbapediaDataPath, parseName, genSymbolToNumber
 
 
-# EXCEPTIONS: ['secret_power', 'crunch', 'diamond_storm', 'acid', 'psychic', 'amnesia', 'shadow_down', 'focus_energy', 'aurora_beam', 'bubble', 'bubble_beam', 'constrict' 'fell_stinger']
+# EXCEPTIONS: ['secret_power', 'crunch', 'diamond_storm', 'acid', 'psychic', 'amnesia', 'shadow_down', 'focus_energy', 'aurora_beam', 'bubble', 'bubble_beam', 'constrict' 'fell_stinger', 'growth']
 # Secret Power has a complicated Bulbapedia description to parse, with tables
 # Crunch, Acid, Focus Energy, and Diamond Storm have changed their stat modifications between generations
 # Psychic and Amnesia have also changed their stat modifications if you count the Special split
@@ -59,7 +59,7 @@ def handleMoveLink(link, stat):
   moveName = parseName(link.get_text().removesuffix('(move)'))
 
   # handle these moves separately; some more moves which changed between generations (e.g. bubble) will be overwritten when making the move dictionary .json file
-  if moveName in ['secret_power', 'psychic', 'amnesia', 'shadow_down', 'shadow_mist', 'focus_energy']:
+  if moveName in ['secret_power', 'psychic', 'amnesia', 'shadow_down', 'shadow_mist', 'focus_energy', 'growth']:
     return moveName, 'exception', 'exception', 'exception'
   # moves with descriptions not covered by the regex defined below
   elif moveName in ['mist_ball', 'luster_purge']:

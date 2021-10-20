@@ -66,6 +66,7 @@ def makeEffectDict():
     "protects_against_priority": 5,
     "other_move_resistance": 3,
     "type_varies": 1,
+    "no_effect": 1,
   }
 
   # make sure all effects are accounted for

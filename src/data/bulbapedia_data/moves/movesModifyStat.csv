@@ -157,7 +157,6 @@ curse,2,attack,1,+,user,100.0
 dragon_dance,3,attack,1,+,user,100.0
 extreme_evoboost,7,attack,2,+,user,100.0
 fell_stinger,6,attack,2,+,user,100.0
-growth,2,attack,1,+,user,100.0
 hone_claws,5,attack,1,+,user,100.0
 howl,3,attack,1,+,user,100.0
 max_knuckle,8,attack,1,+,user,100.0
@@ -205,7 +204,6 @@ withdraw,1,defense,1,+,user,100.0
 acupressure,4,evasion,2,+,user,100.0
 double_team,1,evasion,1,+,user,100.0
 minimize,1,evasion,1,+,user,100.0
-growth,1,special,1,+,user,100.0
 acupressure,4,special_attack,2,+,user,100.0
 ancient_power,2,special_attack,1,+,user,10.0
 calm_mind,3,special_attack,1,+,user,100.0
@@ -215,7 +213,6 @@ clangorous_soulblaze,7,special_attack,1,+,user,100.0
 extreme_evoboost,7,special_attack,2,+,user,100.0
 fiery_dance,5,special_attack,1,+,user,50.0
 geomancy,6,special_attack,2,+,user,100.0
-growth,2,special_attack,1,+,user,100.0
 max_flutterby,8,special_attack,1,+,user,100.0
 max_ooze,8,special_attack,1,+,user,100.0
 meteor_beam,8,special_attack,1,+,user,100.0
@@ -278,8 +275,7 @@ z_growl,7,defense,1,+,user,100.0
 z_roar,7,defense,1,+,user,100.0
 z_sing,7,speed,1,+,user,100.0
 z_supersonic,7,speed,1,+,user,100.0
-z_growth,7,attack,1,+,user,100.0
-z_growth,7,special_attack,2,+,user,100.0
+z_growth,7,special_attack,1,+,user,100.0
 z_poison_powder,7,defense,1,+,user,100.0
 z_stun_spore,7,special_defense,1,+,user,100.0
 z_sleep_powder,7,speed,1,+,user,100.0

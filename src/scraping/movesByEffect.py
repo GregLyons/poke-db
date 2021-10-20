@@ -19,16 +19,12 @@ def makeEffectCSV(label, url, writer):
       continue
 
     effect = parseName(label)
-    if label == 'changes_terrain':
+    # terrain creators and removers are grouped together under one label each
+    if effect == 'changes_terrain':
       if moveName in ['splintered_stormshards', 'defog', 'g_max_wind_rage', 'steel_roller', ]:
         effect = 'removes_terrain'
       else:
         effect = 'creates_terrain'
-    elif label == 'changes_weather':
-      if moveName in ['defog', ]:
-        effect = 'removes_weather'
-      else:
-        effect = 'creates_weather'
 
 
     writer.writerow([effect, parseName(move)])
@@ -90,7 +86,7 @@ def main():
     'https://bulbapedia.bulbagarden.net/wiki/Category:Form-changing_moves'],
     ['drains',
     'https://bulbapedia.bulbagarden.net/wiki/Category:HP-draining_moves'],
-    ['manipualtes-items',
+    ['manipulates-items',
     'https://bulbapedia.bulbagarden.net/wiki/Category:Item-manipulating_moves'],
     ['depends-on-weight',
     'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_affected_by_weight'],
@@ -176,13 +172,11 @@ def main():
     'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_with_no_effect'],
     ['multi-hit',
     'https://bulbapedia.bulbagarden.net/wiki/Category:Multi-strike_moves'],
-    ['protection',
-    'https://bulbapedia.bulbagarden.net/wiki/Category:Protection_moves'],
     ['creates-screen',
     'https://bulbapedia.bulbagarden.net/wiki/Category:Screen-creating_moves'],
     ['removes-screen',
     'https://bulbapedia.bulbagarden.net/wiki/Category:Screen-removing_moves'],
-    ['changes-weather',
+    ['creates-weather',
     'https://bulbapedia.bulbagarden.net/wiki/Category:Weather-changing_moves'],
     ['special-type-effectiveness',
     'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_have_special_type_effectiveness_properties'],
