@@ -20,7 +20,7 @@ def typeMatchups(fnamePrefix):
       for row in dataRows:
         csvRow = []
 
-        attackingType = row.find_all('th')[-1].a['title']
+        attackingType = parseName(row.find_all('th')[-1].a['title'])
         csvRow.append(attackingType)
 
         cells = row.find_all('td')

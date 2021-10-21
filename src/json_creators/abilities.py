@@ -22,27 +22,6 @@ def makeInitialAbilityDict(fname):
         "stat_modifications": {},
       }
 
-  # initialize fields in abilityDict
-  # initialize statuses
-  # for status in statusList():
-  #   # ability has a chance of causing a status--if it can't cause it, chance is 0
-  #   initializeKeyValue(abilityDict, "causes_status", status, 0.0)
-  #   # ability does not resist status
-  #   initializeKeyValue(abilityDict, "resists_status", status, False)
-  # # initialize effects
-  # for effect in effectList():
-  #   # ability has effect or it does not
-  #   initializeKeyValue(abilityDict, "effects", effect, False)
-  # # initialize usage methods
-  # # for usageMethod in usageMethodList():
-  # #   # ability multiplies damage of move of usageMethod by multiplier
-  # #   initializeKeyValue(abilityDict, "boosts_usage_method", usageMethod, 1.0)
-  # #   # ability multiplies damage taken from move of usageMethod by multiplier
-  # #   initializeKeyValue(abilityDict, "resists_usage_method", usageMethod, 1.0)
-  # for stat in statList():
-  #   # ability changes stat by 0 stages--0 being an int indicates that multiplier is 1
-  #   initializeKeyValue(abilityDict, "stat_modifications", stat, [0, 'user'])
-  
   return abilityDict
 
 # allows lookup of ability by abilityName, not just abilityID

@@ -18,22 +18,26 @@ def makePokemonTypeCSV(fname):
 
       speciesName = ''
 
-      # use to keep track of when a Pokemon has multiple forms
-      previousSpeciesName = ''
+      # Burmy doesn't have type differences, or differences in ability, but we need to give it multiple different forms for the evolution chain
+      burmyCounter = 0
+      burmySuffixes = ['plant', 'sandy', 'trash']
 
       for row in dataRows:
         # for some reason, the MS (menu sprite) column is actually a <th>, not a <td>, so we must keep this in mind when indexing
         cells = row.find_all(['td', 'th'])
 
-        # if Pokemon is Alolan or Galarian form, then their dex number will be missing
-        isRegional = '#' not in cells[0].get_text()
-        if isRegional:
-          continue
 
         dexNumber = cells[1].get_text().rstrip('\n').lstrip('#').lstrip('0')
 
 
         speciesName = cells[3].get_text().rstrip('\n')
+
+        # if Pokemon is Alolan or Galarian form, then their dex number will be missing
+        isRegional = '#' not in cells[0].get_text()
+        # remove regional forms--certain Gen 4 Pokemon do not have a number in this slot either, so keep them
+        if isRegional and speciesName not in ['Heatran', 'Regigigas','Cresselia', 'Phione', 'Darkrai', 'Shaymin', 'Arceus']:
+          continue
+
 
         # it's easiest to handle Darmanitan separately from all the rest, due to his multiple forms
         if speciesName == 'Darmanitan':
@@ -71,6 +75,9 @@ def makePokemonTypeCSV(fname):
             formName = ''
           else:
             print("Couldn't handle", formattedSpeciesName, type2)
+        elif formattedSpeciesName == 'burmy':
+          formName = burmySuffixes[burmyCounter]
+          burmyCounter += 1
         elif formattedSpeciesName == 'wormadam':
           if type2 == 'grass':
             formName = 'plant'
@@ -100,7 +107,7 @@ def makePokemonTypeCSV(fname):
           elif type1 == 'fire':
             formName = 'sunny'
           elif type1 == 'water':
-            formName == 'rainy'
+            formName = 'rainy'
           elif type1 == 'ice':
             formName = 'snowy'
           else:
@@ -116,12 +123,19 @@ def makePokemonTypeCSV(fname):
             formName = 'sensu'
           else:
             print("Couldn't handle", formattedSpeciesName, type1)
+        elif formattedSpeciesName == 'urshifu':
+          if type2 == 'water':
+            formName = 'rapid_strike'
+          elif type2 == 'dark':
+            formName = ''
+          else:
+            print("Couldn't handle", formattedSpeciesName, type2)
         else:
           formName = ''
 
         if formName != '':
           formName = '_' + formName
-
+      
         writer.writerow([
           genSymbolToNumber(genSymbol), 
           dexNumber, 
@@ -130,18 +144,17 @@ def makePokemonTypeCSV(fname):
           type1, 
           type2
         ])
-
-        previousSpeciesName = speciesName
   
     # Add mega forms and regional forms, which are located at different links, to the .csv
     addMegas(writer)
     addRegionalForms(writer)
+    addGMax(writer)
 
     # add Darmanitan
     writer.writerow([5, 555, 'darmanitan', 'darmanitan_standard', 'fire', ''])
-    writer.writerow([5, '', 'darmanitan', 'darmanitan_zen', 'fire', 'psychic'])
-    writer.writerow([8, '', 'darmanitan', 'darmanitan_standard_galar', 'ice', ''])
-    writer.writerow([8, '', 'darmanitan', 'darmanitan_zen_galar', 'ice', 'fire'])
+    writer.writerow([5, 555, 'darmanitan', 'darmanitan_zen', 'fire', 'psychic'])
+    writer.writerow([8, 555, 'darmanitan', 'darmanitan_standard_galar', 'ice', ''])
+    writer.writerow([8, 555, 'darmanitan', 'darmanitan_zen_galar', 'ice', 'fire'])
 
   return
 
@@ -231,6 +244,39 @@ def addRegionalForms(writer):
 
   return
 
+# Add G-max pokemon
+def addGMax(writer):
+  bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Gigantamax', 0, 10)
+  dataRows = bs.find(id='Introduced_in_Pokémon_Sword_and_Shield_v1.0.0').find_next('table').find_all('tr')[2:] + bs.find(id='Introduced_in_The_Isle_of_Armor').find_next('table').find_all('tr')[2:]
+
+  for row in dataRows:
+    cells = row.find_all('td')
+    pokemonName = cells[0].get_text(separator=' ')
+    speciesName = parseName(pokemonName.split()[0], 'pokemon')
+
+    if 'Urshifu' in pokemonName:
+      # parseName method already handles Urshifu forms of the format in the table
+      pokemonName = 'g_max_' + parseName(pokemonName, 'pokemon')
+    elif 'Toxtricity' in pokemonName:
+      writer.writerow([8, '', speciesName, 'g_max_' + speciesName + '_low_key', 'electric', 'poison'])
+      writer.writerow([8, '', speciesName, 'g_max_' + speciesName + '_amped', 'electric', 'poison'])
+      continue
+    else: 
+      pokemonName = 'g_max_' + parseName(pokemonName.split('(')[0], 'pokemon')
+
+    gmaxTypes = [span.get_text().replace(u'\xa0', '') for span in cells[1].find_all('span')]
+    gmaxType1 = gmaxTypes[0]
+
+    # Bulbapedia lists each type twice 
+    if len(gmaxTypes) == 2:
+      gmaxType2 = ''
+    else:
+      gmaxType2 = gmaxTypes[3]
+
+    writer.writerow([8, '', speciesName, pokemonName, parseName(gmaxType1), parseName(gmaxType2)])
+
+  return
+
 # columns are Pokemon Name, Old Typing, Gen (of type change)
 def pokemonTypeChanges(fname):
   with open(fname, 'w', newline='', encoding='utf-8') as changeCSV:
@@ -280,8 +326,8 @@ def main():
   main_fname = dataPath + 'pokemonByType.csv'
   makePokemonTypeCSV(main_fname)
 
-  # change_fname = dataPath + 'pokemonTypeChanges.csv'
-  # pokemonTypeChanges(change_fname)
+  change_fname = dataPath + 'pokemonTypeChanges.csv'
+  pokemonTypeChanges(change_fname)
 
 if __name__ == '__main__':
   main()

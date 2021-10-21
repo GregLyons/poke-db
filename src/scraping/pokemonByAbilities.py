@@ -82,9 +82,9 @@ def makeAbilityCSVandExtractNotes(fname):
               if headers[headerIndex] == 'Dex Number':
                 currentGen = dexNumberToGen(value)
 
-              # keep track of Pokemon name for notes--dex entry won't suffice since Megas share dex entry
+              # keep track of Pokemon name for notes--dex entry won't suffice since Megas and forms share dex entry
               if headers[headerIndex] == 'Pokemon Name':
-                currentPokemonName = value
+                currentPokemonName = value.replace('Sumer', 'Summer')
 
                 # once we know the name, we can determine the current gen of the given Pokemon, if different from default
                 if '(Mega ' in currentPokemonName:
@@ -98,10 +98,10 @@ def makeAbilityCSVandExtractNotes(fname):
               if cell.find('span', {'class': 'explain'}) != None:
                 notesInCell = cell.find_all('span', {'class': 'explain'})
                 for note in notesInCell:
-                  notesWriter.writerow([parseName(currentPokemonName, 'pokemon'), parseName(headers[headerIndex]), note.get('title')])
+                  notesWriter.writerow([parseName(currentPokemonName, 'pokemon'), parseName(headers[headerIndex]), note.get('title').replace('Lightningrod', 'Lightning Rod')])
               
               if headers[headerIndex] == 'Pokemon Name':
-                csvRow.append(parseName(value, 'pokemon'))
+                csvRow.append(parseName(currentPokemonName, 'pokemon'))
               else:
                 csvRow.append(parseName(value))
 

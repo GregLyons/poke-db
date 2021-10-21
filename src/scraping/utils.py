@@ -107,15 +107,17 @@ def parseName(text, mode='normal'):
       form = speciesAndForm[1].replace('(', '').replace(')', '')
 
       # remove 'Form' and 'Forme'
-      form = re.sub(r'Forme*', '', form)
+      form = re.sub(r'[Ff]orme*', '', form)
 
-      # various cases to 
-      if speciesName == 'Wormadam':
+      # various cases to handle
+      if speciesName in ['Wormadam', 'Burmy']:
         form = form.replace('Cloak', '')
-      elif speciesName == 'Darmanitan':
+      elif speciesName in ['Darmanitan', 'Morpeko']:
         form = form.replace('Mode', '')
-        # switch order 'Galarian Standard' to 'Standard Galarian'
+        # switch order 'Galarian Standard' to 'Standard Galarian for Darmanitan; does nothing for Morpeko'
         form = re.sub(r'Galarian (Standard|Zen)', r'\1 Galarian', form)
+      elif speciesName == 'Oricorio':
+        form = form.replace('Style', '')
       elif speciesName == 'Urshifu':
         #  preserve 'Rapid Strike' to match with Smogon API
         form = form.replace('Single Strike Style', '')
@@ -128,7 +130,7 @@ def parseName(text, mode='normal'):
         form = form.replace('Shield', '')
       elif speciesName in ['Pumpkaboo', 'Gourgeist']:
         form = form.replace('Size', '')
-      elif speciesName == 'Indeedee':
+      elif speciesName in ['Indeedee', 'Meowstic']:
         form = form.replace('Female', 'f').replace('Male', 'm')
       elif speciesName == 'Calyrex':
         form = form.replace('Rider', '')
@@ -232,6 +234,7 @@ if __name__ == '__main__':
     ['Calyrex (Ice Rider Calyrex)', 'calyrex_ice'],
     ['Nidoran♀', 'nidoran_f'],
     ['Nidoran♂', 'nidoran_m'],
+    ['Deerling (Summer)', 'deerling_summer']
   ]
 
   for test in pokemonTests:
