@@ -105,6 +105,13 @@ def versionDictionary():
 
   return versionDict
 
+def getVersionGroupsInGen(gen):
+  if gen in range(numberOfGens() + 1):
+    versionDict = versionDictionary()
+    return [versionGroup for versionGroup in versionDict.keys() if versionDict[versionGroup][-1] == gen]
+  else:
+    raise ValueError("Not a valid Gen!")
+
 # list of shadow moves
 def isShadowMove(moveName):
   return moveName in ['shadow_blitz', 'shadow_rush', 'shadow_break', 'shadow_end', 'shadow_wave', 'shadow_rave', 'shadow_storm', 'shadow_fire', 'shadow_bolt', 'shadow_chill', 'shadow_blast', 'shadow_sky', 'shadow_hold', 'shadow_mist', 'shadow_panic', 'shadow_down', 'shadow_shed', 'shadow_half']
@@ -201,6 +208,7 @@ def parseName(text, mode='normal'):
   
 if __name__ == '__main__':
   # Testing Move name parser
+  print('Testing move name parser...')
   moveTests = [
     ['Karate Chop', 'karate_chop'],
     ['Razor Wind', 'razor_wind'],
@@ -222,8 +230,10 @@ if __name__ == '__main__':
   for test in moveTests:
     if (parseName(test[0]) != test[1]):
       print(parseName(test[0]), 'is not', test[1])
+  print('Finished testing move name parser.')
 
   # Testing Pokemon name parser
+  print('Testing Pokemon name parser...')
   pokemonTests = [
     ['Dragapult', 'dragapult'],
     ['Kommo-o', 'kommo_o'],
@@ -272,3 +282,4 @@ if __name__ == '__main__':
   for test in pokemonTests:
     if (parseName(test[0], 'pokemon') != test[1]):
       print(parseName(test[0], 'pokemon'), 'is not', test[1])
+  print('Finished testing Pokemon name parser.')

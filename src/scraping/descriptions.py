@@ -1,6 +1,6 @@
 import csv
 import re
-from utils import openLink, getBulbapediaDataPath, parseName, versionDictionary, genSymbolToNumber, numberOfGens
+from utils import openLink, getBulbapediaDataPath, parseName, versionDictionary, genSymbolToNumber, numberOfGens, getVersionGroupsInGen
 
 # exceptions:
 
@@ -160,6 +160,9 @@ def handleAbilityLink(link, descriptionDict, abilityGen):
 
       abilityDescriptionCell = table.find_all('tr')[-1].find('td')
 
+      # make sure that all version groups in this generation are matched with a description
+      unhandledVersionGroups = set(getVersionGroupsInGen(descriptionGen))
+
       if abilityDescriptionCell.find('sup'):
         for child in abilityDescriptionCell.children:
           if child.name:
@@ -169,6 +172,9 @@ def handleAbilityLink(link, descriptionDict, abilityGen):
                 # sometimes typo
                 versionGroup = versionGroupLink.get_text().replace('Colo.', 'Colo')
                 versionGroupCodes.append(versionGroup)
+
+                unhandledVersionGroups.remove(versionGroup)
+
               descriptions_groups.append([abilityDescription, versionGroupCodes])
           else:
             abilityDescription = child.get_text().strip('\n')
@@ -185,9 +191,16 @@ def handleAbilityLink(link, descriptionDict, abilityGen):
             continue
           elif versionGroupGen == descriptionGen:
             versionGroupCodes.append(versionGroup)
+            unhandledVersionGroups.remove(versionGroup)
         
         descriptions_groups.append([abilityDescription, versionGroupCodes])
 
+      for leftover in unhandledVersionGroups:
+        if leftover == 'PE':
+          continue
+        # assign latest ability description to leftover; mutability allows us to append to versionGroupCodes rather than to the outer list descriptions_groups
+        versionGroupCodes.append(leftover)
+      
     except Exception as e:
       print(f'Error handling the description table for {abilityName}.')
       print(e)
@@ -422,11 +435,11 @@ def main():
   # print('Scraping move descriptions...')
   # scrapeDescriptions(fnamePrefix, 'move', descriptionDict)
 
-  # print('Scraping ability descriptions...')
-  # scrapeDescriptions(fnamePrefix, 'ability', descriptionDict)
+  print('Scraping ability descriptions...')
+  scrapeDescriptions(fnamePrefix, 'ability', descriptionDict)
 
-  print('Scraping item descriptions...')
-  scrapeDescriptions(fnamePrefix, 'item', descriptionDict)
+  # print('Scraping item descriptions...')
+  # scrapeDescriptions(fnamePrefix, 'item', descriptionDict)
 
   print(descriptionDict.keys())
 
