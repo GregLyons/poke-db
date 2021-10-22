@@ -3,6 +3,10 @@ from bs4 import BeautifulSoup
 import csv
 import re
 
+# Used for a few calculations--need to alter when gen 9 comes
+def numberOfGens():
+  return 8
+
 # Returns BeautifulSoup object given Bulbapedia link
 def openLink(url, retryCount, retryMax):
   try:
@@ -72,6 +76,34 @@ def removeShadowMoves(fname, firstHeader):
     for row in reader:
       if row["Move Name"] not in shadowMoves:
         writer.writerow([row[firstHeader], row['Move Name']])
+
+# 
+def versionDictionary():
+  versionDict = {
+    "Stad": ["Stadium", 1],
+    "GS": ["Gold/Silver", 2],
+    "C": ["Crystal", 2],
+    "Stad2": ["Stadium 2", 2],
+    "RS": ["Ruby/Sapphire", 3],
+    "E": ["Emerald", 3],
+    "Colo.": ["Colosseum", 3],
+    "XD": ["XD: Gale of Darkness", 3],
+    "FRLG": ["Fire Red/Leaf Green", 3],
+    "DP": ["Diamond/Pearl", 4],
+    "Pt": ["Platinum", 4],
+    "HGSS": ["Heart Gold/Soul Silver", 4],
+    "PBR": ["Pokemon Battle Revolution", 4],
+    "BW": ["Black/White", 5],
+    "B2W2": ["Black 2/White 2", 5],
+    "XY": ["X/Y", 6],
+    "ORAS": ["Omega Ruby/Alpha Sapphire", 6],
+    "SM": ["Sun/Moon", 7],
+    "USUM": ["Ultra Sun/Ultra Moon", 7],
+    "PE": ["Let's Go Pikachu/Let's Go Eeevee", 7],
+    "SwSh": ["Sword/Shield", 8]
+  }
+
+  return versionDict
 
 # list of shadow moves
 def isShadowMove(moveName):

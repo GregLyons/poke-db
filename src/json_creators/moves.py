@@ -1,6 +1,6 @@
 import csv
 from functools import cmp_to_key
-from utils import getBulbapediaDataPath, genSymbolToNumber, getSerebiiDataPath, effectList, statList, statusList, typeList, usageMethodList
+from utils import getBulbapediaDataPath, genSymbolToNumber, getSerebiiDataPath, effectList, statList, statusList, typeList, usageMethodList, numberOfGens
 
 # TODO defog only removes terrain in gen8
 # TODO 
@@ -11,11 +11,6 @@ from utils import getBulbapediaDataPath, genSymbolToNumber, getSerebiiDataPath, 
 # also include whether the move inflicts status, and the probability of inflicting status
 # also include any effects the move has
 # also include any usage methods the move has
-
-
-# Used for a few calculations--need to alter when gen 9 comes
-def numberOfGens():
-  return 8
 
 # get value(s) and generation(s) from description
 def parseMoveListNote(note):

@@ -7,6 +7,10 @@ def getBulbapediaDataPath():
 def getSerebiiDataPath():
   return 'src\\data\\serebii_data\\'
 
+# Used for a few calculations--need to alter when gen 9 comes
+def numberOfGens():
+  return 8
+
 # converts dex number to gen
 def dexNumberToGen(dexNumber):
   dexNumber = int(dexNumber)
