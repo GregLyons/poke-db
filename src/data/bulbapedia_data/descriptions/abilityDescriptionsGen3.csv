@@ -1,12 +1,12 @@
-Ability Name,RS,E,Colo.,XD,FRLG
+Ability Name,RS,E,Colo,XD,FRLG
 air_lock,0,0,0,0,0
-arena_trap,0,0,0,0,0
+arena_trap,0,0,1,1,0
 battle_armor,0,0,0,0,0
 blaze,0,0,0,0,0
 chlorophyll,0,0,0,0,0
 clear_body,0,0,0,0,0
 cloud_nine,0,0,0,0,0
-color_change,0,0,0,0,0
+color_change,0,0,1,1,0
 compound_eyes,0,0,0,0,0
 cute_charm,0,0,0,0,0
 damp,0,0,0,0,0
@@ -14,7 +14,7 @@ drizzle,0,0,0,0,0
 drought,0,0,0,0,0
 early_bird,0,0,0,0,0
 effect_spore,0,0,0,0,0
-flame_body,0,0,0,0,0
+flame_body,0,0,1,1,0
 flash_fire,0,0,0,0,0
 forecast,0,0,0,0,0
 guts,0,0,0,0,0
@@ -32,7 +32,7 @@ lightning_rod,0,0,0,0,0
 limber,0,0,0,0,0
 liquid_ooze,0,0,0,0,0
 magma_armor,0,0,0,0,0
-magnet_pull,0,0,0,0,0
+magnet_pull,0,0,1,1,0
 marvel_scale,0,0,0,0,0
 minus,0,0,0,0,0
 natural_cure,0,0,0,0,0
@@ -41,7 +41,7 @@ overgrow,0,0,0,0,0
 own_tempo,0,0,0,0,0
 pickup,0,0,0,0,0
 plus,0,0,0,0,0
-poison_point,0,0,0,0,0
+poison_point,0,0,1,1,0
 pressure,0,0,0,0,0
 pure_power,0,0,0,0,0
 rain_dish,0,0,0,0,0
@@ -74,4 +74,4 @@ volt_absorb,0,0,0,0,0
 water_absorb,0,0,0,0,0
 water_veil,0,0,0,0,0
 white_smoke,0,0,0,0,0
-wonder_guard,0,0,0,0,0
+wonder_guard,0,0,1,1,0

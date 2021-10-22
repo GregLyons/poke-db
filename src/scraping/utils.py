@@ -86,7 +86,7 @@ def versionDictionary():
     "Stad2": ["Stadium 2", 2],
     "RS": ["Ruby/Sapphire", 3],
     "E": ["Emerald", 3],
-    "Colo.": ["Colosseum", 3],
+    "Colo": ["Colosseum", 3],
     "XD": ["XD: Gale of Darkness", 3],
     "FRLG": ["Fire Red/Leaf Green", 3],
     "DP": ["Diamond/Pearl", 4],

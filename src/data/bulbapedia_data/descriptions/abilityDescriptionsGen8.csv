@@ -6,7 +6,7 @@ air_lock,1
 analytic,2
 anger_point,3
 anticipation,3
-arena_trap,2
+arena_trap,3
 aroma_veil,1
 as_one_glastrier,0
 as_one_spectrier,0
@@ -23,10 +23,10 @@ blaze,3
 bulletproof,0
 cheek_pouch,0
 chilling_neigh,0
-chlorophyll,4
-clear_body,3
+chlorophyll,3
+clear_body,4
 cloud_nine,1
-color_change,2
+color_change,3
 comatose,0
 competitive,1
 compound_eyes,3
@@ -36,7 +36,7 @@ cotton_down,0
 curious_medicine,0
 cursed_body,0
 cute_charm,1
-damp,4
+damp,5
 dancer,0
 dark_aura,0
 dauntless_shield,0
@@ -57,7 +57,7 @@ electric_surge,0
 emergency_exit,0
 fairy_aura,0
 filter,2
-flame_body,2
+flame_body,3
 flare_boost,1
 flash_fire,3
 flower_gift,3
@@ -107,7 +107,7 @@ iron_fist,1
 justified,2
 keen_eye,3
 klutz,0
-leaf_guard,4
+leaf_guard,3
 levitate,2
 libero,0
 light_metal,0
@@ -120,12 +120,12 @@ magic_bounce,3
 magic_guard,0
 magician,0
 magma_armor,2
-magnet_pull,2
+magnet_pull,3
 marvel_scale,4
 mega_launcher,0
 merciless,0
 mimicry,0
-minus,4
+minus,5
 mirror_armor,0
 misty_surge,0
 mold_breaker,2
@@ -138,7 +138,7 @@ mummy,2
 natural_cure,3
 neuroforce,0
 neutralizing_gas,0
-no_guard,2
+no_guard,3
 normalize,2
 oblivious,4
 overcoat,2
@@ -150,9 +150,9 @@ perish_body,0
 pickpocket,1
 pickup,2
 pixilate,1
-plus,4
+plus,5
 poison_heal,2
-poison_point,2
+poison_point,3
 poison_touch,1
 power_construct,0
 power_of_alchemy,0
@@ -225,7 +225,7 @@ sticky_hold,2
 storm_drain,3
 strong_jaw,1
 sturdy,3
-suction_cups,4
+suction_cups,5
 super_luck,2
 surge_surfer,0
 swarm,3
@@ -261,8 +261,8 @@ water_bubble,0
 water_compaction,0
 water_veil,2
 weak_armor,2
-white_smoke,3
+white_smoke,4
 wimp_out,0
-wonder_guard,2
+wonder_guard,3
 wonder_skin,1
 zen_mode,1
