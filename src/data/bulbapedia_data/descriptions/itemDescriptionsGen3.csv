@@ -1,8 +1,8 @@
 Item Name,RS,E,Colo,XD,FRLG
 amulet_coin,1,1,1,1,2
 berry_juice,1,1,1,1,2
-berserk_gene
-blue_orb,0,0,1
+berserk_gene,,,,,
+blue_orb,0,0,,,1
 bright_powder,1,1,1,1,2
 choice_band,0,0,0,0,1
 focus_band,1,1,1,1,2
@@ -12,7 +12,7 @@ leftovers,1,1,3,3,2
 macho_brace,0,0,2,2,1
 mental_herb,0,0,0,0,1
 quick_claw,1,1,3,3,2
-red_orb,0,0,1
+red_orb,0,0,,,1
 scope_lens,1,2,1,1,3
 sea_incense,0,0,0,0,1
 shell_bell,0,0,0,0,1

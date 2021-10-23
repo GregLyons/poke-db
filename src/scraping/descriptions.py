@@ -12,7 +12,8 @@ versionDict = versionDictionary()
 def getDataList(category):
   if category == 'move':
     bs = openLink('https://bulbapedia.bulbagarden.net/wiki/List_of_moves', 0, 10)
-    moveRows = bs.find(id='List_of_moves').find_next('table').find('table').find_all('tr')[1:] + bs.find(id='List_of_G-Max_Moves').find_next('table').find('table').find_all('tr')
+    moveRows = bs.find(id='List_of_moves').find_next('table').find('table').find_all('tr')[82:84] + bs.find(id='List_of_moves').find_next('table').find('table').find_all('tr')[294:296]
+    # bs.find(id='List_of_G-Max_Moves').find_next('table').find('table').find_all('tr')[1:2]
  
     dataRows, nameSlot, genSlot, ignoreSlot, ignoreCode, placeholderGen = moveRows, 1, -1, 0, '???', 8
 
@@ -85,6 +86,8 @@ def handleMoveLink(link, descriptionDict, moveGen):
     try: 
       cells = row.find_all('td')
 
+      #make sure that all version groups in this generation are matched with a description
+      
       # sometimes the descriptions are different within version groups between item and TM description; the first one is the item description
       groups, moveDescription = cells[0].find_all('b'), cells[1].get_text().rstrip('\n').split('*')[0]
 
@@ -160,9 +163,6 @@ def handleAbilityLink(link, descriptionDict, abilityGen):
 
       abilityDescriptionCell = table.find_all('tr')[-1].find('td')
 
-      # make sure that all version groups in this generation are matched with a description
-      unhandledVersionGroups = set(getVersionGroupsInGen(descriptionGen))
-
       if abilityDescriptionCell.find('sup'):
         for child in abilityDescriptionCell.children:
           if child.name:
@@ -172,8 +172,6 @@ def handleAbilityLink(link, descriptionDict, abilityGen):
                 # sometimes typo
                 versionGroup = versionGroupLink.get_text().replace('Colo.', 'Colo')
                 versionGroupCodes.append(versionGroup)
-
-                unhandledVersionGroups.remove(versionGroup)
 
               descriptions_groups.append([abilityDescription, versionGroupCodes])
           else:
@@ -191,15 +189,8 @@ def handleAbilityLink(link, descriptionDict, abilityGen):
             continue
           elif versionGroupGen == descriptionGen:
             versionGroupCodes.append(versionGroup)
-            unhandledVersionGroups.remove(versionGroup)
         
         descriptions_groups.append([abilityDescription, versionGroupCodes])
-
-      for leftover in unhandledVersionGroups:
-        if leftover == 'PE':
-          continue
-        # assign latest ability description to leftover; mutability allows us to append to versionGroupCodes rather than to the outer list descriptions_groups
-        versionGroupCodes.append(leftover)
       
     except Exception as e:
       print(f'Error handling the description table for {abilityName}.')
@@ -273,8 +264,7 @@ def handleItemLink(link, descriptionDict):
     print()
     return itemName
 
-
-  # keep track of how when the description changes
+  # keep track of when the description changes
   descriptionIndex = -1
   oldItemDescription = ''
   itemDescriptionArray = []
@@ -305,7 +295,7 @@ def handleItemLink(link, descriptionDict):
       print(e)
       print()
       return itemName
-  
+
   return itemName
 
 
@@ -347,7 +337,41 @@ def scrapeDescriptions(fnamePrefix, category, descriptionDict):
       print(e)
       continue
   
-  print(f'Finished extracting {category} descriptions. Writing to .csv\'s now.')
+  print(f'Finished extracting {category} descriptions. Removing duplicates and filling in missing entries...')
+
+  for entityKey in descriptionDict:
+    if descriptionDict[entityKey]["description_type"] == category:
+      unhandledVersionGroups = set(versionDict.keys())
+      # if a version group shows up twice for different description indices, de-assign all but the latest description index from that version group
+      for descriptionIndex in [index for index in descriptionDict[entityKey].keys() if isinstance(index, int)]:
+        for versionGroup in descriptionDict[entityKey][descriptionIndex]:
+          if versionGroup in unhandledVersionGroups:
+            unhandledVersionGroups.remove(versionGroup)
+            oldDescriptionIndex = descriptionIndex
+          else:
+            descriptionDict[entityKey][oldDescriptionIndex].remove(versionGroup)
+            oldDescriptionIndex = descriptionIndex
+      
+      print(unhandledVersionGroups)
+
+      # if a version group doesn't have a description, assign it the description of another version group from the same gen
+      for leftover in unhandledVersionGroups:
+        leftoverGen = versionDict[leftover][-1]
+        assigned = False
+
+        for descriptionIndex in [index for index in descriptionDict[entityKey].keys() if isinstance(index, int)]:
+          if not assigned:
+            for versionGroup in descriptionDict[entityKey][descriptionIndex]:
+              if versionDict[versionGroup][-1] == leftoverGen and not assigned:
+                descriptionDict[entityKey][descriptionIndex].append(leftover)
+                assigned = True
+              else:
+                continue
+        print(leftover)
+
+    else:
+      continue
+
 
   print(f'Writing {category} descriptions to .csv.')
   # Write move descriptions to .csv
@@ -388,6 +412,7 @@ def scrapeDescriptions(fnamePrefix, category, descriptionDict):
 
     fnames_gens.append([i + 1, fnamePrefix + f'Gen{i + 1}.csv'])
   
+
   for fname_gen in fnames_gens:
     entityGen, fname = fname_gen
     print('Writing for Gen', entityGen, '...')
@@ -400,6 +425,7 @@ def scrapeDescriptions(fnamePrefix, category, descriptionDict):
       headers = [f'{category.title()} Name']
       for versionGroup in versionGroupsOfGen:
         groupName = versionGroup
+
         headers.append(groupName)
       writer.writerow(headers)
 
@@ -411,13 +437,22 @@ def scrapeDescriptions(fnamePrefix, category, descriptionDict):
         for versionGroup in versionGroupsOfGen:
           if versionGroup == 'Colo.':
             versionGroup = 'Colo'
+          
+          # in some cases, the version group does not contain the entity, e.g. PE does not contain abilities, or held items other than mega stones
+          addedEntry = False
 
           for descriptionIndex in descriptionDict[entityKey].keys():
             # check if descriptionIndex is actually an int; there are keys of descriptionDict which aren't int
-            if isinstance(descriptionIndex, int) and versionGroup in descriptionDict[entityKey][descriptionIndex]:
+            if isinstance(descriptionIndex, int) and versionGroup in descriptionDict[entityKey][descriptionIndex] and not addedEntry:
               csvRow.append(descriptionIndex)
+              addedEntry = True
+              continue
             else:
               continue
+          
+          # if entry wasn't added, add a placeholder
+          if not addedEntry:
+            csvRow.append('')
         
         writer.writerow(csvRow)
 
@@ -432,11 +467,11 @@ def main():
   fnamePrefix = dataPath + '___Descriptions'
   descriptionDict = {}
 
-  # print('Scraping move descriptions...')
-  # scrapeDescriptions(fnamePrefix, 'move', descriptionDict)
+  print('Scraping move descriptions...')
+  scrapeDescriptions(fnamePrefix, 'move', descriptionDict)
 
-  print('Scraping ability descriptions...')
-  scrapeDescriptions(fnamePrefix, 'ability', descriptionDict)
+  # print('Scraping ability descriptions...')
+  # scrapeDescriptions(fnamePrefix, 'ability', descriptionDict)
 
   # print('Scraping item descriptions...')
   # scrapeDescriptions(fnamePrefix, 'item', descriptionDict)
