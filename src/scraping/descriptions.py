@@ -12,8 +12,7 @@ versionDict = versionDictionary()
 def getDataList(category):
   if category == 'move':
     bs = openLink('https://bulbapedia.bulbagarden.net/wiki/List_of_moves', 0, 10)
-    moveRows = bs.find(id='List_of_moves').find_next('table').find('table').find_all('tr')[82:84] + bs.find(id='List_of_moves').find_next('table').find('table').find_all('tr')[294:296]
-    # bs.find(id='List_of_G-Max_Moves').find_next('table').find('table').find_all('tr')[1:2]
+    moveRows = bs.find(id='List_of_moves').find_next('table').find('table').find_all('tr')[1:] + bs.find(id='List_of_G-Max_Moves').find_next('table').find('table').find_all('tr')[1:2]
  
     dataRows, nameSlot, genSlot, ignoreSlot, ignoreCode, placeholderGen = moveRows, 1, -1, 0, '???', 8
 
@@ -362,16 +361,22 @@ def scrapeDescriptions(fnamePrefix, category, descriptionDict):
         for descriptionIndex in [index for index in descriptionDict[entityKey].keys() if isinstance(index, int)]:
           if not assigned:
             for versionGroup in descriptionDict[entityKey][descriptionIndex]:
-              if versionDict[versionGroup][-1] == leftoverGen and not assigned:
+              versionGroupGen = versionDict[versionGroup][-1]
+
+              # ignore versionGroups which don't have the entity
+              # Let's Go Pikachu/Let's Go Eevee don't have abilities, items, or held berries
+              # other cases, such as abilities in gen 3, will already be ignored since there will be no other version groups in the generation present from which to take an ability description
+              if category in ['ability', 'item', 'berry'] and versionGroup == 'PE':
+                continue
+              elif versionGroupGen == leftoverGen and not assigned:
                 descriptionDict[entityKey][descriptionIndex].append(leftover)
                 assigned = True
               else:
                 continue
-        print(leftover)
-
     else:
       continue
 
+  print('descriptionDict cleaned.')
 
   print(f'Writing {category} descriptions to .csv.')
   # Write move descriptions to .csv
@@ -390,7 +395,7 @@ def scrapeDescriptions(fnamePrefix, category, descriptionDict):
       csvRow = [entityKey, descriptionDict[entityKey]["gen"]]
 
       for description in descriptionDict[entityKey]["descriptions"]:
-        csvRow.append(description)
+        csvRow.append(description.replace('\n', ''))
       
       # make length of rows consistent
       while len(csvRow) < len(headers):
@@ -399,62 +404,42 @@ def scrapeDescriptions(fnamePrefix, category, descriptionDict):
       writer.writerow(csvRow)
 
   print(f'Writing {category} description indices for each version group to .csv\'s.')
-  # Write version groups and description indices to .csv's for each gen 
-  # The first column is Move Name, followed by Gen, followed by a column for each version group in that gen
-  # The rows are the name of the move, its gen, followed by the description indices to which each version group corresponds
-  fnames_gens = []
-  for i in range(numberOfGens()):
-    # ignore gens which didn't have the mechanic, e.g. gen 2 didn't have abilities
-    if category == 'ability' and i < 2:
-      continue
-    elif category == 'item' and i < 1:
-      continue
 
-    fnames_gens.append([i + 1, fnamePrefix + f'Gen{i + 1}.csv'])
-  
+  with open(fnamePrefix + 'Keys.csv', 'w', newline='', encoding='utf-8') as entityDescription_versionGroupCSV:
+    writer = csv.writer(entityDescription_versionGroupCSV)
 
-  for fname_gen in fnames_gens:
-    entityGen, fname = fname_gen
-    print('Writing for Gen', entityGen, '...')
+    # write header
+    headers = [f'{category.title()} Name']
+    for versionGroup in versionDict.keys():
+      headers.append(versionGroup)
+    writer.writerow(headers)
 
-    with open(fname, 'w', newline='', encoding='utf-8') as entityDescription_versionGroupCSV:
-      writer = csv.writer(entityDescription_versionGroupCSV)
-      versionGroupsOfGen = [versionGroup for versionGroup in versionDict.keys() if versionDict[versionGroup][-1] == entityGen]
+    # write move descriptions for current gen, filtering out descriptions which haven't been released yet, or which aren't about moves
+    for entityKey in descriptionDict.keys():
+      # start .csv row with name of move
+      csvRow = [entityKey]
 
-      # write header
-      headers = [f'{category.title()} Name']
-      for versionGroup in versionGroupsOfGen:
-        groupName = versionGroup
-
-        headers.append(groupName)
-      writer.writerow(headers)
-
-      # write move descriptions for current gen, filtering out descriptions which haven't been released yet, or which aren't about moves
-      for entityKey in [key for key in descriptionDict.keys() if descriptionDict[key]["gen"] <= entityGen and descriptionDict[key]["description_type"] == category]:
-        # start .csv row with name of move
-        csvRow = [entityKey]
-
-        for versionGroup in versionGroupsOfGen:
-          if versionGroup == 'Colo.':
-            versionGroup = 'Colo'
-          
-          # in some cases, the version group does not contain the entity, e.g. PE does not contain abilities, or held items other than mega stones
-          addedEntry = False
-
-          for descriptionIndex in descriptionDict[entityKey].keys():
-            # check if descriptionIndex is actually an int; there are keys of descriptionDict which aren't int
-            if isinstance(descriptionIndex, int) and versionGroup in descriptionDict[entityKey][descriptionIndex] and not addedEntry:
-              csvRow.append(descriptionIndex)
-              addedEntry = True
-              continue
-            else:
-              continue
-          
-          # if entry wasn't added, add a placeholder
-          if not addedEntry:
-            csvRow.append('')
+      for versionGroup in versionDict.keys():
+        if versionGroup == 'Colo.':
+          versionGroup = 'Colo'
         
-        writer.writerow(csvRow)
+        # in some cases, the version group does not contain the entity, e.g. PE does not contain abilities, or held items other than mega stones
+        addedEntry = False
+
+        for descriptionIndex in descriptionDict[entityKey].keys():
+          # check if descriptionIndex is actually an int; there are keys of descriptionDict which aren't int
+          if isinstance(descriptionIndex, int) and versionGroup in descriptionDict[entityKey][descriptionIndex] and not addedEntry:
+            csvRow.append(descriptionIndex)
+            addedEntry = True
+            continue
+          else:
+            continue
+        
+        # if entry wasn't added, add a placeholder
+        if not addedEntry:
+          csvRow.append('')
+      
+      writer.writerow(csvRow)
 
 
   print(f'Finished writing {category} descriptions.')
