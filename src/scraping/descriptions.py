@@ -1,18 +1,16 @@
 import csv
 import re
-from utils import openLink, getBulbapediaDataPath, parseName, versionDictionary, genSymbolToNumber, numberOfGens, getVersionGroupsInGen
+from utils import openLink, getBulbapediaDataPath, parseName, versionDictionary, genSymbolToNumber
 
-# exceptions:
-
-# abilities: as_one, cacophony
-
+# keeps track of version groups and corresponding gens
 versionDict = versionDictionary()
 
-# category describes the type of description being considered
+# given category, e.g. move or ability, return the relevant Bulbapedia table/list for that category, along with column indices for the desired data
+# all but the non-berry held items lie in tables; non-berry held item links are spread across multiple <ul>'s
 def getDataList(category):
   if category == 'move':
     bs = openLink('https://bulbapedia.bulbagarden.net/wiki/List_of_moves', 0, 10)
-    moveRows = bs.find(id='List_of_moves').find_next('table').find('table').find_all('tr')[1:] + bs.find(id='List_of_G-Max_Moves').find_next('table').find('table').find_all('tr')[1:2]
+    moveRows = bs.find(id='List_of_moves').find_next('table').find('table').find_all('tr')[1:] + bs.find(id='List_of_G-Max_Moves').find_next('table').find('table').find_all('tr')[1:]
  
     dataRows, nameSlot, genSlot, ignoreSlot, ignoreCode, placeholderGen = moveRows, 1, -1, 0, '???', 8
 
@@ -48,436 +46,10 @@ def getDataList(category):
 
   return dataRows, nameSlot, genSlot, ignoreSlot, ignoreCode, placeholderGen
 
-# figure out which method to use for updating descriptionDict based on category
-# passes link, descriptionDict, gen to the aforementioned method
-def handleLink(link, descriptionDict, gen, category):
-  if category == 'move':
-    return handleMoveLink(link, descriptionDict, gen)
-  elif category == 'ability':
-    return handleAbilityLink(link, descriptionDict, gen)
-  elif category == 'item':
-    # need to find gen in the item page
-    return handleItemLink(link, descriptionDict)
-  elif category == 'berry':
-    return handleBerryLink(link, descriptionDict, gen)
-  elif category == 'gen2berry':
-    return handleGen2BerryLink(link, descriptionDict)
-  else:
-    return
-
-# find descriptions for move referenced by given link and add to descriptionDict
-def handleMoveLink(link, descriptionDict, moveGen):
-  moveName, linkURL = parseName(link.get_text().rstrip('*')), 'https://bulbapedia.bulbagarden.net/' + link['href']
-
-  # checking for duplicate names, if any
-  if moveName in descriptionDict:
-    print(f'{moveName} is already in descriptionDict!')
-
-  # initialize entry for moveName
-  descriptionDict[moveName] = {
-    "gen": moveGen,
-    "description_type": "move",
-  }
-
-  bs = openLink(linkURL, 0, 10)
-
-  # description table is in a section labeled by id; each description is in a row of that table
-  try:
-    descriptionRows = bs.find(id='Description').find_next('table').find('table').find_all('tr')[1:]
-
-  except Exception as e:
-    print('Error finding description table for', moveName, '.')
-    print(e)
-    print()
-    return moveName
-
-  # keep track of how when the description changes
-  descriptionIndex = -1
-  oldMoveDescription = ''
-  moveDescriptionArray = []
-  descriptionDict[moveName]["descriptions"] = moveDescriptionArray
-
-  # second column is description, first column is list of version groups corresponding to that description
-  for row in descriptionRows: 
-    try: 
-      cells = row.find_all('td')
-
-      #make sure that all version groups in this generation are matched with a description
-      
-      # sometimes the descriptions are different within version groups between item and TM description; the first one is the item description
-      groups, moveDescription = cells[0].find_all('b'), cells[1].get_text().rstrip('\n').split('*')[0]
-
-      if moveDescription != oldMoveDescription:
-        moveDescriptionArray.append(moveDescription)
-        descriptionIndex += 1
-        descriptionDict[moveName][descriptionIndex] = []
-      
-      for group in groups:
-        versionGroups = group.find_all('a')
-        for versionGroup in versionGroups:
-          # sometimes typo
-          descriptionDict[moveName][descriptionIndex].append(versionGroup.get_text().replace('Colo.', 'Colo'))
-
-      oldMoveDescription = moveDescription
-    except Exception as e:
-      print('Error handling the description table for', moveName, '.')
-      print(e)
-      print()
-      return moveName
-  
-  return moveName
-
-# find descriptions for ability referenced by given link and add to descriptionDict
-def handleAbilityLink(link, descriptionDict, abilityGen):
-  abilityName, linkURL = parseName(link.get_text().rstrip('*')), 'https://bulbapedia.bulbagarden.net/' + link['href']
-
-  # as_one depends on which of Glastrier or Spectrier is merged with Calyrex, and Bulbapedia treats it as one ability (though with two different ability indices)
-  if abilityName == 'as_one':
-    descriptionDict["as_one_glastrier"] = {
-      "gen": 8,
-      "description_type": "ability",
-      "descriptions": ["This Ability combines the effects of both Calyrex's Unnerve Ability and Glastrier's Chilling Neigh Ability."],
-      0: ['SwSh'],
-    }
-    descriptionDict["as_one_spectrier"] = {
-      "gen": 8,
-      "description_type": "ability",
-      "descriptions": ["This Ability combines the effects of both Calyrex's Unnerve Ability and Spectrier's Grim Neigh Ability."],
-      0: ['SwSh'],
-    }
-
-    return 'as_one'
-  else:
-    descriptionDict[abilityName] = {
-      "gen": abilityGen,
-      "description_type": "ability",
-    }
-
-  # description table is at top of page, and each description has its own <table> within the description table
-  bs = openLink(linkURL, 0, 10)
-  try:
-    descriptionTable = bs.find(id="mw-content-text").find_next('table')
-
-    # the "This may be in need of research" and "This article is incomplete" boxes at the top of the page are actually tables; they're center-aligned, whereas the table we're interested in is not
-    while descriptionTable.has_attr('align'):
-      descriptionTable = descriptionTable.find_next('table')
-
-    # if and ability was released in, say, gen VI, then there will still be entries for that ability in gens III-V with dummy text; such entries will have the 'display:none' in their style attribute
-    descriptionEntryTables = [table for table in descriptionTable.find('tr').find_next_siblings('tr')[-1].find_all('table') if 'display:none;' not in table["style"]]
-  except Exception as e:
-    print(f'Error finding description table for {abilityName}.')
-    print(e)
-    print()
-    return abilityName
-
-  # in contrast to the case of move descriptions, if a generation has multiple different ability descriptions, then the different descriptions belong to the same cell as their version groups, and they are only separated by a <br>
-  # we match descriptions with version groups in a list, then we iterate through that list in a manner similar to the case of move descriptions to avoid duplicates
-  descriptions_groups = []
-  for table in descriptionEntryTables:
-    try: 
-      descriptionGen = genSymbolToNumber(table.find('small').get_text().strip('\n').replace('Generation ', ''))
-
-      abilityDescriptionCell = table.find_all('tr')[-1].find('td')
-
-      if abilityDescriptionCell.find('sup'):
-        for child in abilityDescriptionCell.children:
-          if child.name:
-            if child.find('a'):
-              versionGroupCodes = []
-              for versionGroupLink in child.find_all('a'):
-                # sometimes typo
-                versionGroup = versionGroupLink.get_text().replace('Colo.', 'Colo')
-                versionGroupCodes.append(versionGroup)
-
-              descriptions_groups.append([abilityDescription, versionGroupCodes])
-          else:
-            abilityDescription = child.get_text().strip('\n')
-      else: 
-        abilityDescription = abilityDescriptionCell.get_text().strip('\n')
-        versionGroupCodes = []
-
-        for versionGroup in versionDict.keys():
-          versionGroupGen = versionDict[versionGroup][-1]
-
-          # abilities aren't present in Let's Go Pikachu/Let's Go Eevee
-          # generations prior to gen 3 won't be included, since all the descriptions start at gen 3 at the earliest
-          if versionGroup == 'PE':
-            continue
-          elif versionGroupGen == descriptionGen:
-            versionGroupCodes.append(versionGroup)
-        
-        descriptions_groups.append([abilityDescription, versionGroupCodes])
-      
-    except Exception as e:
-      print(f'Error handling the description table for {abilityName}.')
-      print(e)
-      print()
-      return abilityName
-  
-  abilityDescriptionArray = []
-  descriptionIndex = -1
-  oldAbilityDescription = ''
-  descriptionDict[abilityName]["descriptions"] = abilityDescriptionArray
-
-  for description_group in descriptions_groups:
-    abilityDescription, versionGroups = description_group
-
-    if abilityDescription != oldAbilityDescription:
-      abilityDescriptionArray.append(abilityDescription)
-      descriptionIndex += 1
-      descriptionDict[abilityName][descriptionIndex] = []
-
-    for versionGroup in versionGroups:
-      descriptionDict[abilityName][descriptionIndex].append(versionGroup)
-
-    oldAbilityDescription = abilityDescription
-
-  return abilityName
-
-# find descriptions for item referenced by given link and add to descriptionDict
-# very similar to handleMoveLink, but we need to find the generation from the link as well, as the item link doesn't come from a table which has the generation
-def handleItemLink(link, descriptionDict):
-  itemName, linkURL = parseName(link.get_text().rstrip('*')), 'https://bulbapedia.bulbagarden.net/' + link['href']
-
-  # checking for duplicate names, if any
-  if itemName in descriptionDict:
-    print(f'{itemName} is already in descriptionDict!')
-
-  bs = openLink(linkURL, 0, 10)
-
-  try:
-    introduction = bs.find(id='mw-content-text').find_next('p').get_text()
-    itemGenSearch = re.search(r'introduced in Generation ([IVX]*).', introduction)
-    if itemGenSearch:
-      itemGen = genSymbolToNumber(itemGenSearch.group(1))
-    else: 
-      if re.search(r'Omega Ruby and Alpha Sapphire', introduction):
-        itemGen = 6
-      elif re.search(r'exclusive to the Generation II games', introduction):
-        itemGen = 2
-      else:
-        raise Exception("Could not find item gen from introduction:", introduction)
-
-  except Exception as e:
-    print(f'Error finding generation for {itemName}.')
-    print(e)
-    print()
-    return itemName
-
-  # initialize entry for itemName
-  descriptionDict[itemName] = {
-    "gen": itemGen,
-    "description_type": "item",
-  }
-
-  # description table is in a section labeled by id; each description is in a row of that table
-  try:
-    descriptionRows = bs.find(id='Description').find_next('table').find('table').find_all('tr')[1:]
-
-  except Exception as e:
-    print('Error finding description table for', itemName, '.')
-    print(e)
-    print()
-    return itemName
-
-  # keep track of when the description changes
-  descriptionIndex = -1
-  oldItemDescription = ''
-  itemDescriptionArray = []
-  descriptionDict[itemName]["descriptions"] = itemDescriptionArray
-
-  # second column is description, first column is list of version groups corresponding to that description
-  for row in descriptionRows: 
-    try: 
-      cells = row.find_all('td')
-
-      # sometimes the descriptions are different within version groups between item and TM description; the first one is the item description
-      groups, itemDescription = cells[0].find_all('b'), cells[1].get_text().rstrip('\n').split('*')[0]
-
-      if itemDescription != oldItemDescription:
-        itemDescriptionArray.append(itemDescription)
-        descriptionIndex += 1
-        descriptionDict[itemName][descriptionIndex] = []
-      
-      for group in groups:
-        versionGroups = group.find_all('a')
-        for versionGroup in versionGroups:
-          # sometimes typo
-          descriptionDict[itemName][descriptionIndex].append(versionGroup.get_text().replace('Colo.', 'Colo'))
-
-      oldItemDescription = itemDescription
-    except Exception as e:
-      print('Error handling the description table for', itemName, '.')
-      print(e)
-      print()
-      return itemName
-
-  return itemName
-
-# 
-def handleBerryLink(link, descriptionDict, berryGen):
-  berryName, linkURL = parseName(link.get_text().rstrip('*')), 'https://bulbapedia.bulbagarden.net/' + link['href']
-
-  descriptionDict[berryName] = {
-    "description_type": "berry",
-    "gen": berryGen,
-  }
-
-  bs = openLink(linkURL, 0, 10)
-  try:
-    # table with bag descriptions is at top of screen inside a table with style including float:right
-    containerTable = bs.find('table', style=lambda value: value and 'float:right' in value).find('table', style=lambda value: value and 'text-align:center' in value)
-
-    # if berry released in a later gen, previous gens take have <tr>'s but are not displayed
-    descriptionRows = containerTable.find_all('tr', style=lambda value: not value or 'display:none;' not in value)[1:]
-
-  except Exception as e:
-    print(f'Error finding description table for {berryName}.')
-    print(e)
-    print()
-    return berryName
-  
-  descriptions_groups = []
-  for row in descriptionRows:
-    try: 
-      descriptionGen = genSymbolToNumber(row.find('th').get_text().strip('\n').replace('Generation ', ''))
-
-      berryDescriptionCell = row.find('td')
-
-      # sometimes the description has a span with "Pokemon" in small caps because that is how it appears in-game; replace it with a string so that the code below works properly
-      for s in berryDescriptionCell.find_all('span', {'class': 'sc'}):
-        s.replaceWith(f"{s.string}")
-
-      # even after replacing the <span> with its string, the deleted <span> still shows up as a child (in some sense...) for berryDescriptionCell (see nested 'else' below)
-      berryDescription = ''
-
-      if berryDescriptionCell.find('sup'):
-        for child in berryDescriptionCell.children:
-          if child.name:
-            if child.find('a'):
-              versionGroupCodes = []
-              for versionGroupLink in child.find_all('a'):
-                # sometimes typo
-                versionGroup = versionGroupLink.get_text().replace('Colo.', 'Colo')
-                versionGroupCodes.append(versionGroup)
-
-              descriptions_groups.append([berryDescription, versionGroupCodes])
-            else:
-              berryDescription = ''
-          else:
-            # since the deleted <span> (which is replaced with text) still shows up as a child for some reason, if we merely assign child.get_text() to berryDescription like in the handleAbilityLink method, then only the part of the description after the <span> will be read; thus, we need to add on the text instead
-            berryDescription += child.get_text().strip('\n')
-      else: 
-        # get description from cell; gen 8 descriptions have a 'Curry Ingredient' section which we remove
-        berryDescription = re.sub(r'Curry Ingredient:.*', '', berryDescriptionCell.get_text().strip('\n')).replace('Held Item: ', '')
-        versionGroupCodes = []
-
-        for versionGroup in versionDict.keys():
-          versionGroupGen = versionDict[versionGroup][-1]
-
-          # abilities aren't present in Let's Go Pikachu/Let's Go Eevee
-          # generations prior to gen 3 won't be included, since all the descriptions start at gen 3 at the earliest
-          if versionGroup == 'PE':
-            continue
-          elif versionGroupGen == descriptionGen:
-            versionGroupCodes.append(versionGroup)
-        
-        descriptions_groups.append([berryDescription, versionGroupCodes])
-      
-    except Exception as e:
-      print(f'Error handling the description table for {berryName}.')
-      print(e)
-      print()
-      return berryName
-  
-  # similar code as in other methods
-  berryDescriptionArray = []
-  descriptionIndex = -1
-  oldBerryDescription = ''
-  descriptionDict[berryName]["descriptions"] = berryDescriptionArray
-
-  for description_group in descriptions_groups:
-    berryDescription, versionGroups = description_group
-
-    if berryDescription != oldBerryDescription:
-      berryDescriptionArray.append(berryDescription)
-      descriptionIndex += 1
-      descriptionDict[berryName][descriptionIndex] = []
-
-    for versionGroup in versionGroups:
-      descriptionDict[berryName][descriptionIndex].append(versionGroup)
-
-    oldBerryDescription = berryDescription
-
-  return berryName
-
-# 
-def handleGen2BerryLink(link, descriptionDict):
-  berryName, linkURL = parseName(link.get_text().rstrip('*')), 'https://bulbapedia.bulbagarden.net/' + link['href']
-
-  if berryName in ['psncure_berry', 'przcure_berry']:
-    berryName = berryName[0:3] + '_' + berryName[3:]
-
-
-  # checking for duplicate names, if any
-  if berryName in descriptionDict:
-    print(f'{berryName} is already in descriptionDict!')
-
-  # initialize entry for moveName
-  descriptionDict[berryName] = {
-    "gen": 2,
-    "description_type": "gen2berry",
-  }
-
-  bs = openLink(linkURL, 0, 10)
-
-  # description table is in a section labeled by id; each description is in a row of that table
-  try:
-    descriptionRows = bs.find(id='Description').find_next('table').find('table').find_all('tr')[1:]
-
-  except Exception as e:
-    print('Error finding description table for', berryName, '.')
-    print(e)
-    print()
-    return berryName
-
-  # keep track of how when the description changes
-  descriptionIndex = -1
-  oldBerryDescription = ''
-  berryDescriptionArray = []
-  descriptionDict[berryName]["descriptions"] = berryDescriptionArray
-
-  # second column is description, first column is list of version groups corresponding to that description
-  for row in descriptionRows: 
-    try: 
-      cells = row.find_all('td')
-
-      #make sure that all version groups in this generation are matched with a description
-      
-      # sometimes the descriptions are different within version groups between item and TM description; the first one is the item description
-      groups, berryDescription = cells[0].find_all('b'), cells[1].get_text().rstrip('\n').split('*')[0]
-
-      if berryDescription != oldBerryDescription:
-        berryDescriptionArray.append(berryDescription)
-        descriptionIndex += 1
-        descriptionDict[berryName][descriptionIndex] = []
-      
-      for group in groups:
-        versionGroups = group.find_all('a')
-        for versionGroup in versionGroups:
-          # sometimes typo
-          descriptionDict[berryName][descriptionIndex].append(versionGroup.get_text().replace('Colo.', 'Colo'))
-
-      oldBerryDescription = berryDescription
-    except Exception as e:
-      print('Error handling the description table for', berryName, '.')
-      print(e)
-      print()
-      return berryName
-  
-  return berryName
-
-# Columns are Move Name, Description
+# scrapes descriptions for specific category from Bulbapedia, storing in descriptionDict, then write to two .csv's: one with the list of descriptions, the other with the version groups and their corresponding description keys 
+# e.g. if a description has index 1 in abilityDescriptions, then in abilityDescriptionsKeys, all version groups with a value of 1 have that description
+# columns of description .csv are name of entity, gen of that entity, followed by indices; rows consist of all the descriptions for a given entity, with the index columns serving as keys for the descriptions
+# columns of keys .csv are name of entity, followed by version groups; rows consist of keys referring to the description .csv
 def scrapeDescriptions(fnamePrefix, category, descriptionDict):
   fnamePrefix = fnamePrefix.replace('___', category)
 
@@ -485,6 +57,8 @@ def scrapeDescriptions(fnamePrefix, category, descriptionDict):
   # in the latter case, everything after dataRows is None
   dataList, nameSlot, genSlot, ignoreSlot, ignoreCode, placeholderGen= getDataList(category)
   
+  # in most cases, dataList is a table containing links to the relevant data
+  # in the non-berry held item case, it is a list of sections, each of which contains a <ul> whose <li>'s contain links to the relevant data
   for entry in dataList:
     try:
       # in this case, entry is a <tr> in a <table>
@@ -592,7 +166,7 @@ def scrapeDescriptions(fnamePrefix, category, descriptionDict):
     writer.writerow(headers)
 
     # write move descriptions for current gen, filtering out descriptions which haven't been released yet, or which aren't about moves
-    for entityKey in descriptionDict.keys():
+    for entityKey in [key for key in descriptionDict.keys() if descriptionDict[key]["description_type"] == category]:
       # start .csv row with name of move
       csvRow = [entityKey]
 
@@ -623,23 +197,410 @@ def scrapeDescriptions(fnamePrefix, category, descriptionDict):
 
   return
 
+# figure out which method to use for updating descriptionDict based on category
+# passes in link for entity, descriptionDict, gen to the aforementioned link-handling method
+def handleLink(link, descriptionDict, gen, category):
+  if category == 'move':
+    return handleMoveLink(link, descriptionDict, gen)
+  elif category == 'ability':
+    return handleAbilityLink(link, descriptionDict, gen)
+  elif category == 'item':
+    # need to find gen in the item page
+    return handleItemLink(link, descriptionDict)
+  elif category == 'berry':
+    return handleBerryLink(link, descriptionDict, gen)
+  elif category == 'gen2berry':
+    return handleGen2BerryLink(link, descriptionDict)
+  else:
+    return
+
+# in each link-handling method, we end up with an array, descriptions_groups, which matches descriptions to the corresponding version groups. this method adds that data to descriptionDict so as to avoid multiple instances of the same exact description
+def addDataToDescriptionDict(entityName, descriptions_groups, descriptionDict):
+  entityDescriptionArray = []
+  descriptionIndex = -1
+  oldEntityDescription = ''
+  descriptionDict[entityName]["descriptions"] = entityDescriptionArray
+
+  for description_group in descriptions_groups:
+    entityDescription, versionGroups = description_group
+
+    if entityDescription != oldEntityDescription:
+      entityDescriptionArray.append(entityDescription)
+      descriptionIndex += 1
+      descriptionDict[entityName][descriptionIndex] = []
+
+    for versionGroup in versionGroups:
+      descriptionDict[entityName][descriptionIndex].append(versionGroup)
+
+    oldEntityDescription = entityDescription
+
+  return entityName
+
+# find descriptions for move referenced by given link and add to descriptionDict
+def handleMoveLink(link, descriptionDict, moveGen):
+  moveName, linkURL = parseName(link.get_text().rstrip('*')), 'https://bulbapedia.bulbagarden.net/' + link['href']
+
+  # checking for duplicate names, if any
+  if moveName in descriptionDict:
+    print(f'{moveName} is already in descriptionDict!')
+
+  # initialize entry for moveName
+  descriptionDict[moveName] = {
+    "gen": moveGen,
+    "description_type": "move",
+  }
+
+  bs = openLink(linkURL, 0, 10)
+
+  # description table is in a section labeled by id; each description is in a row of that table
+  try:
+    descriptionRows = bs.find(id='Description').find_next('table').find('table').find_all('tr')[1:]
+
+  except Exception as e:
+    print('Error finding description table for', moveName, '.')
+    print(e)
+    print()
+    return moveName
+
+  # match descriptions with version groups
+  descriptions_groups = []
+  for row in descriptionRows: 
+    cells = row.find_all('td')
+
+    # the version groups are blold-faced
+    groups = cells[0].find_all('b')
+
+    # sometimes the descriptions are different within version groups between move and TM description; the first one is the move description
+    moveDescription = cells[1].get_text().rstrip('\n').split('*')[0]
+    
+    versionGroupCodes = []
+
+    for group in groups:
+      for versionGroupCode in group.find_all('a'):
+        # sometimes 'Colo.', sometimes 'Colo'--standardize
+        versionGroupCodes.append(versionGroupCode.get_text().replace('Colo.', 'Colo'))
+
+    descriptions_groups.append([moveDescription, versionGroupCodes])
+
+  addDataToDescriptionDict(moveName, descriptions_groups, descriptionDict)
+  
+  return moveName
+
+# find descriptions for ability referenced by given link and add to descriptionDict
+# in contrast with handleMoveLink, the description table is in a different part of the page, and the formatting of the cells is more complicated
+def handleAbilityLink(link, descriptionDict, abilityGen):
+  abilityName, linkURL = parseName(link.get_text().rstrip('*')), 'https://bulbapedia.bulbagarden.net/' + link['href']
+
+  # as_one depends on which of Glastrier or Spectrier is merged with Calyrex, and Bulbapedia treats it as one ability (though with two different ability indices)
+  if abilityName == 'as_one':
+    descriptionDict["as_one_glastrier"] = {
+      "gen": 8,
+      "description_type": "ability",
+      "descriptions": ["This Ability combines the effects of both Calyrex's Unnerve Ability and Glastrier's Chilling Neigh Ability."],
+      0: ['SwSh'],
+    }
+    descriptionDict["as_one_spectrier"] = {
+      "gen": 8,
+      "description_type": "ability",
+      "descriptions": ["This Ability combines the effects of both Calyrex's Unnerve Ability and Spectrier's Grim Neigh Ability."],
+      0: ['SwSh'],
+    }
+
+    return 'as_one'
+  else:
+    descriptionDict[abilityName] = {
+      "gen": abilityGen,
+      "description_type": "ability",
+    }
+
+  # description table is at top of page, and each description has its own <table> within the description table
+  bs = openLink(linkURL, 0, 10)
+  try:
+    descriptionTable = bs.find(id="mw-content-text").find_next('table')
+
+    # the "This may be in need of research" and "This article is incomplete" boxes at the top of the page are actually tables; they're center-aligned, whereas the table we're interested in is not
+    while descriptionTable.has_attr('align'):
+      descriptionTable = descriptionTable.find_next('table')
+
+    # if and ability was released in, say, gen VI, then there will still be entries for that ability in gens III-V with dummy text; such entries will have the 'display:none' in their style attribute
+    descriptionEntryTables = [table for table in descriptionTable.find('tr').find_next_siblings('tr')[-1].find_all('table') if 'display:none;' not in table["style"]]
+  except Exception as e:
+    print(f'Error finding description table for {abilityName}.')
+    print(e)
+    print()
+    return abilityName
+
+  # in contrast to the case of move descriptions, if a generation has multiple different ability descriptions, then the different descriptions belong to the same cell as their version groups, and they are only separated by a <br>
+  descriptions_groups = []
+  for table in descriptionEntryTables:
+    try: 
+      descriptionGen = genSymbolToNumber(table.find('small').get_text().strip('\n').replace('Generation ', ''))
+
+      abilityDescriptionCell = table.find_all('tr')[-1].find('td')
+
+      if abilityDescriptionCell.find('sup'):
+        for child in abilityDescriptionCell.children:
+          if child.name:
+            if child.find('a'):
+              versionGroupCodes = []
+              for versionGroupLink in child.find_all('a'):
+                # sometimes typo
+                versionGroup = versionGroupLink.get_text().replace('Colo.', 'Colo')
+                versionGroupCodes.append(versionGroup)
+
+              descriptions_groups.append([abilityDescription, versionGroupCodes])
+          else:
+            abilityDescription = child.get_text().strip('\n')
+      else: 
+        abilityDescription = abilityDescriptionCell.get_text().strip('\n')
+        versionGroupCodes = []
+
+        for versionGroup in versionDict.keys():
+          versionGroupGen = versionDict[versionGroup][-1]
+
+          # abilities aren't present in Let's Go Pikachu/Let's Go Eevee
+          # generations prior to gen 3 won't be included, since all the descriptions start at gen 3 at the earliest
+          if versionGroup == 'PE':
+            continue
+          elif versionGroupGen == descriptionGen:
+            versionGroupCodes.append(versionGroup)
+        
+        descriptions_groups.append([abilityDescription, versionGroupCodes])
+      
+    except Exception as e:
+      print(f'Error handling the description table for {abilityName}.')
+      print(e)
+      print()
+      return abilityName
+  
+  addDataToDescriptionDict(abilityName, descriptions_groups, descriptionDict)
+
+  return abilityName
+
+# find descriptions for item referenced by given link and add to descriptionDict
+# very similar to handleMoveLink, but we need to find the generation from the item link as well, as the item link doesn't come from a table which has the generation
+def handleItemLink(link, descriptionDict):
+  itemName, linkURL = parseName(link.get_text().rstrip('*')), 'https://bulbapedia.bulbagarden.net/' + link['href']
+
+  # checking for duplicate names, if any
+  if itemName in descriptionDict:
+    print(f'{itemName} is already in descriptionDict!')
+
+  bs = openLink(linkURL, 0, 10)
+
+  try:
+    introduction = bs.find(id='mw-content-text').find_next('p').get_text()
+    itemGenSearch = re.search(r'introduced in Generation ([IVX]*).', introduction)
+    if itemGenSearch:
+      itemGen = genSymbolToNumber(itemGenSearch.group(1))
+    else: 
+      if re.search(r'Omega Ruby and Alpha Sapphire', introduction):
+        itemGen = 6
+      elif re.search(r'exclusive to the Generation II games', introduction):
+        itemGen = 2
+      else:
+        raise Exception("Could not find item gen from introduction:", introduction)
+
+  except Exception as e:
+    print(f'Error finding generation for {itemName}.')
+    print(e)
+    print()
+    return itemName
+
+  # initialize entry for itemName
+  descriptionDict[itemName] = {
+    "gen": itemGen,
+    "description_type": "item",
+  }
+
+  # description table is in a section labeled by id; each description is in a row of that table
+  try:
+    descriptionRows = bs.find(id='Description').find_next('table').find('table').find_all('tr')[1:]
+
+  except Exception as e:
+    print('Error finding description table for', itemName, '.')
+    print(e)
+    print()
+    return itemName
+
+  # match descriptions with version groups
+  descriptions_groups = []
+  for row in descriptionRows: 
+    cells = row.find_all('td')
+
+    # the version groups are blold-faced
+    groups = cells[0].find_all('b')
+
+    # sometimes the descriptions are different within version groups; get the first one
+    itemDescription = cells[1].get_text().rstrip('\n').split('*')[0]
+    
+    # extract version group codes from groups
+    versionGroupCodes = []
+    for group in groups:
+      for versionGroupCode in group.find_all('a'):
+        # sometimes 'Colo.', sometimes 'Colo'--standardize
+        versionGroupCodes.append(versionGroupCode.get_text().replace('Colo.', 'Colo'))
+    descriptions_groups.append([itemDescription, versionGroupCodes])
+
+  addDataToDescriptionDict(itemName, descriptions_groups, descriptionDict)
+
+  return itemName
+
+# find descriptions for berry referenced by given link and add to descriptionDict
+# similar to handleAbilityLink, as the description table is in a similar part of the page and formatted similarly, though there are a few exceptions to consider
+def handleBerryLink(link, descriptionDict, berryGen):
+  berryName, linkURL = parseName(link.get_text().rstrip('*')), 'https://bulbapedia.bulbagarden.net/' + link['href']
+
+  descriptionDict[berryName] = {
+    "description_type": "berry",
+    "gen": berryGen,
+  }
+
+  bs = openLink(linkURL, 0, 10)
+  try:
+    # table with bag descriptions is at top of screen inside a table with style including float:right
+    containerTable = bs.find('table', style=lambda value: value and 'float:right' in value).find('table', style=lambda value: value and 'text-align:center' in value)
+
+    # if berry released in a later gen, previous gens take have <tr>'s but are not displayed
+    descriptionRows = containerTable.find_all('tr', style=lambda value: not value or 'display:none;' not in value)[1:]
+
+  except Exception as e:
+    print(f'Error finding description table for {berryName}.')
+    print(e)
+    print()
+    return berryName
+  
+  # in contrast to the case of move descriptions, if a generation has multiple different berry descriptions, then the different descriptions belong to the same cell as their version groups, and they are only separated by a <br>
+  # we match descriptions with version groups in a list
+  descriptions_groups = []
+  for row in descriptionRows:
+    try: 
+      descriptionGen = genSymbolToNumber(row.find('th').get_text().strip('\n').replace('Generation ', ''))
+
+      berryDescriptionCell = row.find('td')
+
+      # sometimes the description has a span with "Pokemon" in small caps because that is how it appears in-game; replace it with a string so that the code below works properly
+      for s in berryDescriptionCell.find_all('span', {'class': 'sc'}):
+        s.replaceWith(f"{s.string}")
+
+      # even after replacing the <span> with its string, the deleted <span> still shows up as a child (in some sense...) for berryDescriptionCell (see nested 'else' below)
+      berryDescription = ''
+
+      if berryDescriptionCell.find('sup'):
+        for child in berryDescriptionCell.children:
+          if child.name:
+            if child.find('a'):
+              versionGroupCodes = []
+              for versionGroupLink in child.find_all('a'):
+                # sometimes typo
+                versionGroup = versionGroupLink.get_text().replace('Colo.', 'Colo')
+                versionGroupCodes.append(versionGroup)
+
+              descriptions_groups.append([berryDescription, versionGroupCodes])
+            else:
+              berryDescription = ''
+          else:
+            # since the deleted <span> (which is replaced with text) still shows up as a child for some reason, if we merely assign child.get_text() to berryDescription like in the handleAbilityLink method, then only the part of the description after the <span> will be read; thus, we need to add on the text instead
+            berryDescription += child.get_text().strip('\n')
+      else: 
+        # get description from cell; gen 8 descriptions have a 'Curry Ingredient' section which we remove
+        berryDescription = re.sub(r'Curry Ingredient:.*', '', berryDescriptionCell.get_text().strip('\n')).replace('Held Item: ', '')
+        versionGroupCodes = []
+
+        for versionGroup in versionDict.keys():
+          versionGroupGen = versionDict[versionGroup][-1]
+
+          # abilities aren't present in Let's Go Pikachu/Let's Go Eevee
+          # generations prior to gen 3 won't be included, since all the descriptions start at gen 3 at the earliest
+          if versionGroup == 'PE':
+            continue
+          elif versionGroupGen == descriptionGen:
+            versionGroupCodes.append(versionGroup)
+        
+        descriptions_groups.append([berryDescription, versionGroupCodes])
+      
+    except Exception as e:
+      print(f'Error handling the description table for {berryName}.')
+      print(e)
+      print()
+      return berryName
+  
+  addDataToDescriptionDict(berryName, descriptions_groups, descriptionDict)
+
+  return berryName
+
+# find descriptions for gen 2-exclusive berry referenced by given link and add to descriptionDict
+# similar to handleMoveLink, where the description table is easier to parse
+def handleGen2BerryLink(link, descriptionDict):
+  berryName, linkURL = parseName(link.get_text().rstrip('*')), 'https://bulbapedia.bulbagarden.net/' + link['href']
+
+  if berryName in ['psncure_berry', 'przcure_berry']:
+    berryName = berryName[0:3] + '_' + berryName[3:]
+
+
+  # checking for duplicate names, if any
+  if berryName in descriptionDict:
+    print(f'{berryName} is already in descriptionDict!')
+
+  # initialize entry for moveName
+  descriptionDict[berryName] = {
+    "gen": 2,
+    "description_type": "gen2berry",
+  }
+
+  bs = openLink(linkURL, 0, 10)
+
+  # description table is in a section labeled by id; each description is in a row of that table
+  try:
+    descriptionRows = bs.find(id='Description').find_next('table').find('table').find_all('tr')[1:]
+
+  except Exception as e:
+    print('Error finding description table for', berryName, '.')
+    print(e)
+    print()
+    return berryName
+
+  # match descriptions with version groups
+  descriptions_groups = []
+  for row in descriptionRows: 
+    cells = row.find_all('td')
+
+    # the version groups are bold-faced
+    groups = cells[0].find_all('b')
+
+    # sometimes the descriptions are different within version groups; get the first one
+    berryDescription = cells[1].get_text().rstrip('\n').split('*')[0]
+    
+    # go through groups and extract version codes corresponding to berryDescription
+    versionGroupCodes = []
+    for group in groups:
+      for versionGroupCode in group.find_all('a'):
+        # sometimes 'Colo.', sometimes 'Colo'--standardize
+        versionGroupCodes.append(versionGroupCode.get_text().replace('Colo.', 'Colo'))
+    descriptions_groups.append([berryDescription, versionGroupCodes])
+
+  addDataToDescriptionDict(berryName, descriptions_groups, descriptionDict)
+  
+  return berryName
+
+# Scrapes descriptions for moves, abilities, non-berry held-items, berries, and gen 2-exclusive berries
 def main():
   dataPath = getBulbapediaDataPath() + '\\descriptions\\'
   # we'll replace '___' depending on category
   fnamePrefix = dataPath + '___Descriptions'
   descriptionDict = {}
 
-  # print('Scraping move descriptions...')
-  # scrapeDescriptions(fnamePrefix, 'move', descriptionDict)
+  print('Scraping move descriptions...')
+  scrapeDescriptions(fnamePrefix, 'move', descriptionDict)
 
-  # print('Scraping ability descriptions...')
-  # scrapeDescriptions(fnamePrefix, 'ability', descriptionDict)
+  print('Scraping ability descriptions...')
+  scrapeDescriptions(fnamePrefix, 'ability', descriptionDict)
 
-  # print('Scraping item descriptions...')
-  # scrapeDescriptions(fnamePrefix, 'item', descriptionDict)
+  print('Scraping item descriptions...')
+  scrapeDescriptions(fnamePrefix, 'item', descriptionDict)
 
-  # print('Scraping berry descriptions...')
-  # scrapeDescriptions(fnamePrefix, 'berry', descriptionDict)
+  print('Scraping berry descriptions...')
+  scrapeDescriptions(fnamePrefix, 'berry', descriptionDict)
 
   print('Scraping gen 2 berry descriptions...')
   scrapeDescriptions(fnamePrefix, 'gen2berry', descriptionDict)
