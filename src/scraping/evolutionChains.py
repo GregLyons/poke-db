@@ -1,6 +1,6 @@
 import csv
 import re
-from utils import openLink, getBulbapediaDataPath, parseName
+from utils import openLink, getDataPath, parseName
 
 # columns are Family Name, Pokemon 1 Name, 1 to 2 Method, Pokemon 2 Name, 2 to 3 Method, Pokemon 3 Name
 def makeEvolutionChainCSV(fname):
@@ -184,7 +184,7 @@ def makeEvolutionChainCSV(fname):
   return 
 
 def main():
-  dataPath = getBulbapediaDataPath() + 'pokemon\\'
+  dataPath = getDataPath() + 'pokemon\\'
   fname = dataPath + 'evolutionChains.csv'
   makeEvolutionChainCSV(fname)
 

@@ -1,6 +1,6 @@
 import csv
 import re
-from utils import openLink, getBulbapediaDataPath, parseName, isShadowMove
+from utils import openLink, getDataPath, parseName, isShadowMove
 
 # given an <a> element for a move category, parse the text to determine the target category, and find all moves therein
 def handleCategoryLink(link, writer):
@@ -58,7 +58,7 @@ def makeCSV(fname):
   return
 
 def main():
-  dataPath = getBulbapediaDataPath() + '\\moves\\'
+  dataPath = getDataPath() + '\\moves\\'
   fname = dataPath + 'movesByTarget.csv'
   makeCSV(fname)
 

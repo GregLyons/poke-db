@@ -1,11 +1,7 @@
 import re
-import types
 
-def getBulbapediaDataPath():
-  return 'src\\data\\bulbapedia_data\\'
-
-def getSerebiiDataPath():
-  return 'src\\data\\serebii_data\\'
+def getDataPath():
+  return 'src\\data\\'
 
 # Used for a few calculations--need to alter when gen 9 comes
 def numberOfGens():
@@ -144,7 +140,7 @@ def statusList():
 # usage methods which interact with abilities, e.g. sound, bite
 def usageMethodList():
   usageMethods = [
-    'pulse', 'ball', 'bite', 'dance', 'explosive', 'mouth', 'powder', 'punch', 'sound',
+    'pulse', 'ball', 'bite', 'dance', 'explosive', 'powder', 'punch', 'sound',
   ]
   return usageMethods
 

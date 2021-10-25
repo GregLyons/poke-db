@@ -1,5 +1,5 @@
 import csv
-from utils import openLink, parseName, getBulbapediaDataPath
+from utils import openLink, parseName, getDataPath
 
 def makeMainCSV(fname):
   with open(fname, 'w', newline='', encoding='utf-8') as csvFile:
@@ -20,7 +20,7 @@ def makeMainCSV(fname):
   return
 
 def main():
-  dataPath = getBulbapediaDataPath() + 'moves\\'
+  dataPath = getDataPath() + 'moves\\'
   fname = dataPath + 'movesRemovedFromGen8.csv'
   makeMainCSV(fname)
   return

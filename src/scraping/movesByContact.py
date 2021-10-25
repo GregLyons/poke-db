@@ -1,5 +1,5 @@
 import csv
-from utils import openLink, getBulbapediaDataPath, parseName
+from utils import openLink, getDataPath, parseName
 
 # Columns are Move Name, Note
 def makeMainCSV(fname):
@@ -39,7 +39,7 @@ def makeMainCSV(fname):
   return
 
 def main():
-  dataPath = getBulbapediaDataPath() + 'moves\\'
+  dataPath = getDataPath() + 'moves\\'
   fname = dataPath + 'movesByContact.csv'
   makeMainCSV(fname)
 

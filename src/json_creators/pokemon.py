@@ -1,7 +1,7 @@
 import csv
 import re
 import copy
-from utils import parseName, genSymbolToNumber, getBulbapediaDataPath, genSymbolToNumber, typeList
+from utils import parseName, genSymbolToNumber, getDataPath, genSymbolToNumber, typeList
 
 # make initial Pokemon dict, with dex number, gen, species, and type data
 # the pokemonByType.csv doesn't contain all the Pokemon forms, since some different forms of the same Pokemon can have the same type. We will rectify this in future functions; for example, base stat data will add in the forms of deoxys since those have different base stats
@@ -336,7 +336,7 @@ def addFormFlags(pokemonDict):
 
 
 def main():
-  dataPath = getBulbapediaDataPath() + '\\pokemon\\'
+  dataPath = getDataPath() + '\\pokemon\\'
 
   type_fname = dataPath + 'pokemonByType.csv'
   type_changes_fname = dataPath + 'pokemonTypeChanges.csv'

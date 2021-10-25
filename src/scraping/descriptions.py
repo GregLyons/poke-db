@@ -1,6 +1,6 @@
 import csv
 import re
-from utils import openLink, getBulbapediaDataPath, parseName, versionDictionary, genSymbolToNumber
+from utils import openLink, getDataPath, parseName, versionDictionary, genSymbolToNumber
 
 # keeps track of version groups and corresponding gens
 versionDict = versionDictionary()
@@ -585,7 +585,7 @@ def handleGen2BerryLink(link, descriptionDict):
 
 # Scrapes descriptions for moves, abilities, non-berry held-items, berries, and gen 2-exclusive berries
 def main():
-  dataPath = getBulbapediaDataPath() + '\\descriptions\\'
+  dataPath = getDataPath() + '\\descriptions\\'
   # we'll replace '___' depending on category
   fnamePrefix = dataPath + '___Descriptions'
   descriptionDict = {}

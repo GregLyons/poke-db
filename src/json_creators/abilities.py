@@ -1,5 +1,5 @@
 import csv
-from utils import getBulbapediaDataPath, genSymbolToNumber, effectList, statusList, usageMethodList, statList, typeList
+from utils import getDataPath, genSymbolToNumber, effectList, statusList, usageMethodList, statList, typeList
 
 # initialize abilityDict with name, description, and gen; key is Ability ID
 def makeInitialAbilityDict(fname):
@@ -216,7 +216,7 @@ def addEffectData(fpath, abilityDict, inverseDict):
   return
 
 def main():
-  dataPath = getBulbapediaDataPath() + '\\abilities\\'
+  dataPath = getDataPath() + '\\abilities\\'
   fname = dataPath + 'abilityList.csv'
   abilityDict = makeInitialAbilityDict(fname)
   inverseDict = makeInverseDict(fname)

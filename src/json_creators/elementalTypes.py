@@ -1,5 +1,5 @@
 import csv
-from utils import parseName, genSymbolToNumber, getBulbapediaDataPath, genSymbolToNumber, typeList
+from utils import parseName, genSymbolToNumber, getDataPath, genSymbolToNumber, typeList
 
 def makeTypeDict(fnamePrefix):
   typeDict = {}
@@ -53,7 +53,7 @@ def makeTypeDict(fnamePrefix):
   return typeDict
 
 def main():
-  dataPath = getBulbapediaDataPath() + '\\types\\'
+  dataPath = getDataPath() + 'types\\'
   fnamePrefix = dataPath + 'typeMatchupsGen'
   typeDict = makeTypeDict(fnamePrefix)
 

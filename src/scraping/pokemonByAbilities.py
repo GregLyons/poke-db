@@ -1,6 +1,6 @@
 import csv
 import re
-from utils import openLink, genSymbolToNumber, dexNumberToGen, getBulbapediaDataPath, parseName
+from utils import openLink, genSymbolToNumber, dexNumberToGen, getDataPath, parseName
 
 # The event Blue-Striped Basculin with Rock Head is not included. My apologies for any inconvenience.
 
@@ -115,7 +115,7 @@ def makeAbilityCSVandExtractNotes(fname):
   return
 
 def main():
-  dataPath = getBulbapediaDataPath() + 'pokemon\\'
+  dataPath = getDataPath() + 'pokemon\\'
   fname = dataPath + f'pokemonByAbilities.csv'
   makeAbilityCSVandExtractNotes(fname)
 

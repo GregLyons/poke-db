@@ -2,7 +2,7 @@ import csv
 from os import error
 import re
 from bs4.element import Tag
-from utils import openLink, getBulbapediaDataPath, parseName, genSymbolToNumber
+from utils import openLink, getDataPath, parseName, genSymbolToNumber
 
 
 # EXCEPTIONS: ['secret_power', 'crunch', 'diamond_storm', 'acid', 'psychic', 'amnesia', 'shadow_down', 'focus_energy', 'aurora_beam', 'bubble', 'bubble_beam', 'constrict' 'fell_stinger', 'growth']
@@ -281,7 +281,7 @@ def addZMoves(fname):
   return
 
 def main():
-  dataPath = getBulbapediaDataPath() + '\\moves\\'
+  dataPath = getDataPath() + '\\moves\\'
   fname = dataPath + 'movesModifyStat.csv'
   makeCSV(fname)
 

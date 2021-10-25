@@ -1,5 +1,5 @@
 import csv
-from utils import openLink, getBulbapediaDataPath, getSerebiiDataPath, parseName, genSymbolToNumber
+from utils import openLink, getDataPath, parseName, genSymbolToNumber
 import re
 
 # TODO colored orbs for Kyogre and Groudon
@@ -648,49 +648,48 @@ def megaStones(fname):
 # We go through the different types of items individually and collect the relevant data in separate .csv's
 # At the same time, we compile the basic item info in a main .csv file, whose columns are Item Name, Item Type, Gen, 
 def main():
-  bulbapediaDataPath = getBulbapediaDataPath() + 'items\\'
-  serebiiDataPath = getSerebiiDataPath() + 'items\\'
+  dataPath = getDataPath() + 'items\\'
 
   # main list
   # Serebii has a more comprehensive list of held items than I could find on Bulbapedia
-  main_fname = serebiiDataPath + 'heldItemList.csv'
+  main_fname = dataPath + 'heldItemListSerebii.csv'
   mainList(main_fname)
 
   # Serebii doesn't list the Gen that the item was introduced--the only place I could find was Bulbapedia, which lists ALL items, not just held items
-  itemGen_fname = bulbapediaDataPath + 'heldItemGen.csv'
+  itemGen_fname = dataPath + 'heldItemGen.csv'
   itemGenList(itemGen_fname)
 
   # berries
   # main list of berries
-  berry_fname = bulbapediaDataPath + 'berries.csv'
+  berry_fname = dataPath + 'berries.csv'
   berryList(berry_fname)
 
   # elemental type of berry for Natural Gift
-  berry_type_fname = bulbapediaDataPath + 'berriesByType.csv'
+  berry_type_fname = dataPath + 'berriesByType.csv'
   berryType(berry_type_fname)
 
   # memories, plates, and drives
-  type_items_fname = bulbapediaDataPath + 'typeItems.csv'
+  type_items_fname = dataPath + 'typeItems.csv'
   typeItems(type_items_fname)
 
   # incenses
-  incense_fname = bulbapediaDataPath + 'incenseList.csv'
+  incense_fname = dataPath + 'incenseList.csv'
   incenseList(incense_fname)
 
   # stat-enhancing items
-  statEnhancers_fname = bulbapediaDataPath + 'statEnhancers.csv'
+  statEnhancers_fname = dataPath + 'statEnhancers.csv'
   statEnhancers(statEnhancers_fname)
 
   # Z-crystals
-  zCrystals_fname = bulbapediaDataPath + 'zCrystals.csv'
+  zCrystals_fname = dataPath + 'zCrystals.csv'
   zCrystals(zCrystals_fname)
 
   # Mega stones
-  megaStones_fname = bulbapediaDataPath + 'megaStones.csv'
+  megaStones_fname = dataPath + 'megaStones.csv'
   megaStones(megaStones_fname)
 
   # type enhancers
-  typeEnhancers_fname = bulbapediaDataPath + 'typeEnhancers.csv'
+  typeEnhancers_fname = dataPath + 'typeEnhancers.csv'
   typeEnhancers(typeEnhancers_fname)
 
   return

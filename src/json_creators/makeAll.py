@@ -1,7 +1,7 @@
 import abilities
 import effects
 import elementalTypes
-import items
+import heldItems
 import moves
 import pokemon
 import statuses
@@ -188,7 +188,7 @@ if __name__ == '__main__':
   effectDict = effects.main()
   checkEffects(effectDict)
 
-  itemDict = items.main()
+  itemDict = heldItems.main()
   checkItems(itemDict)
 
   moveDict = moves.main()

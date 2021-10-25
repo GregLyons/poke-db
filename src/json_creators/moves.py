@@ -1,9 +1,9 @@
 import csv
 from functools import cmp_to_key
-from utils import getBulbapediaDataPath, genSymbolToNumber, getSerebiiDataPath, effectList, statList, statusList, typeList, usageMethodList, numberOfGens
+from utils import getDataPath, genSymbolToNumber, getBulbapediaDataPath, effectList, statList, statusList, typeList, usageMethodList, numberOfGens
 
 # TODO defog only removes terrain in gen8
-# TODO 
+# TODO
 
 # Create move .json file with the following data:
 # name, description, power, PP, accuracy, category, priority, contact, target, type, gen introduced, where it affects item
@@ -694,39 +694,35 @@ def removedFromGen8(fname, moveDict):
 
 def main():
   # holds moveID, Name, Type, Category, Contest, PP, Power, Accuracy, Gen
-  bulbapediaDataPath = getBulbapediaDataPath() + '/moves/'
-  serebiiDataPath = getSerebiiDataPath() + '\\moves\\'
+  dataPath = getDataPath() + '/moves/'
 
-  moveList_fname = bulbapediaDataPath + 'moveList.csv'
+  moveList_fname = dataPath + 'moveList.csv'
   moveDict = makeInitialMoveDict(moveList_fname)
 
   # for reverse lookup of Move ID by Move Name
   inverseDict = makeInverseDict(moveList_fname)
 
-  priority_fname = bulbapediaDataPath + 'movesByPriority.csv'
+  priority_fname = dataPath + 'movesByPriority.csv'
   addPriorityToMoveDict(priority_fname, moveDict, inverseDict)
 
-  contact_fname = bulbapediaDataPath + f'movesByContact.csv'
+  contact_fname = dataPath + f'movesByContact.csv'
   addContactToMoveDict(contact_fname, moveDict, inverseDict)
 
-  effect_fname = bulbapediaDataPath + f'movesByEffect.csv'
+  effect_fname = dataPath + f'movesByEffect.csv'
   addEffectToMoveDict(effect_fname, moveDict, inverseDict)
 
-  status_fname = bulbapediaDataPath + f'movesByStatus.csv'
+  status_fname = dataPath + f'movesByStatus.csv'
   addStatusToMoveDict(status_fname, moveDict, inverseDict)
 
-  target_fname = bulbapediaDataPath + f'movesByTarget.csv'
+  target_fname = dataPath + f'movesByTarget.csv'
   addTargetToMoveDict(target_fname, moveDict, inverseDict)
 
-  descriptions_fname = serebiiDataPath + 'moveDescriptions.csv'
-  addDescriptionToMoveDict(descriptions_fname, moveDict, inverseDict)
-
-  statMod_fname = bulbapediaDataPath + 'movesModifyStat.csv'
+  statMod_fname = dataPath + 'movesModifyStat.csv'
   addStatModToMoveDict(statMod_fname, moveDict, inverseDict)
 
   updateMoveCategory(moveDict, inverseDict)
 
-  removedFromGen8_fname = bulbapediaDataPath + 'movesRemovedFromGen8.csv'
+  removedFromGen8_fname = dataPath + 'movesRemovedFromGen8.csv'
   removedFromGen8(removedFromGen8_fname, moveDict)
 
   return moveDict

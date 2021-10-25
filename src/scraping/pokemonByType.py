@@ -1,6 +1,6 @@
 import csv
 import re
-from utils import openLink, getBulbapediaDataPath, parseName, genSymbolToNumber
+from utils import openLink, getDataPath, parseName, genSymbolToNumber
 
 # Columns are Gen, Dex Number, Species Name, Pokemon Name, Type 1, and Type 2
 # Type 2 possibly equals Type 1
@@ -322,7 +322,7 @@ def pokemonTypeChanges(fname):
   return
 
 def main():
-  dataPath = getBulbapediaDataPath() + '\\pokemon\\'
+  dataPath = getDataPath() + '\\pokemon\\'
   main_fname = dataPath + 'pokemonByType.csv'
   makePokemonTypeCSV(main_fname)
 

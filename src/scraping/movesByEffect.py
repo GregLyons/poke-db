@@ -1,6 +1,5 @@
-import os
 import csv
-from utils import openLink, removeShadowMoves, getBulbapediaDataPath, parseName, isShadowMove
+from utils import openLink, getDataPath, parseName, isShadowMove
 import re
 
 # columns are Effect Name, Move Name
@@ -100,8 +99,6 @@ def main():
     'https://bulbapedia.bulbagarden.net/wiki/Category:Dance_moves'],
     ['explosive',
     'https://bulbapedia.bulbagarden.net/wiki/Category:Explosive_moves'],
-    ['mouth',
-    'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_require_use_of_mouth'],
     ['powder',
     'https://bulbapedia.bulbagarden.net/wiki/Category:Powder_and_spore_moves'],
     ['punch',
@@ -184,7 +181,7 @@ def main():
     'https://bulbapedia.bulbagarden.net/wiki/Category:Effects_that_can_modify_move_types']
   ]
 
-  dataPath = getBulbapediaDataPath() + 'moves\\'
+  dataPath = getDataPath() + 'moves\\'
 
   fname = dataPath + 'movesByEffect.csv'
   csvFile = open(fname, 'w', newline='', encoding='utf-8')

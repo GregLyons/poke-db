@@ -1,6 +1,14 @@
 import csv
 import re
-from utils import getBulbapediaDataPath, getSerebiiDataPath, effectList, statusList, statList, typeList, parseName
+import effects
+import statuses
+import elementalTypes as types
+from utils import getDataPath, effectList, statusList, statList, typeList, parseName
+
+# dictionaries containing effect names/gens and status names/gens
+effectDict = effects.main()
+statusDict = statuses.main()
+typeDict = types.main()
 
 # initial item dictionary with item name, item type, gen introduced, gen 2 exclusivity, and sprite URL
 # TODO: sprites and descriptions for mega stones
@@ -10,15 +18,13 @@ def makeInitialItemDict(bulbapedia_fname, serebii_fname):
 
     itemDict = {}
     for row in reader:
-      itemName, itemType, description, spriteURL = row["Item Name"], row["Item Type"], row["Description"], row["Sprite URL"]
+      itemName, itemType = row["Item Name"], row["Item Type"]
 
       # the gen 2 berries will be handled in the berry section--the other gen 2 exclusive items have 'gen2_' as a prefix
       gen2Exclusive = 'gen2_' in row["Item Type"] or itemName == 'berserk_gene'
 
       itemDict[itemName] = {
         "item_type": '',
-        "description": description,
-        "sprite_url": spriteURL,
         # list of Pokemon who can use the item, if restricted
         "pokemon_specific": [],
         "gen": '',
@@ -49,8 +55,6 @@ def makeInitialItemDict(bulbapedia_fname, serebii_fname):
   # for some reason, Serebii doesn't have berry juice or adrenaline orb
   itemDict["berry_juice"] = {
         "item_type": 'other',
-        "description": 'If the user\'s HP falls below 50%, it will consume its held Berry Juice and restore 20 HP.',
-        "sprite_url": 'https://cdn2.bulbagarden.net/upload/b/b1/Bag_Berry_Juice_Sprite.png',
         "pokemon_specific": [],
         "gen": 5,
         "gen2_exclusive": False,
@@ -65,8 +69,6 @@ def makeInitialItemDict(bulbapedia_fname, serebii_fname):
   # we handle adrenaline orb stat modifications below
   itemDict["adrenaline_orb"] = {
         "item_type": 'other',
-        "description": 'If the holder is affected by Intimidate, boosts the holder\'s Speed by one stage.',
-        "sprite_url": 'https://cdn2.bulbagarden.net/upload/a/a1/Bag_Adrenaline_Orb_Sprite.png',
         "pokemon_specific": [],
         "gen": 7,
         "gen2_exclusive": False,
@@ -125,7 +127,6 @@ def addBerryData(fpath, itemDict):
     for stat in statList():
       itemDict["starf_berry"]["stat_modifications"][stat] = [['+2', 'user', 3]]
 
-
   # gen 2 berries
   with open(fpath + 'berriesGen2.csv', 'r', encoding='utf-8') as gen2BerriesCSV:
     reader = csv.DictReader(gen2BerriesCSV)
@@ -180,7 +181,7 @@ def addBerryData(fpath, itemDict):
 
   # berries which cause confusion if Pokemon doesn't like taste
   for berryName in ['figy_berry', 'wiki_berry', 'mago_berry', 'aguav_berry', 'iapapa_berry']:
-    itemDict[berryName]["causes_status"]['confusion'] = [[True, 3]]
+    itemDict[berryName]["causes_status"]['confusion'] = [[100.0, 3]]
 
   return
 
@@ -219,7 +220,7 @@ def addOtherItemData(fpath, itemDict):
     reader = csv.DictReader(typeItemCSV)
     for row in reader:
       itemType, itemName, type = row["Item Type"], row["Item Name"], row["Elemental Type"]
-      gen = itemDict[itemName]["gen"]
+      itemGen = itemDict[itemName]["gen"]
 
       if type not in typeList():
         print(itemName, type)
@@ -228,16 +229,16 @@ def addOtherItemData(fpath, itemDict):
       # move and pokemon type changes
       if itemType in ['drive', 'plate', 'memory']:
         itemDict[itemName]["knock_off"] = False
-        itemDict[itemName]["effects"]["changes_move_type"] = [[True, gen]]
+        itemDict[itemName]["effects"]["changes_move_type"] = [[True, itemGen]]
       if itemType in ['plate', 'memory']:
-        itemDict[itemName]["effects"]["changes_pokemon_type"] = [[True, gen]]
+        itemDict[itemName]["effects"]["changes_pokemon_type"] = [[True, itemGen]]
       
       # type boosters
       if itemType == 'plate':
-        itemDict[itemName]["boosts_type"][type] = [[1.2, gen]]
+        itemDict[itemName]["boosts_type"][type] = [[1.2, itemGen]]
       elif itemType == 'gem':
         if type != 'fairy':
-          itemDict[itemName]["boosts_type"][type] = [[1.5, gen], [1.3, 6]]
+          itemDict[itemName]["boosts_type"][type] = [[1.5, itemGen], [1.3, 6]]
         else:
           itemDict[itemName]["boosts_type"][type] = [[1.3, 6]]
 
@@ -259,7 +260,7 @@ def addOtherItemData(fpath, itemDict):
   with open(fpath + 'typeEnhancersSpecific.csv', 'r', encoding='utf-8') as typeEnhancerSpecificCSV:
     reader = csv.DictReader(typeEnhancerSpecificCSV)
     for row in reader:
-      gen, itemName, pokemonName = row["Gen"], row["Item Name"], row["Pokemon Name"]
+      itemGen, itemName, pokemonName = row["Gen"], row["Item Name"], row["Pokemon Name"]
       itemDict[itemName]["pokemon_specific"] = [pokemonName]
       # soul dew
       if pokemonName in ['latias', 'latios']:
@@ -289,7 +290,7 @@ def addOtherItemData(fpath, itemDict):
   with open(fpath + 'statEnhancers.csv', 'r', encoding='utf-8') as statEnhancerCSV:
     reader = csv.DictReader(statEnhancerCSV)
     for row in reader:
-      gen, itemName, pokemonName, stat1, stat2, modifier = row["Gen"], row["Item Name"], row["Pokemon Name"], row["Stat 1"], row["Stat 2"], row["Modifier"]
+      itemGen, itemName, pokemonName, stat1, stat2, modifier = row["Gen"], row["Item Name"], row["Pokemon Name"], row["Stat 1"], row["Stat 2"], row["Modifier"]
 
       if stat2 == '':
         stat2 = stat1
@@ -306,8 +307,8 @@ def addOtherItemData(fpath, itemDict):
         continue
 
       itemDict[itemName]["pokemon_specific"].append(pokemonName)
-      itemDict[itemName]["stat_modifications"][stat1] = [[modifier, 'user', gen]]
-      itemDict[itemName]["stat_modifications"][stat2] = [[modifier, 'user', gen]]
+      itemDict[itemName]["stat_modifications"][stat1] = [[modifier, 'user', itemGen]]
+      itemDict[itemName]["stat_modifications"][stat2] = [[modifier, 'user', itemGen]]
 
       handledItems.add(itemName)
 
@@ -327,11 +328,11 @@ def addOtherItemData(fpath, itemDict):
     ]:
       stat, items = exceptions
       for itemName in items:
-        gen = itemDict[itemName]["gen"]
+        itemGen = itemDict[itemName]["gen"]
         if itemName == 'room_service':
-           itemDict[itemName]["stat_modifications"][stat] = [['-1', 'user', gen]]
+           itemDict[itemName]["stat_modifications"][stat] = [['-1', 'user', itemGen]]
         else:
-          itemDict[itemName]["stat_modifications"][stat] = [['+1', 'user', gen]]
+          itemDict[itemName]["stat_modifications"][stat] = [['+1', 'user', itemGen]]
 
         handledItems.add(itemName)
 
@@ -343,8 +344,8 @@ def addOtherItemData(fpath, itemDict):
     ]:
       stat, items = exceptions
       for itemName in items:
-        gen = itemDict[itemName]["gen"]
-        itemDict[itemName]["stat_modifications"][stat] = [['+2', 'user', gen]]
+        itemGen = itemDict[itemName]["gen"]
+        itemDict[itemName]["stat_modifications"][stat] = [['+2', 'user', itemGen]]
 
         handledItems.add(itemName)
 
@@ -366,7 +367,7 @@ def addOtherItemData(fpath, itemDict):
     reader = csv.DictReader(incenseCSV)
     for row in reader:
       itemName, description = row["Item Name"], row["Description"]
-      gen = itemDict[itemName]["gen"]
+      itemGen = itemDict[itemName]["gen"]
 
       # cannot capture effect/effect irrelevant for battling
       if itemName in ['full_incense', 'luck_incense', 'pure_incense']:
@@ -407,7 +408,7 @@ def addOtherItemData(fpath, itemDict):
       handledItems.add(itemName)
 
   # miscellaneous exceptions for item effects
-  for exception in [
+  for effect_item in [
     ['punishes_contact', ['sticky_barb', 'rocky_helmet']],
     ['costs_hp', ['black_sludge', 'life_orb']],
     ['restores_hp', ['berry_juice', 'leftovers', 'black_sludge', 'shell_bell']],
@@ -426,18 +427,18 @@ def addOtherItemData(fpath, itemDict):
     ['changes_form', ['rusted_sword', 'rusted_shield']],
     ['resets_stats', ['white_herb']]
   ]:
-    effect, items = exception
+    effect, items = effect_item
     for itemName in items:
       if effect not in effectList():
         print(itemName, effect)
 
-      gen = itemDict[itemName]["gen"]
-      itemDict[itemName]["effects"][effect] = [[True, gen]]
+      effectGen, itemGen = effectDict[effect], itemDict[itemName]["gen"]
+      itemDict[itemName]["effects"][effect] = [[True, min(effectGen, itemGen)]]
 
       handledItems.add(itemName)
 
   # status-causing items
-  for exception in [
+  for effect_item in [
     ['burn', ['flame_orb']],
     ['bad_poison', ['toxic_orb']],
     ['confusion', ['berserk_gene']],
@@ -448,9 +449,9 @@ def addOtherItemData(fpath, itemDict):
     ['charging_turn', ['power_herb']],
     ['trapped', ['shed_shell']],
   ]:
-    status, items = exception
+    status, items = effect_item
     for itemName in items:
-      gen = itemDict[itemName]["gen"]
+      itemGen = itemDict[itemName]["gen"]
       if itemName == 'focus_band':
         itemDict[itemName]["causes_status"][status] = [[12.0, 2], [10.0, 3]]
       elif itemName == 'kings_rock':
@@ -458,12 +459,12 @@ def addOtherItemData(fpath, itemDict):
       elif itemName == 'razor_fang':
         itemDict[itemName]["causes_status"][status] = [[10, 4]]
       else:
-        itemDict[itemName]["causes_status"][status] = [[100.0, gen]]
+        itemDict[itemName]["causes_status"][status] = [[100.0, itemGen]]
 
       handledItems.add(itemName)
 
   # status-resisting items
-  for exception in [
+  for effect_item in [
     ['infatuation', ['mental_herb']],
     ['taunt', ['mental_herb']],
     ['encore', ['mental_herb']],
@@ -471,45 +472,45 @@ def addOtherItemData(fpath, itemDict):
     ['heal_block', ['mental_herb']],
     ['disable', ['mental_herb']],
   ]:
-    status, items = exception
+    status, items = effect_item
     for itemName in items:
-      gen = itemDict[itemName]["gen"]
+      statusGen, itemGen = statusDict[status], itemDict[itemName]["gen"]
       if itemName == 'mental_herb' and status != 'infatuation':
         itemDict[itemName]["resists_status"][status] = [[True, 5]]
       else:
-        itemDict[itemName]["resists_status"][status] = [[True, gen]]
+        itemDict[itemName]["resists_status"][status] = [[True, min(statusGen, itemGen)]]
 
       handledItems.add(itemName)
   
   # type-resisting items
-  for exception in [
+  for effect_item in [
     ['ground', ['air_balloon']],
   ]:
-    type, items = exception
+    type, items = effect_item
     for itemName in items:
-      gen = itemDict[itemName]["gen"]
-      itemDict[itemName]["resists_type"][type] = [[0, gen]]
+      typeGen, itemGen = typeDict[type]["gen"], itemDict[itemName]["gen"]
+      itemDict[itemName]["resists_type"][type] = [[0, min(typeGen, itemGen)]]
 
       handledItems.add(itemName)
 
   # items for primal reversion
-  for exception in [
+  for effect_item in [
     ['kyogre', 'blue_orb'],
     ['groudon', 'red_orb'],
   ]:
-    pokemonName, itemName = exception
+    pokemonName, itemName = effect_item
     itemDict[itemName]["pokemon_specific"].append(pokemonName)
 
     handledItems.add(itemName)
 
   # usage-method-resting items
-  for exception in [
+  for effect_item in [
     ['powder', ['safety_goggles']],
   ]:
-    usageMethod, items = exception
+    usageMethod, items = effect_item
     for itemName in items:
-      gen = itemDict[itemName]["gen"]
-      itemDict[itemName]["resists_usage_method"][usageMethod] = [[True, gen]]
+      itemGen = itemDict[itemName]["gen"]
+      itemDict[itemName]["resists_usage_method"][usageMethod] = [[True, itemGen]]
 
       handledItems.add(itemName)
 
@@ -521,8 +522,7 @@ def addOtherItemData(fpath, itemDict):
     handledItems.add(itemName)
 
   # remove certain items from itemDict
-  removeItems = ['golden_nanab_berry', 'golden_pinap_berry', 'golden_razz_berry', 'silver_nanab_berry', 'silver_razz_berry', 'silver_pinap_berry']
-  for itemName in removeItems:
+  for itemName in ['golden_nanab_berry', 'golden_pinap_berry', 'golden_razz_berry', 'silver_nanab_berry', 'silver_razz_berry', 'silver_pinap_berry']:
     del itemDict[itemName]
     handledItems.add(itemName)
 
@@ -533,16 +533,15 @@ def addOtherItemData(fpath, itemDict):
   return
 
 def main():
-  bulbapediaDataPath = getBulbapediaDataPath() + '\\items\\'
-  serebiiDataPath = getSerebiiDataPath() + '\\items\\'
+  dataPath = getDataPath() + 'items/'
 
-  bulbapedia_fname = bulbapediaDataPath + 'heldItemList.csv'
-  serebii_fname = serebiiDataPath + 'heldItemList.csv'
+  bulbapedia_fname = dataPath + 'heldItemList.csv'
+  serebii_fname = dataPath + 'heldItemListSerebii.csv'
   itemDict = makeInitialItemDict(bulbapedia_fname, serebii_fname)
 
-  addBerryData(bulbapediaDataPath, itemDict)
+  addBerryData(dataPath, itemDict)
   
-  addOtherItemData(bulbapediaDataPath, itemDict)
+  addOtherItemData(dataPath, itemDict)
 
   return itemDict
 

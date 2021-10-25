@@ -1,5 +1,5 @@
 import csv
-from utils import openLink, getBulbapediaDataPath, parseName
+from utils import openLink, getDataPath, parseName
 
 # columns are Move ID, Move Name, Type, Category (physical/special/status), Contest Type, PP, Power, Accuracy, and Gen 
 def makeMoveListCSVandExtractNotes(fname):
@@ -98,7 +98,7 @@ def addZMoves(fname):
   return
 
 def main():
-  dataPath = getBulbapediaDataPath() + 'moves\\'
+  dataPath = getDataPath() + 'moves\\'
   fname = dataPath + 'moveList.csv'
   makeMoveListCSVandExtractNotes(fname)
 
