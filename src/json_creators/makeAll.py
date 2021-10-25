@@ -1,11 +1,12 @@
 import abilities
 import effects
-import elementalTypes
+import elementalTypes as types
 import heldItems
 import moves
 import pokemon
 import statuses
-from utils import statusList, typeList, effectList, usageMethodList, statList
+import usageMethods
+from utils import statusList, typeList, effectList, usageMethodList, statList, checkConsistency
 
 # check that statusDict matches statusList
 def checkStatuses(statusDict):
@@ -22,6 +23,8 @@ def checkStatuses(statusDict):
       print(key, 'not in statusList')
 
   print('Finished statusDict.')
+  print()
+
   return
 
 # check that effectDict matches effectList
@@ -39,116 +42,99 @@ def checkEffects(effectDict):
       print(key, 'not in effectList')
 
   print('Finished effectDict.')
+  print()
+
   return
 
 # check that typeDict is consistent with typeList, statusList
 def checkTypes(typeDict):
-  print('Checking typeDict...')
-
-  for type in typeDict.keys():
-    if type not in typeList():
-      print('Inconsistent main key', type)
-    for defendingType in typeDict[type]["damage_to"]:
-      if defendingType not in typeList():
-        print('Inconsistent defending type', defendingType, 'for main key', type)
-    for attackingType in typeDict[type]["damage_from"]:
-      if defendingType not in typeList():
-        print('Inconsistent attacking type', attackingType, 'for main key', type)
-
+  print('Checking for inconsistencies in typeDict...')
+  for typeName in typeDict.keys():
+    for inconsistency in [
+      checkConsistency(typeDict[typeName]["damage_to"], 'type', typeDict, 0.0, True),
+      checkConsistency(typeDict[typeName]["damage_from"], 'type', typeDict, 0.0, True),
+    ]:
+      if inconsistency:
+        print(f'Inconsistency found for {typeName}: {inconsistency}')
   print('Finished.')
+  print()
+
   return
 
 # check that moveDict is consistent with effectList, statusList, typeList, usageMethodList, statList
 def checkMoves(moveDict):
-  print('Checking moveDict...')
+  # check name consistency in moveDict
+  print('Checking for inconsistencies in moveDict...')
+  for abilityName in moveDict.keys():
+    for inconsistency in [
+      checkConsistency(moveDict[abilityName]["effects"], 'effect', effectDict, False),
+      checkConsistency(moveDict[abilityName]["causes_status"], 'status', statusDict, 0.0),
+      checkConsistency(moveDict[abilityName]["resists_status"], 'status', statusDict, False),
+      checkConsistency(moveDict[abilityName]["usage_method"], 'usage_method', usageMethodDict, True),
+    ]:
+      if inconsistency:
+        print(f'Inconsistency found for {abilityName}: {inconsistency}')
 
-  for key in moveDict.keys():
-    moveName = moveDict[key]["name"]
-    for effect in moveDict[key]["effects"]:
-      if effect not in effectList():
-        print('Inconsistent effect name:', moveName, effect)
-    for status in moveDict[key]["causes_status"]:
-      if status not in statusList():
-        print('Inconsistent cause-status name:', moveName, status)
-    for status in moveDict[key]["resists_status"]:
-      if status not in statusList():
-        print('Inconsistent resist-status name:', moveName, status)
-    for type in [typePatch[0] for typePatch in moveDict[key]["type"]]:
-      if type not in typeList():
-        print('Inconsistent type name:', moveName, type)
-    for usageMethod in moveDict[key]["usage_method"]:
-      if usageMethod not in usageMethodList():
-        print('Inconsistent usage method name:', moveName, usageMethod)
-    for stat in moveDict[key]["stat_modifications"]:
+    for stat in moveDict[abilityName]["stat_modifications"]:
       if stat not in statList():
-        print('Inconsistent stat name', moveName, stat)
-  
-  print('Finished moveDict.')
+        print('Inconsistent stat name', abilityName, stat)
+  print('Finished.')
+  print()
+
   return
 
 # check that abilityDict is consistent with effectList, statusList, typeList, usageMethodList, statList
 def checkAbilities(abilityDict):
-  print('Checking abilityDict...')
 
-  for key in abilityDict.keys():
-    abilityName = abilityDict[key]["name"]
-    for effect in abilityDict[key]["effects"]:
-      if effect not in effectList():
-        print('Inconsistent effect name:', abilityName, effect)
-    for status in abilityDict[key]["causes_status"]:
-      if status not in statusList():
-        print('Inconsistent cause-status name:', abilityName, status)
-    for status in abilityDict[key]["resists_status"]:
-      if status not in statusList():
-        print('Inconsistent resist-status name:', abilityName, status)
-    for type in abilityDict[key]["boosts_type"]:
-      if type not in typeList():
-        print('Inconsistent boost-type name:', abilityName, type)
-    for type in abilityDict[key]["resists_type"]:
-      if type not in typeList():
-        print('Inconsistent resist-type name:', abilityName, type)
-    for usageMethod in abilityDict[key]["boosts_usage_method"]:
-      if usageMethod not in usageMethodList():
-        print('Inconsistent boost-usage method name:', abilityName, usageMethod)
-    for usageMethod in abilityDict[key]["resists_usage_method"]:
-      if usageMethod not in usageMethodList():
-        print('Inconsistent resist-usage method name:', abilityName, usageMethod)
-    for stat in abilityDict[key]["stat_modifications"]:
+  # check name consistency in abilityDict
+  print('Checking for inconsistencies in abilityDict...')
+  for abilityName in abilityDict.keys():
+    for inconsistency in [
+      checkConsistency(abilityDict[abilityName]["effects"], 'effect', effectDict, False),
+      checkConsistency(abilityDict[abilityName]["causes_status"], 'status', statusDict, 0.0),
+      checkConsistency(abilityDict[abilityName]["resists_status"], 'status', statusDict, False),
+      checkConsistency(abilityDict[abilityName]["boosts_type"], 'type', typeDict, 0.0, True),
+      checkConsistency(abilityDict[abilityName]["resists_type"], 'type', typeDict, 0.0, True),
+      checkConsistency(abilityDict[abilityName]["boosts_usage_method"], 'usage_method', usageMethodDict, 0.0),
+      checkConsistency(abilityDict[abilityName]["resists_usage_method"], 'usage_method', usageMethodDict, 0.0),
+    ]:
+      if inconsistency:
+        print(f'Inconsistency found for {abilityName}: {inconsistency}')
+
+    for stat in abilityDict[abilityName]["stat_modifications"]:
       if stat not in statList():
         print('Inconsistent stat name', abilityName, stat)
-  
-  print('Finished abilityDict.')
+  print('Finished.')
+  print()
+
   return
 
 # check that itemDict is consistent with effectList, statusList, typeList, usageMethodList, statList
 def checkItems(itemDict):
-  print('Checking itemDict...')
-
+  print('Checking for inconsistencies in itemDict...')
   for itemName in itemDict.keys():
-    for effect in itemDict[itemName]["effects"]:
-      if effect not in effectList():
-        print('Inconsistent effect name:', itemName, effect)
-    for status in itemDict[itemName]["causes_status"]:
-      if status not in statusList():
-        print('Inconsistent cause-status name:', itemName, status)
-    for status in itemDict[itemName]["resists_status"]:
-      if status not in statusList():
-        print('Inconsistent resist-status name:', itemName, status)
-    for type in itemDict[itemName]["boosts_type"]:
-      if type not in typeList():
-        print('Inconsistent boost-type name:', itemName, type)
-    for type in itemDict[itemName]["resists_type"]:
-      if type not in typeList():
-        print('Inconsistent resist-type name:', itemName, type)
+    for inconsistency in [
+      checkConsistency(itemDict[itemName]["effects"], 'effect', effectDict, False),
+      checkConsistency(itemDict[itemName]["causes_status"], 'status', statusDict, 0.0),
+      checkConsistency(itemDict[itemName]["resists_status"], 'status', statusDict, False),
+      checkConsistency(itemDict[itemName]["boosts_type"], 'type', typeDict, 0.0, True),
+      checkConsistency(itemDict[itemName]["resists_type"], 'type', typeDict, 0.0, True),
+      checkConsistency(itemDict[itemName]["resists_usage_method"], 'usage_method', usageMethodDict, 0.0),
+    ]:
+      if inconsistency:
+        print(f'Inconsistency found for {itemName}: {inconsistency}')
+
     for stat in itemDict[itemName]["stat_modifications"]:
       if stat not in statList():
         print('Inconsistent stat name', itemName, stat)
+  print('Finished.')
+  print()
 
-  print('Finished itemDict.')
   return
 
 # check that pokemonDict is consistent with typeList
 def checkPokemon(pokemonDict):
+  print('Checking for inconsistencies in pokemmonDict...')
   for pokemonName in pokemonDict.keys():
     type1, type2 = pokemonDict[pokemonName]["type_1"][0][0], pokemonDict[pokemonName]["type_2"][0][0] if pokemonDict[pokemonName]["type_2"][0][0] else 'normal'
 
@@ -156,6 +142,9 @@ def checkPokemon(pokemonDict):
       print('Inconsistent type name', pokemonName, type1)
     if type2 not in typeList():
       print('Inconsistent type name', pokemonName, type2)
+
+  print('Finished.')
+  print()
 
   return
 
@@ -165,8 +154,7 @@ def checkAbilitiesAgainstPokemon(abilityDict, pokemonDict):
 
   # set of ability names from abilityDict
   abilityNames = set()
-  for abilityKey in abilityDict.keys():
-    abilityName = abilityDict[abilityKey]["name"]
+  for abilityName in abilityDict.keys():
     abilityNames.add(abilityName)
 
   for pokemonName in pokemonDict.keys():
@@ -177,16 +165,28 @@ def checkAbilitiesAgainstPokemon(abilityDict, pokemonDict):
           print(pokemonName, 'has an inconsitent ability in slot', abilitySlot, 'with name', abilityName)
   
   print('Finished.')
+  print()
+
   return
 
 # This file is for making all the .csv files at once rather than running each individual script
 if __name__ == '__main__':
   # initialize the various dictionaries and check that they're consistent with the type, status, usage method, effect, and stat lists
-  abilityDict = abilities.main()
-  checkAbilities(abilityDict)
-
+  global effectDict
   effectDict = effects.main()
   checkEffects(effectDict)
+  global statusDict
+  statusDict = statuses.main()
+  checkStatuses(statusDict)
+  global typeDict
+  typeDict = types.main()
+  checkTypes(typeDict)
+  global usageMethodDict
+  usageMethodDict = usageMethods.main()
+
+
+  abilityDict = abilities.main()
+  checkAbilities(abilityDict)
 
   itemDict = heldItems.main()
   checkItems(itemDict)
@@ -197,8 +197,6 @@ if __name__ == '__main__':
   pokemonDict = pokemon.main()
   checkPokemon(pokemonDict)
 
-  statusDict = statuses.main()
-  checkStatuses(statusDict)
 
   # check that the more complicated dictionaries are consistent with each other
   checkAbilitiesAgainstPokemon(abilityDict, pokemonDict)

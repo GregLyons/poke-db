@@ -115,13 +115,13 @@ def effectList():
     # weight-related
     'depends_on_weight', 'affects_weight',
     # stat-related
-    'resets_stats', 'prevents_stat_drop',
+    'resets_stats', 'prevents_stat_drop', 'uses_different_stat',
     # priority-related
     'move_last_in_priority', 'move_first_in_priority', 'adds_priority', 'protects_against_priority',
     # contact-related
     'ignores_contact', 'punishes_contact',
     # miscellaneous
-    'calls_other_move', 'depends_on_environment', 'multi_hit', 'ohko','changes_form', 'manipulates_items', 'activates_gulp_missile',  'extends_duration', 'other_move_enhancement', 'other_move_resistance',  'anti_mini', 'type_varies', 'other_move_order_change', 'no_effect'
+    'calls_other_move', 'depends_on_environment', 'multi_hit', 'ohko','changes_form', 'manipulates_items', 'activates_gulp_missile',  'extends_duration', 'other_move_enhancement', 'other_move_resistance',  'anti_mini', 'type_varies', 'other_move_order_change', 'no_effect',
   ]
   return effects
 
@@ -151,6 +151,30 @@ def typeList():
   ]
   return types
 
+def checkConsistency(entityDict, categoryName, categoryDict, defaultValue, genIsKey = False):
+  try:
+    inconsistencies = ''
+    for categoryKey, patches in entityDict.items():
+      if categoryKey not in categoryDict.keys():
+        inconsistencies += f'Inconsistent name: {categoryKey}\n'
+        
+      if genIsKey:
+        categoryGen = categoryDict[categoryKey]["gen"]
+      else:
+        categoryGen = categoryDict[categoryKey]
+        
+      for patch in patches:
+        value, patchGen = patch
+        if type(value) != type(defaultValue):
+          inconsistencies += f'Value is not the same type as {defaultValue}: {categoryKey}, {value}\n'
+        if patchGen < categoryGen:
+          inconsistencies += f'Patch gen is smaller than category gen: {categoryKey}\n'
+  except KeyError as e: 
+    print(e)
+    print(f'Bad key name; make sure key is a {categoryName}.')
+    return 'Bad key name.\n'
+
+  return inconsistencies
 
 # parse names in different forms from Bulbapedia and Smogon API to a common, snake_case form
 def parseName(text, mode='normal'):

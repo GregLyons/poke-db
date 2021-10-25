@@ -2,18 +2,16 @@ import csv
 import re
 import effects
 import statuses
+import usageMethods
 import elementalTypes as types
-from utils import getDataPath, effectList, statusList, statList, typeList, parseName
+from utils import getDataPath, statList, parseName, checkConsistency
 
-# dictionaries containing effect names/gens and status names/gens
-effectDict = effects.main()
-statusDict = statuses.main()
-typeDict = types.main()
 
 # initial item dictionary with item name, item type, gen introduced, gen 2 exclusivity, and sprite URL
 # TODO: sprites and descriptions for mega stones
-def makeInitialItemDict(bulbapedia_fname, serebii_fname):
-  with open(serebii_fname, 'r', encoding='utf-8') as serebiiCSV:
+def makeInitialItemDict(fnamePrefix):
+  # item data from Serebii; has some items which Bulbapedia doesn't have
+  with open(fnamePrefix + 'Serebii.csv', 'r', encoding='utf-8') as serebiiCSV:
     reader = csv.DictReader(serebiiCSV)
 
     itemDict = {}
@@ -29,6 +27,7 @@ def makeInitialItemDict(bulbapedia_fname, serebii_fname):
         "pokemon_specific": [],
         "gen": '',
         "gen2_exclusive": gen2Exclusive,
+        # indicates whether knock off does extra damage to a Pokemon holding the item; note that Mega Stones can be knocked off of incompatible Pokemon for a damage boost, but we will assume that the Pokemon-specific items are being held by compatible Pokemon
         "knock_off": True,
         "effects": {},
         "causes_status": {},
@@ -40,17 +39,40 @@ def makeInitialItemDict(bulbapedia_fname, serebii_fname):
         "stat_modifications": {},
       }
 
-  # add gen and item type data
-  with open(bulbapedia_fname, 'r', encoding='utf-8') as bulbapediaCSV:
-    reader = csv.DictReader(bulbapediaCSV)
+  # item data from Bulbapedia; should have complete list of items now
+  with open(fnamePrefix + '.csv', 'r', encoding='utf-8') as itemTypeCSV:
+    reader = csv.DictReader(itemTypeCSV)
 
     for row in reader:
-      itemName, itemType, gen = row["Item Name"], row["Item Type"], row["Gen"]
+      itemName, itemType = row["Item Name"], row["Item Type"]
 
+      if itemName not in itemDict:
+        itemDict[itemName] = {
+          "item_type": '',
+          "pokemon_specific": [],
+          "gen": '',
+          "gen2_exclusive": False,
+          "knock_off": True,
+          "effects": {},
+          "causes_status": {},
+          "resists_status": {},
+          "boosts_type": {},
+          "resists_type": {},
+          "boosts_usage_method": {},
+          "resists_usage_method": {},
+          "stat_modifications": {},
+        }
+
+      itemDict[itemName]["item_type"] = itemType
+
+  # add gen data
+  with open(fnamePrefix.removesuffix('List') + 'Gen.csv', 'r', encoding='utf-8') as genCSV:
+    reader = csv.DictReader(genCSV)
+    for row in reader:
+      itemName, gen = row["Item Name"], int(row["Gen"])
       # list on Bulbapedia includes non-held items, so we must ignore those; this is why we read the Serebii file first
       if itemName in itemDict:
-        itemDict[itemName]["item_type"] = itemType
-        itemDict[itemName]["gen"] = gen
+        itemDict[itemName]["gen"] = int(gen)
 
   # for some reason, Serebii doesn't have berry juice or adrenaline orb
   itemDict["berry_juice"] = {
@@ -62,6 +84,8 @@ def makeInitialItemDict(bulbapedia_fname, serebii_fname):
         "effects": {"restores_hp": [[True, 5]]},
         "causes_status": {},
         "resists_status": {},
+        "boosts_usage_method": {},
+        "resists_usage_method": {},
         "boosts_type": {},
         "resists_type": {},
         "stat_modifications": {},
@@ -78,6 +102,8 @@ def makeInitialItemDict(bulbapedia_fname, serebii_fname):
         "resists_status": {},
         "boosts_type": {},
         "resists_type": {},
+        "boosts_usage_method": {},
+        "resists_usage_method": {},
         "stat_modifications": {},
       }
 
@@ -91,9 +117,9 @@ def addBerryData(fpath, itemDict):
 
     for row in reader:
       berryName, type, gen4Power, gen6Power = row["Berry Name"], row["Type"], row["Power in Gen IV-V"], int(row["Power in Gen VI"])
-      gen = itemDict[berryName]["gen"]
+      gen = int(itemDict[berryName]["gen"])
 
-      if type not in typeList():
+      if type not in typeDict.keys():
         print(berryName, type)
         continue
 
@@ -141,7 +167,7 @@ def addBerryData(fpath, itemDict):
       elif 'Restores' in effect:
         itemDict[berryName]["effects"]["restores_hp"] = [[True, 2]]
       else:
-        if effect not in statusList() + effectList():
+        if effect not in statusDict.keys() and effect not in effectDict.keys():
           print(berryName, effect)
           continue
 
@@ -156,7 +182,7 @@ def addBerryData(fpath, itemDict):
       gen = itemDict[berryName]["gen"]
 
       if status != 'any':
-        if status not in statusList():
+        if status not in statusDict.keys():
           print(berryName, status)
           continue
 
@@ -174,7 +200,7 @@ def addBerryData(fpath, itemDict):
       berryName, type = row["Berry Name"], row["Type Resisted"]
       gen = itemDict[berryName]["gen"]
 
-      if type not in typeList():
+      if type not in typeDict.keys():
         print(berryName, type)
       
       itemDict[berryName]["resists_type"][type] = [[0.5, gen]]
@@ -203,13 +229,14 @@ def addOtherItemData(fpath, itemDict):
         "pokemon_specific": [pokemonName],
         "gen": 6,
         "gen2_exclusive": False,
-        # indicates whether knock off does extra damage to a Pokemon holding the item; note that Mega Stones can be knocked off of incompatible Pokemon for a damage boost, but we will assume that the Pokemon-specific items are being held by compatible Pokemon
         "knock_off": False,
         "effects": {'changes_form': [[True, 6]]},
         "causes_status": {},
         "resists_status": {},
         "boosts_type": {},
         "resists_type": {},
+        "boosts_usage_method": {},
+        "resists_usage_method": {},
         "stat_modifications": {},
       }
 
@@ -222,16 +249,18 @@ def addOtherItemData(fpath, itemDict):
       itemType, itemName, type = row["Item Type"], row["Item Name"], row["Elemental Type"]
       itemGen = itemDict[itemName]["gen"]
 
-      if type not in typeList():
+      if type not in typeDict.keys():
         print(itemName, type)
         continue
 
       # move and pokemon type changes
       if itemType in ['drive', 'plate', 'memory']:
         itemDict[itemName]["knock_off"] = False
-        itemDict[itemName]["effects"]["changes_move_type"] = [[True, itemGen]]
+        effectGen = effectDict["changes_move_type"]
+        itemDict[itemName]["effects"]["changes_move_type"] = [[True, max(itemGen, effectGen)]]
       if itemType in ['plate', 'memory']:
-        itemDict[itemName]["effects"]["changes_pokemon_type"] = [[True, itemGen]]
+        effectGen = effectDict["changes_pokemon_type"]
+        itemDict[itemName]["effects"]["changes_pokemon_type"] = [[True, max(itemGen, effectGen)]]
       
       # type boosters
       if itemType == 'plate':
@@ -429,16 +458,16 @@ def addOtherItemData(fpath, itemDict):
   ]:
     effect, items = effect_item
     for itemName in items:
-      if effect not in effectList():
+      if effect not in effectDict.keys():
         print(itemName, effect)
 
       effectGen, itemGen = effectDict[effect], itemDict[itemName]["gen"]
-      itemDict[itemName]["effects"][effect] = [[True, min(effectGen, itemGen)]]
+      itemDict[itemName]["effects"][effect] = [[True, max(effectGen, itemGen)]]
 
       handledItems.add(itemName)
 
   # status-causing items
-  for effect_item in [
+  for status_item in [
     ['burn', ['flame_orb']],
     ['bad_poison', ['toxic_orb']],
     ['confusion', ['berserk_gene']],
@@ -449,7 +478,7 @@ def addOtherItemData(fpath, itemDict):
     ['charging_turn', ['power_herb']],
     ['trapped', ['shed_shell']],
   ]:
-    status, items = effect_item
+    status, items = status_item
     for itemName in items:
       itemGen = itemDict[itemName]["gen"]
       if itemName == 'focus_band':
@@ -457,14 +486,14 @@ def addOtherItemData(fpath, itemDict):
       elif itemName == 'kings_rock':
         itemDict[itemName]["causes_status"][status] = [[11.7, 2], [10.0, 3]]
       elif itemName == 'razor_fang':
-        itemDict[itemName]["causes_status"][status] = [[10, 4]]
+        itemDict[itemName]["causes_status"][status] = [[10.0, 4]]
       else:
         itemDict[itemName]["causes_status"][status] = [[100.0, itemGen]]
 
       handledItems.add(itemName)
 
   # status-resisting items
-  for effect_item in [
+  for status_item in [
     ['infatuation', ['mental_herb']],
     ['taunt', ['mental_herb']],
     ['encore', ['mental_herb']],
@@ -472,45 +501,45 @@ def addOtherItemData(fpath, itemDict):
     ['heal_block', ['mental_herb']],
     ['disable', ['mental_herb']],
   ]:
-    status, items = effect_item
+    status, items = status_item
     for itemName in items:
       statusGen, itemGen = statusDict[status], itemDict[itemName]["gen"]
       if itemName == 'mental_herb' and status != 'infatuation':
         itemDict[itemName]["resists_status"][status] = [[True, 5]]
       else:
-        itemDict[itemName]["resists_status"][status] = [[True, min(statusGen, itemGen)]]
+        itemDict[itemName]["resists_status"][status] = [[True, max(statusGen, itemGen)]]
 
       handledItems.add(itemName)
   
   # type-resisting items
-  for effect_item in [
+  for type_item in [
     ['ground', ['air_balloon']],
   ]:
-    type, items = effect_item
+    type, items = type_item
     for itemName in items:
       typeGen, itemGen = typeDict[type]["gen"], itemDict[itemName]["gen"]
-      itemDict[itemName]["resists_type"][type] = [[0, min(typeGen, itemGen)]]
+      itemDict[itemName]["resists_type"][type] = [[0.0, max(typeGen, itemGen)]]
 
       handledItems.add(itemName)
 
   # items for primal reversion
-  for effect_item in [
+  for pokemon_item in [
     ['kyogre', 'blue_orb'],
     ['groudon', 'red_orb'],
   ]:
-    pokemonName, itemName = effect_item
+    pokemonName, itemName = pokemon_item
     itemDict[itemName]["pokemon_specific"].append(pokemonName)
 
     handledItems.add(itemName)
 
   # usage-method-resting items
-  for effect_item in [
+  for usageMethod_item in [
     ['powder', ['safety_goggles']],
   ]:
-    usageMethod, items = effect_item
+    usageMethod, items = usageMethod_item
     for itemName in items:
-      itemGen = itemDict[itemName]["gen"]
-      itemDict[itemName]["resists_usage_method"][usageMethod] = [[True, itemGen]]
+      usageMethodGen, itemGen = usageMethodDict[usageMethod], itemDict[itemName]["gen"]
+      itemDict[itemName]["resists_usage_method"][usageMethod] = [[0.0, max(usageMethodGen, itemGen)]]
 
       handledItems.add(itemName)
 
@@ -533,11 +562,20 @@ def addOtherItemData(fpath, itemDict):
   return
 
 def main():
+  # dictionaries containing effect names/gens and status names/gens
+  global effectDict
+  effectDict = effects.main()
+  global statusDict
+  statusDict = statuses.main()
+  global typeDict
+  typeDict = types.main()
+  global usageMethodDict
+  usageMethodDict = usageMethods.main()
+
   dataPath = getDataPath() + 'items/'
 
-  bulbapedia_fname = dataPath + 'heldItemList.csv'
-  serebii_fname = dataPath + 'heldItemListSerebii.csv'
-  itemDict = makeInitialItemDict(bulbapedia_fname, serebii_fname)
+  fnamePrefix = dataPath + 'heldItemList'
+  itemDict = makeInitialItemDict(fnamePrefix)
 
   addBerryData(dataPath, itemDict)
   
@@ -548,28 +586,21 @@ def main():
 if __name__ == '__main__':
   itemDict = main()
 
-  # check name consistency in itemDict
-  print()
-  print('Checking name consistency...')
+  # check consistency in itemDict
+  print('Checking for inconsistencies...')
   for itemName in itemDict.keys():
-    for effect in itemDict[itemName]["effects"]:
-      if effect not in effectList():
-        print('Inconsistent effect name:', itemName, effect)
-    for status in itemDict[itemName]["causes_status"]:
-      if status not in statusList():
-        print('Inconsistent cause-status name:', itemName, status)
-    for status in itemDict[itemName]["resists_status"]:
-      if status not in statusList():
-        print('Inconsistent resist-status name:', itemName, status)
-    for type in itemDict[itemName]["boosts_type"]:
-      if type not in typeList():
-        print('Inconsistent boost-type name:', itemName, type)
-    for type in itemDict[itemName]["resists_type"]:
-      if type not in typeList():
-        print('Inconsistent resist-type name:', itemName, type)
+    for inconsistency in [
+      checkConsistency(itemDict[itemName]["effects"], 'effect', effectDict, False),
+      checkConsistency(itemDict[itemName]["causes_status"], 'status', statusDict, 0.0),
+      checkConsistency(itemDict[itemName]["resists_status"], 'status', statusDict, False),
+      checkConsistency(itemDict[itemName]["boosts_type"], 'type', typeDict, 0.0, True),
+      checkConsistency(itemDict[itemName]["resists_type"], 'type', typeDict, 0.0, True),
+      checkConsistency(itemDict[itemName]["resists_usage_method"], 'usage_method', usageMethodDict, 0.0),
+    ]:
+      if inconsistency:
+        print(f'Inconsistency found for {itemName}: {inconsistency}')
+
     for stat in itemDict[itemName]["stat_modifications"]:
       if stat not in statList():
         print('Inconsistent stat name', itemName, stat)
-    
-  print()
-  print('Checked name consistency.')
+  print('Finished.')

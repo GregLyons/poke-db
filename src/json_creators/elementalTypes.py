@@ -1,5 +1,5 @@
 import csv
-from utils import parseName, genSymbolToNumber, getDataPath, genSymbolToNumber, typeList
+from utils import getDataPath, checkConsistency
 
 def makeTypeDict(fnamePrefix):
   typeDict = {}
@@ -33,20 +33,20 @@ def makeTypeDict(fnamePrefix):
 
           # if defendingType isn't already in attackingType's damage_to dictionary, add it
           if defendingType not in typeDict[attackingType]["damage_to"]:
-            typeDict[attackingType]["damage_to"][defendingType] = [[row[defendingType], gens[genCounter]]]
+            typeDict[attackingType]["damage_to"][defendingType] = [[float(row[defendingType]), gens[genCounter]]]
           # otherwise, see if the multiplier has changed
           else: 
             # if multiplier has changed, add the change
-            if typeDict[attackingType]["damage_to"][defendingType][-1][0] != row[defendingType]:
-              typeDict[attackingType]["damage_to"][defendingType].append([row[defendingType], gens[genCounter]])
+            if typeDict[attackingType]["damage_to"][defendingType][-1][0] != float(row[defendingType]):
+              typeDict[attackingType]["damage_to"][defendingType].append([float(row[defendingType]), gens[genCounter]])
             # otherwise, continue to next defendingType
           
           # similar process, but for "damage_from" relations
           if attackingType not in typeDict[defendingType]["damage_from"]:
-            typeDict[defendingType]["damage_from"][attackingType] = [[row[defendingType], gens[genCounter]]]
+            typeDict[defendingType]["damage_from"][attackingType] = [[float(row[defendingType]), gens[genCounter]]]
           else:
-            if typeDict[defendingType]["damage_from"][attackingType][-1][0] != row[defendingType]:
-              typeDict[defendingType]["damage_from"][attackingType].append([row[defendingType], gens[genCounter]])
+            if typeDict[defendingType]["damage_from"][attackingType][-1][0] != float(row[defendingType]):
+              typeDict[defendingType]["damage_from"][attackingType].append([float(row[defendingType]), gens[genCounter]])
 
       genCounter += 1
 
@@ -61,17 +61,14 @@ def main():
 
 if __name__ == '__main__':
   typeDict = main()
-
-  print('Checking consistency of names...')
-
-  for type in typeDict.keys():
-    if type not in typeList():
-      print('Inconsistent main key', type)
-    for defendingType in typeDict[type]["damage_to"]:
-      if defendingType not in typeList():
-        print('Inconsistent defending type', defendingType, 'for main key', type)
-    for attackingType in typeDict[type]["damage_from"]:
-      if defendingType not in typeList():
-        print('Inconsistent attacking type', attackingType, 'for main key', type)
-
+  
+  # check consistency in itemDict
+  print('Checking for inconsistencies...')
+  for typeName in typeDict.keys():
+    for inconsistency in [
+      checkConsistency(typeDict[typeName]["damage_to"], 'type', typeDict, 0.0, True),
+      checkConsistency(typeDict[typeName]["damage_from"], 'type', typeDict, 0.0, True),
+    ]:
+      if inconsistency:
+        print(f'Inconsistency found for {typeName}: {inconsistency}')
   print('Finished.')
