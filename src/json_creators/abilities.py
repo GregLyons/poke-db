@@ -3,7 +3,7 @@ import effects
 import statuses
 import usageMethods
 import elementalTypes as types
-from utils import getDataPath, genSymbolToNumber, effectList, statusList, usageMethodList, statList, typeList, checkConsistency
+from utils import getCSVDataPath, genSymbolToNumber, effectList, statusList, usageMethodList, statList, typeList, checkConsistency
 
 # initialize abilityDict with name, description, and gen; key is Ability ID
 def makeInitialAbilityDict(fname):
@@ -11,9 +11,8 @@ def makeInitialAbilityDict(fname):
     reader = csv.DictReader(abilityListCSV)
     abilityDict = {}
     for row in reader:
-      abilityName, description, gen = row["Ability Name"].replace('*', ''), row["Description"], row["Gen"]
+      abilityName, gen = row["Ability Name"].replace('*', ''), row["Gen"]
       abilityDict[abilityName] = {
-        "description": description,
         "gen": genSymbolToNumber(gen),
         "effects": {},
         "causes_status": {},
@@ -202,7 +201,7 @@ def main():
   global usageMethodDict
   usageMethodDict = usageMethods.main()
 
-  dataPath = getDataPath() + '\\abilities\\'
+  dataPath = getCSVDataPath() + '\\abilities\\'
   fname = dataPath + 'abilityList.csv'
   abilityDict = makeInitialAbilityDict(fname)
 

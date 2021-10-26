@@ -1,5 +1,5 @@
 import csv
-from utils import openLink, parseName, getDataPath
+from utils import openLink, parseName, getCSVDataPath
 
 def makeMainCSV(fname):
   with open(fname, 'w', newline='', encoding='utf-8') as csvFile:
@@ -20,7 +20,7 @@ def makeMainCSV(fname):
   return
 
 def main():
-  dataPath = getDataPath() + 'moves\\'
+  dataPath = getCSVDataPath() + 'moves\\'
   fname = dataPath + 'movesRemovedFromGen8.csv'
   makeMainCSV(fname)
   return

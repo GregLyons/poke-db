@@ -1,5 +1,5 @@
 import csv
-from utils import openLink, getDataPath, parseName
+from utils import openLink, getCSVDataPath, parseName
 
 # Columns are Move Name, Note
 def makeMainCSV(fname):
@@ -39,7 +39,7 @@ def makeMainCSV(fname):
   return
 
 def main():
-  dataPath = getDataPath() + 'moves\\'
+  dataPath = getCSVDataPath() + 'moves\\'
   fname = dataPath + 'movesByContact.csv'
   makeMainCSV(fname)
 

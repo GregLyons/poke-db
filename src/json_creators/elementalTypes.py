@@ -1,5 +1,5 @@
 import csv
-from utils import getDataPath, checkConsistency
+from utils import getCSVDataPath, checkConsistency
 
 def makeTypeDict(fnamePrefix):
   typeDict = {}
@@ -53,7 +53,7 @@ def makeTypeDict(fnamePrefix):
   return typeDict
 
 def main():
-  dataPath = getDataPath() + 'types\\'
+  dataPath = getCSVDataPath() + 'types\\'
   fnamePrefix = dataPath + 'typeMatchupsGen'
   typeDict = makeTypeDict(fnamePrefix)
 

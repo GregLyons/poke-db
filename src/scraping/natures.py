@@ -1,5 +1,5 @@
 import csv
-from utils import openLink, getDataPath, parseName
+from utils import openLink, getCSVDataPath, parseName
 
 # Columns are Nature Name, Increased Stat, Decreased Stat, Favorite Flavor, Disliked Flavor
 def natureList(fname):
@@ -24,7 +24,7 @@ def natureList(fname):
   return
 
 def main():
-  dataPath = getDataPath() + 'natures\\'
+  dataPath = getCSVDataPath() + 'natures\\'
   nature_fname = dataPath + 'natureList.csv'
   natureList(nature_fname)
 

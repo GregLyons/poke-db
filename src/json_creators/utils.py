@@ -1,7 +1,10 @@
 import re
 
-def getDataPath():
-  return 'src\\data\\'
+def getCSVDataPath():
+  return 'src\\data\\csv\\'
+
+def getJSONDataPath():
+  return 'src\\data\\json\\'
 
 # Used for a few calculations--need to alter when gen 9 comes
 def numberOfGens():

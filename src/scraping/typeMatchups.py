@@ -1,5 +1,5 @@
 import csv
-from utils import openLink, parseName, getDataPath
+from utils import openLink, parseName, getCSVDataPath
 
 # Makes a .csv for each generation's type matchup chart; rows are attacking types, columns are defending types
 def typeMatchups(fnamePrefix):
@@ -32,7 +32,7 @@ def typeMatchups(fnamePrefix):
   return
 
 def main():
-  dataPath = getDataPath() + 'types\\'
+  dataPath = getCSVDataPath() + 'types\\'
   typeMatchups_fnamePrefix = dataPath + 'typeMatchupsGen'
   typeMatchups(typeMatchups_fnamePrefix)
   return

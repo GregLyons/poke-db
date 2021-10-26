@@ -1,3 +1,5 @@
+import json
+import re
 import abilities
 import effects
 import elementalTypes as types
@@ -6,11 +8,11 @@ import moves
 import pokemon
 import statuses
 import usageMethods
-from utils import statusList, typeList, effectList, usageMethodList, statList, checkConsistency
+from utils import statusList, typeList, effectList, usageMethodList, statList, checkConsistency, getJSONDataPath
 
 # check that statusDict matches statusList
 def checkStatuses(statusDict):
-  print('Checking statusDict...')
+  print('Checking completeness of statusDict...')
 
   # make sure all statuses are accounted for
   for status in statusList():
@@ -22,14 +24,14 @@ def checkStatuses(statusDict):
     if key not in statusList():
       print(key, 'not in statusList')
 
-  print('Finished statusDict.')
+  print('Finished.')
   print()
 
   return
 
 # check that effectDict matches effectList
 def checkEffects(effectDict):
-  print('Checking effectDict...')
+  print('Checking completeness of effectDict...')
 
   # make sure all effects are accounted for
   for effect in effectList():
@@ -41,12 +43,31 @@ def checkEffects(effectDict):
     if key not in effectList():
       print(key, 'not in effectList')
 
-  print('Finished effectDict.')
+  print('Finished.')
   print()
 
   return
 
-# check that typeDict is consistent with typeList, statusList
+# check that usageMethodDict matches usageMethodList
+def checkUsageMethods(usageMethodDict):
+  print('Checking usageMethodDict...')
+
+  # make sure all usage methods are accounted for
+  for usageMethod in usageMethodList():
+    if usageMethod not in usageMethodDict:
+      print(usageMethod, 'not in usageMethodDict')
+
+  # make sure no typos
+  for key in usageMethodDict.keys():
+    if key not in usageMethodList():
+      print(key, 'not in usageMethodList')
+
+  print('Finished usageMethodDict.')
+  print()
+
+  return
+
+# checks typeDict is consistent with typeList and has consistent values
 def checkTypes(typeDict):
   print('Checking for inconsistencies in typeDict...')
   for typeName in typeDict.keys():
@@ -61,7 +82,7 @@ def checkTypes(typeDict):
 
   return
 
-# check that moveDict is consistent with effectList, statusList, typeList, usageMethodList, statList
+# check that moveDict is consistent with effectList, statusList, typeList, usageMethodList, statList and has consistent values
 def checkMoves(moveDict):
   # check name consistency in moveDict
   print('Checking for inconsistencies in moveDict...')
@@ -83,7 +104,7 @@ def checkMoves(moveDict):
 
   return
 
-# check that abilityDict is consistent with effectList, statusList, typeList, usageMethodList, statList
+# check that abilityDict is consistent with effectList, statusList, typeList, usageMethodList, statList and has consistent values
 def checkAbilities(abilityDict):
 
   # check name consistency in abilityDict
@@ -109,7 +130,7 @@ def checkAbilities(abilityDict):
 
   return
 
-# check that itemDict is consistent with effectList, statusList, typeList, usageMethodList, statList
+# check that itemDict is consistent with effectList, statusList, typeList, usageMethodList, statList and has consistent values
 def checkItems(itemDict):
   print('Checking for inconsistencies in itemDict...')
   for itemName in itemDict.keys():
@@ -150,7 +171,7 @@ def checkPokemon(pokemonDict):
 
 # check that pokemonDict and abilityDict have same ability names
 def checkAbilitiesAgainstPokemon(abilityDict, pokemonDict):
-  print('Checking consistency of abilityDict and pokemonDict...')
+  print('Checking consistency of abilityDict with pokemonDict...')
 
   # set of ability names from abilityDict
   abilityNames = set()
@@ -169,9 +190,9 @@ def checkAbilitiesAgainstPokemon(abilityDict, pokemonDict):
 
   return
 
-# This file is for making all the .csv files at once rather than running each individual script
-if __name__ == '__main__':
-  # initialize the various dictionaries and check that they're consistent with the type, status, usage method, effect, and stat lists
+# check dicts for internal consistency and for consistency with each other, then write to .json files
+def main():
+  # initialize the various reference dicts and check that they're consistent with the type, status, usage method, effect, and stat lists
   global effectDict
   effectDict = effects.main()
   checkEffects(effectDict)
@@ -184,19 +205,58 @@ if __name__ == '__main__':
   global usageMethodDict
   usageMethodDict = usageMethods.main()
 
-
+  # check that abilityDict is consistent with the reference dicts and that its values are consistent (e.g. values are of correct data type, if it has an effect then it doesn't do in an earlier gen than when the effect was introduced)
   abilityDict = abilities.main()
   checkAbilities(abilityDict)
 
+  # same but for itemDict
   itemDict = heldItems.main()
   checkItems(itemDict)
 
+  # same but for moveDict
   moveDict = moves.main()
   checkMoves(moveDict)
 
+  # check that pokemonDict is consistent with typeList
   pokemonDict = pokemon.main()
   checkPokemon(pokemonDict)
 
-
-  # check that the more complicated dictionaries are consistent with each other
+  # check that the more complicated dictionaries are consistent with each other in terms of ability names
   checkAbilitiesAgainstPokemon(abilityDict, pokemonDict)
+
+  # now that all the dicts have been checked for consistency, write each of them to a .json file
+  dicts_fnames = [
+    [effectDict, 'effects.json'],
+    [statusDict, 'statuses.json'],
+    [usageMethodDict, 'usageMethods.json'],
+    [typeDict, 'elementalTypes.json'],
+    [abilityDict, 'abilities.json'],
+    [itemDict, 'items.json'],
+    [moveDict, 'moves.json'],
+    [pokemonDict, 'pokemon.json']
+  ]
+  for dict_fname in dicts_fnames:
+    dict, fname = dict_fname
+    with open(getJSONDataPath() + fname, 'w', newline='') as jsonFile:
+      output = json.dumps(dict, indent=2)
+
+      # formatting for .json file, essentially to get the lists on one line but still have indentations and line breaks
+      # double opening braces
+      output = re.sub(r': \[\n\s+\[\n\s+', ': [[', output)
+      # put most values on same line--after this step, there's a few edge cases
+      output = re.sub(r',\n\s+([A-Za-z0-9\.])+', r', \1', output)
+      # for inner lists which are on separate lines, put them together on the same line
+      output = re.sub(r'\n\s+\],\n\s+\[\n\s+', '], [', output)
+      # handle entries of list where successive entries are quotes, with a number in quotes
+      output = re.sub(r'",\n\s+"(\d)', r'", "\1', output)
+      # double closing braces
+      output = re.sub(r'\n\s+\]\n\s+\]', ']]', output)
+      # handle entries of list which have number followed by string
+      output = re.sub(r'\[\[.*(\d),\n\s+"', r'[[\1, "', output)
+      # entries of list which have string followed by string, in the first index
+      output = re.sub(r'\[\["(.*)",\n\s+"', r'[["\1", "', output)
+
+      jsonFile.write(output)
+
+if __name__ == '__main__':
+  main()

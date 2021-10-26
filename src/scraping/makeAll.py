@@ -1,8 +1,8 @@
 import abilityList
 import abilityEffects
+import descriptions
 import evolutionChains
 import heldItems
-import moveDescriptions
 import moveList
 import movesByContact
 import movesByEffect
@@ -25,14 +25,14 @@ if __name__ == '__main__':
   abilityEffects.main()
   print('Ability effects complete')
 
+  descriptions.main()
+  print('Description data complete')
+
   evolutionChains.main()
   print('Evolution chains complete')
 
   heldItems.main()
   print('Held item data complete')
-
-  moveDescriptions.main()
-  print('Move description data complete')
 
   moveList.main()
   print('Moves list complete')
@@ -68,7 +68,7 @@ if __name__ == '__main__':
   print('Pokemon type data complete')
 
   movesModifyStat.main()
-  print('Stat modificatin data complete')
+  print('Stat modification data complete')
 
   typeMatchups.main()
   print('Type matchup data complete')

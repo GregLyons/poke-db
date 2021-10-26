@@ -1,0 +1,6489 @@
+{
+  "absorb_bulb": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 5,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "special_attack": [["+1", "user", 5]]
+    }
+  },
+  "adamant_orb": {
+    "item_type": "type_enhancer_specific",
+    "pokemon_specific": [
+      "dialga"
+    ],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "dragon": [[1.2, 4]],
+      "steel": [[1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "air_balloon": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 5,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {
+      "ground": [[0.0, 5]]
+    },
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "aloraichium_z": {
+    "item_type": "z_crystal_specific",
+    "pokemon_specific": [
+      "alolan_raichu"
+    ],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "amulet_coin": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "assault_vest": {
+    "item_type": "stat_enhancer",
+    "pokemon_specific": [
+      ""
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "special_defense": [["1.5", "user", "6"]]
+    }
+  },
+  "berry_sweet": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 8,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "berserk_gene": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": true,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {
+      "confusion": [[100.0, 2]]
+    },
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "big_root": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "other_move_enhancement": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "binding_band": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 5,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "other_move_enhancement": [[true, 5]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "black_belt": {
+    "item_type": "type_enhancer",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "fighting": [[1.1, 2], [1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "black_glasses": {
+    "item_type": "type_enhancer",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "dark": [[1.1, 2], [1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "black_sludge": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "costs_hp": [[true, 4]],
+      "restores_hp": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "blue_orb": {
+    "item_type": "",
+    "pokemon_specific": [
+      "kyogre"
+    ],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "blue_scarf": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "blunder_policy": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 8,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "speed": [["+2", "user", 8]]
+    }
+  },
+  "bright_powder": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "evasion": [[8, "user", 2], [1.11,
+        "user", 3]]
+  },
+  "bug_gem": {
+    "item_type": "gem",
+    "pokemon_specific": [],
+    "gen": 5,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "bug": [[1.5, 5], [1.3, 6]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "bug_memory": {
+    "item_type": "memory",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 7]],
+      "changes_pokemon_type": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "buginium_z": {
+    "item_type": "z_crystal",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "burn_drive": {
+    "item_type": "drive",
+    "pokemon_specific": [],
+    "gen": 5,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "cell_battery": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 5,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "attack": [["+1", "user", 5]]
+    }
+  },
+  "charcoal": {
+    "item_type": "type_enhancer",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "fire": [[1.1, 2], [1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "chill_drive": {
+    "item_type": "drive",
+    "pokemon_specific": [],
+    "gen": 5,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "choice_band": {
+    "item_type": "choice",
+    "pokemon_specific": [
+      ""
+    ],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "attack": [["1.5", "user", "3"]]
+    }
+  },
+  "choice_scarf": {
+    "item_type": "choice",
+    "pokemon_specific": [
+      ""
+    ],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "speed": [["1.5", "user", "4"]]
+    }
+  },
+  "choice_specs": {
+    "item_type": "choice",
+    "pokemon_specific": [
+      ""
+    ],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "special_attack": [["1.5", "user", "4"]]
+    }
+  },
+  "cleanse_tag": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "clover_sweet": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 8,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "damp_rock": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "extends_duration": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "dark_gem": {
+    "item_type": "gem",
+    "pokemon_specific": [],
+    "gen": 5,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "dark": [[1.5, 5], [1.3, 6]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "dark_memory": {
+    "item_type": "memory",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 7]],
+      "changes_pokemon_type": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "darkinium_z": {
+    "item_type": "z_crystal",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "decidium_z": {
+    "item_type": "z_crystal_specific",
+    "pokemon_specific": [
+      "decidueye"
+    ],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "deep_sea_scale": {
+    "item_type": "stat_enhancer_specific",
+    "pokemon_specific": [
+      "clamperl"
+    ],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "defense": [["2.0", "user", "3"]],
+      "special_defense": [["2.0", "user", "3"]]
+    }
+  },
+  "deep_sea_tooth": {
+    "item_type": "stat_enhancer_specific",
+    "pokemon_specific": [
+      "clamperl"
+    ],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "attack": [["2.0", "user", "3"]],
+      "special_attack": [["2.0", "user", "3"]]
+    }
+  },
+  "destiny_knot": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {
+      "infatuation": [[100.0, 4]]
+    },
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "douse_drive": {
+    "item_type": "drive",
+    "pokemon_specific": [],
+    "gen": 5,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "draco_plate": {
+    "item_type": "plate",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 6]],
+      "changes_pokemon_type": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "dragon": [[1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "dragon_fang": {
+    "item_type": "type_enhancer",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "dragon": [[1.1, 2], [1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "dragon_gem": {
+    "item_type": "gem",
+    "pokemon_specific": [],
+    "gen": 5,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "dragon": [[1.5, 5], [1.3, 6]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "dragon_memory": {
+    "item_type": "memory",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 7]],
+      "changes_pokemon_type": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "dragonium_z": {
+    "item_type": "z_crystal",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "dread_plate": {
+    "item_type": "plate",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 6]],
+      "changes_pokemon_type": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "dark": [[1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "dubious_disc": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "earth_plate": {
+    "item_type": "plate",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 6]],
+      "changes_pokemon_type": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "ground": [[1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "eevium_z": {
+    "item_type": "z_crystal_specific",
+    "pokemon_specific": [
+      "eevee"
+    ],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "eject_button": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 5,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "switches_out_user": [[true, 5]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "eject_pack": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 8,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "switches_out_user": [[true, 8]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "electirizer": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "electric_gem": {
+    "item_type": "gem",
+    "pokemon_specific": [],
+    "gen": 5,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "electric": [[1.5, 5], [1.3, 6]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "electric_memory": {
+    "item_type": "memory",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 7]],
+      "changes_pokemon_type": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "electric_seed": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "defense": [["+1", "user", 7]]
+    }
+  },
+  "electrium_z": {
+    "item_type": "z_crystal",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "everstone": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "eviolite": {
+    "item_type": "stat_enhancer",
+    "pokemon_specific": [
+      ""
+    ],
+    "gen": 5,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "attack": [["1.5", "user", "5"]],
+      "special_attack": [["1.5", "user", "5"]]
+    }
+  },
+  "exp_share": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 1,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "expert_belt": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "other_move_enhancement": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "fairium_z": {
+    "item_type": "z_crystal",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "fairy_gem": {
+    "item_type": "gem",
+    "pokemon_specific": [],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "fairy": [[1.3, 6]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "fairy_memory": {
+    "item_type": "memory",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 7]],
+      "changes_pokemon_type": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "fighting_gem": {
+    "item_type": "gem",
+    "pokemon_specific": [],
+    "gen": 5,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "fighting": [[1.5, 5], [1.3, 6]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "fighting_memory": {
+    "item_type": "memory",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 7]],
+      "changes_pokemon_type": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "fightinium_z": {
+    "item_type": "z_crystal",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "fire_gem": {
+    "item_type": "gem",
+    "pokemon_specific": [],
+    "gen": 5,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "fire": [[1.5, 5], [1.3, 6]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "fire_memory": {
+    "item_type": "memory",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 7]],
+      "changes_pokemon_type": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "firium_z": {
+    "item_type": "z_crystal",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "fist_plate": {
+    "item_type": "plate",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 6]],
+      "changes_pokemon_type": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "fighting": [[1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "flame_orb": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {
+      "burn": [[100.0, 4]]
+    },
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "flame_plate": {
+    "item_type": "plate",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 6]],
+      "changes_pokemon_type": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "fire": [[1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "float_stone": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 5,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "affects_weight": [[true, 5]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "flower_sweet": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 8,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "flying_gem": {
+    "item_type": "gem",
+    "pokemon_specific": [],
+    "gen": 5,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "flying": [[1.5, 5], [1.3, 6]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "flying_memory": {
+    "item_type": "memory",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 7]],
+      "changes_pokemon_type": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "flyinium_z": {
+    "item_type": "z_crystal",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "focus_band": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {
+      "bracing": [[12.0, 2], [10.0, 3]]
+    },
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "focus_sash": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {
+      "bracing": [[100.0, 4]]
+    },
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "full_incense": {
+    "item_type": "incense",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "move_last_in_priority": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "ghost_gem": {
+    "item_type": "gem",
+    "pokemon_specific": [],
+    "gen": 5,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "ghost": [[1.5, 5], [1.3, 6]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "ghost_memory": {
+    "item_type": "memory",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 7]],
+      "changes_pokemon_type": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "ghostium_z": {
+    "item_type": "z_crystal",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "grass_gem": {
+    "item_type": "gem",
+    "pokemon_specific": [],
+    "gen": 5,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "grass": [[1.5, 5], [1.3, 6]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "grass_memory": {
+    "item_type": "memory",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 7]],
+      "changes_pokemon_type": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "grassium_z": {
+    "item_type": "z_crystal",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "grassy_seed": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "defense": [["+1", "user", 7]]
+    }
+  },
+  "green_scarf": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "grip_claw": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "extends_duration": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "griseous_orb": {
+    "item_type": "type_enhancer_specific",
+    "pokemon_specific": [
+      "giratina_origin"
+    ],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "dragon": [[1.2, 4]],
+      "ghost": [[1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "ground_gem": {
+    "item_type": "gem",
+    "pokemon_specific": [],
+    "gen": 5,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "ground": [[1.5, 5], [1.3, 6]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "ground_memory": {
+    "item_type": "memory",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 7]],
+      "changes_pokemon_type": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "groundium_z": {
+    "item_type": "z_crystal",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "hard_stone": {
+    "item_type": "type_enhancer",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "rock": [[1.1, 2], [1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "heat_rock": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "extends_duration": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "heavy_duty_boots": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 8,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "ignores_hazards": [[true, 8]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "ice_gem": {
+    "item_type": "gem",
+    "pokemon_specific": [],
+    "gen": 5,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "ice": [[1.5, 5], [1.3, 6]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "ice_memory": {
+    "item_type": "memory",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 7]],
+      "changes_pokemon_type": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "icicle_plate": {
+    "item_type": "plate",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 6]],
+      "changes_pokemon_type": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "ice": [[1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "icium_z": {
+    "item_type": "z_crystal",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "icy_rock": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "extends_duration": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "incinium_z": {
+    "item_type": "z_crystal_specific",
+    "pokemon_specific": [
+      "incineroar"
+    ],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "insect_plate": {
+    "item_type": "plate",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 6]],
+      "changes_pokemon_type": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "bug": [[1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "iron_ball": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "removes_type_immunity": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "speed": [[5, "user", 4]]
+    }
+  },
+  "iron_plate": {
+    "item_type": "plate",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 6]],
+      "changes_pokemon_type": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "steel": [[1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "kings_rock": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {
+      "flinch": [[11.7, 2], [10.0, 3]]
+    },
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "kommonium_z": {
+    "item_type": "z_crystal_specific",
+    "pokemon_specific": [
+      "kommo_o"
+    ],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "lagging_tail": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "move_last_in_priority": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "lax_incense": {
+    "item_type": "incense",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "evasion": [[5, "user", 3], [1.11,
+          "user", 4]]
+    }
+  },
+  "leek": {
+    "item_type": "stat_enhancer_specific",
+    "pokemon_specific": [
+      "farfetchd",
+      "farfetchd_galar",
+      "sirfetchd"
+    ],
+    "gen": 2,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "critical_hit_ratio": [["+2", "user", "2"]]
+    }
+  },
+  "leftovers": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "restores_hp": [[true, 2]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "life_orb": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "costs_hp": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "light_ball": {
+    "item_type": "stat_enhancer_specific",
+    "pokemon_specific": [
+      "pikachu",
+      "pikachu_cosplay",
+      "pikachu_in_a_cap"
+    ],
+    "gen": 2,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "attack": [["2.0", "user", "2"]],
+      "special_attack": [["2.0", "user", "2"]]
+    }
+  },
+  "light_clay": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "extends_duration": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "love_sweet": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 8,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "luck_incense": {
+    "item_type": "incense",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "lucky_egg": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "lucky_punch": {
+    "item_type": "stat_enhancer_specific",
+    "pokemon_specific": [
+      "chansey"
+    ],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "critical_hit_ratio": [["+2", "user", "2"]]
+    }
+  },
+  "luminous_moss": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "special_defense": [["+1", "user", 6]]
+    }
+  },
+  "lunalium_z": {
+    "item_type": "z_crystal_specific",
+    "pokemon_specific": [
+      "lunala",
+      "necrozma_dawn_wings"
+    ],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "lustrous_orb": {
+    "item_type": "type_enhancer_specific",
+    "pokemon_specific": [
+      "palkia"
+    ],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "dragon": [[1.2, 4]],
+      "water": [[1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "lycanium_z": {
+    "item_type": "z_crystal_specific",
+    "pokemon_specific": [
+      "lycanroc"
+    ],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "macho_brace": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "speed": [[5, "user", 4]]
+    }
+  },
+  "magmarizer": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "magnet": {
+    "item_type": "type_enhancer",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "electric": [[1.1, 2], [1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "marshadium_z": {
+    "item_type": "z_crystal_specific",
+    "pokemon_specific": [
+      "marshadow"
+    ],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "meadow_plate": {
+    "item_type": "plate",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 6]],
+      "changes_pokemon_type": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "grass": [[1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "mental_herb": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "infatuation": [[true, 3]],
+      "taunt": [[true, 5]],
+      "encore": [[true, 5]],
+      "torment": [[true, 5]],
+      "heal_block": [[true, 5]],
+      "disable": [[true, 5]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "metal_coat": {
+    "item_type": "type_enhancer",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "steel": [[1.1, 2], [1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "metal_powder": {
+    "item_type": "stat_enhancer_specific",
+    "pokemon_specific": [
+      "ditto"
+    ],
+    "gen": 2,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "defense": [["2.0", "user", "2"]]
+    }
+  },
+  "metronome": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "other_move_enhancement": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "mewnium_z": {
+    "item_type": "z_crystal_specific",
+    "pokemon_specific": [
+      "mew"
+    ],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "mimikium_z": {
+    "item_type": "z_crystal_specific",
+    "pokemon_specific": [
+      "mimikyu"
+    ],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "mind_plate": {
+    "item_type": "plate",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 6]],
+      "changes_pokemon_type": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "psychic": [[1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "miracle_seed": {
+    "item_type": "type_enhancer",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "grass": [[1.1, 2], [1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "misty_seed": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "special_defense": [["+1", "user", 7]]
+    }
+  },
+  "muscle_band": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "other_move_enhancement": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "mystic_water": {
+    "item_type": "type_enhancer",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "water": [[1.1, 2], [1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "never_melt_ice": {
+    "item_type": "type_enhancer",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "ice": [[1.1, 2], [1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "normal_gem": {
+    "item_type": "gem",
+    "pokemon_specific": [],
+    "gen": 5,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "normal": [[1.5, 5], [1.3, 6]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "normalium_z": {
+    "item_type": "z_crystal",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "odd_incense": {
+    "item_type": "incense",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "psychic": [[1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "pikanium_z": {
+    "item_type": "z_crystal_specific",
+    "pokemon_specific": [
+      "pikachu_normal"
+    ],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "pikashunium_z": {
+    "item_type": "z_crystal_specific",
+    "pokemon_specific": [
+      "pikachu_in_a_cap"
+    ],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "pink_bow": {
+    "item_type": "type_enhancer",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": true,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "normal": [[1.1, 2]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "pink_scarf": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "pixie_plate": {
+    "item_type": "plate",
+    "pokemon_specific": [],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 6]],
+      "changes_pokemon_type": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "fairy": [[1.2, 6]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "poison_barb": {
+    "item_type": "type_enhancer",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "poison": [[1.1, 2], [1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "poison_gem": {
+    "item_type": "gem",
+    "pokemon_specific": [],
+    "gen": 5,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "poison": [[1.5, 5], [1.3, 6]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "poison_memory": {
+    "item_type": "memory",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 7]],
+      "changes_pokemon_type": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "poisonium_z": {
+    "item_type": "z_crystal",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "polkadot_bow": {
+    "item_type": "type_enhancer",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": true,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "normal": [[1.1, 2]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "power_anklet": {
+    "item_type": "power_item",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "speed": [[5, "user", 4]]
+    }
+  },
+  "power_band": {
+    "item_type": "power_item",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "speed": [[5, "user", 4]]
+    }
+  },
+  "power_belt": {
+    "item_type": "power_item",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "speed": [[5, "user", 4]]
+    }
+  },
+  "power_bracer": {
+    "item_type": "power_item",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "speed": [[5, "user", 4]]
+    }
+  },
+  "power_herb": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {
+      "charging_turn": [[100.0, 4]]
+    },
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "power_lens": {
+    "item_type": "power_item",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "speed": [[5, "user", 4]]
+    }
+  },
+  "power_weight": {
+    "item_type": "power_item",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "speed": [[5, "user", 4]]
+    }
+  },
+  "primarium_z": {
+    "item_type": "z_crystal_specific",
+    "pokemon_specific": [
+      "primarina"
+    ],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "protective_pads": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "ignores_contact": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "protector": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "psychic_gem": {
+    "item_type": "gem",
+    "pokemon_specific": [],
+    "gen": 5,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "psychic": [[1.5, 5], [1.3, 6]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "psychic_memory": {
+    "item_type": "memory",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 7]],
+      "changes_pokemon_type": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "psychic_seed": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "special_defense": [["+1", "user", 7]]
+    }
+  },
+  "psychium_z": {
+    "item_type": "z_crystal",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "pure_incense": {
+    "item_type": "incense",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "quick_claw": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "move_first_in_priority": [[true, 2]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "quick_powder": {
+    "item_type": "stat_enhancer_specific",
+    "pokemon_specific": [
+      "ditto"
+    ],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "speed": [["2.0", "user", "4"]]
+    }
+  },
+  "razor_claw": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "critical_hit_ratio": [["+1", "user", 4]]
+    }
+  },
+  "razor_fang": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {
+      "flinch": [[10.0, 4]]
+    },
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "reaper_cloth": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "red_card": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 5,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "switches_out_target": [[true, 5]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "red_orb": {
+    "item_type": "",
+    "pokemon_specific": [
+      "groudon"
+    ],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "red_scarf": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "ribbon_sweet": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 8,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "ring_target": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 5,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "removes_type_immunity": [[true, 5]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "rock_gem": {
+    "item_type": "gem",
+    "pokemon_specific": [],
+    "gen": 5,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "rock": [[1.5, 5], [1.3, 6]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "rock_incense": {
+    "item_type": "incense",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "rock": [[1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "rock_memory": {
+    "item_type": "memory",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 7]],
+      "changes_pokemon_type": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "rockium_z": {
+    "item_type": "z_crystal",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "rocky_helmet": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 5,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "punishes_contact": [[true, 5]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "room_service": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 8,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "speed": [["-1", "user", 8]]
+    }
+  },
+  "rose_incense": {
+    "item_type": "incense",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "grass": [[1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "rusted_shield": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 8,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "changes_form": [[true, 8]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "rusted_sword": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 8,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "changes_form": [[true, 8]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "safety_goggles": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "ignores_weather": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {
+      "powder": [[0.0, 6]]
+    },
+    "stat_modifications": {}
+  },
+  "scope_lens": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "critical_hit_ratio": [["+1", "user", 3]]
+    }
+  },
+  "sea_incense": {
+    "item_type": "incense",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "water": [[1.05, 3], [1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "sharp_beak": {
+    "item_type": "type_enhancer",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "flying": [[1.1, 2], [1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "shed_shell": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {
+      "trapped": [[100.0, 4]]
+    },
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "shell_bell": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "restores_hp": [[true, 3]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "shock_drive": {
+    "item_type": "drive",
+    "pokemon_specific": [],
+    "gen": 5,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "silk_scarf": {
+    "item_type": "type_enhancer",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "normal": [[1.1, 2], [1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "silver_powder": {
+    "item_type": "type_enhancer",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "bug": [[1.1, 2], [1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "sky_plate": {
+    "item_type": "plate",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 6]],
+      "changes_pokemon_type": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "flying": [[1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "smoke_ball": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "smooth_rock": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "extends_duration": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "snorlium_z": {
+    "item_type": "z_crystal_specific",
+    "pokemon_specific": [
+      "snorlax"
+    ],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "snowball": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "attack": [["+1", "user", 6]]
+    }
+  },
+  "soft_sand": {
+    "item_type": "type_enhancer",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "ground": [[1.1, 2], [1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "solganium_z": {
+    "item_type": "z_crystal_specific",
+    "pokemon_specific": [
+      "solgaleo",
+      "necrozma_dusk_mane"
+    ],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "soothe_bell": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "soul_dew": {
+    "item_type": "type_enhancer_specific",
+    "pokemon_specific": [
+      "latios"
+    ],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "psychic": [[1.2, 7]],
+      "dragon": [[1.2, 7]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "special_attack": [[5, "user", 3], [1,
+          "user", 7]],
+      "special_defense": [[5, "user", 3], [1,
+          "user", 7]]
+    }
+  },
+  "spell_tag": {
+    "item_type": "type_enhancer",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "ghost": [[1.1, 2], [1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "splash_plate": {
+    "item_type": "plate",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 6]],
+      "changes_pokemon_type": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "water": [[1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "spooky_plate": {
+    "item_type": "plate",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 6]],
+      "changes_pokemon_type": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "ghost": [[1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "star_sweet": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 8,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "steel_gem": {
+    "item_type": "gem",
+    "pokemon_specific": [],
+    "gen": 5,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "steel": [[1.5, 5], [1.3, 6]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "steel_memory": {
+    "item_type": "memory",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 7]],
+      "changes_pokemon_type": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "steelium_z": {
+    "item_type": "z_crystal",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "sticky_barb": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "punishes_contact": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "stone_plate": {
+    "item_type": "plate",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 6]],
+      "changes_pokemon_type": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "rock": [[1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "strawberry_sweet": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 8,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "tapunium_z": {
+    "item_type": "z_crystal_specific",
+    "pokemon_specific": [
+      "tapu_koko",
+      "tapu_lele",
+      "tapu_bulu",
+      "tapu_fini"
+    ],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "terrain_extender": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "extends_duration": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "thick_club": {
+    "item_type": "stat_enhancer_specific",
+    "pokemon_specific": [
+      "cubone",
+      "marowak",
+      "marowak_alola"
+    ],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "attack": [["2.0", "user", "2"]]
+    }
+  },
+  "throat_spray": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 8,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "special_attack": [["+1", "user", 8]]
+    }
+  },
+  "toxic_orb": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {
+      "bad_poison": [[100.0, 4]]
+    },
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "toxic_plate": {
+    "item_type": "plate",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 6]],
+      "changes_pokemon_type": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "poison": [[1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "twisted_spoon": {
+    "item_type": "type_enhancer",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "psychic": [[1.1, 2], [1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "ultranecrozium_z": {
+    "item_type": "z_crystal_specific",
+    "pokemon_specific": [
+      "necrozma_ultra"
+    ],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "utility_umbrella": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 8,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "suppresses_ability": [[true, 8]],
+      "ignores_weather": [[true, 8]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "water_gem": {
+    "item_type": "gem",
+    "pokemon_specific": [],
+    "gen": 5,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "water": [[1.5, 5], [1.3, 6]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "water_memory": {
+    "item_type": "memory",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 7]],
+      "changes_pokemon_type": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "waterium_z": {
+    "item_type": "z_crystal",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "wave_incense": {
+    "item_type": "incense",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "water": [[1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "weakness_policy": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "attack": [["+2", "user", 6]],
+      "special_attack": [["+2", "user", 6]]
+    }
+  },
+  "white_herb": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "resets_stats": [[true, 3]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "wide_lens": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "accuracy": [[1, "user", 4]]
+  },
+  "wise_glasses": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "other_move_enhancement": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "yellow_scarf": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "zap_plate": {
+    "item_type": "plate",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_move_type": [[true, 6]],
+      "changes_pokemon_type": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "electric": [[1.2, 4]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "zoom_lens": {
+    "item_type": "",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "accuracy": [[2, "user", 4]]
+  },
+  "aguav_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {
+      "confusion": [[100.0, 3]]
+    },
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["dragon", 0, 3], [[
+          "dragon", 0, 6]]
+    ]
+  },
+  "apicot_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "special_defense": [["+1", "user", 3]]
+    },
+    "nature_power": [["ground", 0, 3], [[
+          "ground", 0, 6]]
+    ]
+  },
+  "aspear_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "freeze": [[true, 3]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["ice", 0, 3], [[
+          "ice", 0, 6]]
+    ]
+  },
+  "babiri_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {
+      "steel": [[0.5, 4]]
+    },
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["steel", 0, 4], [[
+          "steel", 0, 6]]
+    ]
+  },
+  "belue_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["electric", 0, 3], [[
+          "electric", 0, 6]]
+    ]
+  },
+  "bluk_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["fire", 0, 3], [[
+          "fire", 0, 6]]
+    ]
+  },
+  "charti_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {
+      "rock": [[0.5, 4]]
+    },
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["rock", 0, 4], [[
+          "rock", 0, 6]]
+    ]
+  },
+  "cheri_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "paralysis": [[true, 3]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["fire", 0, 3], [[
+          "fire", 0, 6]]
+    ]
+  },
+  "chesto_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "sleep": [[true, 3]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["water", 0, 3], [[
+          "water", 0, 6]]
+    ]
+  },
+  "chilan_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {
+      "normal": [[0.5, 4]]
+    },
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["normal", 0, 4], [[
+          "normal", 0, 6]]
+    ]
+  },
+  "chople_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {
+      "fighting": [[0.5, 4]]
+    },
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["fighting", 0, 4], [[
+          "fighting", 0, 6]]
+    ]
+  },
+  "coba_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {
+      "flying": [[0.5, 4]]
+    },
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["flying", 0, 4], [[
+          "flying", 0, 6]]
+    ]
+  },
+  "colbur_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {
+      "dark": [[0.5, 4]]
+    },
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["dark", 0, 4], [[
+          "dark", 0, 6]]
+    ]
+  },
+  "cornn_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["bug", 0, 3], [[
+          "bug", 0, 6]]
+    ]
+  },
+  "custap_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "move_first_in_priority": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["ghost", 0, 4], [[
+          "ghost", 0, 6]]
+    ]
+  },
+  "durin_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["water", 0, 3], [[
+          "water", 0, 6]]
+    ]
+  },
+  "enigma_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["bug", 0, 3], [[
+          "bug", 0, 6]]
+    ]
+  },
+  "figy_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {
+      "confusion": [[100.0, 3]]
+    },
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["bug", 0, 3], [[
+          "bug", 0, 6]]
+    ]
+  },
+  "ganlon_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "defense": [["+1", "user", 3]]
+    },
+    "nature_power": [["ice", 0, 3], [[
+          "ice", 0, 6]]
+    ]
+  },
+  "grepa_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["flying", 0, 3], [[
+          "flying", 0, 6]]
+    ]
+  },
+  "haban_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {
+      "dragon": [[0.5, 4]]
+    },
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["dragon", 0, 4], [[
+          "dragon", 0, 6]]
+    ]
+  },
+  "hondew_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["ground", 0, 3], [[
+          "ground", 0, 6]]
+    ]
+  },
+  "iapapa_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {
+      "confusion": [[100.0, 3]]
+    },
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["dark", 0, 3], [[
+          "dark", 0, 6]]
+    ]
+  },
+  "jaboca_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["dragon", 0, 4], [[
+          "dragon", 0, 6]]
+    ]
+  },
+  "kasib_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {
+      "ghost": [[0.5, 4]]
+    },
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["ghost", 0, 4], [[
+          "ghost", 0, 6]]
+    ]
+  },
+  "kebia_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {
+      "poison": [[0.5, 4]]
+    },
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["poison", 0, 4], [[
+          "poison", 0, 6]]
+    ]
+  },
+  "kee_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "defense": [["+1", "user", 6]]
+    },
+    "nature_power": [["fairy", 0, 6]]
+  },
+  "kelpsy_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["fighting", 0, 3], [[
+          "fighting", 0, 6]]
+    ]
+  },
+  "lansat_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "critical_hit_ratio": [["+1", "user", 3]]
+    },
+    "nature_power": [["flying", 0, 3], [[
+          "flying", 0, 6]]
+    ]
+  },
+  "leppa_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["fighting", 0, 3], [[
+          "fighting", 0, 6]]
+    ]
+  },
+  "liechi_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "attack": [["+1", "user", 3]]
+    },
+    "nature_power": [["grass", 0, 3], [[
+          "grass", 0, 6]]
+    ]
+  },
+  "lum_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "burn": [[true, 3]],
+      "freeze": [[true, 3]],
+      "paralysis": [[true, 3]],
+      "poison": [[true, 3]],
+      "bad_poison": [[true, 3]],
+      "sleep": [[true, 3]],
+      "confusion": [[true, 3]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["flying", 0, 3], [[
+          "flying", 0, 6]]
+    ]
+  },
+  "mago_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {
+      "confusion": [[100.0, 3]]
+    },
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["ghost", 0, 3], [[
+          "ghost", 0, 6]]
+    ]
+  },
+  "magost_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["rock", 0, 3], [[
+          "rock", 0, 6]]
+    ]
+  },
+  "maranga_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "special_defense": [["+1", "user", 6]]
+    },
+    "nature_power": [["dark", 0, 6]]
+  },
+  "micle_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "accuracy": [[null,
+          "user", 4], [1.2,
+          "user", 5]]
+    },
+    "nature_power": [["rock", 0, 4], [[
+          "rock", 0, 6]]
+    ]
+  },
+  "nanab_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["water", 0, 3], [[
+          "water", 0, 6]]
+    ]
+  },
+  "nomel_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["dragon", 0, 3], [[
+          "dragon", 0, 6]]
+    ]
+  },
+  "occa_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {
+      "fire": [[0.5, 4]]
+    },
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["fire", 0, 4], [[
+          "fire", 0, 6]]
+    ]
+  },
+  "oran_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["poison", 0, 3], [[
+          "poison", 0, 6]]
+    ]
+  },
+  "pamtre_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["steel", 0, 3], [[
+          "steel", 0, 6]]
+    ]
+  },
+  "passho_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {
+      "water": [[0.5, 4]]
+    },
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["water", 0, 4], [[
+          "water", 0, 6]]
+    ]
+  },
+  "payapa_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {
+      "psychic": [[0.5, 4]]
+    },
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["psychic", 0, 4], [[
+          "psychic", 0, 6]]
+    ]
+  },
+  "pecha_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "poison": [[true, 3]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["electric", 0, 3], [[
+          "electric", 0, 6]]
+    ]
+  },
+  "persim_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "confusion": [[true, 3]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["ground", 0, 3], [[
+          "ground", 0, 6]]
+    ]
+  },
+  "petaya_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "special_attack": [["+1", "user", 3]]
+    },
+    "nature_power": [["poison", 0, 3], [[
+          "poison", 0, 6]]
+    ]
+  },
+  "pinap_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["grass", 0, 3], [[
+          "grass", 0, 6]]
+    ]
+  },
+  "pomeg_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["ice", 0, 3], [[
+          "ice", 0, 6]]
+    ]
+  },
+  "qualot_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["poison", 0, 3], [[
+          "poison", 0, 6]]
+    ]
+  },
+  "rabuta_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["ghost", 0, 3], [[
+          "ghost", 0, 6]]
+    ]
+  },
+  "rawst_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "burn": [[true, 3]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["grass", 0, 3], [[
+          "grass", 0, 6]]
+    ]
+  },
+  "razz_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["steel", 0, 3], [[
+          "steel", 0, 6]]
+    ]
+  },
+  "rindo_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {
+      "grass": [[0.5, 4]]
+    },
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["grass", 0, 4], [[
+          "grass", 0, 6]]
+    ]
+  },
+  "roseli_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {
+      "fairy": [[0.5, 6]]
+    },
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["fairy", 0, 6]]
+  },
+  "rowap_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["dark", 0, 4], [[
+          "dark", 0, 6]]
+    ]
+  },
+  "salac_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "speed": [["+1", "user", 3]]
+    },
+    "nature_power": [["fighting", 0, 3], [[
+          "fighting", 0, 6]]
+    ]
+  },
+  "shuca_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {
+      "ground": [[0.5, 4]]
+    },
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["ground", 0, 4], [[
+          "ground", 0, 6]]
+    ]
+  },
+  "sitrus_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["psychic", 0, 3], [[
+          "psychic", 0, 6]]
+    ]
+  },
+  "spelon_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["dark", 0, 3], [[
+          "dark", 0, 6]]
+    ]
+  },
+  "starf_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "attack": [["+2", "user", 3]],
+      "defense": [["+2", "user", 3]],
+      "special_attack": [["+2", "user", 3]],
+      "special_defense": [["+2", "user", 3]],
+      "speed": [["+2", "user", 3]],
+      "accuracy": [["+2", "user", 3]],
+      "evasion": [["+2", "user", 3]],
+      "critical_hit_ratio": [["+2", "user", 3]]
+    },
+    "nature_power": [["psychic", 0, 3], [[
+          "psychic", 0, 6]]
+    ]
+  },
+  "tamato_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["psychic", 0, 3], [[
+          "psychic", 0, 6]]
+    ]
+  },
+  "tanga_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {
+      "bug": [[0.5, 4]]
+    },
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["bug", 0, 4], [[
+          "bug", 0, 6]]
+    ]
+  },
+  "wacan_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {
+      "electric": [[0.5, 4]]
+    },
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["electric", 0, 4], [[
+          "electric", 0, 6]]
+    ]
+  },
+  "watmel_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["fire", 0, 3], [[
+          "fire", 0, 6]]
+    ]
+  },
+  "wepear_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["electric", 0, 3], [[
+          "electric", 0, 6]]
+    ]
+  },
+  "wiki_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 3,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {
+      "confusion": [[100.0, 3]]
+    },
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["rock", 0, 3], [[
+          "rock", 0, 6]]
+    ]
+  },
+  "yache_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 4,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {
+      "ice": [[0.5, 4]]
+    },
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+    "nature_power": [["ice", 0, 4], [[
+          "ice", 0, 6]]
+    ]
+  },
+  "berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": true,
+    "knock_off": true,
+    "effects": {
+      "restores_hp": [[true, 2]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "bitter_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": true,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "confusion": [[true, 2]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "burnt_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": true,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "freeze": [[true, 2]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "gold_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": true,
+    "knock_off": true,
+    "effects": {
+      "restores_hp": [[true, 2]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "ice_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": true,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "burn": [[true, 2]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "mint_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": true,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "sleep": [[true, 2]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "miracle_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "burn": [[true, 2]],
+      "freeze": [[true, 2]],
+      "paralysis": [[true, 2]],
+      "poison": [[true, 2]],
+      "bad_poison": [[true, 2]],
+      "sleep": [[true, 2]],
+      "confusion": [[true, 2]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "mystery_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": 2,
+    "gen2_exclusive": true,
+    "knock_off": true,
+    "effects": {
+      "restores_pp": [[true, 2]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "prz_cure_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": "",
+    "gen2_exclusive": true,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "paralysis": [[true, 2]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "psn_cure_berry": {
+    "item_type": "berry",
+    "pokemon_specific": [],
+    "gen": "",
+    "gen2_exclusive": true,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "poison": [[true, 2]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "abomasite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/e/e5/Bag_Abomasite_Sprite.png",
+    "sprite_url": "Mega stone for Abomasnow.",
+    "pokemon_specific": [
+      "abomasnow"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "absolite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/d/d8/Bag_Absolite_Sprite.png",
+    "sprite_url": "Mega stone for Absol.",
+    "pokemon_specific": [
+      "absol"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "aerodactylite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/0/02/Bag_Aerodactylite_Sprite.png",
+    "sprite_url": "Mega stone for Aerodactyl.",
+    "pokemon_specific": [
+      "aerodactyl"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "aggronite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/c/c1/Bag_Aggronite_Sprite.png",
+    "sprite_url": "Mega stone for Aggron.",
+    "pokemon_specific": [
+      "aggron"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "alakazite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/9/9c/Bag_Alakazite_Sprite.png",
+    "sprite_url": "Mega stone for Alakazam.",
+    "pokemon_specific": [
+      "alakazam"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "altarianite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/2/2d/Bag_Altarianite_Sprite.png",
+    "sprite_url": "Mega stone for Altaria.",
+    "pokemon_specific": [
+      "altaria"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "ampharosite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/2/2c/Bag_Ampharosite_Sprite.png",
+    "sprite_url": "Mega stone for Ampharos.",
+    "pokemon_specific": [
+      "ampharos"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "audinite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/e/e9/Bag_Audinite_Sprite.png",
+    "sprite_url": "Mega stone for Audino.",
+    "pokemon_specific": [
+      "audino"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "banettite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/3/35/Bag_Banettite_Sprite.png",
+    "sprite_url": "Mega stone for Banette.",
+    "pokemon_specific": [
+      "banette"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "beedrillite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/1/1c/Bag_Beedrillite_Sprite.png",
+    "sprite_url": "Mega stone for Beedrill.",
+    "pokemon_specific": [
+      "beedrill"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "blastoisinite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/6/62/Bag_Blastoisinite_Sprite.png",
+    "sprite_url": "Mega stone for Blastoise.",
+    "pokemon_specific": [
+      "blastoise"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "blazikenite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/1/14/Bag_Blazikenite_Sprite.png",
+    "sprite_url": "Mega stone for Blaziken.",
+    "pokemon_specific": [
+      "blaziken"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "cameruptite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/3/3e/Bag_Cameruptite_Sprite.png",
+    "sprite_url": "Mega stone for Camerupt.",
+    "pokemon_specific": [
+      "camerupt"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "charizardite_x": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/1/1c/Bag_Charizardite_X_Sprite.png",
+    "sprite_url": "Mega stone for Charizard.",
+    "pokemon_specific": [
+      "charizard"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "charizardite_y": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/c/c8/Bag_Charizardite_Y_Sprite.png",
+    "sprite_url": "Mega stone for Charizard.",
+    "pokemon_specific": [
+      "charizard"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "diancite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/a/aa/Bag_Diancite_Sprite.png",
+    "sprite_url": "Mega stone for Diancie.",
+    "pokemon_specific": [
+      "diancie"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "galladite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/9/9f/Bag_Galladite_Sprite.png",
+    "sprite_url": "Mega stone for Gallade.",
+    "pokemon_specific": [
+      "gallade"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "garchompite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/4/4c/Bag_Garchompite_Sprite.png",
+    "sprite_url": "Mega stone for Garchomp.",
+    "pokemon_specific": [
+      "garchomp"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "gardevoirite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/4/49/Bag_Gardevoirite_Sprite.png",
+    "sprite_url": "Mega stone for Gardevoir.",
+    "pokemon_specific": [
+      "gardevoir"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "gengarite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/2/27/Bag_Gengarite_Sprite.png",
+    "sprite_url": "Mega stone for Gengar.",
+    "pokemon_specific": [
+      "gengar"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "glalitite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/8/81/Bag_Glalitite_Sprite.png",
+    "sprite_url": "Mega stone for Glalie.",
+    "pokemon_specific": [
+      "glalie"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "gyaradosite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/9/9f/Bag_Gyaradosite_Sprite.png",
+    "sprite_url": "Mega stone for Gyarados.",
+    "pokemon_specific": [
+      "gyarados"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "heracronite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/8/8c/Bag_Heracronite_Sprite.png",
+    "sprite_url": "Mega stone for Heracross.",
+    "pokemon_specific": [
+      "heracross"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "houndoominite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/a/ae/Bag_Houndoominite_Sprite.png",
+    "sprite_url": "Mega stone for Houndoom.",
+    "pokemon_specific": [
+      "houndoom"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "kangaskhanite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/c/c5/Bag_Kangaskhanite_Sprite.png",
+    "sprite_url": "Mega stone for Kangaskhan.",
+    "pokemon_specific": [
+      "kangaskhan"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "latiasite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/3/39/Bag_Latiasite_Sprite.png",
+    "sprite_url": "Mega stone for Latias.",
+    "pokemon_specific": [
+      "latias"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "latiosite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/6/69/Bag_Latiosite_Sprite.png",
+    "sprite_url": "Mega stone for Latios.",
+    "pokemon_specific": [
+      "latios"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "lopunnite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/4/4d/Bag_Lopunnite_Sprite.png",
+    "sprite_url": "Mega stone for Lopunny.",
+    "pokemon_specific": [
+      "lopunny"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "lucarionite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/7/76/Bag_Lucarionite_Sprite.png",
+    "sprite_url": "Mega stone for Lucario.",
+    "pokemon_specific": [
+      "lucario"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "manectite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/9/98/Bag_Manectite_Sprite.png",
+    "sprite_url": "Mega stone for Manectric.",
+    "pokemon_specific": [
+      "manectric"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "mawilite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/e/ed/Bag_Mawilite_Sprite.png",
+    "sprite_url": "Mega stone for Mawile.",
+    "pokemon_specific": [
+      "mawile"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "medichamite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/e/ed/Bag_Medichamite_Sprite.png",
+    "sprite_url": "Mega stone for Medicham.",
+    "pokemon_specific": [
+      "medicham"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "metagrossite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/2/2a/Bag_Metagrossite_Sprite.png",
+    "sprite_url": "Mega stone for Metagross.",
+    "pokemon_specific": [
+      "metagross"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "mewtwonite_x": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/0/0d/Bag_Mewtwonite_X_Sprite.png",
+    "sprite_url": "Mega stone for Mewtwo.",
+    "pokemon_specific": [
+      "mewtwo"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "mewtwonite_y": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/4/4a/Bag_Mewtwonite_Y_Sprite.png",
+    "sprite_url": "Mega stone for Mewtwo.",
+    "pokemon_specific": [
+      "mewtwo"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "pidgeotite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/8/87/Bag_Pidgeotite_Sprite.png",
+    "sprite_url": "Mega stone for Pidgeot.",
+    "pokemon_specific": [
+      "pidgeot"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "pinsirite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/1/15/Bag_Pinsirite_Sprite.png",
+    "sprite_url": "Mega stone for Pinsir.",
+    "pokemon_specific": [
+      "pinsir"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "sablenite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/2/2f/Bag_Sablenite_Sprite.png",
+    "sprite_url": "Mega stone for Sableye.",
+    "pokemon_specific": [
+      "sableye"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "salamencite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/d/d0/Bag_Salamencite_Sprite.png",
+    "sprite_url": "Mega stone for Salamence.",
+    "pokemon_specific": [
+      "salamence"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "sceptilite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/5/5b/Bag_Sceptilite_Sprite.png",
+    "sprite_url": "Mega stone for Sceptile.",
+    "pokemon_specific": [
+      "sceptile"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "scizorite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/7/73/Bag_Scizorite_Sprite.png",
+    "sprite_url": "Mega stone for Scizor.",
+    "pokemon_specific": [
+      "scizor"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "sharpedonite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/f/fb/Bag_Sharpedonite_Sprite.png",
+    "sprite_url": "Mega stone for Sharpedo.",
+    "pokemon_specific": [
+      "sharpedo"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "slowbronite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/9/9e/Bag_Slowbronite_Sprite.png",
+    "sprite_url": "Mega stone for Slowbro.",
+    "pokemon_specific": [
+      "slowbro"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "steelixite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/6/6c/Bag_Steelixite_Sprite.png",
+    "sprite_url": "Mega stone for Steelix.",
+    "pokemon_specific": [
+      "steelix"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "swampertite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/f/f3/Bag_Swampertite_Sprite.png",
+    "sprite_url": "Mega stone for Swampert.",
+    "pokemon_specific": [
+      "swampert"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "tyranitarite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/e/e3/Bag_Tyranitarite_Sprite.png",
+    "sprite_url": "Mega stone for Tyranitar.",
+    "pokemon_specific": [
+      "tyranitar"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "venusaurite": {
+    "item_type": "mega_stone",
+    "description": "//cdn2.bulbagarden.net/upload/0/0b/Bag_Venusaurite_Sprite.png",
+    "sprite_url": "Mega stone for Venusaur.",
+    "pokemon_specific": [
+      "venusaur"
+    ],
+    "gen": 6,
+    "gen2_exclusive": false,
+    "knock_off": false,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "berry_juice": {
+    "item_type": "other",
+    "pokemon_specific": [],
+    "gen": 5,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {
+      "restores_hp": [[true, 5]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "stat_modifications": {}
+  },
+  "adrenaline_orb": {
+    "item_type": "other",
+    "pokemon_specific": [],
+    "gen": 7,
+    "gen2_exclusive": false,
+    "knock_off": true,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "speed": [["+1", "user", 7]]
+    }
+  }
+}

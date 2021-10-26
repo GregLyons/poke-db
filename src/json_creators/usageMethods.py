@@ -22,10 +22,10 @@ def makeUsageMethodDict():
     "sound": 1,
   }
 
-  # make sure all statuss are accounted for
-  for status in usageMethodList():
-    if status not in usageMethodDict:
-      print(status, 'not in usageMethodDict')
+  # make sure all usage methodsare accounted for
+  for usageMethod in usageMethodList():
+    if usageMethod not in usageMethodDict:
+      print(usageMethod, 'not in usageMethodDict')
 
   # make sure no typos
   for key in usageMethodDict.keys():

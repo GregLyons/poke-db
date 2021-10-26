@@ -1,0 +1,3433 @@
+{
+  "adaptability": {
+    "gen": 4,
+    "effects": {
+      "other_move_enhancement": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "aerilate": {
+    "gen": 6,
+    "effects": {
+      "changes_move_type": [[true, 6]],
+      "other_move_enhancement": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "aftermath": {
+    "gen": 4,
+    "effects": {
+      "punishes_contact": [[true, 3]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "air_lock": {
+    "gen": 3,
+    "effects": {
+      "ignores_weather": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "analytic": {
+    "gen": 5,
+    "effects": {
+      "other_move_enhancement": [[true, 5]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "anger_point": {
+    "gen": 4,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "attack": [["+12", "user", 4]]
+    }
+  },
+  "anticipation": {
+    "gen": 4,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "arena_trap": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {
+      "trapped": [[100.0, 3]]
+    },
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "aroma_veil": {
+    "gen": 6,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "infatuation": [[true, 6]],
+      "disable": [[true, 6]],
+      "torment": [[true, 6]],
+      "encore": [[true, 6]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "aura_break": {
+    "gen": 6,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "bad_dreams": {
+    "gen": 4,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "ball_fetch": {
+    "gen": 8,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "battery": {
+    "gen": 7,
+    "effects": {
+      "other_move_enhancement": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "special_attack": [["1.3", "user", 7]]
+    }
+  },
+  "battle_armor": {
+    "gen": 3,
+    "effects": {
+      "prevents_crit": [[true, 3]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "battle_bond": {
+    "gen": 7,
+    "effects": {
+      "changes_form": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "beast_boost": {
+    "gen": 7,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "attack": [["+1", "user", 7]],
+      "defense": [["+1", "user", 7]],
+      "special_attack": [["+1", "user", 7]],
+      "special_defense": [["+1", "user", 7]],
+      "speed": [["+1", "user", 7]]
+    }
+  },
+  "berserk": {
+    "gen": 7,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "special_attack": [["+1", "user", 7]]
+    }
+  },
+  "big_pecks": {
+    "gen": 5,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "blaze": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "fire": [[1.5, 3]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "bulletproof": {
+    "gen": 6,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {
+      "ball": [[0.0, 6]]
+    },
+    "stat_modifications": {}
+  },
+  "cheek_pouch": {
+    "gen": 6,
+    "effects": {
+      "restores_hp": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "chilling_neigh": {
+    "gen": 8,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "chlorophyll": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "speed": [["2.0", "user", 3]]
+    }
+  },
+  "clear_body": {
+    "gen": 3,
+    "effects": {
+      "prevents_stat_drop": [[true, 3]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "cloud_nine": {
+    "gen": 3,
+    "effects": {
+      "ignores_weather": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "color_change": {
+    "gen": 3,
+    "effects": {
+      "changes_pokemon_type": [[true, 3]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "comatose": {
+    "gen": 7,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "poison": [[true, 7]],
+      "bad_poison": [[true, 7]],
+      "burn": [[true, 7]],
+      "paralysis": [[true, 7]],
+      "freeze": [[true, 7]],
+      "sleep": [[true, 7]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "competitive": {
+    "gen": 6,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "special_attack": [["+2", "user", 6]]
+    }
+  },
+  "compound_eyes": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "accuracy": [["1.3", "user", 3]]
+    }
+  },
+  "contrary": {
+    "gen": 5,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "corrosion": {
+    "gen": 7,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "cotton_down": {
+    "gen": 8,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "speed": [["-1", "user", 8]]
+    }
+  },
+  "curious_medicine": {
+    "gen": 8,
+    "effects": {
+      "resets_stats": [[true, 8]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "cursed_body": {
+    "gen": 5,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "cute_charm": {
+    "gen": 3,
+    "effects": {
+      "punishes_contact": [[true, 3]]
+    },
+    "causes_status": {
+      "infatuation": [[30.0, 3]]
+    },
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "damp": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "dancer": {
+    "gen": 7,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "dark_aura": {
+    "gen": 6,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "dark": [[1.33, 6]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "dauntless_shield": {
+    "gen": 8,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "defense": [["+1", "user", 8]]
+    }
+  },
+  "dazzling": {
+    "gen": 7,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "defeatist": {
+    "gen": 5,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "attack": [["0.5", "user", 5]],
+      "special_attack": [["0.5", "user", 5]]
+    }
+  },
+  "defiant": {
+    "gen": 5,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "attack": [["+2", "user", 5]]
+    }
+  },
+  "delta_stream": {
+    "gen": 6,
+    "effects": {
+      "creates_weather": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "desolate_land": {
+    "gen": 6,
+    "effects": {
+      "creates_weather": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "disguise": {
+    "gen": 7,
+    "effects": {
+      "changes_form": [[true, 7]],
+      "costs_hp": [[true, 8]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "download": {
+    "gen": 4,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "attack": [["+1", "user", 4]],
+      "special_attack": [["+1", "user", 4]]
+    }
+  },
+  "dragons_maw": {
+    "gen": 8,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "dragon": [[1.5, 8]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "drizzle": {
+    "gen": 3,
+    "effects": {
+      "creates_weather": [[true, 3]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "drought": {
+    "gen": 3,
+    "effects": {
+      "creates_weather": [[true, 3]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "dry_skin": {
+    "gen": 4,
+    "effects": {
+      "restores_hp": [[true, 4]],
+      "costs_hp": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {
+      "fire": [[1.25, 4]],
+      "water": [[0.0, 4]]
+    },
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "early_bird": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "sleep": [[true, 3]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "effect_spore": {
+    "gen": 3,
+    "effects": {
+      "punishes_contact": [[true, 3]]
+    },
+    "causes_status": {
+      "poison": [[9.0, 3]],
+      "paralysis": [[10.0, 3]],
+      "sleep": [[11.0, 3]]
+    },
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "electric_surge": {
+    "gen": 7,
+    "effects": {
+      "creates_terrain": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "emergency_exit": {
+    "gen": 7,
+    "effects": {
+      "switches_out_user": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "fairy_aura": {
+    "gen": 6,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "fairy": [[1.33, 6]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "filter": {
+    "gen": 4,
+    "effects": {
+      "other_move_resistance": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "flame_body": {
+    "gen": 3,
+    "effects": {
+      "punishes_contact": [[true, 3]]
+    },
+    "causes_status": {
+      "burn": [[30.0, 3]]
+    },
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "flare_boost": {
+    "gen": 5,
+    "effects": {
+      "other_move_enhancement": [[true, 5]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "special_attack": [["1.5", "user", 5]]
+    }
+  },
+  "flash_fire": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "fire": [[1.5, 3]]
+    },
+    "resists_type": {
+      "fire": [[0.0, 3]]
+    },
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "flower_gift": {
+    "gen": 4,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "attack": [["1.5", "user", 4]],
+      "special_defense": [["1.5", "user", 4]]
+    }
+  },
+  "flower_veil": {
+    "gen": 6,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "poison": [[true, 6]],
+      "bad_poison": [[true, 6]],
+      "burn": [[true, 6]],
+      "paralysis": [[true, 6]],
+      "freeze": [[true, 6]],
+      "sleep": [[true, 6]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "fluffy": {
+    "gen": 7,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {
+      "fire": [[2.0, 7]]
+    },
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "forecast": {
+    "gen": 3,
+    "effects": {
+      "changes_form": [[true, 5]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "forewarn": {
+    "gen": 4,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "friend_guard": {
+    "gen": 5,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "frisk": {
+    "gen": 4,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "full_metal_body": {
+    "gen": 7,
+    "effects": {
+      "prevents_stat_drop": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "fur_coat": {
+    "gen": 6,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "defense": [["2.0", "user", 6]]
+    }
+  },
+  "gale_wings": {
+    "gen": 6,
+    "effects": {
+      "adds_priority": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "galvanize": {
+    "gen": 7,
+    "effects": {
+      "changes_move_type": [[true, 7]],
+      "other_move_enhancement": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "gluttony": {
+    "gen": 4,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "gooey": {
+    "gen": 6,
+    "effects": {
+      "punishes_contact": [[true, 3]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "speed": [["-1", "user", 6]]
+    }
+  },
+  "gorilla_tactics": {
+    "gen": 8,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "attack": [["1.5", "user", 8]]
+    }
+  },
+  "grass_pelt": {
+    "gen": 6,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "defense": [["1.5", "user", 6]]
+    }
+  },
+  "grassy_surge": {
+    "gen": 7,
+    "effects": {
+      "creates_terrain": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "grim_neigh": {
+    "gen": 8,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "gulp_missile": {
+    "gen": 8,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "guts": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "attack": [["1.5", "user", 3]]
+    }
+  },
+  "harvest": {
+    "gen": 5,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "healer": {
+    "gen": 5,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "heatproof": {
+    "gen": 4,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {
+      "fire": [[0.5, 4]]
+    },
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "heavy_metal": {
+    "gen": 5,
+    "effects": {
+      "affects_weight": [[true, 5]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "honey_gather": {
+    "gen": 4,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "huge_power": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "attack": [["2.0", "user", 3]]
+    }
+  },
+  "hunger_switch": {
+    "gen": 8,
+    "effects": {
+      "changes_form": [[true, 8]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "hustle": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "attack": [["0.5", "user", 3]],
+      "accuracy": [["0.8", "user", 3]]
+    }
+  },
+  "hydration": {
+    "gen": 4,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "poison": [[true, 4]],
+      "bad_poison": [[true, 4]],
+      "burn": [[true, 4]],
+      "paralysis": [[true, 4]],
+      "freeze": [[true, 4]],
+      "sleep": [[true, 4]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "hyper_cutter": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "ice_body": {
+    "gen": 4,
+    "effects": {
+      "restores_hp": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "ice_face": {
+    "gen": 8,
+    "effects": {
+      "changes_form": [[true, 8]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "ice_scales": {
+    "gen": 8,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "special_defense": [["0.5", "user", 8]]
+    }
+  },
+  "illuminate": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "illusion": {
+    "gen": 5,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "immunity": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "poison": [[true, 3]],
+      "bad_poison": [[true, 3]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "imposter": {
+    "gen": 5,
+    "effects": {
+      "changes_form": [[true, 5]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "infiltrator": {
+    "gen": 5,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "innards_out": {
+    "gen": 7,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "inner_focus": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "flinch": [[true, 3]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "insomnia": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "sleep": [[true, 3]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "intimidate": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "attack": [["-1", "all_foes", 3]]
+    }
+  },
+  "intrepid_sword": {
+    "gen": 8,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "attack": [["+1", "user", 8]]
+    }
+  },
+  "iron_barbs": {
+    "gen": 5,
+    "effects": {
+      "punishes_contact": [[true, 3]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "iron_fist": {
+    "gen": 4,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {
+      "punch": [[1.2, 4]]
+    },
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "justified": {
+    "gen": 5,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "attack": [["+1", "user", 5]]
+    }
+  },
+  "keen_eye": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "klutz": {
+    "gen": 4,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "leaf_guard": {
+    "gen": 4,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "levitate": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {
+      "ground": [[0.0, 3]]
+    },
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "libero": {
+    "gen": 8,
+    "effects": {
+      "changes_pokemon_type": [[true, 8]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "light_metal": {
+    "gen": 5,
+    "effects": {
+      "affects_weight": [[true, 5]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "lightning_rod": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {
+      "electric": [[0.0, 5]]
+    },
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "special_attack": [[0, "user", 3], ["+1",
+          "user", 3]]
+    }
+  },
+  "limber": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "paralysis": [[true, 3]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "liquid_ooze": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "liquid_voice": {
+    "gen": 7,
+    "effects": {
+      "changes_move_type": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "long_reach": {
+    "gen": 7,
+    "effects": {
+      "ignores_contact": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "magic_bounce": {
+    "gen": 5,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "magic_guard": {
+    "gen": 4,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "magician": {
+    "gen": 6,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "magma_armor": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "freeze": [[true, 3]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "magnet_pull": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {
+      "trapped": [[100.0, 3]]
+    },
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "marvel_scale": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "defense": [["1.5", "user", 3]]
+    }
+  },
+  "mega_launcher": {
+    "gen": 6,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {
+      "pulse": [[1.5, 6]]
+    },
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "merciless": {
+    "gen": 7,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "mimicry": {
+    "gen": 8,
+    "effects": {
+      "changes_pokemon_type": [[true, 8]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "minus": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "special_attack": [["1.5", "user", 3]]
+    }
+  },
+  "mirror_armor": {
+    "gen": 8,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "misty_surge": {
+    "gen": 7,
+    "effects": {
+      "creates_terrain": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "mold_breaker": {
+    "gen": 4,
+    "effects": {
+      "ignores_ability": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "moody": {
+    "gen": 5,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "attack": [["-1", "user", 5]],
+      "defense": [["+2", "user", 5]],
+      "special_attack": [["-1", "user", 5]],
+      "special_defense": [["+2", "user", 5]],
+      "speed": [["-1", "user", 5]],
+      "evasion": [["+2", "user", 5]],
+      "accuracy": [["-1", "user", 5]]
+    }
+  },
+  "motor_drive": {
+    "gen": 4,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {
+      "electric": [[0.0, 4]]
+    },
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "speed": [["+1", "user", 4]]
+    }
+  },
+  "moxie": {
+    "gen": 5,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "attack": [["+1", "user", 5]]
+    }
+  },
+  "multiscale": {
+    "gen": 5,
+    "effects": {
+      "other_move_resistance": [[true, 5]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "multitype": {
+    "gen": 4,
+    "effects": {
+      "changes_pokemon_type": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "mummy": {
+    "gen": 5,
+    "effects": {
+      "punishes_contact": [[true, 3]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "natural_cure": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "burn": [[true, 3]],
+      "paralysis": [[true, 3]],
+      "freeze": [[true, 3]],
+      "poison": [[true, 3]],
+      "bad_poison": [[true, 3]],
+      "sleep": [[true, 3]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "neuroforce": {
+    "gen": 7,
+    "effects": {
+      "other_move_enhancement": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "neutralizing_gas": {
+    "gen": 8,
+    "effects": {
+      "suppresses_ability": [[true, 8]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "no_guard": {
+    "gen": 4,
+    "effects": {
+      "cannot_miss": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "normalize": {
+    "gen": 4,
+    "effects": {
+      "changes_move_type": [[true, 6]],
+      "other_move_enhancement": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "oblivious": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "infatuation": [[true, 3]],
+      "taunt": [[true, 3]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "overcoat": {
+    "gen": 5,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "overgrow": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "grass": [[1.5, 3]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "own_tempo": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "confusion": [[true, 3]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "parental_bond": {
+    "gen": 6,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "pastel_veil": {
+    "gen": 8,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "poison": [[true, 8]],
+      "bad_poison": [[true, 8]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "perish_body": {
+    "gen": 8,
+    "effects": {
+      "punishes_contact": [[true, 8]]
+    },
+    "causes_status": {
+      "perish_song": [[100.0, 8]]
+    },
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "pickpocket": {
+    "gen": 5,
+    "effects": {
+      "punishes_contact": [[true, 3]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "pickup": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "pixilate": {
+    "gen": 6,
+    "effects": {
+      "changes_move_type": [[true, 6]],
+      "other_move_enhancement": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "plus": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "special_attack": [["1.5", "user", 3]]
+    }
+  },
+  "poison_heal": {
+    "gen": 4,
+    "effects": {
+      "restores_hp": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {
+      "poison": [[true, 4]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "poison_point": {
+    "gen": 3,
+    "effects": {
+      "punishes_contact": [[true, 3]]
+    },
+    "causes_status": {
+      "poison": [[30.0, 3]]
+    },
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "poison_touch": {
+    "gen": 5,
+    "effects": {},
+    "causes_status": {
+      "poison": [[30.0, 5]]
+    },
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "power_construct": {
+    "gen": 7,
+    "effects": {
+      "changes_form": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "power_of_alchemy": {
+    "gen": 7,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "power_spot": {
+    "gen": 8,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "prankster": {
+    "gen": 5,
+    "effects": {
+      "adds_priority": [[true, 5]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "pressure": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "primordial_sea": {
+    "gen": 6,
+    "effects": {
+      "creates_weather": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "prism_armor": {
+    "gen": 7,
+    "effects": {
+      "other_move_resistance": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "propeller_tail": {
+    "gen": 8,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "protean": {
+    "gen": 6,
+    "effects": {
+      "changes_pokemon_type": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "psychic_surge": {
+    "gen": 7,
+    "effects": {
+      "creates_terrain": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "punk_rock": {
+    "gen": 8,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {
+      "sound": [[1.3, 8]]
+    },
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "pure_power": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "attack": [["2.0", "user", 3]]
+    }
+  },
+  "queenly_majesty": {
+    "gen": 7,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "quick_draw": {
+    "gen": 8,
+    "effects": {
+      "move_first_in_priority": [[true, 8]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "quick_feet": {
+    "gen": 4,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "speed": [["1.5", "user", 4]]
+    }
+  },
+  "rain_dish": {
+    "gen": 3,
+    "effects": {
+      "restores_hp": [[true, 3]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "rattled": {
+    "gen": 5,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "speed": [["+1", "user", 5]]
+    }
+  },
+  "receiver": {
+    "gen": 7,
+    "effects": {
+      "changes_ability": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "reckless": {
+    "gen": 4,
+    "effects": {
+      "other_move_enhancement": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "refrigerate": {
+    "gen": 6,
+    "effects": {
+      "changes_move_type": [[true, 6]],
+      "other_move_enhancement": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "regenerator": {
+    "gen": 5,
+    "effects": {
+      "restores_hp": [[true, 5]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "ripen": {
+    "gen": 8,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "rivalry": {
+    "gen": 4,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "rks_system": {
+    "gen": 7,
+    "effects": {
+      "changes_pokemon_type": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "rock_head": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "rough_skin": {
+    "gen": 3,
+    "effects": {
+      "punishes_contact": [[true, 3]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "run_away": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "sand_force": {
+    "gen": 5,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "sand_rush": {
+    "gen": 5,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "speed": [["2.0", "user", 5]]
+    }
+  },
+  "sand_spit": {
+    "gen": 8,
+    "effects": {
+      "creates_weather": [[true, 8]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "sand_stream": {
+    "gen": 3,
+    "effects": {
+      "creates_weather": [[true, 3]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "sand_veil": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "evasion": [["1.25", "user", 3]]
+    }
+  },
+  "sap_sipper": {
+    "gen": 5,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {
+      "grass": [[0.0, 5]]
+    },
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "attack": [["+1", "user", 5]]
+    }
+  },
+  "schooling": {
+    "gen": 7,
+    "effects": {
+      "changes_form": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "scrappy": {
+    "gen": 4,
+    "effects": {},
+    "causes_status": {
+      "identified": [[100.0, 4]]
+    },
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "screen_cleaner": {
+    "gen": 8,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "serene_grace": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "shadow_shield": {
+    "gen": 7,
+    "effects": {
+      "other_move_resistance": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "shadow_tag": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {
+      "trapped": [[100.0, 3]]
+    },
+    "resists_status": {
+      "trapped": [[true, 4]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "shed_skin": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "poison": [[true, 3]],
+      "bad_poison": [[true, 3]],
+      "burn": [[true, 3]],
+      "paralysis": [[true, 3]],
+      "freeze": [[true, 3]],
+      "sleep": [[true, 3]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "sheer_force": {
+    "gen": 5,
+    "effects": {
+      "other_move_enhancement": [[true, 5]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "shell_armor": {
+    "gen": 3,
+    "effects": {
+      "prevents_crit": [[true, 3]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "shield_dust": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "shields_down": {
+    "gen": 7,
+    "effects": {
+      "changes_form": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "simple": {
+    "gen": 4,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "skill_link": {
+    "gen": 4,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "slow_start": {
+    "gen": 4,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "attack": [["0.5", "user", 4]],
+      "speed": [["0.5", "user", 4]]
+    }
+  },
+  "slush_rush": {
+    "gen": 7,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "speed": [["2.0", "user", 7]]
+    }
+  },
+  "sniper": {
+    "gen": 4,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "snow_cloak": {
+    "gen": 4,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "evasion": [["1.25", "user", 4]]
+    }
+  },
+  "snow_warning": {
+    "gen": 4,
+    "effects": {
+      "creates_weather": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "solar_power": {
+    "gen": 4,
+    "effects": {
+      "costs_hp": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "special_attack": [["1.5", "user", 4]]
+    }
+  },
+  "solid_rock": {
+    "gen": 4,
+    "effects": {
+      "other_move_resistance": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "soul_heart": {
+    "gen": 7,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "special_attack": [["+1", "user", 7]]
+    }
+  },
+  "soundproof": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {
+      "sound": [[0.0, 3]]
+    },
+    "stat_modifications": {}
+  },
+  "speed_boost": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "speed": [["+1", "user", 3]]
+    }
+  },
+  "stakeout": {
+    "gen": 7,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "stall": {
+    "gen": 4,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "stalwart": {
+    "gen": 8,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "stamina": {
+    "gen": 7,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "defense": [["+1", "user", 7]]
+    }
+  },
+  "stance_change": {
+    "gen": 6,
+    "effects": {
+      "changes_form": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "static": {
+    "gen": 3,
+    "effects": {
+      "punishes_contact": [[true, 3]]
+    },
+    "causes_status": {
+      "paralysis": [[30.0, 3]]
+    },
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "steadfast": {
+    "gen": 4,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "speed": [["+1", "user", 4]]
+    }
+  },
+  "steam_engine": {
+    "gen": 8,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "speed": [["+6", "user", 8]]
+    }
+  },
+  "steelworker": {
+    "gen": 7,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "steel": [[1.5, 7]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "steely_spirit": {
+    "gen": 8,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "steel": [[1.5, 8]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "stench": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {
+      "flinch": [[10.0, 5]]
+    },
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "sticky_hold": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "storm_drain": {
+    "gen": 4,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {
+      "water": [[0.0, 5]]
+    },
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "special_attack": [[0, "user", 4], ["+1",
+          "user", 4]]
+    }
+  },
+  "strong_jaw": {
+    "gen": 6,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {
+      "bite": [[1.5, 6]]
+    },
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "sturdy": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {
+      "bracing": [[100.0, 3]]
+    },
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "suction_cups": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "super_luck": {
+    "gen": 4,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "surge_surfer": {
+    "gen": 7,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "speed": [["2.0", "user", 7]]
+    }
+  },
+  "swarm": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "bug": [[1.5, 3]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "sweet_veil": {
+    "gen": 6,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "poison": [[true, 6]],
+      "bad_poison": [[true, 6]],
+      "burn": [[true, 6]],
+      "paralysis": [[true, 6]],
+      "freeze": [[true, 6]],
+      "sleep": [[true, 6]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "swift_swim": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "speed": [["2.0", "user", 3]]
+    }
+  },
+  "symbiosis": {
+    "gen": 6,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "synchronize": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {
+      "burn": [[100.0, 3]],
+      "poison": [[100.0, 3]],
+      "bad_poison": [[0.0, 3], [100.0, 5]],
+      "paralysis": [[100.0, 3]]
+    },
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "tangled_feet": {
+    "gen": 4,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "evasion": [["2.0", "user", 4]]
+    }
+  },
+  "tangling_hair": {
+    "gen": 7,
+    "effects": {
+      "punishes_contact": [[true, 3]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "speed": [["-1", "user", 7]]
+    }
+  },
+  "technician": {
+    "gen": 4,
+    "effects": {
+      "other_move_enhancement": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "telepathy": {
+    "gen": 5,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "teravolt": {
+    "gen": 5,
+    "effects": {
+      "ignores_ability": [[true, 5]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "thick_fat": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {
+      "fire": [[0.5, 3]],
+      "ice": [[0.5, 3]]
+    },
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "tinted_lens": {
+    "gen": 4,
+    "effects": {
+      "other_move_enhancement": [[true, 4]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "torrent": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "water": [[1.5, 3]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "tough_claws": {
+    "gen": 6,
+    "effects": {
+      "other_move_enhancement": [[true, 6]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "toxic_boost": {
+    "gen": 5,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "trace": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "transistor": {
+    "gen": 8,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {
+      "electric": [[1.5, 8]]
+    },
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "triage": {
+    "gen": 7,
+    "effects": {
+      "adds_priority": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "truant": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {
+      "recharging": [[100.0, 3]]
+    },
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "turboblaze": {
+    "gen": 5,
+    "effects": {
+      "ignores_ability": [[true, 5]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "unaware": {
+    "gen": 4,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "unburden": {
+    "gen": 4,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "speed": [["2.0", "user", 4]]
+    }
+  },
+  "unnerve": {
+    "gen": 5,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "unseen_fist": {
+    "gen": 8,
+    "effects": {
+      "bypasses_protect": [[true, 8]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "victory_star": {
+    "gen": 5,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "accuracy": [["1.1", "user", 5]]
+    }
+  },
+  "vital_spirit": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "sleep": [[true, 3]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "volt_absorb": {
+    "gen": 3,
+    "effects": {
+      "restores_hp": [[true, 3]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {
+      "electric": [[0.0, 3]]
+    },
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "wandering_spirit": {
+    "gen": 8,
+    "effects": {
+      "punishes_contact": [[true, 3]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "water_absorb": {
+    "gen": 3,
+    "effects": {
+      "restores_hp": [[true, 3]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {
+      "water": [[0.0, 3]]
+    },
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "water_bubble": {
+    "gen": 7,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "burn": [[true, 7]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "water_compaction": {
+    "gen": 7,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "defense": [["+2", "user", 7]]
+    }
+  },
+  "water_veil": {
+    "gen": 3,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {
+      "burn": [[true, 3]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "weak_armor": {
+    "gen": 5,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {
+      "speed": [["+1", "user", 5]]
+    }
+  },
+  "white_smoke": {
+    "gen": 3,
+    "effects": {
+      "prevents_stat_drop": [[true, 3]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "wimp_out": {
+    "gen": 7,
+    "effects": {
+      "switches_out_user": [[true, 7]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "wonder_guard": {
+    "gen": 3,
+    "effects": {
+      "other_move_resistance": [[true, 3]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "wonder_skin": {
+    "gen": 5,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "zen_mode": {
+    "gen": 5,
+    "effects": {
+      "changes_form": [[true, 5]]
+    },
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "as_one": {
+    "gen": 8,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  }
+}

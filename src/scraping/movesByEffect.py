@@ -1,5 +1,5 @@
 import csv
-from utils import openLink, getDataPath, parseName, isShadowMove
+from utils import openLink, getCSVDataPath, parseName, isShadowMove
 import re
 
 # columns are Effect Name, Move Name
@@ -181,7 +181,7 @@ def main():
     'https://bulbapedia.bulbagarden.net/wiki/Category:Effects_that_can_modify_move_types']
   ]
 
-  dataPath = getDataPath() + 'moves\\'
+  dataPath = getCSVDataPath() + 'moves\\'
 
   fname = dataPath + 'movesByEffect.csv'
   csvFile = open(fname, 'w', newline='', encoding='utf-8')

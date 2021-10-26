@@ -4,7 +4,7 @@ import effects
 import usageMethods
 import statuses
 from functools import cmp_to_key
-from utils import getDataPath, genSymbolToNumber, statList, numberOfGens, checkConsistency
+from utils import getCSVDataPath, genSymbolToNumber, statList, numberOfGens, checkConsistency
 
 
 # Create move .json file with the following data:
@@ -657,7 +657,7 @@ def main():
   usageMethodDict = usageMethods.main()
 
   # holds moveID, Name, Type, Category, Contest, PP, Power, Accuracy, Gen
-  dataPath = getDataPath() + '/moves/'
+  dataPath = getCSVDataPath() + '/moves/'
 
   moveList_fname = dataPath + 'moveList.csv'
   moveDict = makeInitialMoveDict(moveList_fname)

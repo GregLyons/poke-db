@@ -1,5 +1,5 @@
 import csv
-from utils import openLink, getDataPath, parseName
+from utils import openLink, getCSVDataPath, parseName
 
 # Columns are status caused, move name, type, category, probability of inflicting status, power, accuracy, and notes
 
@@ -227,7 +227,7 @@ def addZMoves(fname):
 
 def main():
   # Make main .csv and extract notes
-  dataPath = getDataPath() + 'moves\\'
+  dataPath = getCSVDataPath() + 'moves\\'
   main_fname = dataPath + 'movesByStatus.csv'
   notes = makeStatusCSVAndExtractNotes(main_fname)
 

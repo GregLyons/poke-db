@@ -105,8 +105,8 @@ def isShadowMove(moveName):
   return moveName in ['shadow_blitz', 'shadow_rush', 'shadow_break', 'shadow_end', 'shadow_wave', 'shadow_rave', 'shadow_storm', 'shadow_fire', 'shadow_bolt', 'shadow_chill', 'shadow_blast', 'shadow_sky', 'shadow_hold', 'shadow_mist', 'shadow_panic', 'shadow_down', 'shadow_shed', 'shadow_half']
 
 #
-def getDataPath():
-  return 'src\\data\\'
+def getCSVDataPath():
+  return 'src\\data\\csv\\'
 
 # parse names in different forms from Bulbapedia and Smogon API to a common, snake_case form
 def parseName(text, mode='normal'):

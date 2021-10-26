@@ -1,6 +1,6 @@
 import csv
 import re
-from utils import openLink, getDataPath, parseName
+from utils import openLink, getCSVDataPath, parseName
 
 # The table-parsing code in this function is very repetitive, but due to many of the tables being slightly different in terms of number/placement of columns, I couldn't think of a more elegant solution 
 # columns are Ability Name, Effect Type
@@ -492,7 +492,7 @@ def abilityEffects(fnamePrefix):
   return
 
 def main():
-  dataPath = getDataPath() + 'abilities/'
+  dataPath = getCSVDataPath() + 'abilities/'
   abilityEffects_fnamePrefix = dataPath + 'abilities'
   abilityEffects(abilityEffects_fnamePrefix)
   return

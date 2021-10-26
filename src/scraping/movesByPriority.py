@@ -1,5 +1,5 @@
 import csv
-from utils import openLink, getDataPath, parseName
+from utils import openLink, getCSVDataPath, parseName
 
 # converts gen symbol to number
 def genSymbolToNumber(roman):
@@ -80,7 +80,7 @@ def makePriorityCSV(fname):
   csvFile.close()
 
 def main():
-  dataPath = getDataPath() + 'moves\\'
+  dataPath = getCSVDataPath() + 'moves\\'
   priority_fname = dataPath + 'movesByPriority.csv'
   makePriorityCSV(priority_fname)
 

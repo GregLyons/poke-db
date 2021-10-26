@@ -1,4 +1,4 @@
-from utils import openLink, getDataPath, parseName
+from utils import openLink, getCSVDataPath, parseName
 import csv
 
 # Columns are Ability ID, Ability Name, Ability Description, and Gen Introduced
@@ -39,7 +39,7 @@ def makeMainCSV(fname):
   return  
 
 def main():
-  dataPath = getDataPath() + 'abilities\\'
+  dataPath = getCSVDataPath() + 'abilities\\'
   ability_fname = dataPath + 'abilityList.csv'
   makeMainCSV(ability_fname)
 

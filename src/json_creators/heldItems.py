@@ -4,7 +4,7 @@ import effects
 import statuses
 import usageMethods
 import elementalTypes as types
-from utils import getDataPath, statList, parseName, checkConsistency
+from utils import getCSVDataPath, statList, parseName, checkConsistency
 
 
 # initial item dictionary with item name, item type, gen introduced, gen 2 exclusivity, and sprite URL
@@ -572,7 +572,7 @@ def main():
   global usageMethodDict
   usageMethodDict = usageMethods.main()
 
-  dataPath = getDataPath() + 'items/'
+  dataPath = getCSVDataPath() + 'items/'
 
   fnamePrefix = dataPath + 'heldItemList'
   itemDict = makeInitialItemDict(fnamePrefix)

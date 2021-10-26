@@ -1,6 +1,6 @@
 import csv
 import re
-from utils import openLink, getDataPath, parseName
+from utils import openLink, getCSVDataPath, parseName
 
 # def getPokemonSpecies(fname):
 #   # don't want duplicates
@@ -47,7 +47,7 @@ def makeWeightHeightCSV(fname):
   return
 
 def main():
-  dataPath = getDataPath() + '\\pokemon\\'
+  dataPath = getCSVDataPath() + '\\pokemon\\'
 
   # we use our pokemon by type .csv to get the list of species
   # type_fname = dataPath + 'pokemonByType.csv'

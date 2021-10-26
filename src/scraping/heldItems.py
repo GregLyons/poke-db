@@ -1,5 +1,5 @@
 import csv
-from utils import openLink, getDataPath, parseName, genSymbolToNumber
+from utils import openLink, getCSVDataPath, parseName, genSymbolToNumber
 import re
 
 # TODO colored orbs for Kyogre and Groudon
@@ -648,7 +648,7 @@ def megaStones(fname):
 # We go through the different types of items individually and collect the relevant data in separate .csv's
 # At the same time, we compile the basic item info in a main .csv file, whose columns are Item Name, Item Type, Gen, 
 def main():
-  dataPath = getDataPath() + 'items\\'
+  dataPath = getCSVDataPath() + 'items\\'
 
   # main list
   # Serebii has a more comprehensive list of held items than I could find on Bulbapedia

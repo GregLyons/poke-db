@@ -1,7 +1,7 @@
 import csv
 import re
 import copy
-from utils import parseName, genSymbolToNumber, getDataPath, genSymbolToNumber, typeList
+from utils import parseName, genSymbolToNumber, getCSVDataPath, genSymbolToNumber, typeList
 
 # make initial Pokemon dict, with dex number, gen, species, and type data
 # the pokemonByType.csv doesn't contain all the Pokemon forms, since some different forms of the same Pokemon can have the same type. We will rectify this in future functions; for example, base stat data will add in the forms of deoxys since those have different base stats
@@ -13,19 +13,20 @@ def makeInitialPokemonDict(fname, changes_fname):
 
     for row in reader:
       gen, dexNumber, speciesName, pokemonName, type1, type2 = row["Gen"], row["Dex Number"], row["Species Name"], row["Pokemon Name"], row["Type 1"], row["Type 2"]
+      
       pokemonDict[pokemonName] = {
         "dex_number": dexNumber,
         "species": speciesName,
-        "gen": gen,
-        "type_1": [[type1, gen]],
-        "type_2": [[type2, gen]],
+        "gen": int(gen),
+        "type_1": [[type1, int(gen)]],
+        "type_2": [[type2, int(gen)]],
         "evolves_to": [],
         "evolves_from": [],
       }
     
     # partner pikachu and partner eevee
     pokemonDict["pikachu_partner"] = {
-        "dex_number": '25',
+        "dex_number": 25,
         "species": 'pikachu',
         "gen": 'lgpe_only',
         "type_1": [['electric', 'lgpe_only']],
@@ -34,7 +35,7 @@ def makeInitialPokemonDict(fname, changes_fname):
         "evolves_from": [],
       }
     pokemonDict["eevee_partner"] = {
-        "dex_number": '133',
+        "dex_number": 133,
         "species": 'eevee',
         "gen": 'lgpe_only',
         "type_1": [['normal', 'lgpe_only']],
@@ -43,20 +44,20 @@ def makeInitialPokemonDict(fname, changes_fname):
         "evolves_from": [],
       }
     pokemonDict["kyogre_primal"] = {
-        "dex_number": '382',
+        "dex_number": 382,
         "species": 'kyogre',
-        "gen": '6',
-        "type_1": [['water', '6']],
-        "type_2": [['', '6']],
+        "gen": 6,
+        "type_1": [['water', 6]],
+        "type_2": [['', 6]],
         "evolves_to": [],
         "evolves_from": [],
       }
     pokemonDict["groudon_primal"] = {
-        "dex_number": '383',
+        "dex_number": 383,
         "species": 'groudon',
-        "gen": '6',
-        "type_1": [['ground', '6']],
-        "type_2": [['fire', '6']],
+        "gen": 6,
+        "type_1": [['ground', 6]],
+        "type_2": [['fire', 6]],
         "evolves_to": [],
         "evolves_from": [],
       }
@@ -66,7 +67,7 @@ def makeInitialPokemonDict(fname, changes_fname):
     reader = csv.DictReader(changeCSV)
 
     for row in reader:
-      pokemonName, previousType1, previousType2, genChange = row["Pokemon Name"], row["Old Type 1"], row["Old Type 2"], row["Gen"]
+      pokemonName, previousType1, previousType2, genChange = row["Pokemon Name"], row["Old Type 1"], row["Old Type 2"], int(row["Gen"])
 
       currentType1, currentType2, gen = pokemonDict[pokemonName]["type_1"], pokemonDict[pokemonName]["type_2"], pokemonDict[pokemonName]["gen"]
 
@@ -95,12 +96,12 @@ def addBaseStatData(fnamePrefix, pokemonDict):
         # If Pokemon is new, add it to baseStatDict
         if row["Pokemon Name"] not in baseStatDict.keys():
           baseStatDict[row["Pokemon Name"]] = {
-            "hp": [[row["hp"], gen[i]]],
-            "attack": [[row["attack"], gen[i]]],
-            "defense": [[row["defense"], gen[i]]],
-            "special_attack": [[row["special_attack"], gen[i]]],
-            "special_defense": [[row["special_defense"], gen[i]]],
-            "speed": [[row["speed"], gen[i]]]
+            "hp": [[int(row["hp"]), gen[i]]],
+            "attack": [[int(row["attack"]), gen[i]]],
+            "defense": [[int(row["defense"]), gen[i]]],
+            "special_attack": [[int(row["special_attack"]), gen[i]]],
+            "special_defense": [[int(row["special_defense"]), gen[i]]],
+            "speed": [[int(row["speed"]), gen[i]]]
           }
         # If Pokemon is old, check for changes in its stats
         else:
@@ -108,8 +109,8 @@ def addBaseStatData(fnamePrefix, pokemonDict):
             # If change is found, add that to the patch log
             if key == "dex_number":
               continue
-            if value[-1][0] != row[key]:
-              value.append([row[key], gen[i]])
+            if int(value[-1][0]) != int(row[key]):
+              value.append([int(row[key]), gen[i]])
               baseStatDict[row["Pokemon Name"]][key] = value
       i += 1
 
@@ -336,7 +337,7 @@ def addFormFlags(pokemonDict):
 
 
 def main():
-  dataPath = getDataPath() + '\\pokemon\\'
+  dataPath = getCSVDataPath() + '\\pokemon\\'
 
   type_fname = dataPath + 'pokemonByType.csv'
   type_changes_fname = dataPath + 'pokemonTypeChanges.csv'
