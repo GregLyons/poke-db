@@ -155,7 +155,7 @@ def handleMoveLink(link, stat):
 def makeCSV(fname):
   with open(fname, 'w', newline='', encoding='utf-8') as csvFile:
     writer = csv.writer(csvFile)
-    writer.writerow(['Move Name', 'Gen', 'Stat Name', 'Modifier', 'Sign', 'Recipient'])
+    writer.writerow(['Move Name', 'Gen', 'Stat Name', 'Modifier', 'Sign', 'Recipient', 'Probability'])
 
     bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Category:Moves_by_stat_modification', 0, 10)
 

@@ -1,29 +1,27 @@
-import mongoose from 'mongoose';
-import {fetchPokemonData} from './data/fetchData.js';
-import {pokemonSchema} from './schema/mongoSchema.js';
+import abilities from '../src/data/json/abilities.json';
+import effects from '../src/data/json/effects.json';
+import elementalTypes from '../src/data/json/elementalTypes.json';
+import items from '../src/data/json/items.json'
+import moves from '../src/data/json/moves.json';
+import pokemon from '../src/data/json/pokemon.json';
+import statuses from '../src/data/json/statuses.json';
+import usageMethods from '../src/data/json/usageMethods.json';
 
-mongoose.connect(process.env.DB_CONNECTION_STRING);
+const NUMBER_OF_GENS = 8;
+const patches = [[80, 1], [90, 6]]
 
-const Pokemon = mongoose.model('Pokemon', pokemonSchema);
+const extendPatches = patches => {
+  let extendedPatchList = [];
+  for (let patch of patches) {
+    const patchGen = patch[-1];
 
-async function start() {
-  console.log('deleting old pokemon...');
-  await Pokemon.deleteMany({});
+    while (extendPatchList.length > 1 && extendedPatchList[-1][-1] < patchGen) {
+      console.log(patchGen);
+      patchGen++;
+    }
 
-  const data = await fetchPokemonData(5, 80);
-
-  for (const obj of data) {
-    console.log(obj);
-    const pokemon = new Pokemon(obj);
-    await pokemon.save();
-    console.log(obj.name, 'uploaded to database.');
+    extendedPatchList.push(patch);
   }
+  return extendedPatchList
 }
-
-start();
-
-// await bulbasaur.save();
-// const finder = await Pokemon.find({name: 'bulbasaur'});
-// console.log(finder);
-
-
+console.log(extendPatches(patches));

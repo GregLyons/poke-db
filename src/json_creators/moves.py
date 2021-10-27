@@ -617,7 +617,7 @@ def updateMoveCategory(moveDict):
     category = moveDict[moveName]["category"][0][0]
 
     if category == 'status':
-      moveDict[moveName]["category"] = [["causes_status", moveGen]]
+      moveDict[moveName]["category"] = [["status", moveGen]]
       continue
     elif category == '???':
       moveDict[moveName]["category"] == [["varies", moveGen]]
@@ -642,6 +642,26 @@ def removedFromGen8(fname, moveDict):
     reader = csv.DictReader(removedCSV)
     for row in reader:
       moveDict[row["Move Name"]]["removed_from_gen8"] = True
+
+  return
+
+# turn various strings into numeric types
+def enforceTypes(moveDict):
+  for moveName in moveDict.keys():
+    # update pp, power, accuracy to be ints
+    for keyName in ["pp", "power", "accuracy"]:
+      patches = moveDict[moveName][keyName]
+
+      transformedPatches = []
+      for patch in patches:
+        value, patchGen = patch
+        if value.isnumeric():
+          transformedPatches.append([int(value), patchGen])
+        elif value == '':
+          transformedPatches.append([None, patchGen])
+        else:
+          transformedPatches.append(patch)
+      moveDict[moveName][keyName] = transformedPatches
 
   return
 
@@ -687,6 +707,8 @@ def main():
 
   removedFromGen8_fname = dataPath + 'movesRemovedFromGen8.csv'
   removedFromGen8(removedFromGen8_fname, moveDict)
+
+  enforceTypes(moveDict)
 
   return moveDict
 

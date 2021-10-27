@@ -53,17 +53,41 @@ def genSymbolToNumber(roman):
   else:
     raise ValueError('Not a valid gen.')
 
-# given a dictionary for a certain entity (move, ability, etc.) with a "gen" key, initialize a nested dictionary, with name outerKeyName, by setting outerKeyName[innerKeyName] = [defaultValue, gen]
-# e.g. for any ability status dictionary, entityDict would be abilityDict, outerKeyName would be "causes_status", and innerKeyName would be an individual status
-# defaultValue can be a list of default values
-def initializeKeyValue(entityDict, outerKeyName, innerKeyName, defaultValue):
-  for key in entityDict.keys():
-    if not isinstance(defaultValue, list):
-      defaultValue = [defaultValue]
+# 
+def versionDictionary():
+  versionDict = {
+    "Stad": ["Stadium", 1],
+    "GS": ["Gold/Silver", 2],
+    "C": ["Crystal", 2],
+    "Stad2": ["Stadium 2", 2],
+    "RS": ["Ruby/Sapphire", 3],
+    "E": ["Emerald", 3],
+    "Colo": ["Colosseum", 3],
+    "XD": ["XD: Gale of Darkness", 3],
+    "FRLG": ["Fire Red/Leaf Green", 3],
+    "DP": ["Diamond/Pearl", 4],
+    "Pt": ["Platinum", 4],
+    "HGSS": ["Heart Gold/Soul Silver", 4],
+    "PBR": ["Pokemon Battle Revolution", 4],
+    "BW": ["Black/White", 5],
+    "B2W2": ["Black 2/White 2", 5],
+    "XY": ["X/Y", 6],
+    "ORAS": ["Omega Ruby/Alpha Sapphire", 6],
+    "SM": ["Sun/Moon", 7],
+    "USUM": ["Ultra Sun/Ultra Moon", 7],
+    "PE": ["Let's Go Pikachu/Let's Go Eeevee", 7],
+    "SwSh": ["Sword/Shield", 8]
+  }
 
-    entityDict[key][outerKeyName][innerKeyName] = [defaultValue + [entityDict[key]["gen"]]]
-  return
+  return versionDict
 
+#
+def getVersionGroupsInGen(gen):
+  if gen in range(numberOfGens() + 1):
+    versionDict = versionDictionary()
+    return [versionGroup for versionGroup in versionDict.keys() if versionDict[versionGroup][-1] == gen]
+  else:
+    raise ValueError("Not a valid Gen!")
 
 # lists of various mechanics to ensure consistent naming
 # stats which can be modified during battle

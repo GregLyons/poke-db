@@ -34,8 +34,8 @@ def makeMainCSV(fname):
       if not skipRow:
         writer.writerow(csvRow)
 
-    writer.writerow(['266', 'as_one', 'This Ability combines the effects of both Calyrex\'s Unnerve Ability and Glastrier\'s Chilling Neigh Ability', 'VIII'])
-    writer.writerow(['267', 'as_one', 'This Ability combines the effects of both Calyrex\'s Unnerve Ability and Spectrier\'s Grim Neigh Ability', 'VIII'])
+    writer.writerow(['266', 'as_one_glastrier', 'This Ability combines the effects of both Calyrex\'s Unnerve Ability and Glastrier\'s Chilling Neigh Ability', 'VIII'])
+    writer.writerow(['267', 'as_one_spectrier', 'This Ability combines the effects of both Calyrex\'s Unnerve Ability and Spectrier\'s Grim Neigh Ability', 'VIII'])
   return  
 
 def main():

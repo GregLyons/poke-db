@@ -5,6 +5,8 @@ import usageMethods
 import elementalTypes as types
 from utils import getCSVDataPath, genSymbolToNumber, effectList, statusList, usageMethodList, statList, typeList, checkConsistency
 
+# TODO gooey, etc. stat modifications
+
 # initialize abilityDict with name, description, and gen; key is Ability ID
 def makeInitialAbilityDict(fname):
   with open(fname, 'r', encoding='utf-8') as abilityListCSV:
@@ -176,15 +178,20 @@ def addEffectData(fpath, abilityDict):
   with open(fpath + 'abilitiesModifyStat.csv', 'r', encoding='utf-8') as resistMoveClassCSV:
     reader = csv.DictReader(resistMoveClassCSV)
     for row in reader:
-      abilityName, stat, modifier, recipient = row["Ability Name"], row["Stat Name"], row["Modifier"], row["Recipient"]
+      abilityName, stat, modifier, recipient = row["Ability Name"], row["Stat Name"], row["Modifier"].strip('+'), row["Recipient"]
       abilityGen = abilityDict[abilityName]["gen"]
+
+      if '.' in modifier:
+        modifier = float(modifier)
+      else:
+        modifier = int(modifier)
 
       if stat not in statList():
         print(abilityName, stat)
         continue
       # only gained stat-modifying properties in Gen 5
       elif abilityName in ['lightning_rod', 'storm_drain']:
-        abilityDict[abilityName]["stat_modifications"][stat] = [[0, recipient, abilityGen], ['+1', recipient, abilityGen]]
+        abilityDict[abilityName]["stat_modifications"][stat] = [[0, recipient, abilityGen], [1, recipient, 5]]
         continue
 
       abilityDict[abilityName]["stat_modifications"][stat] = [[modifier, recipient, abilityGen]]

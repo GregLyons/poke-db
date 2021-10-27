@@ -114,12 +114,7 @@ def scrapeDescriptions(fnamePrefix, category, descriptionDict):
             for versionGroup in descriptionDict[entityKey][descriptionIndex]:
               versionGroupGen = versionDict[versionGroup][-1]
 
-              # ignore versionGroups which don't have the entity
-              # Let's Go Pikachu/Let's Go Eevee don't have abilities, items, or held berries
-              # other cases, such as abilities in gen 3, will already be ignored since there will be no other version groups in the generation present from which to take an ability description
-              if category in ['ability', 'item', 'berry'] and versionGroup == 'PE':
-                continue
-              elif versionGroupGen == leftoverGen and not assigned:
+              if versionGroupGen == leftoverGen and not assigned:
                 descriptionDict[entityKey][descriptionIndex].append(leftover)
                 assigned = True
               else:
@@ -224,7 +219,8 @@ def addDataToDescriptionDict(entityName, descriptions_groups, descriptionDict):
   for description_group in descriptions_groups:
     entityDescription, versionGroups = description_group
 
-    if entityDescription != oldEntityDescription:
+    # only add new description if it's not blank (e.g. from Gen 7 to Gen 8, the ability descriptions for PE will be blank)
+    if entityDescription and entityDescription != oldEntityDescription:
       entityDescriptionArray.append(entityDescription)
       descriptionIndex += 1
       descriptionDict[entityName][descriptionIndex] = []
@@ -358,11 +354,7 @@ def handleAbilityLink(link, descriptionDict, abilityGen):
         for versionGroup in versionDict.keys():
           versionGroupGen = versionDict[versionGroup][-1]
 
-          # abilities aren't present in Let's Go Pikachu/Let's Go Eevee
-          # generations prior to gen 3 won't be included, since all the descriptions start at gen 3 at the earliest
-          if versionGroup == 'PE':
-            continue
-          elif versionGroupGen == descriptionGen:
+          if versionGroupGen == descriptionGen:
             versionGroupCodes.append(versionGroup)
         
         descriptions_groups.append([abilityDescription, versionGroupCodes])
@@ -510,11 +502,7 @@ def handleBerryLink(link, descriptionDict, berryGen):
         for versionGroup in versionDict.keys():
           versionGroupGen = versionDict[versionGroup][-1]
 
-          # abilities aren't present in Let's Go Pikachu/Let's Go Eevee
-          # generations prior to gen 3 won't be included, since all the descriptions start at gen 3 at the earliest
-          if versionGroup == 'PE':
-            continue
-          elif versionGroupGen == descriptionGen:
+          if versionGroupGen == descriptionGen:
             versionGroupCodes.append(versionGroup)
         
         descriptions_groups.append([berryDescription, versionGroupCodes])
@@ -590,21 +578,21 @@ def main():
   fnamePrefix = dataPath + '___Descriptions'
   descriptionDict = {}
 
-  print('Scraping move descriptions...')
-  scrapeDescriptions(fnamePrefix, 'move', descriptionDict)
-
-  print('Scraping ability descriptions...')
-  scrapeDescriptions(fnamePrefix, 'ability', descriptionDict)
-
-  print('Scraping item descriptions...')
-  scrapeDescriptions(fnamePrefix, 'item', descriptionDict)
+  # print('Scraping ability descriptions...')
+  # scrapeDescriptions(fnamePrefix, 'ability', descriptionDict)
 
   print('Scraping berry descriptions...')
   scrapeDescriptions(fnamePrefix, 'berry', descriptionDict)
 
-  print('Scraping gen 2 berry descriptions...')
-  scrapeDescriptions(fnamePrefix, 'gen2berry', descriptionDict)
+  # print('Scraping gen 2 berry descriptions...')
+  # scrapeDescriptions(fnamePrefix, 'gen2berry', descriptionDict)
 
+  # print('Scraping item descriptions...')
+  # scrapeDescriptions(fnamePrefix, 'item', descriptionDict)
+
+
+  # print('Scraping move descriptions...')
+  # scrapeDescriptions(fnamePrefix, 'move', descriptionDict)
 
   return
 
