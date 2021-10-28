@@ -13,6 +13,9 @@ def makeInitialPokemonDict(fname, changes_fname):
 
     for row in reader:
       gen, dexNumber, speciesName, pokemonName, type1, type2 = row["Gen"], row["Dex Number"], row["Species Name"], row["Pokemon Name"], row["Type 1"], row["Type 2"]
+
+      if dexNumber != '':
+        dexNumber = int(dexNumber)
       
       pokemonDict[pokemonName] = {
         "dex_number": dexNumber,
@@ -185,9 +188,13 @@ def addAbilityData(fname, pokemonDict):
 
     for row in reader:
       if row["Pokemon Name"] != "Pokemon Name":
+        dexNumber = row["Dex Number"]
+        if dexNumber != '':
+          dexNumber = int(dexNumber)
+
         pokemonAbilityDict[row["Pokemon Name"]] = {
           # dex number will be used to keep track of form differences later
-          "dex_number": row["Dex Number"],
+          "dex_number": dexNumber,
           "ability_1": [[row["Ability 1"], max(int(row['Gen']), 3)]],
           "ability_2": [[row["Ability 2"], max(int(row['Gen']), 3)]],
           "ability_hidden": [[row["Hidden"], max(int(row['Gen']), 5)]]
@@ -288,7 +295,7 @@ def addHeightWeightData(fname, pokemonDict):
     reader = csv.DictReader(bmiCSV)
 
     for row in reader:
-      pokemonName, height, weight = row["Pokemon Name"], row["Height m"], row["Weight kg"]
+      pokemonName, height, weight = row["Pokemon Name"], float(row["Height m"]), float(row["Weight kg"])
 
       try:
         pokemonDict[pokemonName]["height"], pokemonDict[pokemonName]["weight"] = height, weight

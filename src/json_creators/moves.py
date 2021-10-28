@@ -125,7 +125,7 @@ def makeInitialMoveDict(fname):
           "accuracy": [[row["Accuracy"].rstrip('%'), 8]],
           "gen": genSymbolToNumber(row["Gen"]),
           "removed_from_gen8": False,
-          "fixed_damage": None,
+          "fixed_damage": False,
           "z_move": isZMove,
           "lgpe_only": False,
           "max_move": isMax,
@@ -506,7 +506,7 @@ def addTargetToMoveDict(fname, moveDict):
     moveDict["helping_hand"]["target"] = [["self", 3], ["adjacent_ally", 4]]
 
     # surf
-    moveDict["surf"]["target"] = [["all_foes", 3], ["all_adjacent"], 4]
+    moveDict["surf"]["target"] = [["all_foes", 3], ["all_adjacent", 4]]
 
     # conversion_2
     moveDict["conversion_2"]["target"] = [["user", 2], ["any_adjacent", 5]]

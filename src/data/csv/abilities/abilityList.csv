@@ -265,5 +265,5 @@ Ability ID,Ability Name,Description,Gen
 025,wonder_guard,Its mysterious power only lets supereffective moves hit the Pokémon.,III
 147,wonder_skin,Makes status moves more likely to miss.,V
 161,zen_mode,Changes the Pokémon's shape when HP is half or less.,V
-266,as_one,This Ability combines the effects of both Calyrex's Unnerve Ability and Glastrier's Chilling Neigh Ability,VIII
-267,as_one,This Ability combines the effects of both Calyrex's Unnerve Ability and Spectrier's Grim Neigh Ability,VIII
+266,as_one_glastrier,This Ability combines the effects of both Calyrex's Unnerve Ability and Glastrier's Chilling Neigh Ability,VIII
+267,as_one_spectrier,This Ability combines the effects of both Calyrex's Unnerve Ability and Spectrier's Grim Neigh Ability,VIII

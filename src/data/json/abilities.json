@@ -3419,7 +3419,18 @@
     "resists_usage_method": {},
     "stat_modifications": {}
   },
-  "as_one": {
+  "as_one_glastrier": {
+    "gen": 8,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {}
+  },
+  "as_one_spectrier": {
     "gen": 8,
     "effects": {},
     "causes_status": {},

@@ -315,6 +315,12 @@ def abilityEffects(fnamePrefix):
     for row in dataRows: 
       cells = row.find_all('td')
       abilityName = parseName(cells[0].get_text())
+      
+      if abilityName == 'as_one':
+        mainWriter.writerow(['as_one_glastrier', 'manipulates_item'])
+        mainWriter.writerow(['as_one_spectrier', 'manipulates_item'])
+        continue
+
       mainWriter.writerow([abilityName, 'manipulates_item'])
     #endregion
 
