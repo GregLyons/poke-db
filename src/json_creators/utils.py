@@ -281,6 +281,6 @@ def parseName(text, mode='normal'):
     text = re.sub(r'([a-z])([A-Z])', r'\1 \2', text)
     
     # replace spaces with underscores, convert to lowercase, and strip any underscores on the ends (e.g. from Ash-Greninja')
-    return text.replace(' ', '_').lower().strip('_')
+    return text.replace(' ', '_').lower().strip('_').replace('é', 'e')
   else:
     return

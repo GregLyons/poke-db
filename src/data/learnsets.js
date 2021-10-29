@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
-/* imported from https://github.com/smogon/pokemon-showdown/blob/master/data/learnsets.ts, with hackmons and missingno deleted */
+// pasted from https://github.com/smogon/pokemon-showdown/blob/master/data/learnsets.ts with missingno and hackmons removed
 
-const Learnsets = {
+const learnsets = {
 	bulbasaur: {
 		learnset: {
 			amnesia: ["8M", "7E", "6E", "5E", "4E"],
@@ -46347,7 +46347,6 @@ const Learnsets = {
 			coaching: ["8T"],
 			confide: ["7M", "6M"],
 			corrosivegas: ["8T"],
-			covet: ["7T", "6T", "5T"],
 			crosspoison: ["8M"],
 			cut: ["6M", "5M", "4M"],
 			darkpulse: ["8M", "7M", "6M", "5T", "4M"],
@@ -76639,12 +76638,12 @@ const Learnsets = {
 			hypervoice: ["8M"],
 			icefang: ["8M"],
 			imprison: ["8M"],
-			ironhead: ["8M", "8L33", "8S0"],
+			ironhead: ["8M", "8L33", "8S0", "8S1"],
 			irontail: ["8M"],
 			laserfocus: ["8L44"],
 			metalclaw: ["8L1"],
 			moonblast: ["8L66"],
-			playrough: ["8M"],
+			playrough: ["8M", "8S1"],
 			protect: ["8M"],
 			psychicfangs: ["8M"],
 			psychocut: ["8M"],
@@ -76655,7 +76654,7 @@ const Learnsets = {
 			revenge: ["8M"],
 			reversal: ["8M"],
 			round: ["8M"],
-			sacredsword: ["8L1", "8S0"],
+			sacredsword: ["8L1", "8S0", "8S1"],
 			scaryface: ["8M"],
 			slash: ["8L11"],
 			sleeptalk: ["8M"],
@@ -76665,7 +76664,7 @@ const Learnsets = {
 			steelbeam: ["8T"],
 			substitute: ["8M"],
 			swift: ["8M"],
-			swordsdance: ["8M", "8L22", "8S0"],
+			swordsdance: ["8M", "8L22", "8S0", "8S1"],
 			tailslap: ["8M"],
 			thunderfang: ["8M"],
 			wildcharge: ["8M"],
@@ -76673,6 +76672,7 @@ const Learnsets = {
 		},
 		eventData: [
 			{generation: 8, level: 70, perfectIVs: 3, moves: ["sacredsword", "swordsdance", "ironhead", "crunch"]},
+			{generation: 8, level: 100, shiny: true, nature: "Adamant", ivs: {hp: 31, atk: 31, def: 31, spa: 30, spd: 31, spe: 31}, moves: ["ironhead", "playrough", "swordsdance", "sacredsword"], pokeball: "cherishball"},
 		],
 		eventOnly: true,
 	},
@@ -76686,7 +76686,7 @@ const Learnsets = {
 		learnset: {
 			agility: ["8M"],
 			bite: ["8L1"],
-			closecombat: ["8M", "8L77"],
+			closecombat: ["8M", "8L77", "8S1"],
 			coaching: ["8T"],
 			crunch: ["8M", "8L55", "8S0"],
 			dazzlinggleam: ["8M"],
@@ -76705,8 +76705,8 @@ const Learnsets = {
 			hypervoice: ["8M"],
 			icefang: ["8M"],
 			imprison: ["8M"],
-			irondefense: ["8M", "8L22", "8S0"],
-			ironhead: ["8M", "8L33", "8S0"],
+			irondefense: ["8M", "8L22", "8S0", "8S1"],
+			ironhead: ["8M", "8L33", "8S0", "8S1"],
 			irontail: ["8M"],
 			laserfocus: ["8L44"],
 			lightscreen: ["8M"],
@@ -76737,12 +76737,13 @@ const Learnsets = {
 			swift: ["8M"],
 			tailslap: ["8M"],
 			thunderfang: ["8M"],
-			wideguard: ["8L1"],
+			wideguard: ["8L1", "8S1"],
 			wildcharge: ["8M"],
 			workup: ["8M"],
 		},
 		eventData: [
 			{generation: 8, level: 70, perfectIVs: 3, moves: ["slash", "crunch", "ironhead", "irondefense"]},
+			{generation: 8, level: 100, shiny: true, nature: "Adamant", ivs: {hp: 31, atk: 31, def: 31, spa: 30, spd: 31, spe: 31}, moves: ["ironhead", "closecombat", "irondefense", "wideguard"], pokeball: "cherishball"},
 		],
 		eventOnly: true,
 	},
@@ -77626,3 +77627,5 @@ const Learnsets = {
 		eventOnly: true,
 	},
 };
+
+export default learnsets;

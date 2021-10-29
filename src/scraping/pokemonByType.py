@@ -11,6 +11,9 @@ def makePokemonTypeCSV(fname):
     writer = csv.writer(speciesCSV)
     writer.writerow(['Gen', 'Dex Number', 'Species Name', 'Pokemon Name', 'Type 1', 'Type 2'])
 
+    # set of types which we build up while constructing the .csv; for adding in Arceus and Silvally forms
+    typeSet = set()
+
     genSymbols = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII']
     for genSymbol in genSymbols:
       table = bs.find('span', {'id': f'Generation_{genSymbol}'}).find_next('table')
@@ -135,7 +138,18 @@ def makePokemonTypeCSV(fname):
 
         if formName != '':
           formName = '_' + formName
-      
+
+        if type1:
+          typeSet.add(type1)
+        if type2:
+          typeSet.add(type2)
+
+        # handle silvally and arceus at the end
+        if formattedSpeciesName in ['arceus', 'silvally']:
+          for type in typeSet: 
+            writer.writerow([genSymbolToNumber(genSymbol), dexNumber, formattedSpeciesName, formattedSpeciesName + '_' + type, type, ''])
+          continue
+
         writer.writerow([
           genSymbolToNumber(genSymbol), 
           dexNumber, 
@@ -149,7 +163,6 @@ def makePokemonTypeCSV(fname):
     addMegas(writer)
     addRegionalForms(writer)
     addGMax(writer)
-
     # add Darmanitan
     writer.writerow([5, 555, 'darmanitan', 'darmanitan_standard', 'fire', ''])
     writer.writerow([5, 555, 'darmanitan', 'darmanitan_zen', 'fire', 'psychic'])
