@@ -646,7 +646,7 @@ def removedFromGen8(fname, moveDict):
   return
 
 # turn various strings into numeric types
-def enforceTypes(moveDict):
+def enforceDataTypes(moveDict):
   for moveName in moveDict.keys():
     # update pp, power, accuracy to be ints
     for keyName in ["pp", "power", "accuracy"]:
@@ -662,6 +662,65 @@ def enforceTypes(moveDict):
         else:
           transformedPatches.append(patch)
       moveDict[moveName][keyName] = transformedPatches
+
+  return
+
+# add base moves/pokemon/move type requirements for max, gmax, and z moves
+def addRequirementData(fname, moveDict):
+  with open(fname, 'r', encoding='utf-8') as requirementCSV: 
+    reader = csv.DictReader(requirementCSV)
+
+    # # dict for easy access to elemental type of moves in gen 7
+    # gen7MoveTypes = {}
+    # for moveName in moveDict.keys():
+    #   # ignore lgpe moves
+    #   gen7MoveType = [patch for patch in moveDict[moveName]["type"] if patch[-1] != 'lgpe_only' and patch[-1] <= 7]
+    #   if gen7MoveType:
+    #     gen7MoveTypes[moveName] = gen7MoveType[0][0]
+
+    for row in reader:
+      moveName, requirement1, requirement2 = row["Move Name"], [row["Requirement 1 Class"], row["Requirement 1 Name"]], [row["Requirement 2 Class"], row["Requirement 2 Name"]]
+      
+      for requirement in [requirement1, requirement2]:
+        reqClass, reqName = requirement
+        # g-max moves and certain z-moves
+        if reqClass == 'pokemon':
+          if "pokemon_specific" not in moveDict[moveName]:
+            moveDict[moveName]["pokemon_specific"] = []
+          moveDict[moveName]["pokemon_specific"].append(reqName)
+        # max moves, g-max moves, and z-moves
+        elif reqClass == 'type':
+          moveDict[moveName]['base_move_type'] = reqName
+        # status z-moves and max guard
+        elif reqClass == 'category':
+          moveDict[moveName]['base_move_category'] = reqName
+        elif reqClass == 'move':
+          moveDict[moveName]['base_move'] = reqName
+
+  return
+
+# add data for power that a base move gives to the corresponding z-move, max move, or g-max move
+def addZPowerMaxPowerData(maxPower_fname, zPower_fname, moveDict):
+  # add power for g-max and max moves
+  with open(maxPower_fname, 'r', encoding='utf-8') as maxPowerCSV:
+    reader = csv.DictReader(maxPowerCSV)
+
+    for row in reader:
+      moveName, maxPower = row["Move Name"], int(row["Max Power"])
+      moveDict[moveName]["max_power"] = maxPower
+
+      # most g-max moves have the same power as the max move of the same type, except for the 3 galar starters
+      if moveName in ['g_max_drum_solo', 'g_max_fireball', 'g_max_hydrosnape']:
+        moveDict[moveName]["g_max_power"] = 160
+      else:
+        moveDict[moveName]["g_max_power"] = maxPower
+  
+  with open(zPower_fname, 'r', encoding='utf-8') as zPowerCSV:
+    reader = csv.DictReader(zPowerCSV)
+
+    for row in reader:
+      moveName, zPower = row["Move Name"].replace('vice_grip', 'vise_grip'), int(row["Z-Power"])
+      moveDict[moveName]["z_power"] = zPower
 
   return
 
@@ -681,9 +740,6 @@ def main():
 
   moveList_fname = dataPath + 'moveList.csv'
   moveDict = makeInitialMoveDict(moveList_fname)
-
-  # for reverse lookup of Move ID by Move Name
-  inverseDict = makeInverseDict(moveList_fname)
 
   priority_fname = dataPath + 'movesByPriority.csv'
   addPriorityToMoveDict(priority_fname, moveDict)
@@ -708,7 +764,14 @@ def main():
   removedFromGen8_fname = dataPath + 'movesRemovedFromGen8.csv'
   removedFromGen8(removedFromGen8_fname, moveDict)
 
-  enforceTypes(moveDict)
+  enforceDataTypes(moveDict)
+
+  requirement_fname = dataPath + 'movesByRequirement.csv'
+  addRequirementData(requirement_fname, moveDict)
+
+  maxPower_fname = dataPath + 'movesByMaxPower.csv'
+  zPower_fname = dataPath + 'movesByZPower.csv'
+  addZPowerMaxPowerData(maxPower_fname, zPower_fname, moveDict)
 
   return moveDict
 

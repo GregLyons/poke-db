@@ -227,7 +227,7 @@ def addAbilityData(fname, pokemonDict):
 
   # Exception for Gengar since his note is unique
   pokemonAbilityDict["gengar"]["ability_1"] = [["levitate", 3], ["cursed_body", 7]]
-
+  
   # some forms in pokemonAbilityDict do not show up in pokemonDict currently, since the forms do not differ by type; we need to add them to the dictionary and remove the old entries after iterating over the dictionary once; we keep track of the forms in formList
   formList = []
   

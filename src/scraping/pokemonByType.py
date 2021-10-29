@@ -149,6 +149,10 @@ def makePokemonTypeCSV(fname):
           for type in typeSet: 
             writer.writerow([genSymbolToNumber(genSymbol), dexNumber, formattedSpeciesName, formattedSpeciesName + '_' + type, type, ''])
           continue
+        
+        # handle necrozma forms later
+        if formattedSpeciesName == 'necrozma':
+          continue
 
         writer.writerow([
           genSymbolToNumber(genSymbol), 
@@ -163,12 +167,21 @@ def makePokemonTypeCSV(fname):
     addMegas(writer)
     addRegionalForms(writer)
     addGMax(writer)
+
     # add Darmanitan
     writer.writerow([5, 555, 'darmanitan', 'darmanitan_standard', 'fire', ''])
     writer.writerow([5, 555, 'darmanitan', 'darmanitan_zen', 'fire', 'psychic'])
     writer.writerow([8, 555, 'darmanitan', 'darmanitan_standard_galar', 'ice', ''])
     writer.writerow([8, 555, 'darmanitan', 'darmanitan_zen_galar', 'ice', 'fire'])
 
+    # add pikachu in a cap
+    writer.writerow([7, 25, 'pikachu', 'pikachu_in_a_cap', 'electric', ''])
+
+    # add necrozma
+    writer.writerow([7, 800, 'necrozma', 'necrozma', 'psychic', ''])
+    writer.writerow([7, 800, 'necrozma', 'necrozma_dusk_mane', 'psychic', 'steel'])
+    writer.writerow([7, 800, 'necrozma', 'necrozma_dawn_wings', 'psychic', 'ghost'])
+    writer.writerow([7, 800, 'necrozma', 'necrozma_ultra', 'psychic', 'dragon'])
   return
 
 def addMegas(writer):

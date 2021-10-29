@@ -62,7 +62,7 @@ def makeMoveListCSVandExtractNotes(fname):
       # the G-max table only contains ID, name, and type, so we add in the other values
       csvRow[0] = str(int(csvRow[0]) + finalNonGmaxID)
       csvRow.append('varies')
-      csvRow = csvRow + 4*['--'] + ['VIII']
+      csvRow = csvRow + 4*[''] + ['VIII']
       writer.writerow(csvRow)
   
   return
