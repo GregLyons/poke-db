@@ -172,9 +172,11 @@ export const getPokemonLearnsetMaps = (learnsets, pokemon) => {
   return {pokemonMap, inversePokemonMap};
 }
 
-export const getParsedLearnsets = (learnsets, moves, pokemon) => {
+// adds Z-moves, max moves, etc. to learnsets and returns updatedLearnsets
+// also returns moveMap and inverseMoveMap for going between moveNames and move names in the learnsets
+export const getUpdatedLearnsets = (learnsets, moves, pokemon) => {
   // learnsets shouldn't have dates, functions, undefined, regexp, or infinity 
-  let parsedLearnsets = JSON.parse(JSON.stringify(learnsets));
+  let updatedLearnsets = JSON.parse(JSON.stringify(learnsets));
   
   // moveMap: moveName --> learnsetMoveName
   // inverseMoveMap: learnsetMoveName --> moveName
@@ -184,14 +186,14 @@ export const getParsedLearnsets = (learnsets, moves, pokemon) => {
   let moveNameSet = new Set(), learnsetMoveNameSet = new Set();
   // do a pass through the learnset data to add all the learnset move names to learnsetMoveNameSet
 
-  // learnsetMoveName --> learnsetPokemonName[]; for adding to learnsets later
+  // pokemonWhoLearnMoveMap: learnsetMoveName --> learnsetPokemonName[]
   const pokemonWhoLearnMoveMap = new Map();
-  for (let learnsetPokemonName of Object.keys(learnsets)) {
+  for (let learnsetPokemonName of Object.keys(updatedLearnsets)) {
     // for many Pokemon forms, the learnset data omits the learnset
-    if (!learnsets[learnsetPokemonName].learnset) {
+    if (!updatedLearnsets[learnsetPokemonName].learnset) {
       continue
     }
-    for (let learnsetMoveName of Object.keys(learnsets[learnsetPokemonName].learnset)) {
+    for (let learnsetMoveName of Object.keys(updatedLearnsets[learnsetPokemonName].learnset)) {
 
       // if learnsetMoveName has not been seen before, learnsetPokemonName is the first Pokemon to learn this move
       if (!pokemonWhoLearnMoveMap.has(learnsetMoveName)) {
@@ -216,7 +218,7 @@ export const getParsedLearnsets = (learnsets, moves, pokemon) => {
 
   // pokemonMap: pokemonName --> learnsetPokemonName 
   // inversePokemonMap: learnsetPokemonName --> pokemkonName[] (recall that multiple Pokemon forms may be mapped to the same learnset Pokemon)
-  const {pokemonMap, inversePokemonMap} = getPokemonLearnsetMaps(learnsets, pokemon)
+  const {pokemonMap, inversePokemonMap} = getPokemonLearnsetMaps(updatedLearnsets, pokemon)
   // need to convert moves to an array to use getStatusZMoves
   const moveArr = serializeDict(moves);
 
@@ -250,7 +252,7 @@ export const getParsedLearnsets = (learnsets, moves, pokemon) => {
           // didn't learn base move in gen 7
           else {
             // learnData is a string containing the gen number and learn method for the move, one string per generation of move's presence 
-            for (let learnData of learnsets[learnsetPokemonName].learnset[learnsetBaseMoveName]) {
+            for (let learnData of updatedLearnsets[learnsetPokemonName].learnset[learnsetBaseMoveName]) {
               // gen number is first character of learnData
               if (learnData[0] == 7) {
                 // Pokemon learned move in gen 7
@@ -263,16 +265,16 @@ export const getParsedLearnsets = (learnsets, moves, pokemon) => {
         })
       ) {
         // the learnData for the Z-move is the same as for the base move; extract the Gen 7 learn data for that move/pokemon
-        learnsets[learnsetPokemonName].learnset[learnsetMoveName] = (learnsets[learnsetPokemonName].learnset[learnsetBaseMoveName]).filter(learnData => learnData[0] === '7');
+        updatedLearnsets[learnsetPokemonName].learnset[learnsetMoveName] = (updatedLearnsets[learnsetPokemonName].learnset[learnsetBaseMoveName]).filter(learnData => learnData[0] === '7');
       }
     }
   }
 
-  // handle generic and Pokemon specific Z-moves
-  for (let moveName of getZMoves(moveArr)) {
-    // for potential debugging
-    if (moveMap.has(moveName.replaceAll('_', ''))) {
-      console.log(`WARNING: moveMap already has ${moveName}, moving on...`);
+  // handle generic and Pokemon specific Z-moves, Max moves, and G-Max moves
+  for (let moveName of getZMoves(moveArr).concat(getMaxMoves(moveArr).concat(getGMaxMoves(moveArr)))) {
+    // Z-status moves have already been handled
+    if (moveNameSet.has(moveName)) {
+      continue;
     }
     
     // add data to the move maps
@@ -290,25 +292,25 @@ export const getParsedLearnsets = (learnsets, moves, pokemon) => {
       for (let pokemonName of moves[moveName].requirements.pokemon) {
         let learnsetPokemonName = pokemonMap.get(pokemonName);
         // Z-moves or max moves are exclusive to their generation
-        // learnData is gen 7 + 'Z' for Z move
-        learnsets[learnsetPokemonName].learnset[learnsetMoveName] = [moveGen + 'Z'];
+        // learnData is the gen + 'S' for 'Special'
+        updatedLearnsets[learnsetPokemonName].learnset[learnsetMoveName] = [moveGen + 'S'];
       }
     } 
-    // indicates move depends on the type of the base move
+    // indicates move depends on the type of the base move; non-Pokemon specific Z-moves, max moves, and gmax moves
     else if (moves[moveName].requirements.hasOwnProperty('type')) {
       const elType = moves[moveName].type[0][0];
 
-      // if a Pokemon learns a damaging move of type elType in gen 7, then it knows the corresponding Z-move
+      // if a Pokemon learns a damaging move of type elType in moveGen, then it knows the corresponding Z-move
       for (let moveOfElType of moveArr
-        // get moves who type in gen 7 was elType; will exclude moves later than gen7
+        // get moves whose type in gen moveGen was elType; will exclude moves later than moveGen
         .filter(move => {
-          const moveGen7Type = (move.type.filter(patch => patch[1] === 7));
-          return moveGen7Type.length && (moveGen7Type[0][0] === elType);
+          const moveType = (move.type.filter(patch => patch[1] === moveGen));
+          return moveType.length && (moveType[0][0] === elType);
         })
         // get moves which are damaging, i.e. not status
         .filter(move => {
-          const moveGen7Category = (move.category.filter(patch => patch[1] === 7));
-          return moveGen7Category.length && (moveGen7Category[0][0] !== 'status');
+          const moveCategory = (move.category.filter(patch => patch[1] === moveGen));
+          return moveCategory.length && (moveCategory[0][0] !== 'status');
         })
       )
       {
@@ -319,58 +321,43 @@ export const getParsedLearnsets = (learnsets, moves, pokemon) => {
         }
 
         const learnsetPokemonNames = pokemonWhoLearnMoveMap.get(learnsetMoveOfElTypeName);
-        
-        if (!pokemonWhoLearnMoveMap.get(learnsetMoveOfElTypeName)) {
-          console.log('No Pokemon learn', moveOfElTypeName);
+
+        if (!learnsetPokemonNames) {
+          continue;
+        }
+
+        for (let learnsetPokemonName of learnsetPokemonNames) {
+          if (!updatedLearnsets[learnsetPokemonName].learnset[learnsetMoveName]) {
+            updatedLearnsets[learnsetPokemonName].learnset[learnsetMoveName] = [moveGen + 'S'];
+          } else {
+            continue;
+          }
+        }
+      }
+    // every Pokemon can learn max guard since every Pokemon can learn a status move
+    } else if (moveName == 'max_guard') {
+      for (let learnsetPokemonName of Object.keys(updatedLearnsets)) {
+        // for many Pokemon forms, the learnset data omits the learnset
+        if (!updatedLearnsets[learnsetPokemonName].learnset) {
+          continue
+        }
+        else {
+          updatedLearnsets[learnsetPokemonName].learnset['maxguard'] = [8 + 'S'];
         }
       }
     }
+    else {
+      console.log(`Move name ${moveName} unhandled.`);
+    }
   }
 
+  for (let moveName of Object.keys(moves)) {
+    // ignore struggle, since Pokemon don't literally 'learn' struggle
+    if (!moveNameSet.has(moveName) && moveName !== 'struggle') {
+      console.log(`Move name ${moveName} unhandled`);
+    }
+  }
 
-  // for (let moveName of Object.keys(moves)) {
-  //   if (!moveNameSet.has(moveName)) {
-  //     console.log(`Move name ${moveName} unhandled`);
-  //   }
-  // }
-
-  return {parsedLearnsets, moveMap, inverseMoveMap};
+  return {updatedLearnsets, moveMap, inverseMoveMap};
 }
 
-// let learnsetMoveNameSet = new Set(); 
-// for (let learnsetPokemonName of Object.keys(learnsets)) {
-//   if (learnsets[learnsetPokemonName].learnset) {
-//     for (let learnsetMoveName of Object.keys(learnsets[learnsetPokemonName].learnset)) {
-//       learnsetMoveNameSet.add(learnsetMoveName);
-//     }
-//   }
-// }
-
-// for (let moveName of Object.keys(moves)) {
-  
-//   let learnsetMoveName;
-//   if (!learnsetMoveNameSet.has(moveName.replaceAll('_', ''))) {
-//     if (moveName.includes('z_')) {
-//       learnsetMoveName = moveName.split('_').slice(1).join('');
-//     } else if (moves[moveName].requirements && moves[moveName].requirements.move) {
-//       learnsetMoveName = moves[moveName].requirements.move.replaceAll('_', '');
-//     }
-//     learnsetMoveNameSet.add(moveName);
-//   } else {
-//     learnsetMoveName = moveName.replaceAll('_', '');
-//   }
-
-
-//   if (!learnsetMoveNameSet.has(learnsetMoveName)) {
-//     console.log(`${moveName} unhandled.`);
-//     continue
-//   }
-
-//   moveMap.set(moveName, learnsetMoveName);
-
-//   if (!inverseMoveMap.get(learnsetMoveName)) {
-//     inverseMoveMap.set(learnsetMoveName, [moveName]);
-//   } else {
-//     inverseMoveMap.set(learnsetMoveName, inverseMoveMap.get(learnsetMoveName).concat(moveName));
-//   }
-// }

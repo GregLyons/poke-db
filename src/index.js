@@ -7,7 +7,7 @@ import pokemon from '../src/data/json/pokemon.json';
 import statuses from '../src/data/json/statuses.json';
 import usageMethods from '../src/data/json/usageMethods.json';
 import learnsets from '../src/data/learnsets.js';
-import { serializeDict, getMovesOfClass, computePokemonLearnsetName, getPokemonLearnsetMaps, getParsedLearnsets } from './utils/utils.js';
+import { serializeDict, getMovesOfClass, computePokemonLearnsetName, getPokemonLearnsetMaps, getUpdatedLearnsets} from './utils/utils.js';
 
 const abilityArr = serializeDict(abilities);
 const effectArr = serializeDict(effects);
@@ -18,10 +18,29 @@ const pokemonArr = serializeDict(pokemon);
 const statusArr = serializeDict(statuses);
 const usageMethodArr = serializeDict(usageMethods);
 
+const addLearnsetsToPokemonArr = (pokemonArr) => {
+  // pokemonMap: pokemonName --> learnsetPokemonName
+  // inversePokemonName: learnsetPokemonName --> pokemonName[]
+  // the latter returns an array since for some Pokemon with multiple forms, learnsets puts the learnset on only one of the forms; e.g.inversePokemonName('deoxys') returns the names for all of Deoxys's forms
+  const {pokemonMap, inversePokemonMap} = getPokemonLearnsetMaps(learnsets, pokemon);
+  
+  const {updatedLearnsets, moveMap, inverseMoveMap} = getUpdatedLearnsets(learnsets, moves, pokemon);
+  
+  
+  for (let pokemonEntry of pokemonArr) {
+    const pokemonName = pokemonEntry.name;
+    
+    // each deoxys form receives the learnset for 'deoxys'
+    const pokemonForms = inversePokemonMap.get(pokemonMap.get(pokemonName));
+    for (let formName of pokemonForms) {
+      pokemonEntry['learnset'] = updatedLearnsets[pokemonMap.get(formName)].learnset;
+    }
+  }
+}
 
-const {parsedLearnsets, moveMap, inverseMoveMap} = getParsedLearnsets(learnsets, moves, pokemon);
-
-
+addLearnsetsToPokemonArr(pokemonArr);
+console.log(pokemon['bulbasaur']);
+console.log(pokemonArr[1]);
 
 // console.log(pokemonMap.get('deoxys_attack'));
 // console.log(inversePokemonMap.get('deoxys'));
