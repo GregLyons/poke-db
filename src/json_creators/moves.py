@@ -681,21 +681,23 @@ def addRequirementData(fname, moveDict):
     for row in reader:
       moveName, requirement1, requirement2 = row["Move Name"], [row["Requirement 1 Class"], row["Requirement 1 Name"]], [row["Requirement 2 Class"], row["Requirement 2 Name"]]
       
+      moveDict[moveName]["requirements"] = {}
+
       for requirement in [requirement1, requirement2]:
         reqClass, reqName = requirement
         # g-max moves and certain z-moves
         if reqClass == 'pokemon':
           if "pokemon_specific" not in moveDict[moveName]:
-            moveDict[moveName]["pokemon_specific"] = []
-          moveDict[moveName]["pokemon_specific"].append(reqName)
+            moveDict[moveName]["requirements"]["pokemon"] = []
+          moveDict[moveName]["requirements"]["pokemon"].append(reqName)
         # max moves, g-max moves, and z-moves
         elif reqClass == 'type':
-          moveDict[moveName]['base_move_type'] = reqName
+          moveDict[moveName]["requirements"]['type'] = reqName
         # status z-moves and max guard
         elif reqClass == 'category':
-          moveDict[moveName]['base_move_category'] = reqName
+          moveDict[moveName]["requirements"]['category'] = reqName
         elif reqClass == 'move':
-          moveDict[moveName]['base_move'] = reqName
+          moveDict[moveName]["requirements"]['move'] = reqName
 
   return
 

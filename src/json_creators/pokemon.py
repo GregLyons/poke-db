@@ -16,7 +16,7 @@ def makeInitialPokemonDict(fname, changes_fname):
 
       if dexNumber != '':
         dexNumber = int(dexNumber)
-      
+
       pokemonDict[pokemonName] = {
         "dex_number": dexNumber,
         "species": speciesName,

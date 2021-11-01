@@ -72,14 +72,16 @@ black_hole_eclipse,type,dark,,
 twinkle_tackle,type,fairy,,
 catastropika,pokemon,pikachu,move,volt_tackle
 10000000_volt_thunderbolt,pokemon,pikachu_in_a_cap,move,thunderbolt
-stoked_sparksurfer,pokemon,alolan_raichu,move,thunderbolt
+stoked_sparksurfer,pokemon,raichu_alola,move,thunderbolt
 extreme_evoboost,pokemon,eevee,move,last_resort
 pulverizing_pancake,pokemon,snorlax,move,giga_impact
 genesis_supernova,pokemon,mew,move,psychic
 sinister_arrow_raid,pokemon,decidueye,move,spirit_shackle
 malicious_moonsault,pokemon,incineroar,move,darkest_lariat
 oceanic_operetta,pokemon,primarina,move,sparkling_aria
-splintered_stormshards,pokemon,lycanroc,move,stone_edge
+splintered_stormshards,pokemon,lycanroc_dusk,move,stone_edge
+splintered_stormshards,pokemon,lycanroc_midday,move,stone_edge
+splintered_stormshards,pokemon,lycanroc_midnight,move,stone_edge
 lets_snuggle_forever,pokemon,mimikyu,move,play_rough
 clangorous_soulblaze,pokemon,kommo_o,move,clanging_scales
 guardian_of_alola,pokemon,tapu_bulu,move,natures_madness
@@ -90,7 +92,7 @@ searing_sunraze_smash,pokemon,solgaleo,move,sunsteel_strike
 searing_sunraze_smash,pokemon,necrozma_dusk_mane,move,sunsteel_strike
 menacing_moonraze_maelstrom,pokemon,lunala,move,moongeist_beam
 menacing_moonraze_maelstrom,pokemon,necrozma_dawn_wings,move,moongeist_beam
-light_that_burns_the_sky,pokemon,ultra_necrozma,move,photon_geyser
+light_that_burns_the_sky,pokemon,necrozma_ultra,move,photon_geyser
 soul_stealing_7_star_strike,pokemon,marshadow,move,spectral_thief
 z_swords_dance,move,swords_dance,,
 z_whirlwind,move,whirlwind,,

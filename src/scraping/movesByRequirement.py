@@ -65,7 +65,7 @@ def makeRequirementCSV(fname):
       if 'volt_thunderbolt' in moveName:
         pokemonNames = ['pikachu_in_a_cap']
       elif 'sparksurfer' in moveName:
-        pokemonNames = ['alolan_raichu']
+        pokemonNames = ['raichu_alola']
       elif 'guardian_of_alola' in moveName:
         pokemonNames = ['tapu_bulu', 'tapu_koko', 'tapu_lele', 'tapu_fini']
       elif 'sunraze' in moveName:
@@ -73,7 +73,9 @@ def makeRequirementCSV(fname):
       elif 'moonraze' in moveName:
         pokemonNames = ['lunala', 'necrozma_dawn_wings']
       elif 'burns_the_sky' in moveName:
-        pokemonNames = ['ultra_necrozma']
+        pokemonNames = ['necrozma_ultra']
+      elif 'stormshards' in moveName:
+        pokemonNames = ['lycanroc_dusk', 'lycanroc_midday', 'lycanroc_midnight']
 
       for pokemonName in pokemonNames:
         writer.writerow([moveName, 'pokemon', pokemonName, 'move', baseMove])

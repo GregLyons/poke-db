@@ -175,6 +175,8 @@ def makeEvolutionChainCSV(fname):
           continue
         #endregion
 
+        if pokemon1 == 'mimikyu_disguised':
+          pokemon1 = 'mimikyu'
 
         writer.writerow([currentFamily, pokemon1, method12, pokemon2, method13, pokemon3])
 

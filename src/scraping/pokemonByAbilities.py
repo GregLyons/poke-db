@@ -101,6 +101,8 @@ def makeAbilityCSVandExtractNotes(fname):
                   notesWriter.writerow([parseName(currentPokemonName, 'pokemon'), parseName(headers[headerIndex]), note.get('title').replace('Lightningrod', 'Lightning Rod')])
               
               if headers[headerIndex] == 'Pokemon Name':
+                if 'Disguised' in currentPokemonName:
+                  currentPokemonName = 'Mimikyu'
                 csvRow.append(parseName(currentPokemonName, 'pokemon'))
               else:
                 csvRow.append(parseName(value))
@@ -110,6 +112,9 @@ def makeAbilityCSVandExtractNotes(fname):
           csvRow.append('Gen')
         else: 
           csvRow.append(currentGen)
+
+
+        # take disguised mimikyu to be the base form
         writer.writerow(csvRow)
 
   return
