@@ -87,8 +87,12 @@ const getGMaxMoves = moveArr => moveArr.filter(move => move.g_max_move).map(move
 
 // #endregion
 
-// 
-export const computePokemonLearnsetName = pokemonName => {
+// ADD LEARNSET DATA
+// #region
+
+// pokemonName --> corresponding Pokemon in learnset with learnset data
+// e.g. deoxysattack doesn't have learnset data, so deoxys_attack is mapped to deoxys instead
+const computePokemonLearnsetName = pokemonName => {
   // certain groups of Pokemon, like Deoxys and its forms, have their learnsets given only to the base form, but the other forms still have entries, e.g. deoxysattack, deoxysdefense, deoxysspeed are present, but have no learnsets
   // in this case, we assign them the learnset of their species/base form
   const formHasMissingLearnset = (pokemonName.includes('hoopa') || pokemonName.includes('deoxys') || pokemonName.includes('giratina') || pokemonName.includes('shaymin') || pokemonName.includes('tornadus') || pokemonName.includes('landorus') || pokemonName.includes('thundurus') || pokemonName.includes('keldeo') || pokemonName.includes('arceus') || pokemonName.includes('silvally'));
@@ -135,7 +139,7 @@ export const computePokemonLearnsetName = pokemonName => {
 
 // return pokemonMap, which sends Pokemon names to the corresponding name in learnsets, and inversePokemonMap, which sends a name in learnsets to all Pokemon names which are mapped to it
 // inversePokemonMap thus returns an array, e.g. inversePokemonMap('deoxys') = ['deoxys_normal', 'deoxys_attack', 'deoxys_defense', 'deoxys_speed'] since only deoxys has a learnset in learnsets
-export const getPokemonLearnsetMaps = (learnsets, pokemon) => {
+const getPokemonLearnsetMaps = (learnsets, pokemon) => {
   const pokemonMap = new Map(), inversePokemonMap = new Map();
 
   for (let pokemonName of Object.keys(pokemon)) {
@@ -174,7 +178,7 @@ export const getPokemonLearnsetMaps = (learnsets, pokemon) => {
 
 // adds Z-moves, max moves, etc. to learnsets and returns updatedLearnsets
 // also returns moveMap and inverseMoveMap for going between moveNames and move names in the learnsets
-export const getUpdatedLearnsets = (learnsets, moves, pokemon) => {
+const getUpdatedLearnsets = (learnsets, moves, pokemon) => {
   // learnsets shouldn't have dates, functions, undefined, regexp, or infinity 
   let updatedLearnsets = JSON.parse(JSON.stringify(learnsets));
   
@@ -265,7 +269,7 @@ export const getUpdatedLearnsets = (learnsets, moves, pokemon) => {
         })
       ) {
         // the learnData for the Z-move is the same as for the base move; extract the Gen 7 learn data for that move/pokemon
-        updatedLearnsets[learnsetPokemonName].learnset[learnsetMoveName] = (updatedLearnsets[learnsetPokemonName].learnset[learnsetBaseMoveName]).filter(learnData => learnData[0] === '7');
+        updatedLearnsets[learnsetPokemonName].learnset[learnsetMoveName] = ['7B'];
       }
     }
   }
@@ -293,7 +297,7 @@ export const getUpdatedLearnsets = (learnsets, moves, pokemon) => {
         let learnsetPokemonName = pokemonMap.get(pokemonName);
         // Z-moves or max moves are exclusive to their generation
         // learnData is the gen + 'S' for 'Special'
-        updatedLearnsets[learnsetPokemonName].learnset[learnsetMoveName] = [moveGen + 'S'];
+        updatedLearnsets[learnsetPokemonName].learnset[learnsetMoveName] = [moveGen + 'B'];
       }
     } 
     // indicates move depends on the type of the base move; non-Pokemon specific Z-moves, max moves, and gmax moves
@@ -328,7 +332,7 @@ export const getUpdatedLearnsets = (learnsets, moves, pokemon) => {
 
         for (let learnsetPokemonName of learnsetPokemonNames) {
           if (!updatedLearnsets[learnsetPokemonName].learnset[learnsetMoveName]) {
-            updatedLearnsets[learnsetPokemonName].learnset[learnsetMoveName] = [moveGen + 'S'];
+            updatedLearnsets[learnsetPokemonName].learnset[learnsetMoveName] = [moveGen + 'B'];
           } else {
             continue;
           }
@@ -342,7 +346,7 @@ export const getUpdatedLearnsets = (learnsets, moves, pokemon) => {
           continue
         }
         else {
-          updatedLearnsets[learnsetPokemonName].learnset['maxguard'] = [8 + 'S'];
+          updatedLearnsets[learnsetPokemonName].learnset['maxguard'] = [8 + 'B'];
         }
       }
     }
@@ -361,3 +365,39 @@ export const getUpdatedLearnsets = (learnsets, moves, pokemon) => {
   return {updatedLearnsets, moveMap, inverseMoveMap};
 }
 
+// adds learnset data to pokemonArr
+export const addLearnsetsToPokemonArr = (learnsets, moves, pokemon, pokemonArr) => {
+  // pokemonMap: pokemonName --> learnsetPokemonName
+  // inversePokemonName: learnsetPokemonName --> pokemonName[]
+  // the latter returns an array since for some Pokemon with multiple forms, learnsets puts the learnset on only one of the forms; e.g.inversePokemonName('deoxys') returns the names for all of Deoxys's forms
+  const {pokemonMap, inversePokemonMap} = getPokemonLearnsetMaps(learnsets, pokemon);
+  
+  const {updatedLearnsets, moveMap, inverseMoveMap} = getUpdatedLearnsets(learnsets, moves, pokemon);
+  
+  for (let pokemonEntry of pokemonArr) {
+    const pokemonName = pokemonEntry.name;
+    
+    pokemonEntry['learnset'] = {};
+
+    // add learnset data
+    for (let learnsetMoveName of Object.keys(updatedLearnsets[pokemonMap.get(pokemonName)].learnset)) {
+      const moveName = inverseMoveMap.get(learnsetMoveName);
+      pokemonEntry.learnset[moveName] = updatedLearnsets[pokemonMap.get(pokemonName)].learnset[learnsetMoveName];
+    }
+
+    // add event data
+    let pokemonEventData = [];
+    if (updatedLearnsets[pokemonMap.get(pokemonName)].eventData) {
+      for (let eventDatum of updatedLearnsets[pokemonMap.get(pokemonName)].eventData) {
+        const {generation, level, gender, nature, shiny, isHidden, perfectIVs, moves: learnsetMoveNames, pokeball} = eventDatum;
+        let moveNames = [];
+        for (let learnsetMoveName of learnsetMoveNames) {
+          moveNames.push(inverseMoveMap.get(learnsetMoveName));
+        }
+        pokemonEventData.push({generation, level, gender, nature, shiny, isHidden, moveNames, perfectIVs, pokeball});
+      }
+    }
+    pokemonEntry['eventData'] = pokemonEventData;
+  }
+}
+// #endregion
