@@ -687,17 +687,17 @@ def addRequirementData(fname, moveDict):
         reqClass, reqName = requirement
         # g-max moves and certain z-moves
         if reqClass == 'pokemon':
-          if "pokemon_specific" not in moveDict[moveName]:
+          if 'pokemon' not in moveDict[moveName]["requirements"].keys():
             moveDict[moveName]["requirements"]["pokemon"] = []
           moveDict[moveName]["requirements"]["pokemon"].append(reqName)
         # max moves, g-max moves, and z-moves
         elif reqClass == 'type':
-          moveDict[moveName]["requirements"]['type'] = reqName
+          moveDict[moveName]["requirements"]["type"] = reqName
         # status z-moves and max guard
         elif reqClass == 'category':
-          moveDict[moveName]["requirements"]['category'] = reqName
+          moveDict[moveName]["requirements"]["category"] = reqName
         elif reqClass == 'move':
-          moveDict[moveName]["requirements"]['move'] = reqName
+          moveDict[moveName]["requirements"]["move"] = reqName
 
   return
 

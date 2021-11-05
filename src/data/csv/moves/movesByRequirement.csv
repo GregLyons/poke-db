@@ -18,40 +18,40 @@ max_wyrmwind,type,dragon,,
 max_darkness,type,dark,,
 max_starfall,type,fairy,,
 max_guard,category,status,,
-g_max_wildfire,pokemon,charizard,type, fire 
-g_max_befuddle,pokemon,butterfree,type, bug 
-g_max_volt_crash,pokemon,pikachu,type, electric 
-g_max_gold_rush,pokemon,meowth,type, normal 
-g_max_chi_strike,pokemon,machamp,type, fighting 
-g_max_terror,pokemon,gengar,type, ghost 
-g_max_foam_burst,pokemon,kingler,type, water 
-g_max_resonance,pokemon,lapras,type, ice 
-g_max_cuddle,pokemon,eevee,type, normal 
-g_max_replenish,pokemon,snorlax,type, normal 
-g_max_malodor,pokemon,garbodor,type, poison 
-g_max_meltdown,pokemon,melmetal,type, steel 
-g_max_wind_rage,pokemon,corviknight,type, flying 
-g_max_gravitas,pokemon,orbeetle,type, psychic 
-g_max_stonesurge,pokemon,drednaw,type, water 
-g_max_volcalith,pokemon,coalossal,type, rock 
-g_max_tartness,pokemon,flapple,type, grass 
-g_max_sweetness,pokemon,appletun,type, grass 
-g_max_sandblast,pokemon,sandaconda,type, ground 
-g_max_stun_shock,pokemon,toxtricity_amped,type, electric 
-g_max_stun_shock,pokemon,toxtricity_low_key,type, electric 
-g_max_centiferno,pokemon,centiskorch,type, fire 
-g_max_smite,pokemon,hatterene,type, fairy 
-g_max_snooze,pokemon,grimmsnarl,type, dark 
-g_max_finale,pokemon,alcremie,type, fairy 
-g_max_steelsurge,pokemon,copperajah,type, steel 
-g_max_depletion,pokemon,duraludon,type, dragon 
-g_max_vine_lash,pokemon,venusaur,type, grass 
-g_max_cannonade,pokemon,blastoise,type, water 
-g_max_drum_solo,pokemon,rillaboom,type, grass 
-g_max_fireball,pokemon,cinderace,type, fire 
-g_max_hydrosnipe,pokemon,inteleon,type, water 
-g_max_one_blow,pokemon,urshifu,type, dark 
-g_max_rapid_flow,pokemon,urshifu_rapid_strike,type, water 
+g_max_wildfire,pokemon,charizard,type,fire
+g_max_befuddle,pokemon,butterfree,type,bug
+g_max_volt_crash,pokemon,pikachu,type,electric
+g_max_gold_rush,pokemon,meowth,type,normal
+g_max_chi_strike,pokemon,machamp,type,fighting
+g_max_terror,pokemon,gengar,type,ghost
+g_max_foam_burst,pokemon,kingler,type,water
+g_max_resonance,pokemon,lapras,type,ice
+g_max_cuddle,pokemon,eevee,type,normal
+g_max_replenish,pokemon,snorlax,type,normal
+g_max_malodor,pokemon,garbodor,type,poison
+g_max_meltdown,pokemon,melmetal,type,steel
+g_max_wind_rage,pokemon,corviknight,type,flying
+g_max_gravitas,pokemon,orbeetle,type,psychic
+g_max_stonesurge,pokemon,drednaw,type,water
+g_max_volcalith,pokemon,coalossal,type,rock
+g_max_tartness,pokemon,flapple,type,grass
+g_max_sweetness,pokemon,appletun,type,grass
+g_max_sandblast,pokemon,sandaconda,type,ground
+g_max_stun_shock,pokemon,toxtricity_amped,type,electric
+g_max_stun_shock,pokemon,toxtricity_low_key,type,electric
+g_max_centiferno,pokemon,centiskorch,type,fire
+g_max_smite,pokemon,hatterene,type,fairy
+g_max_snooze,pokemon,grimmsnarl,type,dark
+g_max_finale,pokemon,alcremie,type,fairy
+g_max_steelsurge,pokemon,copperajah,type,steel
+g_max_depletion,pokemon,duraludon,type,dragon
+g_max_vine_lash,pokemon,venusaur,type,grass
+g_max_cannonade,pokemon,blastoise,type,water
+g_max_drum_solo,pokemon,rillaboom,type,grass
+g_max_fireball,pokemon,cinderace,type,fire
+g_max_hydrosnipe,pokemon,inteleon,type,water
+g_max_one_blow,pokemon,urshifu,type,dark
+g_max_rapid_flow,pokemon,urshifu_rapid_strike,type,water
 breakneck_blitz,type,normal,,
 all_out_pummeling,type,fighting,,
 supersonic_skystrike,type,flying,,

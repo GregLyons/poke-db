@@ -319,7 +319,7 @@ def addHeightWeightData(fname, pokemonDict):
 
   return
 
-# add mega/regional/gmax flags, and restore dex numbers to forms
+# add mega/regional/gmax flags, and restore dex numbers to such forms
 def addFormFlags(pokemonDict):
   # initialization
   for pokemonName in pokemonDict.keys():
@@ -349,9 +349,33 @@ def addFormFlags(pokemonDict):
 
     # add in dex number for pokemonName, which won't have a dex number yet
     pokemonDict[pokemonName]["dex_number"] = pokemonDict[baseForm]["dex_number"]
-
   return
 
+def checkPokeAPIForms(fname, pokemonDict):
+  pokemonNames = set(pokemonDict.keys())
+  pokeapiConversionDict = {}
+  for pokemonName in pokemonNames:
+    pokeapiConversionDict[pokemonName] = []
+
+  print(fname)
+  with open(fname, 'r', encoding='utf-8') as pokeAPIcsv:
+    reader = csv.DictReader(pokeAPIcsv)
+    for row in reader:
+      pokeapiName, pokeapiID = row["PokeAPI Name"], row["PokeAPI ID"]
+
+      parsedPokeapiName = parseName(pokeapiName, 'pokemon')
+      if parsedPokeapiName.split('_')[-1] == 'gmax':
+        pokemonName = 'g_max_' + '_'.join(parsedPokeapiName.split('_')[:-1])
+      else:
+        pokemonName = parsedPokeapiName
+
+      if pokemonName not in pokemonNames:
+        print(pokemonName, pokeapiID)
+      else:
+        pokeapiConversionDict[pokemonName] = [pokeapiName, pokeapiID]
+
+  print(pokeapiConversionDict)
+  return
 
 def main():
   dataPath = getCSVDataPath() + '\\pokemon\\'
@@ -373,6 +397,9 @@ def main():
   addHeightWeightData(bmi_fname, pokemonDict)
 
   addFormFlags(pokemonDict)
+
+  pokeapi_fname = dataPath + 'pokemonByID.csv'
+  checkPokeAPIForms(pokeapi_fname, pokemonDict)
 
   return pokemonDict
 

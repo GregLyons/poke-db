@@ -190,6 +190,43 @@ def checkAbilitiesAgainstPokemon(abilityDict, pokemonDict):
 
   return
 
+def checkMoveRequirements(moveDict, typeDict, pokemonDict): 
+  moveNames = set()
+  for moveName in moveDict.keys():
+    moveNames.add(moveName)
+  
+  pokemonNames = set()
+  for pokemonName in pokemonDict.keys():
+    pokemonNames.add(pokemonName)
+
+  typeNames = set()
+  for typeName in typeDict.keys():
+    typeNames.add(typeName)
+
+  for moveName in moveDict.keys():
+    # ignore moves without requirements
+    if 'requirements' not in moveDict[moveName].keys():
+      continue
+    else:
+      requirements = moveDict[moveName]["requirements"]
+    
+    if 'pokemon' in requirements.keys():
+      for pokemonName in requirements["pokemon"]:
+        if pokemonName not in pokemonNames:
+          print(moveName, 'has an inconsistent Pokemon requirement:', pokemonName)
+    
+    if 'type' in requirements.keys():
+      typeName = requirements["type"]
+      if typeName not in typeNames:
+        print(moveName, 'has an inconsistent type requirement:', typeName)
+
+    if 'move' in requirements.keys():
+      baseMoveName = requirements["move"]
+      if baseMoveName not in moveNames:
+        print(moveName, 'has an inconsistent base move name:', baseMoveName)
+
+  return
+
 # check dicts for internal consistency and for consistency with each other, then write to .json files
 def main():
   # initialize the various reference dicts and check that they're consistent with the type, status, usage method, effect, and stat lists
@@ -223,6 +260,9 @@ def main():
 
   # check that the more complicated dictionaries are consistent with each other in terms of ability names
   checkAbilitiesAgainstPokemon(abilityDict, pokemonDict)
+
+  # check that move requirements have consistent base move names, type names, and pokemon names
+  checkMoveRequirements(moveDict, typeDict, pokemonDict)
 
   # now that all the dicts have been checked for consistency, write each of them to a .json file
   dicts_fnames = [

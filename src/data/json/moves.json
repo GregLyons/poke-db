@@ -22393,7 +22393,7 @@
       "pokemon": [
         "charizard"
       ],
-      "type": "\u00a0fire\u00a0"
+      "type": "fire"
     }
   },
   "g_max_befuddle": {
@@ -22430,7 +22430,7 @@
       "pokemon": [
         "butterfree"
       ],
-      "type": "\u00a0bug\u00a0"
+      "type": "bug"
     }
   },
   "g_max_volt_crash": {
@@ -22465,7 +22465,7 @@
       "pokemon": [
         "pikachu"
       ],
-      "type": "\u00a0electric\u00a0"
+      "type": "electric"
     }
   },
   "g_max_gold_rush": {
@@ -22500,7 +22500,7 @@
       "pokemon": [
         "meowth"
       ],
-      "type": "\u00a0normal\u00a0"
+      "type": "normal"
     }
   },
   "g_max_chi_strike": {
@@ -22533,7 +22533,7 @@
       "pokemon": [
         "machamp"
       ],
-      "type": "\u00a0fighting\u00a0"
+      "type": "fighting"
     }
   },
   "g_max_terror": {
@@ -22568,7 +22568,7 @@
       "pokemon": [
         "gengar"
       ],
-      "type": "\u00a0ghost\u00a0"
+      "type": "ghost"
     }
   },
   "g_max_resonance": {
@@ -22602,7 +22602,7 @@
       "pokemon": [
         "lapras"
       ],
-      "type": "\u00a0ice\u00a0"
+      "type": "ice"
     }
   },
   "g_max_cuddle": {
@@ -22637,7 +22637,7 @@
       "pokemon": [
         "eevee"
       ],
-      "type": "\u00a0normal\u00a0"
+      "type": "normal"
     }
   },
   "g_max_replenish": {
@@ -22671,7 +22671,7 @@
       "pokemon": [
         "snorlax"
       ],
-      "type": "\u00a0normal\u00a0"
+      "type": "normal"
     }
   },
   "g_max_malodor": {
@@ -22706,7 +22706,7 @@
       "pokemon": [
         "garbodor"
       ],
-      "type": "\u00a0poison\u00a0"
+      "type": "poison"
     }
   },
   "g_max_stonesurge": {
@@ -22740,7 +22740,7 @@
       "pokemon": [
         "drednaw"
       ],
-      "type": "\u00a0water\u00a0"
+      "type": "water"
     }
   },
   "g_max_wind_rage": {
@@ -22776,7 +22776,7 @@
       "pokemon": [
         "corviknight"
       ],
-      "type": "\u00a0flying\u00a0"
+      "type": "flying"
     }
   },
   "g_max_stun_shock": {
@@ -22812,7 +22812,7 @@
       "pokemon": [
         "toxtricity_low_key"
       ],
-      "type": "\u00a0electric\u00a0"
+      "type": "electric"
     }
   },
   "g_max_finale": {
@@ -22846,7 +22846,7 @@
       "pokemon": [
         "alcremie"
       ],
-      "type": "\u00a0fairy\u00a0"
+      "type": "fairy"
     }
   },
   "g_max_depletion": {
@@ -22879,7 +22879,7 @@
       "pokemon": [
         "duraludon"
       ],
-      "type": "\u00a0dragon\u00a0"
+      "type": "dragon"
     }
   },
   "g_max_gravitas": {
@@ -22913,7 +22913,7 @@
       "pokemon": [
         "orbeetle"
       ],
-      "type": "\u00a0psychic\u00a0"
+      "type": "psychic"
     }
   },
   "g_max_volcalith": {
@@ -22946,7 +22946,7 @@
       "pokemon": [
         "coalossal"
       ],
-      "type": "\u00a0rock\u00a0"
+      "type": "rock"
     }
   },
   "g_max_sandblast": {
@@ -22981,7 +22981,7 @@
       "pokemon": [
         "sandaconda"
       ],
-      "type": "\u00a0ground\u00a0"
+      "type": "ground"
     }
   },
   "g_max_snooze": {
@@ -23017,7 +23017,7 @@
       "pokemon": [
         "grimmsnarl"
       ],
-      "type": "\u00a0dark\u00a0"
+      "type": "dark"
     }
   },
   "g_max_tartness": {
@@ -23052,7 +23052,7 @@
       "pokemon": [
         "flapple"
       ],
-      "type": "\u00a0grass\u00a0"
+      "type": "grass"
     }
   },
   "g_max_sweetness": {
@@ -23093,7 +23093,7 @@
       "pokemon": [
         "appletun"
       ],
-      "type": "\u00a0grass\u00a0"
+      "type": "grass"
     }
   },
   "g_max_smite": {
@@ -23128,7 +23128,7 @@
       "pokemon": [
         "hatterene"
       ],
-      "type": "\u00a0fairy\u00a0"
+      "type": "fairy"
     }
   },
   "g_max_steelsurge": {
@@ -23162,7 +23162,7 @@
       "pokemon": [
         "copperajah"
       ],
-      "type": "\u00a0steel\u00a0"
+      "type": "steel"
     }
   },
   "g_max_meltdown": {
@@ -23197,7 +23197,7 @@
       "pokemon": [
         "melmetal"
       ],
-      "type": "\u00a0steel\u00a0"
+      "type": "steel"
     }
   },
   "g_max_foam_burst": {
@@ -23232,7 +23232,7 @@
       "pokemon": [
         "kingler"
       ],
-      "type": "\u00a0water\u00a0"
+      "type": "water"
     }
   },
   "g_max_centiferno": {
@@ -23267,7 +23267,7 @@
       "pokemon": [
         "centiskorch"
       ],
-      "type": "\u00a0fire\u00a0"
+      "type": "fire"
     }
   },
   "g_max_vine_lash": {
@@ -23300,7 +23300,7 @@
       "pokemon": [
         "venusaur"
       ],
-      "type": "\u00a0grass\u00a0"
+      "type": "grass"
     }
   },
   "g_max_cannonade": {
@@ -23333,7 +23333,7 @@
       "pokemon": [
         "blastoise"
       ],
-      "type": "\u00a0water\u00a0"
+      "type": "water"
     }
   },
   "g_max_drum_solo": {
@@ -23366,7 +23366,7 @@
       "pokemon": [
         "rillaboom"
       ],
-      "type": "\u00a0grass\u00a0"
+      "type": "grass"
     }
   },
   "g_max_fireball": {
@@ -23399,7 +23399,7 @@
       "pokemon": [
         "cinderace"
       ],
-      "type": "\u00a0fire\u00a0"
+      "type": "fire"
     }
   },
   "g_max_hydrosnipe": {
@@ -23432,7 +23432,7 @@
       "pokemon": [
         "inteleon"
       ],
-      "type": "\u00a0water\u00a0"
+      "type": "water"
     }
   },
   "g_max_one_blow": {
@@ -23465,7 +23465,7 @@
       "pokemon": [
         "urshifu"
       ],
-      "type": "\u00a0dark\u00a0"
+      "type": "dark"
     }
   },
   "g_max_rapid_flow": {
@@ -23498,7 +23498,7 @@
       "pokemon": [
         "urshifu_rapid_strike"
       ],
-      "type": "\u00a0water\u00a0"
+      "type": "water"
     }
   },
   "z_swords_dance": {

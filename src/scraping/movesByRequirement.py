@@ -27,7 +27,8 @@ def makeRequirementCSV(fname):
 
     for row in dataRows:
       cells = row.find_all(['th', 'td'])
-      pokemonName, moveName, moveType = parseName(cells[0].get_text()), parseName(cells[-2].get_text()), parseName(cells[-1].get_text())
+      # need to strip extra space from the type requirement
+      pokemonName, moveName, moveType = parseName(cells[0].get_text()), parseName(cells[-2].get_text()), parseName(cells[-1].get_text()).strip()
 
       # pokemon names are formatted differently than usual, as the species and form names are on separate lines
       if 'toxtricity' in pokemonName:
