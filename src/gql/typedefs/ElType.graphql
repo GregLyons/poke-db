@@ -1,0 +1,80 @@
+"""
+E.g. Water. Short for 'Elemental Type'. So-called so as not to conflict with type declarations in programming languages, etc.
+"""
+type ElType {
+  id: Int!
+
+  name: String!
+
+  """
+  The Generation in which the ElType was introduced.
+  """
+  introduced: Int!
+
+  doubleDamageFrom: [ElType!]!
+  neutralDamageFrom: [ElType!]!
+  halfDamageFrom: [ElType!]!
+  noDamageFrom: [ElType!]!
+
+  doubleDamageTo: [ElType!]!
+  neutralDamageTo: [ElType!]!
+  halfDamageTo: [ElType!]!
+  noDamageTo: [ElType!]!
+
+  """
+  Pokemon whose typing includes this ElType.
+  """
+  pokemon: [Pokemon!]!
+
+  """
+  Moves which are of this ElType.
+  """
+  moves: [Move!]!
+
+  """
+  Abilities, Items, etc. which affect this ElType. E.g. The Ability Flash Fire is immune to Fire.
+  """
+  modifiers: [ElTypeModifier!]!
+}
+
+"""
+An entity which affects ElType (e.g. Flash Fire resists Fire moves), and the data for that relation.
+"""
+type ElTypeModifier {
+  """
+  E.g. ABILITY or ITEM.
+  """
+  sourceClass: ElTypeModifierSource!
+
+  sourceName: String!
+
+  """
+  E.g. OFFENSIVE (boosts moves of type) or DEFENSIVE (resists moves of type).
+  """
+  modifierClass: ElTypeModifierClass!
+
+  """
+  E.g. 0.0 for Flash Fire, 1.33 for Blaze.
+  """
+  multiplier: Float!
+}
+
+"""
+Where the ElTypeModifier comes from. E.g. Flash Fire is an ABILITY which modifies Fire moves.
+"""
+enum ElTypeModifierSource {
+  ABILITY
+  ITEM
+}
+
+enum ElTypeModifierClass {
+  """
+  E.g. Blaze boosts Fire attacks of the user of the ElTypeModifierSource.
+  """
+  OFFENSIVE
+
+  """
+  E.g. Flash Fire grants Fire resistance to the user of the ElTypeModifierSource.
+  """
+  DEFENSIVE
+}

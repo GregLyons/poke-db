@@ -1,0 +1,34 @@
+type Move {
+  id: ID!
+
+  name: String!
+
+  power: Int!
+
+  pp: Int!
+
+  """
+  100 means 100% accuracy. Null means the Move bypasses accuracy checks, e.g. Aerial Ace.
+  """
+  accuracy: Int
+
+  category: MoveCategory!
+
+  """
+  The Priority Bracket of the Move.
+  """
+  priority: Int!
+
+  makesContact: Boolean
+}
+
+enum MoveCategory {
+  PHYSICAL
+  SPECIAL
+  STATUS
+
+  """
+  E.g. Breakneck Blitz is either PHYSICAL or SPECIAL depending on the base Move.
+  """
+  VARIES
+}

@@ -1,0 +1,177 @@
+"""
+A Pokemon, as opposed to a Pokemon species. E.g. Mega Charizard X, Mega Charizard Y, Gigantamax Charizard, and Charizard are all separate Pokemon (though not Dynamax Charizard, as that doesn't have a separate sprite); Darmanitan Standard, Darmanitan Zen, Darmanitan Standard Galar, and Darmanitan Zen Galar are all separate Pokemon; Burmy Plant, Steel, Trash and Wormadam Plant, Steel, Trash are all separate Pokemon, even though the Burmy forms have only cosmetic differences.
+"""
+type Pokemon {
+  id: Int! 
+
+  """
+  Pokemon are named by their form. 
+  """
+  name: String!
+
+  """
+  Number in the National Dex. Different forms of the same species share the same dexNumber.
+  """
+  dexNumber: Int!
+
+  """
+  E.g. Mega Charizard X and Charizard belong to the species Charizard, Charmeleon belongs to the species Charmeleon, and Alolan Raticate and Ratice belong to the same species, Raticate.
+  """
+  species: String!
+
+  """
+  The Pokemon's six base stats.
+  """
+  baseStats: BaseStats!
+
+  """
+  The Moves that this Pokemon can learn, along with the methods by which it can learn them.
+  """ 
+  learnset: [LearnData!]!
+
+  """
+  The elType of the Pokemon, e.g. [Grass, Poison]
+  """
+  elTyping: [Type!]!
+
+  """
+  The Generation in which the Pokemon was introduced.
+  """
+  introduced: Int!
+
+  """
+  Height in meters.
+  """
+  height: Int!
+
+  """
+  Height in kilograms.
+  """
+  weight: Int!
+
+
+  """
+  A link to the Pokemon's sprite.
+  """
+  spriteURL: String!
+
+  """
+  E.g. Charmander evolves into Charmeleon. An EvolveData instance is used for each evolution, e.g. for Eevee to Flareon, Eevee to Vaporeon, etc.
+  """
+  evolvesTo: [EvolveData!]!
+
+  """
+  E.g. Charmeleon evolves from Charmander. Even though every Pokemon can evolve from at most one other Pokemon, we use an array to give symmetry with EvolvesTo.
+  """
+  evolvesFrom: [EvolveData!]!
+
+  """
+  The different abilities a Pokemon can have.
+  """
+  abilities: [AbilityData!]!
+}
+
+"""
+Contains the six base stats for the Pokemon. For Gen 1 Special stat, we set specialAttack and specialDefense to both be the Special stat.
+"""
+type BaseStats {
+  hp: Int!
+  attack: Int!
+  defense: Int!
+  specialAttack: Int!
+  specialDefense: Int!
+  speed: Int!
+}
+
+"""
+Data describing a Move that the Pokemon can learn, and by which method.
+"""
+type LearnData {
+  """
+  The Move which can be learned.
+  """
+  move: Move!
+
+  """
+  A string representing the method by which the Pokemon can learn the move, in line with the Pokemon Showdown learnset.ts. First character is the Generation, second character is the method, and any additional characters provide further specificity.
+  M = TM/HM
+  T = tutor
+  L = start or level-up, 3rd char+ is the level
+  R = restricted (special moves like Rotom moves)
+  E = egg
+  D = Dream World, only 5D is valid
+  S = event, 3rd char+ is the index in .eventData
+  V = Virtual Console or Let's Go transer, only 7V/8V is valid
+  C = NOT A REAL SOURCE, only 3C/4C is valid
+  """
+  learnMethod: String!
+}
+
+
+type FormData {
+  """
+  E.g. Mega, Dynamax, etc.
+  """
+  formType: FormType!
+
+  """
+  E.g. Charizard for Mega Charizard X, Raticate for Alolan Raticate, Darmanitan Standard for Zen Darmanitan. In some cases, e.g. Burmy, a base form is chosen according to PokeAPI.
+  """
+  baseForm: Pokemon!
+}
+
+enum FormType {
+  MEGA
+  DYNAMAX
+  GIGANTAMAX
+  ALOLA
+  GALAR
+  HISUI
+  """
+  E.g. Vivillon forms; no type or base stat differences.
+  """
+  COSMETIC
+
+  """
+  E.g. Zen Darmanitan; gives type or base stat differences.
+  """
+  OTHER
+}
+
+"""
+Describes how one Pokemon evolves to another, e.g. Charmander to Charmeleon. 
+"""
+type EvolveData {
+  """
+  E.g. Charmander.
+  """
+  startPokemon: Pokemon!
+
+  """
+  E.g. Charmeleon.
+  """
+  endPokemon: Pokemon!
+
+  """
+  A string describing the evolution method, from Bulbapedia. E.g. "Level 16".
+  """
+  method: String!
+}
+
+"""
+An Ability that a Pokemon can have, along with which slot (e.g. 1, 2, or 'Hidden').
+"""
+type AbilityData {
+  ability: Ability!
+
+  """
+  E.g. distinguishes hidden Ability from other abilities on the Pokemon.
+  """
+  slot: AbilitySlot!
+}
+
+enum AbilitySlot {
+  ONE
+  TWO
+  HIDDEN
+}
