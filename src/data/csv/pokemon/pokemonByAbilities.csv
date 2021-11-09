@@ -807,7 +807,7 @@ Dex Number,Sprite URL,Pokemon Name,Ability 1,Ability 2,Hidden,Gen
 668,//cdn2.bulbagarden.net/upload/2/22/668MS6.png,pyroar,rivalry,unnerve,moxie,6
 669,//cdn2.bulbagarden.net/upload/f/ff/669MS6.png,flabebe,flower_veil,,symbiosis,6
 670,//cdn2.bulbagarden.net/upload/0/03/670MS6.png,floette,flower_veil,,symbiosis,6
-670,//cdn2.bulbagarden.net/upload/c/cb/670EMS6.png,floette_eternal_flower,flower_veil,,,6
+670,//cdn2.bulbagarden.net/upload/c/cb/670EMS6.png,floette_eternal,flower_veil,,,6
 671,//cdn2.bulbagarden.net/upload/4/44/671MS6.png,florges,flower_veil,,symbiosis,6
 672,//cdn2.bulbagarden.net/upload/b/b3/672MS6.png,skiddo,sap_sipper,,grass_pelt,6
 673,//cdn2.bulbagarden.net/upload/8/8c/673MS6.png,gogoat,sap_sipper,,grass_pelt,6
@@ -891,7 +891,7 @@ Dex Number,Sprite URL,Pokemon Name,Ability 1,Ability 2,Hidden,Gen
 742,//cdn2.bulbagarden.net/upload/a/af/742MS8.png,cutiefly,honey_gather,shield_dust,sweet_veil,7
 743,//cdn2.bulbagarden.net/upload/e/ed/743MS8.png,ribombee,honey_gather,shield_dust,sweet_veil,7
 744,//cdn2.bulbagarden.net/upload/b/bd/744MS8.png,rockruff,keen_eye,vital_spirit,steadfast,7
-744,//cdn2.bulbagarden.net/upload/b/bd/744MS8.png,rockruff_event,own_tempo,,,7
+744,//cdn2.bulbagarden.net/upload/b/bd/744MS8.png,rockruff_own_tempo,own_tempo,,,7
 745,//cdn2.bulbagarden.net/upload/b/bf/745MS8.png,lycanroc_midday,keen_eye,sand_rush,steadfast,7
 745,//cdn2.bulbagarden.net/upload/8/8e/745MnMS8.png,lycanroc_midnight,keen_eye,vital_spirit,no_guard,7
 745,//cdn2.bulbagarden.net/upload/f/fa/745DMS8.png,lycanroc_dusk,tough_claws,,,7

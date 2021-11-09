@@ -113,6 +113,12 @@ def makeAbilityCSVandExtractNotes(fname):
         else: 
           csvRow.append(currentGen)
 
+        # rename certain pokemon
+        extraFormName = csvRow[2]
+        if 'eternal_flower' in extraFormName:
+          csvRow[2] = csvRow[2].replace('_flower', '')
+        elif extraFormName == 'rockruff_event':
+          csvRow[2] = 'rockruff_own_tempo'
 
         # take disguised mimikyu to be the base form
         writer.writerow(csvRow)

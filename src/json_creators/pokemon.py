@@ -1,3 +1,4 @@
+from ast import parse
 import csv
 import re
 import copy
@@ -117,7 +118,7 @@ def addBaseStatData(fnamePrefix, pokemonDict):
               baseStatDict[row["Pokemon Name"]][key] = value
       i += 1
 
-  # some forms in baseStatDict do not show up in pokemonDict currently, since the forms do not differ by type; we need to add them to the dictionary and remove the old entries after iterating over the dictionary once; we keep track of the forms in formList
+  # some forms in baseStatDict do not show up in pokemonDict currently and vice versa, we need to add the forms to the dictionary and remove the less specific species names
   formList = []
 
   for pokemonName in pokemonDict.keys():
@@ -125,7 +126,8 @@ def addBaseStatData(fnamePrefix, pokemonDict):
     try:
       for stat in baseStatDict[pokemonName].keys():
           pokemonDict[pokemonName][stat] = baseStatDict[pokemonName][stat]
-    # KeyErrors will occur because pokemonName is in pokemonDict but not in baseStatDict; the latter has more form data
+
+    # KeyErrors will occur because pokemonName is not in baseStatDict
     except KeyError:
       # in case (a), formNames will be empty since baseStatDict has the species name, not the form name; in case (b), it will be the list of formNames, and pokemonName will be the species name
       formNames = [formName for formName in baseStatDict.keys() if pokemonName in formName]
@@ -158,6 +160,35 @@ def addBaseStatData(fnamePrefix, pokemonDict):
 
     # remove pokemonName from pokemonDict, leaving all the forms we just entered
     del pokemonDict[pokemonName]
+
+  # there remain forms which show up in baseStatDict but not in pokemonDict since pokemonName may still have been in baseStatDict, so we do one more pass 
+  speciesForms = {}
+  for formName in baseStatDict.keys():
+    # check for '_' to verify it really is a form name and not a species name
+    if formName not in pokemonDict and '_' in formName:
+      speciesName = formName.split('_')[0]
+      formName = '_'.join(formName.split('_')[1:])
+
+      if speciesName not in speciesForms.keys():
+        speciesForms[speciesName] = []
+      speciesForms[speciesName].append(formName)
+
+  for speciesName in speciesForms.keys():
+    for formName in speciesForms[speciesName]:
+      pokemonName = speciesName + '_' + formName
+      pokemonDict[pokemonName] = copy.deepcopy(pokemonDict[speciesName])
+
+      # enter base stat data for formName
+      for stat in baseStatDict[pokemonName].keys():
+          pokemonDict[pokemonName][stat] = baseStatDict[pokemonName][stat]
+    
+    # in some cases, baseStatDict has the speciesName as well as the extra form name; this means that the speciesName refers to the default form of the Pokemon, and we wish to maintain that data
+    if speciesName not in baseStatDict.keys():
+      del pokemonDict[speciesName]
+  
+  for formName in baseStatDict.keys():
+    if formName not in pokemonDict and formName not in ['castform', 'burmy', 'arceus', 'oricorio', 'silvally']:
+      print(formName)
 
   return
 
@@ -270,6 +301,34 @@ def addAbilityData(fname, pokemonDict):
     # remove pokemonName from pokemonDict, leaving all the forms we just entered
     del pokemonDict[pokemonName]
 
+  # there remain forms which show up in abilityDict but not in pokemonDict since pokemonName may still have been in abilityDict, so we do one more pass 
+  speciesForms = {}
+  for formName in pokemonAbilityDict.keys():
+    # check for '_' to verify it really is a form name and not a species name
+    if formName not in pokemonDict and '_' in formName:
+      speciesName = formName.split('_')[0]
+      formName = '_'.join(formName.split('_')[1:])
+
+      if speciesName not in speciesForms.keys():
+        speciesForms[speciesName] = []
+      speciesForms[speciesName].append(formName)
+
+  for speciesName in speciesForms.keys():
+    for formName in speciesForms[speciesName]:
+      pokemonName = speciesName + '_' + formName
+      pokemonDict[pokemonName] = copy.deepcopy(pokemonDict[speciesName])
+
+      # enter ability data for formName
+      for abilitySlot in pokemonAbilityDict[pokemonName].keys():
+          pokemonDict[pokemonName][abilitySlot] = pokemonAbilityDict[pokemonName][abilitySlot]
+    
+    # in some cases, abilityDict has the speciesName as well as the extra form name; this means that the speciesName refers to the default form of the Pokemon, and we wish to maintain that data
+    if speciesName not in pokemonAbilityDict.keys():
+      del pokemonDict[speciesName]
+  
+  for formName in pokemonAbilityDict.keys():
+    if formName not in pokemonDict and formName not in ['castform', 'burmy', 'arceus', 'oricorio', 'silvally', 'pumpkaboo', 'gourgeist']:
+      print(formName)
   return
 
 # add data about evolution relations between Pokemon to pokemonDict
@@ -351,30 +410,161 @@ def addFormFlags(pokemonDict):
     pokemonDict[pokemonName]["dex_number"] = pokemonDict[baseForm]["dex_number"]
   return
 
+# 
+def forceRename(pokemonDict):
+  for keyPair in [
+    ['necrozma_dusk_mane', 'necrozma_dusk'],
+    ['necrozma_dawn_wings', 'necrozma_dawn'],
+    ['eiscue_noice_face', 'eiscue_noice'],
+    ['eiscue_ice_face', 'eiscue_ice'],
+    ['hoopa_confined', 'hoopa'],
+    ['minior_core', 'minior'],
+    ['shellos_west_sea', 'shellos_west'],
+    ['shellos_east_sea', 'shellos_east'],
+    ['gastrodon_west_sea', 'gastrodon_west'],
+    ['gastrodon_east_sea', 'gastrodon_east'],
+  ]:
+    oldKey, newKey = keyPair
+    pokemonDict[newKey] = pokemonDict.pop(oldKey)
+    # for, e.g. shellos and gastrodon, we need to replace the names in the evolution data as well
+    for evolutionData in pokemonDict[newKey]['evolves_to']:
+      try:
+        evolutionName = evolutionData[0]
+
+        newPrevolutionData = []
+        for prevolutionData in pokemonDict[evolutionName]['evolves_from']:
+          prevolutionName = prevolutionData[0]
+          if prevolutionName == oldKey:
+            newPrevolutionData.append([newKey] + prevolutionData[1:])
+          else:
+            newPrevolutionData.append(prevolutionData)
+        pokemonDict[evolutionName]['evolves_from'] = newPrevolutionData
+
+      # happens when evolutionData or prevolutionData is []
+      except IndexError:
+        continue
+          
+    for prevolutionData in pokemonDict[newKey]['evolves_from']:
+      try:
+        prevolutionName = prevolutionData[0]
+
+        newEvolutionData = []
+        for evolutionData in pokemonDict[prevolutionName]['evolves_to']:
+          evolutionName = evolutionData[0]
+          if evolutionName == newKey:
+            newEvolutionData.append([newKey] + evolutionData[1:])
+          else: 
+            newEvolutionData.append(evolutionData)
+        pokemonDict[prevolutionName]['evolves_to'] = newEvolutionData
+
+      except IndexError:
+        continue
+
+  return
+
+# 
 def checkPokeAPIForms(fname, pokemonDict):
   pokemonNames = set(pokemonDict.keys())
   pokeapiConversionDict = {}
   for pokemonName in pokemonNames:
     pokeapiConversionDict[pokemonName] = []
 
-  print(fname)
   with open(fname, 'r', encoding='utf-8') as pokeAPIcsv:
     reader = csv.DictReader(pokeAPIcsv)
-    for row in reader:
-      pokeapiName, pokeapiID = row["PokeAPI Name"], row["PokeAPI ID"]
 
-      parsedPokeapiName = parseName(pokeapiName, 'pokemon')
+    for row in reader:
+      pokeapiName, pokeapiID = row["PokeAPI Form Name"], row["PokeAPI ID"]
+
+      # take urshifu-single-strike as default
+      parsedPokeapiName = parseName(pokeapiName, 'pokemon').replace('_single_strike', '').replace('_hero', '').replace('_rider', '')
+      # gmax
       if parsedPokeapiName.split('_')[-1] == 'gmax':
         pokemonName = 'g_max_' + '_'.join(parsedPokeapiName.split('_')[:-1])
+      # gender
+      elif parsedPokeapiName.split('_')[-1] == 'male':
+        pokemonName = '_'.join(parsedPokeapiName.split('_')[:-1]) + '_m'
+      elif parsedPokeapiName.split('_')[-1] == 'female':
+        pokemonName = '_'.join(parsedPokeapiName.split('_')[:-1]) + '_f'
+      # silvally and arceus
+      elif parsedPokeapiName in ['silvally', 'arceus']:
+        pokemonName = parsedPokeapiName + '_normal'
+      # mimikyu
+      elif parsedPokeapiName == 'mimikyu_disguised':
+        pokemonName = 'mimikyu'
+      # ash greninja
+      elif 'battle_bond' in parsedPokeapiName:
+        pokemonName = 'greninja_ash'
+      # ignore totem pokemon
+      elif '_totem' in parsedPokeapiName:
+        continue
+      # various pokemon default forms
+      elif parsedPokeapiName == 'burmy':
+        pokemonName = 'burmy_plant'
+      elif parsedPokeapiName in ['shellos', 'gastrodon']:
+        pokemonName = parsedPokeapiName + '_west'
+      elif parsedPokeapiName in ['deerling', 'sawsbuck']:
+        pokemonName = parsedPokeapiName + '_spring'
+      elif parsedPokeapiName == 'cherrim':
+        pokemonName = 'cherrim_overcast'
+      elif parsedPokeapiName == 'castform':
+        pokemonName = 'castform_normal'
+      elif parsedPokeapiName == 'zygarde':
+        pokemonName = 'zygarde_50'
+      elif parsedPokeapiName == 'furfrou_natural':
+        pokemonName = 'furfrou'
       else:
         pokemonName = parsedPokeapiName
 
-      if pokemonName not in pokemonNames:
-        print(pokemonName, pokeapiID)
-      else:
-        pokeapiConversionDict[pokemonName] = [pokeapiName, pokeapiID]
 
-  print(pokeapiConversionDict)
+      # flag cosmetic forms
+      # cosmeticData = [True, basePokemon, gen]
+      if pokemonName not in pokemonNames:
+        # pikachu
+        if 'pikachu' in pokemonName:
+          # LGPE
+          if 'partner' in pokemonName:
+            base = 'pikachu_partner'
+            gen = 7
+          else:
+            base = 'pikachu'
+            # cap
+            if 'cap' in pokemonName:
+              gen = 7
+            # cosplay
+            else:
+              gen = 6
+
+        # minior
+        elif 'minior' in pokemonName:
+          miniorColor = pokemonName.split('_')[1]
+          gen = 7
+          if 'meteor' in pokemonName:
+            pokemonName = 'minior_meteor_' + miniorColor
+            base = 'minior_meteor'
+          else:
+            pokemonName = 'minior_' + miniorColor
+            base = 'minior'
+
+        elif pokemonName.split('_')[0] in ['magearna', 'unown', 'spewpa', 'scatterbug', 'vivillon', 'furfrou', 'flabebe', 'floette', 'florges', 'sinistea', 'genesect', 'mothim', 'polteageist', 'zarude', 'xerneas', 'arceus']:
+          base = pokemonName.split('_')[0]
+
+          if 'arceus' not in pokemonName:
+            gen = pokemonDict[pokemonName.split('_')[0]]['gen']
+          # arceus-???
+          else:
+            gen = 4
+
+        else:
+          print(pokemonName, pokeapiID, 'PokeAPI name not handled!')
+          continue
+        
+        cosmeticData = [base, gen]
+      # indicates form is not cosmetic
+      else:
+        cosmeticData = [None, None]
+
+      pokeapiConversionDict[pokemonName] = [pokeapiName, pokeapiID, cosmeticData]
+
   return
 
 def main():
@@ -398,7 +588,9 @@ def main():
 
   addFormFlags(pokemonDict)
 
-  pokeapi_fname = dataPath + 'pokemonByID.csv'
+  forceRename(pokemonDict)
+
+  pokeapi_fname = dataPath + 'pokemonFormByID.csv'
   checkPokeAPIForms(pokeapi_fname, pokemonDict)
 
   return pokemonDict

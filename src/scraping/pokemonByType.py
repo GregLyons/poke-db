@@ -133,6 +133,11 @@ def makePokemonTypeCSV(fname):
             formName = ''
           else:
             print("Couldn't handle", formattedSpeciesName, type2)
+        elif formattedSpeciesName == 'calyrex':
+          if type2 == 'ice':
+            formName = 'ice'
+          elif type2 == 'ghost':
+            formName = 'shadow'
         else:
           formName = ''
 
