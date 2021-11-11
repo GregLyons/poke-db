@@ -503,7 +503,7 @@ def addTargetToMoveDict(fname, moveDict):
     # hard code exceptions
     #region
     # helping_hand
-    moveDict["helping_hand"]["target"] = [["self", 3], ["adjacent_ally", 4]]
+    moveDict["helping_hand"]["target"] = [["user", 3], ["adjacent_ally", 4]]
 
     # surf
     moveDict["surf"]["target"] = [["all_foes", 3], ["all_adjacent", 4]]
