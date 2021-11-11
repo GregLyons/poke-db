@@ -205,17 +205,17 @@ In addition, we have the following indices (one would usually be selecting an en
   - `(gen_id, hp, defense)`; for sorting by survivability against a Physical `pmove`. `hp` is relevant for other calculations as well independently of `defense` (e.g. against fixed damage `pmoves`), but `defense` is almost almost always used in the context of surviving `pmoves`, in which case `hp` is relevant too. In either case, the `gen_id` is also relevant.
   - `(gen_id, hp, special_defense)`; same reasoning as above but for surviving a Special `pmove`.
   - `(gen_id, attack)`; for sorting by ability to deal damage with Physical `pmove`'s.
-  - `(gen_id, defense)`; same as above but for Special `pmove`'s.
+  - `(gen_id, special_attack)`; same as above but for Special `pmove`'s.
 - `pmove`
   - `(gen_id, formatted_name)`
   - `introduced`
-  - `(gen_id, type)`
+  - `(gen_id, ptype)`
   - `(gen_id, power)`; for damage calculations.
   - `(gen_id, category)`; often want to classify by Physical, Special, Status.
 - `item`
   - `(gen_id, formatted_name)`
   - `introduced`
-  - `(gen_id, item_type)`
+  - `(gen_id, item_class)`
 - `ability`
   - `(gen_id, formatted_name)`
   - `introduced`

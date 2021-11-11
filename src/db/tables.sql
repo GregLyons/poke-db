@@ -1,5 +1,5 @@
 /*
-CREATE TABLES FOR ENTITIES
+TABLES FOR ENTITIES
 */
 
 -- LGPE counts as its own generation; we use it for entities which are LGPE-exclusive
@@ -32,6 +32,8 @@ CREATE TABLE version_group (
 
   PRIMARY KEY (generation_id, version_group_id),
   FOREIGN KEY (generation_id) REFERENCES generation(generation_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 );
 
 CREATE TABLE ability (
@@ -44,7 +46,14 @@ CREATE TABLE ability (
 
   PRIMARY KEY (generation_id, ability_id),
   FOREIGN KEY (generation_id) REFERENCES generation(generation_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (introduced) REFERENCES generation(generation_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX gen_alpha (generation_id, ability_formatted_name),
+  INDEX intro (introduced)
 );
 
 CREATE TABLE item (
@@ -57,7 +66,15 @@ CREATE TABLE item (
 
   PRIMARY KEY (generation_id, ability_id),
   FOREIGN KEY (generation_id) REFERENCES generation(generation_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (introduced) REFERENCES generation(generation_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX gen_alpha (generation_id, item_formatted_name),
+  INDEX intro (introduced),
+  INDEX by_class (generation_id, item_class)
 );
 
 CREATE TABLE effect (
@@ -68,6 +85,8 @@ CREATE TABLE effect (
 
   PRIMARY KEY (effect_id),
   FOREIGN KEY (introduced) REFERENCES generation(generation_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 );
 
 CREATE TABLE usage_method (
@@ -78,6 +97,8 @@ CREATE TABLE usage_method (
 
   PRIMARY KEY (usage_method_id),
   FOREIGN KEY (introduced) REFERENCES generation(generation_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 );
 
 CREATE TABLE pstatus (
@@ -97,7 +118,11 @@ CREATE TABLE ptype (
 
   PRIMARY KEY (generation_id, ptype_id),
   FOREIGN KEY (generation_id) REFERENCES generation(generation_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (introduced) REFERENCES generation(generation_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 );
 
 CREATE TABLE pmove (
@@ -106,7 +131,8 @@ CREATE TABLE pmove (
   pmove_name VARCHAR(45) NOT NULL,
   pmove_formatted_name VARCHAR(45) NOT NULL,
   introduced TINYINT NOT NULL UNSIGNED,
-  pmove_ptype TINYINT NOT NULL UNSIGNED,
+  ptype_generation_id TINYINT NOT NULL UNSIGNED,
+  ptype_id TINYINT NOT NULL UNSIGNED,
   pmove_power SMALLINT UNSIGNED /* Non-damaging pmoves, fixed damage pmoves, and variable damage pmoves can have NULL */,
   pmove_pp TINYINT NOT NULL UNSIGNED,
   pmove_accuracy TINYINT UNSIGNED /* pmoves which bypass accuracy checks can have NULL */
@@ -117,9 +143,23 @@ CREATE TABLE pmove (
 
   PRIMARY KEY (generation_id, pmove_id),
   FOREIGN KEY (generation_id) REFERENCES generation(generation_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (introduced) REFERENCES generation(generation_id),
-  FOREIGN KEY (ptype) REFERENCES ptype(generation_id, ptype_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  FOREIGN KEY (ptype_generation_id, ptype_id) REFERENCES ptype(generation_id, ptype_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (usage_method) 
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  
+  INDEX gen_alpha (generation_id, pmove_formatted_name),
+  INDEX intro (introduced),
+  INDEX by_ptype (generation_id, ptype_generation_id, ptype_id),
+  INDEX by_power (generation_id, move_power),
+  INDEX by_category (generation_id, move_category)
 );
 
 -- stats in battle, i.e. attack, defense, evasion, accuracy, critical hit ratio, but not HP
@@ -151,11 +191,24 @@ CREATE TABLE pokemon (
 
   PRIMARY KEY (generation_id, pokemon_id),
   FOREIGN KEY (generation_id) REFERENCES generation(generation_id),
-  FOREIGN KEY (introduced) REFERENCES generation(generation_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  FOREIGN KEY (introduced) REFERENCES generation(generation_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX gen_alpha (generation_id, pokemon_formatted_name),
+  INDEX intro (introduced),
+  INDEX dex_sort (generation_id, pokemon_dex, introduced),
+  INDEX speed_tier (generation_id, speed),
+  INDEX survive_physical (generation_id, hp, defense),
+  INDEX survive_special (generation_id, hp, special_defense),
+  INDEX damage_physical (generation_id, attack),
+  INDEX damage_special (generation_id, special_attack),
 );
 
 /*
-CREATE TABLES FOR RELATIONSHIPS
+TABLES FOR RELATIONSHIPS
 */
 
 /*
@@ -172,8 +225,12 @@ CREATE TABLE pmove_requires_ptype (
   ptype_id TINYINT NOT NULL UNSIGNED,
 
   PRIMARY KEY (pmove_generation_id, pmove_id, ptype_generation_id, ptype_id),
-  FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id),
+  FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (ptype_generation_id, ptype_id) REFERENCES ptype(generation_id, ptype_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 );
 
 /*
@@ -190,7 +247,11 @@ CREATE TABLE pmove_requires_pmove (
 
   PRIMARY KEY (pmove_generation_id, pmove_id, base_pmove_generation_id, base_pmove_id),
   FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (base_pmove_generation_id, base_pmove_id) REFERENCES pmove(generation_id, pmove_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 ); 
 
 CREATE TABLE pokemon_evolution (
@@ -202,7 +263,13 @@ CREATE TABLE pokemon_evolution (
 
   PRIMARY KEY(prevolution_generation_id, prevolution_id, evolution_generation_id, evolution_id),
   FOREIGN KEY (prevolution_generation_id, prevolution_id) REFERENCES pokemon(generation_id, pokemon_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (evolution_generation_id, evolution_id) REFERENCES pokemon(generation_id, pokemon_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX opposite_prevolution_evolution (evolution_generation_id, evolution_id, prevolution_generation_id, prevolution_id)
 );
 
 -- does not include cosmetic forms
@@ -215,7 +282,11 @@ CREATE TABLE pokemon_form (
 
   PRIMARY KEY (base_form_generation_id, base_form_id, form_generation_id, form_id),
   FOREIGN KEY (base_form_generation_id, base_form_id) REFERENCES pokemon(generation_id, pokemon_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (form_generation_id, form_id) REFERENCES pokemon(generation_id, pokemon_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 );
 
 -- we don't store the base stats, typing, etc. of cosmetic forms since they only differ in appearance; to compute those properties for a given cosmetic form, just use the corresponding property of the base form
@@ -227,18 +298,8 @@ CREATE TABLE cosmetic_form (
 
   PRIMARY KEY (base_form_generation_id, base_form_id, cosmetic_form_generation_id, cosmetic_form_id),
   FOREIGN KEY (base_form_generation_id, base_form_id) REFERENCES pokemon(generation_id, pokemon_id)
-);
-
--- E.g. Flamethrower is a Fire-type pmove
-CREATE TABLE pmove_ptype (
-  pmove_generation_id TINYINT NOT NULL UNSIGNED,
-  pmove_id SMALLINT NOT NULL UNSIGNED,
-  ptype_generation_id TINYINT NOT NULL UNSIGNED,
-  ptype_id TINYINT NOT NULL UNSIGNED,
-
-  PRIMARY KEY (pmove_generation_id, pmove_id, ptype_generation_id, ptype_id),
-  FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id),
-  FOREIGN KEY (ptype_generation_id, ptype_id) REFERENCES ptype(generation_id, ptype_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 );
 
 -- for Natural Gift
@@ -251,7 +312,11 @@ CREATE TABLE item_ptype (
 
   PRIMARY KEY (item_generation_id, item_id, ptype_generation_id, ptype_id),
   FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (ptype_generation_id, ptype_id) REFERENCES ptype(generation_id, ptype_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 )
 
 /*
@@ -265,11 +330,17 @@ CREATE TABLE pokemon_ptype (
   pokemon_generation_id TINYINT NOT NULL UNSIGNED,
   pokemon_id SMALLINT NOT NULL UNSIGNED,
   ptype_generation_id TINYINT NOT NULL UNSIGNED,
-  ptype_id TINYINT NOT NULL UNSIGNED
+  ptype_id TINYINT NOT NULL UNSIGNED,
 
   PRIMARY KEY (pokemon_generation_id, pokemon_id, ptype_generation_id, ptype_id),
   FOREIGN KEY (pokemon_generation_id, pokemon_id) REFERENCES pokemon(generation_id, pokemon_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (ptype_generation_id, ptype_id) REFERENCES ptype(generation_id, pokemon_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX opposite_pokemon_ptype_generation_id (ptype_generation_idptype, _id, pokemon_generation_id, pokemon_id)
 );
 
 CREATE TABLE pokemon_pmove (
@@ -281,7 +352,13 @@ CREATE TABLE pokemon_pmove (
 
   PRIMARY KEY (pokemon_generation_id, pokemon_id, pmove_generation_id, pmove_id),
   FOREIGN KEY (pokemon_generation_id, pokemon_id) REFERENCES pokemon(generation_id, pokemon_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+  
+  INDEX opposite_pokemon_pmove (pmove_generation_id, pmove_id, pokemon_generation_id, pokemon_id)
 );
 
 CREATE TABLE pokemon_ability (
@@ -293,7 +370,13 @@ CREATE TABLE pokemon_ability (
 
   PRIMARY KEY (pokemon_generation_id, pokemon_id, ability_generation_id, ability_id), 
   FOREIGN KEY (pokemon_generation_id, pokemon_id) REFERENCES pokemon(generation_id, pokemon_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES (generation_id, pmove_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  
+  INDEX opposite_pokemon_ability (ability_generation_id, ability_id, pokemon_generation_id, pokemon_id)
 );
 
 /*
@@ -308,7 +391,13 @@ CREATE TABLE ptype_matchup (
 
   PRIMARY KEY (attacking_ptype_generation_id, attacking_ptype_id, defending_ptype_generation_id, defending_ptype_id),
   FOREIGN KEY (attacking_ptype_generation_id, attacking_ptype_id) REFERENCES ptype(generation_id, ptype_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (defending_ptype_generation_id, defending_ptype_id) REFERENCES ptype(generation_id, ptype_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  
+  INDEX opposite_attacking_ptype_defending_ptype (defending_ptype_generation_id, defending_ptype_id, attacking_ptype_generation_id, attacking_ptype_id)
 );
 
 /*
@@ -325,7 +414,13 @@ CREATE TABLE pmove_modifies_stat (
 
   PRIMARY KEY (pmove_generation_id, pmove_id, stat_id),
   FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (stat_id) REFERENCES (stat_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX opposite_pmove_stat (stat_id, pmove_generation_id, pmove_id)
 );
 
 CREATE TABLE pmove_effect (
@@ -335,7 +430,13 @@ CREATE TABLE pmove_effect (
 
   PRIMARY KEY (pmove_generation_id, pmove_id, effect_id),
   FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (effect_id) REFERENCES effect(effect_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+
+  INDEX opposite_pmove_effect (effect_id, pmove_generation_id, pmove_id)
 );
 
 CREATE TABLE pmove_causes_pstatus (
@@ -346,7 +447,13 @@ CREATE TABLE pmove_causes_pstatus (
 
   PRIMARY KEY (pmove_generation_id, pmove_id, pstatus_id),
   FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (pstatus_id) REFERENCES pstatus(pstatus_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+
+  INDEX opposite_pmove_causes_pstatus (pstatus_id, pmove_generation_id, pmove_id)
 );
 
 CREATE TABLE pmove_resists_pstatus (
@@ -356,7 +463,13 @@ CREATE TABLE pmove_resists_pstatus (
 
   PRIMARY KEY (pmove_generation_id, pmove_id, pstatus_id),
   FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (pstatus_id) REFERENCES pstatus(pstatus_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX opposite_pmove_resists_pstatus (pstatus_id, pmove_generation_id, pmove_id)
 );
 
 CREATE TABLE pmove_requires_pokemon (
@@ -367,7 +480,13 @@ CREATE TABLE pmove_requires_pokemon (
 
   PRIMARY KEY (pmove_generation_id, pmove_id, pokemon_generation_id, pokemon_id), 
   FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (pokemon_generation_id, pokemon_id) REFERENCES pokemon(generation_id, pokemon_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX opposite_pmove_pokemon (pokemon_generation_id, pokemon_id, pmove_generation_id, pmove_id)
 );
 
 CREATE TABLE pmove_requires_pokemon (
@@ -378,7 +497,13 @@ CREATE TABLE pmove_requires_pokemon (
 
   PRIMARY KEY (pmove_generation_id, pmove_id, item_generation_id, item_id), 
   FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX opposite_pmove_item (item_generation_id, item_id, pmove_generation_id, pmove_id)
 );
 
 -- note that Aura Sphere is both a pulse and a ball pmove, so we need an m-to-n relationship
@@ -389,7 +514,13 @@ CREATE TABLE pmove_usage_method (
 
   PRIMARY KEY (pmove_generation_id, pmove_id, usage_method_id),
   FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (usage_method_id) REFERENCES usage_method(usage_method_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX opposite_pmove_usage_method (usage_method_id, pmove_generation_id, pmove_id)
 );
 
 /*
@@ -404,7 +535,13 @@ CREATE TABLE ability_boosts_ptype (
 
   PRIMARY KEY (ability_generation_id, ability_id, ptype_generation_id, ptype_id),
   FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (ptype_generation_id, ptype_id) REFERENCES ptype(generation_id, ptype_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX opposite_ability_boosts_ptype (ptype_generation_id, ptype_id, ability_generation_id, ability_id)
 );
 
 CREATE TABLE ability_resists_ptype (
@@ -416,7 +553,13 @@ CREATE TABLE ability_resists_ptype (
 
   PRIMARY KEY (ability_generation_id, ability_id, ptype_generation_id, ptype_id),
   FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (ptype_generation_id, ptype_id) REFERENCES ptype(generation_id, ptype_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX opposite_ability_resists_ptype (ptype_generation_id, ptype_id, ability_generation_id, ability_id)
 );
 
 CREATE TABLE ability_boosts_usage_method (
@@ -427,7 +570,13 @@ CREATE TABLE ability_boosts_usage_method (
 
   PRIMARY KEY (ability_generation_id, ability_id, usage_method_id),
   FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (usage_method_id) REFERENCES usage_method(usage_method_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX opposite_ability_boosts_usage_method (usage_method_id, ability_generation_id, ability_id)
 );
 
 CREATE TABLE ability_resists_usage_method (
@@ -438,7 +587,13 @@ CREATE TABLE ability_resists_usage_method (
 
   PRIMARY KEY (ability_generation_id, ability_id, usage_method_id),
   FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (usage_method_id) REFERENCES usage_method(usage_method_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX opposite_ability_resists_usage_method (usage_method_id, ability_generation_id, ability_id)
 );
 
 CREATE TABLE ability_modifies_stat (
@@ -452,7 +607,13 @@ CREATE TABLE ability_modifies_stat (
 
   PRIMARY KEY (ability_generation_id, ability_id, stat_id),
   FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (stat_id) REFERENCES (stat_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX opposite_ability_stat (stat_id, ability_generation_id, ability_id)
 );
 
 CREATE TABLE ability_effect (
@@ -462,7 +623,13 @@ CREATE TABLE ability_effect (
 
   PRIMARY KEY (ability_generation_id, ability_id, effect_id),
   FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (effect_id) REFERENCES effect(effect_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX opposite_ability_effect (effect_id, ability_generation_id, ability_id)
 );
 
 CREATE TABLE ability_causes_pstatus (
@@ -473,7 +640,13 @@ CREATE TABLE ability_causes_pstatus (
 
   PRIMARY KEY (ability_generation_id, ability_id, pstatus_id),
   FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (pstatus_id) REFERENCES pstatus(pstatus_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  
+  INDEX opposite_ability_causes_pstatus (pstatus_id, ability_generation_id, ability_id)
 );
 
 CREATE TABLE ability_resists_pstatus (
@@ -483,7 +656,13 @@ CREATE TABLE ability_resists_pstatus (
 
   PRIMARY KEY (ability_generation_id, ability_id, pstatus_id),
   FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (pstatus_id) REFERENCES pstatus(pstatus_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX opposite_ability_resists_pstatus (pstatus_id, ability_generation_id, ability_id)
 );
 
 /*
@@ -498,7 +677,13 @@ CREATE TABLE item_boosts_ptype (
 
   PRIMARY KEY (item_generation_id, item_id, ptype_generation_id, ptype_id),
   FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (ptype_generation_id, ptype_id) REFERENCES ptype(generation_id, ptype_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX opposite_item_boosts_ptype (ptype_generation_id, ptype_id, item_generation_id, item_id)
 );
 
 CREATE TABLE item_resists_ptype (
@@ -510,7 +695,13 @@ CREATE TABLE item_resists_ptype (
 
   PRIMARY KEY (item_generation_id, item_id, ptype_generation_id, ptype_id),
   FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (ptype_generation_id, ptype_id) REFERENCES ptype(generation_id, ptype_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX opposite_item_resists_ptype (ptype_generation_id, ptype_id, item_generation_id, item_id)
 );
 
 CREATE TABLE item_boosts_usage_method (
@@ -521,7 +712,13 @@ CREATE TABLE item_boosts_usage_method (
 
   PRIMARY KEY (item_generation_id, item_id, usage_method_id),
   FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (usage_method_id) REFERENCES usage_method(usage_method_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX opposite_item_boosts_usage_method (usage_method_id, item_generation_id, item_id)
 );
 
 CREATE TABLE item_resists_usage_method (
@@ -532,7 +729,13 @@ CREATE TABLE item_resists_usage_method (
 
   PRIMARY KEY (item_generation_id, item_id, usage_method_id),
   FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (usage_method_id) REFERENCES usage_method(usage_method_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX opposite_item_resists_usage_method (usage_method_id, item_generation_id, item_id)
 );
 
 CREATE TABLE item_modifies_stat (
@@ -546,7 +749,13 @@ CREATE TABLE item_modifies_stat (
 
   PRIMARY KEY (item_generation_id, item_id, stat_id),
   FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (stat_id) REFERENCES (stat_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX opposite_item_stat (stat_id, item_generation_id, item_id)
 );
 
 CREATE TABLE item_effect (
@@ -556,7 +765,13 @@ CREATE TABLE item_effect (
 
   PRIMARY KEY (item_generation_id, item_id, effect_id),
   FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (effect_id) REFERENCES effect(effect_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX opposite_item_effect (effect_id, item_generation_id, item_id)
 );
 
 CREATE TABLE item_causes_pstatus (
@@ -566,7 +781,13 @@ CREATE TABLE item_causes_pstatus (
 
   PRIMARY KEY (item_generation_id, item_id, pstatus_id),
   FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (pstatus_id) REFERENCES pstatus(pstatus_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX opposite_item_causes_pstatus (pstatus_id, item_generation_id, item_id)
 );
 
 CREATE TABLE item_resists_pstatus (
@@ -576,7 +797,13 @@ CREATE TABLE item_resists_pstatus (
 
   PRIMARY KEY (item_generation_id, item_id, pstatus_id),
   FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (pstatus_id) REFERENCES pstatus(pstatus_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX opposite_item_resists_pstatus (pstatus_id, item_generation_id, item_id)
 );
 
 /*
@@ -589,7 +816,13 @@ CREATE TABLE version_group_pdescription (
 
   PRIMARY KEY (version_group_generation_id, version_group_id, pdescription_id),
   FOREIGN KEY (version_group_generation_id, version_group_id) REFERENCES version_group(generation_id, version_group_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (pdescription_id) REFERENCES pdescription(pdescription_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX opposite_version_group_pdescription (pdescription_id, version_group_generation_id, version_group_id),
 );
 
 CREATE TABLE version_group_sprite (
@@ -599,7 +832,13 @@ CREATE TABLE version_group_sprite (
 
   PRIMARY KEY (version_group_generation_id, version_group_id, sprite_id),
   FOREIGN KEY (version_group_generation_id, version_group_id) REFERENCES version_group(generation_id, version_group_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (sprite_id) REFERENCES sprite(sprite_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX opposite_version_group_sprite (sprite_id, version_group_generation_id, version_group_id),
 );
 
 /*
@@ -618,8 +857,14 @@ CREATE TABLE pdescription_ability (
 
   PRIMARY KEY (ability_generation_id, ability_id, version_group_generation_id, version_group_id, pdescription_id),
   FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (version_group_generation_id, version_group_id) REFERENCES version_group(generation_id, version_group_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY pdescription_id REFERENCES pdescription(pdescription_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 );
 
 CREATE TABLE pdescription_pmove (
@@ -631,8 +876,14 @@ CREATE TABLE pdescription_pmove (
 
   PRIMARY KEY (pmove_generation_id, pmove_id, version_group_generation_id, version_group_id, pdescription_id),
   FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (version_group_generation_id, version_group_id) REFERENCES version_group(generation_id, version_group_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY pdescription_id REFERENCES pdescription(pdescription_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 );
 
 CREATE TABLE pdescription_item (
@@ -644,8 +895,14 @@ CREATE TABLE pdescription_item (
 
   PRIMARY KEY (item_generation_id, item_id, version_group_generation_id, version_group_id, pdescription_id),
   FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (version_group_generation_id, version_group_id) REFERENCES version_group(generation_id, version_group_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY pdescription_id REFERENCES pdescription(pdescription_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 );
 
 /*
@@ -660,8 +917,14 @@ CREATE TABLE sprite_pokemon (
 
   PRIMARY KEY (pokemon_generation_id, pokemon_id, version_group_generation_id, version_group_id, sprite_id),
   FOREIGN KEY (pokemon_generation_id, pokemon_id) REFERENCES pokemon(generation_id, pokemon_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (version_group_generation_id, version_group_id) REFERENCES version_group(generation_id, version_group_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY sprite_id REFERENCES sprite(sprite_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 );
 
 CREATE TABLE sprite_item (
@@ -673,6 +936,12 @@ CREATE TABLE sprite_item (
 
   PRIMARY KEY (item_generation_id, item_id, version_group_generation_id, version_group_id, sprite_id),
   FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (version_group_generation_id, version_group_id) REFERENCES version_group(generation_id, version_group_id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY sprite_id REFERENCES sprite(sprite_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 );
