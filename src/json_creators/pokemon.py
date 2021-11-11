@@ -565,9 +565,85 @@ def checkPokeAPIForms(fname, pokemonDict):
 
       pokeapiConversionDict[pokemonName] = [pokeapiName, pokeapiID, cosmeticData]
 
-  
+  return
+
+def addFullName(pokemonDict):
+  for pokemonName in pokemonDict.keys():
+    print(getFullName(pokemonName))
 
   return
+
+def getFullName(pokemonName):
+  nameParts = pokemonName.split('_')
+
+  if len(nameParts) == 1:
+    return pokemonName.title()
+
+  # rearrange names of g-max pokemon
+  if 'g_max_' in pokemonName:
+    nameParts = nameParts[2:] + nameParts[0:2]
+
+  speciesName = nameParts[0].title()
+  formName = ' '.join([part.title() for part in nameParts[1:]])
+
+  # further processing of form name
+  # g-max
+  formName = formName.replace('G Max', 'G-Max')
+
+  # gender
+  if formName == 'M':
+    formName = 'Male'
+  elif formName == 'F':
+    formName = 'Female'
+
+  # Zygarde
+  if formName in ['10', '50']:
+    formName = formName + '%'
+
+  # Urshifu
+  if speciesName == 'Urshifu' and formName == '':
+    formName = 'Single Strike'
+
+  # Apostrophes
+  if speciesName in ['Farfetchd', 'Sirfetchd']:
+    speciesName = speciesName[:-2] + "'d"
+
+  # Hyphens
+  if [speciesName, formName] in [
+    ['Ho', 'Oh'],
+    ['Porygon', 'Z'],
+    ['Jangmo', 'O'],
+    ['Hakomo', 'O'],
+    ['Kommo', 'O']
+  ]:
+    if formName == 'O':
+      formName = 'o'
+    speciesName, formName = speciesName + '-' + formName, ''
+
+    return speciesName
+
+  # Periods
+  if [speciesName, formName] in [
+    ['Mr', 'Mime'],
+    ['Mr', 'Rime'],
+    ['Mime', 'Jr']
+  ]:
+    if speciesName == 'Mime':
+      speciesName, formName = formName + '. ' + speciesName, ''
+    else:
+      speciesName, formName = speciesName + '. ' + formName, ''
+  
+    return speciesName
+
+  # Colons
+  if [speciesName, formName] in [
+    ['Type', 'Null']
+  ]:
+    speciesName, formName = speciesName + ': ' + formName, ''
+    
+    return speciesName
+
+  return f'{speciesName} ({formName})'
 
 def main():
   dataPath = getCSVDataPath() + '\\pokemon\\'
@@ -594,6 +670,8 @@ def main():
 
   pokeapi_fname = dataPath + 'pokemonFormByID.csv'
   checkPokeAPIForms(pokeapi_fname, pokemonDict)
+
+  addFullName(pokemonDict)
 
   return pokemonDict
 
