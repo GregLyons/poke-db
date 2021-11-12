@@ -775,6 +775,8 @@ def main():
   zPower_fname = dataPath + 'movesByZPower.csv'
   addZPowerMaxPowerData(maxPower_fname, zPower_fname, moveDict)
 
+  print(moveDict['absorb'])
+
   return moveDict
 
 if __name__ == '__main__':

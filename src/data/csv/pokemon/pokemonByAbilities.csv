@@ -1059,5 +1059,5 @@ Dex Number,Sprite URL,Pokemon Name,Ability 1,Ability 2,Hidden,Gen
 896,//cdn2.bulbagarden.net/upload/6/68/896MS8.png,glastrier,chilling_neigh,,,8
 897,//cdn2.bulbagarden.net/upload/3/34/897MS8.png,spectrier,grim_neigh,,,8
 898,//cdn2.bulbagarden.net/upload/8/87/898MS8.png,calyrex,unnerve,,,8
-898,//cdn2.bulbagarden.net/upload/e/ed/898IMS8.png,calyrex_ice,as_one,,,8
-898,//cdn2.bulbagarden.net/upload/c/c4/898SMS8.png,calyrex_shadow,as_one,,,8
+898,//cdn2.bulbagarden.net/upload/e/ed/898IMS8.png,calyrex_ice,as_one_glastrier,,,8
+898,//cdn2.bulbagarden.net/upload/c/c4/898SMS8.png,calyrex_shadow,as_one_spectrier,,,8

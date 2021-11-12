@@ -268,6 +268,10 @@ def parseName(text, mode='normal'):
       speciesName = speciesName.replace('♀', ' Female').replace('Female', 'f')
       speciesName = speciesName.replace('♂', ' Male').replace('Male', 'm')
       
+    # ignore 'Mane' and 'Wings' in Necrozma
+    if 'Necrozma' in speciesName:
+      form = form.replace(' Mane', '').replace(' Wings', '')
+    
     # combine species and form name after parsing
     text = (speciesName + ' ' + form).strip().replace('  ', ' ')
 

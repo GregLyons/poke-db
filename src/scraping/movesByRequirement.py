@@ -70,9 +70,9 @@ def makeRequirementCSV(fname):
       elif 'guardian_of_alola' in moveName:
         pokemonNames = ['tapu_bulu', 'tapu_koko', 'tapu_lele', 'tapu_fini']
       elif 'sunraze' in moveName:
-        pokemonNames = ['solgaleo', 'necrozma_dusk_mane']
+        pokemonNames = ['solgaleo', 'necrozma_dusk']
       elif 'moonraze' in moveName:
-        pokemonNames = ['lunala', 'necrozma_dawn_wings']
+        pokemonNames = ['lunala', 'necrozma_dawn']
       elif 'burns_the_sky' in moveName:
         pokemonNames = ['necrozma_ultra']
       elif 'stormshards' in moveName:

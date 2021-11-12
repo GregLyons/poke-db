@@ -7377,7 +7377,7 @@
     "usage_method": {},
     "contact": [[false, 3]],
     "priority": [[5, 3]],
-    "target": [["self", 3], ["adjacent_ally", 4]]
+    "target": [["user", 3], ["adjacent_ally", 4]]
   },
   "trick": {
     "id": 271,
@@ -19529,7 +19529,7 @@
     "target": [["any_adjacent", 7]],
     "requirements": {
       "pokemon": [
-        "necrozma_dusk_mane"
+        "necrozma_dusk"
       ],
       "move": "sunsteel_strike"
     }
@@ -19562,7 +19562,7 @@
     "target": [["any_adjacent", 7]],
     "requirements": {
       "pokemon": [
-        "necrozma_dawn_wings"
+        "necrozma_dawn"
       ],
       "move": "moongeist_beam"
     }

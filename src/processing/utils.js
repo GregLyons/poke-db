@@ -97,14 +97,14 @@ const computePokemonLearnsetName = pokemonName => {
   // in this case, we assign them the learnset of their species/base form
   const formHasMissingLearnset = (pokemonName.includes('hoopa') || pokemonName.includes('deoxys') || pokemonName.includes('giratina') || pokemonName.includes('shaymin') || pokemonName.includes('tornadus') || pokemonName.includes('landorus') || pokemonName.includes('thundurus') || pokemonName.includes('keldeo') || pokemonName.includes('arceus') || pokemonName.includes('silvally'));
 
-  if (pokemonName.includes('_mega') || pokemonName.includes('_primal')|| formHasMissingLearnset) 
+  if (pokemonName.includes('_mega') || pokemonName.includes('_primal') || formHasMissingLearnset) 
   // primals, megas, and pokemon whose forms have missing learnsets
   {
     return pokemonName.split('_')[0];
 
   } 
   // gmax pokemon
-  else if (pokemonName.includes('g_max_')) {
+  else if (pokemonName.includes('_gmax')) {
     // toxtricity amped
     if (pokemonName.includes('amped')) {
       return 'toxtricity';
@@ -143,6 +143,11 @@ const getPokemonLearnsetMaps = (learnsets, pokemon) => {
   const pokemonMap = new Map(), inversePokemonMap = new Map();
 
   for (let pokemonName of Object.keys(pokemon)) {
+    // ignore cosmetic forms
+    if (pokemon[pokemonName].cosmetic) {
+      continue;
+    }
+
     // make pokemonName match its entry in learnsets
     let learnsetPokemonName;
     if (!learnsets.hasOwnProperty(computePokemonLearnsetName(pokemonName))) {
@@ -375,6 +380,11 @@ export const addLearnsetsToPokemonArr = (learnsets, moves, pokemon, pokemonArr) 
   const {updatedLearnsets, moveMap, inverseMoveMap} = getUpdatedLearnsets(learnsets, moves, pokemon);
   
   for (let pokemonEntry of pokemonArr) {
+    // ignore cosmetic forms
+    if (pokemonEntry.cosmetic) {
+      continue;
+    }
+
     const pokemonName = pokemonEntry.name;
     
     pokemonEntry['learnset'] = {};

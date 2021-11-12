@@ -89,9 +89,9 @@ guardian_of_alola,pokemon,tapu_koko,move,natures_madness
 guardian_of_alola,pokemon,tapu_lele,move,natures_madness
 guardian_of_alola,pokemon,tapu_fini,move,natures_madness
 searing_sunraze_smash,pokemon,solgaleo,move,sunsteel_strike
-searing_sunraze_smash,pokemon,necrozma_dusk_mane,move,sunsteel_strike
+searing_sunraze_smash,pokemon,necrozma_dusk,move,sunsteel_strike
 menacing_moonraze_maelstrom,pokemon,lunala,move,moongeist_beam
-menacing_moonraze_maelstrom,pokemon,necrozma_dawn_wings,move,moongeist_beam
+menacing_moonraze_maelstrom,pokemon,necrozma_dawn,move,moongeist_beam
 light_that_burns_the_sky,pokemon,necrozma_ultra,move,photon_geyser
 soul_stealing_7_star_strike,pokemon,marshadow,move,spectral_thief
 z_swords_dance,move,swords_dance,,

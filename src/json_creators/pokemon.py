@@ -15,6 +15,10 @@ def makeInitialPokemonDict(fname, changes_fname):
     for row in reader:
       gen, dexNumber, speciesName, pokemonName, type1, type2 = row["Gen"], row["Dex Number"], row["Species Name"], row["Pokemon Name"], row["Type 1"], row["Type 2"]
 
+      # move g_max to end of pokemonName for consistency with regionals, megas, etc.
+      if 'g_max' in pokemonName: 
+        pokemonName = '_'.join(pokemonName.split('_')[2:]) + '_gmax'
+
       if dexNumber != '':
         dexNumber = int(dexNumber)
 
@@ -125,7 +129,7 @@ def addBaseStatData(fnamePrefix, pokemonDict):
     # pokemon form is in the list of pokemon by type, so it will show up in both pokemonDict and baseStatDict
     try:
       for stat in baseStatDict[pokemonName].keys():
-          pokemonDict[pokemonName][stat] = baseStatDict[pokemonName][stat]
+        pokemonDict[pokemonName][stat] = baseStatDict[pokemonName][stat]
 
     # KeyErrors will occur because pokemonName is not in baseStatDict
     except KeyError:
@@ -134,11 +138,12 @@ def addBaseStatData(fnamePrefix, pokemonDict):
 
       # case (a)
       if len(formNames) == 0:
-        # g_max forms are only in the type .csv, as g_max doesn't change base stats (except double HP, which isn't in the Bulbapedia table)
-        if 'g_max_' not in pokemonName:
+        # exception for gmax pokemon: gmax Pokemon have the same base stats as their base form counterparts (aside from double hp, which we won't store); generally, we won't need the 'else' clause, but for toxtricity_low_key_gmax and toxtricity_amped_gmax, whose base forms ARE in baseStatDict, the assignment of formName, pokemonName is incorrect, so we need the 'else' clause for that case.
+        if 'toxtricity' not in pokemonName or '_gmax' not in pokemonName:
           formName, pokemonName = pokemonName, pokemonName.split('_')[0]
         else:
-          formName, pokemonName = pokemonName, '_'.join(pokemonName.split('_')[2:])
+          formName, pokemonName = pokemonName, '_'.join(pokemonName.split('_')[:-1])
+      
         for stat in baseStatDict[pokemonName].keys():
           pokemonDict[formName][stat] = baseStatDict[pokemonName][stat]
       else:
@@ -274,11 +279,12 @@ def addAbilityData(fname, pokemonDict):
 
       # case (a)
       if len(formNames) == 0:
-        # g_max forms are only in the type .csv, as g_max doesn't change ability
-        if 'g_max_' not in pokemonName:
+        # exception for gmax pokemon: gmax Pokemon have the same abilities as their base form counterparts; generally, we won't need the 'else' clause, but for toxtricity_low_key_gmax and toxtricity_amped_gmax, whose base forms ARE in pokemonAbilityDict, the assignment of formName, pokemonName is incorrect, so we need the 'else' clause for that case.
+        if 'toxtricity' not in pokemonName or '_gmax' not in pokemonName:
           formName, pokemonName = pokemonName, pokemonName.split('_')[0]
         else:
-          formName, pokemonName = pokemonName, '_'.join(pokemonName.split('_')[2:])
+          formName, pokemonName = pokemonName, '_'.join(pokemonName.split('_')[:-1])
+
         for abilitySlot in pokemonAbilityDict[pokemonName].keys():
           pokemonDict[formName][abilitySlot] = pokemonAbilityDict[pokemonName][abilitySlot]
       else:
@@ -396,9 +402,9 @@ def addFormFlags(pokemonDict):
       # will include 'darmanitan_standard' and 'darmanitan_zen'
       baseForm = '_'.join(pokemonName.split('_')[:-1])
       formType = 'galar'
-    elif 'g_max_' in pokemonName:
-      baseForm = '_'.join(pokemonName.split('_')[2:])
-      formType = 'g_max'
+    elif 'gmax' in pokemonName:
+      baseForm = '_'.join(pokemonName.split('_')[:-1])
+      formType = 'gmax'
     else:
       continue
     
@@ -479,7 +485,7 @@ def checkPokeAPIForms(fname, pokemonDict):
       parsedPokeapiName = parseName(pokeapiName, 'pokemon').replace('_single_strike', '').replace('_hero', '').replace('_rider', '')
       # gmax
       if parsedPokeapiName.split('_')[-1] == 'gmax':
-        pokemonName = 'g_max_' + '_'.join(parsedPokeapiName.split('_')[:-1])
+        pokemonName = '_'.join(parsedPokeapiName.split('_')[:-1]) + '_gmax'
       # gender
       elif parsedPokeapiName.split('_')[-1] == 'male':
         pokemonName = '_'.join(parsedPokeapiName.split('_')[:-1]) + '_m'
@@ -514,7 +520,6 @@ def checkPokeAPIForms(fname, pokemonDict):
         pokemonName = 'furfrou'
       else:
         pokemonName = parsedPokeapiName
-
 
       # flag cosmetic forms
       # cosmeticData = [True, basePokemon, gen]
@@ -564,24 +569,36 @@ def checkPokeAPIForms(fname, pokemonDict):
         cosmeticData = [None, None]
 
       pokeapiConversionDict[pokemonName] = [pokeapiName, pokeapiID, cosmeticData]
+    
+  # add PokeAPI conversion data to pokemonDict
+  for pokemonName in pokeapiConversionDict.keys():
+    if pokemonName in pokemonDict:
+      pokemonDict[pokemonName]["pokeapi"] = pokeapiConversionDict[pokemonName][:2]
+      pokemonDict[pokemonName]["cosmetic"] = False
+    else:
+      pokeapiName, pokeapiID, cosmeticData = pokeapiConversionDict[pokemonName]
+      base, gen = cosmeticData
+
+      pokemonDict[pokemonName] = {
+        "cosmetic": True,
+        "introduced": gen,
+        "base_form": base,
+        "pokeapi": [pokeapiName, pokeapiID]
+      }
 
   return
 
 def addFullName(pokemonDict):
   for pokemonName in pokemonDict.keys():
-    print(getFullName(pokemonName))
+    pokemonDict[pokemonName]['full_name'] = getFullName(pokemonName)
 
   return
 
 def getFullName(pokemonName):
   nameParts = pokemonName.split('_')
 
-  if len(nameParts) == 1:
+  if len(nameParts) == 1 and pokemonName != 'urshifu':
     return pokemonName.title()
-
-  # rearrange names of g-max pokemon
-  if 'g_max_' in pokemonName:
-    nameParts = nameParts[2:] + nameParts[0:2]
 
   speciesName = nameParts[0].title()
   formName = ' '.join([part.title() for part in nameParts[1:]])
@@ -590,19 +607,23 @@ def getFullName(pokemonName):
   # g-max
   formName = formName.replace('G Max', 'G-Max')
 
-  # gender
-  if formName == 'M':
-    formName = 'Male'
-  elif formName == 'F':
-    formName = 'Female'
+  # gender; ignore unown
+  if speciesName != 'Unown':
+    if formName == 'M':
+      formName = 'Male'
+    elif formName == 'F':
+      formName = 'Female'
 
   # Zygarde
   if formName in ['10', '50']:
     formName = formName + '%'
 
   # Urshifu
-  if speciesName == 'Urshifu' and formName == '':
-    formName = 'Single Strike'
+  if 'Urshifu' in speciesName:
+    if len(formName) < 3:
+      formName = 'Single Strike'
+    elif formName == 'G-Max':
+      formName = 'Single Strike G-Max'
 
   # Apostrophes
   if speciesName in ['Farfetchd', 'Sirfetchd']:
@@ -613,7 +634,7 @@ def getFullName(pokemonName):
     ['Ho', 'Oh'],
     ['Porygon', 'Z'],
     ['Jangmo', 'O'],
-    ['Hakomo', 'O'],
+    ['Hakamo', 'O'],
     ['Kommo', 'O']
   ]:
     if formName == 'O':
@@ -626,14 +647,18 @@ def getFullName(pokemonName):
   if [speciesName, formName] in [
     ['Mr', 'Mime'],
     ['Mr', 'Rime'],
-    ['Mime', 'Jr']
+    ['Mime', 'Jr'],
   ]:
     if speciesName == 'Mime':
-      speciesName, formName = formName + '. ' + speciesName, ''
+      speciesName, formName = speciesName + ' ' + formName + '.', ''
     else:
       speciesName, formName = speciesName + '. ' + formName, ''
   
     return speciesName
+
+  # Mr. Mime (Galar)
+  if speciesName == 'Mr' and formName == 'Mime Galar':
+    return 'Mr. Mime (Galar)'
 
   # Colons
   if [speciesName, formName] in [
@@ -642,6 +667,10 @@ def getFullName(pokemonName):
     speciesName, formName = speciesName + ': ' + formName, ''
     
     return speciesName
+
+  # Tapus
+  if speciesName == 'Tapu':
+    return speciesName + ' ' + formName
 
   return f'{speciesName} ({formName})'
 
@@ -681,6 +710,10 @@ if __name__ == '__main__':
   print('Checking pokemonDict...')
 
   for pokemonName in pokemonDict.keys():
+    # ignore cosmetic forms
+    if pokemonDict[pokemonName]['cosmetic']:
+      continue
+
     type1, type2 = pokemonDict[pokemonName]["type_1"][0][0], pokemonDict[pokemonName]["type_2"][0][0] if pokemonDict[pokemonName]["type_2"][0][0] else 'normal'
     if type1 not in typeList():
       print('Inconsistent type name', pokemonName, type1)

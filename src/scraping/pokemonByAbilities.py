@@ -120,6 +120,14 @@ def makeAbilityCSVandExtractNotes(fname):
         elif extraFormName == 'rockruff_event':
           csvRow[2] = 'rockruff_own_tempo'
 
+        # rename as_one
+        if csvRow[3] == 'as_one':
+          pokemonName = csvRow[2]
+          if 'ice' in pokemonName:
+            csvRow[3] = 'as_one_glastrier'
+          else:
+            csvRow[3] = 'as_one_spectrier'
+
         # take disguised mimikyu to be the base form
         writer.writerow(csvRow)
 

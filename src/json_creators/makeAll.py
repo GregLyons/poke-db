@@ -157,6 +157,10 @@ def checkItems(itemDict):
 def checkPokemon(pokemonDict):
   print('Checking for inconsistencies in pokemmonDict...')
   for pokemonName in pokemonDict.keys():
+    # ignore cosmetic forms
+    if pokemonDict[pokemonName]['cosmetic']:
+      continue
+
     type1, type2 = pokemonDict[pokemonName]["type_1"][0][0], pokemonDict[pokemonName]["type_2"][0][0] if pokemonDict[pokemonName]["type_2"][0][0] else 'normal'
 
     if type1 not in typeList():
@@ -179,6 +183,10 @@ def checkAbilitiesAgainstPokemon(abilityDict, pokemonDict):
     abilityNames.add(abilityName)
 
   for pokemonName in pokemonDict.keys():
+    # ignore cosmetic forms
+    if pokemonDict[pokemonName]['cosmetic']:
+      continue
+
     for abilitySlot in ["ability_1", "ability_2", "ability_hidden"]:
       for abilityPatch in pokemonDict[pokemonName][abilitySlot]:
         abilityName = abilityPatch[0]

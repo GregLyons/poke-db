@@ -175,6 +175,10 @@ def parseName(text, mode='normal'):
       speciesName = speciesName.replace('♀', ' Female').replace('Female', 'f')
       speciesName = speciesName.replace('♂', ' Male').replace('Male', 'm')
 
+    # ignore 'Mane' and 'Wings' in Necrozma
+    if 'Necrozma' in speciesName:
+      form = form.replace(' Mane', '').replace(' Wings', '')
+
     # combine species and form name after parsing
     text = (speciesName + ' ' + form).strip().replace('  ', ' ')
 
@@ -247,7 +251,7 @@ if __name__ == '__main__':
     ['Wishiwashi (School Form)', 'wishiwashi_school'],
     ['Minior (Meteor Form)', 'minior_meteor'],
     ['Minior (Core)', 'minior_core'],
-    ['Necrozma (Dusk Mane Necrozma)', 'necrozma_dusk_mane'],
+    ['Necrozma (Dusk Mane Necrozma)', 'necrozma_dusk'],
     ['Toxtricity (Low Key Form)', 'toxtricity_low_key'],
     ['Eternatus (Eternamax Eternatus)', 'eternatus_eternamax'],
     ['Urshifu (Single Strike Style)', 'urshifu'],
