@@ -221,37 +221,35 @@ def makeInitialMoveDict(fname):
 
   # For each move in initialMoveDict, rewrite the patches in "Type", "PP", "Power", and "Accuracy" fields so that the generation represents the starting gen rather than the ending gen of that value
   for moveName in moveDict:
+    moveDict[moveName]["lgpe_exclusive_values"] = {}
     for innerKey in ['type', 'pp', 'power', 'accuracy', 'category']:
-      # Split up patch into LGPE_only and other
-      LGPEOnlyPatch = [patch for patch in moveDict[moveName][innerKey] if patch[1] == 'lgpe_only']
-      noLGPEOnlyPatches = [patch for patch in moveDict[moveName][innerKey] if patch[1] != 'lgpe_only']
-
-      # If the move is LGPE_only, no change required
-      if LGPEOnlyPatch == moveDict[moveName][innerKey]:
-        continue
-      # If the move is not LGPE_only, change the non_LGPE_only patches
-      else:
-        # If only one non_LGPE_only patch, set gen equal to when move was introduced
-        if len(noLGPEOnlyPatches) == 1:
-          patch = moveDict[moveName][innerKey][0]
-          value = patch[0]
-          moveDict[moveName][innerKey] = [[value, moveDict[moveName]["gen"]]]
-        # Otherwise, need to determine when the starting gens from the list of ending gens
+      # If the move is LGPE_only, no change required; move on
+      if moveDict[moveName]["lgpe_only"]:
+        moveDict[moveName]["lgpe_exclusive_values"][innerKey] = moveDict[moveName][innerKey][0][0]
+        if innerKey in ['pp', 'power', 'accuracy']:
+          moveDict[moveName][innerKey] = [['0', 8]]
         else:
-          modifiedPatchList = []
-          for i in range(len(moveDict[moveName][innerKey])):
-            # first 'patch' applied in gen the move was introduced
-            if i == 0:
-              modifiedPatchList.append([moveDict[moveName][innerKey][0][0], moveDict[moveName]["gen"]])
-            # send [value, endGen] to [value, oldEndGen + 1]
-            else:
-              oldValueEndGen = moveDict[moveName][innerKey][i - 1][1]
-              value = moveDict[moveName][innerKey][i][0]
-              modifiedPatchList.append([value, oldValueEndGen + 1])
+          moveDict[moveName][innerKey] = [[moveDict[moveName][innerKey][0][0], 8]]
+        continue
 
-          moveDict[moveName][innerKey] = modifiedPatchList
-      if LGPEOnlyPatch:
-        moveDict[moveName][innerKey].append(LGPEOnlyPatch[0])
+      # Split up patch into LGPE_only and other
+      LGPEOnlyPatch = [patch for patch in moveDict[moveName][innerKey] if patch[1] in ['lgpe_only', 'LGPE']]
+      noLGPEOnlyPatches = [patch for patch in moveDict[moveName][innerKey] if patch[1] not in ['lgpe_only', 'LGPE']]
+
+      moveDict[moveName][innerKey], moveDict[moveName]["lgpe_exclusive_values"][innerKey] = noLGPEOnlyPatches, LGPEOnlyPatch
+
+      modifiedPatchList = []
+      for i in range(len(moveDict[moveName][innerKey])):
+        # first 'patch' applied in gen the move was introduced
+        if i == 0:
+          modifiedPatchList.append([moveDict[moveName][innerKey][0][0], moveDict[moveName]["gen"]])
+        # send [value, endGen] to [value, oldEndGen + 1]
+        else:
+          oldValueEndGen = moveDict[moveName][innerKey][i - 1][1]
+          value = moveDict[moveName][innerKey][i][0]
+          modifiedPatchList.append([value, oldValueEndGen + 1])
+      
+      moveDict[moveName][innerKey] = modifiedPatchList
 
   # hard code water shuriken type
   moveDict["water_shuriken"]["category"] = [['physical', 6], ['special', 8]]
@@ -316,7 +314,7 @@ def addPriorityToMoveDict(fname, moveDict):
     moveDict[key]["priority"] = priorities_noDuplicates
   
   # lastly, we add Teleport, ID 100 with -6 priority in LGPE
-  moveDict["teleport"]["priority"].append([-6, 'lgpe_only'])
+  moveDict["teleport"]["lgpe_exclusive_values"]["priority"] = -6
 
   return
 
@@ -774,8 +772,6 @@ def main():
   maxPower_fname = dataPath + 'movesByMaxPower.csv'
   zPower_fname = dataPath + 'movesByZPower.csv'
   addZPowerMaxPowerData(maxPower_fname, zPower_fname, moveDict)
-
-  print(moveDict['absorb'])
 
   return moveDict
 
