@@ -40,7 +40,8 @@
       "steel": [[1.0, 2]],
       "dark": [[1.0, 2]],
       "fairy": [[1.0, 6]]
-    }
+    },
+    "formatted_name": "Normal"
   },
   "fighting": {
     "gen": 1,
@@ -83,7 +84,8 @@
       "steel": [[1.0, 2]],
       "dark": [[0.5, 2]],
       "fairy": [[2.0, 6]]
-    }
+    },
+    "formatted_name": "Fighting"
   },
   "flying": {
     "gen": 1,
@@ -126,7 +128,8 @@
       "steel": [[1.0, 2]],
       "dark": [[1.0, 2]],
       "fairy": [[1.0, 6]]
-    }
+    },
+    "formatted_name": "Flying"
   },
   "poison": {
     "gen": 1,
@@ -169,7 +172,8 @@
       "steel": [[1.0, 2]],
       "dark": [[1.0, 2]],
       "fairy": [[0.5, 6]]
-    }
+    },
+    "formatted_name": "Poison"
   },
   "ground": {
     "gen": 1,
@@ -212,7 +216,8 @@
       "steel": [[1.0, 2]],
       "dark": [[1.0, 2]],
       "fairy": [[1.0, 6]]
-    }
+    },
+    "formatted_name": "Ground"
   },
   "rock": {
     "gen": 1,
@@ -255,7 +260,8 @@
       "steel": [[2.0, 2]],
       "dark": [[1.0, 2]],
       "fairy": [[1.0, 6]]
-    }
+    },
+    "formatted_name": "Rock"
   },
   "bug": {
     "gen": 1,
@@ -298,7 +304,8 @@
       "steel": [[1.0, 2]],
       "dark": [[1.0, 2]],
       "fairy": [[1.0, 6]]
-    }
+    },
+    "formatted_name": "Bug"
   },
   "ghost": {
     "gen": 1,
@@ -341,7 +348,8 @@
       "steel": [[1.0, 2]],
       "dark": [[2.0, 2]],
       "fairy": [[1.0, 6]]
-    }
+    },
+    "formatted_name": "Ghost"
   },
   "fire": {
     "gen": 1,
@@ -384,7 +392,8 @@
       "steel": [[0.5, 2]],
       "dark": [[1.0, 2]],
       "fairy": [[0.5, 6]]
-    }
+    },
+    "formatted_name": "Fire"
   },
   "water": {
     "gen": 1,
@@ -427,7 +436,8 @@
       "steel": [[0.5, 2]],
       "dark": [[1.0, 2]],
       "fairy": [[1.0, 6]]
-    }
+    },
+    "formatted_name": "Water"
   },
   "grass": {
     "gen": 1,
@@ -470,7 +480,8 @@
       "steel": [[1.0, 2]],
       "dark": [[1.0, 2]],
       "fairy": [[1.0, 6]]
-    }
+    },
+    "formatted_name": "Grass"
   },
   "electric": {
     "gen": 1,
@@ -513,7 +524,8 @@
       "steel": [[0.5, 2]],
       "dark": [[1.0, 2]],
       "fairy": [[1.0, 6]]
-    }
+    },
+    "formatted_name": "Electric"
   },
   "psychic": {
     "gen": 1,
@@ -556,7 +568,8 @@
       "steel": [[1.0, 2]],
       "dark": [[2.0, 2]],
       "fairy": [[1.0, 6]]
-    }
+    },
+    "formatted_name": "Psychic"
   },
   "ice": {
     "gen": 1,
@@ -599,7 +612,8 @@
       "steel": [[2.0, 2]],
       "dark": [[1.0, 2]],
       "fairy": [[1.0, 6]]
-    }
+    },
+    "formatted_name": "Ice"
   },
   "dragon": {
     "gen": 1,
@@ -642,7 +656,8 @@
       "steel": [[1.0, 2]],
       "dark": [[1.0, 2]],
       "fairy": [[2.0, 6]]
-    }
+    },
+    "formatted_name": "Dragon"
   },
   "steel": {
     "gen": 2,
@@ -685,7 +700,8 @@
       "dragon": [[0.5, 2]],
       "dark": [[0.5, 2], [1.0, 6]],
       "fairy": [[0.5, 6]]
-    }
+    },
+    "formatted_name": "Steel"
   },
   "dark": {
     "gen": 2,
@@ -728,7 +744,8 @@
       "dragon": [[1.0, 2]],
       "dark": [[0.5, 2]],
       "fairy": [[2.0, 6]]
-    }
+    },
+    "formatted_name": "Dark"
   },
   "fairy": {
     "gen": 6,
@@ -771,6 +788,7 @@
       "dragon": [[0.0, 6]],
       "dark": [[0.5, 6]],
       "fairy": [[1.0, 6]]
-    }
+    },
+    "formatted_name": "Fairy"
   }
 }

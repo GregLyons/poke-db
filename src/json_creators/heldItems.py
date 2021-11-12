@@ -561,6 +561,22 @@ def addOtherItemData(fpath, itemDict):
       print(key)
   return
 
+def addFormattedName(itemDict):
+  for itemName in itemDict.keys():
+    itemDict[itemName]['formatted_name'] = getFormattedName(itemName)
+
+  return
+
+def getFormattedName(itemName):
+  # apostrophes
+  if itemName == 'kings_rock':
+    return 'King\'s Rock'
+  # gen 2 berries
+  elif itemName in ['psn_cure_berry', 'prz_cure_berry', 'miracle_berry', 'mystery_berry']:
+    return ''.join((' '.join(itemName.split('_')).title().replace('Psn', 'PSN').replace('Prz', 'PRZ')).split(' '))
+  else:
+    return ' '.join(itemName.split('_')).title()
+
 def main():
   # dictionaries containing effect names/gens and status names/gens
   global effectDict
@@ -580,6 +596,8 @@ def main():
   addBerryData(dataPath, itemDict)
   
   addOtherItemData(dataPath, itemDict)
+
+  addFormattedName(itemDict)
 
   return itemDict
 

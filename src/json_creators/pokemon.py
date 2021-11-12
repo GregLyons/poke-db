@@ -590,11 +590,11 @@ def checkPokeAPIForms(fname, pokemonDict):
 
 def addFullName(pokemonDict):
   for pokemonName in pokemonDict.keys():
-    pokemonDict[pokemonName]['full_name'] = getFullName(pokemonName)
+    pokemonDict[pokemonName]['formatted_name'] = getFormattedName(pokemonName)
 
   return
 
-def getFullName(pokemonName):
+def getFormattedName(pokemonName):
   nameParts = pokemonName.split('_')
 
   if len(nameParts) == 1 and pokemonName != 'urshifu':

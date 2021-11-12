@@ -197,6 +197,25 @@ def addEffectData(fpath, abilityDict):
       abilityDict[abilityName]["stat_modifications"][stat] = [[modifier, recipient, abilityGen]]
   return
 
+def addFormattedName(abilityDict):
+  for abilityName in abilityDict.keys():
+    abilityDict[abilityName]['formatted_name'] = getFormattedName(abilityName)
+
+  return
+
+def getFormattedName(abilityName):
+  if abilityName == 'rks_system':
+    return 'RKS System'
+  elif abilityName == 'soul_heart':
+    return 'Soul-Heart'
+  elif 'as_one' in abilityName:
+    if 'glastrier' in abilityName:
+      return 'As One (Glastrier)'
+    else:
+      return 'As One (Spectrier)'
+  else:
+    return ' '.join(abilityName.split('_')).title()
+
 def main():
   # dictionaries containing effect names/gens and status names/gens
   global effectDict
@@ -213,6 +232,8 @@ def main():
   abilityDict = makeInitialAbilityDict(fname)
 
   addEffectData(dataPath, abilityDict)
+
+  addFormattedName(abilityDict)
 
   return abilityDict
 

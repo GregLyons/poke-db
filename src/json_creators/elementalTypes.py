@@ -52,10 +52,18 @@ def makeTypeDict(fnamePrefix):
 
   return typeDict
 
+def addFormattedName(typeDict):
+  for typeName in typeDict.keys():
+    typeDict[typeName]['formatted_name'] = typeName.title()
+
+  return
+
 def main():
   dataPath = getCSVDataPath() + 'types\\'
   fnamePrefix = dataPath + 'typeMatchupsGen'
   typeDict = makeTypeDict(fnamePrefix)
+
+  addFormattedName(typeDict)
 
   return typeDict
 

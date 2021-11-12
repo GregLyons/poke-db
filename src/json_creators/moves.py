@@ -724,6 +724,81 @@ def addZPowerMaxPowerData(maxPower_fname, zPower_fname, moveDict):
 
   return
 
+def addFormattedName(moveDict):
+  for moveName in moveDict.keys():
+    moveDict[moveName]['formatted_name'] = getFormattedName(moveName)
+
+  return
+
+def getFormattedName(moveName):
+  # 10,000,000 Volt Thunderbolt
+  if moveName == '10000000_volt_thunderbolt':
+    return '10,000,000 Volt Thunderbolt'
+
+  # hyphens
+  if moveName in [
+    'double_edge',
+    'self_destruct',
+    'soft_boiled',
+    'mud_slap',
+    'lock_on',
+    'will_o_wisp',
+    'wake_up_slap',
+    'u_turn',
+    'x_scissor',
+    'v_create',
+    'trick_or_treat',
+    'topsy_turvy',
+    'baby_doll_eyes',
+    'power_up_punch',
+    'all_out_pummeling',
+    'savage_spin_out',
+    'never_ending_nightmare',
+    'soul_stealing_7_star_strike',
+    'multi_attack'
+  ]:
+    # first handle special cases of hyphenation
+    # Will-O-Wisp
+    if moveName == 'will_o_wisp':
+      return 'Will-O-Wisp'
+    # U-turn
+    elif moveName == 'u_turn':
+      return 'U-turn'
+    # V-create
+    elif moveName == 'v_create':
+      return 'V-create'
+    # Trick-or-Treat
+    elif moveName == 'trick_or_treat':
+      return 'Trick-or_Treat'
+    # Freeze-Dry
+    elif moveName == 'freeze_dry':
+      return 'Freeze-Dry'
+    # Savage Spin-Out
+    elif moveName == 'savage_spin_out':
+      return 'Savage Spin-Out'
+    # Soul-Stealing 7-Star Strike
+    elif moveName == 'soul_stealing_7_star_strike':
+      return 'Soul-Stealing 7-Star Strike'
+    # Otherwise, connect first two words with a hyphen
+    else:
+      moveName = moveName.replace('_', '-', 1)
+
+  # apostrophes
+  if moveName in [
+    'forests_curse',
+    'kings_shield',
+    'lands_wrath',
+    'natures_madness',
+    'lets_snuggle_forever'
+  ]:
+    moveName = moveName.replace('s_', '\'s_', 1)
+
+  # Z-moves and G-Max moves
+  if 'z_' in moveName or 'g_max_' in moveName:
+    moveName = moveName.replace('_', '-', 1)
+
+  return ' '.join(moveName.split('_')).title().replace('\'S', '\'s')
+
 def main():
   # dictionaries containing effect names/gens and status names/gens
   global effectDict
@@ -772,6 +847,8 @@ def main():
   maxPower_fname = dataPath + 'movesByMaxPower.csv'
   zPower_fname = dataPath + 'movesByZPower.csv'
   addZPowerMaxPowerData(maxPower_fname, zPower_fname, moveDict)
+
+  addFormattedName(moveDict)
 
   return moveDict
 

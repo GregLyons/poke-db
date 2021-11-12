@@ -14,7 +14,8 @@
     "resists_usage_method": {},
     "stat_modifications": {
       "special_attack": [["+1", "user", 5]]
-    }
+    },
+    "formatted_name": "Absorb Bulb"
   },
   "adamant_orb": {
     "item_type": "type_enhancer_specific",
@@ -34,7 +35,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Adamant Orb"
   },
   "air_balloon": {
     "item_type": "",
@@ -51,7 +53,8 @@
     },
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Air Balloon"
   },
   "aloraichium_z": {
     "item_type": "z_crystal_specific",
@@ -68,7 +71,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Aloraichium Z"
   },
   "amulet_coin": {
     "item_type": "",
@@ -83,7 +87,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Amulet Coin"
   },
   "assault_vest": {
     "item_type": "stat_enhancer",
@@ -102,7 +107,8 @@
     "resists_usage_method": {},
     "stat_modifications": {
       "special_defense": [["1.5", "user", "6"]]
-    }
+    },
+    "formatted_name": "Assault Vest"
   },
   "berry_sweet": {
     "item_type": "",
@@ -117,7 +123,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Berry Sweet"
   },
   "berserk_gene": {
     "item_type": "",
@@ -134,7 +141,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Berserk Gene"
   },
   "big_root": {
     "item_type": "",
@@ -151,7 +159,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Big Root"
   },
   "binding_band": {
     "item_type": "",
@@ -168,7 +177,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Binding Band"
   },
   "black_belt": {
     "item_type": "type_enhancer",
@@ -185,7 +195,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Black Belt"
   },
   "black_glasses": {
     "item_type": "type_enhancer",
@@ -202,7 +213,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Black Glasses"
   },
   "black_sludge": {
     "item_type": "",
@@ -220,7 +232,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Black Sludge"
   },
   "blue_orb": {
     "item_type": "",
@@ -237,7 +250,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Blue Orb"
   },
   "blue_scarf": {
     "item_type": "",
@@ -252,7 +266,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Blue Scarf"
   },
   "blunder_policy": {
     "item_type": "",
@@ -269,7 +284,8 @@
     "resists_usage_method": {},
     "stat_modifications": {
       "speed": [["+2", "user", 8]]
-    }
+    },
+    "formatted_name": "Blunder Policy"
   },
   "bright_powder": {
     "item_type": "",
@@ -286,7 +302,8 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "evasion": [[8, "user", 2], [1.11,
-        "user", 3]]
+        "user", 3]],
+    "formatted_name": "Bright Powder"
   },
   "bug_gem": {
     "item_type": "gem",
@@ -303,7 +320,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Bug Gem"
   },
   "bug_memory": {
     "item_type": "memory",
@@ -321,7 +339,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Bug Memory"
   },
   "buginium_z": {
     "item_type": "z_crystal",
@@ -336,7 +355,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Buginium Z"
   },
   "burn_drive": {
     "item_type": "drive",
@@ -353,7 +373,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Burn Drive"
   },
   "cell_battery": {
     "item_type": "",
@@ -370,7 +391,8 @@
     "resists_usage_method": {},
     "stat_modifications": {
       "attack": [["+1", "user", 5]]
-    }
+    },
+    "formatted_name": "Cell Battery"
   },
   "charcoal": {
     "item_type": "type_enhancer",
@@ -387,7 +409,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Charcoal"
   },
   "chill_drive": {
     "item_type": "drive",
@@ -404,7 +427,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Chill Drive"
   },
   "choice_band": {
     "item_type": "choice",
@@ -423,7 +447,8 @@
     "resists_usage_method": {},
     "stat_modifications": {
       "attack": [["1.5", "user", "3"]]
-    }
+    },
+    "formatted_name": "Choice Band"
   },
   "choice_scarf": {
     "item_type": "choice",
@@ -442,7 +467,8 @@
     "resists_usage_method": {},
     "stat_modifications": {
       "speed": [["1.5", "user", "4"]]
-    }
+    },
+    "formatted_name": "Choice Scarf"
   },
   "choice_specs": {
     "item_type": "choice",
@@ -461,7 +487,8 @@
     "resists_usage_method": {},
     "stat_modifications": {
       "special_attack": [["1.5", "user", "4"]]
-    }
+    },
+    "formatted_name": "Choice Specs"
   },
   "cleanse_tag": {
     "item_type": "",
@@ -476,7 +503,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Cleanse Tag"
   },
   "clover_sweet": {
     "item_type": "",
@@ -491,7 +519,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Clover Sweet"
   },
   "damp_rock": {
     "item_type": "",
@@ -508,7 +537,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Damp Rock"
   },
   "dark_gem": {
     "item_type": "gem",
@@ -525,7 +555,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Dark Gem"
   },
   "dark_memory": {
     "item_type": "memory",
@@ -543,7 +574,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Dark Memory"
   },
   "darkinium_z": {
     "item_type": "z_crystal",
@@ -558,7 +590,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Darkinium Z"
   },
   "decidium_z": {
     "item_type": "z_crystal_specific",
@@ -575,7 +608,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Decidium Z"
   },
   "deep_sea_scale": {
     "item_type": "stat_enhancer_specific",
@@ -595,7 +629,8 @@
     "stat_modifications": {
       "defense": [["2.0", "user", "3"]],
       "special_defense": [["2.0", "user", "3"]]
-    }
+    },
+    "formatted_name": "Deep Sea Scale"
   },
   "deep_sea_tooth": {
     "item_type": "stat_enhancer_specific",
@@ -615,7 +650,8 @@
     "stat_modifications": {
       "attack": [["2.0", "user", "3"]],
       "special_attack": [["2.0", "user", "3"]]
-    }
+    },
+    "formatted_name": "Deep Sea Tooth"
   },
   "destiny_knot": {
     "item_type": "",
@@ -632,7 +668,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Destiny Knot"
   },
   "douse_drive": {
     "item_type": "drive",
@@ -649,7 +686,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Douse Drive"
   },
   "draco_plate": {
     "item_type": "plate",
@@ -669,7 +707,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Draco Plate"
   },
   "dragon_fang": {
     "item_type": "type_enhancer",
@@ -686,7 +725,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Dragon Fang"
   },
   "dragon_gem": {
     "item_type": "gem",
@@ -703,7 +743,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Dragon Gem"
   },
   "dragon_memory": {
     "item_type": "memory",
@@ -721,7 +762,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Dragon Memory"
   },
   "dragonium_z": {
     "item_type": "z_crystal",
@@ -736,7 +778,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Dragonium Z"
   },
   "dread_plate": {
     "item_type": "plate",
@@ -756,7 +799,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Dread Plate"
   },
   "dubious_disc": {
     "item_type": "",
@@ -771,7 +815,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Dubious Disc"
   },
   "earth_plate": {
     "item_type": "plate",
@@ -791,7 +836,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Earth Plate"
   },
   "eevium_z": {
     "item_type": "z_crystal_specific",
@@ -808,7 +854,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Eevium Z"
   },
   "eject_button": {
     "item_type": "",
@@ -825,7 +872,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Eject Button"
   },
   "eject_pack": {
     "item_type": "",
@@ -842,7 +890,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Eject Pack"
   },
   "electirizer": {
     "item_type": "",
@@ -857,7 +906,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Electirizer"
   },
   "electric_gem": {
     "item_type": "gem",
@@ -874,7 +924,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Electric Gem"
   },
   "electric_memory": {
     "item_type": "memory",
@@ -892,7 +943,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Electric Memory"
   },
   "electric_seed": {
     "item_type": "",
@@ -909,7 +961,8 @@
     "resists_usage_method": {},
     "stat_modifications": {
       "defense": [["+1", "user", 7]]
-    }
+    },
+    "formatted_name": "Electric Seed"
   },
   "electrium_z": {
     "item_type": "z_crystal",
@@ -924,7 +977,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Electrium Z"
   },
   "everstone": {
     "item_type": "",
@@ -939,7 +993,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Everstone"
   },
   "eviolite": {
     "item_type": "stat_enhancer",
@@ -959,7 +1014,8 @@
     "stat_modifications": {
       "attack": [["1.5", "user", "5"]],
       "special_attack": [["1.5", "user", "5"]]
-    }
+    },
+    "formatted_name": "Eviolite"
   },
   "exp_share": {
     "item_type": "",
@@ -974,7 +1030,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Exp Share"
   },
   "expert_belt": {
     "item_type": "",
@@ -991,7 +1048,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Expert Belt"
   },
   "fairium_z": {
     "item_type": "z_crystal",
@@ -1006,7 +1064,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Fairium Z"
   },
   "fairy_gem": {
     "item_type": "gem",
@@ -1023,7 +1082,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Fairy Gem"
   },
   "fairy_memory": {
     "item_type": "memory",
@@ -1041,7 +1101,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Fairy Memory"
   },
   "fighting_gem": {
     "item_type": "gem",
@@ -1058,7 +1119,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Fighting Gem"
   },
   "fighting_memory": {
     "item_type": "memory",
@@ -1076,7 +1138,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Fighting Memory"
   },
   "fightinium_z": {
     "item_type": "z_crystal",
@@ -1091,7 +1154,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Fightinium Z"
   },
   "fire_gem": {
     "item_type": "gem",
@@ -1108,7 +1172,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Fire Gem"
   },
   "fire_memory": {
     "item_type": "memory",
@@ -1126,7 +1191,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Fire Memory"
   },
   "firium_z": {
     "item_type": "z_crystal",
@@ -1141,7 +1207,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Firium Z"
   },
   "fist_plate": {
     "item_type": "plate",
@@ -1161,7 +1228,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Fist Plate"
   },
   "flame_orb": {
     "item_type": "",
@@ -1178,7 +1246,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Flame Orb"
   },
   "flame_plate": {
     "item_type": "plate",
@@ -1198,7 +1267,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Flame Plate"
   },
   "float_stone": {
     "item_type": "",
@@ -1215,7 +1285,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Float Stone"
   },
   "flower_sweet": {
     "item_type": "",
@@ -1230,7 +1301,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Flower Sweet"
   },
   "flying_gem": {
     "item_type": "gem",
@@ -1247,7 +1319,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Flying Gem"
   },
   "flying_memory": {
     "item_type": "memory",
@@ -1265,7 +1338,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Flying Memory"
   },
   "flyinium_z": {
     "item_type": "z_crystal",
@@ -1280,7 +1354,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Flyinium Z"
   },
   "focus_band": {
     "item_type": "",
@@ -1297,7 +1372,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Focus Band"
   },
   "focus_sash": {
     "item_type": "",
@@ -1314,7 +1390,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Focus Sash"
   },
   "full_incense": {
     "item_type": "incense",
@@ -1331,7 +1408,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Full Incense"
   },
   "ghost_gem": {
     "item_type": "gem",
@@ -1348,7 +1426,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Ghost Gem"
   },
   "ghost_memory": {
     "item_type": "memory",
@@ -1366,7 +1445,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Ghost Memory"
   },
   "ghostium_z": {
     "item_type": "z_crystal",
@@ -1381,7 +1461,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Ghostium Z"
   },
   "grass_gem": {
     "item_type": "gem",
@@ -1398,7 +1479,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Grass Gem"
   },
   "grass_memory": {
     "item_type": "memory",
@@ -1416,7 +1498,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Grass Memory"
   },
   "grassium_z": {
     "item_type": "z_crystal",
@@ -1431,7 +1514,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Grassium Z"
   },
   "grassy_seed": {
     "item_type": "",
@@ -1448,7 +1532,8 @@
     "resists_usage_method": {},
     "stat_modifications": {
       "defense": [["+1", "user", 7]]
-    }
+    },
+    "formatted_name": "Grassy Seed"
   },
   "green_scarf": {
     "item_type": "",
@@ -1463,7 +1548,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Green Scarf"
   },
   "grip_claw": {
     "item_type": "",
@@ -1480,7 +1566,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Grip Claw"
   },
   "griseous_orb": {
     "item_type": "type_enhancer_specific",
@@ -1500,7 +1587,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Griseous Orb"
   },
   "ground_gem": {
     "item_type": "gem",
@@ -1517,7 +1605,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Ground Gem"
   },
   "ground_memory": {
     "item_type": "memory",
@@ -1535,7 +1624,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Ground Memory"
   },
   "groundium_z": {
     "item_type": "z_crystal",
@@ -1550,7 +1640,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Groundium Z"
   },
   "hard_stone": {
     "item_type": "type_enhancer",
@@ -1567,7 +1658,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Hard Stone"
   },
   "heat_rock": {
     "item_type": "",
@@ -1584,7 +1676,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Heat Rock"
   },
   "heavy_duty_boots": {
     "item_type": "",
@@ -1601,7 +1694,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Heavy Duty Boots"
   },
   "ice_gem": {
     "item_type": "gem",
@@ -1618,7 +1712,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Ice Gem"
   },
   "ice_memory": {
     "item_type": "memory",
@@ -1636,7 +1731,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Ice Memory"
   },
   "icicle_plate": {
     "item_type": "plate",
@@ -1656,7 +1752,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Icicle Plate"
   },
   "icium_z": {
     "item_type": "z_crystal",
@@ -1671,7 +1768,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Icium Z"
   },
   "icy_rock": {
     "item_type": "",
@@ -1688,7 +1786,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Icy Rock"
   },
   "incinium_z": {
     "item_type": "z_crystal_specific",
@@ -1705,7 +1804,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Incinium Z"
   },
   "insect_plate": {
     "item_type": "plate",
@@ -1725,7 +1825,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Insect Plate"
   },
   "iron_ball": {
     "item_type": "",
@@ -1744,7 +1845,8 @@
     "resists_usage_method": {},
     "stat_modifications": {
       "speed": [[5, "user", 4]]
-    }
+    },
+    "formatted_name": "Iron Ball"
   },
   "iron_plate": {
     "item_type": "plate",
@@ -1764,7 +1866,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Iron Plate"
   },
   "kings_rock": {
     "item_type": "",
@@ -1781,7 +1884,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "King's Rock"
   },
   "kommonium_z": {
     "item_type": "z_crystal_specific",
@@ -1798,7 +1902,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Kommonium Z"
   },
   "lagging_tail": {
     "item_type": "",
@@ -1815,7 +1920,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Lagging Tail"
   },
   "lax_incense": {
     "item_type": "incense",
@@ -1833,7 +1939,8 @@
     "stat_modifications": {
       "evasion": [[5, "user", 3], [1.11,
           "user", 4]]
-    }
+    },
+    "formatted_name": "Lax Incense"
   },
   "leek": {
     "item_type": "stat_enhancer_specific",
@@ -1854,7 +1961,8 @@
     "resists_usage_method": {},
     "stat_modifications": {
       "critical_hit_ratio": [["+2", "user", "2"]]
-    }
+    },
+    "formatted_name": "Leek"
   },
   "leftovers": {
     "item_type": "",
@@ -1871,7 +1979,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Leftovers"
   },
   "life_orb": {
     "item_type": "",
@@ -1888,7 +1997,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Life Orb"
   },
   "light_ball": {
     "item_type": "stat_enhancer_specific",
@@ -1910,7 +2020,8 @@
     "stat_modifications": {
       "attack": [["2.0", "user", "2"]],
       "special_attack": [["2.0", "user", "2"]]
-    }
+    },
+    "formatted_name": "Light Ball"
   },
   "light_clay": {
     "item_type": "",
@@ -1927,7 +2038,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Light Clay"
   },
   "love_sweet": {
     "item_type": "",
@@ -1942,7 +2054,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Love Sweet"
   },
   "luck_incense": {
     "item_type": "incense",
@@ -1957,7 +2070,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Luck Incense"
   },
   "lucky_egg": {
     "item_type": "",
@@ -1972,7 +2086,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Lucky Egg"
   },
   "lucky_punch": {
     "item_type": "stat_enhancer_specific",
@@ -1991,7 +2106,8 @@
     "resists_usage_method": {},
     "stat_modifications": {
       "critical_hit_ratio": [["+2", "user", "2"]]
-    }
+    },
+    "formatted_name": "Lucky Punch"
   },
   "luminous_moss": {
     "item_type": "",
@@ -2008,7 +2124,8 @@
     "resists_usage_method": {},
     "stat_modifications": {
       "special_defense": [["+1", "user", 6]]
-    }
+    },
+    "formatted_name": "Luminous Moss"
   },
   "lunalium_z": {
     "item_type": "z_crystal_specific",
@@ -2026,7 +2143,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Lunalium Z"
   },
   "lustrous_orb": {
     "item_type": "type_enhancer_specific",
@@ -2046,7 +2164,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Lustrous Orb"
   },
   "lycanium_z": {
     "item_type": "z_crystal_specific",
@@ -2063,7 +2182,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Lycanium Z"
   },
   "macho_brace": {
     "item_type": "",
@@ -2080,7 +2200,8 @@
     "resists_usage_method": {},
     "stat_modifications": {
       "speed": [[5, "user", 4]]
-    }
+    },
+    "formatted_name": "Macho Brace"
   },
   "magmarizer": {
     "item_type": "",
@@ -2095,7 +2216,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Magmarizer"
   },
   "magnet": {
     "item_type": "type_enhancer",
@@ -2112,7 +2234,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Magnet"
   },
   "marshadium_z": {
     "item_type": "z_crystal_specific",
@@ -2129,7 +2252,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Marshadium Z"
   },
   "meadow_plate": {
     "item_type": "plate",
@@ -2149,7 +2273,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Meadow Plate"
   },
   "mental_herb": {
     "item_type": "",
@@ -2171,7 +2296,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Mental Herb"
   },
   "metal_coat": {
     "item_type": "type_enhancer",
@@ -2188,7 +2314,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Metal Coat"
   },
   "metal_powder": {
     "item_type": "stat_enhancer_specific",
@@ -2207,7 +2334,8 @@
     "resists_usage_method": {},
     "stat_modifications": {
       "defense": [["2.0", "user", "2"]]
-    }
+    },
+    "formatted_name": "Metal Powder"
   },
   "metronome": {
     "item_type": "",
@@ -2224,7 +2352,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Metronome"
   },
   "mewnium_z": {
     "item_type": "z_crystal_specific",
@@ -2241,7 +2370,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Mewnium Z"
   },
   "mimikium_z": {
     "item_type": "z_crystal_specific",
@@ -2258,7 +2388,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Mimikium Z"
   },
   "mind_plate": {
     "item_type": "plate",
@@ -2278,7 +2409,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Mind Plate"
   },
   "miracle_seed": {
     "item_type": "type_enhancer",
@@ -2295,7 +2427,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Miracle Seed"
   },
   "misty_seed": {
     "item_type": "",
@@ -2312,7 +2445,8 @@
     "resists_usage_method": {},
     "stat_modifications": {
       "special_defense": [["+1", "user", 7]]
-    }
+    },
+    "formatted_name": "Misty Seed"
   },
   "muscle_band": {
     "item_type": "",
@@ -2329,7 +2463,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Muscle Band"
   },
   "mystic_water": {
     "item_type": "type_enhancer",
@@ -2346,7 +2481,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Mystic Water"
   },
   "never_melt_ice": {
     "item_type": "type_enhancer",
@@ -2363,7 +2499,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Never Melt Ice"
   },
   "normal_gem": {
     "item_type": "gem",
@@ -2380,7 +2517,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Normal Gem"
   },
   "normalium_z": {
     "item_type": "z_crystal",
@@ -2395,7 +2533,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Normalium Z"
   },
   "odd_incense": {
     "item_type": "incense",
@@ -2412,7 +2551,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Odd Incense"
   },
   "pikanium_z": {
     "item_type": "z_crystal_specific",
@@ -2429,7 +2569,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Pikanium Z"
   },
   "pikashunium_z": {
     "item_type": "z_crystal_specific",
@@ -2446,7 +2587,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Pikashunium Z"
   },
   "pink_bow": {
     "item_type": "type_enhancer",
@@ -2463,7 +2605,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Pink Bow"
   },
   "pink_scarf": {
     "item_type": "",
@@ -2478,7 +2621,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Pink Scarf"
   },
   "pixie_plate": {
     "item_type": "plate",
@@ -2498,7 +2642,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Pixie Plate"
   },
   "poison_barb": {
     "item_type": "type_enhancer",
@@ -2515,7 +2660,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Poison Barb"
   },
   "poison_gem": {
     "item_type": "gem",
@@ -2532,7 +2678,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Poison Gem"
   },
   "poison_memory": {
     "item_type": "memory",
@@ -2550,7 +2697,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Poison Memory"
   },
   "poisonium_z": {
     "item_type": "z_crystal",
@@ -2565,7 +2713,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Poisonium Z"
   },
   "polkadot_bow": {
     "item_type": "type_enhancer",
@@ -2582,7 +2731,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Polkadot Bow"
   },
   "power_anklet": {
     "item_type": "power_item",
@@ -2599,7 +2749,8 @@
     "resists_usage_method": {},
     "stat_modifications": {
       "speed": [[5, "user", 4]]
-    }
+    },
+    "formatted_name": "Power Anklet"
   },
   "power_band": {
     "item_type": "power_item",
@@ -2616,7 +2767,8 @@
     "resists_usage_method": {},
     "stat_modifications": {
       "speed": [[5, "user", 4]]
-    }
+    },
+    "formatted_name": "Power Band"
   },
   "power_belt": {
     "item_type": "power_item",
@@ -2633,7 +2785,8 @@
     "resists_usage_method": {},
     "stat_modifications": {
       "speed": [[5, "user", 4]]
-    }
+    },
+    "formatted_name": "Power Belt"
   },
   "power_bracer": {
     "item_type": "power_item",
@@ -2650,7 +2803,8 @@
     "resists_usage_method": {},
     "stat_modifications": {
       "speed": [[5, "user", 4]]
-    }
+    },
+    "formatted_name": "Power Bracer"
   },
   "power_herb": {
     "item_type": "",
@@ -2667,7 +2821,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Power Herb"
   },
   "power_lens": {
     "item_type": "power_item",
@@ -2684,7 +2839,8 @@
     "resists_usage_method": {},
     "stat_modifications": {
       "speed": [[5, "user", 4]]
-    }
+    },
+    "formatted_name": "Power Lens"
   },
   "power_weight": {
     "item_type": "power_item",
@@ -2701,7 +2857,8 @@
     "resists_usage_method": {},
     "stat_modifications": {
       "speed": [[5, "user", 4]]
-    }
+    },
+    "formatted_name": "Power Weight"
   },
   "primarium_z": {
     "item_type": "z_crystal_specific",
@@ -2718,7 +2875,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Primarium Z"
   },
   "protective_pads": {
     "item_type": "",
@@ -2735,7 +2893,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Protective Pads"
   },
   "protector": {
     "item_type": "",
@@ -2750,7 +2909,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Protector"
   },
   "psychic_gem": {
     "item_type": "gem",
@@ -2767,7 +2927,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Psychic Gem"
   },
   "psychic_memory": {
     "item_type": "memory",
@@ -2785,7 +2946,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Psychic Memory"
   },
   "psychic_seed": {
     "item_type": "",
@@ -2802,7 +2964,8 @@
     "resists_usage_method": {},
     "stat_modifications": {
       "special_defense": [["+1", "user", 7]]
-    }
+    },
+    "formatted_name": "Psychic Seed"
   },
   "psychium_z": {
     "item_type": "z_crystal",
@@ -2817,7 +2980,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Psychium Z"
   },
   "pure_incense": {
     "item_type": "incense",
@@ -2832,7 +2996,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Pure Incense"
   },
   "quick_claw": {
     "item_type": "",
@@ -2849,7 +3014,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Quick Claw"
   },
   "quick_powder": {
     "item_type": "stat_enhancer_specific",
@@ -2868,7 +3034,8 @@
     "resists_usage_method": {},
     "stat_modifications": {
       "speed": [["2.0", "user", "4"]]
-    }
+    },
+    "formatted_name": "Quick Powder"
   },
   "razor_claw": {
     "item_type": "",
@@ -2885,7 +3052,8 @@
     "resists_usage_method": {},
     "stat_modifications": {
       "critical_hit_ratio": [["+1", "user", 4]]
-    }
+    },
+    "formatted_name": "Razor Claw"
   },
   "razor_fang": {
     "item_type": "",
@@ -2902,7 +3070,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Razor Fang"
   },
   "reaper_cloth": {
     "item_type": "",
@@ -2917,7 +3086,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Reaper Cloth"
   },
   "red_card": {
     "item_type": "",
@@ -2934,7 +3104,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Red Card"
   },
   "red_orb": {
     "item_type": "",
@@ -2951,7 +3122,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Red Orb"
   },
   "red_scarf": {
     "item_type": "",
@@ -2966,7 +3138,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Red Scarf"
   },
   "ribbon_sweet": {
     "item_type": "",
@@ -2981,7 +3154,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Ribbon Sweet"
   },
   "ring_target": {
     "item_type": "",
@@ -2998,7 +3172,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Ring Target"
   },
   "rock_gem": {
     "item_type": "gem",
@@ -3015,7 +3190,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Rock Gem"
   },
   "rock_incense": {
     "item_type": "incense",
@@ -3032,7 +3208,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Rock Incense"
   },
   "rock_memory": {
     "item_type": "memory",
@@ -3050,7 +3227,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Rock Memory"
   },
   "rockium_z": {
     "item_type": "z_crystal",
@@ -3065,7 +3243,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Rockium Z"
   },
   "rocky_helmet": {
     "item_type": "",
@@ -3082,7 +3261,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Rocky Helmet"
   },
   "room_service": {
     "item_type": "",
@@ -3099,7 +3279,8 @@
     "resists_usage_method": {},
     "stat_modifications": {
       "speed": [["-1", "user", 8]]
-    }
+    },
+    "formatted_name": "Room Service"
   },
   "rose_incense": {
     "item_type": "incense",
@@ -3116,7 +3297,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Rose Incense"
   },
   "rusted_shield": {
     "item_type": "",
@@ -3133,7 +3315,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Rusted Shield"
   },
   "rusted_sword": {
     "item_type": "",
@@ -3150,7 +3333,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Rusted Sword"
   },
   "safety_goggles": {
     "item_type": "",
@@ -3169,7 +3353,8 @@
     "resists_usage_method": {
       "powder": [[0.0, 6]]
     },
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Safety Goggles"
   },
   "scope_lens": {
     "item_type": "",
@@ -3186,7 +3371,8 @@
     "resists_usage_method": {},
     "stat_modifications": {
       "critical_hit_ratio": [["+1", "user", 3]]
-    }
+    },
+    "formatted_name": "Scope Lens"
   },
   "sea_incense": {
     "item_type": "incense",
@@ -3203,7 +3389,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Sea Incense"
   },
   "sharp_beak": {
     "item_type": "type_enhancer",
@@ -3220,7 +3407,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Sharp Beak"
   },
   "shed_shell": {
     "item_type": "",
@@ -3237,7 +3425,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Shed Shell"
   },
   "shell_bell": {
     "item_type": "",
@@ -3254,7 +3443,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Shell Bell"
   },
   "shock_drive": {
     "item_type": "drive",
@@ -3271,7 +3461,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Shock Drive"
   },
   "silk_scarf": {
     "item_type": "type_enhancer",
@@ -3288,7 +3479,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Silk Scarf"
   },
   "silver_powder": {
     "item_type": "type_enhancer",
@@ -3305,7 +3497,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Silver Powder"
   },
   "sky_plate": {
     "item_type": "plate",
@@ -3325,7 +3518,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Sky Plate"
   },
   "smoke_ball": {
     "item_type": "",
@@ -3340,7 +3534,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Smoke Ball"
   },
   "smooth_rock": {
     "item_type": "",
@@ -3357,7 +3552,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Smooth Rock"
   },
   "snorlium_z": {
     "item_type": "z_crystal_specific",
@@ -3374,7 +3570,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Snorlium Z"
   },
   "snowball": {
     "item_type": "",
@@ -3391,7 +3588,8 @@
     "resists_usage_method": {},
     "stat_modifications": {
       "attack": [["+1", "user", 6]]
-    }
+    },
+    "formatted_name": "Snowball"
   },
   "soft_sand": {
     "item_type": "type_enhancer",
@@ -3408,7 +3606,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Soft Sand"
   },
   "solganium_z": {
     "item_type": "z_crystal_specific",
@@ -3426,7 +3625,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Solganium Z"
   },
   "soothe_bell": {
     "item_type": "",
@@ -3441,7 +3641,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Soothe Bell"
   },
   "soul_dew": {
     "item_type": "type_enhancer_specific",
@@ -3466,7 +3667,8 @@
           "user", 7]],
       "special_defense": [[5, "user", 3], [1,
           "user", 7]]
-    }
+    },
+    "formatted_name": "Soul Dew"
   },
   "spell_tag": {
     "item_type": "type_enhancer",
@@ -3483,7 +3685,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Spell Tag"
   },
   "splash_plate": {
     "item_type": "plate",
@@ -3503,7 +3706,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Splash Plate"
   },
   "spooky_plate": {
     "item_type": "plate",
@@ -3523,7 +3727,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Spooky Plate"
   },
   "star_sweet": {
     "item_type": "",
@@ -3538,7 +3743,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Star Sweet"
   },
   "steel_gem": {
     "item_type": "gem",
@@ -3555,7 +3761,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Steel Gem"
   },
   "steel_memory": {
     "item_type": "memory",
@@ -3573,7 +3780,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Steel Memory"
   },
   "steelium_z": {
     "item_type": "z_crystal",
@@ -3588,7 +3796,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Steelium Z"
   },
   "sticky_barb": {
     "item_type": "",
@@ -3605,7 +3814,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Sticky Barb"
   },
   "stone_plate": {
     "item_type": "plate",
@@ -3625,7 +3835,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Stone Plate"
   },
   "strawberry_sweet": {
     "item_type": "",
@@ -3640,7 +3851,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Strawberry Sweet"
   },
   "tapunium_z": {
     "item_type": "z_crystal_specific",
@@ -3660,7 +3872,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Tapunium Z"
   },
   "terrain_extender": {
     "item_type": "",
@@ -3677,7 +3890,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Terrain Extender"
   },
   "thick_club": {
     "item_type": "stat_enhancer_specific",
@@ -3698,7 +3912,8 @@
     "resists_usage_method": {},
     "stat_modifications": {
       "attack": [["2.0", "user", "2"]]
-    }
+    },
+    "formatted_name": "Thick Club"
   },
   "throat_spray": {
     "item_type": "",
@@ -3715,7 +3930,8 @@
     "resists_usage_method": {},
     "stat_modifications": {
       "special_attack": [["+1", "user", 8]]
-    }
+    },
+    "formatted_name": "Throat Spray"
   },
   "toxic_orb": {
     "item_type": "",
@@ -3732,7 +3948,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Toxic Orb"
   },
   "toxic_plate": {
     "item_type": "plate",
@@ -3752,7 +3969,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Toxic Plate"
   },
   "twisted_spoon": {
     "item_type": "type_enhancer",
@@ -3769,7 +3987,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Twisted Spoon"
   },
   "ultranecrozium_z": {
     "item_type": "z_crystal_specific",
@@ -3786,7 +4005,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Ultranecrozium Z"
   },
   "utility_umbrella": {
     "item_type": "",
@@ -3804,7 +4024,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Utility Umbrella"
   },
   "water_gem": {
     "item_type": "gem",
@@ -3821,7 +4042,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Water Gem"
   },
   "water_memory": {
     "item_type": "memory",
@@ -3839,7 +4061,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Water Memory"
   },
   "waterium_z": {
     "item_type": "z_crystal",
@@ -3854,7 +4077,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Waterium Z"
   },
   "wave_incense": {
     "item_type": "incense",
@@ -3871,7 +4095,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Wave Incense"
   },
   "weakness_policy": {
     "item_type": "",
@@ -3889,7 +4114,8 @@
     "stat_modifications": {
       "attack": [["+2", "user", 6]],
       "special_attack": [["+2", "user", 6]]
-    }
+    },
+    "formatted_name": "Weakness Policy"
   },
   "white_herb": {
     "item_type": "",
@@ -3906,7 +4132,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "White Herb"
   },
   "wide_lens": {
     "item_type": "",
@@ -3922,7 +4149,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "accuracy": [[1, "user", 4]]
+    "accuracy": [[1, "user", 4]],
+    "formatted_name": "Wide Lens"
   },
   "wise_glasses": {
     "item_type": "",
@@ -3939,7 +4167,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Wise Glasses"
   },
   "yellow_scarf": {
     "item_type": "",
@@ -3954,7 +4183,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Yellow Scarf"
   },
   "zap_plate": {
     "item_type": "plate",
@@ -3974,7 +4204,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Zap Plate"
   },
   "zoom_lens": {
     "item_type": "",
@@ -3990,7 +4221,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "accuracy": [[2, "user", 4]]
+    "accuracy": [[2, "user", 4]],
+    "formatted_name": "Zoom Lens"
   },
   "aguav_berry": {
     "item_type": "berry",
@@ -4010,7 +4242,8 @@
     "stat_modifications": {},
     "nature_power": [["dragon", 0, 3], [[
           "dragon", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Aguav Berry"
   },
   "apicot_berry": {
     "item_type": "berry",
@@ -4030,7 +4263,8 @@
     },
     "nature_power": [["ground", 0, 3], [[
           "ground", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Apicot Berry"
   },
   "aspear_berry": {
     "item_type": "berry",
@@ -4050,7 +4284,8 @@
     "stat_modifications": {},
     "nature_power": [["ice", 0, 3], [[
           "ice", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Aspear Berry"
   },
   "babiri_berry": {
     "item_type": "berry",
@@ -4070,7 +4305,8 @@
     "stat_modifications": {},
     "nature_power": [["steel", 0, 4], [[
           "steel", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Babiri Berry"
   },
   "belue_berry": {
     "item_type": "berry",
@@ -4088,7 +4324,8 @@
     "stat_modifications": {},
     "nature_power": [["electric", 0, 3], [[
           "electric", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Belue Berry"
   },
   "bluk_berry": {
     "item_type": "berry",
@@ -4106,7 +4343,8 @@
     "stat_modifications": {},
     "nature_power": [["fire", 0, 3], [[
           "fire", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Bluk Berry"
   },
   "charti_berry": {
     "item_type": "berry",
@@ -4126,7 +4364,8 @@
     "stat_modifications": {},
     "nature_power": [["rock", 0, 4], [[
           "rock", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Charti Berry"
   },
   "cheri_berry": {
     "item_type": "berry",
@@ -4146,7 +4385,8 @@
     "stat_modifications": {},
     "nature_power": [["fire", 0, 3], [[
           "fire", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Cheri Berry"
   },
   "chesto_berry": {
     "item_type": "berry",
@@ -4166,7 +4406,8 @@
     "stat_modifications": {},
     "nature_power": [["water", 0, 3], [[
           "water", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Chesto Berry"
   },
   "chilan_berry": {
     "item_type": "berry",
@@ -4186,7 +4427,8 @@
     "stat_modifications": {},
     "nature_power": [["normal", 0, 4], [[
           "normal", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Chilan Berry"
   },
   "chople_berry": {
     "item_type": "berry",
@@ -4206,7 +4448,8 @@
     "stat_modifications": {},
     "nature_power": [["fighting", 0, 4], [[
           "fighting", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Chople Berry"
   },
   "coba_berry": {
     "item_type": "berry",
@@ -4226,7 +4469,8 @@
     "stat_modifications": {},
     "nature_power": [["flying", 0, 4], [[
           "flying", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Coba Berry"
   },
   "colbur_berry": {
     "item_type": "berry",
@@ -4246,7 +4490,8 @@
     "stat_modifications": {},
     "nature_power": [["dark", 0, 4], [[
           "dark", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Colbur Berry"
   },
   "cornn_berry": {
     "item_type": "berry",
@@ -4264,7 +4509,8 @@
     "stat_modifications": {},
     "nature_power": [["bug", 0, 3], [[
           "bug", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Cornn Berry"
   },
   "custap_berry": {
     "item_type": "berry",
@@ -4284,7 +4530,8 @@
     "stat_modifications": {},
     "nature_power": [["ghost", 0, 4], [[
           "ghost", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Custap Berry"
   },
   "durin_berry": {
     "item_type": "berry",
@@ -4302,7 +4549,8 @@
     "stat_modifications": {},
     "nature_power": [["water", 0, 3], [[
           "water", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Durin Berry"
   },
   "enigma_berry": {
     "item_type": "berry",
@@ -4320,7 +4568,8 @@
     "stat_modifications": {},
     "nature_power": [["bug", 0, 3], [[
           "bug", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Enigma Berry"
   },
   "figy_berry": {
     "item_type": "berry",
@@ -4340,7 +4589,8 @@
     "stat_modifications": {},
     "nature_power": [["bug", 0, 3], [[
           "bug", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Figy Berry"
   },
   "ganlon_berry": {
     "item_type": "berry",
@@ -4360,7 +4610,8 @@
     },
     "nature_power": [["ice", 0, 3], [[
           "ice", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Ganlon Berry"
   },
   "grepa_berry": {
     "item_type": "berry",
@@ -4378,7 +4629,8 @@
     "stat_modifications": {},
     "nature_power": [["flying", 0, 3], [[
           "flying", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Grepa Berry"
   },
   "haban_berry": {
     "item_type": "berry",
@@ -4398,7 +4650,8 @@
     "stat_modifications": {},
     "nature_power": [["dragon", 0, 4], [[
           "dragon", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Haban Berry"
   },
   "hondew_berry": {
     "item_type": "berry",
@@ -4416,7 +4669,8 @@
     "stat_modifications": {},
     "nature_power": [["ground", 0, 3], [[
           "ground", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Hondew Berry"
   },
   "iapapa_berry": {
     "item_type": "berry",
@@ -4436,7 +4690,8 @@
     "stat_modifications": {},
     "nature_power": [["dark", 0, 3], [[
           "dark", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Iapapa Berry"
   },
   "jaboca_berry": {
     "item_type": "berry",
@@ -4454,7 +4709,8 @@
     "stat_modifications": {},
     "nature_power": [["dragon", 0, 4], [[
           "dragon", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Jaboca Berry"
   },
   "kasib_berry": {
     "item_type": "berry",
@@ -4474,7 +4730,8 @@
     "stat_modifications": {},
     "nature_power": [["ghost", 0, 4], [[
           "ghost", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Kasib Berry"
   },
   "kebia_berry": {
     "item_type": "berry",
@@ -4494,7 +4751,8 @@
     "stat_modifications": {},
     "nature_power": [["poison", 0, 4], [[
           "poison", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Kebia Berry"
   },
   "kee_berry": {
     "item_type": "berry",
@@ -4512,7 +4770,8 @@
     "stat_modifications": {
       "defense": [["+1", "user", 6]]
     },
-    "nature_power": [["fairy", 0, 6]]
+    "nature_power": [["fairy", 0, 6]],
+    "formatted_name": "Kee Berry"
   },
   "kelpsy_berry": {
     "item_type": "berry",
@@ -4530,7 +4789,8 @@
     "stat_modifications": {},
     "nature_power": [["fighting", 0, 3], [[
           "fighting", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Kelpsy Berry"
   },
   "lansat_berry": {
     "item_type": "berry",
@@ -4550,7 +4810,8 @@
     },
     "nature_power": [["flying", 0, 3], [[
           "flying", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Lansat Berry"
   },
   "leppa_berry": {
     "item_type": "berry",
@@ -4568,7 +4829,8 @@
     "stat_modifications": {},
     "nature_power": [["fighting", 0, 3], [[
           "fighting", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Leppa Berry"
   },
   "liechi_berry": {
     "item_type": "berry",
@@ -4588,7 +4850,8 @@
     },
     "nature_power": [["grass", 0, 3], [[
           "grass", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Liechi Berry"
   },
   "lum_berry": {
     "item_type": "berry",
@@ -4614,7 +4877,8 @@
     "stat_modifications": {},
     "nature_power": [["flying", 0, 3], [[
           "flying", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Lum Berry"
   },
   "mago_berry": {
     "item_type": "berry",
@@ -4634,7 +4898,8 @@
     "stat_modifications": {},
     "nature_power": [["ghost", 0, 3], [[
           "ghost", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Mago Berry"
   },
   "magost_berry": {
     "item_type": "berry",
@@ -4652,7 +4917,8 @@
     "stat_modifications": {},
     "nature_power": [["rock", 0, 3], [[
           "rock", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Magost Berry"
   },
   "maranga_berry": {
     "item_type": "berry",
@@ -4670,7 +4936,8 @@
     "stat_modifications": {
       "special_defense": [["+1", "user", 6]]
     },
-    "nature_power": [["dark", 0, 6]]
+    "nature_power": [["dark", 0, 6]],
+    "formatted_name": "Maranga Berry"
   },
   "micle_berry": {
     "item_type": "berry",
@@ -4692,7 +4959,8 @@
     },
     "nature_power": [["rock", 0, 4], [[
           "rock", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Micle Berry"
   },
   "nanab_berry": {
     "item_type": "berry",
@@ -4710,7 +4978,8 @@
     "stat_modifications": {},
     "nature_power": [["water", 0, 3], [[
           "water", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Nanab Berry"
   },
   "nomel_berry": {
     "item_type": "berry",
@@ -4728,7 +4997,8 @@
     "stat_modifications": {},
     "nature_power": [["dragon", 0, 3], [[
           "dragon", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Nomel Berry"
   },
   "occa_berry": {
     "item_type": "berry",
@@ -4748,7 +5018,8 @@
     "stat_modifications": {},
     "nature_power": [["fire", 0, 4], [[
           "fire", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Occa Berry"
   },
   "oran_berry": {
     "item_type": "berry",
@@ -4766,7 +5037,8 @@
     "stat_modifications": {},
     "nature_power": [["poison", 0, 3], [[
           "poison", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Oran Berry"
   },
   "pamtre_berry": {
     "item_type": "berry",
@@ -4784,7 +5056,8 @@
     "stat_modifications": {},
     "nature_power": [["steel", 0, 3], [[
           "steel", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Pamtre Berry"
   },
   "passho_berry": {
     "item_type": "berry",
@@ -4804,7 +5077,8 @@
     "stat_modifications": {},
     "nature_power": [["water", 0, 4], [[
           "water", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Passho Berry"
   },
   "payapa_berry": {
     "item_type": "berry",
@@ -4824,7 +5098,8 @@
     "stat_modifications": {},
     "nature_power": [["psychic", 0, 4], [[
           "psychic", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Payapa Berry"
   },
   "pecha_berry": {
     "item_type": "berry",
@@ -4844,7 +5119,8 @@
     "stat_modifications": {},
     "nature_power": [["electric", 0, 3], [[
           "electric", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Pecha Berry"
   },
   "persim_berry": {
     "item_type": "berry",
@@ -4864,7 +5140,8 @@
     "stat_modifications": {},
     "nature_power": [["ground", 0, 3], [[
           "ground", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Persim Berry"
   },
   "petaya_berry": {
     "item_type": "berry",
@@ -4884,7 +5161,8 @@
     },
     "nature_power": [["poison", 0, 3], [[
           "poison", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Petaya Berry"
   },
   "pinap_berry": {
     "item_type": "berry",
@@ -4902,7 +5180,8 @@
     "stat_modifications": {},
     "nature_power": [["grass", 0, 3], [[
           "grass", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Pinap Berry"
   },
   "pomeg_berry": {
     "item_type": "berry",
@@ -4920,7 +5199,8 @@
     "stat_modifications": {},
     "nature_power": [["ice", 0, 3], [[
           "ice", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Pomeg Berry"
   },
   "qualot_berry": {
     "item_type": "berry",
@@ -4938,7 +5218,8 @@
     "stat_modifications": {},
     "nature_power": [["poison", 0, 3], [[
           "poison", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Qualot Berry"
   },
   "rabuta_berry": {
     "item_type": "berry",
@@ -4956,7 +5237,8 @@
     "stat_modifications": {},
     "nature_power": [["ghost", 0, 3], [[
           "ghost", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Rabuta Berry"
   },
   "rawst_berry": {
     "item_type": "berry",
@@ -4976,7 +5258,8 @@
     "stat_modifications": {},
     "nature_power": [["grass", 0, 3], [[
           "grass", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Rawst Berry"
   },
   "razz_berry": {
     "item_type": "berry",
@@ -4994,7 +5277,8 @@
     "stat_modifications": {},
     "nature_power": [["steel", 0, 3], [[
           "steel", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Razz Berry"
   },
   "rindo_berry": {
     "item_type": "berry",
@@ -5014,7 +5298,8 @@
     "stat_modifications": {},
     "nature_power": [["grass", 0, 4], [[
           "grass", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Rindo Berry"
   },
   "roseli_berry": {
     "item_type": "berry",
@@ -5032,7 +5317,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["fairy", 0, 6]]
+    "nature_power": [["fairy", 0, 6]],
+    "formatted_name": "Roseli Berry"
   },
   "rowap_berry": {
     "item_type": "berry",
@@ -5050,7 +5336,8 @@
     "stat_modifications": {},
     "nature_power": [["dark", 0, 4], [[
           "dark", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Rowap Berry"
   },
   "salac_berry": {
     "item_type": "berry",
@@ -5070,7 +5357,8 @@
     },
     "nature_power": [["fighting", 0, 3], [[
           "fighting", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Salac Berry"
   },
   "shuca_berry": {
     "item_type": "berry",
@@ -5090,7 +5378,8 @@
     "stat_modifications": {},
     "nature_power": [["ground", 0, 4], [[
           "ground", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Shuca Berry"
   },
   "sitrus_berry": {
     "item_type": "berry",
@@ -5108,7 +5397,8 @@
     "stat_modifications": {},
     "nature_power": [["psychic", 0, 3], [[
           "psychic", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Sitrus Berry"
   },
   "spelon_berry": {
     "item_type": "berry",
@@ -5126,7 +5416,8 @@
     "stat_modifications": {},
     "nature_power": [["dark", 0, 3], [[
           "dark", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Spelon Berry"
   },
   "starf_berry": {
     "item_type": "berry",
@@ -5153,7 +5444,8 @@
     },
     "nature_power": [["psychic", 0, 3], [[
           "psychic", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Starf Berry"
   },
   "tamato_berry": {
     "item_type": "berry",
@@ -5171,7 +5463,8 @@
     "stat_modifications": {},
     "nature_power": [["psychic", 0, 3], [[
           "psychic", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Tamato Berry"
   },
   "tanga_berry": {
     "item_type": "berry",
@@ -5191,7 +5484,8 @@
     "stat_modifications": {},
     "nature_power": [["bug", 0, 4], [[
           "bug", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Tanga Berry"
   },
   "wacan_berry": {
     "item_type": "berry",
@@ -5211,7 +5505,8 @@
     "stat_modifications": {},
     "nature_power": [["electric", 0, 4], [[
           "electric", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Wacan Berry"
   },
   "watmel_berry": {
     "item_type": "berry",
@@ -5229,7 +5524,8 @@
     "stat_modifications": {},
     "nature_power": [["fire", 0, 3], [[
           "fire", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Watmel Berry"
   },
   "wepear_berry": {
     "item_type": "berry",
@@ -5247,7 +5543,8 @@
     "stat_modifications": {},
     "nature_power": [["electric", 0, 3], [[
           "electric", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Wepear Berry"
   },
   "wiki_berry": {
     "item_type": "berry",
@@ -5267,7 +5564,8 @@
     "stat_modifications": {},
     "nature_power": [["rock", 0, 3], [[
           "rock", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Wiki Berry"
   },
   "yache_berry": {
     "item_type": "berry",
@@ -5287,7 +5585,8 @@
     "stat_modifications": {},
     "nature_power": [["ice", 0, 4], [[
           "ice", 0, 6]]
-    ]
+    ],
+    "formatted_name": "Yache Berry"
   },
   "berry": {
     "item_type": "berry",
@@ -5304,7 +5603,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Berry"
   },
   "bitter_berry": {
     "item_type": "berry",
@@ -5321,7 +5621,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Bitter Berry"
   },
   "burnt_berry": {
     "item_type": "berry",
@@ -5338,7 +5639,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Burnt Berry"
   },
   "gold_berry": {
     "item_type": "berry",
@@ -5355,7 +5657,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Gold Berry"
   },
   "ice_berry": {
     "item_type": "berry",
@@ -5372,7 +5675,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Ice Berry"
   },
   "mint_berry": {
     "item_type": "berry",
@@ -5389,7 +5693,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Mint Berry"
   },
   "miracle_berry": {
     "item_type": "berry",
@@ -5412,7 +5717,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "MiracleBerry"
   },
   "mystery_berry": {
     "item_type": "berry",
@@ -5429,7 +5735,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "MysteryBerry"
   },
   "prz_cure_berry": {
     "item_type": "berry",
@@ -5446,7 +5753,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "PRZCureBerry"
   },
   "psn_cure_berry": {
     "item_type": "berry",
@@ -5463,7 +5771,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "PSNCureBerry"
   },
   "abomasite": {
     "item_type": "mega_stone",
@@ -5484,7 +5793,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Abomasite"
   },
   "absolite": {
     "item_type": "mega_stone",
@@ -5505,7 +5815,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Absolite"
   },
   "aerodactylite": {
     "item_type": "mega_stone",
@@ -5526,7 +5837,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Aerodactylite"
   },
   "aggronite": {
     "item_type": "mega_stone",
@@ -5547,7 +5859,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Aggronite"
   },
   "alakazite": {
     "item_type": "mega_stone",
@@ -5568,7 +5881,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Alakazite"
   },
   "altarianite": {
     "item_type": "mega_stone",
@@ -5589,7 +5903,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Altarianite"
   },
   "ampharosite": {
     "item_type": "mega_stone",
@@ -5610,7 +5925,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Ampharosite"
   },
   "audinite": {
     "item_type": "mega_stone",
@@ -5631,7 +5947,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Audinite"
   },
   "banettite": {
     "item_type": "mega_stone",
@@ -5652,7 +5969,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Banettite"
   },
   "beedrillite": {
     "item_type": "mega_stone",
@@ -5673,7 +5991,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Beedrillite"
   },
   "blastoisinite": {
     "item_type": "mega_stone",
@@ -5694,7 +6013,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Blastoisinite"
   },
   "blazikenite": {
     "item_type": "mega_stone",
@@ -5715,7 +6035,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Blazikenite"
   },
   "cameruptite": {
     "item_type": "mega_stone",
@@ -5736,7 +6057,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Cameruptite"
   },
   "charizardite_x": {
     "item_type": "mega_stone",
@@ -5757,7 +6079,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Charizardite X"
   },
   "charizardite_y": {
     "item_type": "mega_stone",
@@ -5778,7 +6101,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Charizardite Y"
   },
   "diancite": {
     "item_type": "mega_stone",
@@ -5799,7 +6123,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Diancite"
   },
   "galladite": {
     "item_type": "mega_stone",
@@ -5820,7 +6145,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Galladite"
   },
   "garchompite": {
     "item_type": "mega_stone",
@@ -5841,7 +6167,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Garchompite"
   },
   "gardevoirite": {
     "item_type": "mega_stone",
@@ -5862,7 +6189,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Gardevoirite"
   },
   "gengarite": {
     "item_type": "mega_stone",
@@ -5883,7 +6211,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Gengarite"
   },
   "glalitite": {
     "item_type": "mega_stone",
@@ -5904,7 +6233,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Glalitite"
   },
   "gyaradosite": {
     "item_type": "mega_stone",
@@ -5925,7 +6255,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Gyaradosite"
   },
   "heracronite": {
     "item_type": "mega_stone",
@@ -5946,7 +6277,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Heracronite"
   },
   "houndoominite": {
     "item_type": "mega_stone",
@@ -5967,7 +6299,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Houndoominite"
   },
   "kangaskhanite": {
     "item_type": "mega_stone",
@@ -5988,7 +6321,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Kangaskhanite"
   },
   "latiasite": {
     "item_type": "mega_stone",
@@ -6009,7 +6343,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Latiasite"
   },
   "latiosite": {
     "item_type": "mega_stone",
@@ -6030,7 +6365,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Latiosite"
   },
   "lopunnite": {
     "item_type": "mega_stone",
@@ -6051,7 +6387,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Lopunnite"
   },
   "lucarionite": {
     "item_type": "mega_stone",
@@ -6072,7 +6409,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Lucarionite"
   },
   "manectite": {
     "item_type": "mega_stone",
@@ -6093,7 +6431,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Manectite"
   },
   "mawilite": {
     "item_type": "mega_stone",
@@ -6114,7 +6453,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Mawilite"
   },
   "medichamite": {
     "item_type": "mega_stone",
@@ -6135,7 +6475,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Medichamite"
   },
   "metagrossite": {
     "item_type": "mega_stone",
@@ -6156,7 +6497,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Metagrossite"
   },
   "mewtwonite_x": {
     "item_type": "mega_stone",
@@ -6177,7 +6519,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Mewtwonite X"
   },
   "mewtwonite_y": {
     "item_type": "mega_stone",
@@ -6198,7 +6541,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Mewtwonite Y"
   },
   "pidgeotite": {
     "item_type": "mega_stone",
@@ -6219,7 +6563,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Pidgeotite"
   },
   "pinsirite": {
     "item_type": "mega_stone",
@@ -6240,7 +6585,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Pinsirite"
   },
   "sablenite": {
     "item_type": "mega_stone",
@@ -6261,7 +6607,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Sablenite"
   },
   "salamencite": {
     "item_type": "mega_stone",
@@ -6282,7 +6629,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Salamencite"
   },
   "sceptilite": {
     "item_type": "mega_stone",
@@ -6303,7 +6651,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Sceptilite"
   },
   "scizorite": {
     "item_type": "mega_stone",
@@ -6324,7 +6673,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Scizorite"
   },
   "sharpedonite": {
     "item_type": "mega_stone",
@@ -6345,7 +6695,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Sharpedonite"
   },
   "slowbronite": {
     "item_type": "mega_stone",
@@ -6366,7 +6717,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Slowbronite"
   },
   "steelixite": {
     "item_type": "mega_stone",
@@ -6387,7 +6739,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Steelixite"
   },
   "swampertite": {
     "item_type": "mega_stone",
@@ -6408,7 +6761,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Swampertite"
   },
   "tyranitarite": {
     "item_type": "mega_stone",
@@ -6429,7 +6783,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Tyranitarite"
   },
   "venusaurite": {
     "item_type": "mega_stone",
@@ -6450,7 +6805,8 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Venusaurite"
   },
   "berry_juice": {
     "item_type": "other",
@@ -6467,7 +6823,8 @@
     "resists_usage_method": {},
     "boosts_type": {},
     "resists_type": {},
-    "stat_modifications": {}
+    "stat_modifications": {},
+    "formatted_name": "Berry Juice"
   },
   "adrenaline_orb": {
     "item_type": "other",
@@ -6484,6 +6841,7 @@
     "resists_usage_method": {},
     "stat_modifications": {
       "speed": [["+1", "user", 7]]
-    }
+    },
+    "formatted_name": "Adrenaline Orb"
   }
 }
