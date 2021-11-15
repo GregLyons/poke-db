@@ -724,7 +724,9 @@ def addZPowerMaxPowerData(maxPower_fname, zPower_fname, moveDict):
 
   return
 
+# Add moves which interact with other moves, as well as those which work with King's Rock
 def addInteractionData(interaction_fname, kings_rock_fname, moveDict):
+  # Add move interaction data
   with open(interaction_fname, 'r', encoding='utf-8') as interactionCSV:
     reader = csv.reader(interactionCSV)
 
@@ -742,8 +744,242 @@ def addInteractionData(interaction_fname, kings_rock_fname, moveDict):
         # ignore gens where targetMoveName wasn't present
         if gen < moveDict[targetMoveName]["gen"]:
           continue
-        moveDict[targetMoveName]["move_interactions"][activeMoveName].append([genInfo[gen - 1], gen])
+        moveDict[targetMoveName]["move_interactions"][activeMoveName].append([genInfo[gen - 1] == 'T', gen])
+    
+  # add protect data to other moves, since the Bulbapedia data is given in terms of moves which DON'T interact with Protect in one or more generations (which we have accounted for in the .csv; 'T' still indicates the move interacts with Protect), there are additional moves which DO interact with Protect
+  # We also add data for moves whose protection effects are virtually identical to Protect (i.e. block both damaging AND status moves), up to potentially some differences in moves which bypass it (which are handled in the moveInteractions.csv)
+  for protectLikeMoveName in ['protect', 'baneful_bunker', 'spiky_shield', 'detect']:
+    for moveName in moveDict.keys():
+      protectLikeMoveGen = moveDict[protectLikeMoveName]["gen"]
+
+      # indicates moveName has already been handled
+      if protectLikeMoveName in moveDict[moveName]["move_interactions"].keys():
+        continue
+      else:
+        moveDict[moveName]["move_interactions"][protectLikeMoveName] = []
+
+      for gen in range(max(protectLikeMoveGen, moveDict[moveName]["gen"]), numberOfGens() + 1):
+        # Check targetting
+        targetData = ''
+        # iterate over patches and choose the latest patch up to/prior to gen
+        for patch in moveDict[moveName]["target"]:
+          if patch[-1] > gen:
+            continue
+          targetData = patch[0]
+
+        hostileMove = targetData in ['all_adjacent', 'adjacent_foe', 'all_adjacent_foes', 'all_foes', 'any', 'any_adjacent']
+        
+        # moves which target user, allies, or all Pokemon bypass protect
+        if targetData in ['user', 'all', 'user_and_all_allies'] or not hostileMove:
+          moveDict[moveName]["move_interactions"][protectLikeMoveName].append([False, gen])
+          continue
+
+        # Check whether moves creates hazards
+        createsHazard = False
+        if 'creates_hazard' in moveDict[moveName]["effects"].keys():
+          # iterate over patches and choose the latest patch up to/prior to gen
+          for patch in moveDict[moveName]["effects"]["creates_hazard"]:
+            if patch[-1] > gen:
+              continue
+            createsHazard = patch[0]
+        
+        # hazard moves ignore Protect
+        if createsHazard:
+          moveDict[moveName]["move_interactions"][protectLikeMoveName].append([False, gen])
+          continue
+        
+        # Z-moves and max moves technically bypass Protect, but they still interact with it in that Protect reduces their damage, so we include them
+        # Status Z-Moves are blocked by Protect
+        moveDict[moveName]["move_interactions"][protectLikeMoveName].append([True, gen])
+
+  # add protect data for moves which block damaging-but-not-status moves
+  for obstructLikeMoveName in ['obstruct', 'kings_shield', 'mat_block', 'obstruct']:
+    for moveName in moveDict.keys():
+      obstructLikeMoveGen = moveDict[obstructLikeMoveName]["gen"]
+
+      # indicates moveName has already been handled
+      if obstructLikeMoveName in moveDict[moveName]["move_interactions"].keys():
+        continue
+      else:
+        moveDict[moveName]["move_interactions"][obstructLikeMoveName] = []
+
+      for gen in range(max(obstructLikeMoveGen, moveDict[moveName]["gen"]), numberOfGens() + 1):
+        # Check targetting
+        targetData = ''
+        # iterate over patches and choose the latest patch up to/prior to gen
+        for patch in moveDict[moveName]["target"]:
+          if patch[-1] > gen:
+            continue
+          targetData = patch[0]
+
+        hostileMove = targetData in ['all_adjacent', 'adjacent_foe', 'all_adjacent_foes', 'all_foes', 'any', 'any_adjacent']
+
+        # Check whether moveName is Status
+        statusMove = False
+
+        # iterate over patches and choose the latest patch up to/prior to gen
+        for patch in moveDict[moveName]["category"]:
+          # indicates patch is later than gen, so irrelevant to the calculation
+          if patch[-1] > gen:
+            continue
+          else:
+            statusMove = patch[0] == 'status'
+        
+        # status moves bypass Obstruct
+        if not hostileMove or statusMove:
+          moveDict[moveName]["move_interactions"][obstructLikeMoveName].append([False, gen])
+        else:
+          moveDict[moveName]["move_interactions"][obstructLikeMoveName].append([True, gen])
+
+
+  # add protect data for moves which block status moves; we write it this way even though there's only one move like crafty shield (itself), in anticipation of future moves
+  for craftyShieldLikeMoveName in ['crafty_shield']:
+    for moveName in moveDict.keys():
+      craftyShieldLikeMoveGen = moveDict[craftyShieldLikeMoveName]["gen"]
+
+      # indicates moveName has already been handled
+      if craftyShieldLikeMoveName in moveDict[moveName]["move_interactions"].keys():
+        continue
+      else:
+        moveDict[moveName]["move_interactions"][craftyShieldLikeMoveName] = []
+
+      for gen in range(max(craftyShieldLikeMoveGen, moveDict[moveName]["gen"]), numberOfGens() + 1):
+        # Check targetting
+        targetData = ''
+        # iterate over patches and choose the latest patch up to/prior to gen
+        for patch in moveDict[moveName]["target"]:
+          if patch[-1] > gen:
+            continue
+          targetData = patch[0]
+
+        hostileMove = targetData in ['all_adjacent', 'adjacent_foe', 'all_adjacent_foes', 'all_foes', 'any', 'any_adjacent']
+
+        # Check whether moveName is Status
+        statusMove = False
+
+        # iterate over patches and choose the latest patch up to/prior to gen
+        for patch in moveDict[moveName]["category"]:
+          # indicates patch is later than gen, so irrelevant to the calculation
+          if patch[-1] > gen:
+            continue
+          else:
+            statusMove = patch[0] == 'status'
+        
+        # crafty shield blocks hostile status moves
+        if hostileMove and statusMove:
+          moveDict[moveName]["move_interactions"][craftyShieldLikeMoveName].append([True, gen])
+        else:
+          moveDict[moveName]["move_interactions"][craftyShieldLikeMoveName].append([False, gen])
+
+  # add protect data for moves which block status moves; we write it this way even though there's only one move like Wide Guard (itself), in anticipation of future moves
+  for wideGuardLikeMoveName in ['wide_guard']:
+    for moveName in moveDict.keys():
+      wideGuardLikeMoveGen = moveDict[wideGuardLikeMoveName]["gen"]
+
+      # indicates moveName has already been handled
+      if wideGuardLikeMoveName in moveDict[moveName]["move_interactions"].keys():
+        continue
+      else:
+        moveDict[moveName]["move_interactions"][wideGuardLikeMoveName] = []
+
+      for gen in range(max(wideGuardLikeMoveGen, moveDict[moveName]["gen"]), numberOfGens() + 1):
+        # Check targetting
+
+        targetData = ''
+        # iterate over patches and choose the latest patch up to/prior to gen
+        for patch in moveDict[moveName]["target"]:
+          if patch[-1] > gen:
+            continue
+          targetData = patch[0]
+
+        # Check whether moveName is Status
+        statusMove = False
+
+        # iterate over patches and choose the latest patch up to/prior to gen
+        for patch in moveDict[moveName]["category"]:
+          # indicates patch is later than gen, so irrelevant to the calculation
+          if patch[-1] > gen:
+            continue
+          else:
+            statusMove = patch[0] == 'status'
+        
+        # damaging moves which target multiple Pokemon are blocked
+        if targetData in ['all_adjacent', 'all_adjacent_foes', 'all_foes']:
+          if not statusMove:
+            moveDict[moveName]["move_interactions"][wideGuardLikeMoveName].append([True, gen]) 
+          # status moves which target multiple Pokemon are blocked after Gen 7  
+          elif gen > 7:
+            moveDict[moveName]["move_interactions"][wideGuardLikeMoveName].append([True, gen]) 
+        else:
+          moveDict[moveName]["move_interactions"][wideGuardLikeMoveName].append([False, gen])
+
+  # add protect data for moves which block priority moves; we write it this way even though there's only one move like Quick Guard (itself), in anticipation of future moves 
+  for quickGuardLikeMoveName in ['quick_guard']:
+    for moveName in moveDict.keys():
+      quickGuardLikeMoveGen = moveDict[quickGuardLikeMoveName]["gen"]
+
+      # indicates moveName has already been handled
+      if quickGuardLikeMoveName in moveDict[moveName]["move_interactions"].keys():
+        continue
+      else:
+        moveDict[moveName]["move_interactions"][quickGuardLikeMoveName] = []
+
+      for gen in range(max(quickGuardLikeMoveGen, moveDict[moveName]["gen"]), numberOfGens() + 1):
+        # Check targetting
+        targetData = ''
+        # iterate over patches and choose the latest patch up to/prior to gen
+        for patch in moveDict[moveName]["target"]:
+          if patch[-1] > gen:
+            continue
+          targetData = patch[0]
+
+        hostileMove = targetData in ['all_adjacent', 'adjacent_foe', 'all_adjacent_foes', 'all_foes', 'any', 'any_adjacent']
+
+        # Calculate priority of moveName
+        priority = 0
+
+        # iterate over patches and choose the latest patch up to/prior to gen
+        for patch in moveDict[moveName]["priority"]:
+          # indicates patch is later than gen, so irrelevant to the calculation
+          if patch[-1] > gen:
+            continue
+          else:
+            priority = patch[0]
+        
+        # blocks moves which target the user's side and have increased priority; note that Quick Guard only has +3 priority, so moves which have priority > 3 will bypass it
+        # Feint is an increased priority move which bypasses quick guard; note that Quick Guard DOES block Feint if the user of Feint is an ally
+        if hostileMove and priority > 0 and priority <= 3 and moveName != 'feint':
+          moveDict[moveName]["move_interactions"][quickGuardLikeMoveName].append([True, gen]) 
+        else:
+          moveDict[moveName]["move_interactions"][quickGuardLikeMoveName].append([False, gen])
   
+  # Max Guard
+  for moveName in moveDict.keys():
+    # indicates moveName has already been handled
+    if 'max_guard' in moveDict[moveName]["move_interactions"].keys():
+      continue
+    else:
+      moveDict[moveName]["move_interactions"]["max_guard"] = []
+
+      for gen in range(max(8, moveDict[moveName]["gen"]), numberOfGens() + 1):
+        # Check targetting
+
+        targetData = ''
+        # iterate over patches and choose the latest patch up to/prior to gen
+        for patch in moveDict[moveName]["target"]:
+          if patch[-1] > gen:
+            continue
+          targetData = patch[0]
+
+        hostileMove = targetData in ['all_adjacent', 'adjacent_foe', 'all_adjacent_foes', 'all_foes', 'any', 'any_adjacent']
+        
+        # blocks hostile moves
+        if hostileMove:
+          moveDict[moveName]["move_interactions"]["max_guard"].append([True, gen]) 
+        else:
+          moveDict[moveName]["move_interactions"]["max_guard"].append([False, gen])
+
+  # Add King's Rock data
   with open(kings_rock_fname, 'r', encoding='utf-8') as kingsRockCSV:
     reader = csv.reader(kingsRockCSV)
 
@@ -763,7 +999,7 @@ def addInteractionData(interaction_fname, kings_rock_fname, moveDict):
         # ignore gens where moveName wasn't present
         if gen < moveDict[moveName]["gen"]:
           continue
-        moveDict[moveName]["item_interactions"]["kings_rock"].append([genInfo[gen - 1], gen])
+        moveDict[moveName]["item_interactions"]["kings_rock"].append([genInfo[gen - 1] == 'T', gen])
 
     # add data for Gen 5 onward
     for moveName in moveDict.keys():
@@ -777,11 +1013,28 @@ def addInteractionData(interaction_fname, kings_rock_fname, moveDict):
       
       for gen in range(max(5, moveGen), numberOfGens() + 1):
 
-        # criteria for moveName to be affected by King's Rock
-        # Check the moveName is Physical, Special, or Varies in Generation gen
-        damagingMove = [patch for patch in moveDict[moveName]["category"] if patch[0] in ['physical', 'special', 'varies'] and patch[-1] == gen] == 1 
+        # check criteria for moveName to be affected by King's Rock: damaging and not flinching
+        # Check whether moveName is Physical, Special, or Varies in Generation gen
+        damagingMove = False
+
+        # iterate over patches and choose the latest patch up to/prior to gen
+        for patch in moveDict[moveName]["category"]:
+          # indicates patch is later than gen, so irrelevant to the calculation
+          if patch[-1] > gen:
+            continue
+          else:
+            damagingMove = patch[0] in ['physical', 'special', 'varies']
+
         # Check that moveName does not flinch in Generation gen
-        flinchingMove = 'flinch' in moveDict[moveName]["causes_status"].keys() and len([patch for patch in moveDict[moveName]["causes_status"]["flinch"] if patch[0] > 0 and patch[-1] <= gen]) == 1
+        if 'flinch' in moveDict[moveName]["causes_status"].keys():
+          # iterate over patches and choose the latest patch up to/prior to gen
+          for patch in moveDict[moveName]["causes_status"]["flinch"]:
+            if patch[-1] > gen:
+              continue
+            else:
+              flinchingMove = patch[0] > 0
+        else:
+          flinchingMove = False
 
         if damagingMove and not flinchingMove:
           moveDict[moveName]["item_interactions"]["kings_rock"].append(['T', gen])

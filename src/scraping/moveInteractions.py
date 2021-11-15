@@ -54,6 +54,89 @@ def makeInteractionCSV(fname):
 
       writer.writerow(['magic_coat', moveName] + genInfo)
 
+    # Protect interactions; data is given in terms of moves which bypass protect, i.e. those which DON'T interact with Protect
+    protectTableRows = openLink('https://bulbapedia.bulbagarden.net/wiki/Protect_(move)', 0, 10).find(id='Moves_that_bypass_Protect').find_next('table').find('table').find_all('tr')[2:]
+
+    for row in protectTableRows:
+      cells = row.find_all(['td', 'th'])
+      moveName, genData = parseName(cells[0].get_text()), cells[3:]
+
+      # will store gen info; Protect debutted in Gen 2
+      genInfo = ['F']
+
+      # parse the table
+      for genDatum in genData:
+        # move bypasses protect, so it DOESN'T interact with protect
+        if '✔' in genDatum.get_text():
+          genInfo.append('F')
+        # move doesn't bypass protect, so it DOES interact with protect
+        elif '{' not in genDatum.get_text():
+          genInfo.append('T')
+
+      # table is missing all the <td>'s in some rows
+      while len(genInfo) < numberOfGens():
+        genInfo.append('F')
+
+      writer.writerow(['protect', moveName] + genInfo)
+      # detect is functionally identical to Protect, so we add that as well
+      writer.writerow(['detect', moveName] + genInfo)
+
+    # Spiky Shield interactions; like with Protect, the moves listed DON'T interact with spiky shield
+    spikyShieldTableRows = openLink('https://bulbapedia.bulbagarden.net/wiki/Spiky_Shield_(move)', 0, 10).find(id='Effect').find_next('table').find('table').find_all('tr')[1:]
+
+    for row in spikyShieldTableRows:
+      cells = row.find_all(['td', 'th'])
+      moveName = parseName(cells[0].get_text())
+
+      # will store gen info; Spiky Shield debutted in Gen VI
+      genInfo = ['F', 'F', 'F', 'F', 'F']
+
+      # the moves don't interact with spiky shield
+      while len(genInfo) < numberOfGens():
+        genInfo.append('F')
+
+      writer.writerow(['spiky_shield', moveName] + genInfo)
+
+    # Baneful Bunker; similar to Protect
+    banefulBunkerTableRows = openLink('https://bulbapedia.bulbagarden.net/wiki/Baneful_Bunker_(move)', 0, 10).find(id='Effect').find_next('table').find('table').find_all('tr')[1:]
+
+    for row in banefulBunkerTableRows:
+      cells = row.find_all(['td', 'th'])
+      moveName = parseName(cells[0].get_text())
+
+      # will store gen info; debutted in Gen VII
+      genInfo = ['F', 'F', 'F', 'F', 'F', 'F']
+
+      # the moves don't interact with baneful bunker
+      while len(genInfo) < numberOfGens():
+        genInfo.append('F')
+
+      writer.writerow(['baneful_bunker', moveName] + genInfo)
+
+    # King's Shield interactions, similar to Protect; note that all status moves bypass King's Shield
+    kingsShieldTableRows = openLink('https://bulbapedia.bulbagarden.net/wiki/King%27s_Shield_(move)', 0, 10).find(id='Moves_that_bypass_King.27s_Shield').find_next('table').find('table').find_all('tr')[1:]
+
+    for row in kingsShieldTableRows:
+      cells = row.find_all(['td', 'th'])
+      moveName = parseName(cells[0].get_text())
+
+      # will store gen info; debutted in Gen VI
+      genInfo = ['F', 'F', 'F', 'F', 'F']
+
+      # the moves don't interact with king's shield
+      while len(genInfo) < numberOfGens():
+        genInfo.append('F')
+
+      writer.writerow(['kings_shield', moveName] + genInfo)
+
+    # Mat Block doesn't have a table, but is bypassed by the following moves (we don't list status moves); similarly for Obstruct
+    for bypassingMove in ['feint', 'hyperspace_fury', 'hyperspace_hole', 'phantom_force', 'shadow_force', 'future_sight', 'doom_desire']:
+      writer.writerow(['mat_block', bypassingMove] + ['F'] * 8)
+      writer.writerow(['obstruct', bypassingMove] + ['F'] * 8)
+
+    # Max Guard doesn't have a table, but is bypassed by the following moves:
+    for bypassingMove in ['feint', 'mean_look', 'role_play', 'perish_song', 'decorate', 'g_max_one_blow', 'g_max_rapid_flow']:
+      writer.writerow(['max_guard', bypassingMove] + ['F'] * 8)
 
   return
 
@@ -66,7 +149,6 @@ def makeKingsRockCSV(fname):
       headerRow.append(i + 1)
     writer.writerow(headerRow)
 
-    # Snatch interactions
     dataRows = openLink('https://bulbapedia.bulbagarden.net/wiki/King%27s_Rock', 0, 10).find(id='Moves_affected_before_Generation_V').find_next('table').find('table').find_all('tr')[2:]
 
     for row in dataRows:
