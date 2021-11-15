@@ -26,4 +26,3 @@ const pokemonTablesSQL = fs.readFileSync(tablePath + 'pokemon.sql').toString();
 
 // Relationship tables involving version groups--includes sprite data and description data
 const versionGroupTablesSQL = fs.readFileSync(tablePath + 'versionGroups.sql').toString();
-

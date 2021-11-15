@@ -724,7 +724,76 @@ def addZPowerMaxPowerData(maxPower_fname, zPower_fname, moveDict):
 
   return
 
-def addFormattedName(moveDict):
+def addInteractionData(interaction_fname, kings_rock_fname, moveDict):
+  with open(interaction_fname, 'r', encoding='utf-8') as interactionCSV:
+    reader = csv.reader(interactionCSV)
+
+    for moveName in moveDict.keys():
+      moveDict[moveName]["move_interactions"] = {}
+
+    # skip header
+    next(reader, None)
+
+    for row in reader:
+      activeMoveName, targetMoveName, genInfo = row[0], row[1], row[2:]
+      
+      moveDict[targetMoveName]["move_interactions"][activeMoveName] = []
+      for gen in range(1, len(genInfo) + 1):
+        # ignore gens where targetMoveName wasn't present
+        if gen < moveDict[targetMoveName]["gen"]:
+          continue
+        moveDict[targetMoveName]["move_interactions"][activeMoveName].append([genInfo[gen - 1], gen])
+  
+  with open(kings_rock_fname, 'r', encoding='utf-8') as kingsRockCSV:
+    reader = csv.reader(kingsRockCSV)
+
+    for moveName in moveDict.keys():
+      moveDict[moveName]["item_interactions"] = {}
+
+    # skip header
+    next(reader, None)
+
+    for row in reader:
+      moveName, genInfo = row[0], row[1:]
+      
+      moveDict[moveName]["item_interactions"]["kings_rock"] = []
+      
+      # .csv only has data up to Gen 4, since from Gen 5 onwards, all non-flinching damagaing move are affected by King's Rock
+      for gen in range(1, 5):
+        # ignore gens where moveName wasn't present
+        if gen < moveDict[moveName]["gen"]:
+          continue
+        moveDict[moveName]["item_interactions"]["kings_rock"].append([genInfo[gen - 1], gen])
+
+    # add data for Gen 5 onward
+    for moveName in moveDict.keys():
+      moveGen = moveDict[moveName]["gen"]
+
+      # initialize king's rock data for unhandled moves
+      if "kings_rock" not in moveDict[moveName]["item_interactions"].keys():
+        moveDict[moveName]["item_interactions"]["kings_rock"] = []
+        for gen in range(max(2, moveGen), 5):
+          moveDict[moveName]["item_interactions"]["kings_rock"].append(['F', gen])
+      
+      for gen in range(max(5, moveGen), numberOfGens() + 1):
+
+        # criteria for moveName to be affected by King's Rock
+        # Check the moveName is Physical, Special, or Varies in Generation gen
+        damagingMove = [patch for patch in moveDict[moveName]["category"] if patch[0] in ['physical', 'special', 'varies'] and patch[-1] == gen] == 1 
+        # Check that moveName does not flinch in Generation gen
+        flinchingMove = 'flinch' in moveDict[moveName]["causes_status"].keys() and len([patch for patch in moveDict[moveName]["causes_status"]["flinch"] if patch[0] > 0 and patch[-1] <= gen]) == 1
+
+        if damagingMove and not flinchingMove:
+          moveDict[moveName]["item_interactions"]["kings_rock"].append(['T', gen])
+        else:
+          moveDict[moveName]["item_interactions"]["kings_rock"].append(['F', gen])
+      
+
+      
+
+  return
+
+def addFormattedNames(moveDict):
   for moveName in moveDict.keys():
     moveDict[moveName]['formatted_name'] = getFormattedName(moveName)
 
@@ -848,7 +917,11 @@ def main():
   zPower_fname = dataPath + 'movesByZPower.csv'
   addZPowerMaxPowerData(maxPower_fname, zPower_fname, moveDict)
 
-  addFormattedName(moveDict)
+  interaction_fname = dataPath + 'moveInteractions.csv'
+  kings_rock_fname = dataPath + 'movesByKingsRock.csv'
+  addInteractionData(interaction_fname, kings_rock_fname, moveDict)
+
+  addFormattedNames(moveDict)
 
   return moveDict
 
