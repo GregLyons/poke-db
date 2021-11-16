@@ -1,4 +1,4 @@
-// EXTENDING PATCH LISTS OF OBJECTS
+// EXTENDING PATCH LISTS OF OBJECTS AND SERIALIZING
 // #region
 const NUMBER_OF_GENS = 8;
 
@@ -87,7 +87,7 @@ const getGMaxMoves = moveArr => moveArr.filter(move => move.g_max_move).map(move
 
 // #endregion
 
-// ADD LEARNSET DATA
+// ADD LEARNSET AND EVENT DATA
 // #region
 
 // pokemonName --> corresponding Pokemon in learnset with learnset data
@@ -407,7 +407,7 @@ export const addLearnsetsToPokemonArr = (learnsets, moves, pokemon, pokemonArr) 
         pokemonEventData.push({generation, level, gender, nature, shiny, isHidden, moveNames, perfectIVs, pokeball});
       }
     }
-    pokemonEntry['eventData'] = pokemonEventData;
+    pokemonEntry['event_data'] = pokemonEventData;
   }
 }
 // #endregion

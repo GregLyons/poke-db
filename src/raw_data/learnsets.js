@@ -77628,4 +77628,4 @@ const learnsets = {
 	},
 };
 
-export default learnsets;
+module.exports = learnsets;
