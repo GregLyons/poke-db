@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node src/db/processing/index.js",
+    "start": "nodemon --exec babel-node src/db/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,7 +27,9 @@
   "dependencies": {
     "apollo-server": "^2.25.3",
     "cross-fetch": "^3.1.4",
+    "dotenv": "^10.0.0",
     "graphql": "^15.7.2",
-    "graphql-config": "^4.1.0"
+    "graphql-config": "^4.1.0",
+    "mysql2": "^2.3.3"
   }
 }
