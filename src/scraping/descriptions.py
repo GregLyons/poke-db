@@ -266,8 +266,14 @@ def handleMoveLink(link, descriptionDict, moveGen):
     # the version groups are blold-faced
     groups = cells[0].find_all('b')
 
-    # sometimes the descriptions are different within version groups between move and TM description; the first one is the move description
+    # sometimes the descriptions are different within version groups between move and TM/HM description; the first one is the move description
     moveDescription = cells[1].get_text().rstrip('\n').split('*')[0]
+
+    # Sometimes Bulbapedia forgets to put an asterisk for the non-TM/HM description, so the above will not detect it. In this case, the two descriptions will be glued togehter, indicated by a period followed immediately by a non-space character; we extract the first description using a regex
+    match = re.search(r'\.[A-Z]', moveDescription)
+    if match:
+      moveDescription = moveDescription[:match.start() + 1]
+      
     
     versionGroupCodes = []
 
@@ -581,8 +587,8 @@ def main():
   # print('Scraping ability descriptions...')
   # scrapeDescriptions(fnamePrefix, 'ability', descriptionDict)
 
-  print('Scraping berry descriptions...')
-  scrapeDescriptions(fnamePrefix, 'berry', descriptionDict)
+  # print('Scraping berry descriptions...')
+  # scrapeDescriptions(fnamePrefix, 'berry', descriptionDict)
 
   # print('Scraping gen 2 berry descriptions...')
   # scrapeDescriptions(fnamePrefix, 'gen2berry', descriptionDict)
@@ -590,9 +596,8 @@ def main():
   # print('Scraping item descriptions...')
   # scrapeDescriptions(fnamePrefix, 'item', descriptionDict)
 
-
-  # print('Scraping move descriptions...')
-  # scrapeDescriptions(fnamePrefix, 'move', descriptionDict)
+  print('Scraping move descriptions...')
+  scrapeDescriptions(fnamePrefix, 'move', descriptionDict)
 
   return
 

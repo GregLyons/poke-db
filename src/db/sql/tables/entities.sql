@@ -12,7 +12,7 @@ CREATE TABLE generation (
 
 CREATE TABLE pdescription (
   pdescription_id MEDIUMINT NOT NULL UNSIGNED AUTO_INCREMENT,
-  pdescription_text TINYTEXT NOT NULL UNIQUE,
+  pdescription_text VARCHAR(255) NOT NULL UNIQUE,
 
   PRIMARY KEY (pdescription_id)
 );

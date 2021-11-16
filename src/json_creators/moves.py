@@ -973,7 +973,7 @@ def addInteractionData(interaction_fname, kings_rock_fname, moveDict):
 
         hostileMove = targetData in ['all_adjacent', 'adjacent_foe', 'all_adjacent_foes', 'all_foes', 'any', 'any_adjacent']
         
-        # blocks hostile moves
+        # blocks hostile moves, including Z-Moves and G-Max moves
         if hostileMove:
           moveDict[moveName]["move_interactions"]["max_guard"].append([True, gen]) 
         else:

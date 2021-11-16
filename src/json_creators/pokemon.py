@@ -432,6 +432,7 @@ def forceRename(pokemonDict):
   ]:
     oldKey, newKey = keyPair
     pokemonDict[newKey] = pokemonDict.pop(oldKey)
+
     # for, e.g. shellos and gastrodon, we need to replace the names in the evolution data as well
     for evolutionData in pokemonDict[newKey]['evolves_to']:
       try:
@@ -479,7 +480,7 @@ def checkPokeAPIForms(fname, pokemonDict):
     reader = csv.DictReader(pokeAPIcsv)
 
     for row in reader:
-      pokeapiName, pokeapiID = row["PokeAPI Form Name"], row["PokeAPI ID"]
+      pokeapiName, pokeapiID = row["PokeAPI Form Name"], int(row["PokeAPI ID"])
 
       # take urshifu-single-strike as default
       parsedPokeapiName = parseName(pokeapiName, 'pokemon').replace('_single_strike', '').replace('_hero', '').replace('_rider', '')
@@ -701,6 +702,28 @@ def main():
   checkPokeAPIForms(pokeapi_fname, pokemonDict)
 
   addFullName(pokemonDict)
+
+  noPokeapiEntry = []
+  speciesMismatch = []
+  for pokemonName in pokemonDict.keys():
+    pokeapiEntry = pokemonDict[pokemonName]["pokeapi"]
+    speciesName = pokemonDict[pokemonName]["species"]
+    if len(pokeapiEntry) < 2:
+      noPokeapiEntry.append(pokemonName)
+      continue
+
+    pokemonName, pokeapiID = pokeapiEntry
+
+    if '-' in pokemonName and pokeapiID < 10000:
+      if pokemonName != speciesName and not pokemonDict[pokemonName]["cosmetic"]:
+        speciesMismatch.append(pokemonName)
+      else:
+        print(str(pokeapiID) + '-' + '-'.join(pokemonName.split('-')[1:]))
+    else:
+      print(pokeapiID)
+  print(noPokeapiEntry)
+  print(speciesMismatch)
+      
 
   return pokemonDict
 
