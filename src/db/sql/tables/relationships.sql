@@ -4,14 +4,14 @@
 /*
 pmove
 */
-CREATE TABLE pmove_requires_pmove (
-  pmove_generation_id TINYINT NOT NULL UNSIGNED,
-  pmove_id SMALLINT NOT NULL UNSIGNED,
-  base_pmove_generation_id TINYINT NOT NULL UNSIGNED,
-  base_pmove_id SMALLINT NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS pmove_requires_pmove (
+  pmove_generation_id TINYINT UNSIGNED NOT NULL,
+  pmove_id SMALLINT UNSIGNED NOT NULL,
+  base_pmove_generation_id TINYINT UNSIGNED NOT NULL,
+  base_pmove_id SMALLINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (pmove_generation_id, pmove_id, base_pmove_generation_id, base_pmove_id),
-  FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id),
+  FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY (base_pmove_generation_id, base_pmove_id) REFERENCES pmove(generation_id, pmove_id)
@@ -19,15 +19,15 @@ CREATE TABLE pmove_requires_pmove (
     ON UPDATE CASCADE
 ); 
 
-CREATE TABLE pokemon_evolution (
-  prevolution_generation_id TINYINT NOT NULL UNSIGNED,
-  prevolution_id SMALLINT NOT NULL UNSIGNED,
-  evolution_generation_id TINYINT NOT NULL UNSIGNED,
-  evolution_id SMALLINT NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS pokemon_evolution (
+  prevolution_generation_id TINYINT UNSIGNED NOT NULL,
+  prevolution_id SMALLINT UNSIGNED NOT NULL,
+  evolution_generation_id TINYINT UNSIGNED NOT NULL,
+  evolution_id SMALLINT UNSIGNED NOT NULL,
   evolution_method VARCHAR(100) NOT NULL
 
   PRIMARY KEY(prevolution_generation_id, prevolution_id, evolution_generation_id, evolution_id),
-  FOREIGN KEY (prevolution_generation_id, prevolution_id) REFERENCES pokemon(generation_id, pokemon_id),
+  FOREIGN KEY (prevolution_generation_id, prevolution_id) REFERENCES pokemon(generation_id, pokemon_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY (evolution_generation_id, evolution_id) REFERENCES pokemon(generation_id, pokemon_id)
@@ -38,15 +38,15 @@ CREATE TABLE pokemon_evolution (
 );
 
 -- does not include cosmetic forms
-CREATE TABLE pokemon_form (
-  base_form_generation_id TINYINT NOT NULL UNSIGNED,
-  base_form_id SMALLINT NOT NULL UNSIGNED,
-  form_generation_id TINYINT NOT NULL UNSIGNED,
-  form_id SMALLINT NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS pokemon_form (
+  base_form_generation_id TINYINT UNSIGNED NOT NULL,
+  base_form_id SMALLINT UNSIGNED NOT NULL,
+  form_generation_id TINYINT UNSIGNED NOT NULL,
+  form_id SMALLINT UNSIGNED NOT NULL,
   form_class ENUM('mega', 'alola', 'galar', 'gmax', 'other'),
 
   PRIMARY KEY (base_form_generation_id, base_form_id, form_generation_id, form_id),
-  FOREIGN KEY (base_form_generation_id, base_form_id) REFERENCES pokemon(generation_id, pokemon_id),
+  FOREIGN KEY (base_form_generation_id, base_form_id) REFERENCES pokemon(generation_id, pokemon_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY (form_generation_id, form_id) REFERENCES pokemon(generation_id, pokemon_id)
@@ -55,11 +55,11 @@ CREATE TABLE pokemon_form (
 );
 
 -- we don't store the base stats, typing, etc. of cosmetic forms since they only differ in appearance; to compute those properties for a given cosmetic form, just use the corresponding property of the base form
-CREATE TABLE cosmetic_form (
-  base_form_generation_id TINYINT NOT NULL UNSIGNED,
-  base_form_id SMALLINT NOT NULL UNSIGNED,
-  cosmetic_form_generation_id TINYINT NOT NULL UNSIGNED,
-  cosmetic_form_id SMALLINT NOT NULL UNSIGNED
+CREATE TABLE IF NOT EXISTS cosmetic_form (
+  base_form_generation_id TINYINT UNSIGNED NOT NULL,
+  base_form_id SMALLINT UNSIGNED NOT NULL,
+  cosmetic_form_generation_id TINYINT UNSIGNED NOT NULL,
+  cosmetic_form_id SMALLINT UNSIGNED NOT NULL
 
   PRIMARY KEY (base_form_generation_id, base_form_id, cosmetic_form_generation_id, cosmetic_form_id),
   FOREIGN KEY (base_form_generation_id, base_form_id) REFERENCES pokemon(generation_id, pokemon_id)
@@ -68,15 +68,15 @@ CREATE TABLE cosmetic_form (
 );
 
 -- for Natural Gift
-CREATE TABLE item_ptype (
-  item_generation_id TINYINT NOT NULL UNSIGNED,
-  item_id SMALLINT NOT NULL UNSIGNED,
-  ptype_generation_id TINYINT NOT NULL UNSIGNED,
-  ptype_id TINYINT NOT NULL UNSIGNED,
-  item_power TINYINT NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS item_ptype (
+  item_generation_id TINYINT UNSIGNED NOT NULL,
+  item_id SMALLINT UNSIGNED NOT NULL,
+  ptype_generation_id TINYINT UNSIGNED NOT NULL,
+  ptype_id TINYINT UNSIGNED NOT NULL,
+  item_power TINYINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (item_generation_id, item_id, ptype_generation_id, ptype_id),
-  FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id),
+  FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY (ptype_generation_id, ptype_id) REFERENCES ptype(generation_id, ptype_id)
@@ -91,14 +91,14 @@ m-to-n
 /*
 pokemon
 */
-CREATE TABLE pokemon_ptype (
-  pokemon_generation_id TINYINT NOT NULL UNSIGNED,
-  pokemon_id SMALLINT NOT NULL UNSIGNED,
-  ptype_generation_id TINYINT NOT NULL UNSIGNED,
-  ptype_id TINYINT NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS pokemon_ptype (
+  pokemon_generation_id TINYINT UNSIGNED NOT NULL,
+  pokemon_id SMALLINT UNSIGNED NOT NULL,
+  ptype_generation_id TINYINT UNSIGNED NOT NULL,
+  ptype_id TINYINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (pokemon_generation_id, pokemon_id, ptype_generation_id, ptype_id),
-  FOREIGN KEY (pokemon_generation_id, pokemon_id) REFERENCES pokemon(generation_id, pokemon_id),
+  FOREIGN KEY (pokemon_generation_id, pokemon_id) REFERENCES pokemon(generation_id, pokemon_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY (ptype_generation_id, ptype_id) REFERENCES ptype(generation_id, pokemon_id)
@@ -108,33 +108,33 @@ CREATE TABLE pokemon_ptype (
   INDEX opposite_pokemon_ptype_generation_id (ptype_generation_idptype, _id, pokemon_generation_id, pokemon_id)
 );
 
-CREATE TABLE pokemon_pmove (
-  pokemon_generation_id TINYINT NOT NULL UNSIGNED,
-  pokemon_id SMALLINT NOT NULL UNSIGNED,
-  pmove_generation_id TINYINT NOT NULL UNSIGNED,
-  pmove_id SMALLINT NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS pokemon_pmove (
+  pokemon_generation_id TINYINT UNSIGNED NOT NULL,
+  pokemon_id SMALLINT UNSIGNED NOT NULL,
+  pmove_generation_id TINYINT UNSIGNED NOT NULL,
+  pmove_id SMALLINT UNSIGNED NOT NULL,
   learn_method VARCHAR(4),
 
   PRIMARY KEY (pokemon_generation_id, pokemon_id, pmove_generation_id, pmove_id),
-  FOREIGN KEY (pokemon_generation_id, pokemon_id) REFERENCES pokemon(generation_id, pokemon_id),
+  FOREIGN KEY (pokemon_generation_id, pokemon_id) REFERENCES pokemon(generation_id, pokemon_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id)
     ON DELETE CASCADE
-    ON UPDATE CASCADE
+    ON UPDATE CASCADE,
   
-  INDEX opposite_pokemon_pmove (pmove_generation_id, pmove_id, pokemon_generation_id, pokemon_id)
+ INDEX opposite_pokemon_pmove (pmove_generation_id, pmove_id, pokemon_generation_id, pokemon_id)
 );
 
-CREATE TABLE pokemon_ability (
-  pokemon_generation_id TINYINT NOT NULL UNSIGNED,
-  pokemon_id SMALLINT NOT NULL UNSIGNED,
-  ability_generation_id TINYINT NOT NULL UNSIGNED,
-  ability_id SMALLINT NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS pokemon_ability (
+  pokemon_generation_id TINYINT UNSIGNED NOT NULL,
+  pokemon_id SMALLINT UNSIGNED NOT NULL,
+  ability_generation_id TINYINT UNSIGNED NOT NULL,
+  ability_id SMALLINT UNSIGNED NOT NULL,
   ability_slot ENUM('1', '2', 'Hidden'),
 
   PRIMARY KEY (pokemon_generation_id, pokemon_id, ability_generation_id, ability_id), 
-  FOREIGN KEY (pokemon_generation_id, pokemon_id) REFERENCES pokemon(generation_id, pokemon_id),
+  FOREIGN KEY (pokemon_generation_id, pokemon_id) REFERENCES pokemon(generation_id, pokemon_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES (generation_id, pmove_id)
@@ -147,15 +147,15 @@ CREATE TABLE pokemon_ability (
 /*
 ptype
 */
-CREATE TABLE ptype_matchup (
-  attacking_ptype_generation_id TINYINT NOT NULL UNSIGNED,
-  attacking_ptype_id TINYINT NOT NULL UNSIGNED,
-  defending_ptype_generation_id TINYINT NOT NULL UNSIGNED,
-  defending_ptype_id TINYINT NOT NULL UNSIGNED,
-  multiplier DECIMAL(3,2) NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS ptype_matchup (
+  attacking_ptype_generation_id TINYINT UNSIGNED NOT NULL,
+  attacking_ptype_id TINYINT UNSIGNED NOT NULL,
+  defending_ptype_generation_id TINYINT UNSIGNED NOT NULL,
+  defending_ptype_id TINYINT UNSIGNED NOT NULL,
+  multiplier DECIMAL(3,2) UNSIGNED NOT NULL,
 
   PRIMARY KEY (attacking_ptype_generation_id, attacking_ptype_id, defending_ptype_generation_id, defending_ptype_id),
-  FOREIGN KEY (attacking_ptype_generation_id, attacking_ptype_id) REFERENCES ptype(generation_id, ptype_id),
+  FOREIGN KEY (attacking_ptype_generation_id, attacking_ptype_id) REFERENCES ptype(generation_id, ptype_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY (defending_ptype_generation_id, defending_ptype_id) REFERENCES ptype(generation_id, ptype_id)
@@ -168,66 +168,66 @@ CREATE TABLE ptype_matchup (
 /*
 pmove
 */
-CREATE TABLE pmove_modifies_stat (
-  pmove_generation_id TINYINT NOT NULL UNSIGNED,
-  pmove_id SMALLINT NOT NULL UNSIGNED,
-  stat_id TINYINT NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS pmove_modifies_stat (
+  pmove_generation_id TINYINT UNSIGNED NOT NULL,
+  pmove_id SMALLINT UNSIGNED NOT NULL,
+  stat_id TINYINT UNSIGNED NOT NULL,
   stage TINYINT NOT NULL, /* 0 for pmoves which modify stat but not the stage */
-  multiplier DECIMAL(3,2) NOT NULL UNSIGNED, /* 0.0 for pmoves which modify stat but not via a multiplier */
-  chance DECIMAL(5,2) NOT NULL UNSIGNED,
+  multiplier DECIMAL(3,2) UNSIGNED NOT NULL, /* 0.0 for pmoves which modify stat but not via a multiplier */
+  chance DECIMAL(5,2) UNSIGNED NOT NULL,
   recipient ENUM('target', 'user'),
 
   PRIMARY KEY (pmove_generation_id, pmove_id, stat_id),
-  FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id),
+  FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-  FOREIGN KEY (stat_id) REFERENCES (stat_id)
+  FOREIGN KEY (stat_id) REFERENCES stat(stat_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
 
   INDEX opposite_pmove_stat (stat_id, pmove_generation_id, pmove_id)
 );
 
-CREATE TABLE pmove_effect (
-  pmove_generation_id TINYINT NOT NULL UNSIGNED,
-  pmove_id SMALLINT NOT NULL UNSIGNED,
-  effect_id TINYINT NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS pmove_effect (
+  pmove_generation_id TINYINT UNSIGNED NOT NULL,
+  pmove_id SMALLINT UNSIGNED NOT NULL,
+  effect_id TINYINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (pmove_generation_id, pmove_id, effect_id),
-  FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id),
+  FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY (effect_id) REFERENCES effect(effect_id)
     ON DELETE CASCADE
-    ON UPDATE CASCADE
+    ON UPDATE CASCADE,
 
   INDEX opposite_pmove_effect (effect_id, pmove_generation_id, pmove_id)
 );
 
-CREATE TABLE pmove_causes_pstatus (
-  pmove_generation_id TINYINT NOT NULL UNSIGNED,
-  pmove_id SMALLINT NOT NULL UNSIGNED,
-  pstatus_id TINYINT NOT NULL UNSIGNED,
-  chance DECIMAL(5,2) NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS pmove_causes_pstatus (
+  pmove_generation_id TINYINT UNSIGNED NOT NULL,
+  pmove_id SMALLINT UNSIGNED NOT NULL,
+  pstatus_id TINYINT UNSIGNED NOT NULL,
+  chance DECIMAL(5,2) UNSIGNED NOT NULL,
 
   PRIMARY KEY (pmove_generation_id, pmove_id, pstatus_id),
-  FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id),
+  FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY (pstatus_id) REFERENCES pstatus(pstatus_id)
     ON DELETE CASCADE
-    ON UPDATE CASCADE
+    ON UPDATE CASCADE,
 
   INDEX opposite_pmove_causes_pstatus (pstatus_id, pmove_generation_id, pmove_id)
 );
 
-CREATE TABLE pmove_resists_pstatus (
-  pmove_generation_id TINYINT NOT NULL UNSIGNED,
-  pmove_id SMALLINT NOT NULL UNSIGNED,
-  pstatus_id TINYINT NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS pmove_resists_pstatus (
+  pmove_generation_id TINYINT UNSIGNED NOT NULL,
+  pmove_id SMALLINT UNSIGNED NOT NULL,
+  pstatus_id TINYINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (pmove_generation_id, pmove_id, pstatus_id),
-  FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id),
+  FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY (pstatus_id) REFERENCES pstatus(pstatus_id)
@@ -237,14 +237,14 @@ CREATE TABLE pmove_resists_pstatus (
   INDEX opposite_pmove_resists_pstatus (pstatus_id, pmove_generation_id, pmove_id)
 );
 
-CREATE TABLE pmove_requires_pokemon (
-  pmove_generation_id TINYINT NOT NULL UNSIGNED,
-  pmove_id SMALLINT NOT NULL UNSIGNED,
-  pokemon_generation_id TINYINT NOT NULL UNSIGNED,
-  pokemon_id SMALLINT NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS pmove_requires_pokemon (
+  pmove_generation_id TINYINT UNSIGNED NOT NULL,
+  pmove_id SMALLINT UNSIGNED NOT NULL,
+  pokemon_generation_id TINYINT UNSIGNED NOT NULL,
+  pokemon_id SMALLINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (pmove_generation_id, pmove_id, pokemon_generation_id, pokemon_id), 
-  FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id),
+  FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY (pokemon_generation_id, pokemon_id) REFERENCES pokemon(generation_id, pokemon_id)
@@ -254,14 +254,14 @@ CREATE TABLE pmove_requires_pokemon (
   INDEX opposite_pmove_pokemon (pokemon_generation_id, pokemon_id, pmove_generation_id, pmove_id)
 );
 
-CREATE TABLE pmove_requires_pokemon (
-  pmove_generation_id TINYINT NOT NULL UNSIGNED,
-  pmove_id SMALLINT NOT NULL UNSIGNED,
-  item_generation_id TINYINT NOT NULL UNSIGNED,
-  item_id SMALLINT NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS pmove_requires_pokemon (
+  pmove_generation_id TINYINT UNSIGNED NOT NULL,
+  pmove_id SMALLINT UNSIGNED NOT NULL,
+  item_generation_id TINYINT UNSIGNED NOT NULL,
+  item_id SMALLINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (pmove_generation_id, pmove_id, item_generation_id, item_id), 
-  FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id),
+  FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id)
@@ -272,13 +272,13 @@ CREATE TABLE pmove_requires_pokemon (
 );
 
 -- note that Aura Sphere is both a pulse and a ball pmove, so we need an m-to-n relationship
-CREATE TABLE pmove_usage_method (
-  pmove_generation_id TINYINT NOT NULL UNSIGNED,
-  pmove_id SMALLINT NOT NULL UNSIGNED,
-  usage_method_id TINYINT NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS pmove_usage_method (
+  pmove_generation_id TINYINT UNSIGNED NOT NULL,
+  pmove_id SMALLINT UNSIGNED NOT NULL,
+  usage_method_id TINYINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (pmove_generation_id, pmove_id, usage_method_id),
-  FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id),
+  FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY (usage_method_id) REFERENCES usage_method(usage_method_id)
@@ -291,15 +291,15 @@ CREATE TABLE pmove_usage_method (
 /*
 ability
 */
-CREATE TABLE ability_boosts_ptype (
-  ability_generation_id TINYINT NOT NULL UNSIGNED,
-  ability_id SMALLINT NOT NULL UNSIGNED,
-  ptype_generation_id TINYINT NOT NULL UNSIGNED,
-  ptype_id TINYINT NOT NULL UNSIGNED,
-  multiplier DECIMAL(4,3) NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS ability_boosts_ptype (
+  ability_generation_id TINYINT UNSIGNED NOT NULL,
+  ability_id SMALLINT UNSIGNED NOT NULL,
+  ptype_generation_id TINYINT UNSIGNED NOT NULL,
+  ptype_id TINYINT UNSIGNED NOT NULL,
+  multiplier DECIMAL(4,3) UNSIGNED NOT NULL,
 
   PRIMARY KEY (ability_generation_id, ability_id, ptype_generation_id, ptype_id),
-  FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id),
+  FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY (ptype_generation_id, ptype_id) REFERENCES ptype(generation_id, ptype_id)
@@ -309,15 +309,15 @@ CREATE TABLE ability_boosts_ptype (
   INDEX opposite_ability_boosts_ptype (ptype_generation_id, ptype_id, ability_generation_id, ability_id)
 );
 
-CREATE TABLE ability_resists_ptype (
-  ability_generation_id TINYINT NOT NULL UNSIGNED,
-  ability_id SMALLINT NOT NULL UNSIGNED,
-  ptype_generation_id TINYINT NOT NULL UNSIGNED,
-  ptype_id TINYINT NOT NULL UNSIGNED,
-  multiplier DECIMAL(4,3) NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS ability_resists_ptype (
+  ability_generation_id TINYINT UNSIGNED NOT NULL,
+  ability_id SMALLINT UNSIGNED NOT NULL,
+  ptype_generation_id TINYINT UNSIGNED NOT NULL,
+  ptype_id TINYINT UNSIGNED NOT NULL,
+  multiplier DECIMAL(4,3) UNSIGNED NOT NULL,
 
   PRIMARY KEY (ability_generation_id, ability_id, ptype_generation_id, ptype_id),
-  FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id),
+  FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY (ptype_generation_id, ptype_id) REFERENCES ptype(generation_id, ptype_id)
@@ -327,14 +327,14 @@ CREATE TABLE ability_resists_ptype (
   INDEX opposite_ability_resists_ptype (ptype_generation_id, ptype_id, ability_generation_id, ability_id)
 );
 
-CREATE TABLE ability_boosts_usage_method (
-  ability_generation_id TINYINT NOT NULL UNSIGNED,
-  ability_id SMALLINT NOT NULL UNSIGNED,
-  usage_method_id TINYINT NOT NULL UNSIGNED,
-  multiplier DECIMAL(4,3) NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS ability_boosts_usage_method (
+  ability_generation_id TINYINT UNSIGNED NOT NULL,
+  ability_id SMALLINT UNSIGNED NOT NULL,
+  usage_method_id TINYINT UNSIGNED NOT NULL,
+  multiplier DECIMAL(4,3) UNSIGNED NOT NULL,
 
   PRIMARY KEY (ability_generation_id, ability_id, usage_method_id),
-  FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id),
+  FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY (usage_method_id) REFERENCES usage_method(usage_method_id)
@@ -344,14 +344,14 @@ CREATE TABLE ability_boosts_usage_method (
   INDEX opposite_ability_boosts_usage_method (usage_method_id, ability_generation_id, ability_id)
 );
 
-CREATE TABLE ability_resists_usage_method (
-  ability_generation_id TINYINT NOT NULL UNSIGNED,
-  ability_id SMALLINT NOT NULL UNSIGNED,
-  usage_method_id TINYINT NOT NULL UNSIGNED,
-  multiplier DECIMAL(4,3) NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS ability_resists_usage_method (
+  ability_generation_id TINYINT UNSIGNED NOT NULL,
+  ability_id SMALLINT UNSIGNED NOT NULL,
+  usage_method_id TINYINT UNSIGNED NOT NULL,
+  multiplier DECIMAL(4,3) UNSIGNED NOT NULL,
 
   PRIMARY KEY (ability_generation_id, ability_id, usage_method_id),
-  FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id),
+  FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY (usage_method_id) REFERENCES usage_method(usage_method_id)
@@ -361,33 +361,33 @@ CREATE TABLE ability_resists_usage_method (
   INDEX opposite_ability_resists_usage_method (usage_method_id, ability_generation_id, ability_id)
 );
 
-CREATE TABLE ability_modifies_stat (
-  ability_generation_id TINYINT NOT NULL UNSIGNED,
-  ability_id SMALLINT NOT NULL UNSIGNED,
-  stat_id TINYINT NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS ability_modifies_stat (
+  ability_generation_id TINYINT UNSIGNED NOT NULL,
+  ability_id SMALLINT UNSIGNED NOT NULL,
+  stat_id TINYINT UNSIGNED NOT NULL,
   stage TINYINT NOT NULL, /* 0 for abilities which modify stat but not the stage */
-  multiplier DECIMAL(3,2) NOT NULL UNSIGNED, /* 0.0 for abilities which modify stat but not via a multiplier */
-  chance DECIMAL(5,2) NOT NULL UNSIGNED,
+  multiplier DECIMAL(3,2) UNSIGNED NOT NULL, /* 0.0 for abilities which modify stat but not via a multiplier */
+  chance DECIMAL(5,2) UNSIGNED NOT NULL,
   recipient ENUM('target', 'user'),
 
   PRIMARY KEY (ability_generation_id, ability_id, stat_id),
-  FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id),
+  FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-  FOREIGN KEY (stat_id) REFERENCES (stat_id)
+  FOREIGN KEY (stat_id) REFERENCES stat(stat_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
 
   INDEX opposite_ability_stat (stat_id, ability_generation_id, ability_id)
 );
 
-CREATE TABLE ability_effect (
-  ability_generation_id TINYINT NOT NULL UNSIGNED,
-  ability_id SMALLINT NOT NULL UNSIGNED,
-  effect_id TINYINT NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS ability_effect (
+  ability_generation_id TINYINT UNSIGNED NOT NULL,
+  ability_id SMALLINT UNSIGNED NOT NULL,
+  effect_id TINYINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (ability_generation_id, ability_id, effect_id),
-  FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id),
+  FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY (effect_id) REFERENCES effect(effect_id)
@@ -397,14 +397,14 @@ CREATE TABLE ability_effect (
   INDEX opposite_ability_effect (effect_id, ability_generation_id, ability_id)
 );
 
-CREATE TABLE ability_causes_pstatus (
-  ability_generation_id TINYINT NOT NULL UNSIGNED,
-  ability_id SMALLINT NOT NULL UNSIGNED,
-  pstatus_id TINYINT NOT NULL UNSIGNED,
-  chance DECIMAL(5,2) NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS ability_causes_pstatus (
+  ability_generation_id TINYINT UNSIGNED NOT NULL,
+  ability_id SMALLINT UNSIGNED NOT NULL,
+  pstatus_id TINYINT UNSIGNED NOT NULL,
+  chance DECIMAL(5,2) UNSIGNED NOT NULL,
 
   PRIMARY KEY (ability_generation_id, ability_id, pstatus_id),
-  FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id),
+  FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY (pstatus_id) REFERENCES pstatus(pstatus_id)
@@ -414,13 +414,13 @@ CREATE TABLE ability_causes_pstatus (
   INDEX opposite_ability_causes_pstatus (pstatus_id, ability_generation_id, ability_id)
 );
 
-CREATE TABLE ability_resists_pstatus (
-  ability_generation_id TINYINT NOT NULL UNSIGNED,
-  ability_id SMALLINT NOT NULL UNSIGNED,
-  pstatus_id TINYINT NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS ability_resists_pstatus (
+  ability_generation_id TINYINT UNSIGNED NOT NULL,
+  ability_id SMALLINT UNSIGNED NOT NULL,
+  pstatus_id TINYINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (ability_generation_id, ability_id, pstatus_id),
-  FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id),
+  FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY (pstatus_id) REFERENCES pstatus(pstatus_id)
@@ -433,15 +433,15 @@ CREATE TABLE ability_resists_pstatus (
 /*
 item
 */
-CREATE TABLE item_boosts_ptype (
-  item_generation_id TINYINT NOT NULL UNSIGNED,
-  item_id SMALLINT NOT NULL UNSIGNED,
-  ptype_generation_id TINYINT NOT NULL UNSIGNED,
-  ptype_id TINYINT NOT NULL UNSIGNED,
-  multiplier DECIMAL(4,3) NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS item_boosts_ptype (
+  item_generation_id TINYINT UNSIGNED NOT NULL,
+  item_id SMALLINT UNSIGNED NOT NULL,
+  ptype_generation_id TINYINT UNSIGNED NOT NULL,
+  ptype_id TINYINT UNSIGNED NOT NULL,
+  multiplier DECIMAL(4,3) UNSIGNED NOT NULL,
 
   PRIMARY KEY (item_generation_id, item_id, ptype_generation_id, ptype_id),
-  FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id),
+  FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY (ptype_generation_id, ptype_id) REFERENCES ptype(generation_id, ptype_id)
@@ -451,15 +451,15 @@ CREATE TABLE item_boosts_ptype (
   INDEX opposite_item_boosts_ptype (ptype_generation_id, ptype_id, item_generation_id, item_id)
 );
 
-CREATE TABLE item_resists_ptype (
-  item_generation_id TINYINT NOT NULL UNSIGNED,
-  item_id SMALLINT NOT NULL UNSIGNED,
-  ptype_generation_id TINYINT NOT NULL UNSIGNED,
-  ptype_id TINYINT NOT NULL UNSIGNED,
-  multiplier DECIMAL(4,3) NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS item_resists_ptype (
+  item_generation_id TINYINT UNSIGNED NOT NULL,
+  item_id SMALLINT UNSIGNED NOT NULL,
+  ptype_generation_id TINYINT UNSIGNED NOT NULL,
+  ptype_id TINYINT UNSIGNED NOT NULL,
+  multiplier DECIMAL(4,3) UNSIGNED NOT NULL,
 
   PRIMARY KEY (item_generation_id, item_id, ptype_generation_id, ptype_id),
-  FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id),
+  FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY (ptype_generation_id, ptype_id) REFERENCES ptype(generation_id, ptype_id)
@@ -469,14 +469,14 @@ CREATE TABLE item_resists_ptype (
   INDEX opposite_item_resists_ptype (ptype_generation_id, ptype_id, item_generation_id, item_id)
 );
 
-CREATE TABLE item_boosts_usage_method (
-  item_generation_id TINYINT NOT NULL UNSIGNED,
-  item_id SMALLINT NOT NULL UNSIGNED,
-  usage_method_id TINYINT NOT NULL UNSIGNED,
-  multiplier DECIMAL(4,3) NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS item_boosts_usage_method (
+  item_generation_id TINYINT UNSIGNED NOT NULL,
+  item_id SMALLINT UNSIGNED NOT NULL,
+  usage_method_id TINYINT UNSIGNED NOT NULL,
+  multiplier DECIMAL(4,3) UNSIGNED NOT NULL,
 
   PRIMARY KEY (item_generation_id, item_id, usage_method_id),
-  FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id),
+  FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY (usage_method_id) REFERENCES usage_method(usage_method_id)
@@ -486,14 +486,14 @@ CREATE TABLE item_boosts_usage_method (
   INDEX opposite_item_boosts_usage_method (usage_method_id, item_generation_id, item_id)
 );
 
-CREATE TABLE item_resists_usage_method (
-  item_generation_id TINYINT NOT NULL UNSIGNED,
-  item_id SMALLINT NOT NULL UNSIGNED,
-  usage_method_id TINYINT NOT NULL UNSIGNED,
-  multiplier DECIMAL(4,3) NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS item_resists_usage_method (
+  item_generation_id TINYINT UNSIGNED NOT NULL,
+  item_id SMALLINT UNSIGNED NOT NULL,
+  usage_method_id TINYINT UNSIGNED NOT NULL,
+  multiplier DECIMAL(4,3) UNSIGNED NOT NULL,
 
   PRIMARY KEY (item_generation_id, item_id, usage_method_id),
-  FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id),
+  FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY (usage_method_id) REFERENCES usage_method(usage_method_id)
@@ -503,33 +503,33 @@ CREATE TABLE item_resists_usage_method (
   INDEX opposite_item_resists_usage_method (usage_method_id, item_generation_id, item_id)
 );
 
-CREATE TABLE item_modifies_stat (
-  item_generation_id TINYINT NOT NULL UNSIGNED,
-  item_id SMALLINT NOT NULL UNSIGNED,
-  stat_id TINYINT NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS item_modifies_stat (
+  item_generation_id TINYINT UNSIGNED NOT NULL,
+  item_id SMALLINT UNSIGNED NOT NULL,
+  stat_id TINYINT UNSIGNED NOT NULL,
   stage TINYINT NOT NULL, /* 0 for abilities which modify stat but not the stage */
-  multiplier DECIMAL(3,2) NOT NULL UNSIGNED, /* 0.0 for abilities which modify stat but not via a multiplier */
-  chance DECIMAL(5,2) NOT NULL UNSIGNED,
+  multiplier DECIMAL(3,2) UNSIGNED NOT NULL, /* 0.0 for abilities which modify stat but not via a multiplier */
+  chance DECIMAL(5,2) UNSIGNED NOT NULL,
   recipient ENUM('target', 'user'),
 
   PRIMARY KEY (item_generation_id, item_id, stat_id),
-  FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id),
+  FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-  FOREIGN KEY (stat_id) REFERENCES (stat_id)
+  FOREIGN KEY (stat_id) REFERENCES stat(stat_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
 
   INDEX opposite_item_stat (stat_id, item_generation_id, item_id)
 );
 
-CREATE TABLE item_effect (
-  item_generation_id TINYINT NOT NULL UNSIGNED,
-  item_id SMALLINT NOT NULL UNSIGNED,
-  effect_id TINYINT NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS item_effect (
+  item_generation_id TINYINT UNSIGNED NOT NULL,
+  item_id SMALLINT UNSIGNED NOT NULL,
+  effect_id TINYINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (item_generation_id, item_id, effect_id),
-  FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id),
+  FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY (effect_id) REFERENCES effect(effect_id)
@@ -539,13 +539,13 @@ CREATE TABLE item_effect (
   INDEX opposite_item_effect (effect_id, item_generation_id, item_id)
 );
 
-CREATE TABLE item_causes_pstatus (
-  item_generation_id TINYINT NOT NULL UNSIGNED,
-  item_id SMALLINT NOT NULL UNSIGNED,
-  pstatus_id TINYINT NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS item_causes_pstatus (
+  item_generation_id TINYINT UNSIGNED NOT NULL,
+  item_id SMALLINT UNSIGNED NOT NULL,
+  pstatus_id TINYINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (item_generation_id, item_id, pstatus_id),
-  FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id),
+  FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY (pstatus_id) REFERENCES pstatus(pstatus_id)
@@ -555,13 +555,13 @@ CREATE TABLE item_causes_pstatus (
   INDEX opposite_item_causes_pstatus (pstatus_id, item_generation_id, item_id)
 );
 
-CREATE TABLE item_resists_pstatus (
-  item_generation_id TINYINT NOT NULL UNSIGNED,
-  item_id SMALLINT NOT NULL UNSIGNED,
-  pstatus_id TINYINT NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS item_resists_pstatus (
+  item_generation_id TINYINT UNSIGNED NOT NULL,
+  item_id SMALLINT UNSIGNED NOT NULL,
+  pstatus_id TINYINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (item_generation_id, item_id, pstatus_id),
-  FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id),
+  FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY (pstatus_id) REFERENCES pstatus(pstatus_id)
@@ -574,13 +574,13 @@ CREATE TABLE item_resists_pstatus (
 /*
 version_group
 */
-CREATE TABLE version_group_pdescription (
-  version_group_generation_id TINYINT NOT NULL UNSIGNED,
-  version_group_id TINYINT NOT NULL UNSIGNED,
-  pdescription_id MEDIUMINT NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS version_group_pdescription (
+  version_group_generation_id TINYINT UNSIGNED NOT NULL,
+  version_group_id TINYINT UNSIGNED NOT NULL,
+  pdescription_id MEDIUMINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (version_group_generation_id, version_group_id, pdescription_id),
-  FOREIGN KEY (version_group_generation_id, version_group_id) REFERENCES version_group(generation_id, version_group_id),
+  FOREIGN KEY (version_group_generation_id, version_group_id) REFERENCES version_group(generation_id, version_group_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY (pdescription_id) REFERENCES pdescription(pdescription_id)
@@ -590,13 +590,13 @@ CREATE TABLE version_group_pdescription (
   INDEX opposite_version_group_pdescription (pdescription_id, version_group_generation_id, version_group_id),
 );
 
-CREATE TABLE version_group_sprite (
-  version_group_generation_id TINYINT NOT NULL UNSIGNED,
-  version_group_id TINYINT NOT NULL UNSIGNED,
-  sprite_id MEDIUMINT NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS version_group_sprite (
+  version_group_generation_id TINYINT UNSIGNED NOT NULL,
+  version_group_id TINYINT UNSIGNED NOT NULL,
+  sprite_id MEDIUMINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (version_group_generation_id, version_group_id, sprite_id),
-  FOREIGN KEY (version_group_generation_id, version_group_id) REFERENCES version_group(generation_id, version_group_id),
+  FOREIGN KEY (version_group_generation_id, version_group_id) REFERENCES version_group(generation_id, version_group_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY (sprite_id) REFERENCES sprite(sprite_id)
@@ -613,18 +613,18 @@ Threefold relationships
 /*
 pdescription
 */
-CREATE TABLE pdescription_ability (
-  ability_generation_id TINYINT NOT NULL UNSIGNED,
-  ability_id SMALLINT NOT NULL UNSIGNED,
-  version_group_generation_id TINYINT NOT NULL UNSIGNED,
-  version_group_id TINYINT NOT NULL UNSIGNED,
-  pdescription_id MEDIUMINT NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS pdescription_ability (
+  ability_generation_id TINYINT UNSIGNED NOT NULL,
+  ability_id SMALLINT UNSIGNED NOT NULL,
+  version_group_generation_id TINYINT UNSIGNED NOT NULL,
+  version_group_id TINYINT UNSIGNED NOT NULL,
+  pdescription_id MEDIUMINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (ability_generation_id, ability_id, version_group_generation_id, version_group_id, pdescription_id),
-  FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id),
+  FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-  FOREIGN KEY (version_group_generation_id, version_group_id) REFERENCES version_group(generation_id, version_group_id),
+  FOREIGN KEY (version_group_generation_id, version_group_id) REFERENCES version_group(generation_id, version_group_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY pdescription_id REFERENCES pdescription(pdescription_id)
@@ -632,18 +632,18 @@ CREATE TABLE pdescription_ability (
     ON UPDATE CASCADE
 );
 
-CREATE TABLE pdescription_pmove (
-  pmove_generation_id TINYINT NOT NULL UNSIGNED,
-  pmove_id SMALLINT NOT NULL UNSIGNED,
-  version_group_generation_id TINYINT NOT NULL UNSIGNED,
-  version_group_id TINYINT NOT NULL UNSIGNED,
-  pdescription_id MEDIUMINT NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS pdescription_pmove (
+  pmove_generation_id TINYINT UNSIGNED NOT NULL,
+  pmove_id SMALLINT UNSIGNED NOT NULL,
+  version_group_generation_id TINYINT UNSIGNED NOT NULL,
+  version_group_id TINYINT UNSIGNED NOT NULL,
+  pdescription_id MEDIUMINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (pmove_generation_id, pmove_id, version_group_generation_id, version_group_id, pdescription_id),
-  FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id),
+  FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-  FOREIGN KEY (version_group_generation_id, version_group_id) REFERENCES version_group(generation_id, version_group_id),
+  FOREIGN KEY (version_group_generation_id, version_group_id) REFERENCES version_group(generation_id, version_group_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY pdescription_id REFERENCES pdescription(pdescription_id)
@@ -651,18 +651,18 @@ CREATE TABLE pdescription_pmove (
     ON UPDATE CASCADE
 );
 
-CREATE TABLE pdescription_item (
-  item_generation_id TINYINT NOT NULL UNSIGNED,
-  item_id SMALLINT NOT NULL UNSIGNED,
-  version_group_generation_id TINYINT NOT NULL UNSIGNED,
-  version_group_id TINYINT NOT NULL UNSIGNED,
-  pdescription_id MEDIUMINT NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS pdescription_item (
+  item_generation_id TINYINT UNSIGNED NOT NULL,
+  item_id SMALLINT UNSIGNED NOT NULL,
+  version_group_generation_id TINYINT UNSIGNED NOT NULL,
+  version_group_id TINYINT UNSIGNED NOT NULL,
+  pdescription_id MEDIUMINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (item_generation_id, item_id, version_group_generation_id, version_group_id, pdescription_id),
-  FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id),
+  FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-  FOREIGN KEY (version_group_generation_id, version_group_id) REFERENCES version_group(generation_id, version_group_id),
+  FOREIGN KEY (version_group_generation_id, version_group_id) REFERENCES version_group(generation_id, version_group_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY pdescription_id REFERENCES pdescription(pdescription_id)
@@ -673,18 +673,18 @@ CREATE TABLE pdescription_item (
 /*
 sprite
 */
-CREATE TABLE sprite_pokemon (
-  pokemon_generation_id TINYINT NOT NULL UNSIGNED,
-  pokemon_id SMALLINT NOT NULL UNSIGNED,
-  version_group_generation_id TINYINT NOT NULL UNSIGNED,
-  version_group_id TINYINT NOT NULL UNSIGNED,
-  sprite_id MEDIUMINT NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS sprite_pokemon (
+  pokemon_generation_id TINYINT UNSIGNED NOT NULL,
+  pokemon_id SMALLINT UNSIGNED NOT NULL,
+  version_group_generation_id TINYINT UNSIGNED NOT NULL,
+  version_group_id TINYINT UNSIGNED NOT NULL,
+  sprite_id MEDIUMINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (pokemon_generation_id, pokemon_id, version_group_generation_id, version_group_id, sprite_id),
-  FOREIGN KEY (pokemon_generation_id, pokemon_id) REFERENCES pokemon(generation_id, pokemon_id),
+  FOREIGN KEY (pokemon_generation_id, pokemon_id) REFERENCES pokemon(generation_id, pokemon_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-  FOREIGN KEY (version_group_generation_id, version_group_id) REFERENCES version_group(generation_id, version_group_id),
+  FOREIGN KEY (version_group_generation_id, version_group_id) REFERENCES version_group(generation_id, version_group_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY sprite_id REFERENCES sprite(sprite_id)
@@ -692,18 +692,18 @@ CREATE TABLE sprite_pokemon (
     ON UPDATE CASCADE
 );
 
-CREATE TABLE sprite_item (
-  item_generation_id TINYINT NOT NULL UNSIGNED,
-  item_id SMALLINT NOT NULL UNSIGNED,
-  version_group_generation_id TINYINT NOT NULL UNSIGNED,
-  version_group_id TINYINT NOT NULL UNSIGNED,
-  sprite_id MEDIUMINT NOT NULL UNSIGNED,
+CREATE TABLE IF NOT EXISTS sprite_item (
+  item_generation_id TINYINT UNSIGNED NOT NULL,
+  item_id SMALLINT UNSIGNED NOT NULL,
+  version_group_generation_id TINYINT UNSIGNED NOT NULL,
+  version_group_id TINYINT UNSIGNED NOT NULL,
+  sprite_id MEDIUMINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (item_generation_id, item_id, version_group_generation_id, version_group_id, sprite_id),
-  FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id),
+  FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-  FOREIGN KEY (version_group_generation_id, version_group_id) REFERENCES version_group(generation_id, version_group_id),
+  FOREIGN KEY (version_group_generation_id, version_group_id) REFERENCES version_group(generation_id, version_group_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY sprite_id REFERENCES sprite(sprite_id)
