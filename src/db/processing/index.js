@@ -17,7 +17,7 @@ Note that, due to the complicated structure of the evolution data, the 'evolves_
 4. For each entry in an entity array, split the entry into multiple copies according to generation. For example, "bulbasaur" in pokemonArr will be split into 8 entries, one for each gen, with the data appropriate to that gen.
 */
 
-/* 1 */
+/* 1. Extend patch notes and serialize. */
 const abilities = require('../../raw_data/json/abilities.json');
 const effects = require('../../raw_data/json/effects.json');
 const pTypes = require('../../raw_data/json/elementalTypes.json');
@@ -29,44 +29,49 @@ const usageMethods = require('../../raw_data/json/usageMethods.json');
 
 const { serializeDict } = require('./utils.js');
 
+// these entities depend on generation, and so will be split later
 const abilityArr = serializeDict(abilities);
-const effectArr = serializeDict(effects);
 const itemArr = serializeDict(items);
 const moveArr = serializeDict(moves);
 const pokemonArr = serializeDict(pokemon);
 const pTypeArr = serializeDict(pTypes);
+
+// these entities do not depend on generation, and so will not be split later
+const effectArr = serializeDict(effects);
 const statusArr = serializeDict(statuses);
 const usageMethodArr = serializeDict(usageMethods);
 
-console.log(pokemonArr
-  .filter(pokemon => pokemon.name == 'eevee')
-  .map(pokemon => pokemon.evolves_to));
 
-/* 2 */
+
+/* 2. Merge learnset data. */
 const { mergeLearnsets } = require('./utils.js');
 const gen2Learnsets = require('../../raw_data/gen2learnsets.js');
 const laterLearnsets = require('../../raw_data/learnsets.js');
 const learnsets = mergeLearnsets(gen2Learnsets, laterLearnsets);
 
-/* 3 */
+
+
+/* 3. Add merged learnset data. */
 const { addLearnsetsToPokemonArr } = require('./utils.js');
 addLearnsetsToPokemonArr(learnsets, moves, pokemon, pokemonArr);
 
-/* 4 */
+
+
+/* 4. Split entities by generation. */
 const { splitArr } = require('./utils.js');
-// handled items and abilities
+const splitAbilityArr = splitArr(abilityArr);
+const splitItemArr = splitArr(itemArr);
+const splitMoveArr = splitArr(moveArr);
 const splitPokemonArr = splitArr(pokemonArr);
-// console.log(splitPokemonArr.filter(pokemon => pokemon.name === 'eevee').map(pokemon => {
-//   console.log(pokemon);
-// }));
+const splitPTypeArr = splitArr(pTypeArr);
 
 module.exports = {
-  abilityArr,
+  splitAbilityArr,
+  splitItemArr,
+  splitMoveArr,
+  splitPokemonArr,
+  splitPTypeArr,
   effectArr,
-  itemArr,
-  moveArr,
-  pokemonArr,
-  pTypeArr,
   statusArr,
   usageMethodArr,
 };

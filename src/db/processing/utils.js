@@ -493,10 +493,6 @@ const splitEntity = (entity, initialGen) => {
         // no further processing necessary
         continue;
       }
-      // special case for evolution data
-      else if (key === 'evolves_to' || key === 'evolves_from') {
-        if (entity.name === 'eevee') console.log(entity[key]);
-      }
       
       // indicates patch list
       if (Array.isArray(value) && Array.isArray(value[0])) {
