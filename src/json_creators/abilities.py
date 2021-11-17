@@ -45,11 +45,21 @@ def addEffectData(fpath, abilityDict):
         # print(abilityName, effect)
         continue
       else:
-        if abilityName == 'disguise' and effect == 'costs_hp':
-          abilityGen = 8
-
         effectGen = effectDict[effect]
-        abilityDict[abilityName]["effects"][effect] = [[True, max(effectGen, abilityGen)]]
+
+        if abilityName == 'disguise' and effect == 'costs_hp':
+          abilityGen = 7
+          effectGen = 8
+
+
+        # from abilityGen to effectGen, abilityName didn't have effect; fill in missing gens
+        abilityDict[abilityName]["effects"][effect] = []
+        diff = effectGen - abilityGen
+
+        for i in range(diff):
+          abilityDict[abilityName]["effects"][effect].append([False, abilityGen + i])
+
+        abilityDict[abilityName]["effects"][effect].append([True, max(effectGen, abilityGen)])
 
   # abilities which can cause status--mainly through contact
   with open(fpath + 'abilitiesContactCausesStatus.csv', 'r', encoding='utf-8') as contactStatusCSV:
@@ -83,7 +93,7 @@ def addEffectData(fpath, abilityDict):
     abilityDict["scrappy"]["causes_status"]["identified"] = [[100.0, 4]]
 
     # stench
-    abilityDict["stench"]["causes_status"]["flinch"] = [[10.0, 5]]
+    abilityDict["stench"]["causes_status"]["flinch"] = [[0.0, 3], [0.0, 4], [10.0, 5]]
 
     # sturdy
     abilityDict["sturdy"]["causes_status"]["bracing"] = [[100.0, 3]]
@@ -124,7 +134,8 @@ def addEffectData(fpath, abilityDict):
       for abilityName in abilities:
         # shadow tag only provides immunity to shadow tag from gen 4 on
         if abilityName == 'shadow_tag':
-          abilityGen = 4
+          abilityDict[abilityName]["resists_status"][status] = [[False, 3], [True, 4]]
+          continue
         else:
           abilityGen = abilityDict[abilityName]["gen"]
 
@@ -160,7 +171,8 @@ def addEffectData(fpath, abilityDict):
 
       # these abilities only got their type-resisting effects in Gen 5
       if abilityName in ['lightning_rod', 'storm_drain']:
-        abilityGen = 5
+        abilityDict[abilityName]["resists_type"][resists] = [[1.0, 3], [1.0, 4], [0.0, 5]]
+        continue
 
       if moveClass == 'method':
         if resists not in usageMethodList():

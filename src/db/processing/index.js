@@ -37,6 +37,11 @@ const usageMethodArr = serializeDict(usageMethods);
 const { addLearnsetsToPokemonArr } = require('./utils.js');
 addLearnsetsToPokemonArr(learnsets, moves, pokemon, pokemonArr);
 
+/* 3 */
+const { splitArr } = require('./utils.js');
+// handled items and abilities
+splitArr(moveArr);
+
 module.exports = {
   abilityArr,
   effectArr,
@@ -47,3 +52,4 @@ module.exports = {
   statusArr,
   usageMethodArr,
 };
+

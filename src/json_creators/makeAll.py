@@ -292,7 +292,7 @@ def main():
       # double opening braces
       output = re.sub(r': \[\n\s+\[\n\s+', ': [[', output)
       # put most values on same line--after this step, there's a few edge cases
-      output = re.sub(r',\n\s+([A-Za-z0-9\.])+', r', \1', output)
+      output = re.sub(r',\n\s+([A-Za-z0-9\.]+)+', r', \1', output)
       # for inner lists which are on separate lines, put them together on the same line
       output = re.sub(r'\n\s+\],\n\s+\[\n\s+', '], [', output)
       # handle entries of list where successive entries are quotes, with a number in quotes

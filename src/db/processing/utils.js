@@ -1,7 +1,9 @@
-// EXTENDING PATCH LISTS OF OBJECTS AND SERIALIZING
-// #region
+import { vanilluxe } from "../../raw_data/learnsets";
+
 const NUMBER_OF_GENS = 8;
 
+// EXTENDING PATCH LISTS OF OBJECTS AND SERIALIZING
+// #region
 
 // given a list of patches of the form [[..., gen_a], [..., gen_b], ...], fill in the gaps between and to the NUMBER_OF_GENS to get a complete list of values
 // [[30, 3], [60, 6]] --> [[30, 3], [30, 4], [30, 5], [60, 6], [60, 7], [60, 8]]
@@ -410,4 +412,83 @@ export const addLearnsetsToPokemonArr = (learnsets, moves, pokemon, pokemonArr) 
     pokemonEntry['event_data'] = pokemonEventData;
   }
 }
+// #endregion
+
+// SPLIT ARRAYS 
+// #region
+
+const splitEntity = (entity, initialGen) => {
+  // the keys of splitObject will be gen numbers
+  let splitObject = {}
+
+  for (let gen = initialGen; gen <= NUMBER_OF_GENS; gen++) {
+    splitObject[gen] = {
+      current_gen: gen,
+    };
+
+    for (let key of Object.keys(entity)) {
+      const value = entity[key];
+      
+      // indicates patch list
+      if (Array.isArray(value) && Array.isArray(value[0])) {
+        for (let patch of value) {
+          if (patch.slice(-1)[0] == gen && !splitObject[gen][key]) {
+            splitObject[gen][key] = patch.slice(0, -1);
+          } else if (patch.slice(-1)[0] == gen) {
+            throw `${entity.formatted_name} has duplicate gen in ${key}, ${value}.`;
+          }
+        }
+        if (!splitObject[gen][key]) {
+          throw `${entity.formatted_name} does not have a patch for ${gen}: ${key}, ${value}.`;
+        }
+      
+      } 
+      // indicates nested object; there may be a patch list within, but there won't be another object within
+      else if (typeof value === 'object') {
+        splitObject[gen][key] = {};
+
+        for (let innerKey of Object.keys(value)) {
+          const innerValue = value[innerKey];
+
+          // indicates patch list
+          if (Array.isArray(innerValue) && Array.isArray(innerValue[0])) {
+            for (let patch of innerValue) {
+              console.log(patch, gen, patch.slice(-1)[0]);
+              if (patch.slice(-1)[0] == gen && !splitObject[gen][key][innerKey]) {
+                splitObject[gen][key][innerKey] = patch.slice(0, -1);
+              } else if (patch.slice(-1)[0] == gen) {
+                throw `${entity.formatted_name} has duplicate gen in ${key}, ${innerValue}.`;
+              }
+            }
+            if (!splitObject[gen][key][innerKey]) {
+              throw `${entity.formatted_name} does not have a patch for ${gen}: ${innerKey}, ${innerValue}.`;
+            }
+          }
+          else if (typeof innerValue === 'object') {
+            throw `${entity.formatted_name} has too nested of an object: ${key}, ${innerKey}.`
+          } 
+          // indicates simple field that doesn't depend on gen
+          else {
+            splitObject[gen][key][innerKey] = innerValue;
+          }
+        }
+      }
+      // indicates simple field that doesn't depend on gen
+      else {
+        splitObject[gen][key] = value;
+      }
+    }
+  };
+
+  // returns an array of objects, split according to generation
+  return Object.keys(splitObject).map(gen => splitObject[gen]);
+};  
+
+export const splitArr = arr => {
+  return arr.reduce((acc, curr) => {
+    console.log(curr.formatted_name);
+    console.log(curr.gen);
+    return acc.concat(splitEntity(curr, curr.gen));
+  }, []);
+};
 // #endregion

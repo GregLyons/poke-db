@@ -18,7 +18,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -70,7 +70,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -120,7 +120,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -172,7 +172,7 @@
     "usage_method": {
       "punch": [[true, 4]]
     },
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -222,7 +222,7 @@
     "usage_method": {
       "punch": [[true, 4]]
     },
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -326,7 +326,7 @@
     "usage_method": {
       "punch": [[true, 4]]
     },
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -380,7 +380,7 @@
     "usage_method": {
       "punch": [[true, 4]]
     },
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -434,7 +434,7 @@
     "usage_method": {
       "punch": [[true, 4]]
     },
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -484,7 +484,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -534,7 +534,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -586,7 +586,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -687,7 +687,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[2, "user", 0, 1]]
+      "attack": [[2, "user", 100.0, 1]]
     },
     "usage_method": {
       "dance": [[true, 7]]
@@ -740,7 +740,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -843,7 +843,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any", 1]],
     "lgpe_exclusive_values": {
@@ -948,7 +948,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any", 1]],
     "lgpe_exclusive_values": {
@@ -1000,7 +1000,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -1050,7 +1050,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -1100,7 +1100,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -1156,7 +1156,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -1208,7 +1208,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -1258,7 +1258,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -1308,7 +1308,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -1359,7 +1359,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -1406,7 +1406,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "accuracy": [[1, "target", 0, 1]]
+      "accuracy": [[1, "target", 100.0, 1]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -1459,7 +1459,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -1509,7 +1509,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -1561,7 +1561,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -1613,7 +1613,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -1663,7 +1663,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -1718,7 +1718,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -1770,7 +1770,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -1822,7 +1822,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -1876,7 +1876,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["user", 1]],
     "lgpe_exclusive_values": {
@@ -1928,7 +1928,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -1977,7 +1977,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "target", 0, 1]]
+      "defense": [[1, "target", 100.0, 1]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -2183,7 +2183,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "target", 0, 1]]
+      "defense": [[1, "target", 100.0, 1]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -2238,7 +2238,7 @@
     "usage_method": {
       "bite": [[true, 6]]
     },
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -2287,7 +2287,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "target", 0, 1]]
+      "attack": [[1, "target", 100.0, 1]]
     },
     "usage_method": {
       "sound": [[true, 1]]
@@ -2594,11 +2594,11 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "target", 2, 1], [-1,
-          "target", 0, 2], [0,
-          "target", 0, 4]],
-      "special_defense": [[0, "target", 0, 1], [-1,
-          "target", 0, 4]]
+      "defense": [[1, "target", 33.2, 1], [-1,
+          "target", 10.0, 2], [0,
+          "target", 0.0, 4]],
+      "special_defense": [[0, "target", 0.0, 1], [-1,
+          "target", 10.0, 4]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -3116,7 +3116,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "target", 0, 1]]
+      "speed": [[1, "target", 100.0, 1]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -3129,8 +3129,8 @@
       "accuracy": [],
       "category": []
     },
-    "speed": [[1, "target", 2, 1], [-1,
-        "target", 0, 2]],
+    "speed": [[1, "target", 33.2, 1], [-1,
+        "target", 10.0, 2]],
     "max_power": 120,
     "g_max_power": 120,
     "z_power": 120,
@@ -3170,7 +3170,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "target", 0, 1]]
+      "attack": [[1, "target", 100.0, 1]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -3183,8 +3183,8 @@
       "accuracy": [],
       "category": []
     },
-    "attack": [[1, "target", 2, 1], [-1,
-        "target", 0, 2]],
+    "attack": [[1, "target", 33.2, 1], [-1,
+        "target", 10.0, 2]],
     "max_power": 120,
     "g_max_power": 120,
     "z_power": 120,
@@ -3277,7 +3277,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any", 1]],
     "lgpe_exclusive_values": {
@@ -3327,7 +3327,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any", 1]],
     "lgpe_exclusive_values": {
@@ -3379,7 +3379,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -3434,7 +3434,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -3487,7 +3487,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[-1, 1], [-5, 3]],
     "target": [["user", 1]],
     "lgpe_exclusive_values": {
@@ -3539,7 +3539,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -3589,7 +3589,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -3797,10 +3797,10 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "user", 0, 1]],
-      "attack": [[2, "user", 0, 1]],
-      "special_defense": [[1, "user", 0, 1], [0,
-          "user", 0, 2]]
+      "special_attack": [[1, "user", 100.0, 1]],
+      "attack": [[2, "user", 100.0, 1]],
+      "special_defense": [[1, "user", 100.0, 1], [0,
+          "user", 0.0, 2]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -4117,7 +4117,7 @@
     "usage_method": {
       "dance": [[true, 7]]
     },
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["user", 1]],
     "lgpe_exclusive_values": {
@@ -4166,7 +4166,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "target", 0, 1]]
+      "speed": [[1, "target", 100.0, 1]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -4687,7 +4687,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -4852,10 +4852,10 @@
       "accuracy": [],
       "category": []
     },
-    "special_attack": [[1, "target", 2, 1], [0,
-        "target", 0, 2]],
-    "special_defense": [[1, "target", 2, 1], [-1,
-        "target", 0, 2]],
+    "special_attack": [[1, "target", 33.2, 1], [0,
+        "target", 0.0, 2]],
+    "special_defense": [[1, "target", 33.2, 1], [-1,
+        "target", 10.0, 2]],
     "max_power": 130,
     "g_max_power": 130,
     "z_power": 175,
@@ -4945,7 +4945,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 1]]
+      "attack": [[1, "user", 100.0, 1]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -4995,7 +4995,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[2, "user", 0, 1]]
+      "speed": [[2, "user", 100.0, 1]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -5046,7 +5046,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[1, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -5097,10 +5097,10 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 1]]
+      "attack": [[1, "user", 100.0, 1]]
     },
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -5300,7 +5300,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[2, "target", 0, 1]]
+      "defense": [[2, "target", 100.0, 1]]
     },
     "usage_method": {
       "sound": [[true, 1]]
@@ -5352,7 +5352,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "evasion": [[1, "user", 0, 1]]
+      "evasion": [[1, "user", 100.0, 1]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -5453,7 +5453,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 1]]
+      "defense": [[1, "user", 100.0, 1]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -5505,7 +5505,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "evasion": [[1, "user", 0, 1]]
+      "evasion": [[1, "user", 100.0, 1]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -5555,7 +5555,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "accuracy": [[1, "target", 0, 1]]
+      "accuracy": [[1, "target", 100.0, 1]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -5655,7 +5655,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 1]]
+      "defense": [[1, "user", 100.0, 1]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -5707,7 +5707,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 1]]
+      "defense": [[1, "user", 100.0, 1]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -5757,7 +5757,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[2, "user", 0, 1]]
+      "defense": [[2, "user", 100.0, 1]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -5957,8 +5957,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "critical_hit_ratio": [[1, "user", 0, 2], [2,
-          "user", 0, 3]]
+      "critical_hit_ratio": [[1, "user", 100.0, 2], [2,
+          "user", 100.0, 3]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -6014,7 +6014,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1], [1, 4], [0, 8]],
     "target": [["user", 1]],
     "lgpe_exclusive_values": {
@@ -6266,7 +6266,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -6524,7 +6524,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -6576,7 +6576,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -6678,10 +6678,10 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 2]]
+      "defense": [[1, "user", 100.0, 2]]
     },
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -6780,10 +6780,10 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "target", 0, 1]]
+      "speed": [[1, "target", 100.0, 1]]
     },
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -6793,8 +6793,8 @@
       "accuracy": [],
       "category": []
     },
-    "speed": [[1, "target", 2, 1], [-1,
-        "target", 0, 2]],
+    "speed": [[1, "target", 33.2, 1], [-1,
+        "target", 10.0, 2]],
     "z_power": 100,
     "move_interactions": {
       "protect": [[true, 2], [true, 3], [true, 4], [true, 5], [true, 6], [true, 7], [true, 8]],
@@ -6843,10 +6843,10 @@
       "accuracy": [],
       "category": []
     },
-    "special_attack": [[2, "user", 0, 1], [0,
-        "user", 0, 2]],
-    "special_defense": [[2, "user", 0, 1], [2,
-        "user", 0, 2]],
+    "special_attack": [[2, "user", 100.0, 1], [0,
+        "user", 0.0, 2]],
+    "special_defense": [[2, "user", 100.0, 1], [2,
+        "user", 100.0, 2]],
     "move_interactions": {
       "snatch": [[false, 1], [false, 2], [true, 3], [true, 4], [true, 5], [true, 6], [true, 7], [false, 8]],
       "protect": [[false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
@@ -6884,7 +6884,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "accuracy": [[1, "target", 0, 1]]
+      "accuracy": [[1, "target", 100.0, 1]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -6986,7 +6986,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -7245,7 +7245,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -7453,7 +7453,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "target", 0, 1]]
+      "speed": [[1, "target", 100.0, 1]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -7466,8 +7466,8 @@
       "accuracy": [],
       "category": []
     },
-    "speed": [[1, "target", 2, 1], [-1,
-        "target", 0, 2]],
+    "speed": [[1, "target", 33.2, 1], [-1,
+        "target", 10.0, 2]],
     "z_power": 100,
     "move_interactions": {
       "protect": [[true, 2], [true, 3], [true, 4], [true, 5], [true, 6], [true, 7], [true, 8]],
@@ -7510,7 +7510,7 @@
     "usage_method": {
       "punch": [[true, 4]]
     },
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -7609,7 +7609,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "accuracy": [[1, "target", 0, 1]]
+      "accuracy": [[1, "target", 100.0, 1]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -7758,7 +7758,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[2, "user", 0, 1]]
+      "defense": [[2, "user", 100.0, 1]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -7811,7 +7811,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -7917,7 +7917,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -8129,7 +8129,7 @@
     "usage_method": {
       "bite": [[true, 6]]
     },
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -8178,7 +8178,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 1]]
+      "attack": [[1, "user", 100.0, 1]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -8335,7 +8335,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -8387,7 +8387,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {
@@ -8492,7 +8492,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 1]],
     "target": [["user", 1]],
     "lgpe_exclusive_values": {
@@ -8594,7 +8594,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 2]],
     "target": [["any_adjacent", 2]],
     "lgpe_exclusive_values": {
@@ -8646,7 +8646,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 2]],
     "target": [["any_adjacent", 2]],
     "lgpe_exclusive_values": {
@@ -8855,7 +8855,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 2]],
     "target": [["any_adjacent", 2]],
     "lgpe_exclusive_values": {
@@ -8962,9 +8962,9 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 2]],
-      "attack": [[1, "user", 0, 2]],
-      "defense": [[1, "user", 0, 2]]
+      "speed": [[1, "user", 100.0, 2]],
+      "attack": [[1, "user", 100.0, 2]],
+      "defense": [[1, "user", 100.0, 2]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -9017,7 +9017,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 2]],
     "target": [["any_adjacent", 2]],
     "lgpe_exclusive_values": {
@@ -9168,7 +9168,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[2, "target", 0, 2]]
+      "speed": [[2, "target", 100.0, 2]]
     },
     "usage_method": {
       "powder": [[true, 6]]
@@ -9224,7 +9224,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 2]],
     "target": [["any_adjacent", 2]],
     "lgpe_exclusive_values": {
@@ -9425,7 +9425,7 @@
     "usage_method": {
       "punch": [[true, 4]]
     },
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[1, 2]],
     "target": [["any_adjacent", 2]],
     "lgpe_exclusive_values": {
@@ -9474,7 +9474,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[2, "target", 0, 2]]
+      "speed": [[2, "target", 100.0, 2]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -9527,7 +9527,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 2]],
     "target": [["any_adjacent", 2]],
     "lgpe_exclusive_values": {
@@ -9626,7 +9626,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[2, "user", 0, 2]]
+      "attack": [[2, "user", 100.0, 2]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -9730,7 +9730,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "accuracy": [[1, "target", 0, 2]]
+      "accuracy": [[1, "target", 100.0, 2]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -9782,7 +9782,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "accuracy": [[1, "target", 0, 2]]
+      "accuracy": [[1, "target", 50.0, 2]]
     },
     "usage_method": {
       "ball": [[true, 6]]
@@ -10091,7 +10091,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "target", 0, 2]]
+      "speed": [[1, "target", 100.0, 2]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -10300,7 +10300,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 2]],
     "target": [["user", 2]],
     "lgpe_exclusive_values": {
@@ -10500,7 +10500,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[2, "target", 0, 2]]
+      "attack": [[2, "target", 100.0, 2]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -10554,7 +10554,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 2]],
     "target": [["any_adjacent", 2]],
     "lgpe_exclusive_values": {
@@ -10604,7 +10604,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 2]],
     "target": [["any_adjacent", 2]],
     "lgpe_exclusive_values": {
@@ -10655,7 +10655,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[2, "target", 0, 2]]
+      "attack": [[2, "target", 100.0, 2]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -10759,7 +10759,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 2]],
     "target": [["any_adjacent", 2]],
     "lgpe_exclusive_values": {
@@ -10811,7 +10811,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 2]],
     "target": [["any_adjacent", 2]],
     "lgpe_exclusive_values": {
@@ -10860,10 +10860,10 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 2]]
+      "defense": [[1, "user", 10.0, 2]]
     },
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 2]],
     "target": [["any_adjacent", 2]],
     "lgpe_exclusive_values": {
@@ -11125,7 +11125,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 2]],
     "target": [["any_adjacent", 2]],
     "lgpe_exclusive_values": {
@@ -11228,7 +11228,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 2]],
     "target": [["any_adjacent", 2]],
     "lgpe_exclusive_values": {
@@ -11485,7 +11485,7 @@
     "usage_method": {
       "punch": [[true, 4]]
     },
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 2]],
     "target": [["any_adjacent", 2]],
     "lgpe_exclusive_values": {
@@ -11535,7 +11535,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 2]],
     "target": [["any_adjacent", 2]],
     "lgpe_exclusive_values": {
@@ -11737,7 +11737,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 2]],
     "target": [["any_adjacent", 2]],
     "lgpe_exclusive_values": {
@@ -11786,10 +11786,10 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 8]]
+      "speed": [[1, "user", 100.0, 8]]
     },
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 2]],
     "target": [["any_adjacent", 2]],
     "lgpe_exclusive_values": {
@@ -11838,7 +11838,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "evasion": [[1, "target", 0, 2]]
+      "evasion": [[1, "target", 100.0, 2]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -11888,10 +11888,10 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "target", 0, 2]]
+      "defense": [[1, "target", 30.0, 2]]
     },
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 2]],
     "target": [["any_adjacent", 2]],
     "lgpe_exclusive_values": {
@@ -11940,10 +11940,10 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 2]]
+      "attack": [[1, "user", 10.0, 2]]
     },
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 2]],
     "target": [["any_adjacent", 2]],
     "lgpe_exclusive_values": {
@@ -11995,7 +11995,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[-1, 2]],
     "target": [["any_adjacent", 2]],
     "lgpe_exclusive_values": {
@@ -12251,7 +12251,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 2]],
     "target": [["any_adjacent", 2]],
     "lgpe_exclusive_values": {
@@ -12453,15 +12453,15 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "target", 0, 2], [0,
-          "target", 0, 4]],
-      "special_defense": [[0, "target", 0, 2], [-1,
-          "target", 0, 4]]
+      "defense": [[1, "target", 20.0, 2], [0,
+          "target", 0.0, 4]],
+      "special_defense": [[0, "target", 0.0, 2], [-1,
+          "target", 20.0, 4]]
     },
     "usage_method": {
       "bite": [[true, 6]]
     },
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 2]],
     "target": [["any_adjacent", 2]],
     "lgpe_exclusive_values": {
@@ -12614,7 +12614,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[1, 2], [2, 5]],
     "target": [["any_adjacent", 2]],
     "lgpe_exclusive_values": {
@@ -12663,14 +12663,14 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 2]],
-      "defense": [[1, "user", 0, 2]],
-      "special_attack": [[1, "user", 0, 2]],
-      "special_defense": [[1, "user", 0, 2]],
-      "speed": [[1, "user", 0, 2]]
+      "attack": [[1, "user", 10.0, 2]],
+      "defense": [[1, "user", 10.0, 2]],
+      "special_attack": [[1, "user", 10.0, 2]],
+      "special_defense": [[1, "user", 10.0, 2]],
+      "speed": [[1, "user", 10.0, 2]]
     },
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3], [false, 4]],
     "priority": [[0, 2]],
     "target": [["any_adjacent", 2]],
     "lgpe_exclusive_values": {
@@ -12680,7 +12680,6 @@
       "accuracy": [],
       "category": []
     },
-    "Contact": [[true, 3], [false, 4]],
     "max_power": 110,
     "g_max_power": 110,
     "z_power": 120,
@@ -12720,7 +12719,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[1, "target", 0, 2]]
+      "special_defense": [[1, "target", 20.0, 2]]
     },
     "usage_method": {
       "ball": [[true, 6]]
@@ -12826,10 +12825,10 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "target", 0, 2]]
+      "defense": [[1, "target", 50.0, 2]]
     },
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 2]],
     "target": [["any_adjacent", 2]],
     "lgpe_exclusive_values": {
@@ -12989,7 +12988,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[1, 3], [3, 5]],
     "target": [["any_adjacent", 3]],
     "lgpe_exclusive_values": {
@@ -13093,8 +13092,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 4]],
-      "special_defense": [[1, "user", 0, 4]]
+      "defense": [[1, "user", 100.0, 4]],
+      "special_defense": [[1, "user", 100.0, 4]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -13398,7 +13397,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "target", 0, 3]]
+      "special_attack": [[1, "target", 100.0, 3]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -13501,8 +13500,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[2, "target", 0, 3]],
-      "special_attack": [[2, "target", 0, 3]]
+      "attack": [[2, "target", 100.0, 3]],
+      "special_attack": [[2, "target", 100.0, 3]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -13554,7 +13553,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 3]],
     "target": [["any_adjacent", 3]],
     "lgpe_exclusive_values": {
@@ -13606,7 +13605,7 @@
     "usage_method": {
       "punch": [[true, 4]]
     },
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[-3, 3]],
     "target": [["any_adjacent", 3]],
     "lgpe_exclusive_values": {
@@ -13659,7 +13658,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 3]],
     "target": [["any_adjacent", 3]],
     "lgpe_exclusive_values": {
@@ -13805,7 +13804,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[1, "user", 0, 4]]
+      "special_defense": [[1, "user", 100.0, 4]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -14204,11 +14203,11 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 3]],
-      "defense": [[1, "user", 0, 3]]
+      "attack": [[1, "user", 100.0, 3]],
+      "defense": [[1, "user", 100.0, 3]]
     },
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 3]],
     "target": [["any_adjacent", 3]],
     "lgpe_exclusive_values": {
@@ -14359,7 +14358,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[-4, 3]],
     "target": [["any_adjacent", 3]],
     "lgpe_exclusive_values": {
@@ -14411,7 +14410,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 3]],
     "target": [["any_adjacent", 3]],
     "lgpe_exclusive_values": {
@@ -14517,7 +14516,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 3]],
     "target": [["any_adjacent", 3]],
     "lgpe_exclusive_values": {
@@ -14569,7 +14568,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 3]],
     "target": [["any_adjacent", 3]],
     "lgpe_exclusive_values": {
@@ -14983,7 +14982,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 3]],
     "target": [["any_adjacent", 3]],
     "lgpe_exclusive_values": {
@@ -15035,7 +15034,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 3]],
     "target": [["any_adjacent", 3]],
     "lgpe_exclusive_values": {
@@ -15135,7 +15134,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[2, "user", 0, 3]]
+      "special_attack": [[2, "user", 100.0, 3]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -15185,7 +15184,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[1, "target", 0, 3]]
+      "special_defense": [[1, "target", 50.0, 3]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -15237,7 +15236,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "target", 0, 3]]
+      "special_attack": [[1, "target", 50.0, 3]]
     },
     "usage_method": {
       "ball": [[true, 6]]
@@ -15291,7 +15290,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[2, "target", 0, 3]]
+      "attack": [[2, "target", 100.0, 3]]
     },
     "usage_method": {
       "dance": [[true, 7]]
@@ -15399,7 +15398,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 3]],
     "target": [["any_adjacent", 3]],
     "lgpe_exclusive_values": {
@@ -15501,7 +15500,7 @@
     "usage_method": {
       "ball": [[true, 6]]
     },
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 3]],
     "target": [["any_adjacent", 3]],
     "lgpe_exclusive_values": {
@@ -15553,7 +15552,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 3]],
     "target": [["any_adjacent", 3]],
     "lgpe_exclusive_values": {
@@ -15708,7 +15707,7 @@
     "usage_method": {
       "bite": [[true, 6]]
     },
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 3]],
     "target": [["any_adjacent", 3]],
     "lgpe_exclusive_values": {
@@ -15757,10 +15756,10 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "target", 0, 3]]
+      "defense": [[1, "target", 50.0, 3]]
     },
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 3]],
     "target": [["any_adjacent", 3]],
     "lgpe_exclusive_values": {
@@ -15913,12 +15912,12 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 3]]
+      "attack": [[1, "user", 20.0, 3]]
     },
     "usage_method": {
       "punch": [[true, 4]]
     },
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 3]],
     "target": [["any_adjacent", 3]],
     "lgpe_exclusive_values": {
@@ -15972,7 +15971,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 3]],
     "target": [["any_adjacent", 3]],
     "lgpe_exclusive_values": {
@@ -16133,7 +16132,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[2, "target", 0, 3]]
+      "special_defense": [[2, "target", 100.0, 3]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -16235,10 +16234,10 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[2, "user", 0, 3]]
+      "special_attack": [[2, "user", 100.0, 3]]
     },
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3], [false, 4]],
     "priority": [[0, 3]],
     "target": [["any_adjacent", 3]],
     "lgpe_exclusive_values": {
@@ -16248,7 +16247,6 @@
       "accuracy": [],
       "category": []
     },
-    "Contact": [[true, 3], [false, 4]],
     "max_power": 140,
     "g_max_power": 140,
     "z_power": 195,
@@ -16341,7 +16339,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "target", 0, 3]]
+      "speed": [[1, "target", 100.0, 3]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -16393,11 +16391,11 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 3]],
-      "defense": [[1, "user", 0, 3]],
-      "special_attack": [[1, "user", 0, 3]],
-      "special_defense": [[1, "user", 0, 3]],
-      "speed": [[1, "user", 0, 3]]
+      "attack": [[1, "user", 10.0, 3]],
+      "defense": [[1, "user", 10.0, 3]],
+      "special_attack": [[1, "user", 10.0, 3]],
+      "special_defense": [[1, "user", 10.0, 3]],
+      "speed": [[1, "user", 10.0, 3]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -16447,7 +16445,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[2, "target", 0, 3]]
+      "special_defense": [[2, "target", 100.0, 3]]
     },
     "usage_method": {
       "sound": [[true, 3]]
@@ -16551,8 +16549,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "target", 0, 3]],
-      "defense": [[1, "target", 0, 3]]
+      "attack": [[1, "target", 100.0, 3]],
+      "defense": [[1, "target", 100.0, 3]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -16602,8 +16600,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 3]],
-      "special_defense": [[1, "user", 0, 3]]
+      "defense": [[1, "user", 100.0, 3]],
+      "special_defense": [[1, "user", 100.0, 3]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -16760,7 +16758,7 @@
     "usage_method": {
       "punch": [[true, 4]]
     },
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 3]],
     "target": [["any_adjacent", 3]],
     "lgpe_exclusive_values": {
@@ -16868,7 +16866,7 @@
     "usage_method": {
       "punch": [[true, 4]]
     },
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 3]],
     "target": [["any_adjacent", 3]],
     "lgpe_exclusive_values": {
@@ -17019,7 +17017,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "accuracy": [[1, "target", 0, 3]]
+      "accuracy": [[1, "target", 30.0, 3]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -17128,7 +17126,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 3]],
     "target": [["any", 3]],
     "lgpe_exclusive_values": {
@@ -17229,7 +17227,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[2, "user", 0, 3]]
+      "defense": [[2, "user", 100.0, 3]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -17331,7 +17329,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 3]]
+      "attack": [[1, "user", 100.0, 3]]
     },
     "usage_method": {
       "sound": [[true, 3]]
@@ -17384,7 +17382,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 3]],
     "target": [["any_adjacent", 3]],
     "lgpe_exclusive_values": {
@@ -17485,8 +17483,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 3]],
-      "defense": [[1, "user", 0, 3]]
+      "attack": [[1, "user", 100.0, 3]],
+      "defense": [[1, "user", 100.0, 3]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -17541,7 +17539,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 3]],
     "target": [["any", 3]],
     "lgpe_exclusive_values": {
@@ -17590,7 +17588,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "target", 0, 3]]
+      "speed": [[1, "target", 100.0, 3]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -17647,7 +17645,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 3]],
     "target": [["any_adjacent", 3]],
     "lgpe_exclusive_values": {
@@ -17699,7 +17697,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 3]],
     "target": [["any_adjacent", 3]],
     "lgpe_exclusive_values": {
@@ -17753,7 +17751,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 3]],
     "target": [["any_adjacent", 3]],
     "lgpe_exclusive_values": {
@@ -17901,8 +17899,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "user", 0, 3]],
-      "special_defense": [[1, "user", 0, 3]]
+      "special_attack": [[1, "user", 100.0, 3]],
+      "special_defense": [[1, "user", 100.0, 3]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -17955,7 +17953,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 3]],
+    "contact": [[true, 3]],
     "priority": [[0, 3]],
     "target": [["any_adjacent", 3]],
     "lgpe_exclusive_values": {
@@ -18004,8 +18002,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 3]],
-      "speed": [[1, "user", 0, 3]]
+      "attack": [[1, "user", 100.0, 3]],
+      "speed": [[1, "user", 100.0, 3]]
     },
     "usage_method": {
       "dance": [[true, 7]]
@@ -18269,7 +18267,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[2, "user", 0, 3]]
+      "special_attack": [[2, "user", 100.0, 3]]
     },
     "usage_method": {},
     "contact": [[false, 3]],
@@ -18479,7 +18477,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -18526,12 +18524,12 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 4]]
+      "speed": [[1, "user", 100.0, 4]]
     },
     "usage_method": {
       "punch": [[true, 4]]
     },
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -18585,7 +18583,7 @@
     "usage_method": {
       "ball": [[true, 6]]
     },
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -18844,7 +18842,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any", 4]],
     "lgpe_exclusive_values": {
@@ -18941,13 +18939,13 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "accuracy": [[2, "user", 0, 4]],
-      "attack": [[2, "user", 0, 4]],
-      "defense": [[2, "user", 0, 4]],
-      "evasion": [[2, "user", 0, 4]],
-      "special_attack": [[2, "user", 0, 4]],
-      "special_defense": [[2, "user", 0, 4]],
-      "speed": [[2, "user", 0, 4]]
+      "accuracy": [[2, "user", 100.0, 4]],
+      "attack": [[2, "user", 100.0, 4]],
+      "defense": [[2, "user", 100.0, 4]],
+      "evasion": [[2, "user", 100.0, 4]],
+      "special_attack": [[2, "user", 100.0, 4]],
+      "special_defense": [[2, "user", 100.0, 4]],
+      "speed": [[2, "user", 100.0, 4]]
     },
     "usage_method": {},
     "contact": [[false, 4]],
@@ -19053,7 +19051,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -19102,11 +19100,11 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 4]],
-      "special_defense": [[1, "user", 0, 4]]
+      "defense": [[1, "user", 100.0, 4]],
+      "special_defense": [[1, "user", 100.0, 4]]
     },
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -19158,7 +19156,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -19210,7 +19208,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -19436,7 +19434,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -19536,7 +19534,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -19931,7 +19929,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -19979,7 +19977,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -20079,7 +20077,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[1, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -20339,7 +20337,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -20391,7 +20389,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -20495,7 +20493,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[2, "user", 0, 4]]
+      "speed": [[2, "user", 100.0, 4]]
     },
     "usage_method": {},
     "contact": [[false, 4]],
@@ -20548,7 +20546,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -20654,7 +20652,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -20704,7 +20702,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -20858,7 +20856,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -20907,7 +20905,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[1, "target", 0, 4]]
+      "special_defense": [[1, "target", 10.0, 4]]
     },
     "usage_method": {
       "sound": [[true, 4]]
@@ -21019,7 +21017,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -21124,7 +21122,7 @@
     "usage_method": {
       "punch": [[true, 4]]
     },
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -21223,7 +21221,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[1, "target", 0, 4]]
+      "special_defense": [[1, "target", 10.0, 4]]
     },
     "usage_method": {
       "ball": [[true, 6]]
@@ -21277,7 +21275,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[1, "target", 0, 4]]
+      "special_defense": [[1, "target", 10.0, 4]]
     },
     "usage_method": {
       "ball": [[true, 6]]
@@ -21334,7 +21332,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any", 4]],
     "lgpe_exclusive_values": {
@@ -21383,7 +21381,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[1, "target", 0, 4]]
+      "special_defense": [[1, "target", 10.0, 4]]
     },
     "usage_method": {},
     "contact": [[false, 4]],
@@ -21487,7 +21485,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -21536,7 +21534,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[2, "user", 0, 4]]
+      "special_attack": [[2, "user", 100.0, 4]]
     },
     "usage_method": {},
     "contact": [[false, 4]],
@@ -21589,7 +21587,7 @@
     "usage_method": {
       "punch": [[true, 4]]
     },
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[1, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -21641,7 +21639,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[-4, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -21743,7 +21741,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -21798,7 +21796,7 @@
     "usage_method": {
       "bite": [[true, 6]]
     },
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -21853,7 +21851,7 @@
     "usage_method": {
       "bite": [[true, 6]]
     },
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -21908,7 +21906,7 @@
     "usage_method": {
       "bite": [[true, 6]]
     },
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -21958,7 +21956,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[1, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -22007,7 +22005,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "accuracy": [[1, "target", 0, 4]]
+      "accuracy": [[1, "target", 30.0, 4]]
     },
     "usage_method": {
       "ball": [[true, 6]]
@@ -22114,7 +22112,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -22163,7 +22161,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "accuracy": [[1, "target", 0, 4]]
+      "accuracy": [[1, "target", 30.0, 4]]
     },
     "usage_method": {},
     "contact": [[false, 4]],
@@ -22213,7 +22211,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[1, "target", 0, 4]]
+      "special_defense": [[1, "target", 10.0, 4]]
     },
     "usage_method": {},
     "contact": [[false, 4]],
@@ -22268,7 +22266,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -22321,7 +22319,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "evasion": [[1, "target", 0, 4]]
+      "evasion": [[1, "target", 100.0, 4]]
     },
     "usage_method": {},
     "contact": [[false, 4]],
@@ -22418,7 +22416,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[2, "user", 0, 4]]
+      "special_attack": [[2, "user", 100.0, 4]]
     },
     "usage_method": {},
     "contact": [[false, 4]],
@@ -22574,7 +22572,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[2, "user", 0, 4]]
+      "special_attack": [[2, "user", 100.0, 4]]
     },
     "usage_method": {},
     "contact": [[false, 4]],
@@ -22627,7 +22625,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -22735,7 +22733,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -22839,7 +22837,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -22992,7 +22990,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[2, "target", 0, 4]]
+      "special_attack": [[2, "target", 100.0, 4]]
     },
     "usage_method": {},
     "contact": [[false, 4]],
@@ -23096,7 +23094,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -23254,7 +23252,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -23303,7 +23301,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "user", 0, 4]]
+      "special_attack": [[1, "user", 70.0, 4]]
     },
     "usage_method": {},
     "contact": [[false, 4]],
@@ -23358,7 +23356,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -23408,7 +23406,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[1, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -23509,8 +23507,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 4]],
-      "special_defense": [[1, "user", 0, 4]]
+      "defense": [[1, "user", 100.0, 4]],
+      "special_defense": [[1, "user", 100.0, 4]]
     },
     "usage_method": {},
     "contact": [[false, 4]],
@@ -23614,7 +23612,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -23666,7 +23664,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -23876,7 +23874,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -24027,7 +24025,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[2, "target", 0, 4]]
+      "special_defense": [[2, "target", 40.0, 4]]
     },
     "usage_method": {},
     "contact": [[false, 4]],
@@ -24079,11 +24077,11 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 4]],
-      "defense": [[1, "user", 0, 4]],
-      "special_attack": [[1, "user", 0, 4]],
-      "special_defense": [[1, "user", 0, 4]],
-      "speed": [[1, "user", 0, 4]]
+      "attack": [[1, "user", 10.0, 4]],
+      "defense": [[1, "user", 10.0, 4]],
+      "special_attack": [[1, "user", 10.0, 4]],
+      "special_defense": [[1, "user", 10.0, 4]],
+      "speed": [[1, "user", 10.0, 4]]
     },
     "usage_method": {},
     "contact": [[false, 4]],
@@ -24141,7 +24139,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 4]],
+    "contact": [[true, 4]],
     "priority": [[0, 4]],
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {
@@ -24190,8 +24188,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "accuracy": [[1, "user", 0, 5]],
-      "attack": [[1, "user", 0, 5]]
+      "accuracy": [[1, "user", 100.0, 5]],
+      "attack": [[1, "user", 100.0, 5]]
     },
     "usage_method": {},
     "contact": [[false, 5]],
@@ -24541,7 +24539,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[2, "user", 0, 5]]
+      "speed": [[2, "user", 100.0, 5]]
     },
     "usage_method": {},
     "contact": [[false, 5]],
@@ -24800,7 +24798,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 5]],
+    "contact": [[true, 5]],
     "priority": [[0, 5]],
     "target": [["any_adjacent", 5]],
     "lgpe_exclusive_values": {
@@ -24949,9 +24947,9 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "user", 0, 5]],
-      "special_defense": [[1, "user", 0, 5]],
-      "speed": [[1, "user", 0, 5]]
+      "special_attack": [[1, "user", 100.0, 5]],
+      "special_defense": [[1, "user", 100.0, 5]],
+      "speed": [[1, "user", 100.0, 5]]
     },
     "usage_method": {
       "dance": [[true, 7]]
@@ -25008,7 +25006,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 5]],
+    "contact": [[true, 5]],
     "priority": [[0, 5]],
     "target": [["any_adjacent", 5]],
     "lgpe_exclusive_values": {
@@ -25211,10 +25209,10 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 5]]
+      "speed": [[1, "user", 100.0, 5]]
     },
     "usage_method": {},
-    "contact": [[false, 5]],
+    "contact": [[true, 5]],
     "priority": [[0, 5]],
     "target": [["any_adjacent", 5]],
     "lgpe_exclusive_values": {
@@ -25263,9 +25261,9 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "accuracy": [[1, "user", 0, 5]],
-      "attack": [[1, "user", 0, 5]],
-      "defense": [[1, "user", 0, 5]]
+      "accuracy": [[1, "user", 100.0, 5]],
+      "attack": [[1, "user", 100.0, 5]],
+      "defense": [[1, "user", 100.0, 5]]
     },
     "usage_method": {},
     "contact": [[false, 5]],
@@ -25315,10 +25313,10 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "target", 0, 5]]
+      "speed": [[1, "target", 100.0, 5]]
     },
     "usage_method": {},
-    "contact": [[false, 5]],
+    "contact": [[true, 5]],
     "priority": [[0, 5]],
     "target": [["any_adjacent", 5]],
     "lgpe_exclusive_values": {
@@ -25367,7 +25365,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[2, "target", 0, 5]]
+      "special_defense": [[2, "target", 100.0, 5]]
     },
     "usage_method": {
       "ball": [[true, 6]]
@@ -25422,7 +25420,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 5]],
+    "contact": [[true, 5]],
     "priority": [[0, 5]],
     "target": [["any_adjacent", 5]],
     "lgpe_exclusive_values": {
@@ -25730,7 +25728,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 5]],
+    "contact": [[true, 5]],
     "priority": [[0, 5]],
     "target": [["any_adjacent", 5]],
     "lgpe_exclusive_values": {
@@ -26036,11 +26034,11 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 5]],
-      "special_defense": [[1, "user", 0, 5]],
-      "attack": [[2, "user", 0, 5]],
-      "special_attack": [[2, "user", 0, 5]],
-      "speed": [[2, "user", 0, 5]]
+      "defense": [[1, "user", 100.0, 5]],
+      "special_defense": [[1, "user", 100.0, 5]],
+      "attack": [[2, "user", 100.0, 5]],
+      "special_attack": [[2, "user", 100.0, 5]],
+      "speed": [[2, "user", 100.0, 5]]
     },
     "usage_method": {},
     "contact": [[false, 5]],
@@ -26201,7 +26199,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 5]],
+    "contact": [[true, 5]],
     "priority": [[0, 5]],
     "target": [["any", 5]],
     "lgpe_exclusive_values": {
@@ -26248,8 +26246,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 5]],
-      "speed": [[2, "user", 0, 5]]
+      "attack": [[1, "user", 100.0, 5]],
+      "speed": [[2, "user", 100.0, 5]]
     },
     "usage_method": {},
     "contact": [[false, 5]],
@@ -26302,7 +26300,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 5]],
+    "contact": [[true, 5]],
     "priority": [[-6, 5]],
     "target": [["any_adjacent", 5]],
     "lgpe_exclusive_values": {
@@ -26455,7 +26453,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 5]],
+    "contact": [[true, 5]],
     "priority": [[0, 5]],
     "target": [["any", 5]],
     "lgpe_exclusive_values": {
@@ -26557,7 +26555,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 5]],
+    "contact": [[true, 5]],
     "priority": [[0, 5]],
     "target": [["any_adjacent", 5]],
     "lgpe_exclusive_values": {
@@ -26969,7 +26967,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "target", 0, 5]]
+      "special_attack": [[1, "target", 100.0, 5]]
     },
     "usage_method": {},
     "contact": [[false, 5]],
@@ -27021,7 +27019,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "target", 0, 5]]
+      "speed": [[1, "target", 100.0, 5]]
     },
     "usage_method": {},
     "contact": [[false, 5]],
@@ -27128,7 +27126,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 5]],
+    "contact": [[true, 5]],
     "priority": [[-6, 5]],
     "target": [["any_adjacent", 5]],
     "lgpe_exclusive_values": {
@@ -27177,8 +27175,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 5]],
-      "special_attack": [[1, "user", 0, 5]]
+      "attack": [[1, "user", 100.0, 5]],
+      "special_attack": [[1, "user", 100.0, 5]]
     },
     "usage_method": {},
     "contact": [[false, 5]],
@@ -27228,7 +27226,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "target", 0, 5]]
+      "speed": [[1, "target", 100.0, 5]]
     },
     "usage_method": {},
     "contact": [[false, 5]],
@@ -27283,7 +27281,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 5]],
+    "contact": [[true, 5]],
     "priority": [[0, 5]],
     "target": [["any_adjacent", 5]],
     "lgpe_exclusive_values": {
@@ -27335,7 +27333,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 5]],
+    "contact": [[true, 5]],
     "priority": [[0, 5]],
     "target": [["any_adjacent", 5]],
     "lgpe_exclusive_values": {
@@ -27387,7 +27385,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 5]],
+    "contact": [[true, 5]],
     "priority": [[0, 5]],
     "target": [["any_adjacent", 5]],
     "lgpe_exclusive_values": {
@@ -27439,7 +27437,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 5]],
+    "contact": [[true, 5]],
     "priority": [[0, 5]],
     "target": [["any_adjacent", 5]],
     "lgpe_exclusive_values": {
@@ -27490,7 +27488,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 5]],
+    "contact": [[true, 5]],
     "priority": [[0, 5]],
     "target": [["any_adjacent", 5]],
     "lgpe_exclusive_values": {
@@ -27540,7 +27538,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 5]],
+    "contact": [[true, 5]],
     "priority": [[0, 5]],
     "target": [["any_adjacent", 5]],
     "lgpe_exclusive_values": {
@@ -27589,10 +27587,10 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "target", 0, 5]]
+      "defense": [[1, "target", 50.0, 5]]
     },
     "usage_method": {},
-    "contact": [[false, 5]],
+    "contact": [[true, 5]],
     "priority": [[0, 5]],
     "target": [["any_adjacent", 5]],
     "lgpe_exclusive_values": {
@@ -27647,7 +27645,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 5]],
+    "contact": [[true, 5]],
     "priority": [[0, 5]],
     "target": [["any_adjacent", 5]],
     "lgpe_exclusive_values": {
@@ -27696,7 +27694,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "accuracy": [[1, "target", 0, 5]]
+      "accuracy": [[1, "target", 50.0, 5]]
     },
     "usage_method": {},
     "contact": [[false, 5]],
@@ -27754,7 +27752,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 5]],
+    "contact": [[true, 5]],
     "priority": [[0, 5]],
     "target": [["any_adjacent", 5]],
     "lgpe_exclusive_values": {
@@ -27801,7 +27799,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[3, "user", 0, 5]]
+      "defense": [[3, "user", 100.0, 5]]
     },
     "usage_method": {},
     "contact": [[false, 5]],
@@ -27851,7 +27849,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "accuracy": [[1, "target", 0, 5]]
+      "accuracy": [[1, "target", 40.0, 5]]
     },
     "usage_method": {},
     "contact": [[false, 5]],
@@ -27957,7 +27955,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 5]],
+    "contact": [[true, 5]],
     "priority": [[0, 5]],
     "target": [["any_adjacent", 5]],
     "lgpe_exclusive_values": {
@@ -28064,7 +28062,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 5]],
+    "contact": [[true, 5]],
     "priority": [[0, 5]],
     "target": [["any_adjacent", 5]],
     "lgpe_exclusive_values": {
@@ -28116,7 +28114,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 5]],
+    "contact": [[true, 5]],
     "priority": [[0, 5]],
     "target": [["any_adjacent", 5]],
     "lgpe_exclusive_values": {
@@ -28380,7 +28378,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "target", 0, 5]]
+      "speed": [[1, "target", 100.0, 5]]
     },
     "usage_method": {},
     "contact": [[false, 5]],
@@ -28435,7 +28433,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 5]],
+    "contact": [[true, 5]],
     "priority": [[0, 5]],
     "target": [["any_adjacent", 5]],
     "lgpe_exclusive_values": {
@@ -28536,7 +28534,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "user", 0, 5]]
+      "special_attack": [[1, "user", 50.0, 5]]
     },
     "usage_method": {
       "dance": [[true, 7]]
@@ -28696,7 +28694,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "target", 0, 5]]
+      "special_attack": [[1, "target", 100.0, 5]]
     },
     "usage_method": {
       "sound": [[true, 5]]
@@ -28802,12 +28800,12 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 5]],
-      "special_defense": [[1, "user", 0, 5]],
-      "speed": [[1, "user", 0, 5]]
+      "defense": [[1, "user", 100.0, 5]],
+      "special_defense": [[1, "user", 100.0, 5]],
+      "speed": [[1, "user", 100.0, 5]]
     },
     "usage_method": {},
-    "contact": [[false, 5]],
+    "contact": [[true, 5]],
     "priority": [[0, 5]],
     "target": [["any_adjacent", 5]],
     "lgpe_exclusive_values": {
@@ -28967,7 +28965,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 6]],
+    "contact": [[true, 6]],
     "priority": [[0, 6]],
     "target": [["any", 6]],
     "lgpe_exclusive_values": {
@@ -29116,8 +29114,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "target", 0, 6]],
-      "special_attack": [[1, "target", 0, 6]]
+      "attack": [[1, "target", 100.0, 6]],
+      "special_attack": [[1, "target", 100.0, 6]]
     },
     "usage_method": {},
     "contact": [[false, 6]],
@@ -29168,7 +29166,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "target", 0, 6]]
+      "speed": [[1, "target", 100.0, 6]]
     },
     "usage_method": {},
     "contact": [[false, 6]],
@@ -29218,11 +29216,11 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[2, "user", 0, 6], [3,
-          "user", 0, 7]]
+      "attack": [[2, "user", 100.0, 6], [3,
+          "user", 100.0, 7]]
     },
     "usage_method": {},
-    "contact": [[false, 6]],
+    "contact": [[true, 6]],
     "priority": [[0, 6]],
     "target": [["any_adjacent", 6]],
     "lgpe_exclusive_values": {
@@ -29279,7 +29277,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 6]],
+    "contact": [[true, 6]],
     "priority": [[0, 6]],
     "target": [["any_adjacent", 6]],
     "lgpe_exclusive_values": {
@@ -29382,8 +29380,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "target", 0, 6]],
-      "special_attack": [[1, "target", 0, 6]]
+      "attack": [[1, "target", 100.0, 6]],
+      "special_attack": [[1, "target", 100.0, 6]]
     },
     "usage_method": {
       "sound": [[true, 6]]
@@ -29749,8 +29747,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "target", 0, 6]],
-      "special_attack": [[1, "target", 0, 6]]
+      "attack": [[1, "target", 100.0, 6]],
+      "special_attack": [[1, "target", 100.0, 6]]
     },
     "usage_method": {
       "sound": [[true, 6]]
@@ -29856,7 +29854,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 6]],
+    "contact": [[true, 6]],
     "priority": [[0, 6]],
     "target": [["any_adjacent", 6]],
     "lgpe_exclusive_values": {
@@ -29954,7 +29952,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 6]]
+      "defense": [[1, "user", 100.0, 6]]
     },
     "usage_method": {},
     "contact": [[false, 6]],
@@ -30152,10 +30150,10 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "target", 0, 6]]
+      "attack": [[1, "target", 10.0, 6]]
     },
     "usage_method": {},
-    "contact": [[false, 6]],
+    "contact": [[true, 6]],
     "priority": [[0, 6]],
     "target": [["any_adjacent", 6]],
     "lgpe_exclusive_values": {
@@ -30254,7 +30252,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "target", 0, 6]]
+      "special_attack": [[1, "target", 30.0, 6]]
     },
     "usage_method": {},
     "contact": [[false, 6]],
@@ -30411,7 +30409,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[2, "target", 0, 6]]
+      "attack": [[2, "target", 100.0, 6]]
     },
     "usage_method": {},
     "contact": [[false, 6]],
@@ -30463,7 +30461,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "target", 0, 6]]
+      "attack": [[1, "target", 100.0, 6]]
     },
     "usage_method": {},
     "contact": [[false, 6]],
@@ -30515,7 +30513,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "target", 0, 6]]
+      "special_attack": [[1, "target", 100.0, 6]]
     },
     "usage_method": {
       "sound": [[true, 6]]
@@ -30567,8 +30565,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 6], [2,
-          "user", 0, 7]]
+      "defense": [[1, "user", 50.0, 6], [2,
+          "user", 50.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 6]],
@@ -30780,7 +30778,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "target", 0, 6]]
+      "special_attack": [[1, "target", 100.0, 6]]
     },
     "usage_method": {},
     "contact": [[false, 6]],
@@ -30882,7 +30880,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[1, "user", 0, 6]]
+      "special_defense": [[1, "user", 100.0, 6]]
     },
     "usage_method": {},
     "contact": [[false, 6]],
@@ -30931,7 +30929,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[2, "target", 0, 6]]
+      "special_attack": [[2, "target", 100.0, 6]]
     },
     "usage_method": {},
     "contact": [[false, 6]],
@@ -30981,9 +30979,9 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "target", 0, 6]],
-      "special_attack": [[1, "target", 0, 6]],
-      "speed": [[1, "target", 0, 6]]
+      "attack": [[1, "target", 100.0, 6]],
+      "special_attack": [[1, "target", 100.0, 6]],
+      "speed": [[1, "target", 100.0, 6]]
     },
     "usage_method": {},
     "contact": [[false, 6]],
@@ -31085,9 +31083,9 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[2, "user", 0, 6]],
-      "special_defense": [[2, "user", 0, 6]],
-      "speed": [[2, "user", 0, 6]]
+      "special_attack": [[2, "user", 100.0, 6]],
+      "special_defense": [[2, "user", 100.0, 6]],
+      "speed": [[2, "user", 100.0, 6]]
     },
     "usage_method": {},
     "contact": [[false, 6]],
@@ -31136,8 +31134,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "target", 0, 6]],
-      "special_defense": [[1, "target", 0, 6]]
+      "defense": [[1, "target", 100.0, 6]],
+      "special_defense": [[1, "target", 100.0, 6]]
     },
     "usage_method": {},
     "contact": [[false, 6]],
@@ -31431,7 +31429,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "target", 0, 6]]
+      "attack": [[1, "target", 100.0, 6]]
     },
     "usage_method": {},
     "contact": [[false, 6]],
@@ -31484,7 +31482,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 6]],
+    "contact": [[true, 6]],
     "priority": [[0, 6]],
     "target": [["any_adjacent", 6]],
     "lgpe_exclusive_values": {
@@ -31534,7 +31532,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 6]],
+    "contact": [[true, 6]],
     "priority": [[0, 6]],
     "target": [["any_adjacent", 6]],
     "lgpe_exclusive_values": {
@@ -31586,7 +31584,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 6]],
+    "contact": [[true, 6]],
     "priority": [[0, 6]],
     "target": [["any_adjacent", 6]],
     "lgpe_exclusive_values": {
@@ -31635,12 +31633,12 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 6]]
+      "attack": [[1, "user", 100.0, 6]]
     },
     "usage_method": {
       "punch": [[true, 6]]
     },
-    "contact": [[false, 6]],
+    "contact": [[true, 6]],
     "priority": [[0, 6]],
     "target": [["any_adjacent", 6]],
     "lgpe_exclusive_values": {
@@ -32052,11 +32050,11 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 6]],
-      "special_defense": [[1, "user", 0, 6]]
+      "defense": [[1, "user", 100.0, 6]],
+      "special_defense": [[1, "user", 100.0, 6]]
     },
     "usage_method": {},
-    "contact": [[false, 6]],
+    "contact": [[true, 6]],
     "priority": [[0, 6]],
     "target": [["any_adjacent", 6]],
     "lgpe_exclusive_values": {
@@ -32108,7 +32106,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 6]]
+      "defense": [[1, "user", 100.0, 6]]
     },
     "usage_method": {},
     "contact": [[false, 6]],
@@ -33136,7 +33134,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[0, 7]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -33240,7 +33238,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[2, 7]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -33393,7 +33391,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[0, 7]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -33496,12 +33494,12 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 7]]
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {
       "punch": [[true, 7]]
     },
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[0, 7]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -33602,7 +33600,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[0, 7]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -33654,7 +33652,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "target", 0, 7]]
+      "attack": [[1, "target", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -33707,7 +33705,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[0, 7]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -33858,7 +33856,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "target", 0, 7]]
+      "speed": [[1, "target", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -33956,8 +33954,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "target", 0, 7]],
-      "special_attack": [[1, "target", 0, 7]]
+      "attack": [[1, "target", 100.0, 7]],
+      "special_attack": [[1, "target", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -34008,7 +34006,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[0, 7]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -34114,7 +34112,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[0, 7]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -34212,10 +34210,10 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "target", 0, 7]]
+      "attack": [[1, "target", 100.0, 7]]
     },
     "usage_method": {},
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[0, 7]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -34264,10 +34262,10 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "target", 0, 7]]
+      "defense": [[1, "target", 100.0, 7]]
     },
     "usage_method": {},
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[0, 7]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -34319,7 +34317,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[0, 7]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -34474,7 +34472,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[0, 7]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -34680,10 +34678,10 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "target", 0, 7]]
+      "attack": [[1, "target", 100.0, 7]]
     },
     "usage_method": {},
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[0, 7]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -34834,7 +34832,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 7]]
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {
       "sound": [[true, 7]]
@@ -34889,7 +34887,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[0, 7]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -34939,7 +34937,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[0, 7]],
     "target": [["all_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -35100,7 +35098,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[0, 7]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -35269,7 +35267,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[0, 7]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -35383,7 +35381,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[0, 7]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -35435,11 +35433,11 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[2, "user", 0, 7]],
-      "defense": [[2, "user", 0, 7]],
-      "special_attack": [[2, "user", 0, 7]],
-      "special_defense": [[2, "user", 0, 7]],
-      "speed": [[2, "user", 0, 7]]
+      "attack": [[2, "user", 100.0, 7]],
+      "defense": [[2, "user", 100.0, 7]],
+      "special_attack": [[2, "user", 100.0, 7]],
+      "special_defense": [[2, "user", 100.0, 7]],
+      "speed": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -35600,7 +35598,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[2, "user", 0, 7]]
+      "special_attack": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -35657,7 +35655,7 @@
     "usage_method": {
       "bite": [[true, 7]]
     },
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[0, 7]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -35709,7 +35707,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[0, 7]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -35758,7 +35756,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "target", 0, 7]]
+      "defense": [[1, "target", 20.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -35811,7 +35809,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[1, 7]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -35860,10 +35858,10 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "target", 0, 7]]
+      "defense": [[1, "target", 20.0, 7]]
     },
     "usage_method": {},
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[0, 7]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -35965,7 +35963,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[0, 7]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -36017,7 +36015,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[0, 7]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -36118,8 +36116,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "target", 0, 7]],
-      "special_attack": [[1, "target", 0, 7]]
+      "attack": [[1, "target", 100.0, 7]],
+      "special_attack": [[1, "target", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -36172,7 +36170,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[0, 7]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -36276,7 +36274,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[0, 7]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -36441,7 +36439,7 @@
     "usage_method": {
       "punch": [[true, 7]]
     },
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[0, 7]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -36606,7 +36604,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[0, 7]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -36719,7 +36717,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[0, 7]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -36830,11 +36828,11 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 7]],
-      "defense": [[1, "user", 0, 7]],
-      "special_attack": [[1, "user", 0, 7]],
-      "special_defense": [[1, "user", 0, 7]],
-      "speed": [[1, "user", 0, 7]]
+      "attack": [[1, "user", 100.0, 7]],
+      "defense": [[1, "user", 100.0, 7]],
+      "special_attack": [[1, "user", 100.0, 7]],
+      "special_defense": [[1, "user", 100.0, 7]],
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {
       "sound": [[true, 7]]
@@ -36894,7 +36892,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[2, 7], [0, 8]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -36992,7 +36990,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[0, 7]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -37195,7 +37193,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[0, 7]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -37495,7 +37493,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[0, 7]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -37549,7 +37547,7 @@
     "usage_method": {
       "punch": [[true, 7]]
     },
-    "contact": [[false, 7]],
+    "contact": [[true, 7]],
     "priority": [[0, 7]],
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {
@@ -37756,7 +37754,7 @@
     "usage_method": {
       "bite": [[true, 8]]
     },
-    "contact": [[false, 8]],
+    "contact": [[true, 8]],
     "priority": [[0, 8]],
     "target": [["any_adjacent", 8]],
     "lgpe_exclusive_values": {
@@ -37806,7 +37804,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[2, "user", 0, 8]]
+      "defense": [[2, "user", 100.0, 8]]
     },
     "usage_method": {},
     "contact": [[false, 8]],
@@ -37857,11 +37855,11 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 8]],
-      "defense": [[1, "user", 0, 8]],
-      "special_attack": [[1, "user", 0, 8]],
-      "special_defense": [[1, "user", 0, 8]],
-      "speed": [[1, "user", 0, 8]]
+      "attack": [[1, "user", 100.0, 8]],
+      "defense": [[1, "user", 100.0, 8]],
+      "special_attack": [[1, "user", 100.0, 8]],
+      "special_defense": [[1, "user", 100.0, 8]],
+      "speed": [[1, "user", 100.0, 8]]
     },
     "usage_method": {},
     "contact": [[false, 8]],
@@ -37910,7 +37908,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "target", 0, 8]]
+      "speed": [[1, "target", 100.0, 8]]
     },
     "usage_method": {},
     "contact": [[false, 8]],
@@ -38116,8 +38114,8 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "target", 0, 8]],
-      "special_defense": [[1, "target", 0, 8]]
+      "defense": [[1, "target", 100.0, 8]],
+      "special_defense": [[1, "target", 100.0, 8]]
     },
     "usage_method": {},
     "contact": [[false, 8]],
@@ -38169,7 +38167,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 8]],
+    "contact": [[true, 8]],
     "priority": [[0, 8]],
     "target": [["any_adjacent", 8]],
     "lgpe_exclusive_values": {
@@ -38222,7 +38220,7 @@
     "usage_method": {
       "bite": [[true, 8]]
     },
-    "contact": [[false, 8]],
+    "contact": [[true, 8]],
     "priority": [[0, 8]],
     "target": [["any_adjacent", 8]],
     "lgpe_exclusive_values": {
@@ -38376,7 +38374,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "user", 0, 8]]
+      "special_attack": [[1, "user", 100.0, 8]]
     },
     "usage_method": {},
     "contact": [[false, 8]],
@@ -38487,7 +38485,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "target", 0, 8]]
+      "speed": [[1, "target", 100.0, 8]]
     },
     "usage_method": {},
     "contact": [[false, 8]],
@@ -38543,7 +38541,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 8]]
+      "attack": [[1, "user", 100.0, 8]]
     },
     "usage_method": {},
     "contact": [[false, 8]],
@@ -38599,7 +38597,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "target", 0, 8]]
+      "defense": [[1, "target", 100.0, 8]]
     },
     "usage_method": {},
     "contact": [[false, 8]],
@@ -38710,7 +38708,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "user", 0, 8]]
+      "special_attack": [[1, "user", 100.0, 8]]
     },
     "usage_method": {},
     "contact": [[false, 8]],
@@ -38821,7 +38819,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 8]]
+      "speed": [[1, "user", 100.0, 8]]
     },
     "usage_method": {},
     "contact": [[false, 8]],
@@ -38932,7 +38930,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 8]]
+      "attack": [[1, "user", 100.0, 8]]
     },
     "usage_method": {},
     "contact": [[false, 8]],
@@ -39098,7 +39096,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[1, "user", 0, 8]]
+      "special_defense": [[1, "user", 100.0, 8]]
     },
     "usage_method": {},
     "contact": [[false, 8]],
@@ -39154,7 +39152,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[1, "target", 0, 8]]
+      "special_defense": [[1, "target", 100.0, 8]]
     },
     "usage_method": {},
     "contact": [[false, 8]],
@@ -39265,7 +39263,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 8]]
+      "defense": [[1, "user", 100.0, 8]]
     },
     "usage_method": {},
     "contact": [[false, 8]],
@@ -39319,11 +39317,11 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 8]],
-      "defense": [[1, "user", 0, 8]],
-      "special_attack": [[1, "user", 0, 8]],
-      "special_defense": [[1, "user", 0, 8]],
-      "speed": [[1, "user", 0, 8]]
+      "attack": [[1, "user", 100.0, 8]],
+      "defense": [[1, "user", 100.0, 8]],
+      "special_attack": [[1, "user", 100.0, 8]],
+      "special_defense": [[1, "user", 100.0, 8]],
+      "speed": [[1, "user", 100.0, 8]]
     },
     "usage_method": {
       "sound": [[true, 8]]
@@ -39375,7 +39373,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 8]],
+    "contact": [[true, 8]],
     "priority": [[0, 8]],
     "target": [["any_adjacent", 8]],
     "lgpe_exclusive_values": {
@@ -39424,8 +39422,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[2, "target", 0, 8]],
-      "special_attack": [[2, "target", 0, 8]]
+      "attack": [[2, "target", 100.0, 8]],
+      "special_attack": [[2, "target", 100.0, 8]]
     },
     "usage_method": {},
     "contact": [[false, 8]],
@@ -39474,7 +39472,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "target", 0, 8]]
+      "speed": [[1, "target", 100.0, 8]]
     },
     "usage_method": {},
     "contact": [[false, 8]],
@@ -39528,7 +39526,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 8]],
+    "contact": [[true, 8]],
     "priority": [[0, 8]],
     "target": [["any_adjacent", 8]],
     "lgpe_exclusive_values": {
@@ -39635,7 +39633,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 8]],
+    "contact": [[true, 8]],
     "priority": [[0, 8]],
     "target": [["any_adjacent", 8]],
     "lgpe_exclusive_values": {
@@ -39686,7 +39684,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 8]],
+    "contact": [[true, 8]],
     "priority": [[0, 8]],
     "target": [["any_adjacent", 8]],
     "lgpe_exclusive_values": {
@@ -39736,7 +39734,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 8]]
+      "speed": [[1, "user", 100.0, 8]]
     },
     "usage_method": {},
     "contact": [[false, 8]],
@@ -39787,10 +39785,10 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "target", 0, 8]]
+      "attack": [[1, "target", 100.0, 8]]
     },
     "usage_method": {},
-    "contact": [[false, 8]],
+    "contact": [[true, 8]],
     "priority": [[0, 8]],
     "target": [["all_adjacent_foes", 8]],
     "lgpe_exclusive_values": {
@@ -39839,7 +39837,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 8]],
+    "contact": [[true, 8]],
     "priority": [[0, 8]],
     "target": [["any_adjacent", 8]],
     "lgpe_exclusive_values": {
@@ -39938,7 +39936,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[1, "target", 0, 8]]
+      "special_defense": [[1, "target", 100.0, 8]]
     },
     "usage_method": {},
     "contact": [[false, 8]],
@@ -39991,7 +39989,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "target", 0, 8]]
+      "defense": [[1, "target", 100.0, 8]]
     },
     "usage_method": {},
     "contact": [[false, 8]],
@@ -40042,10 +40040,10 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "target", 0, 8]]
+      "special_attack": [[1, "target", 100.0, 8]]
     },
     "usage_method": {},
-    "contact": [[false, 8]],
+    "contact": [[true, 8]],
     "priority": [[0, 8]],
     "target": [["any_adjacent", 8]],
     "lgpe_exclusive_values": {
@@ -40196,7 +40194,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[2, "target", 0, 8]]
+      "defense": [[2, "target", 100.0, 8]]
     },
     "usage_method": {},
     "contact": [[false, 8]],
@@ -40249,7 +40247,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 8]],
+    "contact": [[true, 8]],
     "priority": [[0, 8]],
     "target": [["any_adjacent", 8]],
     "lgpe_exclusive_values": {
@@ -40500,7 +40498,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 8]],
+    "contact": [[true, 8]],
     "priority": [[0, 8]],
     "target": [["any_adjacent", 8]],
     "lgpe_exclusive_values": {
@@ -40548,8 +40546,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 8]],
-      "speed": [[1, "user", 0, 8]]
+      "defense": [[1, "user", 100.0, 8]],
+      "speed": [[1, "user", 100.0, 8]]
     },
     "usage_method": {},
     "contact": [[false, 8]],
@@ -40600,7 +40598,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "user", 0, 8]]
+      "special_attack": [[1, "user", 100.0, 8]]
     },
     "usage_method": {},
     "contact": [[false, 8]],
@@ -40751,7 +40749,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 8]],
+    "contact": [[true, 8]],
     "priority": [[1, 8]],
     "target": [["any_adjacent", 8]],
     "lgpe_exclusive_values": {
@@ -40897,10 +40895,10 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "target", 0, 8]]
+      "special_attack": [[1, "target", 100.0, 8]]
     },
     "usage_method": {},
-    "contact": [[false, 8]],
+    "contact": [[true, 8]],
     "priority": [[0, 8]],
     "target": [["any_adjacent", 8]],
     "lgpe_exclusive_values": {
@@ -40998,7 +40996,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 8]],
+    "contact": [[true, 8]],
     "priority": [[0, 8]],
     "target": [["any_adjacent", 8]],
     "lgpe_exclusive_values": {
@@ -41141,8 +41139,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "target", 0, 8]],
-      "defense": [[1, "target", 0, 8]]
+      "attack": [[1, "target", 100.0, 8]],
+      "defense": [[1, "target", 100.0, 8]]
     },
     "usage_method": {},
     "contact": [[false, 8]],
@@ -41194,7 +41192,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 8]],
+    "contact": [[true, 8]],
     "priority": [[0, 8]],
     "target": [["any_adjacent", 8]],
     "lgpe_exclusive_values": {
@@ -41243,7 +41241,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 8]],
+    "contact": [[true, 8]],
     "priority": [[0, 8]],
     "target": [["any_adjacent", 8]],
     "lgpe_exclusive_values": {
@@ -41292,7 +41290,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 8]],
+    "contact": [[true, 8]],
     "priority": [[0, 8]],
     "target": [["any_adjacent", 8]],
     "lgpe_exclusive_values": {
@@ -41450,7 +41448,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 8]],
+    "contact": [[true, 8]],
     "priority": [[0, 8]],
     "target": [["any_adjacent", 8]],
     "lgpe_exclusive_values": {
@@ -41500,7 +41498,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {},
-    "contact": [[false, 8]],
+    "contact": [[true, 8]],
     "priority": [[0, 8]],
     "target": [["any_adjacent", 8]],
     "lgpe_exclusive_values": {
@@ -41742,10 +41740,10 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "target", 0, 8]]
+      "defense": [[1, "target", 100.0, 8]]
     },
     "usage_method": {},
-    "contact": [[false, 8]],
+    "contact": [[true, 8]],
     "priority": [[0, 8]],
     "target": [["any_adjacent", 8]],
     "lgpe_exclusive_values": {
@@ -43051,7 +43049,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "evasion": [[1, "target", 0, 8]]
+      "evasion": [[1, "target", 100.0, 8]]
     },
     "usage_method": {},
     "contact": [[false, 8]],
@@ -43351,7 +43349,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[2, "target", 0, 8]]
+      "speed": [[2, "target", 100.0, 8]]
     },
     "usage_method": {},
     "contact": [[false, 8]],
@@ -43866,7 +43864,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[2, "user", 0, 7]]
+      "attack": [[2, "user", 100.0, 7]]
     },
     "usage_method": {
       "dance": [[true, 7]]
@@ -43924,7 +43922,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[1, "user", 0, 7]]
+      "special_defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -43976,8 +43974,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "accuracy": [[1, "target", 0, 7]],
-      "evasion": [[1, "user", 0, 7]]
+      "accuracy": [[1, "target", 100.0, 7]],
+      "evasion": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -44029,8 +44027,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "target", 0, 7]],
-      "attack": [[1, "user", 0, 7]]
+      "defense": [[1, "target", 100.0, 7]],
+      "attack": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -44082,8 +44080,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "target", 0, 7]],
-      "attack": [[1, "user", 0, 7]]
+      "defense": [[1, "target", 100.0, 7]],
+      "attack": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -44135,8 +44133,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "target", 0, 7]],
-      "defense": [[1, "user", 0, 7]]
+      "attack": [[1, "target", 100.0, 7]],
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {
       "sound": [[true, 7]]
@@ -44193,7 +44191,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 7]]
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {
       "sound": [[true, 7]]
@@ -44249,7 +44247,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 7]]
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {
       "sound": [[true, 7]]
@@ -44305,7 +44303,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 7]]
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {
       "sound": [[true, 7]]
@@ -44520,7 +44518,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[2, "user", 0, 1]]
+      "special_attack": [[2, "user", 100.0, 1]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -44574,7 +44572,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 7]]
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {
       "powder": [[true, 7]]
@@ -44630,7 +44628,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[1, "user", 0, 7]]
+      "special_defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {
       "powder": [[true, 7]]
@@ -44686,7 +44684,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 7]]
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {
       "powder": [[true, 7]]
@@ -44740,7 +44738,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 7]]
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -44794,7 +44792,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[1, "user", 0, 7]]
+      "special_defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -44851,7 +44849,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 7]]
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -44905,7 +44903,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 7]]
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -44957,7 +44955,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[2, "user", 0, 7]]
+      "attack": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -45011,7 +45009,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[2, "user", 0, 7]]
+      "speed": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -45168,8 +45166,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[2, "target", 0, 7]],
-      "attack": [[1, "user", 0, 7]]
+      "defense": [[2, "target", 100.0, 7]],
+      "attack": [[1, "user", 100.0, 7]]
     },
     "usage_method": {
       "sound": [[true, 7]]
@@ -45225,7 +45223,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "evasion": [[1, "user", 0, 7]]
+      "evasion": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -45331,7 +45329,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[2, "user", 0, 7]]
+      "defense": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -45385,7 +45383,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "evasion": [[1, "user", 0, 7]]
+      "evasion": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -45437,8 +45435,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "accuracy": [[1, "target", 0, 7]],
-      "evasion": [[1, "user", 0, 7]]
+      "accuracy": [[1, "target", 100.0, 7]],
+      "evasion": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -45492,7 +45490,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "user", 0, 7]]
+      "special_attack": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -45544,7 +45542,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[2, "user", 0, 7]]
+      "defense": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -45596,7 +45594,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 7]]
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -45650,7 +45648,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[2, "user", 0, 7]]
+      "defense": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -45704,7 +45702,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[1, "user", 0, 7]]
+      "special_defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -45811,7 +45809,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 7]]
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -45863,8 +45861,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "critical_hit_ratio": [[7, "user", 0, 7]],
-      "accuracy": [[1, "user", 0, 7]]
+      "critical_hit_ratio": [[7, "user", 100.0, 7]],
+      "accuracy": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -45970,7 +45968,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[2, "user", 0, 7]]
+      "attack": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -46035,8 +46033,8 @@
       "accuracy": [],
       "category": []
     },
-    "special_defense": [[7, "user", 0, 1], [2,
-        "user", 0, 2]],
+    "special_defense": [[7, "user", 100.0, 1], [2,
+        "user", 100.0, 2]],
     "requirements": {
       "move": "amnesia"
     },
@@ -46076,8 +46074,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "accuracy": [[1, "target", 0, 7]],
-      "evasion": [[1, "user", 0, 7]]
+      "accuracy": [[1, "target", 100.0, 7]],
+      "evasion": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -46185,7 +46183,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[1, "user", 0, 7]]
+      "special_defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -46239,7 +46237,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 7]]
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -46293,7 +46291,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 7]]
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -46457,8 +46455,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "accuracy": [[1, "target", 0, 7]],
-      "evasion": [[1, "user", 0, 7]]
+      "accuracy": [[1, "target", 100.0, 7]],
+      "evasion": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -46510,7 +46508,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[3, "user", 0, 7]]
+      "attack": [[3, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -46564,7 +46562,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[2, "user", 0, 7]]
+      "defense": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -46673,7 +46671,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[2, "user", 0, 7]]
+      "attack": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -46727,11 +46725,11 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 7]],
-      "defense": [[1, "user", 0, 7]],
-      "special_attack": [[1, "user", 0, 7]],
-      "special_defense": [[1, "user", 0, 7]],
-      "speed": [[1, "user", 0, 7]]
+      "attack": [[1, "user", 100.0, 7]],
+      "defense": [[1, "user", 100.0, 7]],
+      "special_attack": [[1, "user", 100.0, 7]],
+      "special_defense": [[1, "user", 100.0, 7]],
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -46838,11 +46836,11 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 7]],
-      "defense": [[1, "user", 0, 7]],
-      "special_attack": [[1, "user", 0, 7]],
-      "special_defense": [[1, "user", 0, 7]],
-      "speed": [[1, "user", 0, 7]]
+      "attack": [[1, "user", 100.0, 7]],
+      "defense": [[1, "user", 100.0, 7]],
+      "special_attack": [[1, "user", 100.0, 7]],
+      "special_defense": [[1, "user", 100.0, 7]],
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -46898,7 +46896,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 7]]
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -46954,7 +46952,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "user", 0, 7]]
+      "special_attack": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -47008,7 +47006,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "user", 0, 7]]
+      "special_attack": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -47063,9 +47061,9 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[2, "user", 0, 7]],
-      "defense": [[1, "user", 0, 7]],
-      "speed": [[1, "user", 0, 7]]
+      "attack": [[2, "user", 100.0, 7]],
+      "defense": [[1, "user", 100.0, 7]],
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -47173,7 +47171,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[2, "target", 0, 7]]
+      "speed": [[2, "target", 100.0, 7]]
     },
     "usage_method": {
       "powder": [[true, 7]]
@@ -47333,7 +47331,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 7]]
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -47387,7 +47385,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "user", 0, 7]]
+      "special_attack": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -47442,7 +47440,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[2, "user", 0, 7]]
+      "attack": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -47496,7 +47494,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 7]]
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -47553,7 +47551,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "critical_hit_ratio": [[2, "user", 0, 7]]
+      "critical_hit_ratio": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -47713,7 +47711,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "evasion": [[1, "user", 0, 7]]
+      "evasion": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -47769,7 +47767,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 7]]
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -47823,7 +47821,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 7]]
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -47927,8 +47925,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[2, "target", 0, 7]],
-      "defense": [[1, "user", 0, 7]]
+      "attack": [[2, "target", 100.0, 7]],
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -47984,7 +47982,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[2, "target", 0, 7]]
+      "attack": [[2, "target", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -48094,7 +48092,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[1, "user", 0, 7]]
+      "special_defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -48202,7 +48200,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "critical_hit_ratio": [[2, "user", 0, 7]]
+      "critical_hit_ratio": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -48309,7 +48307,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 7]]
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -48364,7 +48362,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 7]]
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -48469,7 +48467,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 7]]
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -48521,7 +48519,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "evasion": [[1, "target", 0, 7]]
+      "evasion": [[1, "target", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -48737,7 +48735,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 7]]
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -48791,7 +48789,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 7]]
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -48898,8 +48896,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 7]],
-      "special_defense": [[1, "user", 0, 7]]
+      "defense": [[1, "user", 100.0, 7]],
+      "special_defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -49005,7 +49003,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 7]]
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -49059,7 +49057,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 7]]
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -49113,8 +49111,8 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "target", 0, 7]],
-      "special_defense": [[1, "user", 0, 7]]
+      "special_attack": [[1, "target", 100.0, 7]],
+      "special_defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -49168,7 +49166,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 7]]
+      "attack": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -49224,7 +49222,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[2, "target", 0, 7]]
+      "attack": [[2, "target", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -49381,7 +49379,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[2, "user", 0, 7]]
+      "special_defense": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -49433,7 +49431,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 7]]
+      "attack": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -49540,7 +49538,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[2, "user", 0, 7]]
+      "speed": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -49595,7 +49593,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 7]]
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -49649,7 +49647,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[1, "user", 0, 7]]
+      "special_defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -49755,7 +49753,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[1, "user", 0, 7]]
+      "special_defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -49807,7 +49805,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[2, "user", 0, 7]]
+      "special_defense": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -49861,7 +49859,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[2, "user", 0, 7]]
+      "speed": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -49918,7 +49916,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 7]]
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -49973,7 +49971,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 7]]
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -50025,7 +50023,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[2, "user", 0, 7]]
+      "special_defense": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -50184,7 +50182,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[2, "user", 0, 7]]
+      "speed": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -50239,7 +50237,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "evasion": [[1, "user", 0, 7]]
+      "evasion": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -50293,7 +50291,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[2, "user", 0, 7]]
+      "special_attack": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -50345,8 +50343,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[2, "target", 0, 7]],
-      "defense": [[1, "user", 0, 7]]
+      "attack": [[2, "target", 100.0, 7]],
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {
       "dance": [[true, 7]]
@@ -50402,7 +50400,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "user", 0, 7]]
+      "special_attack": [[1, "user", 100.0, 7]]
     },
     "usage_method": {
       "dance": [[true, 7]]
@@ -50456,7 +50454,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[1, "user", 0, 7]]
+      "special_defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -50615,8 +50613,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[2, "target", 0, 7]],
-      "special_attack": [[1, "user", 0, 7]]
+      "special_defense": [[2, "target", 100.0, 7]],
+      "special_attack": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -50673,7 +50671,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 7]]
+      "attack": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -50725,8 +50723,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[2, "target", 0, 7]],
-      "special_attack": [[1, "user", 0, 7]]
+      "special_defense": [[2, "target", 100.0, 7]],
+      "special_attack": [[1, "user", 100.0, 7]]
     },
     "usage_method": {
       "sound": [[true, 7]]
@@ -50782,7 +50780,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 7]]
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {
       "sound": [[true, 7]]
@@ -50836,8 +50834,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "target", 0, 7]],
-      "defense": [[1, "user", 0, 7]]
+      "attack": [[1, "target", 100.0, 7]],
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -50889,8 +50887,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 7]],
-      "special_defense": [[2, "user", 0, 7]]
+      "defense": [[1, "user", 100.0, 7]],
+      "special_defense": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -50944,7 +50942,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[2, "user", 0, 7]]
+      "defense": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -51000,7 +50998,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 7]]
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -51052,7 +51050,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[2, "user", 0, 7]]
+      "attack": [[2, "user", 100.0, 7]]
     },
     "usage_method": {
       "sound": [[true, 7]]
@@ -51106,8 +51104,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[2, "user", 0, 7]],
-      "defense": [[1, "user", 0, 7]]
+      "attack": [[2, "user", 100.0, 7]],
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -51159,7 +51157,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[1, "user", 0, 7]]
+      "special_defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -51213,8 +51211,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "user", 0, 7]],
-      "special_defense": [[1, "user", 0, 7]]
+      "special_attack": [[1, "user", 100.0, 7]],
+      "special_defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -51268,8 +51266,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 7]],
-      "speed": [[1, "user", 0, 7]]
+      "attack": [[1, "user", 100.0, 7]],
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {
       "dance": [[true, 7]]
@@ -51380,7 +51378,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "user", 0, 7]]
+      "special_attack": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -51437,7 +51435,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "user", 0, 7]]
+      "special_attack": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -51542,7 +51540,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "critical_hit_ratio": [[2, "user", 0, 7]]
+      "critical_hit_ratio": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -51594,8 +51592,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "accuracy": [[2, "target", 0, 7]],
-      "critical_hit_ratio": [[2, "user", 0, 7]]
+      "accuracy": [[2, "target", 100.0, 7]],
+      "critical_hit_ratio": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -51649,7 +51647,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "user", 0, 7]]
+      "special_attack": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -51709,7 +51707,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[2, "user", 0, 7]]
+      "special_attack": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -51761,7 +51759,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[2, "user", 0, 7]]
+      "special_attack": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -51813,7 +51811,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 7]]
+      "attack": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -51865,7 +51863,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 7]]
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -51919,7 +51917,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "evasion": [[1, "user", 0, 7]]
+      "evasion": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -51975,7 +51973,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[2, "user", 0, 7]]
+      "speed": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -52081,7 +52079,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 7]]
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -52135,7 +52133,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 7]]
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -52189,7 +52187,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 7]]
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -52246,7 +52244,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 7]]
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -52300,7 +52298,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "critical_hit_ratio": [[2, "user", 0, 7]]
+      "critical_hit_ratio": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -52354,7 +52352,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 7]]
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -52406,7 +52404,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "evasion": [[1, "user", 0, 7]]
+      "evasion": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -52460,7 +52458,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[2, "user", 0, 7]]
+      "speed": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -52514,7 +52512,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[2, "user", 0, 7]]
+      "speed": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -52568,7 +52566,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[2, "user", 0, 7]]
+      "special_attack": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -52626,7 +52624,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "evasion": [[1, "target", 0, 7]]
+      "evasion": [[1, "target", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -52728,8 +52726,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[2, "target", 0, 7]],
-      "special_defense": [[2, "user", 0, 7]]
+      "special_attack": [[2, "target", 100.0, 7]],
+      "special_defense": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -52783,7 +52781,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 7]]
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -52835,8 +52833,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[2, "user", 0, 7]],
-      "special_defense": [[1, "user", 0, 7]]
+      "defense": [[2, "user", 100.0, 7]],
+      "special_defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -53052,8 +53050,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[2, "user", 0, 7]],
-      "accuracy": [[1, "user", 0, 7]]
+      "attack": [[2, "user", 100.0, 7]],
+      "accuracy": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -53107,7 +53105,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 7]]
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -53161,7 +53159,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 7]]
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -53215,7 +53213,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 7]]
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -53267,7 +53265,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[1, "user", 0, 7]]
+      "special_defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -53322,7 +53320,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[2, "user", 0, 7]]
+      "speed": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -53430,7 +53428,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "user", 0, 7]]
+      "special_attack": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -53484,7 +53482,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[1, "user", 0, 7]]
+      "special_defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -53538,9 +53536,9 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "user", 0, 7]],
-      "special_defense": [[1, "user", 0, 7]],
-      "speed": [[1, "user", 0, 7]]
+      "special_attack": [[1, "user", 100.0, 7]],
+      "special_defense": [[1, "user", 100.0, 7]],
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {
       "dance": [[true, 7]]
@@ -53598,7 +53596,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "user", 0, 7]]
+      "special_attack": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -53652,9 +53650,9 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 7]],
-      "defense": [[1, "user", 0, 7]],
-      "accuracy": [[1, "user", 0, 7]]
+      "attack": [[1, "user", 100.0, 7]],
+      "defense": [[1, "user", 100.0, 7]],
+      "accuracy": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -53708,7 +53706,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "user", 0, 7]]
+      "special_attack": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -53762,7 +53760,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[1, "user", 0, 7]]
+      "special_defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -53817,7 +53815,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 7]]
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -53873,7 +53871,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 7]]
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -53925,7 +53923,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[2, "user", 0, 7]]
+      "speed": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -53979,11 +53977,11 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[2, "user", 0, 7]],
-      "defense": [[1, "user", 0, 7]],
-      "special_attack": [[2, "user", 0, 7]],
-      "special_defense": [[1, "user", 0, 7]],
-      "speed": [[2, "user", 0, 7]]
+      "attack": [[2, "user", 100.0, 7]],
+      "defense": [[1, "user", 100.0, 7]],
+      "special_attack": [[2, "user", 100.0, 7]],
+      "special_defense": [[1, "user", 100.0, 7]],
+      "speed": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -54093,8 +54091,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 7]],
-      "speed": [[2, "user", 0, 7]]
+      "attack": [[1, "user", 100.0, 7]],
+      "speed": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -54148,7 +54146,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 7]]
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -54203,7 +54201,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "user", 0, 7]]
+      "special_attack": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -54258,7 +54256,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[2, "user", 0, 7]]
+      "speed": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -54310,8 +54308,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[2, "user", 0, 7]],
-      "special_attack": [[1, "user", 0, 7]]
+      "attack": [[2, "user", 100.0, 7]],
+      "special_attack": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -54365,7 +54363,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[3, "user", 0, 7]]
+      "defense": [[3, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -54419,7 +54417,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 7]]
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -54471,7 +54469,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 7]]
+      "attack": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -54525,7 +54523,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 7]]
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -54581,11 +54579,11 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 7]],
-      "defense": [[1, "user", 0, 7]],
-      "special_attack": [[1, "user", 0, 7]],
-      "special_defense": [[1, "user", 0, 7]],
-      "speed": [[1, "user", 0, 7]]
+      "attack": [[1, "user", 100.0, 7]],
+      "defense": [[1, "user", 100.0, 7]],
+      "special_attack": [[1, "user", 100.0, 7]],
+      "special_defense": [[1, "user", 100.0, 7]],
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -54639,8 +54637,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "target", 0, 7]],
-      "defense": [[1, "user", 0, 7]]
+      "attack": [[1, "target", 100.0, 7]],
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {
       "sound": [[true, 7]]
@@ -54696,7 +54694,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "user", 0, 7]]
+      "special_attack": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -54752,11 +54750,11 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 7]],
-      "defense": [[1, "user", 0, 7]],
-      "special_attack": [[1, "user", 0, 7]],
-      "special_defense": [[1, "user", 0, 7]],
-      "speed": [[1, "user", 0, 7]]
+      "attack": [[1, "user", 100.0, 7]],
+      "defense": [[1, "user", 100.0, 7]],
+      "special_attack": [[1, "user", 100.0, 7]],
+      "special_defense": [[1, "user", 100.0, 7]],
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -54811,7 +54809,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "target", 0, 7]]
+      "attack": [[1, "target", 100.0, 7]]
     },
     "usage_method": {
       "sound": [[true, 7]]
@@ -54867,7 +54865,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 7]]
+      "attack": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -54921,7 +54919,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[1, "user", 0, 7]]
+      "special_defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -54973,7 +54971,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 7]]
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -55028,7 +55026,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 7]]
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -55082,7 +55080,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[1, "user", 0, 7]]
+      "special_defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -55137,7 +55135,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "user", 0, 7]]
+      "special_attack": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -55191,7 +55189,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 7]]
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -55248,7 +55246,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[2, "target", 0, 7]]
+      "attack": [[2, "target", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -55302,8 +55300,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "target", 0, 7]],
-      "defense": [[1, "user", 0, 7]]
+      "attack": [[1, "target", 100.0, 7]],
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -55357,8 +55355,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "target", 0, 7]],
-      "special_defense": [[1, "user", 0, 7]]
+      "special_attack": [[1, "target", 100.0, 7]],
+      "special_defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {
       "sound": [[true, 7]]
@@ -55414,7 +55412,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 7]]
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -55466,7 +55464,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[2, "user", 0, 7]]
+      "special_defense": [[2, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -55518,8 +55516,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[2, "target", 0, 7]],
-      "special_defense": [[1, "user", 0, 7]]
+      "special_attack": [[2, "target", 100.0, 7]],
+      "special_defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -55571,8 +55569,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "target", 0, 7]],
-      "defense": [[1, "user", 0, 7]]
+      "attack": [[1, "target", 100.0, 7]],
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -55624,7 +55622,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[2, "user", 0, 7]]
+      "special_defense": [[2, "user", 100.0, 7]]
     },
     "usage_method": {
       "powder": [[true, 7]]
@@ -55680,11 +55678,11 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 7]],
-      "defense": [[1, "user", 0, 7]],
-      "special_attack": [[3, "user", 0, 7]],
-      "special_defense": [[3, "user", 0, 7]],
-      "speed": [[3, "user", 0, 7]]
+      "attack": [[1, "user", 100.0, 7]],
+      "defense": [[1, "user", 100.0, 7]],
+      "special_attack": [[3, "user", 100.0, 7]],
+      "special_defense": [[3, "user", 100.0, 7]],
+      "speed": [[3, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -55736,8 +55734,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "target", 0, 7]],
-      "special_defense": [[1, "user", 0, 7]]
+      "defense": [[1, "target", 100.0, 7]],
+      "special_defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -55789,11 +55787,11 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 7]],
-      "defense": [[1, "user", 0, 7]],
-      "special_attack": [[1, "user", 0, 7]],
-      "special_defense": [[1, "user", 0, 7]],
-      "speed": [[1, "user", 0, 7]]
+      "attack": [[1, "user", 100.0, 7]],
+      "defense": [[1, "user", 100.0, 7]],
+      "special_attack": [[1, "user", 100.0, 7]],
+      "special_defense": [[1, "user", 100.0, 7]],
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -55847,7 +55845,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 7]]
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -55899,11 +55897,11 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 7]],
-      "defense": [[1, "user", 0, 7]],
-      "special_attack": [[1, "user", 0, 7]],
-      "special_defense": [[1, "user", 0, 7]],
-      "speed": [[1, "user", 0, 7]]
+      "attack": [[1, "user", 100.0, 7]],
+      "defense": [[1, "user", 100.0, 7]],
+      "special_attack": [[1, "user", 100.0, 7]],
+      "special_defense": [[1, "user", 100.0, 7]],
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -55955,11 +55953,11 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 7]],
-      "defense": [[1, "user", 0, 7]],
-      "special_attack": [[1, "user", 0, 7]],
-      "special_defense": [[1, "user", 0, 7]],
-      "speed": [[1, "user", 0, 7]]
+      "attack": [[1, "user", 100.0, 7]],
+      "defense": [[1, "user", 100.0, 7]],
+      "special_attack": [[1, "user", 100.0, 7]],
+      "special_defense": [[1, "user", 100.0, 7]],
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -56011,8 +56009,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "target", 0, 7]],
-      "defense": [[1, "user", 0, 7]]
+      "attack": [[1, "target", 100.0, 7]],
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -56121,7 +56119,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "defense": [[1, "user", 0, 7]]
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -56230,8 +56228,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "target", 0, 7]],
-      "defense": [[1, "user", 0, 7]]
+      "attack": [[1, "target", 100.0, 7]],
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -56283,7 +56281,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_defense": [[1, "user", 0, 7]]
+      "special_defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -56337,7 +56335,7 @@
     },
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 7]]
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -56389,7 +56387,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 7]]
+      "attack": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -56441,8 +56439,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "target", 0, 7]],
-      "special_attack": [[1, "user", 0, 7]]
+      "attack": [[1, "target", 100.0, 7]],
+      "special_attack": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -56496,7 +56494,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "user", 0, 7]]
+      "special_attack": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -56550,7 +56548,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 7]]
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -56606,11 +56604,11 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "user", 0, 7]],
-      "defense": [[1, "user", 0, 7]],
-      "special_attack": [[1, "user", 0, 7]],
-      "special_defense": [[1, "user", 0, 7]],
-      "speed": [[1, "user", 0, 7]]
+      "attack": [[1, "user", 100.0, 7]],
+      "defense": [[1, "user", 100.0, 7]],
+      "special_attack": [[1, "user", 100.0, 7]],
+      "special_defense": [[1, "user", 100.0, 7]],
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -56662,7 +56660,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [[1, "user", 0, 7]]
+      "special_attack": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -56716,7 +56714,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "speed": [[1, "user", 0, 7]]
+      "speed": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -56768,8 +56766,8 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "attack": [[1, "target", 0, 7]],
-      "defense": [[1, "user", 0, 7]]
+      "attack": [[1, "target", 100.0, 7]],
+      "defense": [[1, "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],

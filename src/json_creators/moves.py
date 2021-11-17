@@ -331,14 +331,14 @@ def addContactToMoveDict(fname, moveDict):
       note = row["Note"]
       moveGen = moveDict[moveName]["gen"]
 
-      if note == '--':
+      if note == '':
         # contact as a mechanic was introduced in Gen 3
-        moveDict[moveName]["Contact"] = [[True, max(moveGen, 3)]]
+        moveDict[moveName]["contact"] = [[True, max(moveGen, 3)]]
       else:
         if note == 'Gen IV onward':
-          moveDict[moveName]["Contact"].append([True, 4])
+          moveDict[moveName]["contact"].append([True, 4])
         elif note == 'Only Gen III':
-          moveDict[moveName]["Contact"] = [[True, 3], [False, 4]]
+          moveDict[moveName]["contact"] = [[True, 3], [False, 4]]
 
   return
 

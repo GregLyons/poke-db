@@ -45,7 +45,7 @@
   "air_lock": {
     "gen": 3,
     "effects": {
-      "ignores_weather": [[true, 6]]
+      "ignores_weather": [[true, 3]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -336,7 +336,7 @@
   "cloud_nine": {
     "gen": 3,
     "effects": {
-      "ignores_weather": [[true, 6]]
+      "ignores_weather": [[true, 3]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -613,7 +613,7 @@
     "gen": 7,
     "effects": {
       "changes_form": [[true, 7]],
-      "costs_hp": [[true, 8]]
+      "costs_hp": [[false, 7], [true, 8]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -886,7 +886,7 @@
   "forecast": {
     "gen": 3,
     "effects": {
-      "changes_form": [[true, 5]]
+      "changes_form": [[true, 3]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -1538,7 +1538,7 @@
     "resists_status": {},
     "boosts_type": {},
     "resists_type": {
-      "electric": [[0.0, 5]]
+      "electric": [[1.0, 3], [1.0, 4], [0.0, 5]]
     },
     "boosts_usage_method": {},
     "resists_usage_method": {},
@@ -1930,7 +1930,7 @@
   "normalize": {
     "gen": 4,
     "effects": {
-      "changes_move_type": [[true, 6]],
+      "changes_move_type": [[true, 4]],
       "other_move_enhancement": [[true, 4]]
     },
     "causes_status": {},
@@ -2659,7 +2659,7 @@
       "trapped": [[100.0, 3]]
     },
     "resists_status": {
-      "trapped": [[true, 4]]
+      "trapped": [[false, 3], [true, 4]]
     },
     "boosts_type": {},
     "resists_type": {},
@@ -3046,7 +3046,7 @@
     "gen": 3,
     "effects": {},
     "causes_status": {
-      "flinch": [[10.0, 5]]
+      "flinch": [[0.0, 3], [0.0, 4], [10.0, 5]]
     },
     "resists_status": {},
     "boosts_type": {},
@@ -3075,7 +3075,7 @@
     "resists_status": {},
     "boosts_type": {},
     "resists_type": {
-      "water": [[0.0, 5]]
+      "water": [[1.0, 3], [1.0, 4], [0.0, 5]]
     },
     "boosts_usage_method": {},
     "resists_usage_method": {},

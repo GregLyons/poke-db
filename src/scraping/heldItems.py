@@ -178,6 +178,11 @@ def itemGenList(fname):
         if itemName == 'good_rod':
           writer.writerow([itemName, 1])
           continue
+        # TYPO: bulbapedia says it's gen 2, but should be gen 3
+        elif itemName == 'macho_brace':
+          writer.writerow([itemName, 3])
+          continue
+
 
         gen = genSymbolToNumber(cells[2].get_text())
         writer.writerow([itemName, gen])

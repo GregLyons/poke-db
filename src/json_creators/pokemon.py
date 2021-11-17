@@ -703,26 +703,26 @@ def main():
 
   addFullName(pokemonDict)
 
-  noPokeapiEntry = []
-  speciesMismatch = []
-  for pokemonName in pokemonDict.keys():
-    pokeapiEntry = pokemonDict[pokemonName]["pokeapi"]
-    speciesName = pokemonDict[pokemonName]["species"]
-    if len(pokeapiEntry) < 2:
-      noPokeapiEntry.append(pokemonName)
-      continue
+  # noPokeapiEntry = []
+  # speciesMismatch = []
+  # for pokemonName in pokemonDict.keys():
+  #   pokeapiEntry = pokemonDict[pokemonName]["pokeapi"]
+  #   speciesName = pokemonDict[pokemonName]["species"]
+  #   if len(pokeapiEntry) < 2:
+  #     noPokeapiEntry.append(pokemonName)
+  #     continue
 
-    pokemonName, pokeapiID = pokeapiEntry
+  #   pokemonName, pokeapiID = pokeapiEntry
 
-    if '-' in pokemonName and pokeapiID < 10000:
-      if pokemonName != speciesName and not pokemonDict[pokemonName]["cosmetic"]:
-        speciesMismatch.append(pokemonName)
-      else:
-        print(str(pokeapiID) + '-' + '-'.join(pokemonName.split('-')[1:]))
-    else:
-      print(pokeapiID)
-  print(noPokeapiEntry)
-  print(speciesMismatch)
+  #   if '-' in pokemonName and pokeapiID < 10000:
+  #     if pokemonName != speciesName and not pokemonDict[pokemonName]["cosmetic"]:
+  #       speciesMismatch.append(pokemonName)
+  #     else:
+  #       print(str(pokeapiID) + '-' + '-'.join(pokemonName.split('-')[1:]))
+  #   else:
+  #     print(pokeapiID)
+  # print(noPokeapiEntry)
+  # print(speciesMismatch)
       
 
   return pokemonDict

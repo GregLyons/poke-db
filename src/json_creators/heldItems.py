@@ -74,7 +74,7 @@ def makeInitialItemDict(fnamePrefix):
       if itemName in itemDict:
         itemDict[itemName]["gen"] = int(gen)
 
-  # for some reason, Serebii doesn't have berry juice or adrenaline orb
+  # for some reason, Serebii doesn't have berry juice or adrenaline orb, or some gen 2 berries
   itemDict["berry_juice"] = {
         "item_type": 'other',
         "pokemon_specific": [],
@@ -106,6 +106,8 @@ def makeInitialItemDict(fnamePrefix):
         "resists_usage_method": {},
         "stat_modifications": {},
       }
+  for itemName in ['psn_cure_berry', 'prz_cure_berry']:
+    itemDict[itemName]["gen"] = 2
 
   return itemDict
 
@@ -122,15 +124,17 @@ def addBerryData(fpath, itemDict):
       if type not in typeDict.keys():
         print(berryName, type)
         continue
+      
+      print(gen4Power, gen6Power)
 
       if gen4Power != '':
         itemDict[berryName]["nature_power"] = [[type, int(gen4Power), gen]]
         # power changed between gens 4 and 6
         if gen6Power != gen4Power:
-          itemDict[berryName]["nature_power"].append([[type, gen6Power, 6]])
+          itemDict[berryName]["nature_power"].append([type, int(gen6Power), 6])
       # berry was introduced in gen 6
       else:
-        itemDict[berryName]["nature_power"] = [[type, gen6Power, gen]]
+        itemDict[berryName]["nature_power"] = [[type, int(gen6Power), gen]]
 
   # stat modification data
   with open(fpath + 'berriesModifyStat.csv', 'r', encoding='utf-8') as statModCSV:
@@ -298,7 +302,7 @@ def addOtherItemData(fpath, itemDict):
           itemDict[itemName]["stat_modifications"][stat] = [[1.5, 'user', 3], [1, 'user', 7]]
         # boosted type from gen 7 onward
         for type in ['psychic', 'dragon']:
-          itemDict[itemName]["boosts_type"][type] = [[1.2, 7]]
+          itemDict[itemName]["boosts_type"][type] = [[1.0, 3], [1.0, 4], [1.0, 5], [1.0, 6], [1.2, 7]]
       elif pokemonName == 'dialga':
         for type in ['dragon', 'steel']:
           itemDict[itemName]["boosts_type"][type] = [[1.2, 4]]
@@ -319,7 +323,7 @@ def addOtherItemData(fpath, itemDict):
   with open(fpath + 'statEnhancers.csv', 'r', encoding='utf-8') as statEnhancerCSV:
     reader = csv.DictReader(statEnhancerCSV)
     for row in reader:
-      itemGen, itemName, pokemonName, stat1, stat2, modifier = row["Gen"], row["Item Name"], row["Pokemon Name"], row["Stat 1"], row["Stat 2"], row["Modifier"]
+      itemGen, itemName, pokemonName, stat1, stat2, modifier = int(row["Gen"]), row["Item Name"], row["Pokemon Name"], row["Stat 1"], row["Stat 2"], row["Modifier"]
 
       if stat2 == '':
         stat2 = stat1
@@ -343,7 +347,12 @@ def addOtherItemData(fpath, itemDict):
 
     # power items halve speed, also iron ball
     for itemName in ['power_weight', 'power_bracer', 'power_belt', 'power_lens', 'power_band', 'power_anklet', 'iron_ball', 'macho_brace']:
-      itemDict[itemName]["stat_modifications"]["speed"] = [[0.5, 'user', 4]]
+      if itemName == 'macho_brace':
+        itemGen = 3
+      else:
+        itemGen = 4
+
+      itemDict[itemName]["stat_modifications"]["speed"] = [[0.5, 'user', itemGen]]
       handledItems.add(itemName)
 
     # one-stage stat change exceptions
@@ -505,7 +514,7 @@ def addOtherItemData(fpath, itemDict):
     for itemName in items:
       statusGen, itemGen = statusDict[status], itemDict[itemName]["gen"]
       if itemName == 'mental_herb' and status != 'infatuation':
-        itemDict[itemName]["resists_status"][status] = [[True, 5]]
+        itemDict[itemName]["resists_status"][status] = [[False, 3], [False, 4], [True, 5]]
       else:
         itemDict[itemName]["resists_status"][status] = [[True, max(statusGen, itemGen)]]
 

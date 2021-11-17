@@ -48,8 +48,8 @@ def makeEffectDict():
     "suppresses_ability": 4,
     # conversion
     "changes_pokemon_type": 1,
-    # electrify
-    "changes_move_type": 6,
+    # normalize
+    "changes_move_type": 4,
     # photon geyser
     "changes_damage_category": 7,
     # foresight
@@ -88,8 +88,8 @@ def makeEffectDict():
     "multi_hit": 1,
     # fissure
     "ohko": 1,
-    # transform doesn't count; secret sword
-    "changes_form": 5,
+    # transform doesn't count; forecast
+    "changes_form": 3,
     # absorb
     "drains": 1,
     # thief
@@ -111,7 +111,7 @@ def makeEffectDict():
     # long reach
     "ignores_contact": 7,
     # air lock
-    "ignores_weather": 6,
+    "ignores_weather": 3,
     # stomp started dealing double damage to minimized targets in gen 2
     "anti_mini": 2,
     # haze
