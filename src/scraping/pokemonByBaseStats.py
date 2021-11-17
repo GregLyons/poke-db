@@ -52,7 +52,7 @@ def makeBaseStatCSVs(fnamePrefix):
         for cell in row.findAll(['th']):
           value = cell.get_text().rstrip('\n')
           # there's a column with no text in its rows
-          if value != '':
+          if value != '' and value != ' ':
             if value == 'Pokémon':
               csvRow.append('Pokemon Name')
             elif value == '#':
@@ -76,6 +76,11 @@ def makeBaseStatCSVs(fnamePrefix):
         # Make gen 1 like other gens
         if (gen == 1):
           csvRow = formatGen1(csvRow)
+
+        # On 11/17/2021, Bulbapedia changed some of its tables, and now the sprites are replaced with an error message; ignore this entry
+        for entry in csvRow:
+          if 'error_creating' in entry:
+            csvRow.remove(entry)
 
         writer.writerow(csvRow)
     finally: 

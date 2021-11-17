@@ -15,12 +15,11 @@ def makeInitialPokemonDict(fname, changes_fname):
     for row in reader:
       gen, dexNumber, speciesName, pokemonName, type1, type2 = row["Gen"], row["Dex Number"], row["Species Name"], row["Pokemon Name"], row["Type 1"], row["Type 2"]
 
-      # move g_max to end of pokemonName for consistency with regionals, megas, etc.
-      if 'g_max' in pokemonName: 
-        pokemonName = '_'.join(pokemonName.split('_')[2:]) + '_gmax'
-
-      if dexNumber != '':
+      if dexNumber.isnumeric():
         dexNumber = int(dexNumber)
+      # indicates unknown dex number, e.g. for Hisuian pokemon
+      elif dexNumber != '':
+        continue
 
       pokemonDict[pokemonName] = {
         "dex_number": dexNumber,
@@ -28,8 +27,8 @@ def makeInitialPokemonDict(fname, changes_fname):
         "gen": int(gen),
         "type_1": [[type1, int(gen)]],
         "type_2": [[type2, int(gen)]],
-        "evolves_to": [],
-        "evolves_from": [],
+        "evolves_to": {},
+        "evolves_from": {},
       }
     
     # partner pikachu and partner eevee
@@ -39,8 +38,8 @@ def makeInitialPokemonDict(fname, changes_fname):
         "gen": 'lgpe_only',
         "type_1": [['electric', 'lgpe_only']],
         "type_2": [['', 'lgpe_only']],
-        "evolves_to": [],
-        "evolves_from": [],
+        "evolves_to": {},
+        "evolves_from": {},
       }
     pokemonDict["eevee_partner"] = {
         "dex_number": 133,
@@ -48,8 +47,8 @@ def makeInitialPokemonDict(fname, changes_fname):
         "gen": 'lgpe_only',
         "type_1": [['normal', 'lgpe_only']],
         "type_2": [['', 'lgpe_only']],
-        "evolves_to": [],
-        "evolves_from": [],
+        "evolves_to": {},
+        "evolves_from": {},
       }
     pokemonDict["kyogre_primal"] = {
         "dex_number": 382,
@@ -57,8 +56,8 @@ def makeInitialPokemonDict(fname, changes_fname):
         "gen": 6,
         "type_1": [['water', 6]],
         "type_2": [['', 6]],
-        "evolves_to": [],
-        "evolves_from": [],
+        "evolves_to": {},
+        "evolves_from": {},
       }
     pokemonDict["groudon_primal"] = {
         "dex_number": 383,
@@ -66,8 +65,8 @@ def makeInitialPokemonDict(fname, changes_fname):
         "gen": 6,
         "type_1": [['ground', 6]],
         "type_2": [['fire', 6]],
-        "evolves_to": [],
-        "evolves_from": [],
+        "evolves_to": {},
+        "evolves_from": {},
       }
 
   # apply type-change data
@@ -81,6 +80,8 @@ def makeInitialPokemonDict(fname, changes_fname):
 
       pokemonDict[pokemonName]["type_1"] = [[previousType1, gen], [currentType1, genChange]]
       pokemonDict[pokemonName]["type_2"] = [[previousType2, gen], [currentType2, genChange]]
+
+  
 
   return pokemonDict
 
@@ -171,8 +172,13 @@ def addBaseStatData(fnamePrefix, pokemonDict):
   for formName in baseStatDict.keys():
     # check for '_' to verify it really is a form name and not a species name
     if formName not in pokemonDict and '_' in formName:
-      speciesName = formName.split('_')[0]
-      formName = '_'.join(formName.split('_')[1:])
+      # exception for Mr. Mime, Mime Jr.
+      if 'mime_' in formName or '_mime' in formName:
+        speciesName = formName.split('_')[0] + '_' + formName.split('_')[1]
+        formName = '_'.join(formName.split('_')[2:])
+      else:
+        speciesName = formName.split('_')[0]
+        formName = '_'.join(formName.split('_')[1:])
 
       if speciesName not in speciesForms.keys():
         speciesForms[speciesName] = []
@@ -359,16 +365,49 @@ def addEvolutionData(fname, pokemonDict):
           if type == '???':
             continue
 
-          pokemonDict[pokemon1]["evolves_to"].append([pokemon2 + '_' + type, method12, max(gen1, gen2)])
-          pokemonDict[pokemon2 + '_' + type]["evolves_from"].append([pokemon1, method12, max(gen1, gen2)])
+          pokemonDict[pokemon1]["evolves_to"][pokemon2 + '_' + type] = [[ method12, max(gen1, gen2)]]
+          pokemonDict[pokemon2 + '_' + type]["evolves_from"][pokemon1] = [[method12, max(gen1, gen2)]]
         continue
+      
 
+      # we need to check for duplicates, which occur whenever the chain splits; e.g. pikachu has two chains, both starting at pichu
       if pokemon2 != '':
-        pokemonDict[pokemon1]["evolves_to"].append([pokemon2, method12, max(gen1, gen2)])
-        pokemonDict[pokemon2]["evolves_from"].append([pokemon1, method12, max(gen1, gen2)])
+        # 1 -> 2 duplicates
+        duplicate12to = pokemon2 in pokemonDict[pokemon1]["evolves_to"].keys() and [method12, max(gen1, gen2)] in pokemonDict[pokemon1]["evolves_to"][pokemon2]
+        duplicate12from = pokemon1 in pokemonDict[pokemon2]["evolves_from"].keys() and [method12, max(gen1, gen2)] in pokemonDict[pokemon2]["evolves_from"][pokemon1]
+
+        if not duplicate12to:
+          # initialize entry
+          if pokemon2 not in pokemonDict[pokemon1]["evolves_to"].keys():
+            pokemonDict[pokemon1]["evolves_to"][pokemon2] = []
+
+          pokemonDict[pokemon1]["evolves_to"][pokemon2].append([method12, max(gen1, gen2)])
+
+        if not duplicate12from:
+          # initialize entry
+          if pokemon1 not in pokemonDict[pokemon2]["evolves_from"].keys():
+            pokemonDict[pokemon2]["evolves_from"][pokemon1] = []
+
+          pokemonDict[pokemon2]["evolves_from"][pokemon1].append([method12, max(gen1, gen2)])
+
       if pokemon3 != '':
-        pokemonDict[pokemon2]["evolves_to"].append([pokemon3, method23, max(gen2, gen3)])
-        pokemonDict[pokemon3]["evolves_from"].append([pokemon2, method23, max(gen2, gen3)])
+        # 2 -> 3 duplicates
+        duplicate23to = pokemon3 in pokemonDict[pokemon2]["evolves_to"].keys() and [method23, max(gen2, gen3)] in pokemonDict[pokemon2]["evolves_to"][pokemon3]
+        duplicate23from = pokemon2 in pokemonDict[pokemon3]["evolves_from"].keys() and [method23, max(gen2, gen3)] in pokemonDict[pokemon3]["evolves_from"][pokemon2]
+
+        if not duplicate23to:
+          # initialize entry
+          if pokemon3 not in pokemonDict[pokemon2]["evolves_to"].keys():
+            pokemonDict[pokemon2]["evolves_to"][pokemon3] = []
+
+          pokemonDict[pokemon2]["evolves_to"][pokemon3].append([method23, max(gen2, gen3)])
+
+        if not duplicate23from:
+          # initialize entry
+          if pokemon2 not in pokemonDict[pokemon3]["evolves_from"].keys():
+            pokemonDict[pokemon3]["evolves_from"][pokemon2] = []
+
+          pokemonDict[pokemon3]["evolves_from"][pokemon2].append([method23, max(gen2, gen3)])
 
   return
 
@@ -422,59 +461,6 @@ def addFormFlags(pokemonDict):
 
     # add in dex number for pokemonName, which won't have a dex number yet
     pokemonDict[pokemonName]["dex_number"] = pokemonDict[baseForm]["dex_number"]
-  return
-
-# 
-def forceRename(pokemonDict):
-  for keyPair in [
-    ['necrozma_dusk_mane', 'necrozma_dusk'],
-    ['necrozma_dawn_wings', 'necrozma_dawn'],
-    ['eiscue_noice_face', 'eiscue_noice'],
-    ['eiscue_ice_face', 'eiscue_ice'],
-    ['hoopa_confined', 'hoopa'],
-    ['minior_core', 'minior'],
-    ['shellos_west_sea', 'shellos_west'],
-    ['shellos_east_sea', 'shellos_east'],
-    ['gastrodon_west_sea', 'gastrodon_west'],
-    ['gastrodon_east_sea', 'gastrodon_east'],
-  ]:
-    oldKey, newKey = keyPair
-    pokemonDict[newKey] = pokemonDict.pop(oldKey)
-
-    # for, e.g. shellos and gastrodon, we need to replace the names in the evolution data as well
-    for evolutionData in pokemonDict[newKey]['evolves_to']:
-      try:
-        evolutionName = evolutionData[0]
-
-        newPrevolutionData = []
-        for prevolutionData in pokemonDict[evolutionName]['evolves_from']:
-          prevolutionName = prevolutionData[0]
-          if prevolutionName == oldKey:
-            newPrevolutionData.append([newKey] + prevolutionData[1:])
-          else:
-            newPrevolutionData.append(prevolutionData)
-        pokemonDict[evolutionName]['evolves_from'] = newPrevolutionData
-
-      # happens when evolutionData or prevolutionData is []
-      except IndexError:
-        continue
-          
-    for prevolutionData in pokemonDict[newKey]['evolves_from']:
-      try:
-        prevolutionName = prevolutionData[0]
-
-        newEvolutionData = []
-        for evolutionData in pokemonDict[prevolutionName]['evolves_to']:
-          evolutionName = evolutionData[0]
-          if evolutionName == newKey:
-            newEvolutionData.append([newKey] + evolutionData[1:])
-          else: 
-            newEvolutionData.append(evolutionData)
-        pokemonDict[prevolutionName]['evolves_to'] = newEvolutionData
-
-      except IndexError:
-        continue
-
   return
 
 # 
@@ -693,6 +679,7 @@ def main():
   baseStat_fnamePrefix = dataPath + 'pokemonByBaseStatsGen'
   addBaseStatData(baseStat_fnamePrefix, pokemonDict)
 
+
   abilities_fname = dataPath + 'pokemonByAbilities.csv'
   addAbilityData(abilities_fname, pokemonDict)
 
@@ -703,8 +690,6 @@ def main():
   addHeightWeightData(bmi_fname, pokemonDict)
 
   addFormFlags(pokemonDict)
-
-  forceRename(pokemonDict)
 
   pokeapi_fname = dataPath + 'pokemonFormByID.csv'
   checkPokeAPIForms(pokeapi_fname, pokemonDict)

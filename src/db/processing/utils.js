@@ -100,7 +100,7 @@ export const mergeLearnsets = (gen2Learnsets, gen3OnwardsLearnsets) => {
   for (let learnsetPokemonName of Object.keys(earlierLearnsets)) {
     mergedLearnsets[learnsetPokemonName] = {};
     mergedLearnsets[learnsetPokemonName].learnset = earlierLearnsets[learnsetPokemonName].learnset;
-    mergedLearnsets[learnsetPokemonName].eventData = earlierLearnsets[learnsetPokemonName].eventData;
+    mergedLearnsets[learnsetPokemonName].event_data = earlierLearnsets[learnsetPokemonName].eventData;
   }
   
   // add data from laterLearnsets
@@ -120,12 +120,12 @@ export const mergeLearnsets = (gen2Learnsets, gen3OnwardsLearnsets) => {
       }
       // concatenate event data
       // event data present from earlier period AND in later period (Fearow only has event data in earlier period)
-      if (mergedLearnsets[learnsetPokemonName].eventData && laterLearnsets[learnsetPokemonName].eventData) {
-        mergedLearnsets[learnsetPokemonName].eventData = mergedLearnsets[learnsetPokemonName].eventData.concat(laterLearnsets[learnsetPokemonName].eventData); 
+      if (mergedLearnsets[learnsetPokemonName].event_data && laterLearnsets[learnsetPokemonName].eventData) {
+        mergedLearnsets[learnsetPokemonName].event_data = mergedLearnsets[learnsetPokemonName].event_data.concat(laterLearnsets[learnsetPokemonName].eventData); 
       }
       // event data from later period, but not earlier period
       else if (laterLearnsets[learnsetPokemonName].eventData) {
-        mergedLearnsets[learnsetPokemonName].eventData = laterLearnsets[learnsetPokemonName].eventData;
+        mergedLearnsets[learnsetPokemonName].event_data = laterLearnsets[learnsetPokemonName].eventData;
       }
       // case of event data only in earlier period needs no treatment, since that data is already in mergedLearnsets
     }
@@ -133,7 +133,7 @@ export const mergeLearnsets = (gen2Learnsets, gen3OnwardsLearnsets) => {
     else {
       mergedLearnsets[learnsetPokemonName] = {};
       mergedLearnsets[learnsetPokemonName].learnset = laterLearnsets[learnsetPokemonName].learnset;
-      mergedLearnsets[learnsetPokemonName].eventData = laterLearnsets[learnsetPokemonName].eventData;
+      mergedLearnsets[learnsetPokemonName].event_data = laterLearnsets[learnsetPokemonName].eventData;
     }
   }
 
@@ -451,8 +451,8 @@ export const addLearnsetsToPokemonArr = (learnsets, moves, pokemon, pokemonArr) 
 
     // add event data
     let pokemonEventData = [];
-    if (updatedLearnsets[pokemonMap.get(pokemonName)].eventData) {
-      for (let eventDatum of updatedLearnsets[pokemonMap.get(pokemonName)].eventData) {
+    if (updatedLearnsets[pokemonMap.get(pokemonName)].event_data) {
+      for (let eventDatum of updatedLearnsets[pokemonMap.get(pokemonName)].event_data) {
         const {generation, level, gender, nature, shiny, isHidden, perfectIVs, moves: learnsetMoveNames, pokeball} = eventDatum;
         let moveNames = [];
         for (let learnsetMoveName of learnsetMoveNames) {
@@ -481,6 +481,22 @@ const splitEntity = (entity, initialGen) => {
 
     for (let key of Object.keys(entity)) {
       const value = entity[key];
+
+      // special case for Pokemon eventData
+      if (key === 'event_data') {
+        const eventDatumForGen = entity[key].filter(eventDatum => eventDatum.generation === gen);
+
+        if (eventDatumForGen.length > 0) {
+          splitObject[gen][key] = eventDatumForGen;
+        }
+
+        // no further processing necessary
+        continue;
+      }
+      // special case for evolution data
+      else if (key === 'evolves_to' || key === 'evolves_from') {
+        if (entity.name === 'eevee') console.log(entity[key]);
+      }
       
       // indicates patch list
       if (Array.isArray(value) && Array.isArray(value[0])) {
@@ -494,7 +510,10 @@ const splitEntity = (entity, initialGen) => {
             else {
               splitObject[gen][key] = patch.slice(0, -1);
             }
-          } else if (patch.slice(-1)[0] == gen) {
+          } 
+          // for some attributes, e.g. power, we need to have only one value per gen, so this catches that 
+          // for other attributes, e.g. 'evolves_to' for eevee, which evolves to multiple Pokemon in Gen 1, we can have multiple values per gen
+          else if (patch.slice(-1)[0] == gen && key != 'evolves_to' && key != 'evolves_from') {
             throw `${entity.formatted_name} has duplicate gen in ${key}, ${value}.`;
           }
         }
@@ -511,6 +530,20 @@ const splitEntity = (entity, initialGen) => {
         for (let innerKey of Object.keys(value)) {
           const innerValue = value[innerKey];
           
+          // special case for Pokemon learnsets; in this case, innerKey is a move name, and innerValue is of the form, e.g. ["7M", "7V", "6M", "5M", "4M", "3M"]
+          if (key === 'learnset') {
+            // learnDatum[0] is a single character repsenting the gen
+            const learnDatumForGen = innerValue.filter(learnDatum => learnDatum[0] == gen).map(learnDatum => learnDatum.slice(1));
+            
+            // if Pokemon doesn't learn move in gen, then learnDatumForGen will be empty
+            if (learnDatumForGen.length > 0) {
+              splitObject[gen][key][innerKey] = learnDatumForGen;
+            }
+
+            // no further processing required for innerKey
+            continue;
+          } 
+
           // indicates patch list
           if (Array.isArray(innerValue) && Array.isArray(innerValue[0])) {
             for (let patch of innerValue) {

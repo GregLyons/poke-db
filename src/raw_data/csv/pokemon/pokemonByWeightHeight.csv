@@ -675,7 +675,9 @@ archeops,1.4,32.0
 trubbish,0.6,31.0
 garbodor,1.9,107.3
 zorua,0.7,12.5
+zorua,0.7,12.5
 zoroark,1.6,81.1
+zoroark,1.6,73.0
 minccino,0.4,5.8
 cinccino,0.5,7.5
 gothita,0.4,5.8
@@ -783,7 +785,7 @@ spewpa,0.3,8.4
 vivillon,1.2,17.0
 litleo,0.6,13.5
 pyroar,1.5,81.5
-flabébé,0.1,0.1
+flabebe,0.1,0.1
 floette,0.2,0.9
 florges,1.1,10.0
 skiddo,0.9,31.0
@@ -845,7 +847,7 @@ zygarde_10,1.2,33.5
 zygarde_complete,4.5,610.0
 diancie,0.7,8.8
 diancie_mega,1.1,27.8
-hoopa_confined,0.5,9.0
+hoopa,0.5,9.0
 hoopa_unbound,6.5,490.0
 volcanion,1.7,195.0
 rowlet,0.3,1.5
@@ -908,7 +910,7 @@ pyukumuku,0.3,1.2
 type_null,1.9,120.5
 silvally,2.3,100.5
 minior_meteor,0.3,40.0
-minior_core,0.3,0.3
+minior,0.3,0.3
 komala,0.4,19.9
 turtonator,2.0,212.0
 togedemaru,0.3,3.3
@@ -935,8 +937,8 @@ celesteela,9.2,999.9
 kartana,0.3,0.1
 guzzlord,5.5,888.0
 necrozma,2.4,230.0
-necrozma_dusk_mane,3.8,460.0
-necrozma_dawn_wings,4.2,350.0
+necrozma_dusk,3.8,460.0
+necrozma_dawn,4.2,350.0
 necrozma_ultra,7.5,230.0
 magearna,1.0,80.5
 marshadow,0.7,22.2
@@ -1013,8 +1015,8 @@ pincurchin,0.3,1.0
 snom,0.3,3.8
 frosmoth,1.3,42.0
 stonjourner,2.5,520.0
-eiscue_ice_face,1.4,89.0
-eiscue_noice_face,1.4,89.0
+eiscue_ice,1.4,89.0
+eiscue_noice,1.4,89.0
 indeedee_m,0.9,28.0
 indeedee_f,0.9,28.0
 morpeko_full_belly,0.3,3.0

@@ -837,7 +837,7 @@ Dex Number,Pokemon Name,hp,attack,defense,special_attack,special_defense,speed
 718,zygarde_complete,216,100,121,91,95,85
 719,diancie,50,100,150,100,150,50
 719,diancie_mega,50,160,110,160,110,110
-720,hoopa_confined,80,110,60,150,130,70
+720,hoopa,80,110,60,150,130,70
 720,hoopa_unbound,80,160,60,170,130,80
 721,volcanion,80,110,120,130,90,70
 722,rowlet,68,55,55,50,50,42
@@ -896,7 +896,7 @@ Dex Number,Pokemon Name,hp,attack,defense,special_attack,special_defense,speed
 772,type_null,95,95,95,95,95,59
 773,silvally,95,95,95,95,95,95
 774,minior_meteor,60,60,100,60,100,60
-774,minior_core,60,100,60,100,60,120
+774,minior,60,100,60,100,60,120
 775,komala,65,115,65,75,95,65
 776,turtonator,60,78,135,91,85,36
 777,togedemaru,65,98,63,40,73,96
@@ -923,8 +923,8 @@ Dex Number,Pokemon Name,hp,attack,defense,special_attack,special_defense,speed
 798,kartana,59,181,131,59,31,109
 799,guzzlord,223,101,53,97,53,43
 800,necrozma,97,107,101,127,89,79
-800,necrozma_dusk_mane,97,157,127,113,109,77
-800,necrozma_dawn_wings,97,113,109,157,127,77
+800,necrozma_dusk,97,157,127,113,109,77
+800,necrozma_dawn,97,113,109,157,127,77
 800,necrozma_ultra,97,167,97,167,97,129
 801,magearna,80,95,115,130,115,65
 802,marshadow,90,125,80,90,90,125
@@ -1001,8 +1001,8 @@ Dex Number,Pokemon Name,hp,attack,defense,special_attack,special_defense,speed
 872,snom,30,25,35,45,30,20
 873,frosmoth,70,65,60,125,90,65
 874,stonjourner,100,125,135,20,20,70
-875,eiscue_ice_face,75,80,110,65,90,50
-875,eiscue_noice_face,75,80,70,65,50,130
+875,eiscue_ice,75,80,110,65,90,50
+875,eiscue_noice,75,80,70,65,50,130
 876,indeedee_m,60,65,55,105,95,95
 876,indeedee_f,70,55,65,95,105,85
 877,morpeko,58,95,58,70,58,97

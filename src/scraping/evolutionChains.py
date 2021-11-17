@@ -115,7 +115,7 @@ def makeEvolutionChainCSV(fname):
         elif pokemon1 == 'shellos':
           # gastrodon already has sea in name on the table
           whichSea = re.search(r'(west|east)', pokemon2).group(1)
-          writer.writerow([currentFamily, pokemon1 + '_' + whichSea + '_sea', method12, pokemon2, method13, pokemon3])
+          writer.writerow([currentFamily, pokemon1 + '_' + whichSea, method12, pokemon2, method13, pokemon3])
 
           continue
         # darmanitan standard

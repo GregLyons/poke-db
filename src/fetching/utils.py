@@ -186,6 +186,18 @@ def parseName(text, mode='normal'):
 
     # separate lowercase followed by uppercase, e.g. 'ExtremeSpeed' to 'Extreme Speed'--for Bulbapedia typos
     text = re.sub(r'([a-z])([A-Z])', r'\1 \2', text)
+
+    # force rename
+    text = text.replace('Dusk Mane', 'Dusk')
+    text = text.replace('Dawn Wings', 'Dawn')
+    text = text.replace('Noice Face', 'Noice')
+    text = text.replace('Ice Face', 'Ice')
+    if 'Minior' in text:
+      text = text.replace('Core', '')
+    if 'Hoopa' in text:
+      text = text.replace('Confined', '')
+    text = text.replace('West Sea', 'West')
+    text = text.replace('East Sea', 'East')
     
     # replace spaces with underscores, convert to lowercase, and strip any underscores on the ends (e.g. from Ash-Greninja')
     return text.replace(' ', '_').lower().strip('_').replace('é', 'e')
@@ -243,7 +255,7 @@ if __name__ == '__main__':
     ['Gourgeist (Small Size)', 'gourgeist_small'],
     ['Zygarde (50% Forme)', 'zygarde_50'],
     ['Zygarde-10%', 'zygarde_10'],
-    ['Hoopa (Hoopa Confined)', 'hoopa_confined'],
+    ['Hoopa (Hoopa Confined)', 'hoopa'],
     ['Wishiwashi (School Form)', 'wishiwashi_school'],
     ['Minior (Meteor Form)', 'minior_meteor'],
     ['Minior (Core)', 'minior_core'],

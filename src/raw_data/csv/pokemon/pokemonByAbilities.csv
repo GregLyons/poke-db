@@ -547,10 +547,10 @@ Dex Number,Sprite URL,Pokemon Name,Ability 1,Ability 2,Hidden,Gen
 420,//cdn2.bulbagarden.net/upload/f/fb/420MS8.png,cherubi,chlorophyll,,,4
 421,//cdn2.bulbagarden.net/upload/2/29/421MS8.png,cherrim_overcast,flower_gift,,,4
 421,//cdn2.bulbagarden.net/upload/3/37/421SMS8.png,cherrim_sunshine,flower_gift,,,4
-422,//cdn2.bulbagarden.net/upload/d/dd/422MS8.png,shellos_west_sea,sticky_hold,storm_drain,sand_force,4
-422,//cdn2.bulbagarden.net/upload/2/2f/422EMS8.png,shellos_east_sea,sticky_hold,storm_drain,sand_force,4
-423,//cdn2.bulbagarden.net/upload/2/22/423MS8.png,gastrodon_west_sea,sticky_hold,storm_drain,sand_force,4
-423,//cdn2.bulbagarden.net/upload/b/b3/423EMS8.png,gastrodon_east_sea,sticky_hold,storm_drain,sand_force,4
+422,//cdn2.bulbagarden.net/upload/d/dd/422MS8.png,shellos_west,sticky_hold,storm_drain,sand_force,4
+422,//cdn2.bulbagarden.net/upload/2/2f/422EMS8.png,shellos_east,sticky_hold,storm_drain,sand_force,4
+423,//cdn2.bulbagarden.net/upload/2/22/423MS8.png,gastrodon_west,sticky_hold,storm_drain,sand_force,4
+423,//cdn2.bulbagarden.net/upload/b/b3/423EMS8.png,gastrodon_east,sticky_hold,storm_drain,sand_force,4
 425,//cdn2.bulbagarden.net/upload/c/c5/425MS8.png,drifloon,aftermath,unburden,flare_boost,4
 426,//cdn2.bulbagarden.net/upload/a/af/426MS8.png,drifblim,aftermath,unburden,flare_boost,4
 427,//cdn2.bulbagarden.net/upload/8/83/427MS8.png,buneary,run_away,klutz,limber,4
@@ -861,7 +861,7 @@ Dex Number,Sprite URL,Pokemon Name,Ability 1,Ability 2,Hidden,Gen
 718,//cdn2.bulbagarden.net/upload/2/25/718CMS8.png,zygarde_complete,power_construct,,,6
 719,//cdn2.bulbagarden.net/upload/0/0e/719MS8.png,diancie,clear_body,,,6
 719,//cdn2.bulbagarden.net/upload/e/ee/719MMS6.png,diancie_mega,magic_bounce,,,6
-720,//cdn2.bulbagarden.net/upload/c/c1/720MS6.png,hoopa_confined,magician,,,6
+720,//cdn2.bulbagarden.net/upload/c/c1/720MS6.png,hoopa,magician,,,6
 720,//cdn2.bulbagarden.net/upload/c/cd/720UMS6.png,hoopa_unbound,magician,,,6
 721,//cdn2.bulbagarden.net/upload/d/d4/721MS8.png,volcanion,water_absorb,,,6
 Dex Number,Sprite URL,Pokemon Name,Ability 1,Ability 2,Hidden,Gen
@@ -925,7 +925,7 @@ Dex Number,Sprite URL,Pokemon Name,Ability 1,Ability 2,Hidden,Gen
 772,//cdn2.bulbagarden.net/upload/0/05/772MS8.png,type_null,battle_armor,,,7
 773,//cdn2.bulbagarden.net/upload/9/97/773MS8.png,silvally,rks_system,,,7
 774,//cdn2.bulbagarden.net/upload/0/00/774MS6.png,minior_meteor,shields_down,,,7
-774,//cdn2.bulbagarden.net/upload/9/9d/774RMS6.png,minior_core,shields_down,,,7
+774,//cdn2.bulbagarden.net/upload/9/9d/774RMS6.png,minior,shields_down,,,7
 775,//cdn2.bulbagarden.net/upload/f/fb/775MS6.png,komala,comatose,,,7
 776,//cdn2.bulbagarden.net/upload/6/63/776MS8.png,turtonator,shell_armor,,,7
 777,//cdn2.bulbagarden.net/upload/a/a6/777MS8.png,togedemaru,iron_barbs,lightning_rod,sturdy,7
@@ -953,8 +953,8 @@ Dex Number,Sprite URL,Pokemon Name,Ability 1,Ability 2,Hidden,Gen
 798,//cdn2.bulbagarden.net/upload/d/d5/798MS8.png,kartana,beast_boost,,,7
 799,//cdn2.bulbagarden.net/upload/d/dd/799MS8.png,guzzlord,beast_boost,,,7
 800,//cdn2.bulbagarden.net/upload/f/f6/800MS8.png,necrozma,prism_armor,,,7
-800,//cdn2.bulbagarden.net/upload/6/63/800DMMS8.png,necrozma_dusk_mane,prism_armor,,,7
-800,//cdn2.bulbagarden.net/upload/e/ef/800DWMS8.png,necrozma_dawn_wings,prism_armor,,,7
+800,//cdn2.bulbagarden.net/upload/6/63/800DMMS8.png,necrozma_dusk,prism_armor,,,7
+800,//cdn2.bulbagarden.net/upload/e/ef/800DWMS8.png,necrozma_dawn,prism_armor,,,7
 800,//cdn2.bulbagarden.net/upload/c/c6/800UMS6.png,necrozma_ultra,neuroforce,,,7
 801,//cdn2.bulbagarden.net/upload/c/c0/801MS8.png,magearna,soul_heart,,,7
 802,//cdn2.bulbagarden.net/upload/d/d2/802MS8.png,marshadow,technician,,,7
@@ -1028,8 +1028,8 @@ Dex Number,Sprite URL,Pokemon Name,Ability 1,Ability 2,Hidden,Gen
 872,//cdn2.bulbagarden.net/upload/1/1b/872MS8.png,snom,shield_dust,,ice_scales,8
 873,//cdn2.bulbagarden.net/upload/e/e5/873MS8.png,frosmoth,shield_dust,,ice_scales,8
 874,//cdn2.bulbagarden.net/upload/b/b6/874MS8.png,stonjourner,power_spot,,,8
-875,//cdn2.bulbagarden.net/upload/3/3b/875MS8.png,eiscue_ice_face,ice_face,,,8
-875,//cdn2.bulbagarden.net/upload/c/c7/875NMS8.png,eiscue_noice_face,ice_face,,,8
+875,//cdn2.bulbagarden.net/upload/3/3b/875MS8.png,eiscue_ice,ice_face,,,8
+875,//cdn2.bulbagarden.net/upload/c/c7/875NMS8.png,eiscue_noice,ice_face,,,8
 876,//cdn2.bulbagarden.net/upload/5/57/876MS8.png,indeedee_m,inner_focus,synchronize,psychic_surge,8
 876,//cdn2.bulbagarden.net/upload/a/a2/876FMS8.png,indeedee_f,own_tempo,synchronize,psychic_surge,8
 877,//cdn2.bulbagarden.net/upload/0/03/877MS8.png,morpeko_full_belly,hunger_switch,,,8

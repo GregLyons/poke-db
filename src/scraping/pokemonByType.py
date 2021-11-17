@@ -99,7 +99,7 @@ def makePokemonTypeCSV(fname):
             print("Couldn't handle", formattedSpeciesName, type2)
         elif formattedSpeciesName == 'hoopa':
           if type2 == 'ghost':
-            formName = 'confined'
+            formName = ''
           elif type2 == 'dark':
             formName = 'unbound'
           else:
@@ -287,13 +287,13 @@ def addGMax(writer):
 
     if 'Urshifu' in pokemonName:
       # parseName method already handles Urshifu forms of the format in the table
-      pokemonName = 'g_max_' + parseName(pokemonName, 'pokemon')
+      pokemonName = parseName(pokemonName, 'pokemon') + '_gmax'
     elif 'Toxtricity' in pokemonName:
-      writer.writerow([8, '', speciesName, 'g_max_' + speciesName + '_low_key', 'electric', 'poison'])
-      writer.writerow([8, '', speciesName, 'g_max_' + speciesName + '_amped', 'electric', 'poison'])
+      writer.writerow([8, '', speciesName, speciesName + '_low_key' + '_gmax', 'electric', 'poison'])
+      writer.writerow([8, '', speciesName, speciesName + '_amped' + '_gmax', 'electric', 'poison'])
       continue
     else: 
-      pokemonName = 'g_max_' + parseName(pokemonName.split('(')[0], 'pokemon')
+      pokemonName = parseName(pokemonName.split('(')[0], 'pokemon') + '_gmax'
 
     gmaxTypes = [span.get_text().replace(u'\xa0', '') for span in cells[1].find_all('span')]
     gmaxType1 = gmaxTypes[0]

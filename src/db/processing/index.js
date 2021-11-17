@@ -8,6 +8,8 @@
   
   Then, transform the entire pokemon.json into an array, pokemonArr, whose entry at index 0 is the original value whose key in pokemon.json is "bulbasaur", together with an extra entry, "name: 'bulbasaur'". So each key becomes another field in the corresponding array entry.
 
+Note that, due to the complicated structure of the evolution data, the 'evolves_to' and 'evolves_from' properties for Pokemon are not extended in this way. We handle them separately in step 4.
+
 2. Pokemon Showdown splits the learnsets between gen 2 and below and after gen 2. We merge them into a single collection of learnsets.
 
 3. Add learnset and event data from Pokemon Showdown's learnsets.js to pokemonArr. Thus, pokemonArr[0], corresponding to "bulbasaur", will have added fields "learnset" and "event_data" with the relevant information. This is done via addLearnsetsToPokemonArr.
@@ -36,13 +38,15 @@ const pTypeArr = serializeDict(pTypes);
 const statusArr = serializeDict(statuses);
 const usageMethodArr = serializeDict(usageMethods);
 
+console.log(pokemonArr
+  .filter(pokemon => pokemon.name == 'eevee')
+  .map(pokemon => pokemon.evolves_to));
+
 /* 2 */
 const { mergeLearnsets } = require('./utils.js');
 const gen2Learnsets = require('../../raw_data/gen2learnsets.js');
 const laterLearnsets = require('../../raw_data/learnsets.js');
 const learnsets = mergeLearnsets(gen2Learnsets, laterLearnsets);
-
-console.log(learnsets.bulbasaur);
 
 /* 3 */
 const { addLearnsetsToPokemonArr } = require('./utils.js');
@@ -51,7 +55,10 @@ addLearnsetsToPokemonArr(learnsets, moves, pokemon, pokemonArr);
 /* 4 */
 const { splitArr } = require('./utils.js');
 // handled items and abilities
-const splitMoveArr = splitArr(moveArr);
+const splitPokemonArr = splitArr(pokemonArr);
+// console.log(splitPokemonArr.filter(pokemon => pokemon.name === 'eevee').map(pokemon => {
+//   console.log(pokemon);
+// }));
 
 module.exports = {
   abilityArr,
