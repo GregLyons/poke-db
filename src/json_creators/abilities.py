@@ -93,7 +93,7 @@ def addEffectData(fpath, abilityDict):
     abilityDict["scrappy"]["causes_status"]["identified"] = [[100.0, 4]]
 
     # stench
-    abilityDict["stench"]["causes_status"]["flinch"] = [[0.0, 3], [0.0, 4], [10.0, 5]]
+    abilityDict["stench"]["causes_status"]["flinch"] = [[10.0, 5]]
 
     # sturdy
     abilityDict["sturdy"]["causes_status"]["bracing"] = [[100.0, 3]]
@@ -171,7 +171,7 @@ def addEffectData(fpath, abilityDict):
 
       # these abilities only got their type-resisting effects in Gen 5
       if abilityName in ['lightning_rod', 'storm_drain']:
-        abilityDict[abilityName]["resists_type"][resists] = [[1.0, 3], [1.0, 4], [0.0, 5]]
+        abilityDict[abilityName]["resists_type"][resists] = [[0.0, 5]]
         continue
 
       if moveClass == 'method':

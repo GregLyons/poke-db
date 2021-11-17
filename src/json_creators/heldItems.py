@@ -124,8 +124,6 @@ def addBerryData(fpath, itemDict):
       if type not in typeDict.keys():
         print(berryName, type)
         continue
-      
-      print(gen4Power, gen6Power)
 
       if gen4Power != '':
         itemDict[berryName]["nature_power"] = [[type, int(gen4Power), gen]]
@@ -302,7 +300,7 @@ def addOtherItemData(fpath, itemDict):
           itemDict[itemName]["stat_modifications"][stat] = [[1.5, 'user', 3], [1, 'user', 7]]
         # boosted type from gen 7 onward
         for type in ['psychic', 'dragon']:
-          itemDict[itemName]["boosts_type"][type] = [[1.0, 3], [1.0, 4], [1.0, 5], [1.0, 6], [1.2, 7]]
+          itemDict[itemName]["boosts_type"][type] = [[1.2, 7]]
       elif pokemonName == 'dialga':
         for type in ['dragon', 'steel']:
           itemDict[itemName]["boosts_type"][type] = [[1.2, 4]]
@@ -514,7 +512,7 @@ def addOtherItemData(fpath, itemDict):
     for itemName in items:
       statusGen, itemGen = statusDict[status], itemDict[itemName]["gen"]
       if itemName == 'mental_herb' and status != 'infatuation':
-        itemDict[itemName]["resists_status"][status] = [[False, 3], [False, 4], [True, 5]]
+        itemDict[itemName]["resists_status"][status] = [[True, 5]]
       else:
         itemDict[itemName]["resists_status"][status] = [[True, max(statusGen, itemGen)]]
 

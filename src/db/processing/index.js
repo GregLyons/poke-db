@@ -40,7 +40,7 @@ addLearnsetsToPokemonArr(learnsets, moves, pokemon, pokemonArr);
 /* 3 */
 const { splitArr } = require('./utils.js');
 // handled items and abilities
-splitArr(moveArr);
+splitArr(abilityArr);
 
 module.exports = {
   abilityArr,

@@ -1538,7 +1538,7 @@
     "resists_status": {},
     "boosts_type": {},
     "resists_type": {
-      "electric": [[1.0, 3], [1.0, 4], [0.0, 5]]
+      "electric": [[0.0, 5]]
     },
     "boosts_usage_method": {},
     "resists_usage_method": {},
@@ -3046,7 +3046,7 @@
     "gen": 3,
     "effects": {},
     "causes_status": {
-      "flinch": [[0.0, 3], [0.0, 4], [10.0, 5]]
+      "flinch": [[10.0, 5]]
     },
     "resists_status": {},
     "boosts_type": {},
@@ -3075,7 +3075,7 @@
     "resists_status": {},
     "boosts_type": {},
     "resists_type": {
-      "water": [[1.0, 3], [1.0, 4], [0.0, 5]]
+      "water": [[0.0, 5]]
     },
     "boosts_usage_method": {},
     "resists_usage_method": {},

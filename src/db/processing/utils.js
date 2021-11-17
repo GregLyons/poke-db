@@ -439,7 +439,7 @@ const splitEntity = (entity, initialGen) => {
           }
         }
         if (!splitObject[gen][key]) {
-          throw `${entity.formatted_name} does not have a patch for ${gen}: ${key}, ${value}.`;
+          console.log(`${entity.formatted_name} does not have a patch for ${gen}: ${key}, ${value}.`);
         }
       
       } 
@@ -453,7 +453,7 @@ const splitEntity = (entity, initialGen) => {
           // indicates patch list
           if (Array.isArray(innerValue) && Array.isArray(innerValue[0])) {
             for (let patch of innerValue) {
-              console.log(patch, gen, patch.slice(-1)[0]);
+              // console.log(patch, gen, patch.slice(-1)[0]);
               if (patch.slice(-1)[0] == gen && !splitObject[gen][key][innerKey]) {
                 splitObject[gen][key][innerKey] = patch.slice(0, -1);
               } else if (patch.slice(-1)[0] == gen) {
@@ -461,7 +461,7 @@ const splitEntity = (entity, initialGen) => {
               }
             }
             if (!splitObject[gen][key][innerKey]) {
-              throw `${entity.formatted_name} does not have a patch for ${gen}: ${innerKey}, ${innerValue}.`;
+              console.log(`${entity.formatted_name} does not have a patch for ${gen}: ${innerKey}, ${innerValue}.`);
             }
           }
           else if (typeof innerValue === 'object') {

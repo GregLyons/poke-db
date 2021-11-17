@@ -2286,11 +2286,11 @@
     "causes_status": {},
     "resists_status": {
       "infatuation": [[true, 3]],
-      "taunt": [[false, 3], [false, 4], [true, 5]],
-      "encore": [[false, 3], [false, 4], [true, 5]],
-      "torment": [[false, 3], [false, 4], [true, 5]],
-      "heal_block": [[false, 3], [false, 4], [true, 5]],
-      "disable": [[false, 3], [false, 4], [true, 5]]
+      "taunt": [[true, 5]],
+      "encore": [[true, 5]],
+      "torment": [[true, 5]],
+      "heal_block": [[true, 5]],
+      "disable": [[true, 5]]
     },
     "boosts_type": {},
     "resists_type": {},
@@ -3656,8 +3656,8 @@
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {
-      "psychic": [[1.0, 3], [1.0, 4], [1.0, 5], [1.0, 6], [1.2, 7]],
-      "dragon": [[1.0, 3], [1.0, 4], [1.0, 5], [1.0, 6], [1.2, 7]]
+      "psychic": [[1.2, 7]],
+      "dragon": [[1.2, 7]]
     },
     "resists_type": {},
     "boosts_usage_method": {},
