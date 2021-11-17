@@ -225,18 +225,33 @@ def makeInitialMoveDict(fname):
     for innerKey in ['type', 'pp', 'power', 'accuracy', 'category']:
       # If the move is LGPE_only, no change required; move on
       if moveDict[moveName]["lgpe_only"]:
-        moveDict[moveName]["lgpe_exclusive_values"][innerKey] = moveDict[moveName][innerKey][0][0]
+        # set values for LGPE
+        if innerKey in ['pp', 'power', 'accuracy'] and moveDict[moveName][innerKey][0][0] != '':
+          moveDict[moveName]["lgpe_exclusive_values"][innerKey] = int(moveDict[moveName][innerKey][0][0])
+        else:
+          moveDict[moveName]["lgpe_exclusive_values"][innerKey] = moveDict[moveName][innerKey][0][0]
+
+        # removed in Gen 8
         if innerKey in ['pp', 'power', 'accuracy']:
-          moveDict[moveName][innerKey] = [['0', 8]]
+          moveDict[moveName][innerKey] = [[0, 8]]
         else:
           moveDict[moveName][innerKey] = [[moveDict[moveName][innerKey][0][0], 8]]
+
         continue
 
       # Split up patch into LGPE_only and other
       LGPEOnlyPatch = [patch for patch in moveDict[moveName][innerKey] if patch[1] in ['lgpe_only', 'LGPE']]
+      # Remove gen info from LGPE only patch
+      if len(LGPEOnlyPatch) == 1:
+        LGPEOnlyPatch = LGPEOnlyPatch[0][0]
+        if LGPEOnlyPatch.isnumeric():
+          LGPEOnlyPatch = int(LGPEOnlyPatch)
+        moveDict[moveName]["lgpe_exclusive_values"][innerKey] = LGPEOnlyPatch
+
+      # non-LGPE patches
       noLGPEOnlyPatches = [patch for patch in moveDict[moveName][innerKey] if patch[1] not in ['lgpe_only', 'LGPE']]
 
-      moveDict[moveName][innerKey], moveDict[moveName]["lgpe_exclusive_values"][innerKey] = noLGPEOnlyPatches, LGPEOnlyPatch
+      moveDict[moveName][innerKey] = noLGPEOnlyPatches
 
       modifiedPatchList = []
       for i in range(len(moveDict[moveName][innerKey])):
@@ -653,10 +668,10 @@ def enforceDataTypes(moveDict):
       transformedPatches = []
       for patch in patches:
         value, patchGen = patch
-        if value.isnumeric():
+        if str(value).isnumeric():
           transformedPatches.append([int(value), patchGen])
         elif value == '':
-          transformedPatches.append([None, patchGen])
+          transformedPatches.append([0, patchGen])
         else:
           transformedPatches.append(patch)
       moveDict[moveName][keyName] = transformedPatches

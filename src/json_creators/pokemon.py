@@ -345,22 +345,30 @@ def addEvolutionData(fname, pokemonDict):
     for row in reader:
       pokemon1, method12, pokemon2, method23, pokemon3 = row["Pokemon 1 Name"], row["1 to 2 Method"], row["Pokemon 2 Name"], row["2 to 3 Method"], row["Pokemon 3 Name"]
 
+      # evolution data is only valid in a given gen so long as the Pokemon involved in the relationship have been released
+      if pokemon1 in pokemonDict.keys():
+        gen1 = pokemonDict[pokemon1]["gen"]
+      if pokemon2 in pokemonDict.keys():
+        gen2 = pokemonDict[pokemon2]["gen"]
+      if pokemon3 in pokemonDict.keys():
+        gen3 = pokemonDict[pokemon3]["gen"]
+
       # special case for silvally
       if pokemon2 == 'silvally':
         for type in typeList():
           if type == '???':
             continue
 
-          pokemonDict[pokemon1]["evolves_to"].append([pokemon2 + '_' + type, method12])
-          pokemonDict[pokemon2 + '_' + type]["evolves_from"].append([pokemon1, method12])
+          pokemonDict[pokemon1]["evolves_to"].append([pokemon2 + '_' + type, method12, max(gen1, gen2)])
+          pokemonDict[pokemon2 + '_' + type]["evolves_from"].append([pokemon1, method12, max(gen1, gen2)])
         continue
 
       if pokemon2 != '':
-        pokemonDict[pokemon1]["evolves_to"].append([pokemon2, method12])
-        pokemonDict[pokemon2]["evolves_from"].append([pokemon1, method12])
+        pokemonDict[pokemon1]["evolves_to"].append([pokemon2, method12, max(gen1, gen2)])
+        pokemonDict[pokemon2]["evolves_from"].append([pokemon1, method12, max(gen1, gen2)])
       if pokemon3 != '':
-        pokemonDict[pokemon2]["evolves_to"].append([pokemon3, method23])
-        pokemonDict[pokemon3]["evolves_from"].append([pokemon2, method23])
+        pokemonDict[pokemon2]["evolves_to"].append([pokemon3, method23, max(gen2, gen3)])
+        pokemonDict[pokemon3]["evolves_from"].append([pokemon2, method23, max(gen2, gen3)])
 
   return
 
