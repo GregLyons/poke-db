@@ -131,7 +131,7 @@ CREATE TABLE IF NOT EXISTS pmove_requires_pokemon (
   INDEX opposite_pmove_pokemon (pokemon_generation_id, pokemon_id, pmove_generation_id, pmove_id)
 );
 
-CREATE TABLE IF NOT EXISTS pmove_requires_pokemon (
+CREATE TABLE IF NOT EXISTS pmove_requires_item (
   pmove_generation_id TINYINT UNSIGNED NOT NULL,
   pmove_id SMALLINT UNSIGNED NOT NULL,
   item_generation_id TINYINT UNSIGNED NOT NULL,

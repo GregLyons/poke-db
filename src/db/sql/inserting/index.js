@@ -3,20 +3,32 @@ Gather together all the INSERT INTO statements in this folder. We combine them a
 
 The keys of each object are the table names, and each value is another object with an "insert" key consisting of the actual INSERT INTO statement.
 
-These will be combined one level up with the objects created in ../tables/index.js for CREATE TABLE and TRUNCATE TABLE functionality, as well as foreign key dependency data.
+These will be combined one level up with the objects created in ../tables/index.js for CREATE TABLE, TRUNCATE TABLE, and SELECT functionality, as well as foreign key dependency data.
 */
 
 const fs = require('fs');
 
-const insertPath = './src/db/sql/inserting/';
+const INSERT_PATH = './src/db/sql/inserting/';
+const FILENAMES_AND_KEYS = [
+  ['entities.sql', 'entityTables'],
+  ['abilities.sql', 'abilityJunctionTables'],
+  ['pTypes.sql', 'typeJunctionTables'],
+  ['items.sql', 'itemJunctionTables'],
+  ['moves.sql', 'moveJunctionTables'],
+  ['pokemon.sql', 'pokemonJunctionTables'],
+  ['versionGroups.sql', 'versionGroupJunctionTables'],
+];
 
-// Object containing table names and their corresponding insert statements
-/* 
-Need to INSERT INTO generation first.
-Need to INSERT INTO ptype before INSERT INTO pmove, the latter of which uses ptype as a foreign key.
-Otherwise, order doesn't matter.
-*/
-const insertEntities = fs.readFileSync(insertPath + 'entities.sql')
+const insertStatements = FILENAMES_AND_KEYS.reduce((acc, curr) => {
+  const [fname, keyName] = curr;
+  return {
+    ...acc,
+    [keyName]: getStatementObj(fname),
+  };
+}, {});
+
+function getStatementObj(fname) {
+  return fs.readFileSync(INSERT_PATH + fname)
   .toString()
   .split(';')
   .reduce((acc, curr) => {
@@ -34,3 +46,6 @@ const insertEntities = fs.readFileSync(insertPath + 'entities.sql')
     }
     else return acc;
   }, {});
+}
+
+module.exports = insertStatements;

@@ -9,6 +9,16 @@ INSERT INTO version_group (
   version_group_code
 ) VALUES ?;
 
+INSERT INTO pdescription (
+  pdescription_id,
+  pdescription_text
+) VALUES ?;
+
+INSERT INTO sprite (
+  sprite_id,
+  sprite_path
+) VALUES ?;
+
 /*
 Simple entities, not dependent on generation_id
 */

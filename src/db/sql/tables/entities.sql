@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS pdescription (
 
 CREATE TABLE IF NOT EXISTS sprite (
   sprite_id MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT,
-  sprite_url TINYTEXT NOT NULL,
+  sprite_path TINYTEXT NOT NULL,
 
   PRIMARY KEY (sprite_id)
 );
