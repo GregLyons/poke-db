@@ -1,3 +1,20 @@
+CREATE TABLE IF NOT EXISTS pmove_has_ptype (
+  pmove_generation_id TINYINT UNSIGNED NOT NULL,
+  pmove_id SMALLINT UNSIGNED NOT NULL,
+  ptype_generation_id TINYINT UNSIGNED NOT NULL,
+  ptype_id TINYINT UNSIGNED NOT NULL,
+
+  PRIMARY KEY (pmove_generation_id, pmove_id, ptype_generation_id, ptype_id),
+  FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  FOREIGN KEY (ptype_generation_id, ptype_id) REFERENCES ptype(generation_id, ptype_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX opposite_pmove_ptype (ptype_generation_id, ptype_id, pmove_generation_id, pmove_id)
+);
+
 CREATE TABLE IF NOT EXISTS pmove_requires_ptype (
   pmove_generation_id TINYINT UNSIGNED NOT NULL,
   pmove_id SMALLINT UNSIGNED NOT NULL,

@@ -139,8 +139,6 @@ CREATE TABLE IF NOT EXISTS pmove (
   pmove_name VARCHAR(45) NOT NULL,
   pmove_formatted_name VARCHAR(45) NOT NULL,
   introduced TINYINT UNSIGNED NOT NULL,
-  ptype_generation_id TINYINT UNSIGNED NOT NULL,
-  ptype_id TINYINT UNSIGNED NOT NULL,
   pmove_power SMALLINT UNSIGNED, /* Non-damaging pmoves, fixed damage pmoves, and variable damage pmoves can have NULL */
   pmove_pp TINYINT UNSIGNED NOT NULL,
   pmove_accuracy TINYINT UNSIGNED, /* pmoves which bypass accuracy checks can have NULL */
@@ -156,14 +154,10 @@ CREATE TABLE IF NOT EXISTS pmove (
   FOREIGN KEY (introduced) REFERENCES generation(generation_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-  FOREIGN KEY (ptype_generation_id, ptype_id) REFERENCES ptype(generation_id, ptype_id)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
   
   INDEX (pmove_id),
   INDEX gen_alpha (generation_id, pmove_formatted_name),
   INDEX intro (introduced),
-  INDEX by_ptype (generation_id, ptype_generation_id, ptype_id),
   INDEX by_power (generation_id, pmove_power),
   INDEX by_category (generation_id, pmove_category)
 );
