@@ -15,6 +15,8 @@ Note that, due to the complicated structure of the evolution data, the 'evolves_
 3. Add learnset and event data from Pokemon Showdown's learnsets.js to pokemonArr. Thus, pokemonArr[0], corresponding to "bulbasaur", will have added fields "learnset" and "event_data" with the relevant information. This is done via addLearnsetsToPokemonArr.
 
 4. For each entry in an entity array, split the entry into multiple copies according to generation. For example, "bulbasaur" in pokemonArr will be split into 8 entries, one for each gen, with the data appropriate to that gen.
+
+5. Import descriptions.json and serialize them.
 */
 
 /* 1. Extend patch notes and serialize. */
@@ -65,12 +67,52 @@ const splitMoveArr = splitArr(moveArr);
 const splitPokemonArr = splitArr(pokemonArr);
 const splitPTypeArr = splitArr(pTypeArr);
 
+
+
+/* 5. Serialize descriptions. */
+const descriptions = require('../../raw_data/json/descriptions.json');
+const { serializeDescriptions } = require('./utils.js');
+
+/*
+Entries in descriptionArr are objects of the form:
+  {
+    entity_name: Name of ability, item, etc. to which the description applies, e.g. 'inner_focus'.
+
+    description_type: Type of entity_name, e.g. 'inner_focus' has description_type 'ability'.
+
+    gen: The generation in which the entity was introduced.
+
+    '0': An array of the form
+      [
+        <Description text>,
+        [<Version group codes>]
+      ],
+    e.g. 
+      [
+        'Prevents flinching.',
+        ['RS', 'E', 'Colo', 'XD', 'FRLG']
+      ]
+    
+    ...: Possibly additional integers, one for each unique description, with similar structure to the value for '0', e.g.
+      '1': [...]
+      '2': [...]
+  }
+*/
+const descriptionArr = serializeDescriptions(descriptions);
+
+console.log(descriptionArr);
+
+// const { splitDescriptions } = require('./utils.js');
+// const splitDescriptionArr = splitDescriptions(descriptionArr);
+// console.log(splitDescriptionArr);
+
 module.exports = {
   splitAbilityArr,
   splitItemArr,
   splitMoveArr,
   splitPokemonArr,
   splitPTypeArr,
+  descriptionArr,
   effectArr,
   statusArr,
   usageMethodArr,

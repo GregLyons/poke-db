@@ -594,3 +594,40 @@ export const splitArr = arr => {
   }, []);
 };
 // #endregion
+
+// SERIALIZE AND SPLIT DESCRIPTIONS
+// #region
+
+// Similar to serializeDict, without patch extension
+export const serializeDescriptions = descriptions => {
+  return Object.keys(descriptions).reduce((acc, curr) => {
+    return acc.concat({
+      "entity_name": curr,
+      ...descriptions[curr],
+    });
+  }, []);
+};
+
+// // Similar to splitArr, but with respect to version group rather than generation
+// export const splitDescriptions = descriptionArr => {
+//   let splitArr = [];
+//   // entity is a description object
+//   for (let entity of descriptionArr) {
+//     // numeric keys of entity have description info
+//     for (let descriptionIndex of Object.keys(entity).filter(key => !isNaN(key))) {
+//       const [description, versionGroups] = entity[descriptionIndex];
+//       for (let versionGroup of versionGroups) {
+//         splitArr.push({
+//           "entity_name": entity.entity_name,
+//           "description_type": entity.description_type,
+//           "description_index": parseInt(descriptionIndex, 10),
+//           "description": description,
+//           "version_group": versionGroup,
+//         });
+//       }
+//     }
+//   }
+
+//   return splitArr;
+// };
+// #endregion

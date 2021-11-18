@@ -9,7 +9,7 @@ import moves
 import pokemon
 import statuses
 import usageMethods
-from utils import statusList, typeList, effectList, usageMethodList, statList, checkConsistency, getJSONDataPath
+from utils import statusList, typeList, effectList, usageMethodList, statList, checkConsistency, versionGroupDictionary, getJSONDataPath
 
 # check that statusDict matches statusList
 def checkStatuses(statusDict):
@@ -237,14 +237,30 @@ def checkMoveRequirements(moveDict, typeDict, pokemonDict):
   return
 
 # check that descriptionDict and entityDict have the same entityNames, where entityType is 'ability', 'item', or 'move'
-def checkDescriptionsAgainstEntityDict(descriptionDict, entityDict, entityType):
+def checkDescriptionsAgainstEntities(descriptionDict, entityDict, entityType):
   print('Checking consistency of descriptionDict with ' + entityType + ' names...')
 
   entityDescriptionNames = set([entityName for entityName in descriptionDict if descriptionDict[entityName]["description_type"] == entityType])
   entityNames = set(entityDict.keys())
 
   if entityDescriptionNames - entityNames:
+    print(f'Inconsistencies found for {entityType}:')
     print(entityDescriptionNames - entityNames)
+
+  print('Finished.')
+  print()
+
+  return
+
+# Checks that the version group codes in descriptionDict are consistent with versionGroupDict
+def checkDescriptionsAgainstVersionGroups(descriptionDict, versionGroupDict):
+  print('Checking consistency of descriptionDict with versionGroupDict...')
+  
+  for entityName in descriptionDict.keys():
+    for descriptionIndex in [descriptionKey for descriptionKey in descriptionDict[entityName].keys() if type(descriptionKey) == int]:
+      for versionGroupCode in descriptionDict[entityName][descriptionIndex][-1]:
+        if versionGroupCode not in versionGroupDict.keys():
+          print('Inconsistent version group code: ' + versionGroupCode + '.')
 
   print('Finished.')
   print()
@@ -285,6 +301,8 @@ def main():
   pokemonDict = pokemon.main()
   checkPokemon(pokemonDict)
 
+  versionGroupDict = versionGroupDictionary()
+
   # check that the more complicated dictionaries are consistent with each other in terms of ability names
   checkAbilitiesAgainstPokemon(abilityDict, pokemonDict)
 
@@ -292,9 +310,12 @@ def main():
   checkMoveRequirements(moveDict, typeDict, pokemonDict)
 
   # check that the entry names in descriptionDict are consistent with the other dicts
-  checkDescriptionsAgainstEntityDict(descriptionDict, abilityDict, 'ability')
-  checkDescriptionsAgainstEntityDict(descriptionDict, itemDict, 'item')
-  checkDescriptionsAgainstEntityDict(descriptionDict, moveDict, 'move')
+  checkDescriptionsAgainstEntities(descriptionDict, abilityDict, 'ability')
+  checkDescriptionsAgainstEntities(descriptionDict, itemDict, 'item')
+  checkDescriptionsAgainstEntities(descriptionDict, moveDict, 'move')
+  
+  # check that the version group codes in descriptionDict agree with those in versionGroupDict
+  checkDescriptionsAgainstVersionGroups(descriptionDict, versionGroupDict)
 
   # now that all the dicts have been checked for consistency, write each of them to a .json file
   dicts_fnames = [
@@ -306,7 +327,8 @@ def main():
     [descriptionDict, 'descriptions.json'],
     [itemDict, 'items.json'],
     [moveDict, 'moves.json'],
-    [pokemonDict, 'pokemon.json']
+    [pokemonDict, 'pokemon.json'],
+    [versionGroupDict, 'versionGroups.json']
   ]
   for dict_fname in dicts_fnames:
     dict, fname = dict_fname

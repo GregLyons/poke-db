@@ -54,8 +54,8 @@ def genSymbolToNumber(roman):
     raise ValueError('Not a valid gen.')
 
 # 
-def versionDictionary():
-  versionDict = {
+def versionGroupDictionary():
+  versionGroupDict = {
     "Stad": ["Stadium", 1],
     "GS": ["Gold/Silver", 2],
     "C": ["Crystal", 2],
@@ -79,12 +79,12 @@ def versionDictionary():
     "SwSh": ["Sword/Shield", 8]
   }
 
-  return versionDict
+  return versionGroupDict
 
 #
 def getVersionGroupsInGen(gen):
   if gen in range(numberOfGens() + 1):
-    versionDict = versionDictionary()
+    versionDict = versionGroupDictionary()
     return [versionGroup for versionGroup in versionDict.keys() if versionDict[versionGroup][-1] == gen]
   else:
     raise ValueError("Not a valid Gen!")
