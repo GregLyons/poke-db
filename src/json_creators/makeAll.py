@@ -1,6 +1,7 @@
 import json
 import re
 import abilities
+import descriptions
 import effects
 import elementalTypes as types
 import heldItems
@@ -235,6 +236,21 @@ def checkMoveRequirements(moveDict, typeDict, pokemonDict):
 
   return
 
+# check that descriptionDict and entityDict have the same entityNames, where entityType is 'ability', 'item', or 'move'
+def checkDescriptionsAgainstEntityDict(descriptionDict, entityDict, entityType):
+  print('Checking consistency of descriptionDict with ' + entityType + ' names...')
+
+  entityDescriptionNames = set([entityName for entityName in descriptionDict if descriptionDict[entityName]["description_type"] == entityType])
+  entityNames = set(entityDict.keys())
+
+  if entityDescriptionNames - entityNames:
+    print(entityDescriptionNames - entityNames)
+
+  print('Finished.')
+  print()
+
+  return
+
 # check dicts for internal consistency and for consistency with each other, then write to .json files
 def main():
   # initialize the various reference dicts and check that they're consistent with the type, status, usage method, effect, and stat lists
@@ -254,6 +270,9 @@ def main():
   abilityDict = abilities.main()
   checkAbilities(abilityDict)
 
+  # no need to check description dict against the reference dicts
+  descriptionDict = descriptions.main()
+
   # same but for itemDict
   itemDict = heldItems.main()
   checkItems(itemDict)
@@ -272,6 +291,11 @@ def main():
   # check that move requirements have consistent base move names, type names, and pokemon names
   checkMoveRequirements(moveDict, typeDict, pokemonDict)
 
+  # check that the entry names in descriptionDict are consistent with the other dicts
+  checkDescriptionsAgainstEntityDict(descriptionDict, abilityDict, 'ability')
+  checkDescriptionsAgainstEntityDict(descriptionDict, itemDict, 'item')
+  checkDescriptionsAgainstEntityDict(descriptionDict, moveDict, 'move')
+
   # now that all the dicts have been checked for consistency, write each of them to a .json file
   dicts_fnames = [
     [effectDict, 'effects.json'],
@@ -279,6 +303,7 @@ def main():
     [usageMethodDict, 'usageMethods.json'],
     [typeDict, 'elementalTypes.json'],
     [abilityDict, 'abilities.json'],
+    [descriptionDict, 'descriptions.json'],
     [itemDict, 'items.json'],
     [moveDict, 'moves.json'],
     [pokemonDict, 'pokemon.json']

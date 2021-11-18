@@ -453,7 +453,7 @@ def addOtherItemData(fpath, itemDict):
     ['removes_type_immunity', ['iron_ball', 'ring_target']],
     ['suppresses_ability', ['utility_umbrella']],
     ['extends_duration', ['grip_claw', 'light_clay', 'terrain_extender', 'damp_rock', 'heat_rock', 'icy_rock', 'smooth_rock']],
-    ['other_move_enhancement', ['big_root', 'binding_band', 'expert_belt', 'metronome', 'muscle_band', 'wise_glasses']],
+    ['other_move_enhancement', ['big_root', 'binding_band', 'expert_belt', 'metronome_item', 'muscle_band', 'wise_glasses']],
     ['affects_weight', ['float_stone']],
     ['move_last_in_priority', ['lagging_tail', 'full_incense']],
     ['move_first_in_priority', ['quick_claw', 'custap_berry']],

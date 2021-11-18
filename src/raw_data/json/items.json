@@ -2337,7 +2337,7 @@
     },
     "formatted_name": "Metal Powder"
   },
-  "metronome": {
+  "metronome_item": {
     "item_type": "",
     "pokemon_specific": [],
     "gen": 4,
@@ -2353,7 +2353,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Metronome"
+    "formatted_name": "Metronome Item"
   },
   "mewnium_z": {
     "item_type": "z_crystal_specific",

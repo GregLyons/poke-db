@@ -141,7 +141,9 @@ def scrapeDescriptions(fnamePrefix, category, descriptionDict):
       csvRow = [entityKey, descriptionDict[entityKey]["gen"]]
 
       for description in descriptionDict[entityKey]["descriptions"]:
-        csvRow.append(description.replace('\n', ''))
+        # remove new lines from description and remove accents from 'Pokémon'.
+        description = description.replace('\n', '').replace('Pok\u00e9mon', 'Pokemon').replace('Pokémon', 'Pokemon')
+        csvRow.append(description)
       
       # make length of rows consistent
       while len(csvRow) < len(headers):
@@ -378,7 +380,8 @@ def handleAbilityLink(link, descriptionDict, abilityGen):
 # find descriptions for item referenced by given link and add to descriptionDict
 # very similar to handleMoveLink, but we need to find the generation from the item link as well, as the item link doesn't come from a table which has the generation
 def handleItemLink(link, descriptionDict):
-  itemName, linkURL = parseName(link.get_text().rstrip('*')), 'https://bulbapedia.bulbagarden.net/' + link['href']
+  # metronome has '(item)' appended to avoid confusion with the move--remove parentheses
+  itemName, linkURL = parseName(link.get_text().rstrip('*')).replace('(item)', 'item'), 'https://bulbapedia.bulbagarden.net/' + link['href']
 
   # checking for duplicate names, if any
   if itemName in descriptionDict:
@@ -587,14 +590,14 @@ def main():
   # print('Scraping ability descriptions...')
   # scrapeDescriptions(fnamePrefix, 'ability', descriptionDict)
 
-  # print('Scraping berry descriptions...')
-  # scrapeDescriptions(fnamePrefix, 'berry', descriptionDict)
+  print('Scraping berry descriptions...')
+  scrapeDescriptions(fnamePrefix, 'berry', descriptionDict)
 
-  # print('Scraping gen 2 berry descriptions...')
-  # scrapeDescriptions(fnamePrefix, 'gen2berry', descriptionDict)
+  print('Scraping gen 2 berry descriptions...')
+  scrapeDescriptions(fnamePrefix, 'gen2berry', descriptionDict)
 
-  # print('Scraping item descriptions...')
-  # scrapeDescriptions(fnamePrefix, 'item', descriptionDict)
+  print('Scraping item descriptions...')
+  scrapeDescriptions(fnamePrefix, 'item', descriptionDict)
 
   print('Scraping move descriptions...')
   scrapeDescriptions(fnamePrefix, 'move', descriptionDict)

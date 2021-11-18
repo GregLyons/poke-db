@@ -113,10 +113,11 @@ def mainList(fname):
     for row in dataRows:
       cells = row.find_all('td')
 
-      # The Gen 2 exclusive Berserk Gene doesn't have a sprite--in this case, there is one less cell
+      # The Gen 2 exclusive Berserk Gene doesn't have a sprite--in this case, there is one less cell, and we go to else clause
       if cells[0].find('img') != None:
         spriteURL = cells[0].find('img')['src']
-        itemName = parseName(cells[2].get_text())
+        # append '_item' to metronome to avoid confusion with the move
+        itemName = parseName(cells[2].get_text()).replace('metronome', 'metronome_item') 
         description = cells[3].get_text()
         itemType = parseDescription(description)
       else:
@@ -172,7 +173,9 @@ def itemGenList(fname):
 
       for row in dataRows:
         cells = row.find_all('td')
-        itemName = parseName(cells[1].get_text())
+        # append '_item' to metronome to avoid confusion with the move
+        itemName = parseName(cells[1].get_text()).replace('metronome', 'metronome_item') 
+        print(itemName)
 
         # 'Good Rod', only in Gens 1-4, so the gen format is written differently
         if itemName == 'good_rod':
