@@ -328,7 +328,8 @@ def main():
     [itemDict, 'items.json'],
     [moveDict, 'moves.json'],
     [pokemonDict, 'pokemon.json'],
-    [versionGroupDict, 'versionGroups.json']
+    [versionGroupDict, 'versionGroups.json'],
+    [statList(), 'stats.json']
   ]
   for dict_fname in dicts_fnames:
     dict, fname = dict_fname

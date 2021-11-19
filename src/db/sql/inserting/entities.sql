@@ -4,14 +4,12 @@ INSERT INTO generation (
   generation_code
 ) VALUES ?;
 
-INSERT INTO version_group (
-  generation_id,
-  version_group_code
-) VALUES ?;
 
 INSERT INTO pdescription (
-  pdescription_id,
-  pdescription_text
+  pdescription_text,
+  pdescription_index,
+  pdescription_type,
+  entity_name
 ) VALUES ?;
 
 INSERT INTO sprite (
@@ -22,6 +20,12 @@ INSERT INTO sprite (
 /*
 Simple entities, not dependent on generation_id
 */
+
+INSERT INTO version_group (
+  generation_id,
+  version_group_code,
+  version_group_formatted_name
+) VALUES ?;
 
 INSERT INTO effect (
   effect_name,

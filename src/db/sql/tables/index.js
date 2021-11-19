@@ -56,12 +56,19 @@ function getStatementObj(fname) {
 
       const selectColumns = columnSelection => `SELECT ${columnSelection} FROM ${tableName}`;
 
+      // delete data from a table 
+      const deleteStatement = `DELETE FROM ${tableName}`
+      // reset auto_increment
+      const resetStatement = `ALTER TABLE ${tableName} AUTO_INCREMENT = 1`
+
       return {
         ...acc,
         [tableName]: {
           "create": createStatement,
           "truncate": truncateStatement,
           "select": selectColumns,
+          "delete": deleteStatement,
+          "reset_auto_inc": resetStatement,
           "foreign_keys": dependencies,
         }
       };

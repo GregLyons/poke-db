@@ -1,0 +1,10 @@
+[
+  "attack",
+  "defense",
+  "special_attack",
+  "special_defense",
+  "speed",
+  "accuracy",
+  "evasion",
+  "critical_hit_ratio"
+]

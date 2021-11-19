@@ -507,6 +507,10 @@ def handleBerryLink(link, descriptionDict, berryGen):
         # get description from cell; gen 8 descriptions have a 'Curry Ingredient' section which we remove
         berryDescription = re.sub(r'Curry Ingredient:.*', '', berryDescriptionCell.get_text().strip('\n')).replace('Held Item: ', '')
         versionGroupCodes = []
+        
+        # for some reason rows with no display are still sometimes selected, so we skip them.
+        if '—' in berryDescription:
+          continue
 
         for versionGroup in versionDict.keys():
           versionGroupGen = versionDict[versionGroup][-1]
@@ -596,11 +600,11 @@ def main():
   print('Scraping gen 2 berry descriptions...')
   scrapeDescriptions(fnamePrefix, 'gen2berry', descriptionDict)
 
-  print('Scraping item descriptions...')
-  scrapeDescriptions(fnamePrefix, 'item', descriptionDict)
+  # print('Scraping item descriptions...')
+  # scrapeDescriptions(fnamePrefix, 'item', descriptionDict)
 
-  print('Scraping move descriptions...')
-  scrapeDescriptions(fnamePrefix, 'move', descriptionDict)
+  # print('Scraping move descriptions...')
+  # scrapeDescriptions(fnamePrefix, 'move', descriptionDict)
 
   return
 

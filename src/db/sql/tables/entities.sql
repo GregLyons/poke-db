@@ -12,7 +12,10 @@ CREATE TABLE IF NOT EXISTS generation (
 
 CREATE TABLE IF NOT EXISTS pdescription (
   pdescription_id MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT,
-  pdescription_text VARCHAR(255) NOT NULL UNIQUE,
+  pdescription_text VARCHAR(255) NOT NULL,
+  pdescription_index TINYINT UNSIGNED NOT NULL,
+  pdescription_type ENUM('ability', 'item', 'move') NOT NULL,
+  entity_name VARCHAR(255) NOT NULL,
 
   PRIMARY KEY (pdescription_id)
 );
@@ -29,6 +32,7 @@ CREATE TABLE IF NOT EXISTS version_group (
   generation_id TINYINT UNSIGNED NOT NULL,
   version_group_id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
   version_group_code VARCHAR(5) NOT NULL UNIQUE,
+  version_group_formatted_name VARCHAR(45) NOT NULL UNIQUE,
 
   PRIMARY KEY (generation_id, version_group_id),
   FOREIGN KEY (generation_id) REFERENCES generation(generation_id)

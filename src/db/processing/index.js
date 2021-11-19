@@ -1,3 +1,7 @@
+/*
+Process the .json files in the raw_data/json folder into a form more amenable for inserting into a database. This includes extending patch lists to cover all generations, changing the objects to arrays, and splitting entries according to generation as necessary (e.g. 'bulbasaur' had one entry in pokemon.json before; now it will have an entry for each generation with the appropriate data).
+*/
+
 /* 
 1. Take the .json files in the raw_data folder, extend the patch notes so that each gen has a patch in every relevant field, and then change each object to an array. This is done via serializeDict.
 
@@ -10,13 +14,13 @@
 
 Note that, due to the complicated structure of the evolution data, the 'evolves_to' and 'evolves_from' properties for Pokemon are not extended in this way. We handle them separately in step 4.
 
-2. Pokemon Showdown splits the learnsets between gen 2 and below and after gen 2. We merge them into a single collection of learnsets.
+2. Pokemon Showdown splits the learnsets between generation 2 and below and after generation 2. We merge them into a single collection of learnsets.
 
 3. Add learnset and event data from Pokemon Showdown's learnsets.js to pokemonArr. Thus, pokemonArr[0], corresponding to "bulbasaur", will have added fields "learnset" and "event_data" with the relevant information. This is done via addLearnsetsToPokemonArr.
 
 4. For each entry in an entity array, split the entry into multiple copies according to generation. For example, "bulbasaur" in pokemonArr will be split into 8 entries, one for each gen, with the data appropriate to that gen.
 
-5. Import descriptions.json and serialize them.
+5. Import descriptions.json and versionGroups.json, then serialize them.
 
 6. Write arrays to .json files.
 */
@@ -71,8 +75,9 @@ const splitPTypeArr = splitArr(pTypeArr);
 
 
 
-/* 5. Serialize descriptions. */
+/* 5. Serialize descriptions and version groups. */
 const descriptions = require('../../raw_data/json/descriptions.json');
+const versionGroups = require('../../raw_data/json/versionGroups.json');
 const { serializeDescriptions } = require('./utils.js');
 
 /*
@@ -102,6 +107,9 @@ Entries in descriptionArr are objects of the form:
 */
 const descriptionArr = serializeDescriptions(descriptions);
 
+const { serializeVersionGroups } = require('./utils.js');
+const versionGroupArr = serializeVersionGroups(versionGroups);
+
 // const { splitDescriptions } = require('./utils.js');
 // const splitDescriptionArr = splitDescriptions(descriptionArr);
 // console.log(splitDescriptionArr);
@@ -110,6 +118,9 @@ const descriptionArr = serializeDescriptions(descriptions);
 
 /* 6. Write arrays to .json files. */
 const fs = require('fs');
+
+// We get list of stats as well
+const statList = require('../../raw_data/json/stats.json');
 
 const PROCESSED_DATA_PATH = './src/db/processing/processed_data/';
 const FILENAMES_AND_ARRAYS = [
@@ -122,6 +133,8 @@ const FILENAMES_AND_ARRAYS = [
   ['effects.json', effectArr],
   ['statuses.json', statusArr],
   ['usageMethods.json', usageMethodArr],
+  ['versionGroups.json', versionGroupArr],
+  ['stats.json', statList]
 ];
 
 FILENAMES_AND_ARRAYS.map(pair => {

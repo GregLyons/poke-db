@@ -10,9 +10,15 @@ def makeDescriptionDict(dataPath):
 
       for row in descriptionReader:
         entityName, entityGen = row[f"{category} Name"], int(row["Gen"])
+        # reclassify berries as items
+        if 'erry' in category:
+          descriptionType = 'Item'
+        else:
+          descriptionType = category.lower()
+
         descriptionDict[entityName] = {
           "gen": entityGen,
-          "description_type": category.lower()
+          "description_type": descriptionType
         }
 
         for descriptionIndex in [key for key in row.keys() if key.isnumeric()]:

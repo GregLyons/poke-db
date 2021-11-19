@@ -1,4 +1,4 @@
-const NUMBER_OF_GENS = 8;
+const { NUMBER_OF_GENS } = require('../utils');
 
 // EXTENDING PATCH LISTS OF OBJECTS AND SERIALIZING
 // #region
@@ -608,6 +608,17 @@ const serializeDescriptions = descriptions => {
   }, []);
 };
 
+const serializeVersionGroups = versionGroups => {
+  return Object.keys(versionGroups).reduce((acc, curr) => {
+    return acc.concat({
+      "name": curr,
+      "formatted_name": versionGroups[curr][0],
+      "gen": versionGroups[curr][1],
+    });
+  }, []);
+
+}
+
 // // Similar to splitArr, but with respect to version group rather than generation
 // const splitDescriptions = descriptionArr => {
 //   let splitArr = [];
@@ -638,4 +649,5 @@ module.exports = {
   addLearnsetsToPokemonArr,
   splitArr,
   serializeDescriptions,
+  serializeVersionGroups,
 };

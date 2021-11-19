@@ -5297,7 +5297,7 @@
   },
   "cheri_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "A hold item that heals paralysis in battle.",
       [
         "RS",
@@ -5338,7 +5338,7 @@
   },
   "chesto_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "A hold item that awakens Pokemon in battle.",
       [
         "RS",
@@ -5379,7 +5379,7 @@
   },
   "pecha_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "A hold item that heals poisoning in battle.",
       [
         "RS",
@@ -5420,7 +5420,7 @@
   },
   "rawst_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "A hold item that heals a burn in battle.",
       [
         "RS",
@@ -5461,7 +5461,7 @@
   },
   "aspear_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "A hold item that defrosts Pokemon in battle.",
       [
         "RS",
@@ -5502,7 +5502,7 @@
   },
   "leppa_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "A hold item that restores 10 PP in battle.",
       [
         "RS",
@@ -5546,7 +5546,7 @@
   },
   "oran_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "A hold item that restores 10 HP in battle.",
       [
         "RS",
@@ -5587,7 +5587,7 @@
   },
   "persim_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "A hold item that heals confusion in battle.",
       [
         "RS",
@@ -5628,7 +5628,7 @@
   },
   "lum_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "A hold item that heals status in battle.",
       [
         "RS"]],
@@ -5675,7 +5675,7 @@
   },
   "sitrus_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "A hold item that restores 30 HP in battle.",
       [
         "RS",
@@ -5716,7 +5716,7 @@
   },
   "figy_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "A hold item that restores HP but may confuse.",
       [
         "RS",
@@ -5757,7 +5757,7 @@
   },
   "wiki_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "A hold item that restores HP but may confuse.",
       [
         "RS",
@@ -5798,7 +5798,7 @@
   },
   "mago_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "A hold item that restores HP but may confuse.",
       [
         "RS",
@@ -5839,7 +5839,7 @@
   },
   "aguav_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "A hold item that restores HP but may confuse.",
       [
         "RS",
@@ -5880,7 +5880,7 @@
   },
   "iapapa_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "A hold item that restores HP but may confuse.",
       [
         "RS",
@@ -5921,7 +5921,7 @@
   },
   "razz_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "block ingredient. Plant in loamy soil to grow Razz.",
       [
         "RS",
@@ -5971,7 +5971,7 @@
   },
   "bluk_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "block ingredient. Plant in loamy soil to grow Bluk.",
       [
         "RS",
@@ -6018,7 +6018,7 @@
   },
   "nanab_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "block ingredient. Plant in loamy soil to grow Nanab.",
       [
         "RS",
@@ -6065,7 +6065,7 @@
   },
   "wepear_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "block ingredient. Plant in loamy soil to grow Wepear.",
       [
         "RS",
@@ -6112,7 +6112,7 @@
   },
   "pinap_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "block ingredient. Plant in loamy soil to grow Pinap.",
       [
         "RS",
@@ -6162,7 +6162,7 @@
   },
   "pomeg_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "block ingredient. Plant in loamy soil to grow Pomeg.",
       [
         "RS"]],
@@ -6206,7 +6206,7 @@
   },
   "kelpsy_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "block ingredient. Plant in loamy soil to grow Kelpsy.",
       [
         "RS"]],
@@ -6250,7 +6250,7 @@
   },
   "qualot_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "block ingredient. Plant in loamy soil to grow Qualot.",
       [
         "RS"]],
@@ -6294,7 +6294,7 @@
   },
   "hondew_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "block ingredient. Plant in loamy soil to grow Hondew.",
       [
         "RS"]],
@@ -6341,7 +6341,7 @@
   },
   "grepa_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "block ingredient. Plant in loamy soil to grow Grepa.",
       [
         "RS"]],
@@ -6388,7 +6388,7 @@
   },
   "tamato_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "block ingredient. Plant in loamy soil to grow Tamato.",
       [
         "RS"]],
@@ -6432,7 +6432,7 @@
   },
   "cornn_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "block ingredient. Plant in loamy soil to grow Cornn.",
       [
         "RS",
@@ -6482,7 +6482,7 @@
   },
   "magost_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "block ingredient. Plant in loamy soil to grow Magost.",
       [
         "RS",
@@ -6532,7 +6532,7 @@
   },
   "rabuta_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "block ingredient. Plant in loamy soil to grow Rabuta.",
       [
         "RS",
@@ -6579,7 +6579,7 @@
   },
   "nomel_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "block ingredient. Plant in loamy soil to grow Nomel.",
       [
         "RS",
@@ -6626,7 +6626,7 @@
   },
   "spelon_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "block ingredient. Plant in loamy soil to grow Spelon.",
       [
         "RS",
@@ -6676,7 +6676,7 @@
   },
   "pamtre_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "block ingredient. Plant in loamy soil to grow Pamtre.",
       [
         "RS",
@@ -6723,7 +6723,7 @@
   },
   "watmel_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "block ingredient. Plant in loamy soil to grow Watmel.",
       [
         "RS",
@@ -6770,7 +6770,7 @@
   },
   "durin_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "block ingredient. Plant in loamy soil to grow Durin.",
       [
         "RS",
@@ -6817,7 +6817,7 @@
   },
   "belue_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "block ingredient. Plant in loamy soil to grow Belue.",
       [
         "RS",
@@ -6864,30 +6864,22 @@
   },
   "occa_berry": {
     "gen": 4,
-    "description_type": "berry", "0": [
-      "\u2014",
-      [
-        "RS",
-        "E",
-        "Colo",
-        "XD",
-        "FRLG"]],
-    "1": [
+    "description_type": "Item", "0": [
       "A Poffin ingredient. If held by a Pokemon, it weakens a foe's supereffective Fire-type attack.",
       [
         "DP",
         "Pt",
         "PBR"]],
-    "2": [
+    "1": [
       "If held by a Pokemon, it weakens a foe's supereffective Fire-type attack.",
       [
         "HGSS"]],
-    "3": [
+    "2": [
       "Weakens a supereffective Fire-type attack against the holding Pokemon.",
       [
         "BW",
         "B2W2"]],
-    "4": [
+    "3": [
       "If held by a Pokemon, this Berry will lessen the damage taken from one supereffective Fire-type attack.",
       [
         "XY",
@@ -6899,30 +6891,22 @@
   },
   "passho_berry": {
     "gen": 4,
-    "description_type": "berry", "0": [
-      "\u2014",
-      [
-        "RS",
-        "E",
-        "Colo",
-        "XD",
-        "FRLG"]],
-    "1": [
+    "description_type": "Item", "0": [
       "A Poffin ingredient. If held by a Pokemon, it weakens a foe's supereffective Water-type attack.",
       [
         "DP",
         "Pt",
         "PBR"]],
-    "2": [
+    "1": [
       "If held by a Pokemon, it weakens a foe's supereffective Water-type attack.",
       [
         "HGSS"]],
-    "3": [
+    "2": [
       "Weakens a supereffective Water-type attack against the holding Pokemon.",
       [
         "BW",
         "B2W2"]],
-    "4": [
+    "3": [
       "If held by a Pokemon, this Berry will lessen the damage taken from one supereffective Water-type attack.",
       [
         "XY",
@@ -6934,30 +6918,22 @@
   },
   "wacan_berry": {
     "gen": 4,
-    "description_type": "berry", "0": [
-      "\u2014",
-      [
-        "RS",
-        "E",
-        "Colo",
-        "XD",
-        "FRLG"]],
-    "1": [
+    "description_type": "Item", "0": [
       "A Poffin ingredient. If held by a Pokemon, it weakens a foe's supereffective Electric-type attack.",
       [
         "DP",
         "Pt",
         "PBR"]],
-    "2": [
+    "1": [
       "If held by a Pokemon, it weakens a foe's supereffective Electric-type attack.",
       [
         "HGSS"]],
-    "3": [
+    "2": [
       "Weakens a supereffective Electric-type attack against the holding Pokemon.",
       [
         "BW",
         "B2W2"]],
-    "4": [
+    "3": [
       "If held by a Pokemon, this Berry will lessen the damage taken from one supereffective Electric-type attack.",
       [
         "XY",
@@ -6969,30 +6945,22 @@
   },
   "rindo_berry": {
     "gen": 4,
-    "description_type": "berry", "0": [
-      "\u2014",
-      [
-        "RS",
-        "E",
-        "Colo",
-        "XD",
-        "FRLG"]],
-    "1": [
+    "description_type": "Item", "0": [
       "A Poffin ingredient. If held by a Pokemon, it weakens a foe's supereffective Grass-type attack.",
       [
         "DP",
         "Pt",
         "PBR"]],
-    "2": [
+    "1": [
       "If held by a Pokemon, it weakens a foe's supereffective Grass-type attack.",
       [
         "HGSS"]],
-    "3": [
+    "2": [
       "Weakens a supereffective Grass-type attack against the holding Pokemon.",
       [
         "BW",
         "B2W2"]],
-    "4": [
+    "3": [
       "If held by a Pokemon, this Berry will lessen the damage taken from one supereffective Grass-type attack.",
       [
         "XY",
@@ -7004,30 +6972,22 @@
   },
   "yache_berry": {
     "gen": 4,
-    "description_type": "berry", "0": [
-      "\u2014",
-      [
-        "RS",
-        "E",
-        "Colo",
-        "XD",
-        "FRLG"]],
-    "1": [
+    "description_type": "Item", "0": [
       "A Poffin ingredient. If held by a Pokemon, it weakens a foe's supereffective Ice-type attack.",
       [
         "DP",
         "Pt",
         "PBR"]],
-    "2": [
+    "1": [
       "If held by a Pokemon, it weakens a foe's supereffective Ice-type attack.",
       [
         "HGSS"]],
-    "3": [
+    "2": [
       "Weakens a supereffective Ice-type attack against the holding Pokemon.",
       [
         "BW",
         "B2W2"]],
-    "4": [
+    "3": [
       "If held by a Pokemon, this Berry will lessen the damage taken from one supereffective Ice-type attack.",
       [
         "XY",
@@ -7039,30 +6999,22 @@
   },
   "chople_berry": {
     "gen": 4,
-    "description_type": "berry", "0": [
-      "\u2014",
-      [
-        "RS",
-        "E",
-        "Colo",
-        "XD",
-        "FRLG"]],
-    "1": [
+    "description_type": "Item", "0": [
       "A Poffin ingredient. If held by a Pokemon, it weakens a foe's supereffective Fighting-type attack.",
       [
         "DP",
         "Pt",
         "PBR"]],
-    "2": [
+    "1": [
       "If held by a Pokemon, it weakens a foe's supereffective Fighting-type attack.",
       [
         "HGSS"]],
-    "3": [
+    "2": [
       "Weakens a supereffective Fighting-type attack against the holding Pokemon.",
       [
         "BW",
         "B2W2"]],
-    "4": [
+    "3": [
       "If held by a Pokemon, this Berry will lessen the damage taken from one supereffective Fighting-type attack.",
       [
         "XY",
@@ -7074,30 +7026,22 @@
   },
   "kebia_berry": {
     "gen": 4,
-    "description_type": "berry", "0": [
-      "\u2014",
-      [
-        "RS",
-        "E",
-        "Colo",
-        "XD",
-        "FRLG"]],
-    "1": [
+    "description_type": "Item", "0": [
       "A Poffin ingredient. If held by a Pokemon, it weakens a foe's supereffective Poison-type attack.",
       [
         "DP",
         "Pt",
         "PBR"]],
-    "2": [
+    "1": [
       "If held by a Pokemon, it weakens a foe's supereffective Poison-type attack.",
       [
         "HGSS"]],
-    "3": [
+    "2": [
       "Weakens a supereffective Poison-type attack against the holding Pokemon.",
       [
         "BW",
         "B2W2"]],
-    "4": [
+    "3": [
       "If held by a Pokemon, this Berry will lessen the damage taken from one supereffective Poison-type attack.",
       [
         "XY",
@@ -7109,30 +7053,22 @@
   },
   "shuca_berry": {
     "gen": 4,
-    "description_type": "berry", "0": [
-      "\u2014",
-      [
-        "RS",
-        "E",
-        "Colo",
-        "XD",
-        "FRLG"]],
-    "1": [
+    "description_type": "Item", "0": [
       "A Poffin ingredient. If held by a Pokemon, it weakens a foe's supereffective Ground-type attack.",
       [
         "DP",
         "Pt",
         "PBR"]],
-    "2": [
+    "1": [
       "If held by a Pokemon, it weakens a foe's supereffective Ground-type attack.",
       [
         "HGSS"]],
-    "3": [
+    "2": [
       "Weakens a supereffective Ground-type attack against the holding Pokemon.",
       [
         "BW",
         "B2W2"]],
-    "4": [
+    "3": [
       "If held by a Pokemon, this Berry will lessen the damage taken from one supereffective Ground-type attack.",
       [
         "XY",
@@ -7144,30 +7080,22 @@
   },
   "coba_berry": {
     "gen": 4,
-    "description_type": "berry", "0": [
-      "\u2014",
-      [
-        "RS",
-        "E",
-        "Colo",
-        "XD",
-        "FRLG"]],
-    "1": [
+    "description_type": "Item", "0": [
       "A Poffin ingredient. If held by a Pokemon, it weakens a foe's supereffective Flying-type attack.",
       [
         "DP",
         "Pt",
         "PBR"]],
-    "2": [
+    "1": [
       "If held by a Pokemon, it weakens a foe's supereffective Flying-type attack.",
       [
         "HGSS"]],
-    "3": [
+    "2": [
       "Weakens a supereffective Flying-type attack against the holding Pokemon.",
       [
         "BW",
         "B2W2"]],
-    "4": [
+    "3": [
       "If held by a Pokemon, this Berry will lessen the damage taken from one supereffective Flying-type attack.",
       [
         "XY",
@@ -7179,30 +7107,22 @@
   },
   "payapa_berry": {
     "gen": 4,
-    "description_type": "berry", "0": [
-      "\u2014",
-      [
-        "RS",
-        "E",
-        "Colo",
-        "XD",
-        "FRLG"]],
-    "1": [
+    "description_type": "Item", "0": [
       "A Poffin ingredient. If held by a Pokemon, it weakens a foe's supereffective Psychic-type attack.",
       [
         "DP",
         "Pt",
         "PBR"]],
-    "2": [
+    "1": [
       "If held by a Pokemon, it weakens a foe's supereffective Psychic-type attack.",
       [
         "HGSS"]],
-    "3": [
+    "2": [
       "Weakens a supereffective Psychic-type attack against the holding Pokemon.",
       [
         "BW",
         "B2W2"]],
-    "4": [
+    "3": [
       "If held by a Pokemon, this Berry will lessen the damage taken from one supereffective Psychic-type attack.",
       [
         "XY",
@@ -7214,35 +7134,27 @@
   },
   "tanga_berry": {
     "gen": 4,
-    "description_type": "berry", "0": [
-      "\u2014",
-      [
-        "RS",
-        "E",
-        "Colo",
-        "XD",
-        "FRLG"]],
-    "1": [
+    "description_type": "Item", "0": [
       "A Poffin ingredient. If held by a Pokemon, it weakens a foe's supereffective Bug-type attack.",
       [
         "DP",
         "Pt",
         "PBR"]],
-    "2": [
+    "1": [
       "If held by a Pokemon, it weakens a foe's supereffective Bug-type attack.",
       [
         "HGSS"]],
-    "3": [
+    "2": [
       "Weakens a supereffective Bug-type attack against the holding Pokemon.",
       [
         "BW",
         "B2W2"]],
-    "4": [
+    "3": [
       "If held by a Pokemon, this berry will lessen the damage taken from one supereffective Bug-type attack.",
       [
         "XY",
         "ORAS"]],
-    "5": [
+    "4": [
       "If held by a Pokemon, this Berry will lessen the damage taken from one supereffective Bug-type attack.",
       [
         "SM",
@@ -7252,30 +7164,22 @@
   },
   "charti_berry": {
     "gen": 4,
-    "description_type": "berry", "0": [
-      "\u2014",
-      [
-        "RS",
-        "E",
-        "Colo",
-        "XD",
-        "FRLG"]],
-    "1": [
+    "description_type": "Item", "0": [
       "A Poffin ingredient. If held by a Pokemon, it weakens a foe's supereffective Rock-type attack.",
       [
         "DP",
         "Pt",
         "PBR"]],
-    "2": [
+    "1": [
       "If held by a Pokemon, it weakens a foe's supereffective Rock-type attack.",
       [
         "HGSS"]],
-    "3": [
+    "2": [
       "Weakens a supereffective Rock-type attack against the holding Pokemon.",
       [
         "BW",
         "B2W2"]],
-    "4": [
+    "3": [
       "If held by a Pokemon, this Berry will lessen the damage taken from one supereffective Rock-type attack.",
       [
         "XY",
@@ -7287,30 +7191,22 @@
   },
   "kasib_berry": {
     "gen": 4,
-    "description_type": "berry", "0": [
-      "\u2014",
-      [
-        "RS",
-        "E",
-        "Colo",
-        "XD",
-        "FRLG"]],
-    "1": [
+    "description_type": "Item", "0": [
       "A Poffin ingredient. If held by a Pokemon, it weakens a foe's supereffective Ghost-type attack.",
       [
         "DP",
         "Pt",
         "PBR"]],
-    "2": [
+    "1": [
       "If held by a Pokemon, it weakens a foe's supereffective Ghost-type attack.",
       [
         "HGSS"]],
-    "3": [
+    "2": [
       "Weakens a supereffective Ghost-type attack against the holding Pokemon.",
       [
         "BW",
         "B2W2"]],
-    "4": [
+    "3": [
       "If held by a Pokemon, this Berry will lessen the damage taken from one supereffective Ghost-type attack.",
       [
         "XY",
@@ -7322,30 +7218,22 @@
   },
   "haban_berry": {
     "gen": 4,
-    "description_type": "berry", "0": [
-      "\u2014",
-      [
-        "RS",
-        "E",
-        "Colo",
-        "XD",
-        "FRLG"]],
-    "1": [
+    "description_type": "Item", "0": [
       "A Poffin ingredient. If held by a Pokemon, it weakens a foe's supereffective Dragon-type attack.",
       [
         "DP",
         "Pt",
         "PBR"]],
-    "2": [
+    "1": [
       "If held by a Pokemon, it weakens a foe's supereffective Dragon-type attack.",
       [
         "HGSS"]],
-    "3": [
+    "2": [
       "Weakens a supereffective Dragon-type attack against the holding Pokemon.",
       [
         "BW",
         "B2W2"]],
-    "4": [
+    "3": [
       "If held by a Pokemon, this Berry will lessen the damage taken from one supereffective Dragon-type attack.",
       [
         "XY",
@@ -7357,30 +7245,22 @@
   },
   "colbur_berry": {
     "gen": 4,
-    "description_type": "berry", "0": [
-      "\u2014",
-      [
-        "RS",
-        "E",
-        "Colo",
-        "XD",
-        "FRLG"]],
-    "1": [
+    "description_type": "Item", "0": [
       "A Poffin ingredient. If held by a Pokemon, it weakens a foe's supereffective Dark-type attack.",
       [
         "DP",
         "Pt",
         "PBR"]],
-    "2": [
+    "1": [
       "If held by a Pokemon, it weakens a foe's supereffective Dark-type attack.",
       [
         "HGSS"]],
-    "3": [
+    "2": [
       "Weakens a supereffective Dark-type attack against the holding Pokemon.",
       [
         "BW",
         "B2W2"]],
-    "4": [
+    "3": [
       "If held by a Pokemon, this Berry will lessen the damage taken from one supereffective Dark-type attack.",
       [
         "XY",
@@ -7392,30 +7272,22 @@
   },
   "babiri_berry": {
     "gen": 4,
-    "description_type": "berry", "0": [
-      "\u2014",
-      [
-        "RS",
-        "E",
-        "Colo",
-        "XD",
-        "FRLG"]],
-    "1": [
+    "description_type": "Item", "0": [
       "A Poffin ingredient. If held by a Pokemon, it weakens a foe's supereffective Steel-type attack.",
       [
         "DP",
         "Pt",
         "PBR"]],
-    "2": [
+    "1": [
       "If held by a Pokemon, it weakens a foe's supereffective Steel-type attack.",
       [
         "HGSS"]],
-    "3": [
+    "2": [
       "Weakens a supereffective Steel-type attack against the holding Pokemon.",
       [
         "BW",
         "B2W2"]],
-    "4": [
+    "3": [
       "If held by a Pokemon, this Berry will lessen the damage taken from one supereffective Steel-type attack.",
       [
         "XY",
@@ -7427,30 +7299,22 @@
   },
   "chilan_berry": {
     "gen": 4,
-    "description_type": "berry", "0": [
-      "\u2014",
-      [
-        "RS",
-        "E",
-        "Colo",
-        "XD",
-        "FRLG"]],
-    "1": [
+    "description_type": "Item", "0": [
       "A Poffin ingredient. If held by a Pokemon, it weakens a foe's Normal-type attack.",
       [
         "DP",
         "Pt",
         "PBR"]],
-    "2": [
+    "1": [
       "If held by a Pokemon, it weakens a foe's Normal-type attack.",
       [
         "HGSS"]],
-    "3": [
+    "2": [
       "Weakens a Normal-type attack against the holding Pokemon.",
       [
         "BW",
         "B2W2"]],
-    "4": [
+    "3": [
       "If held by a Pokemon, this Berry will lessen the damage taken from one Normal-type attack.",
       [
         "XY",
@@ -7462,7 +7326,7 @@
   },
   "liechi_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "A hold item that raises Attack in a pinch.",
       [
         "RS",
@@ -7500,7 +7364,7 @@
   },
   "ganlon_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "A hold item that raises Defense in a pinch.",
       [
         "RS",
@@ -7538,7 +7402,7 @@
   },
   "salac_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "A hold item that raises Speed in a pinch.",
       [
         "RS",
@@ -7582,7 +7446,7 @@
   },
   "petaya_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "A hold item that raises Sp.Atk in a pinch.",
       [
         "RS",
@@ -7617,7 +7481,7 @@
   },
   "apicot_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "A hold item that raises Sp.Def in a pinch.",
       [
         "RS",
@@ -7655,7 +7519,7 @@
   },
   "lansat_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "A hold item that ups the critical-hit rate in a pinch.",
       [
         "RS",
@@ -7693,7 +7557,7 @@
   },
   "starf_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "A hold item that sharply boosts a stat in a pinch.",
       [
         "RS",
@@ -7731,7 +7595,7 @@
   },
   "enigma_berry": {
     "gen": 3,
-    "description_type": "berry", "0": [
+    "description_type": "Item", "0": [
       "block ingredient. Plant in loamy soil to grow a mystery.",
       [
         "RS",
@@ -7769,27 +7633,19 @@
   },
   "micle_berry": {
     "gen": 4,
-    "description_type": "berry", "0": [
-      "\u2014",
-      [
-        "RS",
-        "E",
-        "Colo",
-        "XD",
-        "FRLG"]],
-    "1": [
+    "description_type": "Item", "0": [
       "A Poffin ingredient. If held by a Pokemon, it raises the accuracy of a move just once in a pinch.",
       [
         "DP",
         "Pt",
         "PBR"]],
-    "2": [
+    "1": [
       "If held by a Pokemon, it raises the accuracy of a move just once in a pinch.",
       [
         "HGSS",
         "BW",
         "B2W2"]],
-    "3": [
+    "2": [
       "A Berry to be consumed by Pokemon. If a Pokemon holds one, its accuracy will increase just once when it's in a pinch.",
       [
         "XY",
@@ -7801,27 +7657,19 @@
   },
   "custap_berry": {
     "gen": 4,
-    "description_type": "berry", "0": [
-      "\u2014",
-      [
-        "RS",
-        "E",
-        "Colo",
-        "XD",
-        "FRLG"]],
-    "1": [
+    "description_type": "Item", "0": [
       "A Poffin ingredient. If held by a Pokemon, it gets to move first just once in a pinch.",
       [
         "DP",
         "Pt",
         "PBR"]],
-    "2": [
+    "1": [
       "If held by a Pokemon, it gets to move first just once in a pinch.",
       [
         "HGSS",
         "BW",
         "B2W2"]],
-    "3": [
+    "2": [
       "A Berry to be consumed by Pokemon. If a Pokemon holds one, it will be able to move first just once when it's in a pinch.",
       [
         "XY",
@@ -7833,30 +7681,22 @@
   },
   "jaboca_berry": {
     "gen": 4,
-    "description_type": "berry", "0": [
-      "\u2014",
-      [
-        "RS",
-        "E",
-        "Colo",
-        "XD",
-        "FRLG"]],
-    "1": [
+    "description_type": "Item", "0": [
       "A Poffin ingredient. If held by a Pokemon, and if a foe's physical attack lands, the foe also takes damage.",
       [
         "DP",
         "Pt",
         "PBR"]],
-    "2": [
+    "1": [
       "If held by a Pokemon and a foe's physical attack lands, the foe also takes damage.",
       [
         "HGSS"]],
-    "3": [
+    "2": [
       "If held by a Pokemon and a physical attack lands, the attacker also takes damage.",
       [
         "BW",
         "B2W2"]],
-    "4": [
+    "3": [
       "A Berry to be consumed by Pokemon. If a physical attack hits the Pokemon holding it, the attacker will also be hurt.",
       [
         "XY",
@@ -7868,30 +7708,22 @@
   },
   "rowap_berry": {
     "gen": 4,
-    "description_type": "berry", "0": [
-      "\u2014",
-      [
-        "RS",
-        "E",
-        "Colo",
-        "XD",
-        "FRLG"]],
-    "1": [
+    "description_type": "Item", "0": [
       "A Poffin ingredient. If held by a Pokemon and if a foe's special attack lands, the foe also takes damage.",
       [
         "DP",
         "Pt",
         "PBR"]],
-    "2": [
+    "1": [
       "If held by a Pokemon and a foe's special attack lands, the foe also takes damage.",
       [
         "HGSS"]],
-    "3": [
+    "2": [
       "If held by a Pokemon and a special attack lands, the attacker takes damage.",
       [
         "BW",
         "B2W2"]],
-    "4": [
+    "3": [
       "A Berry to be consumed by Pokemon. If a special attack hits the Pokemon holding it, the attacker will also be hurt.",
       [
         "XY",
@@ -7903,15 +7735,7 @@
   },
   "roseli_berry": {
     "gen": 6,
-    "description_type": "berry", "0": [
-      "\u2014",
-      [
-        "RS",
-        "E",
-        "Colo",
-        "XD",
-        "FRLG"]],
-    "1": [
+    "description_type": "Item", "0": [
       "Unknown",
       [
         "DP",
@@ -7920,7 +7744,7 @@
         "PBR",
         "BW",
         "B2W2"]],
-    "2": [
+    "1": [
       "If held by a Pokemon, this Berry will lessen the damage taken from one supereffective Fairy-type attack.",
       [
         "XY",
@@ -7932,15 +7756,7 @@
   },
   "kee_berry": {
     "gen": 6,
-    "description_type": "berry", "0": [
-      "\u2014",
-      [
-        "RS",
-        "E",
-        "Colo",
-        "XD",
-        "FRLG"]],
-    "1": [
+    "description_type": "Item", "0": [
       "Unknown",
       [
         "DP",
@@ -7949,7 +7765,7 @@
         "PBR",
         "BW",
         "B2W2"]],
-    "2": [
+    "1": [
       "If held by a Pokemon, this Berry will increase the holder's Defense if it's hit with a physical move.",
       [
         "XY",
@@ -7961,15 +7777,7 @@
   },
   "maranga_berry": {
     "gen": 6,
-    "description_type": "berry", "0": [
-      "\u2014",
-      [
-        "RS",
-        "E",
-        "Colo",
-        "XD",
-        "FRLG"]],
-    "1": [
+    "description_type": "Item", "0": [
       "Unknown",
       [
         "DP",
@@ -7978,7 +7786,7 @@
         "PBR",
         "BW",
         "B2W2"]],
-    "2": [
+    "1": [
       "If held by a Pokemon, this Berry will increase the holder's Sp. Def if it's hit with a special move.",
       [
         "XY",
@@ -7990,7 +7798,7 @@
   },
   "psn_cure_berry": {
     "gen": 2,
-    "description_type": "gen2berry", "0": [
+    "description_type": "Item", "0": [
       "A self-cure for poison. (HOLD)",
       [
         "GS",
@@ -7999,7 +7807,7 @@
   },
   "prz_cure_berry": {
     "gen": 2,
-    "description_type": "gen2berry", "0": [
+    "description_type": "Item", "0": [
       "A self-cure for paralysis. (HOLD)",
       [
         "GS",
@@ -8008,7 +7816,7 @@
   },
   "burnt_berry": {
     "gen": 2,
-    "description_type": "gen2berry", "0": [
+    "description_type": "Item", "0": [
       "A self-cure for freezing. (HOLD)",
       [
         "GS",
@@ -8017,7 +7825,7 @@
   },
   "ice_berry": {
     "gen": 2,
-    "description_type": "gen2berry", "0": [
+    "description_type": "Item", "0": [
       "A self-cure for a burn. (HOLD)",
       [
         "GS",
@@ -8026,7 +7834,7 @@
   },
   "bitter_berry": {
     "gen": 2,
-    "description_type": "gen2berry", "0": [
+    "description_type": "Item", "0": [
       "A self-cure for confusion. (HOLD)",
       [
         "GS",
@@ -8035,7 +7843,7 @@
   },
   "mint_berry": {
     "gen": 2,
-    "description_type": "gen2berry", "0": [
+    "description_type": "Item", "0": [
       "A self-awakening for sleep. (HOLD)",
       [
         "GS",
@@ -8044,7 +7852,7 @@
   },
   "miracle_berry": {
     "gen": 2,
-    "description_type": "gen2berry", "0": [
+    "description_type": "Item", "0": [
       "Cures all status problems. (HOLD)",
       [
         "GS",
@@ -8053,7 +7861,7 @@
   },
   "mystery_berry": {
     "gen": 2,
-    "description_type": "gen2berry", "0": [
+    "description_type": "Item", "0": [
       "A self-restore for PP. (HOLD)",
       [
         "GS",
@@ -8062,7 +7870,7 @@
   },
   "berry": {
     "gen": 2,
-    "description_type": "gen2berry", "0": [
+    "description_type": "Item", "0": [
       "A self-restore item. (10HP, HOLD)",
       [
         "GS",
@@ -8071,7 +7879,7 @@
   },
   "gold_berry": {
     "gen": 2,
-    "description_type": "gen2berry", "0": [
+    "description_type": "Item", "0": [
       "A self-restore item. (30HP, HOLD)",
       [
         "GS",
