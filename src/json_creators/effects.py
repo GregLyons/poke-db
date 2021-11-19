@@ -93,7 +93,7 @@ def makeEffectDict():
     # absorb
     "drains": 1,
     # thief
-    "manipulates_items": 2,
+    "manipulates_item": 2,
     # cramorant
     "activates_gulp_missile": 8,
     # static
@@ -103,9 +103,9 @@ def makeEffectDict():
     # adaptability; refers to abilities which power up moves via a mechanic other than move type or usage method, e.g. adaptability boosts STAB moves
     "other_move_enhancement": 1,
     # lagging tail; refers to priority bracket
-    "move_last_in_priority": 4,
+    "moves_last_in_priority": 4,
     # quick claw
-    "move_first_in_priority": 2,
+    "moves_first_in_priority": 2,
     # heavy duty boots
     "ignores_hazards": 8,
     # long reach

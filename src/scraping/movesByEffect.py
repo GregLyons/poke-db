@@ -85,7 +85,7 @@ def main():
     'https://bulbapedia.bulbagarden.net/wiki/Category:Form-changing_moves'],
     ['drains',
     'https://bulbapedia.bulbagarden.net/wiki/Category:HP-draining_moves'],
-    ['manipulates-items',
+    ['manipulates-item',
     'https://bulbapedia.bulbagarden.net/wiki/Category:Item-manipulating_moves'],
     ['depends-on-weight',
     'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_affected_by_weight'],

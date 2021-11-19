@@ -77,11 +77,11 @@ def abilityEffects(fnamePrefix):
         if '-type' in description and 'same' not in description:
           type = parseName(re.search(r'.*-type', description).group().split()[-1].removesuffix('type'))
           currentWriter.writerow([abilityName, type, multiplier, 'type'])
-          mainWriter.writerow([abilityName, 'boost_type'])
+          mainWriter.writerow([abilityName, 'boosts_type'])
         else:
           if 'recoil' in description or 'effective' in description or 'contact' in description or '60' in description or 'same' in description:
             currentWriter.writerow([abilityName, 'other', multiplier, 'other'])
-            mainWriter.writerow([abilityName, 'boost_other'])
+            mainWriter.writerow([abilityName, 'other_move_enhancement'])
           else:
             method = parseName(description.split()[-2])
 
@@ -89,10 +89,10 @@ def abilityEffects(fnamePrefix):
             method = method.replace('punching', 'punch').replace('biting', 'bite').replace('sound_based', 'sound')
 
             currentWriter.writerow([abilityName, method, multiplier, 'method'])
-            mainWriter.writerow([abilityName, 'boost_usage_method'])
+            mainWriter.writerow([abilityName, 'boosts_usage_method'])
       
       currentWriter.writerow(['flash_fire', 'fire', '1.5', 'type'])
-      mainWriter.writerow(['flash_fire', 'boost_type'])
+      mainWriter.writerow(['flash_fire', 'boosts_type'])
 
       # exceptions
     #endregion
@@ -209,9 +209,9 @@ def abilityEffects(fnamePrefix):
       for row in resistMoveClassRows:
         currentWriter.writerow(row)
         if row[3] == 'type':
-          mainWriter.writerow([row[0], 'resist_type'])
+          mainWriter.writerow([row[0], 'resists_type'])
         else:
-          mainWriter.writerow([row[0], 'resist_method'])
+          mainWriter.writerow([row[0], 'resists_usage_method'])
     #endregion
 
     # cause status on contact
@@ -222,17 +222,17 @@ def abilityEffects(fnamePrefix):
       currentWriter.writerow(['Ability Name', 'Status', 'Probability'])
 
       currentWriter.writerow(['cute_charm', 'infatuation', '30.0'])
-      mainWriter.writerow(['cute_charm', 'contact_causes_status'])
+      mainWriter.writerow(['cute_charm', 'punishes_contact'])
       currentWriter.writerow(['effect_spore', 'poison', '9.0'])
       currentWriter.writerow(['effect_spore', 'paralysis', '10.0'])
       currentWriter.writerow(['effect_spore', 'sleep', '11.0'])
-      mainWriter.writerow(['effect_spore', 'contact_causes_status'])
+      mainWriter.writerow(['effect_spore', 'punishes_contact'])
       currentWriter.writerow(['flame_body', 'burn', '30.0'])
-      mainWriter.writerow(['flame_body', 'contact_causes_status'])
+      mainWriter.writerow(['flame_body', 'punishes_contact'])
       currentWriter.writerow(['poison_point', 'poison', '30.0'])
-      mainWriter.writerow(['poison_point', 'contact_causes_status'])
+      mainWriter.writerow(['poison_point', 'punishes_contact'])
       currentWriter.writerow(['static', 'paralysis', '30.0'])
-      mainWriter.writerow(['static', 'contact_causes_status'])
+      mainWriter.writerow(['static', 'punishes_contact'])
     #endregion
 
     # protect against status
@@ -285,7 +285,7 @@ def abilityEffects(fnamePrefix):
 
       for row in protectAgainstStatusRows:
         currentWriter.writerow([row[0], row[1]])
-        mainWriter.writerow([row[0], 'protect_against_status'])
+        mainWriter.writerow([row[0], 'protects_against_status'])
     #endregion
     
     # finally, a few effects which we don't put in separate .csv, and which we can just hardcode
@@ -293,7 +293,7 @@ def abilityEffects(fnamePrefix):
     # punish contact
     #region
     for abilityName in ['cute_charm', 'effect_spore', 'flame_body', 'poison_point', 'static', 'rough_skin', 'iron_barbs', 'gooey', 'tangling_hair']:
-      mainWriter.writerow([abilityName, 'punish_contact'])
+      mainWriter.writerow([abilityName, 'punishes_contact'])
     #endregion
 
     # recover HP
@@ -333,7 +333,7 @@ def abilityEffects(fnamePrefix):
       ["ignores_ability", ["teravolt", "turboblaze", "mold_breaker"]],
       ["changes_ability", ["receiver"]],
       ["suppresses_ability", ["neutralizing_gas"]],
-      ["move_first_in_priority", ["quick_draw"]],
+      ["moves_first_in_priority", ["quick_draw"]],
       ["other_move_enhancement", ["sheer_force", "adaptability", "analytic", "battery", "flare_boost", "aerilate", 'normalize', 'galvanize', 'pixilate', "refrigerate", 'reckless', 'technician', 'neuroforce', 'tough_claws', 'tinted_lens']],
       ["bypasses_protect", ["unseen_fist"]],
       ["switches_out_user", ["wimp_out", "emergency_exit"]],
@@ -349,7 +349,7 @@ def abilityEffects(fnamePrefix):
       ['prevents_stat_drop', ['clear_body', 'white_smoke', "full_metal_body"]],
       ['other_move_resistance', ['wonder_guard', 'filter', 'solid_rock', 'prism_armor', 'multiscale', 'shadow_shield']],
       ['adds_priority', ['prankster', 'gale_wings', 'triage']],
-      ['protect_against_priority', ['dazzling', 'queenly_majesty']],
+      ['protects_against_priority', ['dazzling', 'queenly_majesty']],
     ]:
       effect, abilities = exception
       for abilityName in abilities:

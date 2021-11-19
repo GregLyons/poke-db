@@ -64,7 +64,13 @@ const createTables = () => {
 
 
 const insertBasicEntities = async () => {
-  const basicEntityTableNames = ['generation', 'pdescription'];
+  // TODO add sprites
+  const basicEntityTableNames = [
+    'generation',
+    'pdescription',
+    'pstatus',
+    'stat',
+  ];
   for (let tableName of basicEntityTableNames) {
     // Delete the tables to overcome foreign key constraints.
     console.log(tableName);
@@ -92,6 +98,7 @@ const insertBasicEntities = async () => {
             const { GEN_ARRAY } = require('./utils.js');
             values = GEN_ARRAY;
             break;
+
           // the description 
           case 'pdescription':
             const descriptions = require('./processing/processed_data/descriptions.json');
@@ -111,6 +118,20 @@ const insertBasicEntities = async () => {
                 }));
             }, []);
             break;
+          
+          // status effects
+          case 'pstatus':
+            const statuses = require('./processing/processed_data/statuses.json');
+            // TODO add formatted name for status effects
+            values = statuses.map(data => [data.name, data.name]);
+            break;
+          
+          // battle stats
+          case 'stat':
+            const status = require('./processing/processed_data/statuses.json');
+            // TODO add formatted name for stats
+            values = stats.map(data => [data.name, data.name]);
+            break;
         }
 
         db.promise().query(tableStatements.entityTables[tableName].insert, [values])
@@ -124,39 +145,24 @@ const insertBasicEntities = async () => {
 }
 
 // 
-const abilities = require('./processing/processed_data/abilities.json');
 const effects = require('./processing/processed_data/effects.json');
 const items = require('./processing/processed_data/items.json');
 const moves = require('./processing/processed_data/moves.json');
 const pokemon = require('./processing/processed_data/pokemon.json');
 const pTypes = require('./processing/processed_data/pTypes.json');
-const statuses = require('./processing/processed_data/statuses.json');
 const usageMethods = require('./processing/processed_data/usageMethods.json');
 const versionGroups = require('./processing/processed_data/versionGroups.json');
 
-// // need (generation_id, version_group_code, formatted_name)
-// values = versionGroups.map(data => [data.gen, data.name, data.formatted_name]);
 
-const insertGenDependentEntities = (
-  abilities,
-  effects,
-  items,
-  moves,
-  pokemon,
-  pTypes,
-  statuses,
-  usageMethods,
-  versionGroups,
-) => {
+
+const insertGenDependentEntities = () => {
   // pmove table needs to be handled after inserting pType.
   const entityTableNames = [
     'ability',
     'effect',
     'item',
     'pokemon',
-    'pstatus',
     'ptype',
-    'stat',
     'usageMethod',
     'versionGroup'
   ];
@@ -182,7 +188,76 @@ const insertGenDependentEntities = (
         // Determine values to be inserted.
         let values;
         switch (tableName) {
-          
+          case 'ability':
+            /*
+              Need (
+                generation_id,
+                ability_name,
+                ability_formatted_name,
+                introduced,
+                affects_item
+              )
+            */
+            const abilities = require('./processing/processed_data/abilities.json');
+            values = abilities.map(abilityObj => {
+              const { gen, name, introduced, formatted_name, affects_item}
+            });
+            break;
+
+          case 'effect':
+            /* 
+              Need (
+                effect_name,
+                effect_formatted_name,
+                introduced
+              )
+            */
+            break;
+
+          case 'item':
+            /* 
+              Need (
+                generation_id,
+                item_name,
+                item_formatted_name,
+                introduced,
+                item_class
+              ) 
+            */
+            break;
+
+          case 'pokemon':
+            /* 
+              Need (
+                generation_id,
+                pokemon_id,
+                pokemon_name,
+                pokemon_formatted_name,
+                pokemon_species,
+                pokemon_dex,
+                pokemon_height,
+                pokemon_weight,
+                introduced,
+                pokemon_hp,
+                pokemon_attack,
+                pokemon_defense,
+                pokemon_special_defense,
+                pokemon_special_attack,
+                pokemon_speed
+              )
+            */
+            break;
+
+          case 'ptype':
+            break;
+
+          case 'usageMethod':
+            break;
+
+          case 'versionGroup':
+            // need (generation_id, version_group_code, formatted_name)
+            values = versionGroups.map(data => [data.gen, data.name, data.formatted_name]);
+            break;
         }
 
         db.promise().query(tableStatements.entityTables[tableName].insert, [values])

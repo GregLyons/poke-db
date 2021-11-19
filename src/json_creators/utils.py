@@ -144,11 +144,11 @@ def effectList():
     # stat-related
     'resets_stats', 'prevents_stat_drop', 'uses_different_stat',
     # priority-related
-    'move_last_in_priority', 'move_first_in_priority', 'adds_priority', 'protects_against_priority',
+    'moves_last_in_priority', 'moves_first_in_priority', 'adds_priority', 'protects_against_priority',
     # contact-related
     'ignores_contact', 'punishes_contact',
     # miscellaneous
-    'calls_other_move', 'depends_on_environment', 'multi_hit', 'ohko','changes_form', 'manipulates_items', 'activates_gulp_missile',  'extends_duration', 'other_move_enhancement', 'other_move_resistance',  'anti_mini', 'type_varies', 'other_move_order_change', 'no_effect',
+    'calls_other_move', 'depends_on_environment', 'multi_hit', 'ohko','changes_form', 'manipulates_item', 'activates_gulp_missile',  'extends_duration', 'other_move_enhancement', 'other_move_resistance',  'anti_mini', 'type_varies', 'other_move_order_change', 'no_effect',
   ]
   return effects
 

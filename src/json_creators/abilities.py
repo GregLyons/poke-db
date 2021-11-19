@@ -42,7 +42,7 @@ def addEffectData(fpath, abilityDict):
         abilityDict[abilityName]["causes_status"]["trapped"] = [[100.0, abilityGen]]
       # some effects in the abilitiesByEffect.csv do not match with effectList(), so we ignore them
       elif effect not in effectList():
-        # print(abilityName, effect)
+        print(abilityName, effect)
         continue
       else:
         effectGen = effectDict[effect]
@@ -150,7 +150,7 @@ def addEffectData(fpath, abilityDict):
 
       if moveClass == 'method':
         if boosts not in usageMethodList():
-          print(abilityName, boosts)
+          # print(abilityName, boosts)
           continue
 
         abilityDict[abilityName]["boosts_usage_method"][boosts] = [[float(multiplier), abilityGen]]

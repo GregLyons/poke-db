@@ -282,6 +282,7 @@
   "cheek_pouch": {
     "gen": 6,
     "effects": {
+      "manipulates_item": [[true, 6]],
       "restores_hp": [[true, 6]]
     },
     "causes_status": {},
@@ -396,7 +397,9 @@
   },
   "compound_eyes": {
     "gen": 3,
-    "effects": {},
+    "effects": {
+      "manipulates_item": [[true, 3]]
+    },
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},
@@ -542,7 +545,9 @@
   },
   "dazzling": {
     "gen": 7,
-    "effects": {},
+    "effects": {
+      "protects_against_priority": [[true, 7]]
+    },
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},
@@ -923,7 +928,9 @@
   },
   "frisk": {
     "gen": 4,
-    "effects": {},
+    "effects": {
+      "manipulates_item": [[true, 4]]
+    },
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},
@@ -992,7 +999,9 @@
   },
   "gluttony": {
     "gen": 4,
-    "effects": {},
+    "effects": {
+      "manipulates_item": [[true, 4]]
+    },
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},
@@ -1100,7 +1109,9 @@
   },
   "harvest": {
     "gen": 5,
-    "effects": {},
+    "effects": {
+      "manipulates_item": [[true, 5]]
+    },
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},
@@ -1467,7 +1478,9 @@
   },
   "klutz": {
     "gen": 4,
-    "effects": {},
+    "effects": {
+      "manipulates_item": [[true, 4]]
+    },
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},
@@ -1628,7 +1641,9 @@
   },
   "magician": {
     "gen": 6,
-    "effects": {},
+    "effects": {
+      "manipulates_item": [[true, 6]]
+    },
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},
@@ -1841,6 +1856,7 @@
   "multitype": {
     "gen": 4,
     "effects": {
+      "manipulates_item": [[true, 4]],
       "changes_pokemon_type": [[true, 4]]
     },
     "causes_status": {},
@@ -2043,6 +2059,7 @@
   "pickpocket": {
     "gen": 5,
     "effects": {
+      "manipulates_item": [[true, 5]],
       "punishes_contact": [[true, 3]]
     },
     "causes_status": {},
@@ -2056,7 +2073,9 @@
   },
   "pickup": {
     "gen": 3,
-    "effects": {},
+    "effects": {
+      "manipulates_item": [[true, 3]]
+    },
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},
@@ -2303,7 +2322,9 @@
   },
   "queenly_majesty": {
     "gen": 7,
-    "effects": {},
+    "effects": {
+      "protects_against_priority": [[true, 7]]
+    },
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},
@@ -2316,7 +2337,7 @@
   "quick_draw": {
     "gen": 8,
     "effects": {
-      "move_first_in_priority": [[true, 8]]
+      "moves_first_in_priority": [[true, 8]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -2428,7 +2449,9 @@
   },
   "ripen": {
     "gen": 8,
-    "effects": {},
+    "effects": {
+      "manipulates_item": [[true, 8]]
+    },
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},
@@ -2453,6 +2476,7 @@
   "rks_system": {
     "gen": 7,
     "effects": {
+      "manipulates_item": [[true, 7]],
       "changes_pokemon_type": [[true, 7]]
     },
     "causes_status": {},
@@ -2920,7 +2944,9 @@
   },
   "stall": {
     "gen": 4,
-    "effects": {},
+    "effects": {
+      "moves_last_in_priority": [[true, 4]]
+    },
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},
@@ -3058,7 +3084,9 @@
   },
   "sticky_hold": {
     "gen": 3,
-    "effects": {},
+    "effects": {
+      "manipulates_item": [[true, 3]]
+    },
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},
@@ -3200,7 +3228,9 @@
   },
   "symbiosis": {
     "gen": 6,
-    "effects": {},
+    "effects": {
+      "manipulates_item": [[true, 6]]
+    },
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},
@@ -3448,7 +3478,9 @@
   },
   "unburden": {
     "gen": 4,
-    "effects": {},
+    "effects": {
+      "manipulates_item": [[true, 4]]
+    },
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},
@@ -3462,7 +3494,9 @@
   },
   "unnerve": {
     "gen": 5,
-    "effects": {},
+    "effects": {
+      "manipulates_item": [[true, 5]]
+    },
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},
@@ -3686,7 +3720,9 @@
   },
   "as_one_glastrier": {
     "gen": 8,
-    "effects": {},
+    "effects": {
+      "manipulates_item": [[true, 8]]
+    },
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},
@@ -3698,7 +3734,9 @@
   },
   "as_one_spectrier": {
     "gen": 8,
-    "effects": {},
+    "effects": {
+      "manipulates_item": [[true, 8]]
+    },
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},

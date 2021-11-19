@@ -7649,7 +7649,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "manipulates_items": [[true, 2]]
+      "manipulates_item": [[true, 2]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -12341,7 +12341,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "manipulates_items": [[true, 3]]
+      "manipulates_item": [[true, 3]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -12651,7 +12651,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "manipulates_items": [[true, 3]]
+      "manipulates_item": [[true, 3]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -12834,7 +12834,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "manipulates_items": [[true, 3]],
+      "manipulates_item": [[true, 3]],
       "powers_up": [[true, 3]]
     },
     "causes_status": {},
@@ -15650,7 +15650,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "manipulates_items": [[true, 3]]
+      "manipulates_item": [[true, 3]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -16571,7 +16571,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "manipulates_items": [[true, 4]],
+      "manipulates_item": [[true, 4]],
       "type_varies": [[true, 4]],
       "variable_power": [[true, 4]]
     },
@@ -16663,7 +16663,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "manipulates_items": [[true, 4]]
+      "manipulates_item": [[true, 4]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -17033,7 +17033,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "manipulates_items": [[true, 4]]
+      "manipulates_item": [[true, 4]]
     },
     "causes_status": {
       "embargo": [[100.0, 4]]
@@ -17079,7 +17079,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "manipulates_items": [[true, 4]],
+      "manipulates_item": [[true, 4]],
       "variable_power": [[true, 4]]
     },
     "causes_status": {
@@ -18957,7 +18957,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "manipulates_items": [[true, 4]]
+      "manipulates_item": [[true, 4]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -20563,7 +20563,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "manipulates_items": [[true, 4]]
+      "manipulates_item": [[true, 4]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -21839,7 +21839,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "manipulates_items": [[true, 5]]
+      "manipulates_item": [[true, 5]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -23303,7 +23303,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "manipulates_items": [[true, 5]]
+      "manipulates_item": [[true, 5]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -23575,7 +23575,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "manipulates_items": [[true, 5]],
+      "manipulates_item": [[true, 5]],
       "cannot_miss": [[true, 5]]
     },
     "causes_status": {},
@@ -32181,9 +32181,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "costs_hp": [[true, 7]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {},
@@ -33526,7 +33524,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "manipulates_items": [[true, 8]]
+      "manipulates_item": [[true, 8]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -33757,7 +33755,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "manipulates_items": [[true, 8]]
+      "manipulates_item": [[true, 8]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -35826,9 +35824,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "costs_hp": [[true, 8]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {},
@@ -36435,7 +36431,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "manipulates_items": [[true, 8]]
+      "manipulates_item": [[true, 8]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -37597,7 +37593,7 @@
     "max_move": false,
     "g_max_move": true,
     "effects": {
-      "manipulates_items": [[true, 8]],
+      "manipulates_item": [[true, 8]],
       "bypasses_protect": [[true, 8]],
       "cannot_miss": [[true, 8]],
       "variable_power": [[true, 8]]
@@ -43952,7 +43948,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "manipulates_items": [[true, 7]]
+      "manipulates_item": [[true, 7]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -44237,7 +44233,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "manipulates_items": [[true, 7]]
+      "manipulates_item": [[true, 7]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -45827,7 +45823,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "manipulates_items": [[true, 7]]
+      "manipulates_item": [[true, 7]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -46596,7 +46592,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "manipulates_items": [[true, 7]]
+      "manipulates_item": [[true, 7]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -47458,7 +47454,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "manipulates_items": [[true, 7]]
+      "manipulates_item": [[true, 7]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -48147,7 +48143,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "manipulates_items": [[true, 7]],
+      "manipulates_item": [[true, 7]],
       "cannot_miss": [[true, 7]]
     },
     "causes_status": {},

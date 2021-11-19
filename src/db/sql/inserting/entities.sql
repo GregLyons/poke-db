@@ -1,9 +1,12 @@
--- Most entities have generation_id as a foreign key,so we create this first. Unlike the other entities, the generation_id column is not autoincremented. Instead, we just use the generation number as the id.
+/*
+Simple entities, not dependent on generation_id
+*/
+
+-- Most entities have generation_id as a foreign key, so we create this first. Unlike the other entities, the generation_id column is not autoincremented. Instead, we just use the generation number as the id.
 INSERT INTO generation (
   generation_id,
   generation_code
 ) VALUES ?;
-
 
 INSERT INTO pdescription (
   pdescription_text,
@@ -17,8 +20,19 @@ INSERT INTO sprite (
   sprite_path
 ) VALUES ?;
 
+
+INSERT INTO pstatus (
+  pstatus_name,
+  pstatus_formatted_name
+) VALUES ?;
+
+INSERT INTO stat (
+  stat_name,
+  stat_formatted_name
+) VALUES ?;
+
 /*
-Simple entities, not dependent on generation_id
+More complicated entities, depending on generation_id
 */
 
 INSERT INTO version_group (
@@ -38,20 +52,6 @@ INSERT INTO usage_method (
   usage_method_formatted_name,
   introduced
 ) VALUES ?;
-
-INSERT INTO pstatus (
-  pstatus_name,
-  pstatus_formatted_name
-) VALUES ?;
-
-INSERT INTO stat (
-  stat_name,
-  stat_formatted_name
-) VALUES ?;
-
-/*
-More complicated entities, depending on generation_id
-*/
 
 INSERT INTO ability (
   generation_id,

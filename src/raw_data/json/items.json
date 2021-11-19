@@ -1400,7 +1400,7 @@
     "gen2_exclusive": false,
     "knock_off": true,
     "effects": {
-      "move_last_in_priority": [[true, 4]]
+      "moves_last_in_priority": [[true, 4]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -1912,7 +1912,7 @@
     "gen2_exclusive": false,
     "knock_off": true,
     "effects": {
-      "move_last_in_priority": [[true, 4]]
+      "moves_last_in_priority": [[true, 4]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -3006,7 +3006,7 @@
     "gen2_exclusive": false,
     "knock_off": true,
     "effects": {
-      "move_first_in_priority": [[true, 2]]
+      "moves_first_in_priority": [[true, 2]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -4491,7 +4491,7 @@
     "gen2_exclusive": false,
     "knock_off": true,
     "effects": {
-      "move_first_in_priority": [[true, 4]]
+      "moves_first_in_priority": [[true, 4]]
     },
     "causes_status": {},
     "resists_status": {},
