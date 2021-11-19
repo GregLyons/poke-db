@@ -371,10 +371,10 @@ def addEffectToMoveDict(fname, moveDict):
 
       # distinguish between usage method and other effects
       if effect in usageMethodDict.keys():
-        usageMethodGen = usageMethodDict[effect]
+        usageMethodGen = usageMethodDict[effect]["gen"]
         moveDict[moveName]["usage_method"][effect] = [[True, max(usageMethodGen, moveGen)]]
       else:      
-        effectGen = effectDict[effect]
+        effectGen = effectDict[effect]["gen"]
       # # if effect isn't in moveDict, add it and initialize as False
         moveDict[moveName]["effects"][effect] = [[True, max(effectGen, moveGen)]]
       
@@ -390,7 +390,7 @@ def addEffectToMoveDict(fname, moveDict):
   ]
   for exception in effect_moves:
     effect, moveNames = exception
-    effectGen = effectDict[effect]
+    effectGen = effectDict[effect]["gen"]
     for moveName in moveNames:
       moveGen = moveDict[moveName]["gen"]
       moveDict[moveName][effect] = [[True, max(effectGen, moveGen)]]
@@ -430,7 +430,7 @@ def addStatusToMoveDict(fname, moveDict):
       moveName = row["Move Name"]
       probability = float(row["Probability"])
 
-      moveGen, statusGen = moveDict[moveName]["gen"], statusDict[status]
+      moveGen, statusGen = moveDict[moveName]["gen"], statusDict[status]["gen"]
       
       moveDict[moveName]["causes_status"][status] = [[probability, max(statusGen, moveGen)]]
 
@@ -489,7 +489,7 @@ def addStatusToMoveDict(fname, moveDict):
     ['sleep', ['heal_bell', 'aromatherapy', 'jungle_healing', 'g_max_sweetness', 'psycho_shift']]
   ]:
     status, moves = exception
-    statusGen = statusDict[status]
+    statusGen = statusDict[status]["gen"]
     for moveName in moves:
       moveGen = moveDict[moveName]["gen"]
       moveDict[moveName]["resists_status"][status] = [[True, max(statusGen, moveGen)]]
@@ -1198,17 +1198,17 @@ if __name__ == '__main__':
 
   # check name consistency in moveDict
   print('Checking for inconsistencies...')
-  for abilityName in moveDict.keys():
+  for moveName in moveDict.keys():
     for inconsistency in [
-      checkConsistency(moveDict[abilityName]["effects"], 'effect', effectDict, False),
-      checkConsistency(moveDict[abilityName]["causes_status"], 'status', statusDict, 0.0),
-      checkConsistency(moveDict[abilityName]["resists_status"], 'status', statusDict, False),
-      checkConsistency(moveDict[abilityName]["usage_method"], 'usage_method', usageMethodDict, True),
+      checkConsistency(moveDict[moveName]["effects"], 'effect', effectDict, False),
+      checkConsistency(moveDict[moveName]["causes_status"], 'status', statusDict, 0.0),
+      checkConsistency(moveDict[moveName]["resists_status"], 'status', statusDict, False),
+      checkConsistency(moveDict[moveName]["usage_method"], 'usage_method', usageMethodDict, False),
     ]:
       if inconsistency:
-        print(f'Inconsistency found for {abilityName}: {inconsistency}')
+        print(f'Inconsistency found for {moveName}: {inconsistency}')
 
-    for stat in moveDict[abilityName]["stat_modifications"]:
+    for stat in moveDict[moveName]["stat_modifications"]:
       if stat not in statList():
-        print('Inconsistent stat name', abilityName, stat)
+        print('Inconsistent stat name', moveName, stat)
   print('Finished.')

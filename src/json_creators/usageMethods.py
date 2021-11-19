@@ -3,7 +3,7 @@ from utils import usageMethodList
 # dictionary containing usage method names and gen usage method was introduced
 # gen is NOT when the earliest move of the corresponding usage method was introduced, but rather when the usage method becomes a mechanic. e.g. mega launcher, the only ability which interacts with pulse moves, was introduced in gen 6, whereas dark pulse, a pulse move, was introduced in gen 4
 def makeUsageMethodDict():
-  usageMethodDict = {
+  usageMethodsAndGens = {
     # mega launcher
     "pulse": 6, 
     # bulletproof
@@ -22,6 +22,14 @@ def makeUsageMethodDict():
     "sound": 1,
   }
 
+  usageMethodDict = {}
+  for statusName in usageMethodsAndGens.keys():
+    formattedEffectName = getFormattedName(statusName)
+    usageMethodDict[statusName] = {
+      "gen": usageMethodsAndGens[statusName],
+      "formatted_name": formattedEffectName
+    }
+
   # make sure all usage methodsare accounted for
   for usageMethod in usageMethodList():
     if usageMethod not in usageMethodDict:
@@ -32,8 +40,16 @@ def makeUsageMethodDict():
     if key not in usageMethodList():
       print(key, 'not in usageMethodList')
 
-  
   return usageMethodDict
+
+def getFormattedName(usageMethodName):
+  # replace underscores with spaces
+  formattedName = usageMethodName.replace('_', ' ')
+  
+  # make first letter uppercase
+  formattedName = formattedName[0].upper() + formattedName[1:]
+
+  return formattedName
 
 def main():
   usageMethodDict = makeUsageMethodDict()

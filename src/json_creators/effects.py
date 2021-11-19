@@ -1,7 +1,7 @@
 from utils import effectList
 
 def makeEffectDict():
-  effectDict = {
+  effectsAndGens = {
     # spikes
     "creates_hazard": 2,
     # rapid spin
@@ -137,6 +137,14 @@ def makeEffectDict():
     "uses_different_stat": 5,
   }
 
+  effectDict = {}
+  for effectName in effectsAndGens.keys():
+    formattedEffectName = getFormattedName(effectName)
+    effectDict[effectName] = {
+      "gen": effectsAndGens[effectName],
+      "formatted_name": formattedEffectName
+    }
+
   # make sure all effects are accounted for
   for effect in effectList():
     if effect not in effectDict:
@@ -148,6 +156,18 @@ def makeEffectDict():
       print(key, 'not in effectList')
   
   return effectDict
+
+def getFormattedName(effectName):
+  # replace underscores with spaces
+  formattedName = effectName.replace('_', ' ')
+  
+  # make first letter uppercase
+  formattedName = formattedName[0].upper() + formattedName[1:]
+
+  formattedName = formattedName.replace('emi invulnerable', 'emi-invulnerable')
+  formattedName = formattedName.replace('Ohko', 'OHKO')
+
+  return formattedName
 
 def main():
   effectDict = makeEffectDict()

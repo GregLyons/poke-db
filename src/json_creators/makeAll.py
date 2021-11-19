@@ -7,9 +7,11 @@ import elementalTypes as types
 import heldItems
 import moves
 import pokemon
+import stats
 import statuses
 import usageMethods
-from utils import statusList, typeList, effectList, usageMethodList, statList, checkConsistency, versionGroupDictionary, getJSONDataPath
+import versionGroups
+from utils import statusList, typeList, effectList, usageMethodList, statList, checkConsistency, getJSONDataPath
 
 # check that statusDict matches statusList
 def checkStatuses(statusDict):
@@ -73,8 +75,8 @@ def checkTypes(typeDict):
   print('Checking for inconsistencies in typeDict...')
   for typeName in typeDict.keys():
     for inconsistency in [
-      checkConsistency(typeDict[typeName]["damage_to"], 'type', typeDict, 0.0, True),
-      checkConsistency(typeDict[typeName]["damage_from"], 'type', typeDict, 0.0, True),
+      checkConsistency(typeDict[typeName]["damage_to"], 'type', typeDict, 0.0),
+      checkConsistency(typeDict[typeName]["damage_from"], 'type', typeDict, 0.0),
     ]:
       if inconsistency:
         print(f'Inconsistency found for {typeName}: {inconsistency}')
@@ -92,7 +94,7 @@ def checkMoves(moveDict):
       checkConsistency(moveDict[abilityName]["effects"], 'effect', effectDict, False),
       checkConsistency(moveDict[abilityName]["causes_status"], 'status', statusDict, 0.0),
       checkConsistency(moveDict[abilityName]["resists_status"], 'status', statusDict, False),
-      checkConsistency(moveDict[abilityName]["usage_method"], 'usage_method', usageMethodDict, True),
+      checkConsistency(moveDict[abilityName]["usage_method"], 'usage_method', usageMethodDict, False),
     ]:
       if inconsistency:
         print(f'Inconsistency found for {abilityName}: {inconsistency}')
@@ -115,8 +117,8 @@ def checkAbilities(abilityDict):
       checkConsistency(abilityDict[abilityName]["effects"], 'effect', effectDict, False),
       checkConsistency(abilityDict[abilityName]["causes_status"], 'status', statusDict, 0.0),
       checkConsistency(abilityDict[abilityName]["resists_status"], 'status', statusDict, False),
-      checkConsistency(abilityDict[abilityName]["boosts_type"], 'type', typeDict, 0.0, True),
-      checkConsistency(abilityDict[abilityName]["resists_type"], 'type', typeDict, 0.0, True),
+      checkConsistency(abilityDict[abilityName]["boosts_type"], 'type', typeDict, 0.0),
+      checkConsistency(abilityDict[abilityName]["resists_type"], 'type', typeDict, 0.0),
       checkConsistency(abilityDict[abilityName]["boosts_usage_method"], 'usage_method', usageMethodDict, 0.0),
       checkConsistency(abilityDict[abilityName]["resists_usage_method"], 'usage_method', usageMethodDict, 0.0),
     ]:
@@ -139,8 +141,8 @@ def checkItems(itemDict):
       checkConsistency(itemDict[itemName]["effects"], 'effect', effectDict, False),
       checkConsistency(itemDict[itemName]["causes_status"], 'status', statusDict, 0.0),
       checkConsistency(itemDict[itemName]["resists_status"], 'status', statusDict, False),
-      checkConsistency(itemDict[itemName]["boosts_type"], 'type', typeDict, 0.0, True),
-      checkConsistency(itemDict[itemName]["resists_type"], 'type', typeDict, 0.0, True),
+      checkConsistency(itemDict[itemName]["boosts_type"], 'type', typeDict, 0.0),
+      checkConsistency(itemDict[itemName]["resists_type"], 'type', typeDict, 0.0),
       checkConsistency(itemDict[itemName]["resists_usage_method"], 'usage_method', usageMethodDict, 0.0),
     ]:
       if inconsistency:
@@ -301,7 +303,9 @@ def main():
   pokemonDict = pokemon.main()
   checkPokemon(pokemonDict)
 
-  versionGroupDict = versionGroupDictionary()
+  statDict = stats.main()
+
+  versionGroupDict = versionGroups.main()
 
   # check that the more complicated dictionaries are consistent with each other in terms of ability names
   checkAbilitiesAgainstPokemon(abilityDict, pokemonDict)
@@ -329,7 +333,7 @@ def main():
     [moveDict, 'moves.json'],
     [pokemonDict, 'pokemon.json'],
     [versionGroupDict, 'versionGroups.json'],
-    [statList(), 'stats.json']
+    [statDict, 'stats.json']
   ]
   for dict_fname in dicts_fnames:
     dict, fname = dict_fname

@@ -20,20 +20,18 @@ Note that, due to the complicated structure of the evolution data, the 'evolves_
 
 4. For each entry in an entity array, split the entry into multiple copies according to generation. For example, "bulbasaur" in pokemonArr will be split into 8 entries, one for each gen, with the data appropriate to that gen.
 
-5. Import descriptions.json and versionGroups.json, then serialize them.
+5. Import descriptions.json, effects.json, stats.json, statuses.json, usageMethods.json, and versionGroups.json, and serialize them. Aside from descriptions.json, these objects are much simpler in that they don't change across games (at least, the data--name and debut gen--we're tracking for them doesn't change), so we use a simplified version of serializeDict.
 
 6. Write arrays to .json files.
 */
 
 /* 1. Extend patch notes and serialize. */
+// #region
 const abilities = require('../../raw_data/json/abilities.json');
-const effects = require('../../raw_data/json/effects.json');
 const pTypes = require('../../raw_data/json/elementalTypes.json');
 const items = require('../../raw_data/json/items.json');
 const moves = require('../../raw_data/json/moves.json');
 const pokemon = require('../../raw_data/json/pokemon.json');
-const statuses = require('../../raw_data/json/statuses.json');
-const usageMethods = require('../../raw_data/json/usageMethods.json');
 
 const { serializeDict } = require('./utils.js');
 
@@ -44,28 +42,26 @@ const moveArr = serializeDict(moves);
 const pokemonArr = serializeDict(pokemon);
 const pTypeArr = serializeDict(pTypes);
 
-// these entities do not depend on generation, and so will not be split later
-const effectArr = serializeDict(effects);
-const statusArr = serializeDict(statuses);
-const usageMethodArr = serializeDict(usageMethods);
-
-
+// #endregion
 
 /* 2. Merge learnset data. */
+// #region
 const { mergeLearnsets } = require('./utils.js');
 const gen2Learnsets = require('../../raw_data/gen2learnsets.js');
 const laterLearnsets = require('../../raw_data/learnsets.js');
 const learnsets = mergeLearnsets(gen2Learnsets, laterLearnsets);
 
-
+// #endregion
 
 /* 3. Add merged learnset data. */
+// #region
 const { addLearnsetsToPokemonArr } = require('./utils.js');
 addLearnsetsToPokemonArr(learnsets, moves, pokemon, pokemonArr);
 
-
+// #endregion
 
 /* 4. Split entities by generation. */
+// #region
 const { splitArr } = require('./utils.js');
 const splitAbilityArr = splitArr(abilityArr);
 const splitItemArr = splitArr(itemArr);
@@ -73,13 +69,10 @@ const splitMoveArr = splitArr(moveArr);
 const splitPokemonArr = splitArr(pokemonArr);
 const splitPTypeArr = splitArr(pTypeArr);
 
+// #endregion
 
-
-/* 5. Serialize descriptions and version groups. */
-const descriptions = require('../../raw_data/json/descriptions.json');
-const versionGroups = require('../../raw_data/json/versionGroups.json');
-const { serializeDescriptions } = require('./utils.js');
-
+/* 5. Serialize descriptions and other simple objects. */
+// #region
 /*
 Entries in descriptionArr are objects of the form:
   {
@@ -105,22 +98,33 @@ Entries in descriptionArr are objects of the form:
       '2': [...]
   }
 */
+const descriptions = require('../../raw_data/json/descriptions.json');
+const { serializeDescriptions } = require('./utils.js');
 const descriptionArr = serializeDescriptions(descriptions);
 
-const { serializeVersionGroups } = require('./utils.js');
-const versionGroupArr = serializeVersionGroups(versionGroups);
+// Serialize simpler objects.
 
-// const { splitDescriptions } = require('./utils.js');
-// const splitDescriptionArr = splitDescriptions(descriptionArr);
-// console.log(splitDescriptionArr);
+const effects = require('../../raw_data/json/effects.json');
+const usageMethods = require('../../raw_data/json/usageMethods.json');
+const stats= require('../../raw_data/json/stats.json');
+const statuses = require('../../raw_data/json/statuses.json');
+const versionGroups = require('../../raw_data/json/versionGroups.json');
 
+const { serializeSimpleDict } = require('./utils.js');
 
+const versionGroupArr = serializeSimpleDict(versionGroups);
+const effectArr = serializeDict(effects);
+const statArr = serializeDict(stats);
+const statusArr = serializeDict(statuses);
+const usageMethodArr = serializeDict(usageMethods);
+
+// #endregion
 
 /* 6. Write arrays to .json files. */
+// #region
 const fs = require('fs');
 
 // We get list of stats as well
-const statList = require('../../raw_data/json/stats.json');
 
 const PROCESSED_DATA_PATH = './src/db/processing/processed_data/';
 const FILENAMES_AND_ARRAYS = [
@@ -131,10 +135,10 @@ const FILENAMES_AND_ARRAYS = [
   ['pTypes.json', splitPTypeArr],
   ['descriptions.json', descriptionArr],
   ['effects.json', effectArr],
+  ['stats.json', statArr],
   ['statuses.json', statusArr],
   ['usageMethods.json', usageMethodArr],
   ['versionGroups.json', versionGroupArr],
-  ['stats.json', statList]
 ];
 
 FILENAMES_AND_ARRAYS.map(pair => {
@@ -148,6 +152,8 @@ FILENAMES_AND_ARRAYS.map(pair => {
 
   console.log(`Saved ${fname}.`);
 })
+
+// #endregion
 
 module.exports = {
   splitAbilityArr,

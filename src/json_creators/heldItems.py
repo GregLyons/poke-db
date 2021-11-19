@@ -258,10 +258,10 @@ def addOtherItemData(fpath, itemDict):
       # move and pokemon type changes
       if itemType in ['drive', 'plate', 'memory']:
         itemDict[itemName]["knock_off"] = False
-        effectGen = effectDict["changes_move_type"]
+        effectGen = effectDict["changes_move_type"]["gen"]
         itemDict[itemName]["effects"]["changes_move_type"] = [[True, max(itemGen, effectGen)]]
       if itemType in ['plate', 'memory']:
-        effectGen = effectDict["changes_pokemon_type"]
+        effectGen = effectDict["changes_pokemon_type"]["gen"]
         itemDict[itemName]["effects"]["changes_pokemon_type"] = [[True, max(itemGen, effectGen)]]
       
       # type boosters
@@ -468,7 +468,7 @@ def addOtherItemData(fpath, itemDict):
       if effect not in effectDict.keys():
         print(itemName, effect)
 
-      effectGen, itemGen = effectDict[effect], itemDict[itemName]["gen"]
+      effectGen, itemGen = effectDict[effect]["gen"], itemDict[itemName]["gen"]
       itemDict[itemName]["effects"][effect] = [[True, max(effectGen, itemGen)]]
 
       handledItems.add(itemName)
@@ -510,7 +510,7 @@ def addOtherItemData(fpath, itemDict):
   ]:
     status, items = status_item
     for itemName in items:
-      statusGen, itemGen = statusDict[status], itemDict[itemName]["gen"]
+      statusGen, itemGen = statusDict[status]["gen"], itemDict[itemName]["gen"]
       if itemName == 'mental_herb' and status != 'infatuation':
         itemDict[itemName]["resists_status"][status] = [[True, 5]]
       else:
@@ -545,7 +545,7 @@ def addOtherItemData(fpath, itemDict):
   ]:
     usageMethod, items = usageMethod_item
     for itemName in items:
-      usageMethodGen, itemGen = usageMethodDict[usageMethod], itemDict[itemName]["gen"]
+      usageMethodGen, itemGen = usageMethodDict[usageMethod]["gen"], itemDict[itemName]["gen"]
       itemDict[itemName]["resists_usage_method"][usageMethod] = [[0.0, max(usageMethodGen, itemGen)]]
 
       handledItems.add(itemName)
@@ -618,8 +618,8 @@ if __name__ == '__main__':
       checkConsistency(itemDict[itemName]["effects"], 'effect', effectDict, False),
       checkConsistency(itemDict[itemName]["causes_status"], 'status', statusDict, 0.0),
       checkConsistency(itemDict[itemName]["resists_status"], 'status', statusDict, False),
-      checkConsistency(itemDict[itemName]["boosts_type"], 'type', typeDict, 0.0, True),
-      checkConsistency(itemDict[itemName]["resists_type"], 'type', typeDict, 0.0, True),
+      checkConsistency(itemDict[itemName]["boosts_type"], 'type', typeDict, 0.0),
+      checkConsistency(itemDict[itemName]["resists_type"], 'type', typeDict, 0.0),
       checkConsistency(itemDict[itemName]["resists_usage_method"], 'usage_method', usageMethodDict, 0.0),
     ]:
       if inconsistency:

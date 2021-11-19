@@ -1,68 +1,266 @@
 {
-  "creates_hazard": 2,
-  "removes_hazard": 2,
-  "creates_terrain": 6,
-  "removes_terrain": 7,
-  "creates_screen": 1,
-  "removes_screen": 1,
-  "creates_weather": 2,
-  "high_crit_chance": 1,
-  "cannot_crit": 2,
-  "always_crits": 5,
-  "bypasses_protect": 4,
-  "thaws_user": 2,
-  "heals_nonvolatile": 1,
-  "restores_hp": 1,
-  "heals_user_immediately": 1,
-  "restores_pp": 2,
-  "recoil": 1,
-  "costs_hp": 1,
-  "can_crash": 1,
-  "changes_ability": 3,
-  "ignores_ability": 4,
-  "suppresses_ability": 4,
-  "changes_pokemon_type": 1,
-  "changes_move_type": 4,
-  "changes_damage_category": 7,
-  "removes_type_immunity": 2,
-  "special_type_effectiveness": 6,
-  "switches_out_target": 2,
-  "switches_out_user": 2,
-  "hits_semi_invulnerable": 1,
-  "cannot_miss": 1,
-  "faints_user": 1,
-  "variable_power": 2,
-  "deals_direct_damage": 1,
-  "powers_up": 2,
-  "consecutive": 1,
-  "counterattack": 1,
-  "depends_on_weight": 3,
-  "affects_weight": 5,
-  "calls_other_move": 1,
-  "depends_on_environment": 3,
-  "multi_hit": 1,
-  "ohko": 1,
-  "changes_form": 3,
-  "drains": 1,
-  "manipulates_item": 2,
-  "activates_gulp_missile": 8,
-  "punishes_contact": 3,
-  "extends_duration": 4,
-  "other_move_enhancement": 1,
-  "moves_last_in_priority": 4,
-  "moves_first_in_priority": 2,
-  "ignores_hazards": 8,
-  "ignores_contact": 7,
-  "ignores_weather": 3,
-  "anti_mini": 2,
-  "resets_stats": 1,
-  "prevents_crit": 3,
-  "prevents_stat_drop": 1,
-  "adds_priority": 5,
-  "other_move_order_change": 5,
-  "protects_against_priority": 5,
-  "other_move_resistance": 3,
-  "type_varies": 2,
-  "no_effect": 1,
-  "uses_different_stat": 5
+  "creates_hazard": {
+    "gen": 2,
+    "formatted_name": "Creates hazard"
+  },
+  "removes_hazard": {
+    "gen": 2,
+    "formatted_name": "Removes hazard"
+  },
+  "creates_terrain": {
+    "gen": 6,
+    "formatted_name": "Creates terrain"
+  },
+  "removes_terrain": {
+    "gen": 7,
+    "formatted_name": "Removes terrain"
+  },
+  "creates_screen": {
+    "gen": 1,
+    "formatted_name": "Creates screen"
+  },
+  "removes_screen": {
+    "gen": 1,
+    "formatted_name": "Removes screen"
+  },
+  "creates_weather": {
+    "gen": 2,
+    "formatted_name": "Creates weather"
+  },
+  "high_crit_chance": {
+    "gen": 1,
+    "formatted_name": "High crit chance"
+  },
+  "cannot_crit": {
+    "gen": 2,
+    "formatted_name": "Cannot crit"
+  },
+  "always_crits": {
+    "gen": 5,
+    "formatted_name": "Always crits"
+  },
+  "bypasses_protect": {
+    "gen": 4,
+    "formatted_name": "Bypasses protect"
+  },
+  "thaws_user": {
+    "gen": 2,
+    "formatted_name": "Thaws user"
+  },
+  "heals_nonvolatile": {
+    "gen": 1,
+    "formatted_name": "Heals nonvolatile"
+  },
+  "restores_hp": {
+    "gen": 1,
+    "formatted_name": "Restores hp"
+  },
+  "heals_user_immediately": {
+    "gen": 1,
+    "formatted_name": "Heals user immediately"
+  },
+  "restores_pp": {
+    "gen": 2,
+    "formatted_name": "Restores pp"
+  },
+  "recoil": {
+    "gen": 1,
+    "formatted_name": "Recoil"
+  },
+  "costs_hp": {
+    "gen": 1,
+    "formatted_name": "Costs hp"
+  },
+  "can_crash": {
+    "gen": 1,
+    "formatted_name": "Can crash"
+  },
+  "changes_ability": {
+    "gen": 3,
+    "formatted_name": "Changes ability"
+  },
+  "ignores_ability": {
+    "gen": 4,
+    "formatted_name": "Ignores ability"
+  },
+  "suppresses_ability": {
+    "gen": 4,
+    "formatted_name": "Suppresses ability"
+  },
+  "changes_pokemon_type": {
+    "gen": 1,
+    "formatted_name": "Changes pokemon type"
+  },
+  "changes_move_type": {
+    "gen": 4,
+    "formatted_name": "Changes move type"
+  },
+  "changes_damage_category": {
+    "gen": 7,
+    "formatted_name": "Changes damage category"
+  },
+  "removes_type_immunity": {
+    "gen": 2,
+    "formatted_name": "Removes type immunity"
+  },
+  "special_type_effectiveness": {
+    "gen": 6,
+    "formatted_name": "Special type effectiveness"
+  },
+  "switches_out_target": {
+    "gen": 2,
+    "formatted_name": "Switches out target"
+  },
+  "switches_out_user": {
+    "gen": 2,
+    "formatted_name": "Switches out user"
+  },
+  "hits_semi_invulnerable": {
+    "gen": 1,
+    "formatted_name": "Hits semi-invulnerable"
+  },
+  "cannot_miss": {
+    "gen": 1,
+    "formatted_name": "Cannot miss"
+  },
+  "faints_user": {
+    "gen": 1,
+    "formatted_name": "Faints user"
+  },
+  "variable_power": {
+    "gen": 2,
+    "formatted_name": "Variable power"
+  },
+  "deals_direct_damage": {
+    "gen": 1,
+    "formatted_name": "Deals direct damage"
+  },
+  "powers_up": {
+    "gen": 2,
+    "formatted_name": "Powers up"
+  },
+  "consecutive": {
+    "gen": 1,
+    "formatted_name": "Consecutive"
+  },
+  "counterattack": {
+    "gen": 1,
+    "formatted_name": "Counterattack"
+  },
+  "depends_on_weight": {
+    "gen": 3,
+    "formatted_name": "Depends on weight"
+  },
+  "affects_weight": {
+    "gen": 5,
+    "formatted_name": "Affects weight"
+  },
+  "calls_other_move": {
+    "gen": 1,
+    "formatted_name": "Calls other move"
+  },
+  "depends_on_environment": {
+    "gen": 3,
+    "formatted_name": "Depends on environment"
+  },
+  "multi_hit": {
+    "gen": 1,
+    "formatted_name": "Multi hit"
+  },
+  "ohko": {
+    "gen": 1,
+    "formatted_name": "OHKO"
+  },
+  "changes_form": {
+    "gen": 3,
+    "formatted_name": "Changes form"
+  },
+  "drains": {
+    "gen": 1,
+    "formatted_name": "Drains"
+  },
+  "manipulates_item": {
+    "gen": 2,
+    "formatted_name": "Manipulates item"
+  },
+  "activates_gulp_missile": {
+    "gen": 8,
+    "formatted_name": "Activates gulp missile"
+  },
+  "punishes_contact": {
+    "gen": 3,
+    "formatted_name": "Punishes contact"
+  },
+  "extends_duration": {
+    "gen": 4,
+    "formatted_name": "Extends duration"
+  },
+  "other_move_enhancement": {
+    "gen": 1,
+    "formatted_name": "Other move enhancement"
+  },
+  "moves_last_in_priority": {
+    "gen": 4,
+    "formatted_name": "Moves last in priority"
+  },
+  "moves_first_in_priority": {
+    "gen": 2,
+    "formatted_name": "Moves first in priority"
+  },
+  "ignores_hazards": {
+    "gen": 8,
+    "formatted_name": "Ignores hazards"
+  },
+  "ignores_contact": {
+    "gen": 7,
+    "formatted_name": "Ignores contact"
+  },
+  "ignores_weather": {
+    "gen": 3,
+    "formatted_name": "Ignores weather"
+  },
+  "anti_mini": {
+    "gen": 2,
+    "formatted_name": "Anti mini"
+  },
+  "resets_stats": {
+    "gen": 1,
+    "formatted_name": "Resets stats"
+  },
+  "prevents_crit": {
+    "gen": 3,
+    "formatted_name": "Prevents crit"
+  },
+  "prevents_stat_drop": {
+    "gen": 1,
+    "formatted_name": "Prevents stat drop"
+  },
+  "adds_priority": {
+    "gen": 5,
+    "formatted_name": "Adds priority"
+  },
+  "other_move_order_change": {
+    "gen": 5,
+    "formatted_name": "Other move order change"
+  },
+  "protects_against_priority": {
+    "gen": 5,
+    "formatted_name": "Protects against priority"
+  },
+  "other_move_resistance": {
+    "gen": 3,
+    "formatted_name": "Other move resistance"
+  },
+  "type_varies": {
+    "gen": 2,
+    "formatted_name": "Type varies"
+  },
+  "no_effect": {
+    "gen": 1,
+    "formatted_name": "No effect"
+  },
+  "uses_different_stat": {
+    "gen": 5,
+    "formatted_name": "Uses different stat"
+  }
 }

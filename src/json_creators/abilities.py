@@ -42,10 +42,10 @@ def addEffectData(fpath, abilityDict):
         abilityDict[abilityName]["causes_status"]["trapped"] = [[100.0, abilityGen]]
       # some effects in the abilitiesByEffect.csv do not match with effectList(), so we ignore them
       elif effect not in effectList():
-        print(abilityName, effect)
+        # print(abilityName, effect)
         continue
       else:
-        effectGen = effectDict[effect]
+        effectGen = effectDict[effect]["gen"]
 
         if abilityName == 'disguise' and effect == 'costs_hp':
           abilityGen = 7
@@ -259,8 +259,8 @@ if __name__ == '__main__':
       checkConsistency(abilityDict[abilityName]["effects"], 'effect', effectDict, False),
       checkConsistency(abilityDict[abilityName]["causes_status"], 'status', statusDict, 0.0),
       checkConsistency(abilityDict[abilityName]["resists_status"], 'status', statusDict, False),
-      checkConsistency(abilityDict[abilityName]["boosts_type"], 'type', typeDict, 0.0, True),
-      checkConsistency(abilityDict[abilityName]["resists_type"], 'type', typeDict, 0.0, True),
+      checkConsistency(abilityDict[abilityName]["boosts_type"], 'type', typeDict, 0.0),
+      checkConsistency(abilityDict[abilityName]["resists_type"], 'type', typeDict, 0.0),
       checkConsistency(abilityDict[abilityName]["boosts_usage_method"], 'usage_method', usageMethodDict, 0.0),
       checkConsistency(abilityDict[abilityName]["resists_usage_method"], 'usage_method', usageMethodDict, 0.0),
     ]:

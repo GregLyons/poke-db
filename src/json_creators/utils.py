@@ -54,8 +54,8 @@ def genSymbolToNumber(roman):
     raise ValueError('Not a valid gen.')
 
 # 
-def versionGroupDictionary():
-  versionGroupDict = {
+def versionGroupProtoDict():
+  versionGroupProtoDict = {
     "Stad": ["Stadium", 1],
     "GS": ["Gold/Silver", 2],
     "C": ["Crystal", 2],
@@ -79,13 +79,13 @@ def versionGroupDictionary():
     "SwSh": ["Sword/Shield", 8]
   }
 
-  return versionGroupDict
+  return versionGroupProtoDict
 
 #
 def getVersionGroupsInGen(gen):
   if gen in range(numberOfGens() + 1):
-    versionDict = versionGroupDictionary()
-    return [versionGroup for versionGroup in versionDict.keys() if versionDict[versionGroup][-1] == gen]
+    versionGroupDict = versionGroupProtoDict()
+    return [versionGroup for versionGroup in versionGroupDict.keys() if versionGroupDict[versionGroup][-1] == gen]
   else:
     raise ValueError("Not a valid Gen!")
 
@@ -178,17 +178,14 @@ def typeList():
   ]
   return types
 
-def checkConsistency(entityDict, categoryName, categoryDict, defaultValue, genIsKey = False):
+def checkConsistency(entityDict, categoryName, categoryDict, defaultValue):
   try:
     inconsistencies = ''
     for categoryKey, patches in entityDict.items():
       if categoryKey not in categoryDict.keys():
         inconsistencies += f'Inconsistent name: {categoryKey}\n'
         
-      if genIsKey:
-        categoryGen = categoryDict[categoryKey]["gen"]
-      else:
-        categoryGen = categoryDict[categoryKey]
+      categoryGen = categoryDict[categoryKey]["gen"]
         
       for patch in patches:
         value, patchGen = patch

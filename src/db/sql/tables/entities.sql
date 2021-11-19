@@ -48,7 +48,6 @@ CREATE TABLE IF NOT EXISTS ability (
   ability_name VARCHAR(45) NOT NULL,
   ability_formatted_name VARCHAR(45) NOT NULL,
   introduced TINYINT UNSIGNED NOT NULL,
-  affects_item TINYINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (generation_id, ability_id),
   FOREIGN KEY (generation_id) REFERENCES generation(generation_id)

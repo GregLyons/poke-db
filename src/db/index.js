@@ -194,14 +194,11 @@ const insertGenDependentEntities = () => {
                 generation_id,
                 ability_name,
                 ability_formatted_name,
-                introduced,
-                affects_item
+                introduced
               )
             */
-            const abilities = require('./processing/processed_data/abilities.json');
-            values = abilities.map(abilityObj => {
-              const { gen, name, introduced, formatted_name, affects_item}
-            });
+            values = require('./processing/processed_data/abilities.json')
+              .map(data => [data.gen, data.name, data.formatted_name, data.introduced]);
             break;
 
           case 'effect':
@@ -212,6 +209,8 @@ const insertGenDependentEntities = () => {
                 introduced
               )
             */
+            values = require('./processing/processed_data/effects.json')
+              .map(data => [data.gen, data.name, data.name, data.introduced]);
             break;
 
           case 'item':
@@ -271,5 +270,5 @@ const insertGenDependentEntities = () => {
 }
 
 
-// createTables();
+createTables();
 // insertBasicEntities();

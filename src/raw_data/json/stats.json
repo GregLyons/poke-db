@@ -1,10 +1,26 @@
-[
-  "attack",
-  "defense",
-  "special_attack",
-  "special_defense",
-  "speed",
-  "accuracy",
-  "evasion",
-  "critical_hit_ratio"
-]
+{
+  "attack": {
+    "formatted_name": "Attack"
+  },
+  "defense": {
+    "formatted_name": "Defense"
+  },
+  "special_attack": {
+    "formatted_name": "Special attack"
+  },
+  "special_defense": {
+    "formatted_name": "Special defense"
+  },
+  "speed": {
+    "formatted_name": "Speed"
+  },
+  "accuracy": {
+    "formatted_name": "Accuracy"
+  },
+  "evasion": {
+    "formatted_name": "Evasion"
+  },
+  "critical_hit_ratio": {
+    "formatted_name": "Critical-hit ratio"
+  }
+}

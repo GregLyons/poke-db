@@ -1,7 +1,7 @@
 from utils import statusList
 
 def makeStatusDict():
-  statusDict = {
+  statusesAndGens = {
     "burn": 1,
     "freeze": 1,
     "paralysis": 1,
@@ -46,6 +46,14 @@ def makeStatusDict():
     "transformed": 1
   }
 
+  statusDict = {}
+  for statusName in statusesAndGens.keys():
+    formattedEffectName = getFormattedName(statusName)
+    statusDict[statusName] = {
+      "gen": statusesAndGens[statusName],
+      "formatted_name": formattedEffectName
+    }
+
   # make sure all statuss are accounted for
   for status in statusList():
     if status not in statusDict:
@@ -58,6 +66,17 @@ def makeStatusDict():
 
   
   return statusDict
+
+def getFormattedName(statusName):
+  # replace underscores with spaces
+  formattedName = statusName.replace('_', ' ')
+  
+  # make first letter uppercase
+  formattedName = formattedName[0].upper() + formattedName[1:]
+
+  formattedName = formattedName.replace('emi invulnerable', 'emi-invulnerable')
+
+  return formattedName
 
 def main():
   statusDict = makeStatusDict()

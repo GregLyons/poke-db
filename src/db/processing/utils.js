@@ -595,7 +595,7 @@ const splitArr = arr => {
 };
 // #endregion
 
-// SERIALIZE AND SPLIT DESCRIPTIONS
+// SERIALIZE SIMPLER OBJECTS
 // #region
 
 // Similar to serializeDict, without patch extension
@@ -608,15 +608,16 @@ const serializeDescriptions = descriptions => {
   }, []);
 };
 
-const serializeVersionGroups = versionGroups => {
-  return Object.keys(versionGroups).reduce((acc, curr) => {
+// Similar to serializeDict, but for simpler objects such as stats, statuses, effects, etc.
+const serializeSimpleDict = simpleDict => {
+  return Object.keys(simpleDict).reduce((acc, curr) => {
     return acc.concat({
       "name": curr,
-      "formatted_name": versionGroups[curr][0],
-      "gen": versionGroups[curr][1],
+      "formatted_name": simpleDict[curr].formatted_name,
+      // stats and statuses don't have gens assigned to them
+      "introduced": simpleDict[curr].gen ? simpleDict[curr].gen : undefined
     });
   }, []);
-
 }
 
 // // Similar to splitArr, but with respect to version group rather than generation
@@ -649,5 +650,5 @@ module.exports = {
   addLearnsetsToPokemonArr,
   splitArr,
   serializeDescriptions,
-  serializeVersionGroups,
+  serializeSimpleDict,
 };

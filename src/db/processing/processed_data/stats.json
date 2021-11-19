@@ -1,1 +1,1 @@
-["attack","defense","special_attack","special_defense","speed","accuracy","evasion","critical_hit_ratio"]
+[{"name":"attack","formatted_name":"Attack"},{"name":"defense","formatted_name":"Defense"},{"name":"special_attack","formatted_name":"Special attack"},{"name":"special_defense","formatted_name":"Special defense"},{"name":"speed","formatted_name":"Speed"},{"name":"accuracy","formatted_name":"Accuracy"},{"name":"evasion","formatted_name":"Evasion"},{"name":"critical_hit_ratio","formatted_name":"Critical-hit ratio"}]

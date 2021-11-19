@@ -1,44 +1,170 @@
 {
-  "burn": 1,
-  "freeze": 1,
-  "paralysis": 1,
-  "poison": 1,
-  "bad_poison": 1,
-  "sleep": 1,
-  "confusion": 1,
-  "curse": 2,
-  "bound": 1,
-  "embargo": 4,
-  "encore": 2,
-  "heal_block": 4,
-  "nightmare": 2,
-  "perish_song": 2,
-  "taunt": 3,
-  "telekinesis": 5,
-  "flinch": 2,
-  "semi_invulnerable_turn": 1,
-  "trapped": 2,
-  "drowsy": 3,
-  "identified": 2,
-  "infatuation": 2,
-  "leech_seed": 1,
-  "torment": 3,
-  "type_change": 5,
-  "disable": 1,
-  "charging_turn": 1,
-  "protection": 2,
-  "recharging": 1,
-  "taking_aim": 2,
-  "thrashing": 1,
-  "aqua_ring": 4,
-  "bracing": 2,
-  "defense_curl": 2,
-  "magic_coat": 3,
-  "mimic": 1,
-  "minimize": 2,
-  "substitute": 1,
-  "center_of_attention": 3,
-  "rooted": 3,
-  "magnetic_levitation": 4,
-  "transformed": 1
+  "burn": {
+    "gen": 1,
+    "formatted_name": "Burn"
+  },
+  "freeze": {
+    "gen": 1,
+    "formatted_name": "Freeze"
+  },
+  "paralysis": {
+    "gen": 1,
+    "formatted_name": "Paralysis"
+  },
+  "poison": {
+    "gen": 1,
+    "formatted_name": "Poison"
+  },
+  "bad_poison": {
+    "gen": 1,
+    "formatted_name": "Bad poison"
+  },
+  "sleep": {
+    "gen": 1,
+    "formatted_name": "Sleep"
+  },
+  "confusion": {
+    "gen": 1,
+    "formatted_name": "Confusion"
+  },
+  "curse": {
+    "gen": 2,
+    "formatted_name": "Curse"
+  },
+  "bound": {
+    "gen": 1,
+    "formatted_name": "Bound"
+  },
+  "embargo": {
+    "gen": 4,
+    "formatted_name": "Embargo"
+  },
+  "encore": {
+    "gen": 2,
+    "formatted_name": "Encore"
+  },
+  "heal_block": {
+    "gen": 4,
+    "formatted_name": "Heal block"
+  },
+  "nightmare": {
+    "gen": 2,
+    "formatted_name": "Nightmare"
+  },
+  "perish_song": {
+    "gen": 2,
+    "formatted_name": "Perish song"
+  },
+  "taunt": {
+    "gen": 3,
+    "formatted_name": "Taunt"
+  },
+  "telekinesis": {
+    "gen": 5,
+    "formatted_name": "Telekinesis"
+  },
+  "flinch": {
+    "gen": 2,
+    "formatted_name": "Flinch"
+  },
+  "semi_invulnerable_turn": {
+    "gen": 1,
+    "formatted_name": "Semi-invulnerable turn"
+  },
+  "trapped": {
+    "gen": 2,
+    "formatted_name": "Trapped"
+  },
+  "drowsy": {
+    "gen": 3,
+    "formatted_name": "Drowsy"
+  },
+  "identified": {
+    "gen": 2,
+    "formatted_name": "Identified"
+  },
+  "infatuation": {
+    "gen": 2,
+    "formatted_name": "Infatuation"
+  },
+  "leech_seed": {
+    "gen": 1,
+    "formatted_name": "Leech seed"
+  },
+  "torment": {
+    "gen": 3,
+    "formatted_name": "Torment"
+  },
+  "type_change": {
+    "gen": 5,
+    "formatted_name": "Type change"
+  },
+  "disable": {
+    "gen": 1,
+    "formatted_name": "Disable"
+  },
+  "charging_turn": {
+    "gen": 1,
+    "formatted_name": "Charging turn"
+  },
+  "protection": {
+    "gen": 2,
+    "formatted_name": "Protection"
+  },
+  "recharging": {
+    "gen": 1,
+    "formatted_name": "Recharging"
+  },
+  "taking_aim": {
+    "gen": 2,
+    "formatted_name": "Taking aim"
+  },
+  "thrashing": {
+    "gen": 1,
+    "formatted_name": "Thrashing"
+  },
+  "aqua_ring": {
+    "gen": 4,
+    "formatted_name": "Aqua ring"
+  },
+  "bracing": {
+    "gen": 2,
+    "formatted_name": "Bracing"
+  },
+  "defense_curl": {
+    "gen": 2,
+    "formatted_name": "Defense curl"
+  },
+  "magic_coat": {
+    "gen": 3,
+    "formatted_name": "Magic coat"
+  },
+  "mimic": {
+    "gen": 1,
+    "formatted_name": "Mimic"
+  },
+  "minimize": {
+    "gen": 2,
+    "formatted_name": "Minimize"
+  },
+  "substitute": {
+    "gen": 1,
+    "formatted_name": "Substitute"
+  },
+  "center_of_attention": {
+    "gen": 3,
+    "formatted_name": "Center of attention"
+  },
+  "rooted": {
+    "gen": 3,
+    "formatted_name": "Rooted"
+  },
+  "magnetic_levitation": {
+    "gen": 4,
+    "formatted_name": "Magnetic levitation"
+  },
+  "transformed": {
+    "gen": 1,
+    "formatted_name": "Transformed"
+  }
 }

@@ -57,8 +57,7 @@ INSERT INTO ability (
   generation_id,
   ability_name,
   ability_formatted_name,
-  introduced,
-  affects_item
+  introduced
 ) VALUES ?;
 
 INSERT INTO item (

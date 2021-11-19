@@ -1,10 +1,34 @@
 {
-  "pulse": 6,
-  "ball": 6,
-  "bite": 6,
-  "dance": 7,
-  "explosive": 3,
-  "powder": 6,
-  "punch": 4,
-  "sound": 1
+  "pulse": {
+    "gen": 6,
+    "formatted_name": "Pulse"
+  },
+  "ball": {
+    "gen": 6,
+    "formatted_name": "Ball"
+  },
+  "bite": {
+    "gen": 6,
+    "formatted_name": "Bite"
+  },
+  "dance": {
+    "gen": 7,
+    "formatted_name": "Dance"
+  },
+  "explosive": {
+    "gen": 3,
+    "formatted_name": "Explosive"
+  },
+  "powder": {
+    "gen": 6,
+    "formatted_name": "Powder"
+  },
+  "punch": {
+    "gen": 4,
+    "formatted_name": "Punch"
+  },
+  "sound": {
+    "gen": 1,
+    "formatted_name": "Sound"
+  }
 }
