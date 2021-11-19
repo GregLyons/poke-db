@@ -32,7 +32,7 @@ Dex Number,Sprite URL,Pokemon Name,Ability 1,Ability 2,Hidden,Gen
 23,//cdn2.bulbagarden.net/upload/a/a7/023MSPE.png,ekans,intimidate,shed_skin,unnerve,1
 24,//cdn2.bulbagarden.net/upload/2/2c/024MSPE.png,arbok,intimidate,shed_skin,unnerve,1
 172,//cdn2.bulbagarden.net/upload/b/be/172MS8.png,pichu,static,,lightning_rod,2
-172,//cdn2.bulbagarden.net/upload/b/be/172MS8.png,pichu_spiky_eared,static,,,2
+172,//cdn2.bulbagarden.net/upload/b/be/172MS8.png,pichu_spiky_eared,static,,,4
 25,//cdn2.bulbagarden.net/upload/6/66/025MS8.png,pikachu,static,,lightning_rod,1
 25,//cdn2.bulbagarden.net/upload/0/0e/025CoMS6.png,pikachu_cosplay,lightning_rod,,,7
 25,//cdn2.bulbagarden.net/upload/b/b6/025OMS8.png,pikachu_in_a_cap,static,,,7
@@ -794,7 +794,7 @@ Dex Number,Sprite URL,Pokemon Name,Ability 1,Ability 2,Hidden,Gen
 656,//cdn2.bulbagarden.net/upload/7/7c/656MS6.png,froakie,torrent,,protean,6
 657,//cdn2.bulbagarden.net/upload/0/00/657MS6.png,frogadier,torrent,,protean,6
 658,//cdn2.bulbagarden.net/upload/c/cd/658MS6.png,greninja,torrent,,protean,6
-658,//cdn2.bulbagarden.net/upload/7/7e/658AMS6.png,greninja_ash,battle_bond,,,6
+658,//cdn2.bulbagarden.net/upload/7/7e/658AMS6.png,greninja_ash,battle_bond,,,7
 659,//cdn2.bulbagarden.net/upload/c/c3/659MS8.png,bunnelby,pickup,cheek_pouch,huge_power,6
 660,//cdn2.bulbagarden.net/upload/a/a9/660MS8.png,diggersby,pickup,cheek_pouch,huge_power,6
 661,//cdn2.bulbagarden.net/upload/0/03/661MS8.png,fletchling,big_pecks,,gale_wings,6

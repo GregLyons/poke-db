@@ -81,8 +81,6 @@ def makeInitialPokemonDict(fname, changes_fname):
       pokemonDict[pokemonName]["type_1"] = [[previousType1, gen], [currentType1, genChange]]
       pokemonDict[pokemonName]["type_2"] = [[previousType2, gen], [currentType2, genChange]]
 
-  
-
   return pokemonDict
 
 # add base stat data to pokemonDict
@@ -102,19 +100,37 @@ def addBaseStatData(fnamePrefix, pokemonDict):
 
     for reader in readerList:
       for row in reader:
+        pokemonName = row["Pokemon Name"]
+
         # If Pokemon is new, add it to baseStatDict
-        if row["Pokemon Name"] not in baseStatDict.keys():
-          baseStatDict[row["Pokemon Name"]] = {
-            "hp": [[int(row["hp"]), gen[i]]],
-            "attack": [[int(row["attack"]), gen[i]]],
-            "defense": [[int(row["defense"]), gen[i]]],
-            "special_attack": [[int(row["special_attack"]), gen[i]]],
-            "special_defense": [[int(row["special_defense"]), gen[i]]],
-            "speed": [[int(row["speed"]), gen[i]]]
+        if pokemonName not in baseStatDict.keys():
+
+          # from gens 2 to 5, there are no stat changes. Thus, we need pokemonGen to keep track of when the Pokemon was introduced. If we just use gen[i], then e.g. "turtwig" would have "hp": [[55, 5]] rather than [[55, 4]].
+          if gen[i] == 5:
+            if pokemonName in pokemonDict.keys():
+              pokemonGen = pokemonDict[pokemonName]["gen"]
+            # hard code exceptions since there's not many
+            else:
+              if pokemonName == 'castform' or 'deoxys' in pokemonName:
+                pokemonGen = 3
+              elif 'giratina' in pokemonName or 'shaymin' in pokemonName or pokemonName in ['burmy', 'arceus']:
+                pokemonGen = 4
+              else:
+                pokemonGen = 5
+          else:
+            pokemonGen = gen[i]
+
+          baseStatDict[pokemonName] = {
+            "hp": [[int(row["hp"]), pokemonGen]],
+            "attack": [[int(row["attack"]), pokemonGen]],
+            "defense": [[int(row["defense"]), pokemonGen]],
+            "special_attack": [[int(row["special_attack"]), pokemonGen]],
+            "special_defense": [[int(row["special_defense"]), pokemonGen]],
+            "speed": [[int(row["speed"]), pokemonGen]]
           }
         # If Pokemon is old, check for changes in its stats
         else:
-          for key, value in baseStatDict[row["Pokemon Name"]].items():
+          for key, value in baseStatDict[pokemonName].items():
             # If change is found, add that to the patch log
             if key == "dex_number":
               continue
@@ -200,6 +216,11 @@ def addBaseStatData(fnamePrefix, pokemonDict):
   for formName in baseStatDict.keys():
     if formName not in pokemonDict and formName not in ['castform', 'burmy', 'arceus', 'oricorio', 'silvally']:
       print(formName)
+
+  # force greninja_ash to be gen 7, not gen 6
+  pokemonDict["greninja_ash"]["gen"] = 7
+  pokemonDict["greninja_ash"]["type_1"] = [['water', 7]]
+  pokemonDict["greninja_ash"]["type_2"] = [['dark', 7]]
 
   return
 
@@ -409,6 +430,13 @@ def addEvolutionData(fname, pokemonDict):
 
           pokemonDict[pokemon3]["evolves_from"][pokemon2].append([method23, max(gen2, gen3)])
 
+  # Spiky eared pichu gets gen 2 instead of 4 because we copy from pichu in pokemonDict. The ability gens are appropriate, but we need to change the other fields.
+  pokemonDict["pichu_spiky_eared"]["gen"] = 4
+  pokemonDict["pichu_spiky_eared"]["type_1"] = [["electric", 4]]
+  pokemonDict["pichu_spiky_eared"]["type_2"] = [["", 4]]
+
+  # 
+
   return
 
 # add height/weight data
@@ -453,7 +481,40 @@ def addFormFlags(pokemonDict):
       baseForm = '_'.join(pokemonName.split('_')[:-1])
       formType = 'gmax'
     else:
-      continue
+      # we'll use speciesName to eliminate a lot of the Pokemon which don't have alternate forms
+      speciesName = pokemonDict[pokemonName]["species"]
+
+      # check if pokemon species/base form name is one word
+      if '_' not in speciesName:
+        # if speciesName belongs to pokemonDict, then that is the base form
+        if pokemonDict[pokemonName]["species"] in pokemonDict.keys():
+          baseForm = speciesName
+          formType = 'other'
+
+        # need to handle case-by-case
+        else:
+          handled = False
+          for baseFormSuffix in ['normal', 'plant', 'aria', 'baile', 'standard', 'origin', 'land', 'incarnate', 'shield', 'average', 'midday', 'solo', 'm', '10', 'overcast', 'west', 'red_striped', 'spring', 'ordinary', 'full_belly', 'amped', 'ice']:
+            if speciesName + '_' + baseFormSuffix in pokemonDict.keys():
+              handled = True
+
+              # indicates base form
+              if baseFormSuffix in pokemonName:
+                continue
+
+              baseForm = speciesName + '_' + baseFormSuffix
+              formType = 'other'
+            else:
+              continue
+          
+          if not handled:
+            print(pokemonName, 'not handled!')
+
+      else:
+        # Currently no Pokemon satisfy this condition; this is for next gen when new Pokemon are introduced. Then we'll figure out what to do with them.
+        if not pokemonName == speciesName:
+          print(pokemonName, 'form data unhandled!')
+        continue
     
     # baseForm and pokemonName refer to each other through "form_data"
     pokemonDict[baseForm]["form_data"][formType] = pokemonName
@@ -461,6 +522,17 @@ def addFormFlags(pokemonDict):
 
     # add in dex number for pokemonName, which won't have a dex number yet
     pokemonDict[pokemonName]["dex_number"] = pokemonDict[baseForm]["dex_number"]
+
+    # add in height and weight data, if not already present
+    if "weight" not in pokemonDict[pokemonName].keys():
+      pokemonDict[pokemonName]["weight"] = pokemonDict[baseForm]["weight"]
+    
+    # g-max pokemon have unknown height, just set to 0
+    if "height" not in pokemonDict[pokemonName].keys():
+      if formType == 'gmax':
+        pokemonDict[pokemonName]["height"] = 0
+      else:
+        pokemonDict[pokemonName]["height"] = pokemonDict[baseForm]["height"]
   return
 
 # 

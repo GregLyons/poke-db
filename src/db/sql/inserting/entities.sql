@@ -32,13 +32,13 @@ INSERT INTO stat (
 ) VALUES ?;
 
 /*
-More complicated entities, depending on generation_id
+More complicated entities, depending on generation_id (or the generation table through introduced, e.g. version_group)
 */
 
 INSERT INTO version_group (
-  generation_id,
   version_group_code,
-  version_group_formatted_name
+  version_group_formatted_name,
+  introduced
 ) VALUES ?;
 
 INSERT INTO effect (
@@ -81,8 +81,6 @@ INSERT INTO pmove (
   pmove_name,
   pmove_formatted_name,
   introduced,
-  ptype_generation_id,
-  ptype_id,
   pmove_power,
   pmove_pp,
   pmove_accuracy,
@@ -94,7 +92,6 @@ INSERT INTO pmove (
 
 INSERT INTO pokemon (
   generation_id,
-  pokemon_id,
   pokemon_name,
   pokemon_formatted_name,
   pokemon_species,

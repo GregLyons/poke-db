@@ -33,13 +33,16 @@ const items = require('../../raw_data/json/items.json');
 const moves = require('../../raw_data/json/moves.json');
 const pokemon = require('../../raw_data/json/pokemon.json');
 
+
+
 const { serializeDict } = require('./utils.js');
 
 // these entities depend on generation, and so will be split later
 const abilityArr = serializeDict(abilities);
 const itemArr = serializeDict(items);
 const moveArr = serializeDict(moves);
-const pokemonArr = serializeDict(pokemon);
+// We'll filter out LGPE Pokemon once we calculate the learnsets
+let pokemonArr = serializeDict(pokemon);
 const pTypeArr = serializeDict(pTypes);
 
 // #endregion
@@ -57,6 +60,10 @@ const learnsets = mergeLearnsets(gen2Learnsets, laterLearnsets);
 // #region
 const { addLearnsetsToPokemonArr } = require('./utils.js');
 addLearnsetsToPokemonArr(learnsets, moves, pokemon, pokemonArr);
+
+// Separate out LGPE only Pokemon
+const lgpeOnlyPokemon = pokemonArr.filter(data => data.gen == 'lgpe_only');
+pokemonArr = pokemonArr.filter(data => data.gen !== 'lgpe_only');
 
 // #endregion
 
@@ -112,11 +119,11 @@ const versionGroups = require('../../raw_data/json/versionGroups.json');
 
 const { serializeSimpleDict } = require('./utils.js');
 
+const effectArr = serializeSimpleDict(effects);
+const statArr = serializeSimpleDict(stats);
+const statusArr = serializeSimpleDict(statuses);
+const usageMethodArr = serializeSimpleDict(usageMethods);
 const versionGroupArr = serializeSimpleDict(versionGroups);
-const effectArr = serializeDict(effects);
-const statArr = serializeDict(stats);
-const statusArr = serializeDict(statuses);
-const usageMethodArr = serializeDict(usageMethods);
 
 // #endregion
 

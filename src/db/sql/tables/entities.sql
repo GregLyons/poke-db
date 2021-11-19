@@ -29,17 +29,15 @@ CREATE TABLE IF NOT EXISTS sprite (
 
 -- E.g. Red/Blue (RB) belongs to one version group
 CREATE TABLE IF NOT EXISTS version_group (
-  generation_id TINYINT UNSIGNED NOT NULL,
   version_group_id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
   version_group_code VARCHAR(5) NOT NULL UNIQUE,
   version_group_formatted_name VARCHAR(45) NOT NULL UNIQUE,
+  introduced TINYINT UNSIGNED NOT NULL,
 
-  PRIMARY KEY (generation_id, version_group_id),
-  FOREIGN KEY (generation_id) REFERENCES generation(generation_id)
+  PRIMARY KEY (version_group_id),
+  FOREIGN KEY (introduced) REFERENCES generation(generation_id)
     ON DELETE CASCADE
-    ON UPDATE CASCADE,
-  
-  INDEX (version_group_id)
+    ON UPDATE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS ability (

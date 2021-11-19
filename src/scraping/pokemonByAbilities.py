@@ -128,7 +128,14 @@ def makeAbilityCSVandExtractNotes(fname):
           else:
             csvRow[3] = 'as_one_spectrier'
 
-        # take disguised mimikyu to be the base form
+        # spiky eared pichu is gen 4, not gen 2
+        if csvRow[2] == 'pichu_spiky_eared':
+          csvRow[6] = 4
+
+        # ash greninja is gen 7, not gen 6
+        if csvRow[2] == 'greninja_ash':
+          csvRow[6] = 7
+
         writer.writerow(csvRow)
 
   return
