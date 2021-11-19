@@ -1,13 +1,13 @@
 require('dotenv').config();
 const mysql = require('mysql2');
-const sqlStatements = require('./sql/index.js');
+const tableStatements = require('./sql/index.js');
 
 const db = mysql.createPool({
   host: process.env.DB_HOST,
   user: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  connectionLimit: 10,
+  connectionLimit: 20,
 });
 
 // initializes database
@@ -21,10 +21,27 @@ const createDB = () => {
   console.log('Database created.');
 } 
 
-// initializes tables
+// creates any missing tables
 const createTables = () => {
-  Object.keys(sqlStatements.createTableStatements).map(tableGroupKey => {
-    sqlStatements.createTableStatements[tableGroupKey].split(';').map(statement => {
+  // Create entity tables first for foreign keys
+  Object.keys(tableStatements.entityTables).map(tableName => {
+    const statement = tableStatements.entityTables[tableName].create;
+
+    db.execute(statement, (err, results, fields) => {
+      if (err && err.errno != 1065) {
+        console.log(err);
+      }
+    });
+  });
+
+  // Create the junction tables
+  Object.keys(tableStatements).map(tableGroup => {
+    // We've already handled entity tables
+    if (tableGroup === 'entityTables') return;
+
+    Object.keys(tableStatements[tableGroup]).map(tableName=> {
+      const statement = tableStatements[tableGroup][tableName].create;
+
       db.execute(statement, (err, results, fields) => {
         if (err && err.errno != 1065) {
           console.log(err);
@@ -32,4 +49,7 @@ const createTables = () => {
       });
     });
   });
-}
+
+  return;
+};
+

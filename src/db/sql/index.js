@@ -8,7 +8,11 @@ const insertStatements = require('./inserting/index.js');
 // Merge insert statements with rest of table statements.
 for (let tableType of Object.keys(insertStatements)) {
   for (let tableName of Object.keys(insertStatements[tableType])) {
-    tableStatements[tableType][tableName].insert = insertStatements[tableType][tableName].insert;
+    tableStatements[tableType][tableName] = 
+    {
+      ...tableStatements[tableType][tableName],
+      insert: insertStatements[tableType][tableName].insert,
+    }
   }
 }
 

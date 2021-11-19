@@ -17,6 +17,8 @@ Note that, due to the complicated structure of the evolution data, the 'evolves_
 4. For each entry in an entity array, split the entry into multiple copies according to generation. For example, "bulbasaur" in pokemonArr will be split into 8 entries, one for each gen, with the data appropriate to that gen.
 
 5. Import descriptions.json and serialize them.
+
+6. Write arrays to .json files.
 */
 
 /* 1. Extend patch notes and serialize. */
@@ -100,11 +102,39 @@ Entries in descriptionArr are objects of the form:
 */
 const descriptionArr = serializeDescriptions(descriptions);
 
-console.log(descriptionArr);
-
 // const { splitDescriptions } = require('./utils.js');
 // const splitDescriptionArr = splitDescriptions(descriptionArr);
 // console.log(splitDescriptionArr);
+
+
+
+/* 6. Write arrays to .json files. */
+const fs = require('fs');
+
+const PROCESSED_DATA_PATH = './src/db/processing/processed_data/';
+const FILENAMES_AND_ARRAYS = [
+  ['abilities.json', splitAbilityArr],
+  ['items.json', splitItemArr],
+  ['moves.json', splitMoveArr],
+  ['pokemon.json', splitPokemonArr],
+  ['pTypes.json', splitPTypeArr],
+  ['descriptions.json', descriptionArr],
+  ['effects.json', effectArr],
+  ['statuses.json', statusArr],
+  ['usageMethods.json', usageMethodArr],
+];
+
+FILENAMES_AND_ARRAYS.map(pair => {
+  const [fname, arr] = pair;
+
+  fs.writeFileSync(PROCESSED_DATA_PATH + fname, JSON.stringify(arr), (err) => {
+    if (err) {
+      throw err;
+    }
+  });
+
+  console.log(`Saved ${fname}.`);
+})
 
 module.exports = {
   splitAbilityArr,

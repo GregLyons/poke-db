@@ -47,7 +47,7 @@ const extendPatchesOfDict = dict => {
 };
 
 // given an entity dict from one of the .json files, convert to an array of objects where each key in the dict gives 
-export const serializeDict = dict => {
+const serializeDict = dict => {
   return Object.keys(dict).reduce((acc, curr) => {
     acc.push({
       name: curr,
@@ -70,7 +70,7 @@ const getMaxMoves = moveArr => moveArr.filter(move => move.max_move).map(move =>
 
 const getGMaxMoves = moveArr => moveArr.filter(move => move.g_max_move).map(move => move.name);
 
-// export const getMovesOfClass = (moveArr, className) => {
+// const getMovesOfClass = (moveArr, className) => {
 //   switch (className) {
 //     case 'z':
 //       return getZMoves(moveArr);
@@ -91,7 +91,7 @@ const getGMaxMoves = moveArr => moveArr.filter(move => move.g_max_move).map(move
 // #region
 
 // Given learnset objects from separate periods, combine them into a single learnset object
-export const mergeLearnsets = (gen2Learnsets, gen3OnwardsLearnsets) => {
+const mergeLearnsets = (gen2Learnsets, gen3OnwardsLearnsets) => {
   let mergedLearnsets = {};
   let earlierLearnsets = JSON.parse(JSON.stringify(gen2Learnsets));
   let laterLearnsets = JSON.parse(JSON.stringify(gen3OnwardsLearnsets));
@@ -425,7 +425,7 @@ const getUpdatedLearnsets = (learnsets, moves, pokemon) => {
 }
 
 // adds learnset data to pokemonArr
-export const addLearnsetsToPokemonArr = (learnsets, moves, pokemon, pokemonArr) => {
+const addLearnsetsToPokemonArr = (learnsets, moves, pokemon, pokemonArr) => {
   // pokemonMap: pokemonName --> learnsetPokemonName
   // inversePokemonName: learnsetPokemonName --> pokemonName[]
   // the latter returns an array since for some Pokemon with multiple forms, learnsets puts the learnset on only one of the forms; e.g.inversePokemonName('deoxys') returns the names for all of Deoxys's forms
@@ -588,7 +588,7 @@ const splitEntity = (entity, initialGen) => {
   return Object.keys(splitObject).map(gen => splitObject[gen]);
 };  
 
-export const splitArr = arr => {
+const splitArr = arr => {
   return arr.reduce((acc, curr) => {
     return acc.concat(splitEntity(curr, curr.gen));
   }, []);
@@ -599,7 +599,7 @@ export const splitArr = arr => {
 // #region
 
 // Similar to serializeDict, without patch extension
-export const serializeDescriptions = descriptions => {
+const serializeDescriptions = descriptions => {
   return Object.keys(descriptions).reduce((acc, curr) => {
     return acc.concat({
       "entity_name": curr,
@@ -609,7 +609,7 @@ export const serializeDescriptions = descriptions => {
 };
 
 // // Similar to splitArr, but with respect to version group rather than generation
-// export const splitDescriptions = descriptionArr => {
+// const splitDescriptions = descriptionArr => {
 //   let splitArr = [];
 //   // entity is a description object
 //   for (let entity of descriptionArr) {
@@ -631,3 +631,11 @@ export const serializeDescriptions = descriptions => {
 //   return splitArr;
 // };
 // #endregion
+
+module.exports = {
+  serializeDict,
+  mergeLearnsets,
+  addLearnsetsToPokemonArr,
+  splitArr,
+  serializeDescriptions,
+};
