@@ -270,6 +270,17 @@ def makeInitialMoveDict(fname):
   moveDict["water_shuriken"]["category"] = [['physical', 6], ['special', 8]]
   moveDict["water_shuriken"]["type"] = [['water', 6]]
 
+  # force hidden power to have power 0 (representing variable power) in gen 2, 60 in gen 6
+  moveDict["hidden_power"]["power"] = [[0, 2], [60, 6]]
+
+  # force double iron bash to have its lgpe values be non-exclusive, as it is also present in gen 8
+  moveDict["double_iron_bash"]["type"] = [['steel', 7]]
+  moveDict["double_iron_bash"]["pp"] = [[5, 7]]
+  moveDict["double_iron_bash"]["power"] = [[60, 7]]
+  moveDict["double_iron_bash"]["accuracy"] = [[100, 7]]
+  moveDict["double_iron_bash"]["category"] = [['physical', 7]]
+  moveDict["double_iron_bash"]["lgpe_exclusive_values"] = {}
+
   return moveDict
 
 # Uses move list located at fname to make inverse lookup of moveID from moveName possible
@@ -337,7 +348,8 @@ def addPriorityToMoveDict(fname, moveDict):
 def addContactToMoveDict(fname, moveDict):
   # initially, no moves make contact
   for moveName in moveDict.keys():
-    moveDict[moveName]["contact"] = [[False, max(moveDict[moveName]["gen"], 3)]]
+    # We do not take the max of moveGen with 3. Otherwise, we will get NULL values when we process the data later, which would be a problem since we take 'contact' to be a non-nullable column in our move table. Specifically, e.g. 'pound' would have NULL values for 'contact' in gens 1 and 2.
+    moveDict[moveName]["contact"] = [[False, moveDict[moveName]["gen"]]]
 
   with open(fname, encoding='utf-8') as contactCSV:
     reader = csv.DictReader(contactCSV)
@@ -348,12 +360,21 @@ def addContactToMoveDict(fname, moveDict):
 
       if note == '':
         # contact as a mechanic was introduced in Gen 3
-        moveDict[moveName]["contact"] = [[True, max(moveGen, 3)]]
+        if moveGen < 3:
+          # if moveName was released prior to gen 3, then it had previous values for 'contact'
+          moveDict[moveName]["contact"].append([True, 3])
+        else:
+          # if moveName was released gen 3 or onward, then it didn't have previous values for 'contact' in the sense of the 'if'-clause.
+          moveDict[moveName]["contact"] = [[True, max(moveGen, 3)]]
       else:
         if note == 'Gen IV onward':
           moveDict[moveName]["contact"].append([True, 4])
         elif note == 'Only Gen III':
-          moveDict[moveName]["contact"] = [[True, 3], [False, 4]]
+          if moveGen < 3:
+            moveDict[moveName]["contact"].append([True, 3])
+            moveDict[moveName]["contact"].append([False, 4])
+          else:
+            moveDict[moveName]["contact"] = [[True, 3], [False, 4]]
 
   return
 
@@ -509,6 +530,9 @@ def addTargetToMoveDict(fname, moveDict):
 
     for row in reader:
       target = row["Targets"]
+      if target not in ['adjacent_ally', 'adjacent_foe', 'all_adjacent','all_adjacent_foes', 'all', 'all_allies', 'all_foes', 'any', 'any_adjacent', 'user', 'user_and_all_allies', 'user_or_adjacent_ally']:
+        print(moveName, 'has invalid target name.')
+
       moveName = row["Move Name"]
       
       moveDict[moveName]["target"] = [[target, moveDict[moveName]["gen"]]]
@@ -519,7 +543,7 @@ def addTargetToMoveDict(fname, moveDict):
     moveDict["helping_hand"]["target"] = [["user", 3], ["adjacent_ally", 4]]
 
     # surf
-    moveDict["surf"]["target"] = [["all_foes", 3], ["all_adjacent", 4]]
+    moveDict["surf"]["target"] = [["all_foes", 1], ["all_adjacent", 4]]
 
     # conversion_2
     moveDict["conversion_2"]["target"] = [["user", 2], ["any_adjacent", 5]]
@@ -528,14 +552,15 @@ def addTargetToMoveDict(fname, moveDict):
     moveDict["poison_gas"]["target"] = [["any_adjacent", 1], ["all_adjacent_foes", 5]]
 
     # cotton_spore
-    moveDict["cotton_spore"]["target"] = [["adjacent", 2], ["all_adjacent_foes", 6]]
+    moveDict["cotton_spore"]["target"] = [["adjacent_foe", 2], ["all_adjacent_foes", 6]]
 
     # nature_power
-    moveDict["nature_power"]["target"] = [["user", 5], ["adjacent", 6]]
+    moveDict["nature_power"]["target"] = [["user", 3], ["any_adjacent", 6]]
 
     # howl
     moveDict["howl"]["target"] = [["user", 3], ["user_and_all_allies", 8]]
     #endregion
+
   return
 
 # read stat modification data and update moveDict
@@ -643,7 +668,7 @@ def updateMoveCategory(moveDict):
         moveDict[moveName]["category"] = [['special', moveGen]] + [[category, 4]]
 
   # hard-code exceptions; moves whose type varies
-  moveDict["hidden_power"]["category"] = [['varies', 3], ['special', 4]]
+  moveDict["hidden_power"]["category"] = [['varies', 2], ['special', 4]]
 
   moveDict["weather_ball"]["category"] = [['varies', 3], ['special', 4]]
 

@@ -23,6 +23,8 @@ Note that, due to the complicated structure of the evolution data, the 'evolves_
 5. Import descriptions.json, effects.json, stats.json, statuses.json, usageMethods.json, and versionGroups.json, and serialize them. Aside from descriptions.json, these objects are much simpler in that they don't change across games (at least, the data--name and debut gen--we're tracking for them doesn't change), so we use a simplified version of serializeDict.
 
 6. Write arrays to .json files.
+
+7. Valid data for insertion (e.g. check for numbers in numeric fields, defined values in non-nullable fields, etc.).
 */
 
 /* 1. Extend patch notes and serialize. */
@@ -40,9 +42,10 @@ const { serializeDict } = require('./utils.js');
 // these entities depend on generation, and so will be split later
 const abilityArr = serializeDict(abilities);
 const itemArr = serializeDict(items);
-const moveArr = serializeDict(moves);
-// We'll filter out LGPE Pokemon once we calculate the learnsets
+// We'll filter out LGPE Pokemon and moves once we calculate the learnsets
+let moveArr = serializeDict(moves);
 let pokemonArr = serializeDict(pokemon);
+
 const pTypeArr = serializeDict(pTypes);
 
 // #endregion
@@ -64,6 +67,8 @@ addLearnsetsToPokemonArr(learnsets, moves, pokemon, pokemonArr);
 // Separate out LGPE only Pokemon
 const lgpeOnlyPokemon = pokemonArr.filter(data => data.gen == 'lgpe_only');
 pokemonArr = pokemonArr.filter(data => data.gen !== 'lgpe_only');
+const lgpeOnlyMoves = moveArr.filter(data => data.gen == 7 && Object.keys(data.lgpe_exclusive_values).length == 5);
+moveArr = moveArr.filter(data => !(data.gen == 7 && Object.keys(data.lgpe_exclusive_values).length == 5));
 
 // #endregion
 
@@ -158,7 +163,80 @@ FILENAMES_AND_ARRAYS.map(pair => {
   });
 
   console.log(`Saved ${fname}.`);
-})
+});
+
+// #endregion
+
+/* 7. Validate data. */
+// #region
+console.log('\nValidating data.\n');
+
+console.log('Checking abilities...');
+splitAbilityArr.map(data => {
+  if (!data.name) console.log('Doesn\'t have a name!');
+
+  if (isNaN(data.introduced)) console.log(`${data.name}: Debut gen ${data.introduced} is not a number.`);
+});
+
+console.log('Checking items...');
+splitItemArr.map(data => {
+  if (!data.name) console.log('Doesn\'t have a name!');
+
+  if (isNaN(data.introduced)) console.log(`${data.name}: Debut gen ${data.introduced} is not a number.`);
+});
+
+console.log('Checking moves...');
+splitMoveArr.map(data => {
+  if (!data.name) console.log('Doesn\'t have a name!');
+
+  if (isNaN(data.introduced)) console.log(`${data.name}: Debut gen ${data.introduced} is not a number.`);
+
+  if (isNaN(data.power)) console.log(`${data.name}: Power ${data.power} is not a number.`);
+
+  if (isNaN(data.pp)) console.log(`${data.name}: PP ${data.pp} is not a number.`);
+
+  if (isNaN(data.accuracy)) console.log(`${data.name}: Accuracy ${data.accuracy} is not a number.`);
+
+  if (['physical', 'special', 'status', 'varies'].indexOf(data.category) < 0) console.log(`${data.name}: ${data.category} is not a valid move category.`);
+
+  if (['adjacent_ally', 'adjacent_foe', 'all_adjacent','all_adjacent_foes', 'all', 'all_allies', 'all_foes', 'any', 'any_adjacent', 'user', 'user_and_all_allies', 'user_or_adjacent_ally'].indexOf(data.target) < 0) console.log(`${data.name}: ${data.target} is not a valid move target class.`);
+});
+
+console.log('Checking Pokemon...');
+splitPokemonArr.map(data => {
+  if(data.cosmetic) return;
+
+  if (!data.name) console.log('Doesn\'t have a name!');
+
+  if (isNaN(data.introduced)) console.log(`${data.name}: Debut gen ${data.introduced} is not a number.`);
+
+  if (isNaN(data.dex_number)) console.log(`${data.name}: Dex number ${data.dexNumber} is not a number.`);
+  
+  if (!data.species) console.log(`${data.name}: Doesn't have a species name.`);
+  
+  if (isNaN(data.height)) console.log(`${data.name}: Height ${data.weight} is not a number.`);
+
+  if (isNaN(data.weight)) console.log(`${data.name}: Weight ${data.weight} is not a number.`);
+
+  if (isNaN(data.hp)) console.log(`${data.name}: HP ${data.hp} is not a number.`);
+
+  if (isNaN(data.attack)) console.log(`${data.name}: Attack ${data.attack} is not a number.`);
+
+  if (isNaN(data.defense)) console.log(`${data.name}: Defense ${data.defense} is not a number.`);
+
+  if (isNaN(data.special_attack)) console.log(`${data.name}: Specialattack ${data.special_attack} is not a number.`);
+
+  if (isNaN(data.special_defense)) console.log(`${data.name}: Special defense ${data.special_defense} is not a number.`);
+
+  if (isNaN(data.speed)) console.log(`${data.name}: Speed ${data.speed} is not a number.`);
+});
+
+console.log('Checking types...');
+splitPTypeArr.map(data => {
+  if (!data.name) console.log('Doesn\'t have a name!');
+
+  if (isNaN(data.introduced)) console.log(`${data.name}: Debut gen ${data.introduced} is not a number.`);
+});
 
 // #endregion
 

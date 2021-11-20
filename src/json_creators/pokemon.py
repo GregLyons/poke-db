@@ -466,6 +466,9 @@ def addFormFlags(pokemonDict):
     pokemonDict[pokemonName]["form_data"] = {}
 
   for pokemonName in pokemonDict.keys():
+    baseForm = pokemonName
+    isBaseForm = False
+
     if '_mega' in pokemonName:
       # will include '_x' and '_y' forms
       baseForm = pokemonName.split('_')[0]
@@ -489,7 +492,10 @@ def addFormFlags(pokemonDict):
         # if speciesName belongs to pokemonDict, then that is the base form
         if pokemonDict[pokemonName]["species"] in pokemonDict.keys():
           baseForm = speciesName
-          formType = 'other'
+          if baseForm == pokemonName:
+            isBaseForm = True
+          else:
+            formType = 'other'
 
         # need to handle case-by-case
         else:
@@ -500,8 +506,9 @@ def addFormFlags(pokemonDict):
 
               # indicates base form
               if baseFormSuffix in pokemonName:
+                isBaseForm = True
                 continue
-
+              
               baseForm = speciesName + '_' + baseFormSuffix
               formType = 'other'
             else:
@@ -510,15 +517,20 @@ def addFormFlags(pokemonDict):
           if not handled:
             print(pokemonName, 'not handled!')
 
+      # Pokemon whose baseForm name includes a '_'
       else:
+        isBaseForm = True
+
         # Currently no Pokemon satisfy this condition; this is for next gen when new Pokemon are introduced. Then we'll figure out what to do with them.
         if not pokemonName == speciesName:
           print(pokemonName, 'form data unhandled!')
+          
         continue
     
     # baseForm and pokemonName refer to each other through "form_data"
-    pokemonDict[baseForm]["form_data"][formType] = pokemonName
-    pokemonDict[pokemonName]["form_data"]["base_form"] = baseForm
+    if not isBaseForm:
+      pokemonDict[pokemonName]["form_data"][baseForm] = 'base_form'
+      pokemonDict[baseForm]["form_data"][pokemonName] = formType
 
     # add in dex number for pokemonName, which won't have a dex number yet
     pokemonDict[pokemonName]["dex_number"] = pokemonDict[baseForm]["dex_number"]

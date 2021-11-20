@@ -2,7 +2,7 @@
 TABLES FOR ENTITIES
 */
 
--- LGPE counts as its own generation. we use it for entities which are LGPE-exclusive
+-- We will handle LGPE in an entirely separate table.
 CREATE TABLE IF NOT EXISTS generation (
   generation_id TINYINT UNSIGNED NOT NULL UNIQUE,
   generation_code VARCHAR(4) NOT NULL UNIQUE,
@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS generation (
   PRIMARY KEY (generation_id)
 );
 
+-- The combination (pdescription_index, pdescription_type, entity_name) gives a unique identifier which we use for inserting data, even though technically only pdescription_id and pdescription_text are necessary.
 CREATE TABLE IF NOT EXISTS pdescription (
   pdescription_id MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT,
   pdescription_text VARCHAR(255) NOT NULL,
@@ -20,9 +21,12 @@ CREATE TABLE IF NOT EXISTS pdescription (
   PRIMARY KEY (pdescription_id)
 );
 
+
+-- While sprite_path should be unique, combining it with entity_name to get another unique identifier makes for easier selection when inserting data.
 CREATE TABLE IF NOT EXISTS sprite (
   sprite_id MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT,
   sprite_path TINYTEXT NOT NULL,
+  entity_name VARCHAR(255) NOT NULL,
 
   PRIMARY KEY (sprite_id)
 );

@@ -155,12 +155,12 @@ const insertBasicEntities = async () => {
 // Inserts data for entities which depend on generation, either through a composite primary key or through an 'introduced' column. 
 // WARNING: the junction tables all depend on one or more tables in here, so performing this will cause those tables to be deleted.
 const insertGenDependentEntities = async () => {
-  // pmove table needs to be handled after inserting pType.
   const entityTableNames = [
     'ability',
     'effect',
     'item',
     'pokemon',
+    'pmove',
     'ptype',
     'usage_method',
     'version_group'
@@ -348,3 +348,333 @@ const insertGenDependentEntities = async () => {
   }
 }
 
+const insertAbilityJunctionData = async () => {
+  // pmove table needs to be handled after inserting pType.
+  const abilityJunctionTables = [
+    'ability_boosts_ptype',
+    'ability_resists_ptype',
+    'ability_boosts_usage_method',
+    'ability_resists_usage_method',
+    'ability_modifies_stat',
+    'ability_effect',
+    'ability_causes_pstatus',
+    'ability_resists_pstatus',
+  ];
+  for (let tableName of abilityJunctionTables) {
+    // Delete the tables to overcome foreign key constraints.
+    console.log(tableName);
+    db.promise().query(tableStatements.abilityJunctionTables[tableName].delete)
+    .then( ([results, fields]) => {
+
+      console.log(`${tableName} table deleted.`);
+
+    })
+    .catch(console.log)
+    .then( () => {
+      db.promise().query(tableStatements.abilityJunctionTables[tableName].reset_auto_inc)
+      .then( ([results, fields]) => {
+        
+        console.log(`Reset AUTO_INCREMENT index for ${tableName} table.`);
+      })
+      .catch(console.log)
+      .then( () => {
+        
+        // Determine values to be inserted.
+        let values;
+        switch (tableName) {
+          case 'ability':
+            /*
+              Need (
+                generation_id,
+                ability_name,
+                ability_formatted_name,
+                introduced
+              )
+            */
+            values = require('./processing/processed_data/abilities.json')
+              .map(data => [data.gen, data.name, data.formatted_name, data.introduced]);
+            break;
+
+          case 'effect':
+            /* 
+              Need (
+                effect_name,
+                effect_formatted_name,
+                introduced
+              )
+            */
+            values = require('./processing/processed_data/effects.json')
+              .map(data => [data.name, data.formatted_name, data.introduced]);
+            break;
+
+          case 'item':
+            /* 
+              Need (
+                generation_id,
+                item_name,
+                item_formatted_name,
+                introduced,
+                item_class
+              ) 
+            */
+            values = require('./processing/processed_data/items.json')
+              .map(data => [data.gen, data.name, data.formatted_name, data.introduced, data.item_type]);
+            break;
+
+          case 'pokemon':
+            /* 
+              Need (
+                generation_id,
+                pokemon_name,
+                pokemon_formatted_name,
+                pokemon_species,
+                pokemon_dex,
+                pokemon_height,
+                pokemon_weight,
+                introduced,
+                pokemon_hp,
+                pokemon_attack,
+                pokemon_defense,
+                pokemon_special_defense,
+                pokemon_special_attack,
+                pokemon_speed
+              )
+            */
+            values = require('./processing/processed_data/pokemon.json')
+              // filter out cosmetic forms and lgpe_only pokemon
+              .filter(data => !data.cosmetic && !(data.gen == 'lgpe_only'))
+              .map(data => [
+                data.gen,
+                data.name,
+                data.formatted_name,
+                data.species,
+                data.dex_number,
+                data.height,
+                data.weight,
+                data.introduced,
+                data.hp,
+                data.attack,
+                data.defense,
+                data.special_defense,
+                data.special_attack,
+                data.speed,
+              ]);
+            break;
+          
+          case 'pmove':
+            /*
+              Need (
+                generation_id,
+                pmove_name,
+                pmove_formatted_name,
+                introduced,
+                pmove_power,
+                pmove_pp,
+                pmove_accuracy,
+                pmove_category,
+                pmove_priority,
+                pmove_contact,
+                pmove_target
+              )
+            */
+            values = require('./processing/processed_data/moves.json')
+              .map(data => [
+                data.gen,
+                data.name,
+                data.formatted_name,
+                data.introduced,
+                data.power,
+                data.pp,
+                data.accuracy,
+                data.category,
+                data.priority,
+                data.contact,
+                data.target
+              ]);
+            break;
+
+          case 'ptype':
+            /*
+              Need (
+                generation_id,
+                ptype_name,
+                ptype_formatted_name,
+                introduced
+              )
+            */
+            values = require('./processing/processed_data/pTypes.json')
+              .map(data => [data.gen, data.name, data.formatted_name, data.introduced]);
+            break;
+
+          case 'usage_method':
+            /*
+              Need (
+                usage_method_name
+                usage_method_formatted_name
+                introduced
+              )
+            */
+            values = require('./processing/processed_data/usageMethods.json')
+              .map(data => [data.name, data.formatted_name, data.introduced]);
+            break;
+
+          case 'version_group':
+            /*
+              Need (
+                version_group_code,
+                version_group_formatted_name
+                introduced
+              )
+            */
+            values = require('./processing/processed_data/versionGroups.json').map(data => [data.name, data.formatted_name, data.introduced]);
+            break;
+
+          default:
+            console.log(`${tableName} unhandled.`);
+        }
+
+        db.promise().query(tableStatements.abilityJunctionTables[tableName].insert, [values])
+        .then( ([results, fields]) => {
+          console.log(`${tableName} data inserted: ${results.affectedRows} rows.`);
+        })
+        .catch(console.log);
+      });
+    });
+  }
+}
+
+/*
+  Given a table name, tableName, with an AUTO_INCREMENT column, select identifying columns for the purpose of data insertion. E.g.
+
+    If tableName = 'pokemon', select 'pokemon_id', the AUTO_INCREMENT column, as well as 'generation_id' and 'pokemon_name'. 
+*/
+const getIdentifyingColumnNames = (tableName) => {
+  let identifyingColumns;
+  switch(tableName) {
+    case 'pdescription':
+      identifyingColumns = 'pdescription_index, pdescription_type, entity_name';
+      break;
+    case 'sprite':
+      identifyingColumns = 'sprite_path, entity_name';
+      break;
+    case 'version_group':
+      identifyingColumns = 'version_group_code';
+      break;
+    case 'ability': 
+    case 'effect':
+    case 'item':
+    case 'pmove':
+    case 'pokemon':
+    case 'pstatus':
+    case 'ptype':
+    case 'stat':
+    case 'usage_method':
+      identifyingColumns = tableName + '_name';
+      break;
+    default:
+      throw `Invalid table name: ${tableName}.`
+  } 
+
+  return identifyingColumns;
+}
+
+/* 
+  Given a table name, tableName, with an AUTO_INCREMENT column, select the AUTO_INCREMENT column, as well as any other identifying columns for the purpose of data insertion. E.g.
+
+    If tableName = 'pokemon', select 'pokemon_id', the AUTO_INCREMENT column, as well as 'generation_id' and 'pokemon_name'. 
+    
+  We will use this to build Maps for inserting into junction tables. E.g.
+  
+    To insert rows into 'pokemon_ability', we use getIdentifyingColumns('pokemon') to (in another function) build a map which sends (pokemon_name, generation_id) to (generation_id, pokemon_id), which is one of the foreign keys for 'pokemon_ability'. 
+*/
+const queryIdentifyingColumns = async (tableName) => {
+  // Whether the entity corresponding to tableName is generation-dependent.
+  let hasGenID;
+  switch (tableName) {
+    case 'pdescription':
+    case 'sprite':
+    case 'version_group':
+    case 'stat':
+    case 'pstatus':
+      hasGenID = false;
+      break;
+    default:
+      hasGenID = true;
+  }
+
+  // The column of tableName which AUTO_INCREMENTs.
+  const autoIncColumn = `${tableName}_id`;
+
+  // The other columns of tableName which help identify a given row for the purpose of data insertion.
+  const identifyingColumns = getIdentifyingColumnNames(tableName);
+
+  return hasGenID 
+    ? db.promise().query(tableStatements.entityTables[tableName].select(`generation_id, ${autoIncColumn}, ${identifyingColumns}`))
+    : db.promise().query(tableStatements.entityTables[tableName].select(`${autoIncColumn}, ${identifyingColumns}`));
+};
+
+/*
+  Given a table name, tableName, build a Map, foreignKeyMap, which maps identifying column values to primary key column values. E.g.
+
+    If tableName = 'pokemon', foreignKeyMap maps { generation_id, pokemon_name } to { pokemon_id, generation_id }.
+
+  This will facilitate inserting data into junction tables, indeed into any table with a foreign key.
+*/
+const buildForeignKeyMaps = async (tableName) => {
+  const results = await queryIdentifyingColumns(tableName).then( ([results, fields]) => {
+    // Maps values in identifying columns of tableName to values in primary key columns of tableName.
+    const foreignKeyMap = new Map();
+
+    results.map(row => {
+      // Check whether tableName depends on 'generation'.
+      const hasGenID = row.generation_id != undefined;
+
+      // Name of the AUTO_INCREMENT column.
+      const autoIncColumnName = `${tableName}_id`;
+      const autoIncColumnValue = row[autoIncColumnName];
+
+      // Compute the primary key column(s).
+      const primaryKeyColumns = { [autoIncColumnName]: autoIncColumnValue }
+      if (hasGenID) primaryKeyColumns.generation_id = row.generation_id
+
+      // Get the non-AUTO_INCREMENT columns from the given row.
+      const identifyingColumns = Object.keys(row).reduce((acc, curr) => {
+        // Ignore AUTO_INCREMENT column.
+        if (curr === `${tableName}_id`) return acc;
+
+        return {
+          ...acc,
+          [curr]: row[curr],
+        }
+      }, {});
+
+      //
+      foreignKeyMap.set(identifyingColumns, primaryKeyColumns);
+    });
+
+    console.log(foreignKeyMap);
+  });
+}
+
+
+// insertGenDependentEntities();
+
+
+// const targetNames = ['adjacent_ally', 'adjacent_foe', 'all_adjacent','all_adjacent_foes', 'all', 'all_allies', 'all_foes', 'any', 'any_adjacent', 'user', 'user_and_all_allies', 'user_or_adjacent_ally']
+const categoryNames = ['physical', 'special', 'status', 'varies']
+
+const values = require('./processing/processed_data/moves.json');
+values.map(data => {
+  if (categoryNames.indexOf(data.category) < 0) console.log(data.name, data.category);
+})
+
+// queryIdentifyingColumns('pokemon')
+//   .then( ([results, fields]) => {
+//     console.log(results);
+//   })
+//   .catch(console.log);
+
+// db.promise().query(tableStatements.entityTables.generation.select('*'))
+// .then( ([results, fields]) => {
+//   console.log(results);
+// }).catch(console.log);

@@ -45,6 +45,10 @@ def makeMoveListCSVandExtractNotes(fname):
         csvRow.append(value)
         headerIndex += 1
 
+      # replace '???' with 'varies' for max moves
+      if csvRow[3] == '???' and 'max_' in csvRow[1]:
+        csvRow[3] = 'varies'
+
       writer.writerow(csvRow)
 
     # add G-Max moves
