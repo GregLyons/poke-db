@@ -349,95 +349,132 @@ const insertGenDependentEntities = async () => {
 }
 
 const insertAbilityJunctionData = async () => {
-  // pmove table needs to be handled after inserting pType.
-  const abilityJunctionTables = [
-    'ability_boosts_ptype',
-    'ability_resists_ptype',
-    'ability_boosts_usage_method',
-    'ability_resists_usage_method',
-    'ability_modifies_stat',
-    'ability_effect',
-    'ability_causes_pstatus',
-    'ability_resists_pstatus',
-  ];
-  for (let tableName of abilityJunctionTables) {
-    // Delete the tables to overcome foreign key constraints.
-    console.log(tableName);
-    db.promise().query(tableStatements.abilityJunctionTables[tableName].delete)
-    .then( ([results, fields]) => {
+  const relevantEntityTables = ['ability', 'ptype', 'usage_method', 'stat', 'pstatus', 'effect']
 
-      console.log(`${tableName} table deleted.`);
+  // Get foreign key maps.
+  Promise.all(relevantEntityTables.map(async (tableName) => {
+    const statement = tableStatements.entityTables[tableName].create;
 
-    })
-    .catch(console.log)
-    .then( () => {
-      db.promise().query(tableStatements.abilityJunctionTables[tableName].reset_auto_inc)
+    console.log(`Getting foreign key map for ${tableName}.`);
+    return await getForeignKeyMap(tableName);
+  }))
+  .then( result => {
+    // Assign foreign key maps (FKM). Order is preserved by Promise.all().
+    const [ability_FKM, pType_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM] = result;
+
+    const abilityJunctionTables = [
+      'ability_boosts_ptype',
+      // 'ability_resists_ptype',
+      // 'ability_boosts_usage_method',
+      // 'ability_resists_usage_method',
+      // 'ability_modifies_stat',
+      // 'ability_effect',
+      // 'ability_causes_pstatus',
+      // 'ability_resists_pstatus',
+    ];
+    for (let tableName of abilityJunctionTables) {
+      // Delete the tables.
+      console.log(tableName);
+      db.promise().query(tableStatements.abilityJunctionTables[tableName].delete)
       .then( ([results, fields]) => {
-        
-        console.log(`Reset AUTO_INCREMENT index for ${tableName} table.`);
+  
+        console.log(`${tableName} table deleted.`);
+  
       })
       .catch(console.log)
+      // Insert data into the tables. No need to reset AUTO_INCREMENT values.
       .then( () => {
         
         // Determine values to be inserted.
         let values;
+        const abilityData = require('./processing/processed_data/abilities.json')
         switch (tableName) {
-          case 'ability':
+          case 'ability_boosts_ptype':
             /*
               Need (
-                generation_id,
-                ability_name,
-                ability_formatted_name,
-                introduced
+                ability_generation_id,
+                ability_id,
+                ptype_generation_id,
+                ptype_id,
+                multiplier
               )
             */
-            values = require('./processing/processed_data/abilities.json')
-              .map(data => [data.gen, data.name, data.formatted_name, data.introduced]);
+            values = abilityData.reduce((acc, curr) => {
+              // Get ability data from curr.
+              const { gen: gen, name: abilityName, boosts_type: boostTypeData } = curr;
+              const { ability_id: abilityID } = ability_FKM.get(makeMapKey([abilityName, gen]));
+              
+              
+              return acc.concat(
+                Object.keys(boostTypeData).map(pTypeName => {
+                  // We always compare entities of the same generation.
+                  const { ptype_id: pTypeID } = pType_FKM.get(makeMapKey([gen, pTypeName]));
+                  const multiplier = boostTypeData[pTypeName];
+
+                  return [
+                    gen,
+                    abilityID,
+                    gen,
+                    pTypeID,
+                    multiplier
+                  ];
+                })
+              )
+            }, [])
+            // Filter out empty entries
+            .filter(data => data.length > 0);
             break;
 
-          case 'effect':
+          case 'ability_resists_ptype':
             /* 
               Need (
-                effect_name,
-                effect_formatted_name,
-                introduced
+                ability_generation_id,
+                ability_id,
+                ptype_generation_id,
+                ptype_id,
+                multiplier
               )
             */
             values = require('./processing/processed_data/effects.json')
               .map(data => [data.name, data.formatted_name, data.introduced]);
             break;
 
-          case 'item':
+          case 'ability_boosts_usage_method':
             /* 
               Need (
-                generation_id,
-                item_name,
-                item_formatted_name,
-                introduced,
-                item_class
+                ability_generation_id,
+                ability_id,
+                usage_method_id,
+                multiplier
               ) 
             */
             values = require('./processing/processed_data/items.json')
               .map(data => [data.gen, data.name, data.formatted_name, data.introduced, data.item_type]);
             break;
 
-          case 'pokemon':
+          case 'ability_resists_usage_method':
             /* 
               Need (
-                generation_id,
-                pokemon_name,
-                pokemon_formatted_name,
-                pokemon_species,
-                pokemon_dex,
-                pokemon_height,
-                pokemon_weight,
-                introduced,
-                pokemon_hp,
-                pokemon_attack,
-                pokemon_defense,
-                pokemon_special_defense,
-                pokemon_special_attack,
-                pokemon_speed
+                ability_generation_id,
+                ability_id,
+                usage_method_id,
+                multiplier
+              ) 
+            */
+            values = require('./processing/processed_data/items.json')
+              .map(data => [data.gen, data.name, data.formatted_name, data.introduced, data.item_type]);
+            break;
+
+          case 'ability_modifies_stat':
+            /* 
+              Need (
+                ability_generation_id,
+                ability_id,
+                state_id,
+                stage,
+                multiplier,
+                chance,
+                recipient
               )
             */
             values = require('./processing/processed_data/pokemon.json')
@@ -461,20 +498,12 @@ const insertAbilityJunctionData = async () => {
               ]);
             break;
           
-          case 'pmove':
+          case 'ability_effect':
             /*
               Need (
-                generation_id,
-                pmove_name,
-                pmove_formatted_name,
-                introduced,
-                pmove_power,
-                pmove_pp,
-                pmove_accuracy,
-                pmove_category,
-                pmove_priority,
-                pmove_contact,
-                pmove_target
+                ability_generation_id,
+                ability_id,
+                effect_id
               )
             */
             values = require('./processing/processed_data/moves.json')
@@ -493,42 +522,30 @@ const insertAbilityJunctionData = async () => {
               ]);
             break;
 
-          case 'ptype':
+          case 'ability_causes_pstatus':
             /*
               Need (
-                generation_id,
-                ptype_name,
-                ptype_formatted_name,
-                introduced
+                ability_generation_id,
+                ability_id,
+                pstatus_id,
+                chance
               )
             */
             values = require('./processing/processed_data/pTypes.json')
               .map(data => [data.gen, data.name, data.formatted_name, data.introduced]);
             break;
-
-          case 'usage_method':
+            
+          case 'ability_resists_pstatus':
             /*
               Need (
-                usage_method_name
-                usage_method_formatted_name
-                introduced
+                ability_generation_id,
+                ability_id,
+                pstatus_id
               )
             */
-            values = require('./processing/processed_data/usageMethods.json')
-              .map(data => [data.name, data.formatted_name, data.introduced]);
+            values = require('./processing/processed_data/pTypes.json')
+              .map(data => [data.gen, data.name, data.formatted_name, data.introduced]);
             break;
-
-          case 'version_group':
-            /*
-              Need (
-                version_group_code,
-                version_group_formatted_name
-                introduced
-              )
-            */
-            values = require('./processing/processed_data/versionGroups.json').map(data => [data.name, data.formatted_name, data.introduced]);
-            break;
-
           default:
             console.log(`${tableName} unhandled.`);
         }
@@ -539,8 +556,10 @@ const insertAbilityJunctionData = async () => {
         })
         .catch(console.log);
       });
-    });
-  }
+    }
+  })
+  .catch(console.log);
+
 }
 
 /*
@@ -596,6 +615,8 @@ const queryIdentifyingColumns = async (tableName) => {
     case 'version_group':
     case 'stat':
     case 'pstatus':
+    case 'usage_method':
+    case 'effect':
       hasGenID = false;
       break;
     default:
@@ -620,10 +641,10 @@ const queryIdentifyingColumns = async (tableName) => {
 
   This will facilitate inserting data into junction tables, indeed into any table with a foreign key.
 */
-const buildForeignKeyMaps = async (tableName) => {
+const getForeignKeyMap = async (tableName) => {
+  const foreignKeyMap = new Map();
   const results = await queryIdentifyingColumns(tableName).then( ([results, fields]) => {
     // Maps values in identifying columns of tableName to values in primary key columns of tableName.
-    const foreignKeyMap = new Map();
 
     results.map(row => {
       // Check whether tableName depends on 'generation'.
@@ -648,25 +669,33 @@ const buildForeignKeyMaps = async (tableName) => {
         }
       }, {});
 
-      //
-      foreignKeyMap.set(identifyingColumns, primaryKeyColumns);
+      // We can't use objects or arrays as keys for a Map, so we need to use a string (AGHHHHHHHHHHHHHHHHHHHHHHHHHH). Since we aren't guaranteed the order of the object keys, we sort them alphabetically.
+      const identifyingColumnsString = Object.keys(identifyingColumns)
+        .sort()
+        .reduce((acc, curr) => {
+          return acc + identifyingColumns[curr] + ' ';
+        }, '')
+        // Slice to remove space.
+        .slice(0, -1);
+      foreignKeyMap.set(identifyingColumnsString, primaryKeyColumns);
     });
-
-    console.log(foreignKeyMap);
   });
+
+  return foreignKeyMap;
 }
 
+const makeMapKey = arr => arr.join(' ');
 
-// insertGenDependentEntities();
+insertAbilityJunctionData();
 
 
 // const targetNames = ['adjacent_ally', 'adjacent_foe', 'all_adjacent','all_adjacent_foes', 'all', 'all_allies', 'all_foes', 'any', 'any_adjacent', 'user', 'user_and_all_allies', 'user_or_adjacent_ally']
-const categoryNames = ['physical', 'special', 'status', 'varies']
+// const categoryNames = ['physical', 'special', 'status', 'varies']
 
-const values = require('./processing/processed_data/moves.json');
-values.map(data => {
-  if (categoryNames.indexOf(data.category) < 0) console.log(data.name, data.category);
-})
+// const values = require('./processing/processed_data/moves.json');
+// values.map(data => {
+//   if (categoryNames.indexOf(data.category) < 0) console.log(data.name, data.category);
+// })
 
 // queryIdentifyingColumns('pokemon')
 //   .then( ([results, fields]) => {
