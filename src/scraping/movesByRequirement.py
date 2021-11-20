@@ -64,7 +64,9 @@ def makeRequirementCSV(fname):
 
       # some of the Pokemon names are very strangely formatted (species name and form name have separate links), so putting separator in get_text() doesn't work well; hard code exceptions
       if 'volt_thunderbolt' in moveName:
-        pokemonNames = ['pikachu_in_a_cap']
+        pokemonNames = []
+        for suffix in ['_original', '_kalos', '_alola', '_hoenn', '_sinnoh', '_unova', '_partner', '_world']:
+          pokemonNames.append('pikachu' + suffix + '_cap')
       elif 'sparksurfer' in moveName:
         pokemonNames = ['raichu_alola']
       elif 'guardian_of_alola' in moveName:

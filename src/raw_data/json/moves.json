@@ -32145,7 +32145,7 @@
     "lgpe_exclusive_values": {},
     "requirements": {
       "pokemon": [
-        "pikachu_in_a_cap"
+        "pikachu_world_cap"
       ],
       "move": "thunderbolt"
     },

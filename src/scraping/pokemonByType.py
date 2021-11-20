@@ -180,7 +180,10 @@ def makePokemonTypeCSV(fname):
     writer.writerow([8, 555, 'darmanitan', 'darmanitan_zen_galar', 'ice', 'fire'])
 
     # add pikachu in a cap
-    writer.writerow([7, 25, 'pikachu', 'pikachu_in_a_cap', 'electric', ''])
+    for suffix in ['_original', '_kalos', '_alola', '_hoenn', '_sinnoh', '_unova', '_partner', '_world']:
+      writer.writerow([7, 25, 'pikachu', 'pikachu' + suffix + '_cap', 'electric', ''])
+
+    # writer.writerow([7, 25, 'pikachu', 'pikachu_in_a_cap', 'electric', ''])
 
     # add necrozma
     writer.writerow([7, 800, 'necrozma', 'necrozma', 'psychic', ''])

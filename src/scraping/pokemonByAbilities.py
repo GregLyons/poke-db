@@ -136,6 +136,20 @@ def makeAbilityCSVandExtractNotes(fname):
         if csvRow[2] == 'greninja_ash':
           csvRow[6] = 7
 
+        # split pikachu_cosplay into its different forms
+        if csvRow[2] == 'pikachu_cosplay':
+          csvRow[6] = 6
+          for suffix in ['_rock_star', '_belle', '_pop_star', '_phd', '_libre']:
+            writer.writerow(csvRow[:2] + ['pikachu' + suffix] + csvRow[3:])
+          continue
+
+        # split pikachu_in_a_cap into its different forms
+        if csvRow[2] == 'pikachu_in_a_cap':
+          csvRow[6] = 7
+          for suffix in ['_original', '_kalos', '_alola', '_hoenn', '_sinnoh', '_unova', '_partner', '_world']:
+            writer.writerow(csvRow[:2] + ['pikachu' + suffix + '_cap'] + csvRow[3:])
+          continue
+
         writer.writerow(csvRow)
 
   return

@@ -6,8 +6,19 @@ Gen,Item Name,Pokemon Name,Description,Additional Description,Stat 1,Stat 2,Modi
 2,leek,farfetchd_galar,Increases critical hit ratio by two stages.,,critical_hit_ratio,,+2
 2,leek,sirfetchd,Increases critical hit ratio by two stages.,,critical_hit_ratio,,+2
 2,light_ball,pikachu,Doubles Attack and Special Attack.,"From Pokémon Emerald onward, if held by either parent of a Pichu when the Egg is produced,the Pichu that hatches will have the move Volt Tackle.",attack,special_attack,2.0
-2,light_ball,pikachu_cosplay,Doubles Attack and Special Attack.,"From Pokémon Emerald onward, if held by either parent of a Pichu when the Egg is produced,the Pichu that hatches will have the move Volt Tackle.",attack,special_attack,2.0
-2,light_ball,pikachu_in_a_cap,Doubles Attack and Special Attack.,"From Pokémon Emerald onward, if held by either parent of a Pichu when the Egg is produced,the Pichu that hatches will have the move Volt Tackle.",attack,special_attack,2.0
+2,light_ball,pikachu_rock_star,Doubles Attack and Special Attack.,"From Pokémon Emerald onward, if held by either parent of a Pichu when the Egg is produced,the Pichu that hatches will have the move Volt Tackle.",attack,special_attack,2.0
+2,light_ball,pikachu_belle,Doubles Attack and Special Attack.,"From Pokémon Emerald onward, if held by either parent of a Pichu when the Egg is produced,the Pichu that hatches will have the move Volt Tackle.",attack,special_attack,2.0
+2,light_ball,pikachu_pop_star,Doubles Attack and Special Attack.,"From Pokémon Emerald onward, if held by either parent of a Pichu when the Egg is produced,the Pichu that hatches will have the move Volt Tackle.",attack,special_attack,2.0
+2,light_ball,pikachu_phd,Doubles Attack and Special Attack.,"From Pokémon Emerald onward, if held by either parent of a Pichu when the Egg is produced,the Pichu that hatches will have the move Volt Tackle.",attack,special_attack,2.0
+2,light_ball,pikachu_libre,Doubles Attack and Special Attack.,"From Pokémon Emerald onward, if held by either parent of a Pichu when the Egg is produced,the Pichu that hatches will have the move Volt Tackle.",attack,special_attack,2.0
+2,light_ball,pikachu_original_cap,Doubles Attack and Special Attack.,"From Pokémon Emerald onward, if held by either parent of a Pichu when the Egg is produced,the Pichu that hatches will have the move Volt Tackle.",attack,special_attack,2.0
+2,light_ball,pikachu_kalos_cap,Doubles Attack and Special Attack.,"From Pokémon Emerald onward, if held by either parent of a Pichu when the Egg is produced,the Pichu that hatches will have the move Volt Tackle.",attack,special_attack,2.0
+2,light_ball,pikachu_alola_cap,Doubles Attack and Special Attack.,"From Pokémon Emerald onward, if held by either parent of a Pichu when the Egg is produced,the Pichu that hatches will have the move Volt Tackle.",attack,special_attack,2.0
+2,light_ball,pikachu_hoenn_cap,Doubles Attack and Special Attack.,"From Pokémon Emerald onward, if held by either parent of a Pichu when the Egg is produced,the Pichu that hatches will have the move Volt Tackle.",attack,special_attack,2.0
+2,light_ball,pikachu_sinnoh_cap,Doubles Attack and Special Attack.,"From Pokémon Emerald onward, if held by either parent of a Pichu when the Egg is produced,the Pichu that hatches will have the move Volt Tackle.",attack,special_attack,2.0
+2,light_ball,pikachu_unova_cap,Doubles Attack and Special Attack.,"From Pokémon Emerald onward, if held by either parent of a Pichu when the Egg is produced,the Pichu that hatches will have the move Volt Tackle.",attack,special_attack,2.0
+2,light_ball,pikachu_partner_cap,Doubles Attack and Special Attack.,"From Pokémon Emerald onward, if held by either parent of a Pichu when the Egg is produced,the Pichu that hatches will have the move Volt Tackle.",attack,special_attack,2.0
+2,light_ball,pikachu_world_cap,Doubles Attack and Special Attack.,"From Pokémon Emerald onward, if held by either parent of a Pichu when the Egg is produced,the Pichu that hatches will have the move Volt Tackle.",attack,special_attack,2.0
 2,lucky_punch,chansey,Increases critical hit ratio by two stages.,,critical_hit_ratio,,+2
 2,metal_powder,ditto,Doubles Defense.,"From Generation III onward, does not work when transformed.",defense,,2.0
 4,quick_powder,ditto,Doubles Speed.,Does not work when transformed.,speed,,2.0

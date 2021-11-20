@@ -197,10 +197,6 @@ const getPokemonLearnsetMaps = (learnsets, pokemon) => {
   const pokemonMap = new Map(), inversePokemonMap = new Map();
 
   for (let pokemonName of Object.keys(pokemon)) {
-    // ignore cosmetic forms
-    if (pokemon[pokemonName].cosmetic) {
-      continue;
-    }
 
     // make pokemonName match its entry in learnsets
     let learnsetPokemonName;
@@ -226,8 +222,17 @@ const getPokemonLearnsetMaps = (learnsets, pokemon) => {
       inversePokemonMap.set(learnsetPokemonName, inversePokemonMap.get(learnsetPokemonName).concat(pokemonName));
     }
 
+    // Some forms aren't represented in learnset, e.g. genesect_douse; match them with their base forms
+    if (!learnsets[learnsetPokemonName].learnset && pokemon[pokemonName].form_data) {
+      // Get baseFormName from form_data
+      const baseFormName = Object.keys(pokemon[pokemonName].form_data).filter(formKey => pokemon[pokemonName].form_data[formKey].form_type === 'base_form')[0];
+      const learnsetBaseFormName = pokemonMap.get(baseFormName)
+
+      pokemonMap.set(pokemonName, learnsetBaseFormName);
+      inversePokemonMap.set(learnsetBaseFormName, inversePokemonMap.get(learnsetBaseFormName).concat(pokemonName));
+    }
     // for debugging; checks whether we have pokemon without learnsets
-    if (!learnsets[learnsetPokemonName].learnset) {
+    else if (!learnsets[learnsetPokemonName].learnset) {
       console.log(`${pokemonName}, ${learnsetPokemonName} has no learnset.`);
     }
   }
@@ -434,10 +439,6 @@ const addLearnsetsToPokemonArr = (learnsets, moves, pokemon, pokemonArr) => {
   const {updatedLearnsets, moveMap, inverseMoveMap} = getUpdatedLearnsets(learnsets, moves, pokemon);
   
   for (let pokemonEntry of pokemonArr) {
-    // ignore cosmetic forms
-    if (pokemonEntry.cosmetic) {
-      continue;
-    }
 
     const pokemonName = pokemonEntry.name;
     

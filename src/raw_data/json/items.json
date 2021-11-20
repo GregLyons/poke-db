@@ -2004,8 +2004,19 @@
     "item_type": "stat_enhancer_specific",
     "pokemon_specific": [
       "pikachu",
-      "pikachu_cosplay",
-      "pikachu_in_a_cap"
+      "pikachu_rock_star",
+      "pikachu_belle",
+      "pikachu_pop_star",
+      "pikachu_phd",
+      "pikachu_libre",
+      "pikachu_original_cap",
+      "pikachu_kalos_cap",
+      "pikachu_alola_cap",
+      "pikachu_hoenn_cap",
+      "pikachu_sinnoh_cap",
+      "pikachu_unova_cap",
+      "pikachu_partner_cap",
+      "pikachu_world_cap"
     ],
     "gen": 2,
     "gen2_exclusive": false,
@@ -2575,7 +2586,14 @@
   "pikashunium_z": {
     "item_type": "z_crystal_specific",
     "pokemon_specific": [
-      "pikachu_in_a_cap"
+      "pikachu_original_cap",
+      "pikachu_kalos_cap",
+      "pikachu_alola_cap",
+      "pikachu_hoenn_cap",
+      "pikachu_sinnoh_cap",
+      "pikachu_unova_cap",
+      "pikachu_partner_cap",
+      "pikachu_world_cap"
     ],
     "gen": 7,
     "gen2_exclusive": false,

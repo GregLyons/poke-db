@@ -175,7 +175,7 @@ def itemGenList(fname):
         cells = row.find_all('td')
         # append '_item' to metronome to avoid confusion with the move
         itemName = parseName(cells[1].get_text()).replace('metronome', 'metronome_item') 
-        print(itemName)
+        # print(itemName)
 
         # 'Good Rod', only in Gens 1-4, so the gen format is written differently
         if itemName == 'good_rod':
@@ -490,6 +490,16 @@ def statEnhancers(fname):
         # in this table, form names come first, e.g. 'Alolan Marowak'--to parse them, we need to switch the order
         pokemonName = re.sub(r'(.+)\s(.+)', r'\2 (\1)', pokemonName)
         pokemonName = parseName(pokemonName, 'pokemon')
+
+        # handle pikachu forms
+        if pokemonName == 'pikachu_cosplay':
+          for suffix in ['_rock_star', '_belle', '_pop_star', '_phd', '_libre']:
+            writer.writerow([gen, itemName, 'pikachu' + suffix, effect, additionalEffect, stat1, stat2, modifier])
+          continue
+        elif pokemonName == 'pikachu_in_a_cap':
+          for suffix in ['_original', '_kalos', '_alola', '_hoenn', '_sinnoh', '_unova', '_partner', '_world']:
+            writer.writerow([gen, itemName, 'pikachu'+ suffix + '_cap', effect, additionalEffect, stat1, stat2, modifier])
+          continue
         
         # write a row for each Pokemon
         writer.writerow([gen, itemName, pokemonName, effect, additionalEffect, stat1, stat2, modifier])
@@ -624,6 +634,12 @@ def zCrystals(fname):
         
         pokemonName = parseName(pokemonName, 'pokemon')
         
+        # pikachu_in_a_cap
+        if pokemonName == 'pikachu_in_a_cap':
+          for suffix in ['_original', '_kalos', '_alola', '_hoenn', '_sinnoh', '_unova', '_partner', '_world']:
+            specificWriter.writerow([itemName, 'pikachu' + suffix + '_cap', baseMove, zMove])
+          continue
+
         # hard to parse string in such a way so as to handle the Tapus and Necrozma
         if pokemonName == 'tapu_koko_tapu_lele_tapu_bulu':
           for tapu in ['tapu_koko', 'tapu_lele', 'tapu_bulu']:

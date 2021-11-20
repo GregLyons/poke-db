@@ -71,7 +71,14 @@ devastating_drake,type,dragon,,
 black_hole_eclipse,type,dark,,
 twinkle_tackle,type,fairy,,
 catastropika,pokemon,pikachu,move,volt_tackle
-10000000_volt_thunderbolt,pokemon,pikachu_in_a_cap,move,thunderbolt
+10000000_volt_thunderbolt,pokemon,pikachu_original_cap,move,thunderbolt
+10000000_volt_thunderbolt,pokemon,pikachu_kalos_cap,move,thunderbolt
+10000000_volt_thunderbolt,pokemon,pikachu_alola_cap,move,thunderbolt
+10000000_volt_thunderbolt,pokemon,pikachu_hoenn_cap,move,thunderbolt
+10000000_volt_thunderbolt,pokemon,pikachu_sinnoh_cap,move,thunderbolt
+10000000_volt_thunderbolt,pokemon,pikachu_unova_cap,move,thunderbolt
+10000000_volt_thunderbolt,pokemon,pikachu_partner_cap,move,thunderbolt
+10000000_volt_thunderbolt,pokemon,pikachu_world_cap,move,thunderbolt
 stoked_sparksurfer,pokemon,raichu_alola,move,thunderbolt
 extreme_evoboost,pokemon,eevee,move,last_resort
 pulverizing_pancake,pokemon,snorlax,move,giga_impact

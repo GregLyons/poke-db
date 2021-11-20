@@ -459,94 +459,6 @@ def addHeightWeightData(fname, pokemonDict):
 
   return
 
-# add mega/regional/gmax flags, and restore dex numbers to such forms
-def addFormFlags(pokemonDict):
-  # initialization
-  for pokemonName in pokemonDict.keys():
-    pokemonDict[pokemonName]["form_data"] = {}
-
-  for pokemonName in pokemonDict.keys():
-    baseForm = pokemonName
-    isBaseForm = False
-
-    if '_mega' in pokemonName:
-      # will include '_x' and '_y' forms
-      baseForm = pokemonName.split('_')[0]
-      formType = 'mega'
-    elif '_alola' in pokemonName:
-      baseForm = '_'.join(pokemonName.split('_')[:-1])
-      formType = 'alola'
-    elif '_galar' in pokemonName:
-      # will include 'darmanitan_standard' and 'darmanitan_zen'
-      baseForm = '_'.join(pokemonName.split('_')[:-1])
-      formType = 'galar'
-    elif 'gmax' in pokemonName:
-      baseForm = '_'.join(pokemonName.split('_')[:-1])
-      formType = 'gmax'
-    else:
-      # we'll use speciesName to eliminate a lot of the Pokemon which don't have alternate forms
-      speciesName = pokemonDict[pokemonName]["species"]
-
-      # check if pokemon species/base form name is one word
-      if '_' not in speciesName:
-        # if speciesName belongs to pokemonDict, then that is the base form
-        if pokemonDict[pokemonName]["species"] in pokemonDict.keys():
-          baseForm = speciesName
-          if baseForm == pokemonName:
-            isBaseForm = True
-          else:
-            formType = 'other'
-
-        # need to handle case-by-case
-        else:
-          handled = False
-          for baseFormSuffix in ['normal', 'plant', 'aria', 'baile', 'standard', 'origin', 'land', 'incarnate', 'shield', 'average', 'midday', 'solo', 'm', '10', 'overcast', 'west', 'red_striped', 'spring', 'ordinary', 'full_belly', 'amped', 'ice']:
-            if speciesName + '_' + baseFormSuffix in pokemonDict.keys():
-              handled = True
-
-              # indicates base form
-              if baseFormSuffix in pokemonName:
-                isBaseForm = True
-                continue
-              
-              baseForm = speciesName + '_' + baseFormSuffix
-              formType = 'other'
-            else:
-              continue
-          
-          if not handled:
-            print(pokemonName, 'not handled!')
-
-      # Pokemon whose baseForm name includes a '_'
-      else:
-        isBaseForm = True
-
-        # Currently no Pokemon satisfy this condition; this is for next gen when new Pokemon are introduced. Then we'll figure out what to do with them.
-        if not pokemonName == speciesName:
-          print(pokemonName, 'form data unhandled!')
-          
-        continue
-    
-    # baseForm and pokemonName refer to each other through "form_data"
-    if not isBaseForm:
-      pokemonDict[pokemonName]["form_data"][baseForm] = 'base_form'
-      pokemonDict[baseForm]["form_data"][pokemonName] = formType
-
-    # add in dex number for pokemonName, which won't have a dex number yet
-    pokemonDict[pokemonName]["dex_number"] = pokemonDict[baseForm]["dex_number"]
-
-    # add in height and weight data, if not already present
-    if "weight" not in pokemonDict[pokemonName].keys():
-      pokemonDict[pokemonName]["weight"] = pokemonDict[baseForm]["weight"]
-    
-    # g-max pokemon have unknown height, just set to 0
-    if "height" not in pokemonDict[pokemonName].keys():
-      if formType == 'gmax':
-        pokemonDict[pokemonName]["height"] = 0
-      else:
-        pokemonDict[pokemonName]["height"] = pokemonDict[baseForm]["height"]
-  return
-
 # 
 def checkPokeAPIForms(fname, pokemonDict):
   pokemonNames = set(pokemonDict.keys())
@@ -600,71 +512,164 @@ def checkPokeAPIForms(fname, pokemonDict):
       else:
         pokemonName = parsedPokeapiName
 
-      # flag cosmetic forms
-      # cosmeticData = [True, basePokemon, gen]
+      # add new forms
       if pokemonName not in pokemonNames:
         # pikachu
         if 'pikachu' in pokemonName:
           # LGPE
           if 'partner' in pokemonName:
-            base = 'pikachu_partner'
-            gen = 7
+            baseFormName = 'pikachu_partner'
+            formGen = 7
           else:
-            base = 'pikachu'
+            baseFormName = 'pikachu'
             # cap
             if 'cap' in pokemonName:
-              gen = 7
+              formGen = 7
             # cosplay
             else:
-              gen = 6
+              formGen = 6
 
         # minior
         elif 'minior' in pokemonName:
           miniorColor = pokemonName.split('_')[1]
-          gen = 7
+          formGen = 7
           if 'meteor' in pokemonName:
             pokemonName = 'minior_meteor_' + miniorColor
-            base = 'minior_meteor'
+            baseFormName = 'minior_meteor'
           else:
             pokemonName = 'minior_' + miniorColor
-            base = 'minior'
+            baseFormName = 'minior'
 
         elif pokemonName.split('_')[0] in ['magearna', 'unown', 'spewpa', 'scatterbug', 'vivillon', 'furfrou', 'flabebe', 'floette', 'florges', 'sinistea', 'genesect', 'mothim', 'polteageist', 'zarude', 'xerneas', 'arceus']:
-          base = pokemonName.split('_')[0]
+          baseFormName = pokemonName.split('_')[0]
 
           if 'arceus' not in pokemonName:
-            gen = pokemonDict[pokemonName.split('_')[0]]['gen']
-          # arceus-???
+            formGen = pokemonDict[pokemonName.split('_')[0]]['gen']
+          # arceus-???, i.e. arceus unknown
           else:
-            gen = 4
+            baseFormName = 'arceus_normal'
+            formGen = 4
 
         else:
           print(pokemonName, pokeapiID, 'PokeAPI name not handled!')
           continue
         
-        cosmeticData = [base, gen]
-      # indicates form is not cosmetic
+        formData = [baseFormName, formGen]
       else:
-        cosmeticData = [None, None]
+        formData = [None, None]
 
-      pokeapiConversionDict[pokemonName] = [pokeapiName, pokeapiID, cosmeticData]
+      pokeapiConversionDict[pokemonName] = [pokeapiName, pokeapiID, formData]
     
   # add PokeAPI conversion data to pokemonDict
   for pokemonName in pokeapiConversionDict.keys():
     if pokemonName in pokemonDict:
       pokemonDict[pokemonName]["pokeapi"] = pokeapiConversionDict[pokemonName][:2]
-      pokemonDict[pokemonName]["cosmetic"] = False
     else:
-      pokeapiName, pokeapiID, cosmeticData = pokeapiConversionDict[pokemonName]
-      base, gen = cosmeticData
+      pokeapiName, pokeapiID, formData = pokeapiConversionDict[pokemonName]
+      baseFormName, formGen = formData
 
-      pokemonDict[pokemonName] = {
-        "cosmetic": True,
-        "introduced": gen,
-        "base_form": base,
-        "pokeapi": [pokeapiName, pokeapiID]
+      pokemonDict[pokemonName] = copy.deepcopy(pokemonDict[baseFormName])
+      pokemonDict[pokemonName]["gen"] = formGen
+      pokemonDict[pokemonName]["pokeapi"] = [pokeapiName, pokeapiID]
+
+  return
+
+# add mega/regional/gmax flags, and restore dex numbers to such forms
+def addFormFlags(pokemonDict):
+  # initialization
+  for pokemonName in pokemonDict.keys():
+    pokemonDict[pokemonName]["form_data"] = {}
+
+  for pokemonName in pokemonDict.keys():
+    baseFormName = pokemonName
+    isBaseForm = False
+
+    if '_mega' in pokemonName:
+      # will include '_x' and '_y' forms
+      baseFormName = pokemonName.split('_')[0]
+      formType = 'mega'
+    # ignore pikachu_alola_cap
+    elif '_alola' in pokemonName and '_alola_cap' not in pokemonName:
+      baseFormName = '_'.join(pokemonName.split('_')[:-1])
+      formType = 'alola'
+    elif '_galar' in pokemonName:
+      # will include 'darmanitan_standard' and 'darmanitan_zen'
+      baseFormName = '_'.join(pokemonName.split('_')[:-1])
+      formType = 'galar'
+    elif 'gmax' in pokemonName:
+      baseFormName = '_'.join(pokemonName.split('_')[:-1])
+      formType = 'gmax'
+    else:
+      # we'll use speciesName to eliminate a lot of the Pokemon which don't have alternate forms
+      speciesName = pokemonDict[pokemonName]["species"]
+
+      # check if pokemon species/base form name is one word
+      if '_' not in speciesName:
+        # if speciesName belongs to pokemonDict, then that is the base form
+        if pokemonDict[pokemonName]["species"] in pokemonDict.keys():
+          baseFormName = speciesName
+          if baseFormName == pokemonName:
+            isBaseForm = True
+          else:
+            formType = 'other'
+
+        # need to handle case-by-case
+        else:
+          handled = False
+          for baseFormSuffix in ['normal', 'plant', 'aria', 'baile', 'standard', 'origin', 'land', 'incarnate', 'shield', 'average', 'midday', 'solo', 'm', '10', 'overcast', 'west', 'red_striped', 'spring', 'ordinary', 'full_belly', 'amped', 'ice']:
+            if speciesName + '_' + baseFormSuffix in pokemonDict.keys():
+              handled = True
+
+              # indicates base form
+              if baseFormSuffix in pokemonName:
+                isBaseForm = True
+                continue
+              
+              baseFormName = speciesName + '_' + baseFormSuffix
+              formType = 'other'
+            else:
+              continue
+          
+          if not handled:
+            print(pokemonName, 'not handled!')
+
+      # Pokemon whose baseForm name includes a '_'
+      else:
+        isBaseForm = True
+
+        # Currently no Pokemon satisfy this condition; this is for next gen when new Pokemon are introduced. Then we'll figure out what to do with them.
+        if not pokemonName == speciesName:
+          print(pokemonName, 'form data unhandled!')
+          
+        continue
+    
+
+    # baseForm and pokemonName refer to each other through "form_data"
+    if not isBaseForm:
+      baseFormGen = pokemonDict[baseFormName]["gen"]
+      formGen = pokemonDict[pokemonName]["gen"]
+      pokemonDict[pokemonName]["form_data"][baseFormName] = {
+        "form_type": 'base_form',
+        "form_gen": baseFormGen
+      }
+      pokemonDict[baseFormName]["form_data"][pokemonName] = {
+        "form_type": formType,
+        "form_gen": formGen
       }
 
+    # add in dex number for pokemonName, which won't have a dex number yet
+    pokemonDict[pokemonName]["dex_number"] = pokemonDict[baseFormName]["dex_number"]
+
+    # add in height and weight data, if not already present
+    if "weight" not in pokemonDict[pokemonName].keys():
+      pokemonDict[pokemonName]["weight"] = pokemonDict[baseFormName]["weight"]
+    
+    # g-max pokemon have unknown height, just set to 0
+    if "height" not in pokemonDict[pokemonName].keys():
+      if formType == 'gmax':
+        pokemonDict[pokemonName]["height"] = 0
+      else:
+        pokemonDict[pokemonName]["height"] = pokemonDict[baseFormName]["height"]
   return
 
 def addFullName(pokemonDict):
@@ -773,35 +778,14 @@ def main():
   bmi_fname = dataPath + 'pokemonByWeightHeight.csv'
   addHeightWeightData(bmi_fname, pokemonDict)
 
-  addFormFlags(pokemonDict)
 
   pokeapi_fname = dataPath + 'pokemonFormByID.csv'
   checkPokeAPIForms(pokeapi_fname, pokemonDict)
 
+  addFormFlags(pokemonDict)
+
   addFullName(pokemonDict)
-
-  # noPokeapiEntry = []
-  # speciesMismatch = []
-  # for pokemonName in pokemonDict.keys():
-  #   pokeapiEntry = pokemonDict[pokemonName]["pokeapi"]
-  #   speciesName = pokemonDict[pokemonName]["species"]
-  #   if len(pokeapiEntry) < 2:
-  #     noPokeapiEntry.append(pokemonName)
-  #     continue
-
-  #   pokemonName, pokeapiID = pokeapiEntry
-
-  #   if '-' in pokemonName and pokeapiID < 10000:
-  #     if pokemonName != speciesName and not pokemonDict[pokemonName]["cosmetic"]:
-  #       speciesMismatch.append(pokemonName)
-  #     else:
-  #       print(str(pokeapiID) + '-' + '-'.join(pokemonName.split('-')[1:]))
-  #   else:
-  #     print(pokeapiID)
-  # print(noPokeapiEntry)
-  # print(speciesMismatch)
       
-
   return pokemonDict
 
 if __name__ == '__main__':
@@ -810,9 +794,6 @@ if __name__ == '__main__':
   print('Checking pokemonDict...')
 
   for pokemonName in pokemonDict.keys():
-    # ignore cosmetic forms
-    if pokemonDict[pokemonName]['cosmetic']:
-      continue
 
     type1, type2 = pokemonDict[pokemonName]["type_1"][0][0], pokemonDict[pokemonName]["type_2"][0][0] if pokemonDict[pokemonName]["type_2"][0][0] else 'normal'
     if type1 not in typeList():
