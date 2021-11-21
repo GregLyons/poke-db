@@ -203,10 +203,18 @@ def addEffectData(fpath, abilityDict):
         continue
       # only gained stat-modifying properties in Gen 5
       elif abilityName in ['lightning_rod', 'storm_drain']:
-        abilityDict[abilityName]["stat_modifications"][stat] = [[0, recipient, abilityGen], [1, recipient, 5]]
+        abilityDict[abilityName]["stat_modifications"][stat] = [[0, recipient, 100.0, abilityGen], [1, recipient, 100.0, 5]]
         continue
 
-      abilityDict[abilityName]["stat_modifications"][stat] = [[modifier, recipient, abilityGen]]
+
+      abilityDict[abilityName]["stat_modifications"][stat] = [[modifier, recipient, 100.0, abilityGen]]
+
+  # Force Moody
+  for statName in ['attack', 'defense', 'special_attack', 'special_defense', 'speed', 'evasion', 'accuracy']:
+    abilityDict["moody"]["stat_modifications"][statName] = [[2, 'user', 14.28, 5]]
+
+    if statName not in ['evasion', 'accuracy']:
+      print()
   return
 
 def addFormattedName(abilityDict):

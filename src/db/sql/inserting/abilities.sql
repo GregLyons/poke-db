@@ -31,7 +31,7 @@ INSERT INTO ability_resists_usage_method (
 INSERT INTO ability_modifies_stat (
   ability_generation_id,
   ability_id,
-  state_id,
+  stat_id,
   stage,
   multiplier,
   chance,

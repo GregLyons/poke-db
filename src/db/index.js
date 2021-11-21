@@ -364,10 +364,10 @@ const insertAbilityJunctionData = async () => {
 
     const abilityJunctionTables = [
       'ability_boosts_ptype',
-      // 'ability_resists_ptype',
-      // 'ability_boosts_usage_method',
-      // 'ability_resists_usage_method',
-      // 'ability_modifies_stat',
+      'ability_resists_ptype',
+      'ability_boosts_usage_method',
+      'ability_resists_usage_method',
+      'ability_modifies_stat',
       // 'ability_effect',
       // 'ability_causes_pstatus',
       // 'ability_resists_pstatus',
@@ -386,10 +386,11 @@ const insertAbilityJunctionData = async () => {
       .then( () => {
         
         // Determine values to be inserted.
-        let values;
+        let values, boostOrResist, boostOrResistKey;
         const abilityData = require('./processing/processed_data/abilities.json')
         switch (tableName) {
           case 'ability_boosts_ptype':
+          case 'ability_resists_ptype':
             /*
               Need (
                 ability_generation_id,
@@ -399,25 +400,28 @@ const insertAbilityJunctionData = async () => {
                 multiplier
               )
             */
+           boostOrResist = tableName.split('_')[1];
+           boostOrResistKey = boostOrResist + '_type';
             values = abilityData.reduce((acc, curr) => {
               // Get ability data from curr.
-              const { gen: gen, name: abilityName, boosts_type: boostTypeData } = curr;
+              const { gen: gen, name: abilityName, [boostOrResistKey]: typeData } = curr;
               const { ability_id: abilityID } = ability_FKM.get(makeMapKey([abilityName, gen]));
               
-              
               return acc.concat(
-                Object.keys(boostTypeData).map(pTypeName => {
+                Object.keys(typeData).map(pTypeName => {
                   // We always compare entities of the same generation.
                   const { ptype_id: pTypeID } = pType_FKM.get(makeMapKey([gen, pTypeName]));
-                  const multiplier = boostTypeData[pTypeName];
+                  const multiplier = typeData[pTypeName];
 
-                  return [
-                    gen,
-                    abilityID,
-                    gen,
-                    pTypeID,
-                    multiplier
-                  ];
+                  return multiplier != 1 
+                    ? [
+                      gen,
+                      abilityID,
+                      gen,
+                      pTypeID,
+                      multiplier
+                    ]
+                    : [];
                 })
               )
             }, [])
@@ -425,33 +429,7 @@ const insertAbilityJunctionData = async () => {
             .filter(data => data.length > 0);
             break;
 
-          case 'ability_resists_ptype':
-            /* 
-              Need (
-                ability_generation_id,
-                ability_id,
-                ptype_generation_id,
-                ptype_id,
-                multiplier
-              )
-            */
-            values = require('./processing/processed_data/effects.json')
-              .map(data => [data.name, data.formatted_name, data.introduced]);
-            break;
-
           case 'ability_boosts_usage_method':
-            /* 
-              Need (
-                ability_generation_id,
-                ability_id,
-                usage_method_id,
-                multiplier
-              ) 
-            */
-            values = require('./processing/processed_data/items.json')
-              .map(data => [data.gen, data.name, data.formatted_name, data.introduced, data.item_type]);
-            break;
-
           case 'ability_resists_usage_method':
             /* 
               Need (
@@ -461,8 +439,34 @@ const insertAbilityJunctionData = async () => {
                 multiplier
               ) 
             */
-            values = require('./processing/processed_data/items.json')
-              .map(data => [data.gen, data.name, data.formatted_name, data.introduced, data.item_type]);
+            boostOrResist = tableName.split('_')[1];
+            boostOrResistKey = boostOrResist + '_usage_method';
+
+            values = abilityData.reduce((acc, curr) => {
+              // Get ability data from curr.
+              const { gen: gen, name: abilityName, [boostOrResistKey]: usageMethodData } = curr;
+              const { ability_id: abilityID } = ability_FKM.get(makeMapKey([abilityName, gen]));
+              
+              
+              return acc.concat(
+                Object.keys(usageMethodData).map(usageMethodName => {
+                  // We always compare entities of the same generation.
+                  const { usage_method_id: usageMethodID } = usageMethod_FKM.get(makeMapKey([usageMethodName]));
+                  const multiplier = usageMethodData[usageMethodName];
+
+                  return multiplier != 1 
+                  ? [
+                    gen,
+                    abilityID,
+                    usageMethodID,
+                    multiplier
+                  ]
+                  : [];
+                })
+              )
+            }, [])
+            // Filter out empty entries
+            .filter(data => data.length > 0);
             break;
 
           case 'ability_modifies_stat':
@@ -477,25 +481,96 @@ const insertAbilityJunctionData = async () => {
                 recipient
               )
             */
-            values = require('./processing/processed_data/pokemon.json')
-              // filter out cosmetic forms and lgpe_only pokemon
-              .filter(data => !data.cosmetic && !(data.gen == 'lgpe_only'))
-              .map(data => [
-                data.gen,
-                data.name,
-                data.formatted_name,
-                data.species,
-                data.dex_number,
-                data.height,
-                data.weight,
-                data.introduced,
-                data.hp,
-                data.attack,
-                data.defense,
-                data.special_defense,
-                data.special_attack,
-                data.speed,
-              ]);
+            values = abilityData.reduce((acc, curr) => {
+              // Get ability data from curr.
+              const { gen: gen, name: abilityName, stat_modifications: statModData } = curr;
+              const { ability_id: abilityID } = ability_FKM.get(makeMapKey([abilityName, gen]));
+              
+              // We only keep 
+              if (abilityName === 'moody') {
+                const moodyBoosts = ['attack', 'defense', 'special_attack', 'special_defense', 'speed', 'accuracy', 'evasion']
+                .reduce((innerAcc, statName) => {
+                  const { stat_id: statID } = stat_FKM.get(makeMapKey([statName]));
+
+                  let chance = 14.28;
+                  // Doesn't modify accuracy or evasion after Gen 8
+                  if (gen >= 8) {
+                    // Fewer stats means different probability.
+                    chance = 20.00;
+                    
+                    if (statName === 'accuracy' || statName === 'evasion') {
+                      return innerAcc;
+                    }
+                  }
+
+                  return innerAcc.concat([[
+                    gen,
+                    abilityID,
+                    statID,
+                    2,
+                    0.0,
+                    chance,
+                    'user'
+                  ]]);
+                }, []);
+                // const moodyDrops = moodyBoosts.map(boost => {
+                //   const [gen, abilityID, statID, stage, multiplier, chance, recipient] = boost
+                //   return [
+                //     gen,
+                //     abilityID,
+                //     statID,
+                //     -1,
+                //     0.0,
+                //     chance,
+                //     recipient
+                //   ];
+                // });
+                // console.log(moodyBoosts.concat(moodyDrops));
+                return moodyBoosts;
+              }
+
+              return acc.concat(
+                Object.keys(statModData).map(statName => {
+                  // We always compare entities of the same generation.
+                  const { stat_id: statID } = stat_FKM.get(makeMapKey([statName]));
+                  const [modifier, recipient] = statModData[statName]
+
+                  // True if stage modification, False if multiplier.
+                  const stageOrMultiplier = modifier % 1 === 0;
+
+                  // stage
+                  if (stageOrMultiplier && modifier == 0) {
+                    return modifier != 0 
+                    ? [
+                      gen,
+                      abilityID,
+                      statID,
+                      modifier,
+                      1.0,
+                      100.00,
+                      recipient
+                    ]
+                    : [];
+                  }
+                  // multiplier
+                  else {
+                    return modifier != 1.0
+                    ? [
+                      gen,
+                      abilityID,
+                      statID,
+                      0, 
+                      modifier,
+                      100.00,
+                      recipient
+                    ]
+                    : [];
+                  }
+                })
+              )
+            }, [])
+            // Filter out empty entries
+            .filter(data => data.length > 0);
             break;
           
           case 'ability_effect':
