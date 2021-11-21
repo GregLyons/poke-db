@@ -342,11 +342,11 @@ def main():
       # for inner lists which are on separate lines, put them together on the same line
       output = re.sub(r'\n\s+\],\n\s+\[\n\s+', '], [', output)
       # handle entries of list where successive entries are quotes, with a number in quotes
-      output = re.sub(r'",\n\s+"(\d)', r'", "\1', output)
+      output = re.sub(r'",\n\s+"(\d+)', r'", "\1', output)
       # double closing braces
       output = re.sub(r'\n\s+\]\n\s+\]', ']]', output)
       # handle entries of list which have number followed by string
-      output = re.sub(r'\[\[.*(\d),\n\s+"', r'[[\1, "', output)
+      output = re.sub(r'\[\[[a-zA-Z,\"](\d+),\n\s+"', r'[[\1, "', output)
       # entries of list which have string followed by string, in the first index
       output = re.sub(r'\[\["(.*)",\n\s+"', r'[["\1", "', output)
 

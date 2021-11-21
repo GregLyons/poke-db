@@ -301,7 +301,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "evasion": [[8, "user", 2], [1.11,
+    "evasion": [[1.08,
+        "user", 2], [1.11,
         "user", 3]],
     "formatted_name": "Bright Powder"
   },
@@ -1844,7 +1845,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "speed": [[5, "user", 4]]
+      "speed": [[0.5,
+          "user", 4]]
     },
     "formatted_name": "Iron Ball"
   },
@@ -1937,7 +1939,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "evasion": [[5, "user", 3], [1.11,
+      "evasion": [[1.05,
+          "user", 3], [1.11,
           "user", 4]]
     },
     "formatted_name": "Lax Incense"
@@ -2210,7 +2213,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "speed": [[5, "user", 3]]
+      "speed": [[0.5,
+          "user", 3]]
     },
     "formatted_name": "Macho Brace"
   },
@@ -2766,7 +2770,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "speed": [[5, "user", 4]]
+      "speed": [[0.5,
+          "user", 4]]
     },
     "formatted_name": "Power Anklet"
   },
@@ -2784,7 +2789,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "speed": [[5, "user", 4]]
+      "speed": [[0.5,
+          "user", 4]]
     },
     "formatted_name": "Power Band"
   },
@@ -2802,7 +2808,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "speed": [[5, "user", 4]]
+      "speed": [[0.5,
+          "user", 4]]
     },
     "formatted_name": "Power Belt"
   },
@@ -2820,7 +2827,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "speed": [[5, "user", 4]]
+      "speed": [[0.5,
+          "user", 4]]
     },
     "formatted_name": "Power Bracer"
   },
@@ -2856,7 +2864,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "speed": [[5, "user", 4]]
+      "speed": [[0.5,
+          "user", 4]]
     },
     "formatted_name": "Power Lens"
   },
@@ -2874,7 +2883,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "speed": [[5, "user", 4]]
+      "speed": [[0.5,
+          "user", 4]]
     },
     "formatted_name": "Power Weight"
   },
@@ -3681,9 +3691,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "special_attack": [[5, "user", 3], [1,
+      "special_attack": [[1.5,
+          "user", 3], [1,
           "user", 7]],
-      "special_defense": [[5, "user", 3], [1,
+      "special_defense": [[1.5,
+          "user", 3], [1,
           "user", 7]]
     },
     "formatted_name": "Soul Dew"
@@ -4167,7 +4179,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "accuracy": [[1, "user", 4]],
+    "accuracy": [[1.1,
+        "user", 4]],
     "formatted_name": "Wide Lens"
   },
   "wise_glasses": {
@@ -4239,7 +4252,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "accuracy": [[2, "user", 4]],
+    "accuracy": [[1.2,
+        "user", 4]],
     "formatted_name": "Zoom Lens"
   },
   "aguav_berry": {

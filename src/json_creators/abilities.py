@@ -214,7 +214,9 @@ def addEffectData(fpath, abilityDict):
     abilityDict["moody"]["stat_modifications"][statName] = [[2, 'user', 14.28, 5]]
 
     if statName not in ['evasion', 'accuracy']:
-      print()
+      abilityDict["moody"]["stat_modifications"][statName].append([[2, 'user', 20.00, 8]])
+    else:
+      abilityDict["moody"]["stat_modifications"][statName].append([[2, 'user', 0.00, 8]])
   return
 
 def addFormattedName(abilityDict):

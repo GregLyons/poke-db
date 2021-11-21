@@ -537,6 +537,11 @@ def addTargetToMoveDict(fname, moveDict):
       
       moveDict[moveName]["target"] = [[target, moveDict[moveName]["gen"]]]
 
+    # Z-status moves have same target data as their base moves, but we need to update this since they aren't listed in the target data scraped from Bulbapedia.
+    for moveName in moveDict.keys():
+      if 'z_' in moveName:
+        moveDict[moveName]["target"] = [[moveDict[moveName[2:]]["target"][0][0], 7]]
+
     # hard code exceptions
     #region
     # helping_hand
@@ -573,8 +578,6 @@ def addStatModToMoveDict(fname, moveDict):
       moveName, gen, stat, modifier, sign, recipient, probability = row
 
       # for belly drum--it always sets attack stage to +6, even if it's negative beforehand
-      if modifier == 'max':
-        modifier = 12
       gen, modifier, probability = int(gen), int(modifier), float(probability)
 
       if sign == '-':
@@ -593,7 +596,7 @@ def addStatModToMoveDict(fname, moveDict):
           moveDict[moveName]["stat_modifications"][stat] = []
 
         moveDict[moveName]["stat_modifications"][stat].append([modifier, recipient, probability, gen])
-  
+
   # hard code exceptions 
   # note that since we leave these out of the original .csv, the z-move counterparts aren't added either since the addZMoves method in the .csv creator file goes based on moves already present in the .csv
   #region
@@ -1049,7 +1052,7 @@ def addInteractionData(interaction_fname, kings_rock_fname, moveDict):
       if "kings_rock" not in moveDict[moveName]["item_interactions"].keys():
         moveDict[moveName]["item_interactions"]["kings_rock"] = []
         for gen in range(max(2, moveGen), 5):
-          moveDict[moveName]["item_interactions"]["kings_rock"].append(['F', gen])
+          moveDict[moveName]["item_interactions"]["kings_rock"].append([False, gen])
       
       for gen in range(max(5, moveGen), numberOfGens() + 1):
 
@@ -1077,9 +1080,9 @@ def addInteractionData(interaction_fname, kings_rock_fname, moveDict):
           flinchingMove = False
 
         if damagingMove and not flinchingMove:
-          moveDict[moveName]["item_interactions"]["kings_rock"].append(['T', gen])
+          moveDict[moveName]["item_interactions"]["kings_rock"].append([True, gen])
         else:
-          moveDict[moveName]["item_interactions"]["kings_rock"].append(['F', gen])
+          moveDict[moveName]["item_interactions"]["kings_rock"].append([False, gen])
       
 
       
@@ -1197,7 +1200,7 @@ def main():
   addStatModToMoveDict(statMod_fname, moveDict)
 
   updateMoveCategory(moveDict)
-
+  
   removedFromGen8_fname = dataPath + 'movesRemovedFromGen8.csv'
   removedFromGen8(removedFromGen8_fname, moveDict)
 

@@ -80,7 +80,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "attack": [[2, "user", 4]]
+      "attack": [[12,
+          "user", 100.0, 4]]
     },
     "formatted_name": "Anger Point"
   },
@@ -175,7 +176,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "special_attack": [[3, "user", 7]]
+      "special_attack": [[1.3,
+          "user", 100.0, 7]]
     },
     "formatted_name": "Battery"
   },
@@ -217,11 +219,16 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "attack": [[1, "user", 7]],
-      "defense": [[1, "user", 7]],
-      "special_attack": [[1, "user", 7]],
-      "special_defense": [[1, "user", 7]],
-      "speed": [[1, "user", 7]]
+      "attack": [[1,
+          "user", 100.0, 7]],
+      "defense": [[1,
+          "user", 100.0, 7]],
+      "special_attack": [[1,
+          "user", 100.0, 7]],
+      "special_defense": [[1,
+          "user", 100.0, 7]],
+      "speed": [[1,
+          "user", 100.0, 7]]
     },
     "formatted_name": "Beast Boost"
   },
@@ -235,7 +242,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "special_attack": [[1, "user", 7]]
+      "special_attack": [[1,
+          "user", 100.0, 7]]
     },
     "formatted_name": "Berserk"
   },
@@ -316,7 +324,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "speed": [[0, "user", 3]]
+      "speed": [[2.0,
+          "user", 100.0, 3]]
     },
     "formatted_name": "Chlorophyll"
   },
@@ -391,7 +400,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "special_attack": [[2, "user", 6]]
+      "special_attack": [[2,
+          "user", 100.0, 6]]
     },
     "formatted_name": "Competitive"
   },
@@ -407,7 +417,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "accuracy": [[3, "user", 3]]
+      "accuracy": [[1.3,
+          "user", 100.0, 3]]
     },
     "formatted_name": "Compound Eyes"
   },
@@ -445,7 +456,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "speed": [[1, "user", 8]]
+      "speed": [[-1,
+          "user", 100.0, 8]]
     },
     "formatted_name": "Cotton Down"
   },
@@ -539,7 +551,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "defense": [[1, "user", 8]]
+      "defense": [[1,
+          "user", 100.0, 8]]
     },
     "formatted_name": "Dauntless Shield"
   },
@@ -567,8 +580,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "attack": [[5, "user", 5]],
-      "special_attack": [[5, "user", 5]]
+      "attack": [[0.5,
+          "user", 100.0, 5]],
+      "special_attack": [[0.5,
+          "user", 100.0, 5]]
     },
     "formatted_name": "Defeatist"
   },
@@ -582,7 +597,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "attack": [[2, "user", 5]]
+      "attack": [[2,
+          "user", 100.0, 5]]
     },
     "formatted_name": "Defiant"
   },
@@ -639,8 +655,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "attack": [[1, "user", 4]],
-      "special_attack": [[1, "user", 4]]
+      "attack": [[1,
+          "user", 100.0, 4]],
+      "special_attack": [[1,
+          "user", 100.0, 4]]
     },
     "formatted_name": "Download"
   },
@@ -820,7 +838,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "special_attack": [[5, "user", 5]]
+      "special_attack": [[1.5,
+          "user", 100.0, 5]]
     },
     "formatted_name": "Flare Boost"
   },
@@ -850,8 +869,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "attack": [[5, "user", 4]],
-      "special_defense": [[5, "user", 4]]
+      "attack": [[1.5,
+          "user", 100.0, 4]],
+      "special_defense": [[1.5,
+          "user", 100.0, 4]]
     },
     "formatted_name": "Flower Gift"
   },
@@ -964,7 +985,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "defense": [[0, "user", 6]]
+      "defense": [[2.0,
+          "user", 100.0, 6]]
     },
     "formatted_name": "Fur Coat"
   },
@@ -1023,7 +1045,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "speed": [[1, "user", 6]]
+      "speed": [[-1,
+          "user", 100.0, 6]]
     },
     "formatted_name": "Gooey"
   },
@@ -1037,7 +1060,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "attack": [[5, "user", 8]]
+      "attack": [[1.5,
+          "user", 100.0, 8]]
     },
     "formatted_name": "Gorilla Tactics"
   },
@@ -1051,7 +1075,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "defense": [[5, "user", 6]]
+      "defense": [[1.5,
+          "user", 100.0, 6]]
     },
     "formatted_name": "Grass Pelt"
   },
@@ -1103,7 +1128,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "attack": [[5, "user", 3]]
+      "attack": [[1.5,
+          "user", 100.0, 3]]
     },
     "formatted_name": "Guts"
   },
@@ -1183,7 +1209,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "attack": [[0, "user", 3]]
+      "attack": [[2.0,
+          "user", 100.0, 3]]
     },
     "formatted_name": "Huge Power"
   },
@@ -1211,8 +1238,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "attack": [[5, "user", 3]],
-      "accuracy": [[8, "user", 3]]
+      "attack": [[0.5,
+          "user", 100.0, 3]],
+      "accuracy": [[0.8,
+          "user", 100.0, 3]]
     },
     "formatted_name": "Hustle"
   },
@@ -1285,7 +1314,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "special_defense": [[5, "user", 8]]
+      "special_defense": [[0.5,
+          "user", 100.0, 8]]
     },
     "formatted_name": "Ice Scales"
   },
@@ -1404,7 +1434,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "attack": [[1, "all_foes", 3]]
+      "attack": [[-1,
+          "all_foes", 100.0, 3]]
     },
     "formatted_name": "Intimidate"
   },
@@ -1418,7 +1449,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "attack": [[1, "user", 8]]
+      "attack": [[1,
+          "user", 100.0, 8]]
     },
     "formatted_name": "Intrepid Sword"
   },
@@ -1460,7 +1492,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "attack": [[1, "user", 5]]
+      "attack": [[1,
+          "user", 100.0, 5]]
     },
     "formatted_name": "Justified"
   },
@@ -1556,8 +1589,9 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "special_attack": [[0, "user", 3], [1,
-          "user", 5]]
+      "special_attack": [[0,
+          "user", 100.0, 3], [1,
+          "user", 100.0, 5]]
     },
     "formatted_name": "Lightning Rod"
   },
@@ -1691,7 +1725,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "defense": [[5, "user", 3]]
+      "defense": [[1.5,
+          "user", 100.0, 3]]
     },
     "formatted_name": "Marvel Scale"
   },
@@ -1745,7 +1780,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "special_attack": [[5, "user", 3]]
+      "special_attack": [[1.5,
+          "user", 100.0, 3]]
     },
     "formatted_name": "Minus"
   },
@@ -1799,13 +1835,41 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "attack": [[1, "user", 5]],
-      "defense": [[2, "user", 5]],
-      "special_attack": [[1, "user", 5]],
-      "special_defense": [[2, "user", 5]],
-      "speed": [[1, "user", 5]],
-      "evasion": [[2, "user", 5]],
-      "accuracy": [[1, "user", 5]]
+      "attack": [[2,
+          "user", 14.28, 5], [[
+            2,
+            "user", 20.0, 8]]
+      ],
+      "defense": [[2,
+          "user", 14.28, 5], [[
+            2,
+            "user", 20.0, 8]]
+      ],
+      "special_attack": [[2,
+          "user", 14.28, 5], [[
+            2,
+            "user", 20.0, 8]]
+      ],
+      "special_defense": [[2,
+          "user", 14.28, 5], [[
+            2,
+            "user", 20.0, 8]]
+      ],
+      "speed": [[2,
+          "user", 14.28, 5], [[
+            2,
+            "user", 20.0, 8]]
+      ],
+      "evasion": [[2,
+          "user", 14.28, 5], [[
+            2,
+            "user", 0.0, 8]]
+      ],
+      "accuracy": [[2,
+          "user", 14.28, 5], [[
+            2,
+            "user", 0.0, 8]]
+      ]
     },
     "formatted_name": "Moody"
   },
@@ -1821,7 +1885,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "speed": [[1, "user", 4]]
+      "speed": [[1,
+          "user", 100.0, 4]]
     },
     "formatted_name": "Motor Drive"
   },
@@ -1835,7 +1900,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "attack": [[1, "user", 5]]
+      "attack": [[1,
+          "user", 100.0, 5]]
     },
     "formatted_name": "Moxie"
   },
@@ -2110,7 +2176,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "special_attack": [[5, "user", 3]]
+      "special_attack": [[1.5,
+          "user", 100.0, 3]]
     },
     "formatted_name": "Plus"
   },
@@ -2316,7 +2383,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "attack": [[0, "user", 3]]
+      "attack": [[2.0,
+          "user", 100.0, 3]]
     },
     "formatted_name": "Pure Power"
   },
@@ -2358,7 +2426,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "speed": [[5, "user", 4]]
+      "speed": [[1.5,
+          "user", 100.0, 4]]
     },
     "formatted_name": "Quick Feet"
   },
@@ -2386,7 +2455,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "speed": [[1, "user", 5]]
+      "speed": [[1,
+          "user", 100.0, 5]]
     },
     "formatted_name": "Rattled"
   },
@@ -2548,7 +2618,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "speed": [[0, "user", 5]]
+      "speed": [[2.0,
+          "user", 100.0, 5]]
     },
     "formatted_name": "Sand Rush"
   },
@@ -2590,7 +2661,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "evasion": [[5, "user", 3]]
+      "evasion": [[1.25,
+          "user", 100.0, 3]]
     },
     "formatted_name": "Sand Veil"
   },
@@ -2606,7 +2678,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "attack": [[1, "user", 5]]
+      "attack": [[1,
+          "user", 100.0, 5]]
     },
     "formatted_name": "Sap Sipper"
   },
@@ -2799,8 +2872,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "attack": [[5, "user", 4]],
-      "speed": [[5, "user", 4]]
+      "attack": [[0.5,
+          "user", 100.0, 4]],
+      "speed": [[0.5,
+          "user", 100.0, 4]]
     },
     "formatted_name": "Slow Start"
   },
@@ -2814,7 +2889,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "speed": [[0, "user", 7]]
+      "speed": [[2.0,
+          "user", 100.0, 7]]
     },
     "formatted_name": "Slush Rush"
   },
@@ -2840,7 +2916,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "evasion": [[5, "user", 4]]
+      "evasion": [[1.25,
+          "user", 100.0, 4]]
     },
     "formatted_name": "Snow Cloak"
   },
@@ -2870,7 +2947,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "special_attack": [[5, "user", 4]]
+      "special_attack": [[1.5,
+          "user", 100.0, 4]]
     },
     "formatted_name": "Solar Power"
   },
@@ -2898,7 +2976,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "special_attack": [[1, "user", 7]]
+      "special_attack": [[1,
+          "user", 100.0, 7]]
     },
     "formatted_name": "Soul-Heart"
   },
@@ -2926,7 +3005,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "speed": [[1, "user", 3]]
+      "speed": [[1,
+          "user", 100.0, 3]]
     },
     "formatted_name": "Speed Boost"
   },
@@ -2978,7 +3058,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "defense": [[1, "user", 7]]
+      "defense": [[1,
+          "user", 100.0, 7]]
     },
     "formatted_name": "Stamina"
   },
@@ -3022,7 +3103,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "speed": [[1, "user", 4]]
+      "speed": [[1,
+          "user", 100.0, 4]]
     },
     "formatted_name": "Steadfast"
   },
@@ -3036,7 +3118,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "speed": [[6, "user", 8]]
+      "speed": [[6,
+          "user", 100.0, 8]]
     },
     "formatted_name": "Steam Engine"
   },
@@ -3108,8 +3191,9 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "special_attack": [[0, "user", 4], [1,
-          "user", 5]]
+      "special_attack": [[0,
+          "user", 100.0, 4], [1,
+          "user", 100.0, 5]]
     },
     "formatted_name": "Storm Drain"
   },
@@ -3175,7 +3259,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "speed": [[0, "user", 7]]
+      "speed": [[2.0,
+          "user", 100.0, 7]]
     },
     "formatted_name": "Surge Surfer"
   },
@@ -3222,7 +3307,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "speed": [[0, "user", 3]]
+      "speed": [[2.0,
+          "user", 100.0, 3]]
     },
     "formatted_name": "Swift Swim"
   },
@@ -3267,7 +3353,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "evasion": [[0, "user", 4]]
+      "evasion": [[2.0,
+          "user", 100.0, 4]]
     },
     "formatted_name": "Tangled Feet"
   },
@@ -3283,7 +3370,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "speed": [[1, "user", 7]]
+      "speed": [[-1,
+          "user", 100.0, 7]]
     },
     "formatted_name": "Tangling Hair"
   },
@@ -3488,7 +3576,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "speed": [[0, "user", 4]]
+      "speed": [[2.0,
+          "user", 100.0, 4]]
     },
     "formatted_name": "Unburden"
   },
@@ -3530,7 +3619,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "accuracy": [[1, "user", 5]]
+      "accuracy": [[1.1,
+          "user", 100.0, 5]]
     },
     "formatted_name": "Victory Star"
   },
@@ -3618,7 +3708,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "defense": [[2, "user", 7]]
+      "defense": [[2,
+          "user", 100.0, 7]]
     },
     "formatted_name": "Water Compaction"
   },
@@ -3646,7 +3737,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "speed": [[1, "user", 5]]
+      "speed": [[1,
+          "user", 100.0, 5]]
     },
     "formatted_name": "Weak Armor"
   },
