@@ -7915,7 +7915,7 @@
   },
   "curse": {
     "id": 174,
-    "type": [["???", 2], ["ghost", 5]],
+    "type": [["ghost", 2]],
     "category": [["status", 2]],
     "pp": [[10, 2]],
     "power": [[0, 2]],
@@ -28453,7 +28453,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["normal", 7]]
+      "type": {
+        "normal": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -28501,7 +28506,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["fighting", 7]]
+      "type": {
+        "fighting": [[true, 7]]
+      },
+      "item": {
+        "fightinium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -28549,7 +28559,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["flying", 7]]
+      "type": {
+        "flying": [[true, 7]]
+      },
+      "item": {
+        "flyinium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -28597,7 +28612,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["poison", 7]]
+      "type": {
+        "poison": [[true, 7]]
+      },
+      "item": {
+        "poisonium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -28645,7 +28665,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["ground", 7]]
+      "type": {
+        "ground": [[true, 7]]
+      },
+      "item": {
+        "groundium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -28693,7 +28718,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["rock", 7]]
+      "type": {
+        "rock": [[true, 7]]
+      },
+      "item": {
+        "rockium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -28741,7 +28771,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["bug", 7]]
+      "type": {
+        "bug": [[true, 7]]
+      },
+      "item": {
+        "buginium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -28789,7 +28824,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["ghost", 7]]
+      "type": {
+        "ghost": [[true, 7]]
+      },
+      "item": {
+        "ghostium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -28837,7 +28877,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["steel", 7]]
+      "type": {
+        "steel": [[true, 7]]
+      },
+      "item": {
+        "steelium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -28885,7 +28930,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["fire", 7]]
+      "type": {
+        "fire": [[true, 7]]
+      },
+      "item": {
+        "firium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -28933,7 +28983,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["water", 7]]
+      "type": {
+        "water": [[true, 7]]
+      },
+      "item": {
+        "waterium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -28981,7 +29036,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["grass", 7]]
+      "type": {
+        "grass": [[true, 7]]
+      },
+      "item": {
+        "grassium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -29029,7 +29089,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["electric", 7]]
+      "type": {
+        "electric": [[true, 7]]
+      },
+      "item": {
+        "electrium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -29077,7 +29142,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["psychic", 7]]
+      "type": {
+        "psychic": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -29125,7 +29195,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["ice", 7]]
+      "type": {
+        "ice": [[true, 7]]
+      },
+      "item": {
+        "icium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -29173,7 +29248,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["dragon", 7]]
+      "type": {
+        "dragon": [[true, 7]]
+      },
+      "item": {
+        "dragonium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -29221,7 +29301,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["dark", 7]]
+      "type": {
+        "dark": [[true, 7]]
+      },
+      "item": {
+        "darkinium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -29269,7 +29354,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["fairy", 7]]
+      "type": {
+        "fairy": [[true, 7]]
+      },
+      "item": {
+        "fairium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -29316,8 +29406,15 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["pikachu", 7]],
-      "move": [["volt_tackle", 7]]
+      "pokemon": {
+        "pikachu": [[true, 7]]
+      },
+      "move": {
+        "volt_tackle": [[true, 7]]
+      },
+      "item": {
+        "pikanium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -30998,8 +31095,15 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["decidueye", 7]],
-      "move": [["spirit_shackle", 7]]
+      "pokemon": {
+        "decidueye": [[true, 7]]
+      },
+      "move": {
+        "spirit_shackle": [[true, 7]]
+      },
+      "item": {
+        "decidium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -31048,8 +31152,15 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["incineroar", 7]],
-      "move": [["darkest_lariat", 7]]
+      "pokemon": {
+        "incineroar": [[true, 7]]
+      },
+      "move": {
+        "darkest_lariat": [[true, 7]]
+      },
+      "item": {
+        "incinium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -31096,8 +31207,15 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["primarina", 7]],
-      "move": [["sparkling_aria", 7]]
+      "pokemon": {
+        "primarina": [[true, 7]]
+      },
+      "move": {
+        "sparkling_aria": [[true, 7]]
+      },
+      "item": {
+        "primarium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -31145,8 +31263,18 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["tapu_bulu", 7], ["tapu_koko", 7], ["tapu_lele", 7], ["tapu_fini", 7]],
-      "move": [["natures_madness", 7], ["natures_madness", 7], ["natures_madness", 7], ["natures_madness", 7]]
+      "pokemon": {
+        "tapu_bulu": [[true, 7]],
+        "tapu_koko": [[true, 7]],
+        "tapu_lele": [[true, 7]],
+        "tapu_fini": [[true, 7]]
+      },
+      "move": {
+        "natures_madness": [[true, 7]]
+      },
+      "item": {
+        "tapunium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -31193,8 +31321,15 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["marshadow", 7]],
-      "move": [["spectral_thief", 7]]
+      "pokemon": {
+        "marshadow": [[true, 7]]
+      },
+      "move": {
+        "spectral_thief": [[true, 7]]
+      },
+      "item": {
+        "marshadium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -31243,8 +31378,15 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["raichu_alola", 7]],
-      "move": [["thunderbolt", 7]]
+      "pokemon": {
+        "raichu_alola": [[true, 7]]
+      },
+      "move": {
+        "thunderbolt": [[true, 7]]
+      },
+      "item": {
+        "aloraichium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -31291,8 +31433,15 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["snorlax", 7]],
-      "move": [["giga_impact", 7]]
+      "pokemon": {
+        "snorlax": [[true, 7]]
+      },
+      "move": {
+        "giga_impact": [[true, 7]]
+      },
+      "item": {
+        "snorlium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -31342,8 +31491,15 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["eevee", 7]],
-      "move": [["last_resort", 7]]
+      "pokemon": {
+        "eevee": [[true, 7]]
+      },
+      "move": {
+        "last_resort": [[true, 7]]
+      },
+      "item": {
+        "eevium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -31390,8 +31546,15 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["mew", 7]],
-      "move": [["psychic", 7]]
+      "pokemon": {
+        "mew": [[true, 7]]
+      },
+      "move": {
+        "psychic": [[true, 7]]
+      },
+      "item": {
+        "mewnium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -32124,8 +32287,22 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["pikachu_original_cap", 7], ["pikachu_kalos_cap", 7], ["pikachu_alola_cap", 7], ["pikachu_hoenn_cap", 7], ["pikachu_sinnoh_cap", 7], ["pikachu_unova_cap", 7], ["pikachu_partner_cap", 7], ["pikachu_world_cap", 7]],
-      "move": [["thunderbolt", 7], ["thunderbolt", 7], ["thunderbolt", 7], ["thunderbolt", 7], ["thunderbolt", 7], ["thunderbolt", 7], ["thunderbolt", 7], ["thunderbolt", 7]]
+      "pokemon": {
+        "pikachu_original_cap": [[true, 7]],
+        "pikachu_kalos_cap": [[true, 7]],
+        "pikachu_alola_cap": [[true, 7]],
+        "pikachu_hoenn_cap": [[true, 7]],
+        "pikachu_sinnoh_cap": [[true, 7]],
+        "pikachu_unova_cap": [[true, 7]],
+        "pikachu_partner_cap": [[true, 7]],
+        "pikachu_world_cap": [[true, 7]]
+      },
+      "move": {
+        "thunderbolt": [[true, 7]]
+      },
+      "item": {
+        "pikashunium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -32315,8 +32492,15 @@
     "lgpe_exclusive_values": {},
     "changes_damage_category": [[true, 7]],
     "requirements": {
-      "pokemon": [["necrozma_ultra", 7]],
-      "move": [["photon_geyser", 7]]
+      "pokemon": {
+        "necrozma_ultra": [[true, 7]]
+      },
+      "move": {
+        "photon_geyser": [[true, 7]]
+      },
+      "item": {
+        "ultranecrozium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -32364,8 +32548,16 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["solgaleo", 7], ["necrozma_dusk", 7]],
-      "move": [["sunsteel_strike", 7], ["sunsteel_strike", 7]]
+      "pokemon": {
+        "solgaleo": [[true, 7]],
+        "necrozma_dusk": [[true, 7]]
+      },
+      "move": {
+        "sunsteel_strike": [[true, 7]]
+      },
+      "item": {
+        "solganium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -32413,8 +32605,16 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["lunala", 7], ["necrozma_dawn", 7]],
-      "move": [["moongeist_beam", 7], ["moongeist_beam", 7]]
+      "pokemon": {
+        "lunala": [[true, 7]],
+        "necrozma_dawn": [[true, 7]]
+      },
+      "move": {
+        "moongeist_beam": [[true, 7]]
+      },
+      "item": {
+        "lunalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -32461,8 +32661,15 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["mimikyu", 7]],
-      "move": [["play_rough", 7]]
+      "pokemon": {
+        "mimikyu": [[true, 7]]
+      },
+      "move": {
+        "play_rough": [[true, 7]]
+      },
+      "item": {
+        "mimikium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -32509,8 +32716,17 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["lycanroc_dusk", 7], ["lycanroc_midday", 7], ["lycanroc_midnight", 7]],
-      "move": [["stone_edge", 7], ["stone_edge", 7], ["stone_edge", 7]]
+      "pokemon": {
+        "lycanroc_dusk": [[true, 7]],
+        "lycanroc_midday": [[true, 7]],
+        "lycanroc_midnight": [[true, 7]]
+      },
+      "move": {
+        "stone_edge": [[true, 7]]
+      },
+      "item": {
+        "lycanium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -32565,8 +32781,15 @@
     "target": [["all_adjacent_foes", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["kommo_o", 7]],
-      "move": [["clanging_scales", 7]]
+      "pokemon": {
+        "kommo_o": [[true, 7]]
+      },
+      "move": {
+        "clanging_scales": [[true, 7]]
+      },
+      "item": {
+        "kommonium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -33312,7 +33535,9 @@
     "target": [["user", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "category": [["status", 8]]
+      "category": {
+        "status": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 8]],
@@ -33951,7 +34176,9 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["fire", 8]]
+      "type": {
+        "fire": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -34001,7 +34228,9 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["bug", 8]]
+      "type": {
+        "bug": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -34050,7 +34279,9 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["electric", 8]]
+      "type": {
+        "electric": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -34100,7 +34331,9 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["normal", 8]]
+      "type": {
+        "normal": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -34150,7 +34383,9 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["fighting", 8]]
+      "type": {
+        "fighting": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -34200,7 +34435,9 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["ghost", 8]]
+      "type": {
+        "ghost": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -34249,7 +34486,9 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["ice", 8]]
+      "type": {
+        "ice": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -34299,7 +34538,9 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["poison", 8]]
+      "type": {
+        "poison": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -34348,7 +34589,9 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["water", 8]]
+      "type": {
+        "water": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -34398,7 +34641,9 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["flying", 8]]
+      "type": {
+        "flying": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -34447,7 +34692,9 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["fairy", 8]]
+      "type": {
+        "fairy": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -34497,7 +34744,9 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["dragon", 8]]
+      "type": {
+        "dragon": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -34546,7 +34795,9 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["psychic", 8]]
+      "type": {
+        "psychic": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -34595,7 +34846,9 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["rock", 8]]
+      "type": {
+        "rock": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -34645,7 +34898,9 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["ground", 8]]
+      "type": {
+        "ground": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -34695,7 +34950,9 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["dark", 8]]
+      "type": {
+        "dark": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -34744,7 +35001,9 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["grass", 8]]
+      "type": {
+        "grass": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -34794,7 +35053,9 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "type": [["steel", 8]]
+      "type": {
+        "steel": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -37145,8 +37406,12 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["charizard", 8]],
-      "type": [["fire", 8]]
+      "pokemon": {
+        "charizard": [[true, 8]]
+      },
+      "type": {
+        "fire": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -37198,8 +37463,12 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["butterfree", 8]],
-      "type": [["bug", 8]]
+      "pokemon": {
+        "butterfree": [[true, 8]]
+      },
+      "type": {
+        "bug": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -37249,8 +37518,12 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["pikachu", 8]],
-      "type": [["electric", 8]]
+      "pokemon": {
+        "pikachu": [[true, 8]]
+      },
+      "type": {
+        "electric": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -37300,8 +37573,12 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["meowth", 8]],
-      "type": [["normal", 8]]
+      "pokemon": {
+        "meowth": [[true, 8]]
+      },
+      "type": {
+        "normal": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -37349,8 +37626,12 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["machamp", 8]],
-      "type": [["fighting", 8]]
+      "pokemon": {
+        "machamp": [[true, 8]]
+      },
+      "type": {
+        "fighting": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -37400,8 +37681,12 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["gengar", 8]],
-      "type": [["ghost", 8]]
+      "pokemon": {
+        "gengar": [[true, 8]]
+      },
+      "type": {
+        "ghost": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -37450,8 +37735,12 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["lapras", 8]],
-      "type": [["ice", 8]]
+      "pokemon": {
+        "lapras": [[true, 8]]
+      },
+      "type": {
+        "ice": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -37501,8 +37790,12 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["eevee", 8]],
-      "type": [["normal", 8]]
+      "pokemon": {
+        "eevee": [[true, 8]]
+      },
+      "type": {
+        "normal": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -37551,8 +37844,12 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["snorlax", 8]],
-      "type": [["normal", 8]]
+      "pokemon": {
+        "snorlax": [[true, 8]]
+      },
+      "type": {
+        "normal": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -37602,8 +37899,12 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["garbodor", 8]],
-      "type": [["poison", 8]]
+      "pokemon": {
+        "garbodor": [[true, 8]]
+      },
+      "type": {
+        "poison": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -37652,8 +37953,12 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["drednaw", 8]],
-      "type": [["water", 8]]
+      "pokemon": {
+        "drednaw": [[true, 8]]
+      },
+      "type": {
+        "water": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 8]],
@@ -37704,8 +38009,12 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["corviknight", 8]],
-      "type": [["flying", 8]]
+      "pokemon": {
+        "corviknight": [[true, 8]]
+      },
+      "type": {
+        "flying": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -37756,8 +38065,13 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["toxtricity_amped", 8], ["toxtricity_low_key", 8]],
-      "type": [["electric", 8], ["electric", 8]]
+      "pokemon": {
+        "toxtricity_amped": [[true, 8]],
+        "toxtricity_low_key": [[true, 8]]
+      },
+      "type": {
+        "electric": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -37806,8 +38120,12 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["alcremie", 8]],
-      "type": [["fairy", 8]]
+      "pokemon": {
+        "alcremie": [[true, 8]]
+      },
+      "type": {
+        "fairy": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -37855,8 +38173,12 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["duraludon", 8]],
-      "type": [["dragon", 8]]
+      "pokemon": {
+        "duraludon": [[true, 8]]
+      },
+      "type": {
+        "dragon": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -37905,8 +38227,12 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["orbeetle", 8]],
-      "type": [["psychic", 8]]
+      "pokemon": {
+        "orbeetle": [[true, 8]]
+      },
+      "type": {
+        "psychic": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -37954,8 +38280,12 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["coalossal", 8]],
-      "type": [["rock", 8]]
+      "pokemon": {
+        "coalossal": [[true, 8]]
+      },
+      "type": {
+        "rock": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -38005,8 +38335,12 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["sandaconda", 8]],
-      "type": [["ground", 8]]
+      "pokemon": {
+        "sandaconda": [[true, 8]]
+      },
+      "type": {
+        "ground": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -38057,8 +38391,12 @@
     "target": [["all_adjacent_foes", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["grimmsnarl", 8]],
-      "type": [["dark", 8]]
+      "pokemon": {
+        "grimmsnarl": [[true, 8]]
+      },
+      "type": {
+        "dark": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -38108,8 +38446,12 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["flapple", 8]],
-      "type": [["grass", 8]]
+      "pokemon": {
+        "flapple": [[true, 8]]
+      },
+      "type": {
+        "grass": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -38165,8 +38507,12 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["appletun", 8]],
-      "type": [["grass", 8]]
+      "pokemon": {
+        "appletun": [[true, 8]]
+      },
+      "type": {
+        "grass": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -38216,8 +38562,12 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["hatterene", 8]],
-      "type": [["fairy", 8]]
+      "pokemon": {
+        "hatterene": [[true, 8]]
+      },
+      "type": {
+        "fairy": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -38266,8 +38616,12 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["copperajah", 8]],
-      "type": [["steel", 8]]
+      "pokemon": {
+        "copperajah": [[true, 8]]
+      },
+      "type": {
+        "steel": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 8]],
@@ -38317,8 +38671,12 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["melmetal", 8]],
-      "type": [["steel", 8]]
+      "pokemon": {
+        "melmetal": [[true, 8]]
+      },
+      "type": {
+        "steel": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -38368,8 +38726,12 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["kingler", 8]],
-      "type": [["water", 8]]
+      "pokemon": {
+        "kingler": [[true, 8]]
+      },
+      "type": {
+        "water": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -38419,8 +38781,12 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["centiskorch", 8]],
-      "type": [["fire", 8]]
+      "pokemon": {
+        "centiskorch": [[true, 8]]
+      },
+      "type": {
+        "fire": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -38468,8 +38834,12 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["venusaur", 8]],
-      "type": [["grass", 8]]
+      "pokemon": {
+        "venusaur": [[true, 8]]
+      },
+      "type": {
+        "grass": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -38517,8 +38887,12 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["blastoise", 8]],
-      "type": [["water", 8]]
+      "pokemon": {
+        "blastoise": [[true, 8]]
+      },
+      "type": {
+        "water": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -38566,8 +38940,12 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["rillaboom", 8]],
-      "type": [["grass", 8]]
+      "pokemon": {
+        "rillaboom": [[true, 8]]
+      },
+      "type": {
+        "grass": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -38615,8 +38993,12 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["cinderace", 8]],
-      "type": [["fire", 8]]
+      "pokemon": {
+        "cinderace": [[true, 8]]
+      },
+      "type": {
+        "fire": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -38664,8 +39046,12 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["inteleon", 8]],
-      "type": [["water", 8]]
+      "pokemon": {
+        "inteleon": [[true, 8]]
+      },
+      "type": {
+        "water": [[true, 8]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 8]],
@@ -38713,8 +39099,12 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["urshifu", 8]],
-      "type": [["dark", 8]]
+      "pokemon": {
+        "urshifu": [[true, 8]]
+      },
+      "type": {
+        "dark": [[true, 8]]
+      }
     },
     "move_interactions": {
       "max_guard": [[false, 8]],
@@ -38762,8 +39152,12 @@
     "target": [["adjacent_foe", 8]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "pokemon": [["urshifu_rapid_strike", 8]],
-      "type": [["water", 8]]
+      "pokemon": {
+        "urshifu_rapid_strike": [[true, 8]]
+      },
+      "type": {
+        "water": [[true, 8]]
+      }
     },
     "move_interactions": {
       "max_guard": [[false, 8]],
@@ -38813,7 +39207,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["swords_dance", 7]]
+      "move": {
+        "swords_dance": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -38863,7 +39262,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["whirlwind", 7]]
+      "move": {
+        "whirlwind": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -38910,7 +39314,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["sand_attack", 7]]
+      "move": {
+        "sand_attack": [[true, 7]]
+      },
+      "item": {
+        "groundium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -38957,7 +39366,12 @@
     "target": [["all_adjacent_foes", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["tail_whip", 7]]
+      "move": {
+        "tail_whip": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -39004,7 +39418,12 @@
     "target": [["all_adjacent_foes", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["leer", 7]]
+      "move": {
+        "leer": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -39053,7 +39472,12 @@
     "target": [["all_adjacent_foes", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["growl", 7]]
+      "move": {
+        "growl": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -39104,7 +39528,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["roar", 7]]
+      "move": {
+        "roar": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -39154,7 +39583,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["sing", 7]]
+      "move": {
+        "sing": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -39204,7 +39638,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["supersonic", 7]]
+      "move": {
+        "supersonic": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -39250,7 +39689,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["disable", 7]]
+      "move": {
+        "disable": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -39297,7 +39741,12 @@
     "target": [["user_and_all_allies", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["mist", 7]]
+      "move": {
+        "mist": [[true, 7]]
+      },
+      "item": {
+        "icium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -39347,7 +39796,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["leech_seed", 7]]
+      "move": {
+        "leech_seed": [[true, 7]]
+      },
+      "item": {
+        "grassium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -39393,7 +39847,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["growth", 7]]
+      "move": {
+        "growth": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -39443,7 +39902,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["poison_powder", 7]]
+      "move": {
+        "poison_powder": [[true, 7]]
+      },
+      "item": {
+        "poisonium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -39493,7 +39957,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["stun_spore", 7]]
+      "move": {
+        "stun_spore": [[true, 7]]
+      },
+      "item": {
+        "grassium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -39543,7 +40012,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["sleep_powder", 7]]
+      "move": {
+        "sleep_powder": [[true, 7]]
+      },
+      "item": {
+        "grassium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -39589,7 +40063,12 @@
     "target": [["all_adjacent_foes", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["string_shot", 7]]
+      "move": {
+        "string_shot": [[true, 7]]
+      },
+      "item": {
+        "buginium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -39637,7 +40116,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["thunder_wave", 7]]
+      "move": {
+        "thunder_wave": [[true, 7]]
+      },
+      "item": {
+        "electrium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -39688,7 +40172,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["toxic", 7]]
+      "move": {
+        "toxic": [[true, 7]]
+      },
+      "item": {
+        "poisonium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -39736,7 +40225,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["hypnosis", 7]]
+      "move": {
+        "hypnosis": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -39782,7 +40276,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["meditate", 7]]
+      "move": {
+        "meditate": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -39830,7 +40329,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["agility", 7]]
+      "move": {
+        "agility": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -39877,7 +40381,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["teleport", 7]]
+      "move": {
+        "teleport": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -39923,7 +40432,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["mimic", 7]]
+      "move": {
+        "mimic": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -39972,7 +40486,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["screech", 7]]
+      "move": {
+        "screech": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -40020,7 +40539,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["double_team", 7]]
+      "move": {
+        "double_team": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -40068,7 +40592,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["recover", 7]]
+      "move": {
+        "recover": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -40114,7 +40643,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["harden", 7]]
+      "move": {
+        "harden": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -40162,7 +40696,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["minimize", 7]]
+      "move": {
+        "minimize": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -40209,7 +40748,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["smokescreen", 7]]
+      "move": {
+        "smokescreen": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -40257,7 +40801,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["confuse_ray", 7]]
+      "move": {
+        "confuse_ray": [[true, 7]]
+      },
+      "item": {
+        "ghostium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -40303,7 +40852,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["withdraw", 7]]
+      "move": {
+        "withdraw": [[true, 7]]
+      },
+      "item": {
+        "waterium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -40349,7 +40903,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["defense_curl", 7]]
+      "move": {
+        "defense_curl": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -40397,7 +40956,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["barrier", 7]]
+      "move": {
+        "barrier": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -40445,7 +41009,12 @@
     "target": [["user_and_all_allies", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["light_screen", 7]]
+      "move": {
+        "light_screen": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -40492,7 +41061,12 @@
     "target": [["all", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["haze", 7]]
+      "move": {
+        "haze": [[true, 7]]
+      },
+      "item": {
+        "icium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -40540,7 +41114,12 @@
     "target": [["user_and_all_allies", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["reflect", 7]]
+      "move": {
+        "reflect": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -40587,7 +41166,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["focus_energy", 7]]
+      "move": {
+        "focus_energy": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -40633,7 +41217,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["metronome", 7]]
+      "move": {
+        "metronome": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -40681,7 +41270,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["mirror_move", 7]]
+      "move": {
+        "mirror_move": [[true, 7]]
+      },
+      "item": {
+        "flyinium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -40729,7 +41323,12 @@
     "special_defense": [["+7", "user", 100.0, 1], ["+2",
         "user", 100.0, 2]],
     "requirements": {
-      "move": [["amnesia", 7]]
+      "move": {
+        "amnesia": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -40776,7 +41375,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["kinesis", 7]]
+      "move": {
+        "kinesis": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -40824,7 +41428,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["soft_boiled", 7]]
+      "move": {
+        "soft_boiled": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -40872,7 +41481,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["glare", 7]]
+      "move": {
+        "glare": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -40920,7 +41534,12 @@
     "target": [["all_adjacent_foes", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["poison_gas", 7]]
+      "move": {
+        "poison_gas": [[true, 7]]
+      },
+      "item": {
+        "poisonium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -40968,7 +41587,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["lovely_kiss", 7]]
+      "move": {
+        "lovely_kiss": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -41018,7 +41642,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["transform", 7]]
+      "move": {
+        "transform": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -41068,7 +41697,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["spore", 7]]
+      "move": {
+        "spore": [[true, 7]]
+      },
+      "item": {
+        "grassium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -41115,7 +41749,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["flash", 7]]
+      "move": {
+        "flash": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -41161,7 +41800,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["splash", 7]]
+      "move": {
+        "splash": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -41209,7 +41853,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["acid_armor", 7]]
+      "move": {
+        "acid_armor": [[true, 7]]
+      },
+      "item": {
+        "poisonium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -41260,7 +41909,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["rest", 7]]
+      "move": {
+        "rest": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -41306,7 +41960,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["sharpen", 7]]
+      "move": {
+        "sharpen": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -41358,7 +42017,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["conversion", 7]]
+      "move": {
+        "conversion": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -41405,7 +42069,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["substitute", 7]]
+      "move": {
+        "substitute": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -41457,7 +42126,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["sketch", 7]]
+      "move": {
+        "sketch": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -41507,7 +42181,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["spider_web", 7]]
+      "move": {
+        "spider_web": [[true, 7]]
+      },
+      "item": {
+        "buginium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -41557,7 +42236,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["mind_reader", 7]]
+      "move": {
+        "mind_reader": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -41605,7 +42289,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["nightmare", 7]]
+      "move": {
+        "nightmare": [[true, 7]]
+      },
+      "item": {
+        "ghostium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -41656,7 +42345,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["curse", 7]]
+      "move": {
+        "curse": [[true, 7]]
+      },
+      "item": {
+        "ghostium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -41704,7 +42398,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["conversion_2", 7]]
+      "move": {
+        "conversion_2": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -41754,7 +42453,12 @@
     "target": [["all_adjacent_foes", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["cotton_spore", 7]]
+      "move": {
+        "cotton_spore": [[true, 7]]
+      },
+      "item": {
+        "grassium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -41800,7 +42504,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["spite", 7]]
+      "move": {
+        "spite": [[true, 7]]
+      },
+      "item": {
+        "ghostium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -41848,7 +42557,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["protect", 7]]
+      "move": {
+        "protect": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -41894,7 +42608,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["scary_face", 7]]
+      "move": {
+        "scary_face": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -41942,7 +42661,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["sweet_kiss", 7]]
+      "move": {
+        "sweet_kiss": [[true, 7]]
+      },
+      "item": {
+        "fairium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -41991,7 +42715,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["belly_drum", 7]]
+      "move": {
+        "belly_drum": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -42039,7 +42768,12 @@
     "target": [["all_foes", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["spikes", 7]]
+      "move": {
+        "spikes": [[true, 7]]
+      },
+      "item": {
+        "groundium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -42090,7 +42824,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["foresight", 7]]
+      "move": {
+        "foresight": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -42136,7 +42875,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["destiny_bond", 7]]
+      "move": {
+        "destiny_bond": [[true, 7]]
+      },
+      "item": {
+        "ghostium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -42184,7 +42928,12 @@
     "target": [["all", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["perish_song", 7]]
+      "move": {
+        "perish_song": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -42232,7 +42981,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["detect", 7]]
+      "move": {
+        "detect": [[true, 7]]
+      },
+      "item": {
+        "fightinium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -42282,7 +43036,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["lock_on", 7]]
+      "move": {
+        "lock_on": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -42330,7 +43089,12 @@
     "target": [["all", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["sandstorm", 7]]
+      "move": {
+        "sandstorm": [[true, 7]]
+      },
+      "item": {
+        "rockium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -42376,7 +43140,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["endure", 7]]
+      "move": {
+        "endure": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -42423,7 +43192,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["charm", 7]]
+      "move": {
+        "charm": [[true, 7]]
+      },
+      "item": {
+        "fairium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -42473,7 +43247,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["swagger", 7]]
+      "move": {
+        "swagger": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -42521,7 +43300,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["milk_drink", 7]]
+      "move": {
+        "milk_drink": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -42571,7 +43355,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["mean_look", 7]]
+      "move": {
+        "mean_look": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -42619,7 +43408,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["attract", 7]]
+      "move": {
+        "attract": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -42667,7 +43461,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["sleep_talk", 7]]
+      "move": {
+        "sleep_talk": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -42716,7 +43515,12 @@
     "target": [["user_and_all_allies", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["heal_bell", 7]]
+      "move": {
+        "heal_bell": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -42762,7 +43566,12 @@
     "target": [["user_and_all_allies", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["safeguard", 7]]
+      "move": {
+        "safeguard": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -42811,7 +43620,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["pain_split", 7]]
+      "move": {
+        "pain_split": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -42858,7 +43672,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["baton_pass", 7]]
+      "move": {
+        "baton_pass": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -42904,7 +43723,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["encore", 7]]
+      "move": {
+        "encore": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -42950,7 +43774,12 @@
     "target": [["all_adjacent_foes", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["sweet_scent", 7]]
+      "move": {
+        "sweet_scent": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -42998,7 +43827,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["morning_sun", 7]]
+      "move": {
+        "morning_sun": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -43046,7 +43880,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["synthesis", 7]]
+      "move": {
+        "synthesis": [[true, 7]]
+      },
+      "item": {
+        "grassium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -43094,7 +43933,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["moonlight", 7]]
+      "move": {
+        "moonlight": [[true, 7]]
+      },
+      "item": {
+        "fairium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -43142,7 +43986,12 @@
     "target": [["all", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["rain_dance", 7]]
+      "move": {
+        "rain_dance": [[true, 7]]
+      },
+      "item": {
+        "waterium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -43190,7 +44039,12 @@
     "target": [["all", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["sunny_day", 7]]
+      "move": {
+        "sunny_day": [[true, 7]]
+      },
+      "item": {
+        "firium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -43237,7 +44091,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["psych_up", 7]]
+      "move": {
+        "psych_up": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -43286,7 +44145,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["stockpile", 7]]
+      "move": {
+        "stockpile": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -43332,7 +44196,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["swallow", 7]]
+      "move": {
+        "swallow": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -43380,7 +44249,12 @@
     "target": [["all", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["hail", 7]]
+      "move": {
+        "hail": [[true, 7]]
+      },
+      "item": {
+        "icium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -43428,7 +44302,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["torment", 7]]
+      "move": {
+        "torment": [[true, 7]]
+      },
+      "item": {
+        "darkinium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -43477,7 +44356,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["flatter", 7]]
+      "move": {
+        "flatter": [[true, 7]]
+      },
+      "item": {
+        "darkinium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -43525,7 +44409,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["will_o_wisp", 7]]
+      "move": {
+        "will_o_wisp": [[true, 7]]
+      },
+      "item": {
+        "firium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -43575,7 +44464,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["memento", 7]]
+      "move": {
+        "memento": [[true, 7]]
+      },
+      "item": {
+        "darkinium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -43621,7 +44515,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["follow_me", 7]]
+      "move": {
+        "follow_me": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -43668,7 +44567,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["nature_power", 7]]
+      "move": {
+        "nature_power": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -43714,7 +44618,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["charge", 7]]
+      "move": {
+        "charge": [[true, 7]]
+      },
+      "item": {
+        "electrium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -43760,7 +44669,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["taunt", 7]]
+      "move": {
+        "taunt": [[true, 7]]
+      },
+      "item": {
+        "darkinium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -43807,7 +44721,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["helping_hand", 7]]
+      "move": {
+        "helping_hand": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -43855,7 +44774,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["trick", 7]]
+      "move": {
+        "trick": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -43904,7 +44828,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["role_play", 7]]
+      "move": {
+        "role_play": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -43952,7 +44881,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["wish", 7]]
+      "move": {
+        "wish": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -43998,7 +44932,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["assist", 7]]
+      "move": {
+        "assist": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -44046,7 +44985,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["ingrain", 7]]
+      "move": {
+        "ingrain": [[true, 7]]
+      },
+      "item": {
+        "grassium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -44092,7 +45036,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["magic_coat", 7]]
+      "move": {
+        "magic_coat": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -44140,7 +45089,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["recycle", 7]]
+      "move": {
+        "recycle": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -44191,7 +45145,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["yawn", 7]]
+      "move": {
+        "yawn": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -44240,7 +45199,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["skill_swap", 7]]
+      "move": {
+        "skill_swap": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -44286,7 +45250,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["imprison", 7]]
+      "move": {
+        "imprison": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -44333,7 +45302,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["refresh", 7]]
+      "move": {
+        "refresh": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -44379,7 +45353,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["grudge", 7]]
+      "move": {
+        "grudge": [[true, 7]]
+      },
+      "item": {
+        "ghostium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -44427,7 +45406,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["snatch", 7]]
+      "move": {
+        "snatch": [[true, 7]]
+      },
+      "item": {
+        "darkinium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -44476,7 +45460,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["camouflage", 7]]
+      "move": {
+        "camouflage": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -44524,7 +45513,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["tail_glow", 7]]
+      "move": {
+        "tail_glow": [[true, 7]]
+      },
+      "item": {
+        "buginium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -44573,7 +45567,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["feather_dance", 7]]
+      "move": {
+        "feather_dance": [[true, 7]]
+      },
+      "item": {
+        "flyinium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -44623,7 +45622,12 @@
     "target": [["all_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["teeter_dance", 7]]
+      "move": {
+        "teeter_dance": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -44669,7 +45673,12 @@
     "target": [["all", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["mud_sport", 7]]
+      "move": {
+        "mud_sport": [[true, 7]]
+      },
+      "item": {
+        "groundium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -44717,7 +45726,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["slack_off", 7]]
+      "move": {
+        "slack_off": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -44764,7 +45778,12 @@
     "target": [["user_and_all_allies", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["aromatherapy", 7]]
+      "move": {
+        "aromatherapy": [[true, 7]]
+      },
+      "item": {
+        "grassium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -44811,7 +45830,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["fake_tears", 7]]
+      "move": {
+        "fake_tears": [[true, 7]]
+      },
+      "item": {
+        "darkinium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -44862,7 +45886,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["odor_sleuth", 7]]
+      "move": {
+        "odor_sleuth": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -44911,7 +45940,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["metal_sound", 7]]
+      "move": {
+        "metal_sound": [[true, 7]]
+      },
+      "item": {
+        "steelium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -44961,7 +45995,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["grass_whistle", 7]]
+      "move": {
+        "grass_whistle": [[true, 7]]
+      },
+      "item": {
+        "grassium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -45008,7 +46047,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["tickle", 7]]
+      "move": {
+        "tickle": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -45055,7 +46099,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["cosmic_power", 7]]
+      "move": {
+        "cosmic_power": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -45103,7 +46152,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["iron_defense", 7]]
+      "move": {
+        "iron_defense": [[true, 7]]
+      },
+      "item": {
+        "steelium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -45153,7 +46207,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["block", 7]]
+      "move": {
+        "block": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -45201,7 +46260,12 @@
     "target": [["user_and_all_allies", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["howl", 7]]
+      "move": {
+        "howl": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -45248,7 +46312,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["bulk_up", 7]]
+      "move": {
+        "bulk_up": [[true, 7]]
+      },
+      "item": {
+        "fightinium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -45294,7 +46363,12 @@
     "target": [["all", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["water_sport", 7]]
+      "move": {
+        "water_sport": [[true, 7]]
+      },
+      "item": {
+        "waterium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -45343,7 +46417,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["calm_mind", 7]]
+      "move": {
+        "calm_mind": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -45394,7 +46473,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["dragon_dance", 7]]
+      "move": {
+        "dragon_dance": [[true, 7]]
+      },
+      "item": {
+        "dragonium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -45443,7 +46527,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["roost", 7]]
+      "move": {
+        "roost": [[true, 7]]
+      },
+      "item": {
+        "flyinium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -45491,7 +46580,12 @@
     "target": [["all", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["gravity", 7]]
+      "move": {
+        "gravity": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -45542,7 +46636,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["miracle_eye", 7]]
+      "move": {
+        "miracle_eye": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -45589,7 +46688,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["healing_wish", 7]]
+      "move": {
+        "healing_wish": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -45635,7 +46739,12 @@
     "target": [["user_and_all_allies", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["tailwind", 7]]
+      "move": {
+        "tailwind": [[true, 7]]
+      },
+      "item": {
+        "flyinium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -45682,7 +46791,12 @@
     "target": [["user_or_adjacent_ally", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["acupressure", 7]]
+      "move": {
+        "acupressure": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -45730,7 +46844,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["embargo", 7]]
+      "move": {
+        "embargo": [[true, 7]]
+      },
+      "item": {
+        "darkinium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -45784,7 +46903,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["psycho_shift", 7]]
+      "move": {
+        "psycho_shift": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -45830,7 +46954,12 @@
     "target": [["all_adjacent_foes", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["heal_block", 7]]
+      "move": {
+        "heal_block": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -45876,7 +47005,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["power_trick", 7]]
+      "move": {
+        "power_trick": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -45922,7 +47056,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["gastro_acid", 7]]
+      "move": {
+        "gastro_acid": [[true, 7]]
+      },
+      "item": {
+        "poisonium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -45970,7 +47109,12 @@
     "target": [["user_and_all_allies", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["lucky_chant", 7]]
+      "move": {
+        "lucky_chant": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -46020,7 +47164,12 @@
     "target": [["adjacent_foe", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["me_first", 7]]
+      "move": {
+        "me_first": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -46066,7 +47215,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["copycat", 7]]
+      "move": {
+        "copycat": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -46114,7 +47268,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["power_swap", 7]]
+      "move": {
+        "power_swap": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -46162,7 +47321,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["guard_swap", 7]]
+      "move": {
+        "guard_swap": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -46210,7 +47374,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["worry_seed", 7]]
+      "move": {
+        "worry_seed": [[true, 7]]
+      },
+      "item": {
+        "grassium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -46261,7 +47430,12 @@
     "target": [["all_foes", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["toxic_spikes", 7]]
+      "move": {
+        "toxic_spikes": [[true, 7]]
+      },
+      "item": {
+        "poisonium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -46309,7 +47483,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["heart_swap", 7]]
+      "move": {
+        "heart_swap": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -46357,7 +47536,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["aqua_ring", 7]]
+      "move": {
+        "aqua_ring": [[true, 7]]
+      },
+      "item": {
+        "waterium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -46403,7 +47587,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["magnet_rise", 7]]
+      "move": {
+        "magnet_rise": [[true, 7]]
+      },
+      "item": {
+        "electrium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -46451,7 +47640,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["rock_polish", 7]]
+      "move": {
+        "rock_polish": [[true, 7]]
+      },
+      "item": {
+        "rockium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -46499,7 +47693,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["switcheroo", 7]]
+      "move": {
+        "switcheroo": [[true, 7]]
+      },
+      "item": {
+        "darkinium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -46547,7 +47746,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["nasty_plot", 7]]
+      "move": {
+        "nasty_plot": [[true, 7]]
+      },
+      "item": {
+        "darkinium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -46599,7 +47803,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["defog", 7]]
+      "move": {
+        "defog": [[true, 7]]
+      },
+      "item": {
+        "flyinium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -46643,7 +47852,12 @@
     "target": [["all", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["trick_room", 7]]
+      "move": {
+        "trick_room": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -46690,7 +47904,12 @@
     "target": [["all_adjacent_foes", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["captivate", 7]]
+      "move": {
+        "captivate": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -46738,7 +47957,12 @@
     "target": [["all_foes", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["stealth_rock", 7]]
+      "move": {
+        "stealth_rock": [[true, 7]]
+      },
+      "item": {
+        "rockium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -46785,7 +48009,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["defend_order", 7]]
+      "move": {
+        "defend_order": [[true, 7]]
+      },
+      "item": {
+        "buginium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -46833,7 +48062,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["heal_order", 7]]
+      "move": {
+        "heal_order": [[true, 7]]
+      },
+      "item": {
+        "buginium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -46883,7 +48117,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["lunar_dance", 7]]
+      "move": {
+        "lunar_dance": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -46931,7 +48170,12 @@
     "target": [["all_adjacent_foes", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["dark_void", 7]]
+      "move": {
+        "dark_void": [[true, 7]]
+      },
+      "item": {
+        "darkinium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -46978,7 +48222,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["hone_claws", 7]]
+      "move": {
+        "hone_claws": [[true, 7]]
+      },
+      "item": {
+        "darkinium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -47026,7 +48275,12 @@
     "target": [["user_and_all_allies", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["wide_guard", 7]]
+      "move": {
+        "wide_guard": [[true, 7]]
+      },
+      "item": {
+        "rockium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -47074,7 +48328,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["guard_split", 7]]
+      "move": {
+        "guard_split": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -47122,7 +48381,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["power_split", 7]]
+      "move": {
+        "power_split": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -47168,7 +48432,12 @@
     "target": [["all", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["wonder_room", 7]]
+      "move": {
+        "wonder_room": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -47217,7 +48486,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["autotomize", 7]]
+      "move": {
+        "autotomize": [[true, 7]]
+      },
+      "item": {
+        "steelium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -47265,7 +48539,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["rage_powder", 7]]
+      "move": {
+        "rage_powder": [[true, 7]]
+      },
+      "item": {
+        "buginium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -47313,7 +48592,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["telekinesis", 7]]
+      "move": {
+        "telekinesis": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -47361,7 +48645,12 @@
     "target": [["all", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["magic_room", 7]]
+      "move": {
+        "magic_room": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -47413,7 +48702,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["quiver_dance", 7]]
+      "move": {
+        "quiver_dance": [[true, 7]]
+      },
+      "item": {
+        "buginium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -47463,7 +48757,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["soak", 7]]
+      "move": {
+        "soak": [[true, 7]]
+      },
+      "item": {
+        "waterium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -47513,7 +48812,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["coil", 7]]
+      "move": {
+        "coil": [[true, 7]]
+      },
+      "item": {
+        "poisonium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -47561,7 +48865,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["simple_beam", 7]]
+      "move": {
+        "simple_beam": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -47609,7 +48918,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["entrainment", 7]]
+      "move": {
+        "entrainment": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -47658,7 +48972,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["after_you", 7]]
+      "move": {
+        "after_you": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -47708,7 +49027,12 @@
     "target": [["user_and_all_allies", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["quick_guard", 7]]
+      "move": {
+        "quick_guard": [[true, 7]]
+      },
+      "item": {
+        "fightinium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -47754,7 +49078,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["ally_switch", 7]]
+      "move": {
+        "ally_switch": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -47806,7 +49135,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["shell_smash", 7]]
+      "move": {
+        "shell_smash": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -47856,7 +49190,12 @@
     "target": [["any", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["heal_pulse", 7]]
+      "move": {
+        "heal_pulse": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -47905,7 +49244,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["shift_gear", 7]]
+      "move": {
+        "shift_gear": [[true, 7]]
+      },
+      "item": {
+        "steelium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -47953,7 +49297,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["quash", 7]]
+      "move": {
+        "quash": [[true, 7]]
+      },
+      "item": {
+        "darkinium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -48002,7 +49351,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["reflect_type", 7]]
+      "move": {
+        "reflect_type": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -48051,7 +49405,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["bestow", 7]]
+      "move": {
+        "bestow": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -48098,7 +49457,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["work_up", 7]]
+      "move": {
+        "work_up": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -48146,7 +49510,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["cotton_guard", 7]]
+      "move": {
+        "cotton_guard": [[true, 7]]
+      },
+      "item": {
+        "grassium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -48194,7 +49563,12 @@
     "target": [["user_and_all_allies", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["mat_block", 7]]
+      "move": {
+        "mat_block": [[true, 7]]
+      },
+      "item": {
+        "fightinium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -48240,7 +49614,12 @@
     "target": [["all", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["rototiller", 7]]
+      "move": {
+        "rototiller": [[true, 7]]
+      },
+      "item": {
+        "groundium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -48288,7 +49667,12 @@
     "target": [["all_foes", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["sticky_web", 7]]
+      "move": {
+        "sticky_web": [[true, 7]]
+      },
+      "item": {
+        "buginium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -48342,7 +49726,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["trick_or_treat", 7]]
+      "move": {
+        "trick_or_treat": [[true, 7]]
+      },
+      "item": {
+        "ghostium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -48393,7 +49782,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["noble_roar", 7]]
+      "move": {
+        "noble_roar": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -48441,7 +49835,12 @@
     "target": [["all", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["ion_deluge", 7]]
+      "move": {
+        "ion_deluge": [[true, 7]]
+      },
+      "item": {
+        "electrium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -48495,7 +49894,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["forests_curse", 7]]
+      "move": {
+        "forests_curse": [[true, 7]]
+      },
+      "item": {
+        "grassium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -48546,7 +49950,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["parting_shot", 7]]
+      "move": {
+        "parting_shot": [[true, 7]]
+      },
+      "item": {
+        "darkinium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -48594,7 +50003,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["topsy_turvy", 7]]
+      "move": {
+        "topsy_turvy": [[true, 7]]
+      },
+      "item": {
+        "darkinium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -48642,7 +50056,12 @@
     "target": [["user_and_all_allies", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["crafty_shield", 7]]
+      "move": {
+        "crafty_shield": [[true, 7]]
+      },
+      "item": {
+        "fairium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -48688,7 +50107,12 @@
     "target": [["all", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["flower_shield", 7]]
+      "move": {
+        "flower_shield": [[true, 7]]
+      },
+      "item": {
+        "fairium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -48737,7 +50161,12 @@
     "target": [["all", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["grassy_terrain", 7]]
+      "move": {
+        "grassy_terrain": [[true, 7]]
+      },
+      "item": {
+        "grassium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -48785,7 +50214,12 @@
     "target": [["all", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["misty_terrain", 7]]
+      "move": {
+        "misty_terrain": [[true, 7]]
+      },
+      "item": {
+        "fairium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -48834,7 +50268,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["electrify", 7]]
+      "move": {
+        "electrify": [[true, 7]]
+      },
+      "item": {
+        "electrium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -48882,7 +50321,12 @@
     "target": [["all", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["fairy_lock", 7]]
+      "move": {
+        "fairy_lock": [[true, 7]]
+      },
+      "item": {
+        "fairium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -48933,7 +50377,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["kings_shield", 7]]
+      "move": {
+        "kings_shield": [[true, 7]]
+      },
+      "item": {
+        "steelium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -48982,7 +50431,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["play_nice", 7]]
+      "move": {
+        "play_nice": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -49033,7 +50487,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["confide", 7]]
+      "move": {
+        "confide": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -49081,7 +50540,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["spiky_shield", 7]]
+      "move": {
+        "spiky_shield": [[true, 7]]
+      },
+      "item": {
+        "grassium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -49127,7 +50591,12 @@
     "target": [["adjacent_ally", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["aromatic_mist", 7]]
+      "move": {
+        "aromatic_mist": [[true, 7]]
+      },
+      "item": {
+        "fairium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -49174,7 +50643,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["eerie_impulse", 7]]
+      "move": {
+        "eerie_impulse": [[true, 7]]
+      },
+      "item": {
+        "electrium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -49221,7 +50695,12 @@
     "target": [["all_adjacent_foes", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["venom_drench", 7]]
+      "move": {
+        "venom_drench": [[true, 7]]
+      },
+      "item": {
+        "poisonium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -49269,7 +50748,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["powder", 7]]
+      "move": {
+        "powder": [[true, 7]]
+      },
+      "item": {
+        "buginium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -49321,7 +50805,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["geomancy", 7]]
+      "move": {
+        "geomancy": [[true, 7]]
+      },
+      "item": {
+        "fairium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -49368,7 +50857,12 @@
     "target": [["user_and_all_allies", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["magnetic_flux", 7]]
+      "move": {
+        "magnetic_flux": [[true, 7]]
+      },
+      "item": {
+        "electrium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -49418,7 +50912,12 @@
     "target": [["user_and_all_allies", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["happy_hour", 7]]
+      "move": {
+        "happy_hour": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -49466,7 +50965,12 @@
     "target": [["all", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["electric_terrain", 7]]
+      "move": {
+        "electric_terrain": [[true, 7]]
+      },
+      "item": {
+        "electrium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -49516,7 +51020,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["celebrate", 7]]
+      "move": {
+        "celebrate": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -49566,7 +51075,12 @@
     "target": [["adjacent_ally", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["hold_hands", 7]]
+      "move": {
+        "hold_hands": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -49613,7 +51127,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["baby_doll_eyes", 7]]
+      "move": {
+        "baby_doll_eyes": [[true, 7]]
+      },
+      "item": {
+        "fairium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -49661,7 +51180,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["shore_up", 7]]
+      "move": {
+        "shore_up": [[true, 7]]
+      },
+      "item": {
+        "groundium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -49710,7 +51234,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["baneful_bunker", 7]]
+      "move": {
+        "baneful_bunker": [[true, 7]]
+      },
+      "item": {
+        "poisonium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -49758,7 +51287,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["floral_healing", 7]]
+      "move": {
+        "floral_healing": [[true, 7]]
+      },
+      "item": {
+        "fairium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -49808,7 +51342,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["strength_sap", 7]]
+      "move": {
+        "strength_sap": [[true, 7]]
+      },
+      "item": {
+        "grassium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -49854,7 +51393,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["spotlight", 7]]
+      "move": {
+        "spotlight": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -49902,7 +51446,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["toxic_thread", 7]]
+      "move": {
+        "toxic_thread": [[true, 7]]
+      },
+      "item": {
+        "poisonium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -49948,7 +51497,12 @@
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["laser_focus", 7]]
+      "move": {
+        "laser_focus": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -49995,7 +51549,12 @@
     "target": [["user_and_all_allies", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["gear_up", 7]]
+      "move": {
+        "gear_up": [[true, 7]]
+      },
+      "item": {
+        "steelium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -50043,7 +51602,12 @@
     "target": [["all", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["psychic_terrain", 7]]
+      "move": {
+        "psychic_terrain": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -50091,7 +51655,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["speed_swap", 7]]
+      "move": {
+        "speed_swap": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -50145,7 +51714,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["purify", 7]]
+      "move": {
+        "purify": [[true, 7]]
+      },
+      "item": {
+        "poisonium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -50191,7 +51765,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["instruct", 7]]
+      "move": {
+        "instruct": [[true, 7]]
+      },
+      "item": {
+        "psychium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],
@@ -50239,7 +51818,12 @@
     "target": [["user_and_all_allies", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["aurora_veil", 7]]
+      "move": {
+        "aurora_veil": [[true, 7]]
+      },
+      "item": {
+        "icium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[false, 7], [false, 8]],
@@ -50286,7 +51870,12 @@
     "target": [["any_adjacent", 7]],
     "lgpe_exclusive_values": {},
     "requirements": {
-      "move": [["tearful_look", 7]]
+      "move": {
+        "tearful_look": [[true, 7]]
+      },
+      "item": {
+        "normalium_z": [[true, 7]]
+      }
     },
     "move_interactions": {
       "protect": [[true, 7], [true, 8]],

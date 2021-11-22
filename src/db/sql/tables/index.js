@@ -45,10 +45,6 @@ function getStatementObj(fname) {
       const createMatch = curr.match(tableRegex);
       const [tableName, createStatement] = [createMatch[1], createMatch.input];
       const truncateStatement = `TRUNCATE TABLE ${tableName}`;
-
-      if (tableName === 'pmove_has_ptype') {
-        console.log(tableName);
-      }
       
       // For each table, identify the foreign key dependencies
       const dependencyRegex = /REFERENCES ([a-z_]+)\(/g;

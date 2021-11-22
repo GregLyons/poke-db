@@ -362,6 +362,11 @@ def addAbilityData(fname, pokemonDict):
   for formName in pokemonAbilityDict.keys():
     if formName not in pokemonDict and formName not in ['castform', 'burmy', 'arceus', 'oricorio', 'silvally', 'pumpkaboo', 'gourgeist']:
       print(formName)
+
+  # force rename pikachu_with_partner_cap to pikachu_partner_cap; we couldn't have this before, since the above algorithm would overwrite pikachu_partner with pikachu_with_partner_cap
+  pokemonDict["pikachu_partner_cap"] = copy.deepcopy(pokemonDict["pikachu_with_partner_cap"])
+  del pokemonDict["pikachu_with_partner_cap"]
+
   return
 
 # add data about evolution relations between Pokemon to pokemonDict

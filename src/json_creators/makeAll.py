@@ -233,10 +233,10 @@ def checkMoveRequirements(moveDict, typeDict, pokemonDict, itemDict):
       else:
         continue
       
-      for patch in requirements[entityClass]:
-        entityName, patchGen = patch
+      for entityName in requirements[entityClass].keys():
+        entityName
         if entityName not in entitySet:
-          print(moveName, 'has an inconsistent', entityClass, 'requirement:', pokemonName)
+          print(moveName, 'has an inconsistent', entityClass, 'requirement:', entityName)
 
   print('Finished.')
   print()

@@ -147,6 +147,9 @@ def makeAbilityCSVandExtractNotes(fname):
         if csvRow[2] == 'pikachu_in_a_cap':
           csvRow[6] = 7
           for suffix in ['_original', '_kalos', '_alola', '_hoenn', '_sinnoh', '_unova', '_partner', '_world']:
+            # To prevent an algorithm in json_creators/pokemon.py from failing, we use 'pikachu_with_partner_cap' for the moment rather than 'pikachu_partner_cap'.
+            if suffix == '_partner':
+              suffix = '_with_partner'
             writer.writerow(csvRow[:2] + ['pikachu' + suffix + '_cap'] + csvRow[3:])
           continue
 

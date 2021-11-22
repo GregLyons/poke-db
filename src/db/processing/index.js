@@ -67,6 +67,7 @@ addLearnsetsToPokemonArr(learnsets, moves, pokemon, pokemonArr);
 // Separate out LGPE only Pokemon
 const lgpeOnlyPokemon = pokemonArr.filter(data => data.gen == 'lgpe_only');
 pokemonArr = pokemonArr.filter(data => data.gen !== 'lgpe_only');
+console.log(lgpeOnlyPokemon.map(data => data.name));
 const lgpeOnlyMoves = moveArr.filter(data => data.gen == 7 && Object.keys(data.lgpe_exclusive_values).length == 5);
 moveArr = moveArr.filter(data => !(data.gen == 7 && Object.keys(data.lgpe_exclusive_values).length == 5));
 

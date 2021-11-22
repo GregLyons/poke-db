@@ -310,7 +310,7 @@ const getUpdatedLearnsets = (learnsets, moves, pokemon) => {
       // update learnsets so that Pokemon who learn the base move can also learn the corresponding Z-move
       // get base move for moveName 
       // note that Z-moves only have one base move, so we use the index [0].
-      const learnsetBaseMoveName = moveMap.get(moves[moveName].requirements["move"][0][0]);
+      const learnsetBaseMoveName = moveMap.get(Object.keys(moves[moveName].requirements["move"])[0]);
       // console.log(learnsetBaseMoveName);
       // console.log(pokemonWhoLearnMoveMap.get(learnsetBaseMoveName));
       for (let learnsetPokemonName of pokemonWhoLearnMoveMap
@@ -361,7 +361,7 @@ const getUpdatedLearnsets = (learnsets, moves, pokemon) => {
     
     // indicates move is Pokemon specific; in this case, it definitely learns the move
     if (moves[moveName].requirements.hasOwnProperty('pokemon')) {
-      for (let pokemonName of moves[moveName].requirements.pokemon.map(patch => patch[0])) {
+      for (let pokemonName of Object.keys(moves[moveName].requirements.pokemon)) {
         let learnsetPokemonName = pokemonMap.get(pokemonName);
         // Z-moves or max moves are exclusive to their generation
         // learnData is the gen + 'S' for 'Special'
@@ -524,7 +524,7 @@ const splitEntity = (entity, initialGen) => {
         // }
         
       } 
-      // indicates nested object; there may be a patch list within, but there won't be another object within
+      // indicates nested object; there may be a patch list within, but there won't be another object within aside from requirement data
       else if (typeof value === 'object') {
         splitObject[gen][key] = {};
         
@@ -569,11 +569,19 @@ const splitEntity = (entity, initialGen) => {
             //   console.log(`${entity.formatted_name} does not have a patch for ${gen}: ${innerKey}, ${innerValue}.`);
             // }
           }
-          // // we shouldn't have a deeper level of nesting for objects; however, pokemon move-requirements are array-valued since multiple pokemon can be a requirement for the same move. Since an array is technically an object, we don't want to skip over that case.
-          // else if (!Array.isArray(innerValue) && typeof innerValue == 'object') {
-          //   console.log(innerValue);
-          //   throw `${entity.formatted_name} has too nested of an object: ${key}, ${innerKey}.`
-          // } 
+          // Special case for move requirements; the reason we have it so nested is that the extendPatch algorithm works; otherwise, we'd need to handle an exception there instead.
+          else if (key == 'requirements') {
+            // innerValue is an object whose keys are requirement names (e.g. 'electric', 'fairy', 'orbeetle', 'alcremie'), and whose values are patch lists
+            splitObject[gen][key][innerKey] = [];
+            for (let reqName of Object.keys(innerValue)) {
+              innerValue[reqName].map(patch => {
+                // patch[0] is true if patch applies for gen, false otherwise.
+                if (patch[1] === gen && patch[0]) {
+                  splitObject[gen][key][innerKey] = splitObject[gen][key][innerKey].concat(reqName);
+                }
+              });
+            }
+          }
           // indicates simple field that doesn't depend on gen
           else {
             splitObject[gen][key][innerKey] = innerValue;

@@ -119,6 +119,7 @@ def makeInitialMoveDict(fname):
         # Many values are lists since they can potentially change across generations--Bulbapedia lists the latest values for each field, with the past values in notes
         moveDict[moveName] = {
           "id": moveID,
+          # Treat Curse in Gens 2-4 as Ghost-type move, not ???-type.
           "type": [[row["Type"], 8]],
           "category": [[row["Category"], 8]],
           "pp": [[row["PP"], 8]],
@@ -281,6 +282,9 @@ def makeInitialMoveDict(fname):
   moveDict["double_iron_bash"]["accuracy"] = [[100, 7]]
   moveDict["double_iron_bash"]["category"] = [['physical', 7]]
   moveDict["double_iron_bash"]["lgpe_exclusive_values"] = {}
+
+  # force curse to always have ghost type
+  moveDict["curse"]["type"] = [['ghost', 2]]
 
   # Add Z-Move flags
   with open(getCSVDataPath() + '/moves/movesZList.csv', encoding='utf-8') as zMoveCSV:
@@ -727,12 +731,12 @@ def addRequirementData(fname, moveDict):
     #     gen7MoveTypes[moveName] = gen7MoveType[0][0]
 
     for row in reader:
-      zMoveName, requirement1, requirement2 = row["Move Name"], [row["Requirement 1 Class"], row["Requirement 1 Name"]], [row["Requirement 2 Class"], row["Requirement 2 Name"]]
+      moveName, requirement1, requirement2 = row["Move Name"], [row["Requirement 1 Class"], row["Requirement 1 Name"]], [row["Requirement 2 Class"], row["Requirement 2 Name"]]
 
-      moveGen = moveDict[zMoveName]["gen"]
+      moveGen = moveDict[moveName]["gen"]
       
-      if 'requirements' not in moveDict[zMoveName].keys():
-        moveDict[zMoveName]["requirements"] = {}
+      if 'requirements' not in moveDict[moveName].keys():
+        moveDict[moveName]["requirements"] = {}
 
       for requirement in [requirement1, requirement2]:
         reqClass, reqName = requirement
@@ -741,9 +745,9 @@ def addRequirementData(fname, moveDict):
         if reqClass == '':
           continue
 
-        if reqClass not in moveDict[zMoveName]["requirements"].keys():
-          moveDict[zMoveName]["requirements"][reqClass] = []
-        moveDict[zMoveName]["requirements"][reqClass].append([reqName, moveGen])
+        if reqClass not in moveDict[moveName]["requirements"].keys():
+          moveDict[moveName]["requirements"][reqClass] = {}
+        moveDict[moveName]["requirements"][reqClass][reqName] = [[True, moveGen]]
         
         # # g-max moves and certain z-moves
         # if reqClass == 'pokemon':
@@ -760,22 +764,30 @@ def addRequirementData(fname, moveDict):
         #   moveDict[moveName]["requirements"]["move"] = reqName
   
   # add item requirement data for status and generic Z-moves.
-  for zMoveName in [moveName for moveName in moveDict.keys() if 'z_' in moveName]:
-    zMoveType = moveDict[zMoveName]["type"][0][0]
+  for moveName in [moveName for moveName in moveDict.keys() if 'z_' in moveName]:
+    moveType = moveDict[moveName]["type"][0][0]
 
-    if not mapZCrystalToType(zMoveType):
-      print(zMoveName, zMoveType, 'has no Z-Crystal!')
+    if 'item' not in moveDict[moveName]["requirements"].keys():
+      moveDict[moveName]["requirements"]["item"] = {}
+
+    if not mapZCrystalToType(moveType):
+      print(moveName, moveType, 'has no Z-Crystal!')
     else: 
-      crystalName = mapZCrystalToType(zMoveType)
-      moveDict[zMoveName]["requirements"]["item"] = [[crystalName, 7]]
+      crystalName = mapZCrystalToType(moveType)
+      moveDict[moveName]["requirements"]["item"][crystalName] = [[True, 7]]
 
 
   with open(getCSVDataPath() + '/moves/movesZList.csv', encoding='utf-8') as zMoveListCSV:
     reader = csv.DictReader(zMoveListCSV)
 
+
     for row in reader:
-      zMoveName, crystalName = row["Z-Move Name"], row["Z-Crystal Name"]
-      moveDict[zMoveName]["requirements"]["item"] = [[crystalName, 7]]
+      moveName, crystalName = row["Z-Move Name"], row["Z-Crystal Name"]
+
+      if 'item' not in moveDict[moveName]["requirements"].keys():
+        moveDict[moveName]["requirements"]["item"] = {}
+        
+      moveDict[moveName]["requirements"]["item"][crystalName] = [[True, 7]]
 
   return
 
@@ -784,10 +796,10 @@ def mapZCrystalToType(typeName):
     return typeName + 'inium_z'
   elif typeName in ['dragon', 'ghost', 'grass', 'ground', 'normal', 'poison', 'rock', 'steel', 'water']:
     return typeName + 'ium_z'
-  elif typeName in ['electric', 'fairy', 'fighting', 'fire', 'ice', 'flying']:
+  elif typeName in ['fairy', 'fighting', 'fire', 'ice', 'flying']:
     return typeName[:-1] + 'ium_z'
-  elif typeName == 'psychic':
-    return 'psychium_z'
+  elif typeName in ['psychic', 'electric']:
+    return typeName[:-1] + 'um_z'
   else:
     print(f'{typeName} not handled!')
     return False

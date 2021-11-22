@@ -181,6 +181,10 @@ def makePokemonTypeCSV(fname):
 
     # add pikachu in a cap
     for suffix in ['_original', '_kalos', '_alola', '_hoenn', '_sinnoh', '_unova', '_partner', '_world']:
+      # To prevent an algorithm in json_creators/pokemon.py from failing, we use 'pikachu_with_partner_cap' for the moment rather than 'pikachu_partner_cap'.
+      if suffix == '_partner':
+        suffix = '_with_partner'
+
       writer.writerow([7, 25, 'pikachu', 'pikachu' + suffix + '_cap', 'electric', ''])
 
     # writer.writerow([7, 25, 'pikachu', 'pikachu_in_a_cap', 'electric', ''])

@@ -146,7 +146,8 @@ const insertBasicEntities = async () => {
           console.log(`${tableName} data inserted: ${results.affectedRows} rows.`);
         })
         .catch(console.log);
-      });
+      })
+      .catch(console.log);;
     });
   }
 
@@ -344,7 +345,8 @@ const insertGenDependentEntities = async () => {
           console.log(`${tableName} data inserted: ${results.affectedRows} rows.`);
         })
         .catch(console.log);
-      });
+      })
+      .catch(console.log);
     });
   }
 }
@@ -587,7 +589,8 @@ const insertAbilityJunctionData = async () => {
           console.log(`${tableName} data inserted: ${results.affectedRows} rows.`);
         })
         .catch(console.log);
-      });
+      })
+      .catch(console.log);
     }
   })
   .catch(console.log);
@@ -889,7 +892,6 @@ const insertMoveJunctionData = async () => {
     ];
     for (let tableName of moveJunctionTables) {
       // Delete the tables.
-      console.log(tableName);
       db.promise().query(tableStatements.moveJunctionTables[tableName].delete)
       .then( ([results, fields]) => {
   
@@ -976,16 +978,16 @@ const insertMoveJunctionData = async () => {
 
               // Check whether requirementData exists AND has the relevant entity, dictKey. If not, return.
               if (!requirementData || !requirementData[dictKey]) return acc;
-              console.log(requirementData);
               
               return acc.concat(
                 requirementData[dictKey].map(entityName => {
                   // All the possible entity classes come alphabetically before 'generation_id', so the order [gen, entityName] is correct.
+                  if (entity_FKM.get(makeMapKey([gen, entityName])) == undefined) {
+                    console.log(requirementData, entityName);
+                  }
                   const { [entity_id]: entityID } = entity_FKM.get(makeMapKey([gen, entityName]));
 
-                  return multiplier != 1 
-                    ? [gen, moveID, gen, entityID]
-                    : [];
+                  return [gen, moveID, gen, entityID]
                 })
               )
             }, [])
@@ -1156,7 +1158,8 @@ const insertMoveJunctionData = async () => {
           console.log(`${tableName} data inserted: ${results.affectedRows} rows.`);
         })
         .catch(console.log);
-      });
+      })
+      .catch(console.log);;
     }
   })
   .catch(console.log);
