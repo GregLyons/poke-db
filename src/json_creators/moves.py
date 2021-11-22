@@ -112,8 +112,9 @@ def makeInitialMoveDict(fname):
 
         isMax = moveName[:3] == "max"
         isGMax = moveName[:5] == "g_max"
-        # the extra checks are for the attacking Z_moves, e.g. 'Breakneck Blitz'
-        isZMove = moveName[:2] == "z_" or (row["PP"] == '1' and row["Accuracy"] == '' and genSymbolToNumber(row["Gen"]) == 7)
+
+        # For status Z-moves; will correct Z-move flags for, e.g. breakneck_blitz, at end of function.
+        isZMove = 'z_' in moveName
 
         # Many values are lists since they can potentially change across generations--Bulbapedia lists the latest values for each field, with the past values in notes
         moveDict[moveName] = {
@@ -280,6 +281,15 @@ def makeInitialMoveDict(fname):
   moveDict["double_iron_bash"]["accuracy"] = [[100, 7]]
   moveDict["double_iron_bash"]["category"] = [['physical', 7]]
   moveDict["double_iron_bash"]["lgpe_exclusive_values"] = {}
+
+  # Add Z-Move flags
+  with open(getCSVDataPath() + '/moves/movesZList.csv', encoding='utf-8') as zMoveCSV:
+    reader = csv.DictReader(zMoveCSV)
+
+    for row in reader:
+      moveName = row["Z-Move Name"]
+      moveDict[moveName]["z_move"] = True
+
 
   return moveDict
 
@@ -717,12 +727,12 @@ def addRequirementData(fname, moveDict):
     #     gen7MoveTypes[moveName] = gen7MoveType[0][0]
 
     for row in reader:
-      moveName, requirement1, requirement2 = row["Move Name"], [row["Requirement 1 Class"], row["Requirement 1 Name"]], [row["Requirement 2 Class"], row["Requirement 2 Name"]]
+      zMoveName, requirement1, requirement2 = row["Move Name"], [row["Requirement 1 Class"], row["Requirement 1 Name"]], [row["Requirement 2 Class"], row["Requirement 2 Name"]]
 
-      moveGen = moveDict[moveName]["gen"]
+      moveGen = moveDict[zMoveName]["gen"]
       
-      if 'requirements' not in moveDict[moveName].keys():
-        moveDict[moveName]["requirements"] = {}
+      if 'requirements' not in moveDict[zMoveName].keys():
+        moveDict[zMoveName]["requirements"] = {}
 
       for requirement in [requirement1, requirement2]:
         reqClass, reqName = requirement
@@ -731,9 +741,9 @@ def addRequirementData(fname, moveDict):
         if reqClass == '':
           continue
 
-        if reqClass not in moveDict[moveName]["requirements"].keys():
-          moveDict[moveName]["requirements"][reqClass] = []
-        moveDict[moveName]["requirements"][reqClass].append([reqName, moveGen])
+        if reqClass not in moveDict[zMoveName]["requirements"].keys():
+          moveDict[zMoveName]["requirements"][reqClass] = []
+        moveDict[zMoveName]["requirements"][reqClass].append([reqName, moveGen])
         
         # # g-max moves and certain z-moves
         # if reqClass == 'pokemon':
@@ -748,7 +758,39 @@ def addRequirementData(fname, moveDict):
         #   moveDict[moveName]["requirements"]["category"] = reqName
         # elif reqClass == 'move':
         #   moveDict[moveName]["requirements"]["move"] = reqName
+  
+  # add item requirement data for status and generic Z-moves.
+  for zMoveName in [moveName for moveName in moveDict.keys() if 'z_' in moveName]:
+    zMoveType = moveDict[zMoveName]["type"][0][0]
+
+    if not mapZCrystalToType(zMoveType):
+      print(zMoveName, zMoveType, 'has no Z-Crystal!')
+    else: 
+      crystalName = mapZCrystalToType(zMoveType)
+      moveDict[zMoveName]["requirements"]["item"] = [[crystalName, 7]]
+
+
+  with open(getCSVDataPath() + '/moves/movesZList.csv', encoding='utf-8') as zMoveListCSV:
+    reader = csv.DictReader(zMoveListCSV)
+
+    for row in reader:
+      zMoveName, crystalName = row["Z-Move Name"], row["Z-Crystal Name"]
+      moveDict[zMoveName]["requirements"]["item"] = [[crystalName, 7]]
+
   return
+
+def mapZCrystalToType(typeName):
+  if typeName in ['bug', 'dark']:
+    return typeName + 'inium_z'
+  elif typeName in ['dragon', 'ghost', 'grass', 'ground', 'normal', 'poison', 'rock', 'steel', 'water']:
+    return typeName + 'ium_z'
+  elif typeName in ['electric', 'fairy', 'fighting', 'fire', 'ice', 'flying']:
+    return typeName[:-1] + 'ium_z'
+  elif typeName == 'psychic':
+    return 'psychium_z'
+  else:
+    print(f'{typeName} not handled!')
+    return False
 
 # add data for power that a base move gives to the corresponding z-move, max move, or g-max move
 def addZPowerMaxPowerData(maxPower_fname, zPower_fname, moveDict):

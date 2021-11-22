@@ -1005,14 +1005,19 @@ const insertMoveJunctionData = async () => {
               // Get entity data from curr.
               const { gen: gen, name: moveName, usage_method: usageMethodData } = curr;
               const { pmove_id: moveID } = move_FKM.get(makeMapKey([gen, moveName]));
+
+              // Move has no usage method.
+              if (!usageMethodData) { return acc; }
               
               return acc.concat(
                 Object.keys(usageMethodData).map(usageMethodName => {
                   // We always compare entities of the same generation.
                   const { usage_method_id: usageMethodID } = usageMethod_FKM.get(makeMapKey([usageMethodName]));
-                  const multiplier = usageMethodData[usageMethodName];
+                  
+                  // A move may lose a usage method. 
+                  const present = usageMethodData[usageMethodName];
 
-                  return multiplier != 1 
+                  return present
                   ? [gen, moveID, usageMethodID]
                   : [];
                 })
