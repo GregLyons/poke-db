@@ -1,5 +1,4 @@
--- for Natural Gift
-CREATE TABLE IF NOT EXISTS item_ptype (
+CREATE TABLE IF NOT EXISTS natural_gift (
   item_generation_id TINYINT UNSIGNED NOT NULL,
   item_id SMALLINT UNSIGNED NOT NULL,
   ptype_generation_id TINYINT UNSIGNED NOT NULL,

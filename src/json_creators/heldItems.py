@@ -126,13 +126,13 @@ def addBerryData(fpath, itemDict):
         continue
 
       if gen4Power != '':
-        itemDict[berryName]["nature_power"] = [[type, int(gen4Power), gen]]
+        itemDict[berryName]["natural_gift"] = [[type, int(gen4Power), gen]]
         # power changed between gens 4 and 6
         if gen6Power != gen4Power:
-          itemDict[berryName]["nature_power"].append([type, int(gen6Power), 6])
+          itemDict[berryName]["natural_gift"].append([type, int(gen6Power), 6])
       # berry was introduced in gen 6
       else:
-        itemDict[berryName]["nature_power"] = [[type, int(gen6Power), gen]]
+        itemDict[berryName]["natural_gift"] = [[type, int(gen6Power), gen]]
 
   # stat modification data
   with open(fpath + 'berriesModifyStat.csv', 'r', encoding='utf-8') as statModCSV:
@@ -149,7 +149,7 @@ def addBerryData(fpath, itemDict):
 
     # exceptions
     # micle berry
-    itemDict["micle_berry"]["stat_modifications"]["accuracy"] = [[None, 'user', 4], [1.2, 'user', 5]]
+    itemDict["micle_berry"]["stat_modifications"]["accuracy"] = [['+0', 'user', 4], [1.2, 'user', 5]]
 
     # starf berry
     for stat in statList():
@@ -326,6 +326,9 @@ def addOtherItemData(fpath, itemDict):
       if stat2 == '':
         stat2 = stat1
 
+      if '+' not in modifier and '-' not in modifier:
+        modifier = float(modifier)
+
       if stat1 not in statList():
         print(itemName, 'Stat 1', stat1)
         continue
@@ -335,6 +338,13 @@ def addOtherItemData(fpath, itemDict):
       
       # already handled above
       if itemName == 'soul_dew':
+        continue
+
+      if itemName == 'metal_powder':
+        itemDict[itemName]["stat_modifications"]["defense"] = [[1.5, 'user', 2], [2.0, 'user', 3]]
+        itemDict[itemName]["stat_modifications"]["special_defense"] = [[1.5, 'user', 2], [1.0, 'user', 3]]
+
+        handledItems.add('metal_powder')
         continue
 
       itemDict[itemName]["pokemon_specific"].append(pokemonName)
@@ -565,7 +575,7 @@ def addOtherItemData(fpath, itemDict):
   # keep track of items to be handled
   for key in itemDict.keys():
     if key not in handledItems and itemDict[key]["item_type"] != 'berry':
-      print(key)
+      print(key, 'not handled!')
   return
 
 def addFormattedName(itemDict):

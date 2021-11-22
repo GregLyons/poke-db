@@ -578,10 +578,7 @@ def addStatModToMoveDict(fname, moveDict):
       moveName, gen, stat, modifier, sign, recipient, probability = row
 
       # for belly drum--it always sets attack stage to +6, even if it's negative beforehand
-      gen, modifier, probability = int(gen), int(modifier), float(probability)
-
-      if sign == '-':
-        modifier = -modifier
+      gen, modifier, probability = int(gen), sign + modifier, float(probability)
 
       # if stat not in moveDict[1]["stat_modifications"]:
       #   for key in moveDict:
@@ -601,50 +598,50 @@ def addStatModToMoveDict(fname, moveDict):
   # note that since we leave these out of the original .csv, the z-move counterparts aren't added either since the addZMoves method in the .csv creator file goes based on moves already present in the .csv
   #region
   # acid
-  moveDict["acid"]["stat_modifications"]["defense"] = [[-1, 'target', 33.2, 1], [-1, 'target', 10.0, 2], [0, 'target', 0.0, 4]]
-  moveDict["acid"]["stat_modifications"]["special_defense"] = [[0, 'target', 0.0, 1], [-1, 'target', 10.0, 4]]
+  moveDict["acid"]["stat_modifications"]["defense"] = [['-1', 'target', 33.2, 1], ['-1', 'target', 10.0, 2], ['0', 'target', 0.0, 4]]
+  moveDict["acid"]["stat_modifications"]["special_defense"] = [['0', 'target', 0.0, 1], ['-1', 'target', 10.0, 4]]
 
   # aurora beam
-  moveDict["aurora_beam"]["attack"] = [[-1, 'target', 33.2, 1], [-1, 'target', 10.0, 2]]
+  moveDict["aurora_beam"]["attack"] = [['-1', 'target', 33.2, 1], ['-1', 'target', 10.0, 2]]
 
   # bubble
-  moveDict["bubble"]["speed"] = [[-1, 'target', 33.2, 1], [-1, 'target', 10.0, 2]]
+  moveDict["bubble"]["speed"] = [['-1', 'target', 33.2, 1], ['-1', 'target', 10.0, 2]]
   
   # bubble beam
-  moveDict["bubble_beam"]["speed"] = [[-1, 'target', 33.2, 1], [-1, 'target', 10.0, 2]]
+  moveDict["bubble_beam"]["speed"] = [['-1', 'target', 33.2, 1], ['-1', 'target', 10.0, 2]]
 
   # constrict
-  moveDict["constrict"]["speed"] = [[-1, 'target', 33.2, 1], [-1, 'target', 10.0, 2]]
+  moveDict["constrict"]["speed"] = [['-1', 'target', 33.2, 1], ['-1', 'target', 10.0, 2]]
 
   # psychic
-  moveDict["psychic"]["special_attack"] = [[-1, 'target', 33.2, 1], [0, 'target', 0.0, 2]]
-  moveDict["psychic"]["special_defense"] = [[-1, 'target', 33.2, 1], [-1, 'target', 10.0, 2]]
+  moveDict["psychic"]["special_attack"] = [['-1', 'target', 33.2, 1], ['+0', 'target', 0.0, 2]]
+  moveDict["psychic"]["special_defense"] = [['-1', 'target', 33.2, 1], ['-1', 'target', 10.0, 2]]
 
   # amnesia
-  moveDict["amnesia"]["special_attack"] = [[2, 'user', 100.0, 1], [0, 'user', 0.0, 2]]
-  moveDict["amnesia"]["special_defense"] = [[2, 'user', 100.0, 1], [2, 'user', 100.0, 2]]
-  moveDict["z_amnesia"]["special_defense"] = [[7, 'user', 100.0, 1], [2, 'user', 100.0, 2]]
+  moveDict["amnesia"]["special_attack"] = [['+2', 'user', 100.0, 1], ['+0', 'user', 0.0, 2]]
+  moveDict["amnesia"]["special_defense"] = [['+2', 'user', 100.0, 1], ['+2', 'user', 100.0, 2]]
+  moveDict["z_amnesia"]["special_defense"] = [['+7', 'user', 100.0, 1], ['+2', 'user', 100.0, 2]]
 
   # crunch
-  moveDict["crunch"]["stat_modifications"]["defense"] = [[-1, 'target', 20.0, 2], [0, 'target', 0.0, 4]]
-  moveDict["crunch"]["stat_modifications"]["special_defense"] = [[0, 'target', 0.0, 2], [-1, 'target', 20.0, 4]]
+  moveDict["crunch"]["stat_modifications"]["defense"] = [['-1', 'target', 20.0, 2], ['+0', 'target', 0.0, 4]]
+  moveDict["crunch"]["stat_modifications"]["special_defense"] = [['+0', 'target', 0.0, 2], ['-1', 'target', 20.0, 4]]
 
   # diamond_storm
-  moveDict["diamond_storm"]["stat_modifications"]["defense"] = [[1, 'user', 50.0, 6], [2, 'user', 50.0, 7]]
+  moveDict["diamond_storm"]["stat_modifications"]["defense"] = [['+1', 'user', 50.0, 6], ['+2', 'user', 50.0, 7]]
 
   # fell_stinger
-  moveDict["fell_stinger"]["stat_modifications"]["attack"] = [[2, 'user', 100.0, 6], [3, 'user', 100.0, 7]]
+  moveDict["fell_stinger"]["stat_modifications"]["attack"] = [['+2', 'user', 100.0, 6], ['+3', 'user', 100.0, 7]]
 
   # focus_energy
-  moveDict["focus_energy"]["stat_modifications"]["critical_hit_ratio"] = [[1, 'user', 100.0, 2], [2, 'user', 100.0, 3]]
-  moveDict["z_focus_energy"]["stat_modifications"]["critical_hit_ratio"] = [[7, 'user', 100.0, 7]]
-  moveDict["z_focus_energy"]["stat_modifications"]["accuracy"] = [[1, 'user', 100.0, 7]]
+  moveDict["focus_energy"]["stat_modifications"]["critical_hit_ratio"] = [['+1', 'user', 100.0, 2], ['+2', 'user', 100.0, 3]]
+  moveDict["z_focus_energy"]["stat_modifications"]["critical_hit_ratio"] = [['+7', 'user', 100.0, 7]]
+  moveDict["z_focus_energy"]["stat_modifications"]["accuracy"] = [['+1', 'user', 100.0, 7]]
 
   # growth
-  moveDict["growth"]["stat_modifications"]["special_attack"] = [[1, 'user', 100.0, 1]]
-  moveDict["growth"]["stat_modifications"]["attack"] = [[2, 'user', 100.0, 1]]
-  moveDict["growth"]["stat_modifications"]["special_defense"] = [[1, 'user', 100.0, 1], [0, 'user', 0.0, 2]]
-  moveDict["z_growth"]["stat_modifications"]["special_attack"] = [[2, 'user', 100.0, 1]]
+  moveDict["growth"]["stat_modifications"]["special_attack"] = [['+1', 'user', 100.0, 1]]
+  moveDict["growth"]["stat_modifications"]["attack"] = [['+2', 'user', 100.0, 1]]
+  moveDict["growth"]["stat_modifications"]["special_defense"] = [['+1', 'user', 100.0, 1], ["+0", 'user', 0.0, 2]]
+  moveDict["z_growth"]["stat_modifications"]["special_attack"] = [['+2', 'user', 100.0, 1]]
   #endregion
 
   return

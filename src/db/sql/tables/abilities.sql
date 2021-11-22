@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS ability_modifies_stat (
   stage TINYINT NOT NULL, /* 0 for abilities which modify stat but not the stage */
   multiplier DECIMAL(3,2) UNSIGNED NOT NULL, /* 0.0 for abilities which modify stat but not via a multiplier */
   chance DECIMAL(5,2) UNSIGNED NOT NULL,
-  recipient ENUM('target', 'user'),
+  recipient ENUM('target', 'user', 'all_foes'),
 
   PRIMARY KEY (ability_generation_id, ability_id, stat_id),
   FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id)

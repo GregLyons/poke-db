@@ -1,4 +1,4 @@
-INSERT INTO item_ptype (
+INSERT INTO natural_gift (
   item_generation_id,
   item_id,
   ptype_generation_id,

@@ -190,20 +190,19 @@ def addEffectData(fpath, abilityDict):
   with open(fpath + 'abilitiesModifyStat.csv', 'r', encoding='utf-8') as resistMoveClassCSV:
     reader = csv.DictReader(resistMoveClassCSV)
     for row in reader:
-      abilityName, stat, modifier, recipient = row["Ability Name"], row["Stat Name"], row["Modifier"].strip('+'), row["Recipient"]
+      abilityName, stat, modifier, recipient = row["Ability Name"], row["Stat Name"], row["Modifier"], row["Recipient"]
       abilityGen = abilityDict[abilityName]["gen"]
 
+      # Indicates multiplier.
       if '.' in modifier:
         modifier = float(modifier)
-      else:
-        modifier = int(modifier)
 
       if stat not in statList():
         print(abilityName, stat)
         continue
       # only gained stat-modifying properties in Gen 5
       elif abilityName in ['lightning_rod', 'storm_drain']:
-        abilityDict[abilityName]["stat_modifications"][stat] = [[0, recipient, 100.0, abilityGen], [1, recipient, 100.0, 5]]
+        abilityDict[abilityName]["stat_modifications"][stat] = [['+0', recipient, 100.0, abilityGen], ['+1', recipient, 100.0, 5]]
         continue
 
 
@@ -211,12 +210,12 @@ def addEffectData(fpath, abilityDict):
 
   # Force Moody
   for statName in ['attack', 'defense', 'special_attack', 'special_defense', 'speed', 'evasion', 'accuracy']:
-    abilityDict["moody"]["stat_modifications"][statName] = [[2, 'user', 14.28, 5]]
+    abilityDict["moody"]["stat_modifications"][statName] = [['+2', 'user', 14.28, 5]]
 
     if statName not in ['evasion', 'accuracy']:
-      abilityDict["moody"]["stat_modifications"][statName].append([[2, 'user', 20.00, 8]])
+      abilityDict["moody"]["stat_modifications"][statName].append([['+2', 'user', 20.00, 8]])
     else:
-      abilityDict["moody"]["stat_modifications"][statName].append([[2, 'user', 0.00, 8]])
+      abilityDict["moody"]["stat_modifications"][statName].append([['+2', 'user', 0.00, 8]])
   return
 
 def addFormattedName(abilityDict):

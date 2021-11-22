@@ -106,7 +106,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "special_defense": [["1.5", "user", 6]]
+      "special_defense": [[1.5,
+          "user", 6]]
     },
     "formatted_name": "Assault Vest"
   },
@@ -447,7 +448,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "attack": [["1.5", "user", 3]]
+      "attack": [[1.5,
+          "user", 3]]
     },
     "formatted_name": "Choice Band"
   },
@@ -467,7 +469,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "speed": [["1.5", "user", 4]]
+      "speed": [[1.5,
+          "user", 4]]
     },
     "formatted_name": "Choice Scarf"
   },
@@ -487,7 +490,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "special_attack": [["1.5", "user", 4]]
+      "special_attack": [[1.5,
+          "user", 4]]
     },
     "formatted_name": "Choice Specs"
   },
@@ -628,8 +632,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "defense": [["2.0", "user", 3]],
-      "special_defense": [["2.0", "user", 3]]
+      "defense": [[2.0,
+          "user", 3]],
+      "special_defense": [[2.0,
+          "user", 3]]
     },
     "formatted_name": "Deep Sea Scale"
   },
@@ -649,8 +655,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "attack": [["2.0", "user", 3]],
-      "special_attack": [["2.0", "user", 3]]
+      "attack": [[2.0,
+          "user", 3]],
+      "special_attack": [[2.0,
+          "user", 3]]
     },
     "formatted_name": "Deep Sea Tooth"
   },
@@ -1013,8 +1021,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "attack": [["1.5", "user", 5]],
-      "special_attack": [["1.5", "user", 5]]
+      "attack": [[1.5,
+          "user", 5]],
+      "special_attack": [[1.5,
+          "user", 5]]
     },
     "formatted_name": "Eviolite"
   },
@@ -2032,8 +2042,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "attack": [["2.0", "user", 2]],
-      "special_attack": [["2.0", "user", 2]]
+      "attack": [[2.0,
+          "user", 2]],
+      "special_attack": [[2.0,
+          "user", 2]]
     },
     "formatted_name": "Light Ball"
   },
@@ -2334,9 +2346,7 @@
   },
   "metal_powder": {
     "item_type": "stat_enhancer_specific",
-    "pokemon_specific": [
-      "ditto"
-    ],
+    "pokemon_specific": [],
     "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2348,7 +2358,12 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "defense": [["2.0", "user", 2]]
+      "defense": [[1.5,
+          "user", 2], [2.0,
+          "user", 3]],
+      "special_defense": [[1.5,
+          "user", 2], [1.0,
+          "user", 3]]
     },
     "formatted_name": "Metal Powder"
   },
@@ -3061,7 +3076,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "speed": [["2.0", "user", 4]]
+      "speed": [[2.0,
+          "user", 4]]
     },
     "formatted_name": "Quick Powder"
   },
@@ -3941,7 +3957,8 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "attack": [["2.0", "user", 2]]
+      "attack": [[2.0,
+          "user", 2]]
     },
     "formatted_name": "Thick Club"
   },
@@ -4272,7 +4289,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["dragon", 60, 3], ["dragon", 80, 6]],
+    "natural_gift": [["dragon", 60, 3], ["dragon", 80, 6]],
     "formatted_name": "Aguav Berry"
   },
   "apicot_berry": {
@@ -4291,7 +4308,7 @@
     "stat_modifications": {
       "special_defense": [["+1", "user", 3]]
     },
-    "nature_power": [["ground", 80, 3], ["ground", 100, 6]],
+    "natural_gift": [["ground", 80, 3], ["ground", 100, 6]],
     "formatted_name": "Apicot Berry"
   },
   "aspear_berry": {
@@ -4310,7 +4327,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["ice", 60, 3], ["ice", 80, 6]],
+    "natural_gift": [["ice", 60, 3], ["ice", 80, 6]],
     "formatted_name": "Aspear Berry"
   },
   "babiri_berry": {
@@ -4329,7 +4346,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["steel", 60, 4], ["steel", 80, 6]],
+    "natural_gift": [["steel", 60, 4], ["steel", 80, 6]],
     "formatted_name": "Babiri Berry"
   },
   "belue_berry": {
@@ -4346,7 +4363,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["electric", 80, 3], ["electric", 100, 6]],
+    "natural_gift": [["electric", 80, 3], ["electric", 100, 6]],
     "formatted_name": "Belue Berry"
   },
   "bluk_berry": {
@@ -4363,7 +4380,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["fire", 70, 3], ["fire", 90, 6]],
+    "natural_gift": [["fire", 70, 3], ["fire", 90, 6]],
     "formatted_name": "Bluk Berry"
   },
   "charti_berry": {
@@ -4382,7 +4399,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["rock", 60, 4], ["rock", 80, 6]],
+    "natural_gift": [["rock", 60, 4], ["rock", 80, 6]],
     "formatted_name": "Charti Berry"
   },
   "cheri_berry": {
@@ -4401,7 +4418,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["fire", 60, 3], ["fire", 80, 6]],
+    "natural_gift": [["fire", 60, 3], ["fire", 80, 6]],
     "formatted_name": "Cheri Berry"
   },
   "chesto_berry": {
@@ -4420,7 +4437,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["water", 60, 3], ["water", 80, 6]],
+    "natural_gift": [["water", 60, 3], ["water", 80, 6]],
     "formatted_name": "Chesto Berry"
   },
   "chilan_berry": {
@@ -4439,7 +4456,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["normal", 60, 4], ["normal", 80, 6]],
+    "natural_gift": [["normal", 60, 4], ["normal", 80, 6]],
     "formatted_name": "Chilan Berry"
   },
   "chople_berry": {
@@ -4458,7 +4475,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["fighting", 60, 4], ["fighting", 80, 6]],
+    "natural_gift": [["fighting", 60, 4], ["fighting", 80, 6]],
     "formatted_name": "Chople Berry"
   },
   "coba_berry": {
@@ -4477,7 +4494,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["flying", 60, 4], ["flying", 80, 6]],
+    "natural_gift": [["flying", 60, 4], ["flying", 80, 6]],
     "formatted_name": "Coba Berry"
   },
   "colbur_berry": {
@@ -4496,7 +4513,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["dark", 60, 4], ["dark", 80, 6]],
+    "natural_gift": [["dark", 60, 4], ["dark", 80, 6]],
     "formatted_name": "Colbur Berry"
   },
   "cornn_berry": {
@@ -4513,7 +4530,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["bug", 70, 3], ["bug", 90, 6]],
+    "natural_gift": [["bug", 70, 3], ["bug", 90, 6]],
     "formatted_name": "Cornn Berry"
   },
   "custap_berry": {
@@ -4532,7 +4549,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["ghost", 80, 4], ["ghost", 100, 6]],
+    "natural_gift": [["ghost", 80, 4], ["ghost", 100, 6]],
     "formatted_name": "Custap Berry"
   },
   "durin_berry": {
@@ -4549,7 +4566,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["water", 80, 3], ["water", 100, 6]],
+    "natural_gift": [["water", 80, 3], ["water", 100, 6]],
     "formatted_name": "Durin Berry"
   },
   "enigma_berry": {
@@ -4566,7 +4583,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["bug", 80, 3], ["bug", 100, 6]],
+    "natural_gift": [["bug", 80, 3], ["bug", 100, 6]],
     "formatted_name": "Enigma Berry"
   },
   "figy_berry": {
@@ -4585,7 +4602,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["bug", 60, 3], ["bug", 80, 6]],
+    "natural_gift": [["bug", 60, 3], ["bug", 80, 6]],
     "formatted_name": "Figy Berry"
   },
   "ganlon_berry": {
@@ -4604,7 +4621,7 @@
     "stat_modifications": {
       "defense": [["+1", "user", 3]]
     },
-    "nature_power": [["ice", 80, 3], ["ice", 100, 6]],
+    "natural_gift": [["ice", 80, 3], ["ice", 100, 6]],
     "formatted_name": "Ganlon Berry"
   },
   "grepa_berry": {
@@ -4621,7 +4638,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["flying", 70, 3], ["flying", 90, 6]],
+    "natural_gift": [["flying", 70, 3], ["flying", 90, 6]],
     "formatted_name": "Grepa Berry"
   },
   "haban_berry": {
@@ -4640,7 +4657,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["dragon", 60, 4], ["dragon", 80, 6]],
+    "natural_gift": [["dragon", 60, 4], ["dragon", 80, 6]],
     "formatted_name": "Haban Berry"
   },
   "hondew_berry": {
@@ -4657,7 +4674,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["ground", 70, 3], ["ground", 90, 6]],
+    "natural_gift": [["ground", 70, 3], ["ground", 90, 6]],
     "formatted_name": "Hondew Berry"
   },
   "iapapa_berry": {
@@ -4676,7 +4693,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["dark", 60, 3], ["dark", 80, 6]],
+    "natural_gift": [["dark", 60, 3], ["dark", 80, 6]],
     "formatted_name": "Iapapa Berry"
   },
   "jaboca_berry": {
@@ -4693,7 +4710,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["dragon", 80, 4], ["dragon", 100, 6]],
+    "natural_gift": [["dragon", 80, 4], ["dragon", 100, 6]],
     "formatted_name": "Jaboca Berry"
   },
   "kasib_berry": {
@@ -4712,7 +4729,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["ghost", 60, 4], ["ghost", 80, 6]],
+    "natural_gift": [["ghost", 60, 4], ["ghost", 80, 6]],
     "formatted_name": "Kasib Berry"
   },
   "kebia_berry": {
@@ -4731,7 +4748,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["poison", 60, 4], ["poison", 80, 6]],
+    "natural_gift": [["poison", 60, 4], ["poison", 80, 6]],
     "formatted_name": "Kebia Berry"
   },
   "kee_berry": {
@@ -4750,7 +4767,7 @@
     "stat_modifications": {
       "defense": [["+1", "user", 6]]
     },
-    "nature_power": [["fairy", 100, 6]],
+    "natural_gift": [["fairy", 100, 6]],
     "formatted_name": "Kee Berry"
   },
   "kelpsy_berry": {
@@ -4767,7 +4784,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["fighting", 70, 3], ["fighting", 90, 6]],
+    "natural_gift": [["fighting", 70, 3], ["fighting", 90, 6]],
     "formatted_name": "Kelpsy Berry"
   },
   "lansat_berry": {
@@ -4786,7 +4803,7 @@
     "stat_modifications": {
       "critical_hit_ratio": [["+1", "user", 3]]
     },
-    "nature_power": [["flying", 80, 3], ["flying", 100, 6]],
+    "natural_gift": [["flying", 80, 3], ["flying", 100, 6]],
     "formatted_name": "Lansat Berry"
   },
   "leppa_berry": {
@@ -4803,7 +4820,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["fighting", 60, 3], ["fighting", 80, 6]],
+    "natural_gift": [["fighting", 60, 3], ["fighting", 80, 6]],
     "formatted_name": "Leppa Berry"
   },
   "liechi_berry": {
@@ -4822,7 +4839,7 @@
     "stat_modifications": {
       "attack": [["+1", "user", 3]]
     },
-    "nature_power": [["grass", 80, 3], ["grass", 100, 6]],
+    "natural_gift": [["grass", 80, 3], ["grass", 100, 6]],
     "formatted_name": "Liechi Berry"
   },
   "lum_berry": {
@@ -4847,7 +4864,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["flying", 60, 3], ["flying", 80, 6]],
+    "natural_gift": [["flying", 60, 3], ["flying", 80, 6]],
     "formatted_name": "Lum Berry"
   },
   "mago_berry": {
@@ -4866,7 +4883,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["ghost", 60, 3], ["ghost", 80, 6]],
+    "natural_gift": [["ghost", 60, 3], ["ghost", 80, 6]],
     "formatted_name": "Mago Berry"
   },
   "magost_berry": {
@@ -4883,7 +4900,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["rock", 70, 3], ["rock", 90, 6]],
+    "natural_gift": [["rock", 70, 3], ["rock", 90, 6]],
     "formatted_name": "Magost Berry"
   },
   "maranga_berry": {
@@ -4902,7 +4919,7 @@
     "stat_modifications": {
       "special_defense": [["+1", "user", 6]]
     },
-    "nature_power": [["dark", 100, 6]],
+    "natural_gift": [["dark", 100, 6]],
     "formatted_name": "Maranga Berry"
   },
   "micle_berry": {
@@ -4919,11 +4936,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "accuracy": [[null,
-          "user", 4], [1.2,
+      "accuracy": [["+0", "user", 4], [1.2,
           "user", 5]]
     },
-    "nature_power": [["rock", 80, 4], ["rock", 100, 6]],
+    "natural_gift": [["rock", 80, 4], ["rock", 100, 6]],
     "formatted_name": "Micle Berry"
   },
   "nanab_berry": {
@@ -4940,7 +4956,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["water", 70, 3], ["water", 90, 6]],
+    "natural_gift": [["water", 70, 3], ["water", 90, 6]],
     "formatted_name": "Nanab Berry"
   },
   "nomel_berry": {
@@ -4957,7 +4973,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["dragon", 70, 3], ["dragon", 90, 6]],
+    "natural_gift": [["dragon", 70, 3], ["dragon", 90, 6]],
     "formatted_name": "Nomel Berry"
   },
   "occa_berry": {
@@ -4976,7 +4992,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["fire", 60, 4], ["fire", 80, 6]],
+    "natural_gift": [["fire", 60, 4], ["fire", 80, 6]],
     "formatted_name": "Occa Berry"
   },
   "oran_berry": {
@@ -4993,7 +5009,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["poison", 60, 3], ["poison", 80, 6]],
+    "natural_gift": [["poison", 60, 3], ["poison", 80, 6]],
     "formatted_name": "Oran Berry"
   },
   "pamtre_berry": {
@@ -5010,7 +5026,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["steel", 70, 3], ["steel", 90, 6]],
+    "natural_gift": [["steel", 70, 3], ["steel", 90, 6]],
     "formatted_name": "Pamtre Berry"
   },
   "passho_berry": {
@@ -5029,7 +5045,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["water", 60, 4], ["water", 80, 6]],
+    "natural_gift": [["water", 60, 4], ["water", 80, 6]],
     "formatted_name": "Passho Berry"
   },
   "payapa_berry": {
@@ -5048,7 +5064,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["psychic", 60, 4], ["psychic", 80, 6]],
+    "natural_gift": [["psychic", 60, 4], ["psychic", 80, 6]],
     "formatted_name": "Payapa Berry"
   },
   "pecha_berry": {
@@ -5067,7 +5083,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["electric", 60, 3], ["electric", 80, 6]],
+    "natural_gift": [["electric", 60, 3], ["electric", 80, 6]],
     "formatted_name": "Pecha Berry"
   },
   "persim_berry": {
@@ -5086,7 +5102,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["ground", 60, 3], ["ground", 80, 6]],
+    "natural_gift": [["ground", 60, 3], ["ground", 80, 6]],
     "formatted_name": "Persim Berry"
   },
   "petaya_berry": {
@@ -5105,7 +5121,7 @@
     "stat_modifications": {
       "special_attack": [["+1", "user", 3]]
     },
-    "nature_power": [["poison", 80, 3], ["poison", 100, 6]],
+    "natural_gift": [["poison", 80, 3], ["poison", 100, 6]],
     "formatted_name": "Petaya Berry"
   },
   "pinap_berry": {
@@ -5122,7 +5138,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["grass", 70, 3], ["grass", 90, 6]],
+    "natural_gift": [["grass", 70, 3], ["grass", 90, 6]],
     "formatted_name": "Pinap Berry"
   },
   "pomeg_berry": {
@@ -5139,7 +5155,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["ice", 70, 3], ["ice", 90, 6]],
+    "natural_gift": [["ice", 70, 3], ["ice", 90, 6]],
     "formatted_name": "Pomeg Berry"
   },
   "qualot_berry": {
@@ -5156,7 +5172,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["poison", 70, 3], ["poison", 90, 6]],
+    "natural_gift": [["poison", 70, 3], ["poison", 90, 6]],
     "formatted_name": "Qualot Berry"
   },
   "rabuta_berry": {
@@ -5173,7 +5189,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["ghost", 70, 3], ["ghost", 90, 6]],
+    "natural_gift": [["ghost", 70, 3], ["ghost", 90, 6]],
     "formatted_name": "Rabuta Berry"
   },
   "rawst_berry": {
@@ -5192,7 +5208,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["grass", 60, 3], ["grass", 80, 6]],
+    "natural_gift": [["grass", 60, 3], ["grass", 80, 6]],
     "formatted_name": "Rawst Berry"
   },
   "razz_berry": {
@@ -5209,7 +5225,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["steel", 60, 3], ["steel", 80, 6]],
+    "natural_gift": [["steel", 60, 3], ["steel", 80, 6]],
     "formatted_name": "Razz Berry"
   },
   "rindo_berry": {
@@ -5228,7 +5244,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["grass", 60, 4], ["grass", 80, 6]],
+    "natural_gift": [["grass", 60, 4], ["grass", 80, 6]],
     "formatted_name": "Rindo Berry"
   },
   "roseli_berry": {
@@ -5247,7 +5263,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["fairy", 80, 6]],
+    "natural_gift": [["fairy", 80, 6]],
     "formatted_name": "Roseli Berry"
   },
   "rowap_berry": {
@@ -5264,7 +5280,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["dark", 80, 4], ["dark", 100, 6]],
+    "natural_gift": [["dark", 80, 4], ["dark", 100, 6]],
     "formatted_name": "Rowap Berry"
   },
   "salac_berry": {
@@ -5283,7 +5299,7 @@
     "stat_modifications": {
       "speed": [["+1", "user", 3]]
     },
-    "nature_power": [["fighting", 80, 3], ["fighting", 100, 6]],
+    "natural_gift": [["fighting", 80, 3], ["fighting", 100, 6]],
     "formatted_name": "Salac Berry"
   },
   "shuca_berry": {
@@ -5302,7 +5318,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["ground", 60, 4], ["ground", 80, 6]],
+    "natural_gift": [["ground", 60, 4], ["ground", 80, 6]],
     "formatted_name": "Shuca Berry"
   },
   "sitrus_berry": {
@@ -5319,7 +5335,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["psychic", 60, 3], ["psychic", 80, 6]],
+    "natural_gift": [["psychic", 60, 3], ["psychic", 80, 6]],
     "formatted_name": "Sitrus Berry"
   },
   "spelon_berry": {
@@ -5336,7 +5352,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["dark", 70, 3], ["dark", 90, 6]],
+    "natural_gift": [["dark", 70, 3], ["dark", 90, 6]],
     "formatted_name": "Spelon Berry"
   },
   "starf_berry": {
@@ -5362,7 +5378,7 @@
       "evasion": [["+2", "user", 3]],
       "critical_hit_ratio": [["+2", "user", 3]]
     },
-    "nature_power": [["psychic", 80, 3], ["psychic", 100, 6]],
+    "natural_gift": [["psychic", 80, 3], ["psychic", 100, 6]],
     "formatted_name": "Starf Berry"
   },
   "tamato_berry": {
@@ -5379,7 +5395,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["psychic", 70, 3], ["psychic", 90, 6]],
+    "natural_gift": [["psychic", 70, 3], ["psychic", 90, 6]],
     "formatted_name": "Tamato Berry"
   },
   "tanga_berry": {
@@ -5398,7 +5414,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["bug", 60, 4], ["bug", 80, 6]],
+    "natural_gift": [["bug", 60, 4], ["bug", 80, 6]],
     "formatted_name": "Tanga Berry"
   },
   "wacan_berry": {
@@ -5417,7 +5433,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["electric", 60, 4], ["electric", 80, 6]],
+    "natural_gift": [["electric", 60, 4], ["electric", 80, 6]],
     "formatted_name": "Wacan Berry"
   },
   "watmel_berry": {
@@ -5434,7 +5450,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["fire", 80, 3], ["fire", 100, 6]],
+    "natural_gift": [["fire", 80, 3], ["fire", 100, 6]],
     "formatted_name": "Watmel Berry"
   },
   "wepear_berry": {
@@ -5451,7 +5467,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["electric", 70, 3], ["electric", 90, 6]],
+    "natural_gift": [["electric", 70, 3], ["electric", 90, 6]],
     "formatted_name": "Wepear Berry"
   },
   "wiki_berry": {
@@ -5470,7 +5486,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["rock", 60, 3], ["rock", 80, 6]],
+    "natural_gift": [["rock", 60, 3], ["rock", 80, 6]],
     "formatted_name": "Wiki Berry"
   },
   "yache_berry": {
@@ -5489,7 +5505,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "nature_power": [["ice", 60, 4], ["ice", 80, 6]],
+    "natural_gift": [["ice", 60, 4], ["ice", 80, 6]],
     "formatted_name": "Yache Berry"
   },
   "berry": {
