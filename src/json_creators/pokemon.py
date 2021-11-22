@@ -76,7 +76,7 @@ def makeInitialPokemonDict(fname, changes_fname):
     for row in reader:
       pokemonName, previousType1, previousType2, genChange = row["Pokemon Name"], row["Old Type 1"], row["Old Type 2"], int(row["Gen"])
 
-      currentType1, currentType2, gen = pokemonDict[pokemonName]["type_1"], pokemonDict[pokemonName]["type_2"], pokemonDict[pokemonName]["gen"]
+      currentType1, currentType2, gen = pokemonDict[pokemonName]["type_1"][0][0], pokemonDict[pokemonName]["type_2"][0][0], pokemonDict[pokemonName]["gen"]
 
       pokemonDict[pokemonName]["type_1"] = [[previousType1, gen], [currentType1, genChange]]
       pokemonDict[pokemonName]["type_2"] = [[previousType2, gen], [currentType2, genChange]]
@@ -621,7 +621,8 @@ def addFormFlags(pokemonDict):
         # need to handle case-by-case
         else:
           handled = False
-          for baseFormSuffix in ['normal', 'plant', 'aria', 'baile', 'standard', 'origin', 'land', 'incarnate', 'shield', 'average', 'midday', 'solo', 'm', '10', 'overcast', 'west', 'red_striped', 'spring', 'ordinary', 'full_belly', 'amped', 'ice']:
+          # By putting 'ice' before 'normal', we ensure that the base forms for Arceus and Silvally are the Normal-type forms (note that they appear twice).
+          for baseFormSuffix in ['ice', 'normal', 'plant', 'aria', 'baile', 'standard', 'origin', 'land', 'incarnate', 'shield', 'average', 'midday', 'solo', 'm', '50', 'overcast', 'west', 'red_striped', 'spring', 'ordinary', 'full_belly', 'amped']:
             if speciesName + '_' + baseFormSuffix in pokemonDict.keys():
               handled = True
 
@@ -653,14 +654,8 @@ def addFormFlags(pokemonDict):
     if not isBaseForm:
       baseFormGen = pokemonDict[baseFormName]["gen"]
       formGen = pokemonDict[pokemonName]["gen"]
-      pokemonDict[pokemonName]["form_data"][baseFormName] = {
-        "form_type": 'base_form',
-        "form_gen": baseFormGen
-      }
-      pokemonDict[baseFormName]["form_data"][pokemonName] = {
-        "form_type": formType,
-        "form_gen": formGen
-      }
+      pokemonDict[pokemonName]["form_data"][baseFormName] = [['base_form', formGen]]
+      pokemonDict[baseFormName]["form_data"][pokemonName] = [[formType, formGen]]
 
     # add in dex number for pokemonName, which won't have a dex number yet
     pokemonDict[pokemonName]["dex_number"] = pokemonDict[baseFormName]["dex_number"]

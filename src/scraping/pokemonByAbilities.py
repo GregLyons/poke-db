@@ -153,7 +153,15 @@ def makeAbilityCSVandExtractNotes(fname):
             writer.writerow(csvRow[:2] + ['pikachu' + suffix + '_cap'] + csvRow[3:])
           continue
 
+        # Zygarde forms
+        if csvRow[2] == 'zygarde_10' or csvRow[2] == 'zygarde_complete':
+          csvRow[6] = 7
+
         writer.writerow(csvRow)
+
+    # Zygarde gaining Power Construct in Gen 7 is not noted, so we write a note for it.
+    notesWriter.writerow(['zygarde_10', 'ability_2', 'Generation VII onwards'])
+    notesWriter.writerow(['zygarde_50', 'ability_2', 'Generation VII onwards'])
 
   return
 

@@ -24,7 +24,7 @@ def makeInitialItemDict(fnamePrefix):
       itemDict[itemName] = {
         "item_type": '',
         # list of Pokemon who can use the item, if restricted
-        "pokemon_specific": [],
+        "pokemon_specific": {},
         "gen": '',
         "gen2_exclusive": gen2Exclusive,
         # indicates whether knock off does extra damage to a Pokemon holding the item; note that Mega Stones can be knocked off of incompatible Pokemon for a damage boost, but we will assume that the Pokemon-specific items are being held by compatible Pokemon
@@ -49,7 +49,7 @@ def makeInitialItemDict(fnamePrefix):
       if itemName not in itemDict:
         itemDict[itemName] = {
           "item_type": '',
-          "pokemon_specific": [],
+          "pokemon_specific": {},
           "gen": '',
           "gen2_exclusive": False,
           "knock_off": True,
@@ -77,7 +77,7 @@ def makeInitialItemDict(fnamePrefix):
   # for some reason, Serebii doesn't have berry juice or adrenaline orb, or some gen 2 berries
   itemDict["berry_juice"] = {
         "item_type": 'other',
-        "pokemon_specific": [],
+        "pokemon_specific": {},
         "gen": 5,
         "gen2_exclusive": False,
         "knock_off": True,
@@ -93,7 +93,7 @@ def makeInitialItemDict(fnamePrefix):
   # we handle adrenaline orb stat modifications below
   itemDict["adrenaline_orb"] = {
         "item_type": 'other',
-        "pokemon_specific": [],
+        "pokemon_specific": {},
         "gen": 7,
         "gen2_exclusive": False,
         "knock_off": True,
@@ -228,7 +228,9 @@ def addOtherItemData(fpath, itemDict):
         "description": description,
         "sprite_url": spriteURL,
         # list of Pokemon who can use the item, if restricted
-        "pokemon_specific": [pokemonName],
+        "pokemon_specific": {
+          pokemonName: [[True, 6]]
+        },
         "gen": 6,
         "gen2_exclusive": False,
         "knock_off": False,
@@ -291,8 +293,10 @@ def addOtherItemData(fpath, itemDict):
   with open(fpath + 'typeEnhancersSpecific.csv', 'r', encoding='utf-8') as typeEnhancerSpecificCSV:
     reader = csv.DictReader(typeEnhancerSpecificCSV)
     for row in reader:
-      itemGen, itemName, pokemonName = row["Gen"], row["Item Name"], row["Pokemon Name"]
-      itemDict[itemName]["pokemon_specific"] = [pokemonName]
+      itemGen, itemName, pokemonName = int(row["Gen"]), row["Item Name"], row["Pokemon Name"]
+      itemDict[itemName]["pokemon_specific"] = {
+        pokemonName: [[True, itemGen]]
+      }
       # soul dew
       if pokemonName in ['latias', 'latios']:
         # boosted stats in gens 3-6
@@ -323,6 +327,7 @@ def addOtherItemData(fpath, itemDict):
     for row in reader:
       itemGen, itemName, pokemonName, stat1, stat2, modifier = int(row["Gen"]), row["Item Name"], row["Pokemon Name"], row["Stat 1"], row["Stat 2"], row["Modifier"]
 
+
       if stat2 == '':
         stat2 = stat1
 
@@ -347,9 +352,26 @@ def addOtherItemData(fpath, itemDict):
         handledItems.add('metal_powder')
         continue
 
-      itemDict[itemName]["pokemon_specific"].append(pokemonName)
       itemDict[itemName]["stat_modifications"][stat1] = [[modifier, 'user', itemGen]]
       itemDict[itemName]["stat_modifications"][stat2] = [[modifier, 'user', itemGen]]
+
+      if len(pokemonName) > 0: 
+        # Add Pokemon specificity data
+        pokemonGen = itemGen
+
+        # Exceptions where itemGen doesn't match pokemonGen; 
+        if '_galar' in pokemonName or pokemonName == 'sirfetchd':
+          pokemonGen = 8
+        elif 'pikachu_' in pokemonName:
+          if '_cap' in pokemonName:
+            pokemonGen = 7
+          # cosplay Pikachu
+          else:
+            pokemonGen = 6
+        elif '_alola' in pokemonName:
+          pokemonGen = 7
+        
+        itemDict[itemName]["pokemon_specific"][pokemonName] = [[True, pokemonGen]]
 
       handledItems.add(itemName)
 
@@ -448,7 +470,8 @@ def addOtherItemData(fpath, itemDict):
     reader = csv.DictReader(zCrystalSpecificCSV)
     for row in reader:
       itemName, pokemonName = row["Item Name"], row["Pokemon Name"]
-      itemDict[itemName]["pokemon_specific"].append(pokemonName)
+      itemDict[itemName]["pokemon_specific"][pokemonName] = [[True, 7]]
+
       itemDict[itemName]["knock_off"] = False
 
       handledItems.add(itemName)
@@ -545,7 +568,7 @@ def addOtherItemData(fpath, itemDict):
     ['groudon', 'red_orb'],
   ]:
     pokemonName, itemName = pokemon_item
-    itemDict[itemName]["pokemon_specific"].append(pokemonName)
+    itemDict[itemName]["pokemon_specific"][pokemonName] = [[True, 6]]
 
     handledItems.add(itemName)
 

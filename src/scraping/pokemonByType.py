@@ -78,6 +78,7 @@ def makePokemonTypeCSV(fname):
             formName = ''
           else:
             print("Couldn't handle", formattedSpeciesName, type2)
+
         elif formattedSpeciesName == 'burmy':
           formName = burmySuffixes[burmyCounter]
           burmyCounter += 1
@@ -90,6 +91,7 @@ def makePokemonTypeCSV(fname):
             formName = 'trash'
           else:
             print("Couldn't handle", formattedSpeciesName, type2)
+
         elif formattedSpeciesName == 'meloetta':
           if type2 == 'psychic':
             formName = 'aria'
@@ -97,6 +99,7 @@ def makePokemonTypeCSV(fname):
             formName = 'pirouette'
           else:
             print("Couldn't handle", formattedSpeciesName, type2)
+
         elif formattedSpeciesName == 'hoopa':
           if type2 == 'ghost':
             formName = ''
@@ -104,6 +107,7 @@ def makePokemonTypeCSV(fname):
             formName = 'unbound'
           else:
             print("Couldn't handle", formattedSpeciesName, type2)
+
         elif formattedSpeciesName == 'castform':
           if type1 == 'normal':
             formName = 'normal'
@@ -115,6 +119,7 @@ def makePokemonTypeCSV(fname):
             formName = 'snowy'
           else:
             print("Couldn't handle", formattedSpeciesName, type1)
+
         elif formattedSpeciesName == 'oricorio':
           if type1 == 'fire':
             formName = 'baile'
@@ -126,6 +131,7 @@ def makePokemonTypeCSV(fname):
             formName = 'sensu'
           else:
             print("Couldn't handle", formattedSpeciesName, type1)
+
         elif formattedSpeciesName == 'urshifu':
           if type2 == 'water':
             formName = 'rapid_strike'
@@ -133,11 +139,13 @@ def makePokemonTypeCSV(fname):
             formName = ''
           else:
             print("Couldn't handle", formattedSpeciesName, type2)
+
         elif formattedSpeciesName == 'calyrex':
           if type2 == 'ice':
             formName = 'ice'
           elif type2 == 'ghost':
             formName = 'shadow'
+            
         else:
           formName = ''
 
@@ -152,9 +160,21 @@ def makePokemonTypeCSV(fname):
         # handle silvally and arceus at the end
         if formattedSpeciesName in ['arceus', 'silvally']:
           for type in typeSet: 
+            # for Fairy Arceus
+            if type == 'fairy' and formattedSpeciesName in 'arceus':
+              writer.writerow([6, dexNumber, formattedSpeciesName, formattedSpeciesName + '_' + type, type, ''])
+              continue
+              
             writer.writerow([genSymbolToNumber(genSymbol), dexNumber, formattedSpeciesName, formattedSpeciesName + '_' + type, type, ''])
           continue
         
+        # add Zygarde forms
+        if formattedSpeciesName == 'zygarde':
+          writer.writerow([6, 718, 'zygarde', 'zygarde_50', 'dragon', 'ground'])
+          writer.writerow([7, 718, 'zygarde', 'zygarde_10', 'dragon', 'ground'])
+          writer.writerow([7, 718, 'zygarde', 'zygarde_complete', 'dragon', 'ground'])
+          continue
+
         # handle necrozma forms later
         if formattedSpeciesName == 'necrozma':
           continue

@@ -151,3 +151,18 @@ CREATE TABLE IF NOT EXISTS item_resists_pstatus (
 
   INDEX opposite_item_resists_pstatus (pstatus_id, item_generation_id, item_id)
 );
+
+CREATE TABLE IF NOT EXISTS item_requires_pokemon (
+  item_generation_id TINYINT UNSIGNED NOT NULL,
+  item_id SMALLINT UNSIGNED NOT NULL,
+  pokemon_generation_id TINYINT UNSIGNED NOT NULL,
+  pokemon_id SMALLINT UNSIGNED NOT NULL,
+
+  PRIMARY KEY (item_generation_id, item_id, pokemon_generation_id, pokemon_id),
+  FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  FOREIGN KEY (pokemon_generation_id, pokemon_id) REFERENCES pokemon(generation_id, pokemon_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+);

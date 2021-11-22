@@ -225,7 +225,18 @@ const getPokemonLearnsetMaps = (learnsets, pokemon) => {
     // Some forms aren't represented in learnset, e.g. genesect_douse; match them with their base forms
     if (!learnsets[learnsetPokemonName].learnset && pokemon[pokemonName].form_data) {
       // Get baseFormName from form_data
-      const baseFormName = Object.keys(pokemon[pokemonName].form_data).filter(formKey => pokemon[pokemonName].form_data[formKey].form_type === 'base_form')[0];
+      let baseFormName;
+      for (let formKey of Object.keys(pokemon[pokemonName].form_data)) {
+        if (pokemon[pokemonName].form_data[formKey][0][0] === 'base_form') {
+          baseFormName = formKey;
+          break;
+        }
+      }
+      
+      if (!baseFormName) {
+        console.log(learnsetPokemonName, 'has no base form.');
+      }
+
       const learnsetBaseFormName = pokemonMap.get(baseFormName)
 
       pokemonMap.set(pokemonName, learnsetBaseFormName);

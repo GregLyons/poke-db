@@ -14,13 +14,6 @@ INSERT INTO pokemon_form (
   form_class
 ) VALUES ?;
 
-INSERT INTO cosmetic_form (
-  base_form_generation_id,
-  base_form_id,
-  cosmetic_form_generation_id,
-  cosmetic_form_id
-) VALUES ?;
-
 INSERT INTO pokemon_ptype (
   pokemon_generation_id,
   pokemon_id,

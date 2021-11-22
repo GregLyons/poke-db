@@ -68,7 +68,11 @@ def makeBaseStatCSVs(fnamePrefix):
               csvRow.append(value.lstrip('0'))
             # otherwise, it's a Pokemon name
             else:
-              csvRow.append(parseName(value, 'pokemon'))
+              # force 'zygarde_50' instead of 'zygarde'
+              pokemonName = parseName(value, 'pokemon')
+              if pokemonName == 'zygarde':
+                pokemonName = 'zygarde_50'
+              csvRow.append(pokemonName)
 
         # cut off last two columns, Total and Average
         csvRow = csvRow[:-2]

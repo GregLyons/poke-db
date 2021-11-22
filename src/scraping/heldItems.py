@@ -625,14 +625,16 @@ def zCrystals(fname):
 
       pokemonNames = cells[3].get_text().rstrip('\n').split(' or ')
       for pokemonName in pokemonNames:
-        # Some exceptions for Pokemon name
-        if pokemonName == 'Alolan Raichu':
-          pokemonName == 'Raichu (Alolan)'
         # Form name comes first, 'Necrozma' comes last
-        elif 'Necrozma' in pokemonName:
+        if 'Necrozma' in pokemonName:
           pokemonName = re.sub(r'(.*)(Necrozma)', r'\2 (\1)', pokemonName)
         
         pokemonName = parseName(pokemonName, 'pokemon')
+
+        if pokemonName == 'alolan_raichu':
+          pokemonName = 'raichu_alola'
+        elif pokemonName == 'pikachu_normal':
+          pokemonName = 'pikachu'
         
         # pikachu_in_a_cap
         if pokemonName == 'pikachu_in_a_cap':
@@ -640,7 +642,14 @@ def zCrystals(fname):
             specificWriter.writerow([itemName, 'pikachu' + suffix + '_cap', baseMove, zMove])
           continue
 
-        # hard to parse string in such a way so as to handle the Tapus and Necrozma
+        # lycanroc forms
+        if pokemonName == 'lycanroc':
+          for suffix in ['_midday', '_dusk', '_midnight']:
+            specificWriter.writerow([itemName, 'lycanroc' + suffix, baseMove, zMove])
+          continue
+
+
+        # hard to parse string in such a way so as to handle the Tapus and Necrozma at the same time.
         if pokemonName == 'tapu_koko_tapu_lele_tapu_bulu':
           for tapu in ['tapu_koko', 'tapu_lele', 'tapu_bulu']:
             specificWriter.writerow([itemName, tapu, baseMove, zMove])

@@ -349,8 +349,11 @@ const insertGenDependentEntities = async () => {
       .catch(console.log);
     });
   }
+
+  return;
 }
 
+// Inserts data for ability junction tables.
 const insertAbilityJunctionData = async () => {
   const relevantEntityTables = ['ability', 'ptype', 'usage_method', 'stat', 'pstatus', 'effect']
 
@@ -594,10 +597,13 @@ const insertAbilityJunctionData = async () => {
     }
   })
   .catch(console.log);
+
+  return;
 }
 
+// Inserts data for item junction tables.
 const insertItemJunctionData = async () => {
-  const relevantEntityTables = ['item', 'ptype', 'usage_method', 'stat', 'pstatus', 'effect']
+  const relevantEntityTables = ['item', 'ptype', 'usage_method', 'stat', 'pstatus', 'effect', 'pokemon']
 
   // Get foreign key maps.
   Promise.all(relevantEntityTables.map(async (tableName) => {
@@ -608,7 +614,7 @@ const insertItemJunctionData = async () => {
   }))
   .then( result => {
     // Assign foreign key maps (FKM). Order is preserved by Promise.all().
-    const [item_FKM, pType_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM] = result;
+    const [item_FKM, pType_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM, pokemon_FKM] = result;
 
     const itemJunctionTables = [
       'natural_gift',
@@ -621,6 +627,7 @@ const insertItemJunctionData = async () => {
       'item_effect',
       'item_causes_pstatus',
       'item_resists_pstatus',
+      'item_requires_pokemon',
     ];
     for (let tableName of itemJunctionTables) {
       // Delete the tables.
@@ -848,6 +855,41 @@ const insertItemJunctionData = async () => {
             // Filter out empty entries
             .filter(data => data.length > 0);
             break;
+          
+          case 'item_requires_pokemon':
+            /*
+              Need (
+                item_generation_id,
+                item_id,
+                pokemon_generation_id,
+                pokemon_id
+              )
+            */
+            
+              values = itemData.reduce((acc, curr) => {
+                // Get item data from curr.
+                const { gen: gen, name: itemName, pokemon_specific: pokemonData } = curr;
+                const { item_id: itemID } = item_FKM.get(makeMapKey([gen, itemName]));
+
+                
+                // If item is not Pokemon-specific
+                if (!pokemonData) { return acc; }
+                
+                return acc.concat(
+                  Object.keys(pokemonData).map(pokemonName => {
+                    // We always compare entities of the same generation.
+                    const { pokemon_id: pokemonID } = pokemon_FKM.get(makeMapKey([gen, pokemonName]));
+  
+                    return pokemonData[pokemonName] 
+                    ? [gen, itemID, gen, pokemonID]
+                    : [];
+                  })
+                )
+              }, [])
+              // Filter out empty entries
+              .filter(data => data.length > 0);
+              break;
+            break;
 
           default:
             console.log(`${tableName} unhandled.`);
@@ -862,8 +904,11 @@ const insertItemJunctionData = async () => {
     }
   })
   .catch(console.log);
+
+  return;
 }
 
+// Inserts data for move junction tables.
 const insertMoveJunctionData = async () => {
   const relevantEntityTables = ['pmove', 'pokemon', 'ptype', 'item', 'usage_method', 'stat', 'pstatus', 'effect']
 
@@ -1163,6 +1208,234 @@ const insertMoveJunctionData = async () => {
     }
   })
   .catch(console.log);
+
+  return;
+}
+
+// Inserts data for move junction tables.
+const insertPokemonJunctionData = async () => {
+  const relevantEntityTables = ['pokemon', 'pmove', 'ptype', 'ability']
+
+  // Get foreign key maps.
+  Promise.all(relevantEntityTables.map(async (tableName) => {
+    const statement = tableStatements.entityTables[tableName].create;
+
+    console.log(`Getting foreign key map for ${tableName}.`);
+    return await getForeignKeyMap(tableName);
+  }))
+  .then( result => {
+    // Assign foreign key maps (FKM). Order is preserved by Promise.all().
+    const [pokemon_FKM, move_FKM, pType_FKM, ability_FKM] = result;
+
+    const pokemonJunctionTables = [
+      'pokemon_evolution',
+      'pokemon_form',
+      'pokemon_ptype',
+      // 'pokemon_pmove',
+      'pokemon_ability',
+    ];
+    for (let tableName of pokemonJunctionTables) {
+      // Delete the tables.
+      db.promise().query(tableStatements.pokemonJunctionTables[tableName].delete)
+      .then( ([results, fields]) => {
+  
+        console.log(`${tableName} table deleted.`);
+  
+      })
+      .catch(console.log)
+      // Insert data into the tables. No need to reset AUTO_INCREMENT values.
+      .then( () => {
+        
+        // Determine values to be inserted.
+        let values
+        const pokemonData = require('./processing/processed_data/pokemon.json')
+        switch (tableName) {
+          case 'pokemon_evolution':
+            /*
+              Need (
+                prevolution_generation_id,
+                prevolution_id,
+                evolution_generation_id,
+                evolution_id,
+                evolution_method
+              )
+            */
+
+            values = pokemonData.reduce((acc, curr) => {
+              const { gen: gen, name: pokemonName, evolves_to: evolvesToData } = curr;
+
+              const { pokemon_id: pokemonID } = pokemon_FKM.get(makeMapKey([gen, pokemonName]));
+              
+              return acc.concat(
+                Object.keys(evolvesToData).map(evolutionName => {
+                  const { pokemon_id: evolutionID } = pokemon_FKM.get(makeMapKey([gen, evolutionName]));
+                  
+                  const evolutionMethod = evolvesToData[evolutionName];
+
+                  return [gen, pokemonID, gen, evolutionID, evolutionMethod];
+                })
+              );
+            }, [])
+            // Filter out empty entries
+            .filter(data => data.length > 0);
+            break;
+          
+          case 'pokemon_form':
+            /*
+              Need (
+                base_form_generation_id,
+                base_form_id,
+                form_generation_id,
+                form_id,
+                form_class
+              )
+            */
+
+              values = pokemonData.reduce((acc, curr) => {
+                const { gen: gen, name: pokemonName, form_data: formData } = curr;
+  
+                const { pokemon_id: pokemonID } = pokemon_FKM.get(makeMapKey([gen, pokemonName]));
+                
+                return acc.concat(
+                  Object.keys(formData).map(formName => {
+                    const { pokemon_id: formID } = pokemon_FKM.get(makeMapKey([gen, formName]));
+                    
+                    const formClass = formData[formName];
+  
+                    return [gen, pokemonID, gen, formID, formClass];
+                  })
+                );
+              }, [])
+              // Filter out empty entries
+              .filter(data => data.length > 0);
+              break;
+
+          case 'pokemon_ptype':
+            /*
+              Need (
+                pokemon_generation_id,
+                pokemon_id,
+                ptype_generation_id,
+                ptype_id
+              )
+            */
+            
+            values = pokemonData.reduce((acc, curr) => {
+              const { gen: gen, name: pokemonName, type_1: pType1Name, type_2: pType2Name } = curr;
+
+              const { pokemon_id: pokemonID } = pokemon_FKM.get(makeMapKey([gen, pokemonName]));
+              
+              // Filter out empty type name, e.g. for monotype Pokemon.
+              return acc.concat(
+                [pType1Name, pType2Name]
+                .filter(pTypeName => pTypeName.length > 0)
+                .map(pTypeName => {
+                  const { ptype_id: pTypeID } = pType_FKM.get(makeMapKey([gen, pTypeName]));
+                  
+                  return [gen, pokemonID, gen, pTypeID];
+                })
+              );
+            }, [])
+            // Filter out empty entries
+            .filter(data => data.length > 0);
+            break;
+
+          case 'pokemon_pmove': 
+            /*
+              Need (
+                pokemon_generation_id,
+                pokemon_id,
+                pmove_generation_id,
+                pmove_id,
+                learn_method
+              )
+            */
+            
+            values = pokemonData.reduce((acc, curr) => {
+              const { gen: gen, name: pokemonName, learnset: learnsetData } = curr;
+
+              const { pokemon_id: pokemonID } = pokemon_FKM.get(makeMapKey([gen, pokemonName]));
+              
+              return acc.concat(
+                Object.keys(learnsetData).reduce((innerAcc, moveName)=> {
+                  const { pmove_id: moveID } = move_FKM.get(makeMapKey([gen, moveName]));
+                  
+                  return innerAcc.concat([
+                    // We can have multiple different learn methods within the same generation.
+                    learnsetData[moveName].map(learnMethod => {
+                      return [gen, pokemonID, gen, moveID, learnMethod];
+                    })
+                  ]);
+                }, [])
+              );
+            }, [])
+            // Filter out empty entries
+            .filter(data => data.length > 0);
+            break;
+
+          case 'pokemon_ability':
+            /*
+              Need (
+                pokemon_generation_id,
+                pokemon_id,
+                ability_generation_id,
+                ability_id,
+                ability_slot
+              )
+            */
+            
+            values = pokemonData.reduce((acc, curr) => {
+              const { gen: gen, name: pokemonName, ability_1: ability1Name, ability_2: ability2Name, ability_hidden: abilityHiddenName } = curr;
+
+              // No abilities in Gen 3
+              if (gen < 3) { return acc; }
+
+              const { pokemon_id: pokemonID } = pokemon_FKM.get(makeMapKey([gen, pokemonName]));
+              
+              // Filter out empty ability slots, e.g. for Mimikyu, who only has one ability.
+              return acc.concat(
+                [ability1Name, ability2Name, abilityHiddenName]
+                .filter(abilityName => abilityName && abilityName.length > 0)
+                .map(abilityName => {
+                  const { ability_id: abilityID } = ability_FKM.get(makeMapKey([abilityName, gen]));
+
+                  let abilitySlot;
+                  switch (abilityName) {
+                    case ability1Name:
+                      abilitySlot = '1';
+                      break;
+                    case ability2Name:
+                      abilitySlot = '2';
+                      break;
+                    case abilityHiddenName:
+                      abilitySlot = 'hidden';
+                      break;
+                  }
+                  
+                  return [gen, pokemonID, gen, abilityID, abilitySlot];
+                })
+              );
+            }, [])
+            // Filter out empty entries
+            .filter(data => data.length > 0);
+            break;
+
+          default:
+            console.log(`${tableName} unhandled.`);
+        }
+
+        db.promise().query(tableStatements.pokemonJunctionTables[tableName].insert, [values])
+        .then( ([results, fields]) => {
+          console.log(`${tableName} data inserted: ${results.affectedRows} rows.`);
+        })
+        .catch(console.log);
+      })
+      .catch(console.log);;
+    }
+  })
+  .catch(console.log);
+
+  return;
 }
 
 /*
@@ -1294,4 +1567,5 @@ const makeMapKey = arr => arr.join(' ');
 // insertGenDependentEntities();
 // insertAbilityJunctionData();
 // insertItemJunctionData();
-insertMoveJunctionData();
+// insertMoveJunctionData();
+insertPokemonJunctionData();

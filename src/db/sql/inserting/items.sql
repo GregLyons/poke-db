@@ -63,3 +63,10 @@ INSERT INTO item_resists_pstatus (
   item_id,
   pstatus_id
 ) VALUES ?;
+
+INSERT INTO item_requires_pokemon (
+  item_generation_id,
+  item_id,
+  pokemon_generation_id,
+  pokemon_id
+) VALUES ?;

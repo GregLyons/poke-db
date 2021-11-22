@@ -1,7 +1,7 @@
 {
   "absorb_bulb": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -19,9 +19,9 @@
   },
   "adamant_orb": {
     "item_type": "type_enhancer_specific",
-    "pokemon_specific": [
-      "dialga"
-    ],
+    "pokemon_specific": {
+      "dialga": [[true, 4]]
+    },
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -40,7 +40,7 @@
   },
   "air_balloon": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -58,9 +58,9 @@
   },
   "aloraichium_z": {
     "item_type": "z_crystal_specific",
-    "pokemon_specific": [
-      "alolan_raichu"
-    ],
+    "pokemon_specific": {
+      "raichu_alola": [[true, 7]]
+    },
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -76,7 +76,7 @@
   },
   "amulet_coin": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -92,9 +92,7 @@
   },
   "assault_vest": {
     "item_type": "stat_enhancer",
-    "pokemon_specific": [
-      ""
-    ],
+    "pokemon_specific": {},
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -113,7 +111,7 @@
   },
   "berry_sweet": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 8,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -129,7 +127,7 @@
   },
   "berserk_gene": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": true,
     "knock_off": true,
@@ -147,7 +145,7 @@
   },
   "big_root": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -165,7 +163,7 @@
   },
   "binding_band": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -183,7 +181,7 @@
   },
   "black_belt": {
     "item_type": "type_enhancer",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -201,7 +199,7 @@
   },
   "black_glasses": {
     "item_type": "type_enhancer",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -219,7 +217,7 @@
   },
   "black_sludge": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -238,9 +236,9 @@
   },
   "blue_orb": {
     "item_type": "",
-    "pokemon_specific": [
-      "kyogre"
-    ],
+    "pokemon_specific": {
+      "kyogre": [[true, 6]]
+    },
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -256,7 +254,7 @@
   },
   "blue_scarf": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -272,7 +270,7 @@
   },
   "blunder_policy": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 8,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -290,7 +288,7 @@
   },
   "bright_powder": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -309,7 +307,7 @@
   },
   "bug_gem": {
     "item_type": "gem",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -327,7 +325,7 @@
   },
   "bug_memory": {
     "item_type": "memory",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -346,7 +344,7 @@
   },
   "buginium_z": {
     "item_type": "z_crystal",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -362,7 +360,7 @@
   },
   "burn_drive": {
     "item_type": "drive",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -380,7 +378,7 @@
   },
   "cell_battery": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -398,7 +396,7 @@
   },
   "charcoal": {
     "item_type": "type_enhancer",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -416,7 +414,7 @@
   },
   "chill_drive": {
     "item_type": "drive",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -434,9 +432,7 @@
   },
   "choice_band": {
     "item_type": "choice",
-    "pokemon_specific": [
-      ""
-    ],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -455,9 +451,7 @@
   },
   "choice_scarf": {
     "item_type": "choice",
-    "pokemon_specific": [
-      ""
-    ],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -476,9 +470,7 @@
   },
   "choice_specs": {
     "item_type": "choice",
-    "pokemon_specific": [
-      ""
-    ],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -497,7 +489,7 @@
   },
   "cleanse_tag": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -513,7 +505,7 @@
   },
   "clover_sweet": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 8,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -529,7 +521,7 @@
   },
   "damp_rock": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -547,7 +539,7 @@
   },
   "dark_gem": {
     "item_type": "gem",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -565,7 +557,7 @@
   },
   "dark_memory": {
     "item_type": "memory",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -584,7 +576,7 @@
   },
   "darkinium_z": {
     "item_type": "z_crystal",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -600,9 +592,9 @@
   },
   "decidium_z": {
     "item_type": "z_crystal_specific",
-    "pokemon_specific": [
-      "decidueye"
-    ],
+    "pokemon_specific": {
+      "decidueye": [[true, 7]]
+    },
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -618,9 +610,9 @@
   },
   "deep_sea_scale": {
     "item_type": "stat_enhancer_specific",
-    "pokemon_specific": [
-      "clamperl"
-    ],
+    "pokemon_specific": {
+      "clamperl": [[true, 3]]
+    },
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -641,9 +633,9 @@
   },
   "deep_sea_tooth": {
     "item_type": "stat_enhancer_specific",
-    "pokemon_specific": [
-      "clamperl"
-    ],
+    "pokemon_specific": {
+      "clamperl": [[true, 3]]
+    },
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -664,7 +656,7 @@
   },
   "destiny_knot": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -682,7 +674,7 @@
   },
   "douse_drive": {
     "item_type": "drive",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -700,7 +692,7 @@
   },
   "draco_plate": {
     "item_type": "plate",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -721,7 +713,7 @@
   },
   "dragon_fang": {
     "item_type": "type_enhancer",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -739,7 +731,7 @@
   },
   "dragon_gem": {
     "item_type": "gem",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -757,7 +749,7 @@
   },
   "dragon_memory": {
     "item_type": "memory",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -776,7 +768,7 @@
   },
   "dragonium_z": {
     "item_type": "z_crystal",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -792,7 +784,7 @@
   },
   "dread_plate": {
     "item_type": "plate",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -813,7 +805,7 @@
   },
   "dubious_disc": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -829,7 +821,7 @@
   },
   "earth_plate": {
     "item_type": "plate",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -850,9 +842,9 @@
   },
   "eevium_z": {
     "item_type": "z_crystal_specific",
-    "pokemon_specific": [
-      "eevee"
-    ],
+    "pokemon_specific": {
+      "eevee": [[true, 7]]
+    },
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -868,7 +860,7 @@
   },
   "eject_button": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -886,7 +878,7 @@
   },
   "eject_pack": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 8,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -904,7 +896,7 @@
   },
   "electirizer": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -920,7 +912,7 @@
   },
   "electric_gem": {
     "item_type": "gem",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -938,7 +930,7 @@
   },
   "electric_memory": {
     "item_type": "memory",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -957,7 +949,7 @@
   },
   "electric_seed": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -975,7 +967,7 @@
   },
   "electrium_z": {
     "item_type": "z_crystal",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -991,7 +983,7 @@
   },
   "everstone": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -1007,9 +999,7 @@
   },
   "eviolite": {
     "item_type": "stat_enhancer",
-    "pokemon_specific": [
-      ""
-    ],
+    "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -1030,7 +1020,7 @@
   },
   "exp_share": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 1,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -1046,7 +1036,7 @@
   },
   "expert_belt": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -1064,7 +1054,7 @@
   },
   "fairium_z": {
     "item_type": "z_crystal",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -1080,7 +1070,7 @@
   },
   "fairy_gem": {
     "item_type": "gem",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -1098,7 +1088,7 @@
   },
   "fairy_memory": {
     "item_type": "memory",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -1117,7 +1107,7 @@
   },
   "fighting_gem": {
     "item_type": "gem",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -1135,7 +1125,7 @@
   },
   "fighting_memory": {
     "item_type": "memory",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -1154,7 +1144,7 @@
   },
   "fightinium_z": {
     "item_type": "z_crystal",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -1170,7 +1160,7 @@
   },
   "fire_gem": {
     "item_type": "gem",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -1188,7 +1178,7 @@
   },
   "fire_memory": {
     "item_type": "memory",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -1207,7 +1197,7 @@
   },
   "firium_z": {
     "item_type": "z_crystal",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -1223,7 +1213,7 @@
   },
   "fist_plate": {
     "item_type": "plate",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -1244,7 +1234,7 @@
   },
   "flame_orb": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -1262,7 +1252,7 @@
   },
   "flame_plate": {
     "item_type": "plate",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -1283,7 +1273,7 @@
   },
   "float_stone": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -1301,7 +1291,7 @@
   },
   "flower_sweet": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 8,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -1317,7 +1307,7 @@
   },
   "flying_gem": {
     "item_type": "gem",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -1335,7 +1325,7 @@
   },
   "flying_memory": {
     "item_type": "memory",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -1354,7 +1344,7 @@
   },
   "flyinium_z": {
     "item_type": "z_crystal",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -1370,7 +1360,7 @@
   },
   "focus_band": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -1388,7 +1378,7 @@
   },
   "focus_sash": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -1406,7 +1396,7 @@
   },
   "full_incense": {
     "item_type": "incense",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -1424,7 +1414,7 @@
   },
   "ghost_gem": {
     "item_type": "gem",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -1442,7 +1432,7 @@
   },
   "ghost_memory": {
     "item_type": "memory",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -1461,7 +1451,7 @@
   },
   "ghostium_z": {
     "item_type": "z_crystal",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -1477,7 +1467,7 @@
   },
   "grass_gem": {
     "item_type": "gem",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -1495,7 +1485,7 @@
   },
   "grass_memory": {
     "item_type": "memory",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -1514,7 +1504,7 @@
   },
   "grassium_z": {
     "item_type": "z_crystal",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -1530,7 +1520,7 @@
   },
   "grassy_seed": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -1548,7 +1538,7 @@
   },
   "green_scarf": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -1564,7 +1554,7 @@
   },
   "grip_claw": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -1582,9 +1572,9 @@
   },
   "griseous_orb": {
     "item_type": "type_enhancer_specific",
-    "pokemon_specific": [
-      "giratina_origin"
-    ],
+    "pokemon_specific": {
+      "giratina_origin": [[true, 4]]
+    },
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -1603,7 +1593,7 @@
   },
   "ground_gem": {
     "item_type": "gem",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -1621,7 +1611,7 @@
   },
   "ground_memory": {
     "item_type": "memory",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -1640,7 +1630,7 @@
   },
   "groundium_z": {
     "item_type": "z_crystal",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -1656,7 +1646,7 @@
   },
   "hard_stone": {
     "item_type": "type_enhancer",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -1674,7 +1664,7 @@
   },
   "heat_rock": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -1692,7 +1682,7 @@
   },
   "heavy_duty_boots": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 8,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -1710,7 +1700,7 @@
   },
   "ice_gem": {
     "item_type": "gem",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -1728,7 +1718,7 @@
   },
   "ice_memory": {
     "item_type": "memory",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -1747,7 +1737,7 @@
   },
   "icicle_plate": {
     "item_type": "plate",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -1768,7 +1758,7 @@
   },
   "icium_z": {
     "item_type": "z_crystal",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -1784,7 +1774,7 @@
   },
   "icy_rock": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -1802,9 +1792,9 @@
   },
   "incinium_z": {
     "item_type": "z_crystal_specific",
-    "pokemon_specific": [
-      "incineroar"
-    ],
+    "pokemon_specific": {
+      "incineroar": [[true, 7]]
+    },
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -1820,7 +1810,7 @@
   },
   "insect_plate": {
     "item_type": "plate",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -1841,7 +1831,7 @@
   },
   "iron_ball": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -1862,7 +1852,7 @@
   },
   "iron_plate": {
     "item_type": "plate",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -1883,7 +1873,7 @@
   },
   "kings_rock": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -1901,9 +1891,9 @@
   },
   "kommonium_z": {
     "item_type": "z_crystal_specific",
-    "pokemon_specific": [
-      "kommo_o"
-    ],
+    "pokemon_specific": {
+      "kommo_o": [[true, 7]]
+    },
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -1919,7 +1909,7 @@
   },
   "lagging_tail": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -1937,7 +1927,7 @@
   },
   "lax_incense": {
     "item_type": "incense",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -1957,11 +1947,11 @@
   },
   "leek": {
     "item_type": "stat_enhancer_specific",
-    "pokemon_specific": [
-      "farfetchd",
-      "farfetchd_galar",
-      "sirfetchd"
-    ],
+    "pokemon_specific": {
+      "farfetchd": [[true, 2]],
+      "farfetchd_galar": [[true, 8]],
+      "sirfetchd": [[true, 8]]
+    },
     "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -1979,7 +1969,7 @@
   },
   "leftovers": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -1997,7 +1987,7 @@
   },
   "life_orb": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2015,22 +2005,22 @@
   },
   "light_ball": {
     "item_type": "stat_enhancer_specific",
-    "pokemon_specific": [
-      "pikachu",
-      "pikachu_rock_star",
-      "pikachu_belle",
-      "pikachu_pop_star",
-      "pikachu_phd",
-      "pikachu_libre",
-      "pikachu_original_cap",
-      "pikachu_kalos_cap",
-      "pikachu_alola_cap",
-      "pikachu_hoenn_cap",
-      "pikachu_sinnoh_cap",
-      "pikachu_unova_cap",
-      "pikachu_partner_cap",
-      "pikachu_world_cap"
-    ],
+    "pokemon_specific": {
+      "pikachu": [[true, 2]],
+      "pikachu_rock_star": [[true, 6]],
+      "pikachu_belle": [[true, 6]],
+      "pikachu_pop_star": [[true, 6]],
+      "pikachu_phd": [[true, 6]],
+      "pikachu_libre": [[true, 6]],
+      "pikachu_original_cap": [[true, 7]],
+      "pikachu_kalos_cap": [[true, 7]],
+      "pikachu_alola_cap": [[true, 7]],
+      "pikachu_hoenn_cap": [[true, 7]],
+      "pikachu_sinnoh_cap": [[true, 7]],
+      "pikachu_unova_cap": [[true, 7]],
+      "pikachu_partner_cap": [[true, 7]],
+      "pikachu_world_cap": [[true, 7]]
+    },
     "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2051,7 +2041,7 @@
   },
   "light_clay": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2069,7 +2059,7 @@
   },
   "love_sweet": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 8,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2085,7 +2075,7 @@
   },
   "luck_incense": {
     "item_type": "incense",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2101,7 +2091,7 @@
   },
   "lucky_egg": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2117,9 +2107,9 @@
   },
   "lucky_punch": {
     "item_type": "stat_enhancer_specific",
-    "pokemon_specific": [
-      "chansey"
-    ],
+    "pokemon_specific": {
+      "chansey": [[true, 2]]
+    },
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2137,7 +2127,7 @@
   },
   "luminous_moss": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2155,10 +2145,10 @@
   },
   "lunalium_z": {
     "item_type": "z_crystal_specific",
-    "pokemon_specific": [
-      "lunala",
-      "necrozma_dawn"
-    ],
+    "pokemon_specific": {
+      "lunala": [[true, 7]],
+      "necrozma_dawn": [[true, 7]]
+    },
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -2174,9 +2164,9 @@
   },
   "lustrous_orb": {
     "item_type": "type_enhancer_specific",
-    "pokemon_specific": [
-      "palkia"
-    ],
+    "pokemon_specific": {
+      "palkia": [[true, 4]]
+    },
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2195,9 +2185,11 @@
   },
   "lycanium_z": {
     "item_type": "z_crystal_specific",
-    "pokemon_specific": [
-      "lycanroc"
-    ],
+    "pokemon_specific": {
+      "lycanroc_midday": [[true, 7]],
+      "lycanroc_dusk": [[true, 7]],
+      "lycanroc_midnight": [[true, 7]]
+    },
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -2213,7 +2205,7 @@
   },
   "macho_brace": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2232,7 +2224,7 @@
   },
   "magmarizer": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2248,7 +2240,7 @@
   },
   "magnet": {
     "item_type": "type_enhancer",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2266,9 +2258,9 @@
   },
   "marshadium_z": {
     "item_type": "z_crystal_specific",
-    "pokemon_specific": [
-      "marshadow"
-    ],
+    "pokemon_specific": {
+      "marshadow": [[true, 7]]
+    },
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -2284,7 +2276,7 @@
   },
   "meadow_plate": {
     "item_type": "plate",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -2305,7 +2297,7 @@
   },
   "mental_herb": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2328,7 +2320,7 @@
   },
   "metal_coat": {
     "item_type": "type_enhancer",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2346,7 +2338,7 @@
   },
   "metal_powder": {
     "item_type": "stat_enhancer_specific",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2369,7 +2361,7 @@
   },
   "metronome_item": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2387,9 +2379,9 @@
   },
   "mewnium_z": {
     "item_type": "z_crystal_specific",
-    "pokemon_specific": [
-      "mew"
-    ],
+    "pokemon_specific": {
+      "mew": [[true, 7]]
+    },
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -2405,9 +2397,9 @@
   },
   "mimikium_z": {
     "item_type": "z_crystal_specific",
-    "pokemon_specific": [
-      "mimikyu"
-    ],
+    "pokemon_specific": {
+      "mimikyu": [[true, 7]]
+    },
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -2423,7 +2415,7 @@
   },
   "mind_plate": {
     "item_type": "plate",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -2444,7 +2436,7 @@
   },
   "miracle_seed": {
     "item_type": "type_enhancer",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2462,7 +2454,7 @@
   },
   "misty_seed": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2480,7 +2472,7 @@
   },
   "muscle_band": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2498,7 +2490,7 @@
   },
   "mystic_water": {
     "item_type": "type_enhancer",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2516,7 +2508,7 @@
   },
   "never_melt_ice": {
     "item_type": "type_enhancer",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2534,7 +2526,7 @@
   },
   "normal_gem": {
     "item_type": "gem",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2552,7 +2544,7 @@
   },
   "normalium_z": {
     "item_type": "z_crystal",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -2568,7 +2560,7 @@
   },
   "odd_incense": {
     "item_type": "incense",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2586,9 +2578,9 @@
   },
   "pikanium_z": {
     "item_type": "z_crystal_specific",
-    "pokemon_specific": [
-      "pikachu_normal"
-    ],
+    "pokemon_specific": {
+      "pikachu": [[true, 7]]
+    },
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -2604,16 +2596,16 @@
   },
   "pikashunium_z": {
     "item_type": "z_crystal_specific",
-    "pokemon_specific": [
-      "pikachu_original_cap",
-      "pikachu_kalos_cap",
-      "pikachu_alola_cap",
-      "pikachu_hoenn_cap",
-      "pikachu_sinnoh_cap",
-      "pikachu_unova_cap",
-      "pikachu_partner_cap",
-      "pikachu_world_cap"
-    ],
+    "pokemon_specific": {
+      "pikachu_original_cap": [[true, 7]],
+      "pikachu_kalos_cap": [[true, 7]],
+      "pikachu_alola_cap": [[true, 7]],
+      "pikachu_hoenn_cap": [[true, 7]],
+      "pikachu_sinnoh_cap": [[true, 7]],
+      "pikachu_unova_cap": [[true, 7]],
+      "pikachu_partner_cap": [[true, 7]],
+      "pikachu_world_cap": [[true, 7]]
+    },
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -2629,7 +2621,7 @@
   },
   "pink_bow": {
     "item_type": "type_enhancer",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": true,
     "knock_off": true,
@@ -2647,7 +2639,7 @@
   },
   "pink_scarf": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2663,7 +2655,7 @@
   },
   "pixie_plate": {
     "item_type": "plate",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -2684,7 +2676,7 @@
   },
   "poison_barb": {
     "item_type": "type_enhancer",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2702,7 +2694,7 @@
   },
   "poison_gem": {
     "item_type": "gem",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2720,7 +2712,7 @@
   },
   "poison_memory": {
     "item_type": "memory",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -2739,7 +2731,7 @@
   },
   "poisonium_z": {
     "item_type": "z_crystal",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -2755,7 +2747,7 @@
   },
   "polkadot_bow": {
     "item_type": "type_enhancer",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": true,
     "knock_off": true,
@@ -2773,7 +2765,7 @@
   },
   "power_anklet": {
     "item_type": "power_item",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2792,7 +2784,7 @@
   },
   "power_band": {
     "item_type": "power_item",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2811,7 +2803,7 @@
   },
   "power_belt": {
     "item_type": "power_item",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2830,7 +2822,7 @@
   },
   "power_bracer": {
     "item_type": "power_item",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2849,7 +2841,7 @@
   },
   "power_herb": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2867,7 +2859,7 @@
   },
   "power_lens": {
     "item_type": "power_item",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2886,7 +2878,7 @@
   },
   "power_weight": {
     "item_type": "power_item",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2905,9 +2897,9 @@
   },
   "primarium_z": {
     "item_type": "z_crystal_specific",
-    "pokemon_specific": [
-      "primarina"
-    ],
+    "pokemon_specific": {
+      "primarina": [[true, 7]]
+    },
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -2923,7 +2915,7 @@
   },
   "protective_pads": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2941,7 +2933,7 @@
   },
   "protector": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2957,7 +2949,7 @@
   },
   "psychic_gem": {
     "item_type": "gem",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -2975,7 +2967,7 @@
   },
   "psychic_memory": {
     "item_type": "memory",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -2994,7 +2986,7 @@
   },
   "psychic_seed": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3012,7 +3004,7 @@
   },
   "psychium_z": {
     "item_type": "z_crystal",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -3028,7 +3020,7 @@
   },
   "pure_incense": {
     "item_type": "incense",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3044,7 +3036,7 @@
   },
   "quick_claw": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3062,9 +3054,9 @@
   },
   "quick_powder": {
     "item_type": "stat_enhancer_specific",
-    "pokemon_specific": [
-      "ditto"
-    ],
+    "pokemon_specific": {
+      "ditto": [[true, 4]]
+    },
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3083,7 +3075,7 @@
   },
   "razor_claw": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3101,7 +3093,7 @@
   },
   "razor_fang": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3119,7 +3111,7 @@
   },
   "reaper_cloth": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3135,7 +3127,7 @@
   },
   "red_card": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3153,9 +3145,9 @@
   },
   "red_orb": {
     "item_type": "",
-    "pokemon_specific": [
-      "groudon"
-    ],
+    "pokemon_specific": {
+      "groudon": [[true, 6]]
+    },
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3171,7 +3163,7 @@
   },
   "red_scarf": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3187,7 +3179,7 @@
   },
   "ribbon_sweet": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 8,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3203,7 +3195,7 @@
   },
   "ring_target": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3221,7 +3213,7 @@
   },
   "rock_gem": {
     "item_type": "gem",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3239,7 +3231,7 @@
   },
   "rock_incense": {
     "item_type": "incense",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3257,7 +3249,7 @@
   },
   "rock_memory": {
     "item_type": "memory",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -3276,7 +3268,7 @@
   },
   "rockium_z": {
     "item_type": "z_crystal",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -3292,7 +3284,7 @@
   },
   "rocky_helmet": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3310,7 +3302,7 @@
   },
   "room_service": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 8,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3328,7 +3320,7 @@
   },
   "rose_incense": {
     "item_type": "incense",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3346,7 +3338,7 @@
   },
   "rusted_shield": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 8,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3364,7 +3356,7 @@
   },
   "rusted_sword": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 8,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3382,7 +3374,7 @@
   },
   "safety_goggles": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3402,7 +3394,7 @@
   },
   "scope_lens": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3420,7 +3412,7 @@
   },
   "sea_incense": {
     "item_type": "incense",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3438,7 +3430,7 @@
   },
   "sharp_beak": {
     "item_type": "type_enhancer",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3456,7 +3448,7 @@
   },
   "shed_shell": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3474,7 +3466,7 @@
   },
   "shell_bell": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3492,7 +3484,7 @@
   },
   "shock_drive": {
     "item_type": "drive",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -3510,7 +3502,7 @@
   },
   "silk_scarf": {
     "item_type": "type_enhancer",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3528,7 +3520,7 @@
   },
   "silver_powder": {
     "item_type": "type_enhancer",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3546,7 +3538,7 @@
   },
   "sky_plate": {
     "item_type": "plate",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -3567,7 +3559,7 @@
   },
   "smoke_ball": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3583,7 +3575,7 @@
   },
   "smooth_rock": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3601,9 +3593,9 @@
   },
   "snorlium_z": {
     "item_type": "z_crystal_specific",
-    "pokemon_specific": [
-      "snorlax"
-    ],
+    "pokemon_specific": {
+      "snorlax": [[true, 7]]
+    },
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -3619,7 +3611,7 @@
   },
   "snowball": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3637,7 +3629,7 @@
   },
   "soft_sand": {
     "item_type": "type_enhancer",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3655,10 +3647,10 @@
   },
   "solganium_z": {
     "item_type": "z_crystal_specific",
-    "pokemon_specific": [
-      "solgaleo",
-      "necrozma_dusk"
-    ],
+    "pokemon_specific": {
+      "solgaleo": [[true, 7]],
+      "necrozma_dusk": [[true, 7]]
+    },
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -3674,7 +3666,7 @@
   },
   "soothe_bell": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3690,9 +3682,9 @@
   },
   "soul_dew": {
     "item_type": "type_enhancer_specific",
-    "pokemon_specific": [
-      "latios"
-    ],
+    "pokemon_specific": {
+      "latios": [[true, 3]]
+    },
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3718,7 +3710,7 @@
   },
   "spell_tag": {
     "item_type": "type_enhancer",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3736,7 +3728,7 @@
   },
   "splash_plate": {
     "item_type": "plate",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -3757,7 +3749,7 @@
   },
   "spooky_plate": {
     "item_type": "plate",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -3778,7 +3770,7 @@
   },
   "star_sweet": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 8,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3794,7 +3786,7 @@
   },
   "steel_gem": {
     "item_type": "gem",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3812,7 +3804,7 @@
   },
   "steel_memory": {
     "item_type": "memory",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -3831,7 +3823,7 @@
   },
   "steelium_z": {
     "item_type": "z_crystal",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -3847,7 +3839,7 @@
   },
   "sticky_barb": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3865,7 +3857,7 @@
   },
   "stone_plate": {
     "item_type": "plate",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -3886,7 +3878,7 @@
   },
   "strawberry_sweet": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 8,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3902,12 +3894,12 @@
   },
   "tapunium_z": {
     "item_type": "z_crystal_specific",
-    "pokemon_specific": [
-      "tapu_koko",
-      "tapu_lele",
-      "tapu_bulu",
-      "tapu_fini"
-    ],
+    "pokemon_specific": {
+      "tapu_koko": [[true, 7]],
+      "tapu_lele": [[true, 7]],
+      "tapu_bulu": [[true, 7]],
+      "tapu_fini": [[true, 7]]
+    },
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -3923,7 +3915,7 @@
   },
   "terrain_extender": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3941,11 +3933,11 @@
   },
   "thick_club": {
     "item_type": "stat_enhancer_specific",
-    "pokemon_specific": [
-      "cubone",
-      "marowak",
-      "marowak_alola"
-    ],
+    "pokemon_specific": {
+      "cubone": [[true, 2]],
+      "marowak": [[true, 2]],
+      "marowak_alola": [[true, 7]]
+    },
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3964,7 +3956,7 @@
   },
   "throat_spray": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 8,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3982,7 +3974,7 @@
   },
   "toxic_orb": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4000,7 +3992,7 @@
   },
   "toxic_plate": {
     "item_type": "plate",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -4021,7 +4013,7 @@
   },
   "twisted_spoon": {
     "item_type": "type_enhancer",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4039,9 +4031,9 @@
   },
   "ultranecrozium_z": {
     "item_type": "z_crystal_specific",
-    "pokemon_specific": [
-      "necrozma_ultra"
-    ],
+    "pokemon_specific": {
+      "necrozma_ultra": [[true, 7]]
+    },
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -4057,7 +4049,7 @@
   },
   "utility_umbrella": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 8,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4076,7 +4068,7 @@
   },
   "water_gem": {
     "item_type": "gem",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4094,7 +4086,7 @@
   },
   "water_memory": {
     "item_type": "memory",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -4113,7 +4105,7 @@
   },
   "waterium_z": {
     "item_type": "z_crystal",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -4129,7 +4121,7 @@
   },
   "wave_incense": {
     "item_type": "incense",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4147,7 +4139,7 @@
   },
   "weakness_policy": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4166,7 +4158,7 @@
   },
   "white_herb": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4184,7 +4176,7 @@
   },
   "wide_lens": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4202,7 +4194,7 @@
   },
   "wise_glasses": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4220,7 +4212,7 @@
   },
   "yellow_scarf": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4236,7 +4228,7 @@
   },
   "zap_plate": {
     "item_type": "plate",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -4257,7 +4249,7 @@
   },
   "zoom_lens": {
     "item_type": "",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4275,7 +4267,7 @@
   },
   "aguav_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4294,7 +4286,7 @@
   },
   "apicot_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4313,7 +4305,7 @@
   },
   "aspear_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4332,7 +4324,7 @@
   },
   "babiri_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4351,7 +4343,7 @@
   },
   "belue_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4368,7 +4360,7 @@
   },
   "bluk_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4385,7 +4377,7 @@
   },
   "charti_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4404,7 +4396,7 @@
   },
   "cheri_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4423,7 +4415,7 @@
   },
   "chesto_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4442,7 +4434,7 @@
   },
   "chilan_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4461,7 +4453,7 @@
   },
   "chople_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4480,7 +4472,7 @@
   },
   "coba_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4499,7 +4491,7 @@
   },
   "colbur_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4518,7 +4510,7 @@
   },
   "cornn_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4535,7 +4527,7 @@
   },
   "custap_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4554,7 +4546,7 @@
   },
   "durin_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4571,7 +4563,7 @@
   },
   "enigma_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4588,7 +4580,7 @@
   },
   "figy_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4607,7 +4599,7 @@
   },
   "ganlon_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4626,7 +4618,7 @@
   },
   "grepa_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4643,7 +4635,7 @@
   },
   "haban_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4662,7 +4654,7 @@
   },
   "hondew_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4679,7 +4671,7 @@
   },
   "iapapa_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4698,7 +4690,7 @@
   },
   "jaboca_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4715,7 +4707,7 @@
   },
   "kasib_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4734,7 +4726,7 @@
   },
   "kebia_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4753,7 +4745,7 @@
   },
   "kee_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4772,7 +4764,7 @@
   },
   "kelpsy_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4789,7 +4781,7 @@
   },
   "lansat_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4808,7 +4800,7 @@
   },
   "leppa_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4825,7 +4817,7 @@
   },
   "liechi_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4844,7 +4836,7 @@
   },
   "lum_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4869,7 +4861,7 @@
   },
   "mago_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4888,7 +4880,7 @@
   },
   "magost_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4905,7 +4897,7 @@
   },
   "maranga_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4924,7 +4916,7 @@
   },
   "micle_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4944,7 +4936,7 @@
   },
   "nanab_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4961,7 +4953,7 @@
   },
   "nomel_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4978,7 +4970,7 @@
   },
   "occa_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -4997,7 +4989,7 @@
   },
   "oran_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -5014,7 +5006,7 @@
   },
   "pamtre_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -5031,7 +5023,7 @@
   },
   "passho_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -5050,7 +5042,7 @@
   },
   "payapa_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -5069,7 +5061,7 @@
   },
   "pecha_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -5088,7 +5080,7 @@
   },
   "persim_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -5107,7 +5099,7 @@
   },
   "petaya_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -5126,7 +5118,7 @@
   },
   "pinap_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -5143,7 +5135,7 @@
   },
   "pomeg_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -5160,7 +5152,7 @@
   },
   "qualot_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -5177,7 +5169,7 @@
   },
   "rabuta_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -5194,7 +5186,7 @@
   },
   "rawst_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -5213,7 +5205,7 @@
   },
   "razz_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -5230,7 +5222,7 @@
   },
   "rindo_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -5249,7 +5241,7 @@
   },
   "roseli_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -5268,7 +5260,7 @@
   },
   "rowap_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -5285,7 +5277,7 @@
   },
   "salac_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -5304,7 +5296,7 @@
   },
   "shuca_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -5323,7 +5315,7 @@
   },
   "sitrus_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -5340,7 +5332,7 @@
   },
   "spelon_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -5357,7 +5349,7 @@
   },
   "starf_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -5383,7 +5375,7 @@
   },
   "tamato_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -5400,7 +5392,7 @@
   },
   "tanga_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -5419,7 +5411,7 @@
   },
   "wacan_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -5438,7 +5430,7 @@
   },
   "watmel_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -5455,7 +5447,7 @@
   },
   "wepear_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -5472,7 +5464,7 @@
   },
   "wiki_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -5491,7 +5483,7 @@
   },
   "yache_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -5510,7 +5502,7 @@
   },
   "berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": true,
     "knock_off": true,
@@ -5528,7 +5520,7 @@
   },
   "bitter_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": true,
     "knock_off": true,
@@ -5546,7 +5538,7 @@
   },
   "burnt_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": true,
     "knock_off": true,
@@ -5564,7 +5556,7 @@
   },
   "gold_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": true,
     "knock_off": true,
@@ -5582,7 +5574,7 @@
   },
   "ice_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": true,
     "knock_off": true,
@@ -5600,7 +5592,7 @@
   },
   "mint_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": true,
     "knock_off": true,
@@ -5618,7 +5610,7 @@
   },
   "miracle_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -5642,7 +5634,7 @@
   },
   "mystery_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": true,
     "knock_off": true,
@@ -5660,7 +5652,7 @@
   },
   "prz_cure_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": true,
     "knock_off": true,
@@ -5678,7 +5670,7 @@
   },
   "psn_cure_berry": {
     "item_type": "berry",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": true,
     "knock_off": true,
@@ -5698,9 +5690,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/e/e5/Bag_Abomasite_Sprite.png",
     "sprite_url": "Mega stone for Abomasnow.",
-    "pokemon_specific": [
-      "abomasnow"
-    ],
+    "pokemon_specific": {
+      "abomasnow": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -5720,9 +5712,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/d/d8/Bag_Absolite_Sprite.png",
     "sprite_url": "Mega stone for Absol.",
-    "pokemon_specific": [
-      "absol"
-    ],
+    "pokemon_specific": {
+      "absol": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -5742,9 +5734,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/0/02/Bag_Aerodactylite_Sprite.png",
     "sprite_url": "Mega stone for Aerodactyl.",
-    "pokemon_specific": [
-      "aerodactyl"
-    ],
+    "pokemon_specific": {
+      "aerodactyl": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -5764,9 +5756,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/c/c1/Bag_Aggronite_Sprite.png",
     "sprite_url": "Mega stone for Aggron.",
-    "pokemon_specific": [
-      "aggron"
-    ],
+    "pokemon_specific": {
+      "aggron": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -5786,9 +5778,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/9/9c/Bag_Alakazite_Sprite.png",
     "sprite_url": "Mega stone for Alakazam.",
-    "pokemon_specific": [
-      "alakazam"
-    ],
+    "pokemon_specific": {
+      "alakazam": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -5808,9 +5800,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/2/2d/Bag_Altarianite_Sprite.png",
     "sprite_url": "Mega stone for Altaria.",
-    "pokemon_specific": [
-      "altaria"
-    ],
+    "pokemon_specific": {
+      "altaria": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -5830,9 +5822,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/2/2c/Bag_Ampharosite_Sprite.png",
     "sprite_url": "Mega stone for Ampharos.",
-    "pokemon_specific": [
-      "ampharos"
-    ],
+    "pokemon_specific": {
+      "ampharos": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -5852,9 +5844,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/e/e9/Bag_Audinite_Sprite.png",
     "sprite_url": "Mega stone for Audino.",
-    "pokemon_specific": [
-      "audino"
-    ],
+    "pokemon_specific": {
+      "audino": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -5874,9 +5866,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/3/35/Bag_Banettite_Sprite.png",
     "sprite_url": "Mega stone for Banette.",
-    "pokemon_specific": [
-      "banette"
-    ],
+    "pokemon_specific": {
+      "banette": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -5896,9 +5888,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/1/1c/Bag_Beedrillite_Sprite.png",
     "sprite_url": "Mega stone for Beedrill.",
-    "pokemon_specific": [
-      "beedrill"
-    ],
+    "pokemon_specific": {
+      "beedrill": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -5918,9 +5910,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/6/62/Bag_Blastoisinite_Sprite.png",
     "sprite_url": "Mega stone for Blastoise.",
-    "pokemon_specific": [
-      "blastoise"
-    ],
+    "pokemon_specific": {
+      "blastoise": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -5940,9 +5932,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/1/14/Bag_Blazikenite_Sprite.png",
     "sprite_url": "Mega stone for Blaziken.",
-    "pokemon_specific": [
-      "blaziken"
-    ],
+    "pokemon_specific": {
+      "blaziken": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -5962,9 +5954,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/3/3e/Bag_Cameruptite_Sprite.png",
     "sprite_url": "Mega stone for Camerupt.",
-    "pokemon_specific": [
-      "camerupt"
-    ],
+    "pokemon_specific": {
+      "camerupt": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -5984,9 +5976,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/1/1c/Bag_Charizardite_X_Sprite.png",
     "sprite_url": "Mega stone for Charizard.",
-    "pokemon_specific": [
-      "charizard"
-    ],
+    "pokemon_specific": {
+      "charizard": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6006,9 +5998,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/c/c8/Bag_Charizardite_Y_Sprite.png",
     "sprite_url": "Mega stone for Charizard.",
-    "pokemon_specific": [
-      "charizard"
-    ],
+    "pokemon_specific": {
+      "charizard": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6028,9 +6020,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/a/aa/Bag_Diancite_Sprite.png",
     "sprite_url": "Mega stone for Diancie.",
-    "pokemon_specific": [
-      "diancie"
-    ],
+    "pokemon_specific": {
+      "diancie": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6050,9 +6042,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/9/9f/Bag_Galladite_Sprite.png",
     "sprite_url": "Mega stone for Gallade.",
-    "pokemon_specific": [
-      "gallade"
-    ],
+    "pokemon_specific": {
+      "gallade": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6072,9 +6064,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/4/4c/Bag_Garchompite_Sprite.png",
     "sprite_url": "Mega stone for Garchomp.",
-    "pokemon_specific": [
-      "garchomp"
-    ],
+    "pokemon_specific": {
+      "garchomp": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6094,9 +6086,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/4/49/Bag_Gardevoirite_Sprite.png",
     "sprite_url": "Mega stone for Gardevoir.",
-    "pokemon_specific": [
-      "gardevoir"
-    ],
+    "pokemon_specific": {
+      "gardevoir": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6116,9 +6108,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/2/27/Bag_Gengarite_Sprite.png",
     "sprite_url": "Mega stone for Gengar.",
-    "pokemon_specific": [
-      "gengar"
-    ],
+    "pokemon_specific": {
+      "gengar": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6138,9 +6130,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/8/81/Bag_Glalitite_Sprite.png",
     "sprite_url": "Mega stone for Glalie.",
-    "pokemon_specific": [
-      "glalie"
-    ],
+    "pokemon_specific": {
+      "glalie": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6160,9 +6152,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/9/9f/Bag_Gyaradosite_Sprite.png",
     "sprite_url": "Mega stone for Gyarados.",
-    "pokemon_specific": [
-      "gyarados"
-    ],
+    "pokemon_specific": {
+      "gyarados": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6182,9 +6174,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/8/8c/Bag_Heracronite_Sprite.png",
     "sprite_url": "Mega stone for Heracross.",
-    "pokemon_specific": [
-      "heracross"
-    ],
+    "pokemon_specific": {
+      "heracross": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6204,9 +6196,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/a/ae/Bag_Houndoominite_Sprite.png",
     "sprite_url": "Mega stone for Houndoom.",
-    "pokemon_specific": [
-      "houndoom"
-    ],
+    "pokemon_specific": {
+      "houndoom": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6226,9 +6218,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/c/c5/Bag_Kangaskhanite_Sprite.png",
     "sprite_url": "Mega stone for Kangaskhan.",
-    "pokemon_specific": [
-      "kangaskhan"
-    ],
+    "pokemon_specific": {
+      "kangaskhan": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6248,9 +6240,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/3/39/Bag_Latiasite_Sprite.png",
     "sprite_url": "Mega stone for Latias.",
-    "pokemon_specific": [
-      "latias"
-    ],
+    "pokemon_specific": {
+      "latias": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6270,9 +6262,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/6/69/Bag_Latiosite_Sprite.png",
     "sprite_url": "Mega stone for Latios.",
-    "pokemon_specific": [
-      "latios"
-    ],
+    "pokemon_specific": {
+      "latios": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6292,9 +6284,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/4/4d/Bag_Lopunnite_Sprite.png",
     "sprite_url": "Mega stone for Lopunny.",
-    "pokemon_specific": [
-      "lopunny"
-    ],
+    "pokemon_specific": {
+      "lopunny": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6314,9 +6306,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/7/76/Bag_Lucarionite_Sprite.png",
     "sprite_url": "Mega stone for Lucario.",
-    "pokemon_specific": [
-      "lucario"
-    ],
+    "pokemon_specific": {
+      "lucario": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6336,9 +6328,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/9/98/Bag_Manectite_Sprite.png",
     "sprite_url": "Mega stone for Manectric.",
-    "pokemon_specific": [
-      "manectric"
-    ],
+    "pokemon_specific": {
+      "manectric": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6358,9 +6350,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/e/ed/Bag_Mawilite_Sprite.png",
     "sprite_url": "Mega stone for Mawile.",
-    "pokemon_specific": [
-      "mawile"
-    ],
+    "pokemon_specific": {
+      "mawile": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6380,9 +6372,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/e/ed/Bag_Medichamite_Sprite.png",
     "sprite_url": "Mega stone for Medicham.",
-    "pokemon_specific": [
-      "medicham"
-    ],
+    "pokemon_specific": {
+      "medicham": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6402,9 +6394,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/2/2a/Bag_Metagrossite_Sprite.png",
     "sprite_url": "Mega stone for Metagross.",
-    "pokemon_specific": [
-      "metagross"
-    ],
+    "pokemon_specific": {
+      "metagross": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6424,9 +6416,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/0/0d/Bag_Mewtwonite_X_Sprite.png",
     "sprite_url": "Mega stone for Mewtwo.",
-    "pokemon_specific": [
-      "mewtwo"
-    ],
+    "pokemon_specific": {
+      "mewtwo": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6446,9 +6438,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/4/4a/Bag_Mewtwonite_Y_Sprite.png",
     "sprite_url": "Mega stone for Mewtwo.",
-    "pokemon_specific": [
-      "mewtwo"
-    ],
+    "pokemon_specific": {
+      "mewtwo": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6468,9 +6460,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/8/87/Bag_Pidgeotite_Sprite.png",
     "sprite_url": "Mega stone for Pidgeot.",
-    "pokemon_specific": [
-      "pidgeot"
-    ],
+    "pokemon_specific": {
+      "pidgeot": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6490,9 +6482,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/1/15/Bag_Pinsirite_Sprite.png",
     "sprite_url": "Mega stone for Pinsir.",
-    "pokemon_specific": [
-      "pinsir"
-    ],
+    "pokemon_specific": {
+      "pinsir": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6512,9 +6504,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/2/2f/Bag_Sablenite_Sprite.png",
     "sprite_url": "Mega stone for Sableye.",
-    "pokemon_specific": [
-      "sableye"
-    ],
+    "pokemon_specific": {
+      "sableye": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6534,9 +6526,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/d/d0/Bag_Salamencite_Sprite.png",
     "sprite_url": "Mega stone for Salamence.",
-    "pokemon_specific": [
-      "salamence"
-    ],
+    "pokemon_specific": {
+      "salamence": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6556,9 +6548,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/5/5b/Bag_Sceptilite_Sprite.png",
     "sprite_url": "Mega stone for Sceptile.",
-    "pokemon_specific": [
-      "sceptile"
-    ],
+    "pokemon_specific": {
+      "sceptile": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6578,9 +6570,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/7/73/Bag_Scizorite_Sprite.png",
     "sprite_url": "Mega stone for Scizor.",
-    "pokemon_specific": [
-      "scizor"
-    ],
+    "pokemon_specific": {
+      "scizor": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6600,9 +6592,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/f/fb/Bag_Sharpedonite_Sprite.png",
     "sprite_url": "Mega stone for Sharpedo.",
-    "pokemon_specific": [
-      "sharpedo"
-    ],
+    "pokemon_specific": {
+      "sharpedo": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6622,9 +6614,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/9/9e/Bag_Slowbronite_Sprite.png",
     "sprite_url": "Mega stone for Slowbro.",
-    "pokemon_specific": [
-      "slowbro"
-    ],
+    "pokemon_specific": {
+      "slowbro": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6644,9 +6636,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/6/6c/Bag_Steelixite_Sprite.png",
     "sprite_url": "Mega stone for Steelix.",
-    "pokemon_specific": [
-      "steelix"
-    ],
+    "pokemon_specific": {
+      "steelix": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6666,9 +6658,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/f/f3/Bag_Swampertite_Sprite.png",
     "sprite_url": "Mega stone for Swampert.",
-    "pokemon_specific": [
-      "swampert"
-    ],
+    "pokemon_specific": {
+      "swampert": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6688,9 +6680,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/e/e3/Bag_Tyranitarite_Sprite.png",
     "sprite_url": "Mega stone for Tyranitar.",
-    "pokemon_specific": [
-      "tyranitar"
-    ],
+    "pokemon_specific": {
+      "tyranitar": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6710,9 +6702,9 @@
     "item_type": "mega_stone",
     "description": "//cdn2.bulbagarden.net/upload/0/0b/Bag_Venusaurite_Sprite.png",
     "sprite_url": "Mega stone for Venusaur.",
-    "pokemon_specific": [
-      "venusaur"
-    ],
+    "pokemon_specific": {
+      "venusaur": [[true, 6]]
+    },
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": false,
@@ -6730,7 +6722,7 @@
   },
   "berry_juice": {
     "item_type": "other",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -6748,7 +6740,7 @@
   },
   "adrenaline_orb": {
     "item_type": "other",
-    "pokemon_specific": [],
+    "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
     "knock_off": true,

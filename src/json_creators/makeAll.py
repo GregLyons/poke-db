@@ -195,6 +195,24 @@ def checkAbilitiesAgainstPokemon(abilityDict, pokemonDict):
 
   return
 
+def checkPokemonAgainstItems(pokemonDict, itemDict): 
+  print('Checking consistency of abilityDict with pokemonDict...')
+
+  # set of ability names from abilityDict
+  pokemonNames = set()
+  for pokemonName in pokemonDict.keys():
+    pokemonNames.add(pokemonName)
+
+  for itemName in itemDict.keys():
+    for pokemonName in itemDict[itemName]["pokemon_specific"].keys():
+      if pokemonName not in pokemonNames:
+        print(itemName, 'has an inconsistent Pokemon specificity requirement', pokemonName, '.')
+  
+  print('Finished.')
+  print()
+
+  return
+
 # check that the move requirements match the relevant dicts
 def checkMoveRequirements(moveDict, typeDict, pokemonDict, itemDict): 
   print('Checking consistency of move requirements with moveDict, typeDict, itemDict, and pokemonDict.')
@@ -314,6 +332,9 @@ def main():
 
   # check that the more complicated dictionaries are consistent with each other in terms of ability names
   checkAbilitiesAgainstPokemon(abilityDict, pokemonDict)
+
+  # check that Pokemon specificity requirements have same names as pokemonDict
+  checkPokemonAgainstItems(pokemonDict, itemDict)
 
   # check that move requirements have consistent base move names, type names, and pokemon names
   checkMoveRequirements(moveDict, typeDict, pokemonDict, itemDict)
