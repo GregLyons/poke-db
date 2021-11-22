@@ -2,6 +2,7 @@ require('dotenv').config();
 const mysql = require('mysql2');
 const tableStatements = require('./sql/index.js');
 
+
 const db = mysql.createPool({
   host: process.env.DB_HOST,
   user: process.env.DB_USERNAME,
@@ -889,7 +890,7 @@ const insertMoveJunctionData = async () => {
     for (let tableName of moveJunctionTables) {
       // Delete the tables.
       console.log(tableName);
-      db.promise().query(tableStatements.itemJunctionTables[tableName].delete)
+      db.promise().query(tableStatements.moveJunctionTables[tableName].delete)
       .then( ([results, fields]) => {
   
         console.log(`${tableName} table deleted.`);
@@ -916,7 +917,7 @@ const insertMoveJunctionData = async () => {
             values = moveData.reduce((acc, curr) => {
               const { gen: gen, name: moveName, type: pTypeName } = curr;
 
-              const { pmove_id: moveID } = pmove_FKM.get(makeMapKey([gen, moveName]));
+              const { pmove_id: moveID } = move_FKM.get(makeMapKey([gen, moveName]));
               
               const { ptype_id: pTypeID } = pType_FKM.get(makeMapKey([gen, pTypeName]));
 
@@ -943,21 +944,26 @@ const insertMoveJunctionData = async () => {
             */
 
             // Whether the requirement is a type, move, Pokemon, or item. Choose the foreign key map accordingly.
+            // dictKey refers to how the data is stored in moves.json; we need the key to extract the requirement data from moveData.
             const entityClass = tableName.split('_')[2];
             const entity_id = entityClass + '_id';
-            let entity_FKM;
+            let entity_FKM, dictKey;
             switch (entityClass) {
               case 'ptype':
                 entity_FKM = pType_FKM;
+                dictKey = 'type';
                 break;
               case 'pmove':
                 entity_FKM = move_FKM;
+                dictKey = 'move';
                 break;
               case 'pokemon':
                 entity_FKM = pokemon_FKM;
+                dictKey = 'pokemon';
                 break;
               case 'item':
                 entity_FKM = item_FKM;
+                dictKey = 'item'
                 break;
               default:
                 throw 'Invalid entity class, ' + entityClass;
@@ -966,13 +972,16 @@ const insertMoveJunctionData = async () => {
             values = moveData.reduce((acc, curr) => {
               // Get item data from curr.
               const { gen: gen, name: moveName, requirements: requirementData } = curr;
-              const { pmove_id: moveID } = pmove_FKM.get(makeMapKey([gen, moveName]));
+              const { pmove_id: moveID } = move_FKM.get(makeMapKey([gen, moveName]));
+
+              // Check whether requirementData exists AND has the relevant entity, dictKey. If not, return.
+              if (!requirementData || !requirementData[dictKey]) return acc;
+              console.log(requirementData);
               
               return acc.concat(
-                Object.keys(typeData).map(entityName => {
-                  // All the possible entity classes 
+                requirementData[dictKey].map(entityName => {
+                  // All the possible entity classes come alphabetically before 'generation_id', so the order [gen, entityName] is correct.
                   const { [entity_id]: entityID } = entity_FKM.get(makeMapKey([gen, entityName]));
-                  const multiplier = typeData[entityName];
 
                   return multiplier != 1 
                     ? [gen, moveID, gen, entityID]
@@ -984,23 +993,18 @@ const insertMoveJunctionData = async () => {
             .filter(data => data.length > 0);
             break;
 
-          case 'pmove_boosts_usage_method':
-          case 'pmove_resists_usage_method':
+          case 'pmove_usage_method':
             /* 
               Need (
                 pmove_generation_id,
                 pmove_id,
-                usage_method_id,
-                multiplier
+                usage_method_id
               ) 
             */
-            boostOrResist = tableName.split('_')[1];
-            boostOrResistKey = boostOrResist + '_usage_method';
-
             values = moveData.reduce((acc, curr) => {
               // Get entity data from curr.
-              const { gen: gen, name: itemName, [boostOrResistKey]: usageMethodData } = curr;
-              const { pmove_id: itemID } = pmove_FKM.get(makeMapKey([gen, itemName]));
+              const { gen: gen, name: moveName, usage_method: usageMethodData } = curr;
+              const { pmove_id: moveID } = move_FKM.get(makeMapKey([gen, moveName]));
               
               return acc.concat(
                 Object.keys(usageMethodData).map(usageMethodName => {
@@ -1009,7 +1013,7 @@ const insertMoveJunctionData = async () => {
                   const multiplier = usageMethodData[usageMethodName];
 
                   return multiplier != 1 
-                  ? [gen, itemID, usageMethodID, multiplier]
+                  ? [gen, moveID, usageMethodID]
                   : [];
                 })
               )
@@ -1031,30 +1035,30 @@ const insertMoveJunctionData = async () => {
               )
             */
             values = moveData.reduce((acc, curr) => {
-              // Get item data from curr.
-              const { gen: gen, name: itemName, stat_modifications: statModData } = curr;
-              const { pmove_id: itemID } = pmove_FKM.get(makeMapKey([gen, itemName]));
+              // Get move data from curr.
+              const { gen: gen, name: moveName, stat_modifications: statModData } = curr;
+              const { pmove_id: moveID } = move_FKM.get(makeMapKey([gen, moveName]));
 
               return acc.concat(
                 Object.keys(statModData).map(statName => {
                   // We always compare entities of the same generation.
                   const { stat_id: statID } = stat_FKM.get(makeMapKey([statName]));
-                  let [modifier, recipient] = statModData[statName]
+                  let [modifier, recipient, chance] = statModData[statName]
 
                   // True if stage modification, False if multiplier.
                   const stageOrMultiplier = typeof modifier == 'string';
-
+                  
                   // stage
                   if (stageOrMultiplier) {
                     modifier = parseInt(modifier.slice(1), 10);
                     return modifier != 0 
-                    ? [gen, itemID, statID, modifier, 1.0, 100.00, recipient]
+                    ? [gen, moveID, statID, modifier, 1.0, chance, recipient]
                     : [];
                   }
                   // multiplier
                   else {
                     return modifier != 1.0
-                    ? [gen, itemID, statID, 0, modifier, 100.00, recipient]
+                    ? [gen, moveID, statID, 0, modifier, chance, recipient]
                     : [];
                   }
                 })
@@ -1073,9 +1077,9 @@ const insertMoveJunctionData = async () => {
               )
             */
             values = moveData.reduce((acc, curr) => {
-              // Get item data from curr.
-              const { gen: gen, name: itemName, effects: effectData } = curr;
-              const { pmove_id: itemID } = pmove_FKM.get(makeMapKey([gen, itemName]));
+              // Get move data from curr.
+              const { gen: gen, name: moveName, effects: effectData } = curr;
+              const { pmove_id: moveID } = move_FKM.get(makeMapKey([gen, moveName]));
               return acc.concat(
                 Object.keys(effectData).map(effectName => {
                   // We always compare entities of the same generation.
@@ -1083,7 +1087,7 @@ const insertMoveJunctionData = async () => {
 
                   // True if effect is present, False otherwise.
                   return effectData[effectName]
-                  ? [gen, itemID, effectID]
+                  ? [gen, moveID, effectID]
                   : [];
                 })
               )
@@ -1098,41 +1102,51 @@ const insertMoveJunctionData = async () => {
               Need (
                 pmove_generation_id,
                 pmove_id,
-                pstatus_id
+                pstatus_id,
+                chance
               ) or (
                 pmove_generation_id,
                 pmove_id,
                 pstatus_id
               )
             */
-            const causeOrResist = tableName.split('_')[1];
-            const causeOrResistKey = causeOrResist + '_status';
-
-            values = moveData.reduce((acc, curr) => {
-              // Get item data from curr.
-              const { gen: gen, name: itemName, [causeOrResistKey]: statusData } = curr;
-              const { pmove_id: itemID } = pmove_FKM.get(makeMapKey([gen, itemName]));
-              
-              return acc.concat(
-                Object.keys(statusData).map(statusName => {
-                  // We always compare entities of the same generation.
-                  const { pstatus_id: statusID } = pstatus_FKM.get(makeMapKey([statusName]));
-
-                  return statusData[statusName] 
-                  ? [gen, itemID, statusID]
-                  : [];
-                })
-              )
-            }, [])
-            // Filter out empty entries
-            .filter(data => data.length > 0);
-            break;
+              const causeOrResist = tableName.split('_')[1];
+              const causeOrResistKey = causeOrResist + '_status';
+  
+              values = moveData.reduce((acc, curr) => {
+                // Get move data from curr.
+                const { gen: gen, name: moveName, [causeOrResistKey]: statusData } = curr;
+                const { pmove_id: moveID } = move_FKM.get(makeMapKey([gen, moveName]));
+                
+                return acc.concat(
+                  Object.keys(statusData).map(statusName => {
+                    // We always compare entities of the same generation.
+                    const { pstatus_id: statusID } = pstatus_FKM.get(makeMapKey([statusName]));
+                    if (causeOrResist === 'causes') {
+                      // In case of causes, statusData[statusName] is probability of causing status.
+                      const chance = statusData[statusName];
+    
+                      return chance != 0.0 
+                      ? [gen, moveID, statusID, chance]
+                      : [];
+                    } else {
+                      // In case of resists, statusData[statusName] is either True or False.
+                      return statusData[statusName] 
+                      ? [gen, moveID, statusID]
+                      : [];
+                    }
+                  })
+                )
+              }, [])
+              // Filter out empty entries
+              .filter(data => data.length > 0);
+              break;
 
           default:
             console.log(`${tableName} unhandled.`);
         }
 
-        db.promise().query(tableStatements.itemJunctionTables[tableName].insert, [values])
+        db.promise().query(tableStatements.moveJunctionTables[tableName].insert, [values])
         .then( ([results, fields]) => {
           console.log(`${tableName} data inserted: ${results.affectedRows} rows.`);
         })
@@ -1272,3 +1286,4 @@ const makeMapKey = arr => arr.join(' ');
 // insertGenDependentEntities();
 // insertAbilityJunctionData();
 // insertItemJunctionData();
+insertMoveJunctionData();

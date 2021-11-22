@@ -45,6 +45,10 @@ function getStatementObj(fname) {
       const createMatch = curr.match(tableRegex);
       const [tableName, createStatement] = [createMatch[1], createMatch.input];
       const truncateStatement = `TRUNCATE TABLE ${tableName}`;
+
+      if (tableName === 'pmove_has_ptype') {
+        console.log(tableName);
+      }
       
       // For each table, identify the foreign key dependencies
       const dependencyRegex = /REFERENCES ([a-z_]+)\(/g;
@@ -57,9 +61,9 @@ function getStatementObj(fname) {
       const selectColumns = columnSelection => `SELECT ${columnSelection} FROM ${tableName}`;
 
       // delete data from a table 
-      const deleteStatement = `DELETE FROM ${tableName}`
+      const deleteStatement = `DELETE FROM ${tableName}`;
       // reset auto_increment
-      const resetStatement = `ALTER TABLE ${tableName} AUTO_INCREMENT = 1`
+      const resetStatement = `ALTER TABLE ${tableName} AUTO_INCREMENT = 1`;
 
       return {
         ...acc,

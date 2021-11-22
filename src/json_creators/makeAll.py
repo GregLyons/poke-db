@@ -195,7 +195,9 @@ def checkAbilitiesAgainstPokemon(abilityDict, pokemonDict):
 
   return
 
-def checkMoveRequirements(moveDict, typeDict, pokemonDict): 
+# check that the move requirements match the relevant dicts
+def checkMoveRequirements(moveDict, typeDict, pokemonDict, itemDict): 
+  print('Checking consistency of move requirements with moveDict, typeDict, itemDict, and pokemonDict.')
   moveNames = set()
   for moveName in moveDict.keys():
     moveNames.add(moveName)
@@ -208,6 +210,10 @@ def checkMoveRequirements(moveDict, typeDict, pokemonDict):
   for typeName in typeDict.keys():
     typeNames.add(typeName)
 
+  itemNames = set()
+  for itemName in itemDict.keys():
+    itemNames.add(itemName)
+
   for moveName in moveDict.keys():
     # ignore moves without requirements
     if 'requirements' not in moveDict[moveName].keys():
@@ -215,20 +221,25 @@ def checkMoveRequirements(moveDict, typeDict, pokemonDict):
     else:
       requirements = moveDict[moveName]["requirements"]
     
-    if 'pokemon' in requirements.keys():
-      for pokemonName in requirements["pokemon"]:
-        if pokemonName not in pokemonNames:
-          print(moveName, 'has an inconsistent Pokemon requirement:', pokemonName)
-    
-    if 'type' in requirements.keys():
-      typeName = requirements["type"]
-      if typeName not in typeNames:
-        print(moveName, 'has an inconsistent type requirement:', typeName)
+    for entityClass in moveDict[moveName]["requirements"]:
+      if entityClass == 'pokemon':
+        entitySet = pokemonNames
+      elif entityClass == 'move':
+        entitySet = moveNames
+      elif entityClass == 'item':
+        entitySet = itemNames
+      elif entityClass == 'type':
+        entitySet = typeNames
+      else:
+        continue
+      
+      for patch in requirements[entityClass]:
+        entityName, patchGen = patch
+        if entityName not in entitySet:
+          print(moveName, 'has an inconsistent', entityClass, 'requirement:', pokemonName)
 
-    if 'move' in requirements.keys():
-      baseMoveName = requirements["move"]
-      if baseMoveName not in moveNames:
-        print(moveName, 'has an inconsistent base move name:', baseMoveName)
+  print('Finished.')
+  print()
 
   return
 
@@ -305,7 +316,7 @@ def main():
   checkAbilitiesAgainstPokemon(abilityDict, pokemonDict)
 
   # check that move requirements have consistent base move names, type names, and pokemon names
-  checkMoveRequirements(moveDict, typeDict, pokemonDict)
+  checkMoveRequirements(moveDict, typeDict, pokemonDict, itemDict)
 
   # check that the entry names in descriptionDict are consistent with the other dicts
   checkDescriptionsAgainstEntities(descriptionDict, abilityDict, 'ability')

@@ -67,6 +67,7 @@ def makeRequirementCSV(fname):
         pokemonNames = []
         for suffix in ['_original', '_kalos', '_alola', '_hoenn', '_sinnoh', '_unova', '_partner', '_world']:
           pokemonNames.append('pikachu' + suffix + '_cap')
+        print(pokemonNames)
       elif 'sparksurfer' in moveName:
         pokemonNames = ['raichu_alola']
       elif 'guardian_of_alola' in moveName:

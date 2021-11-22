@@ -309,7 +309,10 @@ const getUpdatedLearnsets = (learnsets, moves, pokemon) => {
       
       // update learnsets so that Pokemon who learn the base move can also learn the corresponding Z-move
       // get base move for moveName 
-      const learnsetBaseMoveName = moveMap.get(moves[moveName].requirements.move);
+      // note that Z-moves only have one base move, so we use the index [0].
+      const learnsetBaseMoveName = moveMap.get(moves[moveName].requirements["move"][0][0]);
+      // console.log(learnsetBaseMoveName);
+      // console.log(pokemonWhoLearnMoveMap.get(learnsetBaseMoveName));
       for (let learnsetPokemonName of pokemonWhoLearnMoveMap
         .get(learnsetBaseMoveName)
         // filter out Pokemon introduced after gen 7, or who did not learn the base move in gen 7
@@ -358,7 +361,7 @@ const getUpdatedLearnsets = (learnsets, moves, pokemon) => {
     
     // indicates move is Pokemon specific; in this case, it definitely learns the move
     if (moves[moveName].requirements.hasOwnProperty('pokemon')) {
-      for (let pokemonName of moves[moveName].requirements.pokemon) {
+      for (let pokemonName of moves[moveName].requirements.pokemon.map(patch => patch[0])) {
         let learnsetPokemonName = pokemonMap.get(pokemonName);
         // Z-moves or max moves are exclusive to their generation
         // learnData is the gen + 'S' for 'Special'
@@ -510,8 +513,8 @@ const splitEntity = (entity, initialGen) => {
             }
           } 
           // for some attributes, e.g. power, we need to have only one value per gen, so this catches that 
-          // for other attributes, e.g. 'evolves_to' for eevee, which evolves to multiple Pokemon in Gen 1, we can have multiple values per gen
-          else if (patch.slice(-1)[0] == gen && key != 'evolves_to' && key != 'evolves_from') {
+          // for other attributes, e.g. 'evolves_to' for eevee, which evolves to multiple Pokemon in Gen 1, we can have multiple values per gen. Also true for move requirements.
+          else if (patch.slice(-1)[0] == gen && key != 'evolves_to' && key != 'evolves_from' && key != 'requirements') {
             throw `${entity.formatted_name} has duplicate gen in ${key}, ${value}.`;
           }
         }
@@ -555,7 +558,9 @@ const splitEntity = (entity, initialGen) => {
                 else {
                   splitObject[gen][key][innerKey] = patch.slice(0, -1);
                 }
-              } else if (patch.slice(-1)[0] == gen) {
+              } 
+              // Move requirements can have multiple Pokemon.
+              else if (patch.slice(-1)[0] == gen && key != 'requirements') {
                 throw `${entity.formatted_name} has duplicate gen in ${key}, ${innerValue}.`;
               }
             }

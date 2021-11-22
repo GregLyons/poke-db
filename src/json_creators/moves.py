@@ -598,8 +598,8 @@ def addStatModToMoveDict(fname, moveDict):
   # note that since we leave these out of the original .csv, the z-move counterparts aren't added either since the addZMoves method in the .csv creator file goes based on moves already present in the .csv
   #region
   # acid
-  moveDict["acid"]["stat_modifications"]["defense"] = [['-1', 'target', 33.2, 1], ['-1', 'target', 10.0, 2], ['0', 'target', 0.0, 4]]
-  moveDict["acid"]["stat_modifications"]["special_defense"] = [['0', 'target', 0.0, 1], ['-1', 'target', 10.0, 4]]
+  moveDict["acid"]["stat_modifications"]["defense"] = [['-1', 'target', 33.2, 1], ['-1', 'target', 10.0, 2], ['+0', 'target', 0.0, 4]]
+  moveDict["acid"]["stat_modifications"]["special_defense"] = [['+0', 'target', 0.0, 1], ['-1', 'target', 10.0, 4]]
 
   # aurora beam
   moveDict["aurora_beam"]["attack"] = [['-1', 'target', 33.2, 1], ['-1', 'target', 10.0, 2]]
@@ -718,25 +718,36 @@ def addRequirementData(fname, moveDict):
 
     for row in reader:
       moveName, requirement1, requirement2 = row["Move Name"], [row["Requirement 1 Class"], row["Requirement 1 Name"]], [row["Requirement 2 Class"], row["Requirement 2 Name"]]
+
+      moveGen = moveDict[moveName]["gen"]
       
-      moveDict[moveName]["requirements"] = {}
+      if 'requirements' not in moveDict[moveName].keys():
+        moveDict[moveName]["requirements"] = {}
 
       for requirement in [requirement1, requirement2]:
         reqClass, reqName = requirement
-        # g-max moves and certain z-moves
-        if reqClass == 'pokemon':
-          if 'pokemon' not in moveDict[moveName]["requirements"].keys():
-            moveDict[moveName]["requirements"]["pokemon"] = []
-          moveDict[moveName]["requirements"]["pokemon"].append(reqName)
-        # max moves, g-max moves, and z-moves
-        elif reqClass == 'type':
-          moveDict[moveName]["requirements"]["type"] = reqName
-        # status z-moves and max guard
-        elif reqClass == 'category':
-          moveDict[moveName]["requirements"]["category"] = reqName
-        elif reqClass == 'move':
-          moveDict[moveName]["requirements"]["move"] = reqName
 
+        # indicates empty requirement, e.g. requirement2 is empty when there's only one requirement.
+        if reqClass == '':
+          continue
+
+        if reqClass not in moveDict[moveName]["requirements"].keys():
+          moveDict[moveName]["requirements"][reqClass] = []
+        moveDict[moveName]["requirements"][reqClass].append([reqName, moveGen])
+        
+        # # g-max moves and certain z-moves
+        # if reqClass == 'pokemon':
+        #   if 'pokemon' not in moveDict[moveName]["requirements"].keys():
+        #     moveDict[moveName]["requirements"]["pokemon"] = []
+        #   moveDict[moveName]["requirements"]["pokemon"].append(reqName)
+        # # max moves, g-max moves, and z-moves
+        # elif reqClass == 'type':
+        #   moveDict[moveName]["requirements"]["type"] = reqName
+        # # status z-moves and max guard
+        # elif reqClass == 'category':
+        #   moveDict[moveName]["requirements"]["category"] = reqName
+        # elif reqClass == 'move':
+        #   moveDict[moveName]["requirements"]["move"] = reqName
   return
 
 # add data for power that a base move gives to the corresponding z-move, max move, or g-max move
