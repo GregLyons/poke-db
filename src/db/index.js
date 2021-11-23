@@ -1,6 +1,7 @@
 require('dotenv').config();
 const mysql = require('mysql2');
 const tableStatements = require('./sql/index.js');
+const { timeElapsed } = require('./utils.js');
 
 
 const db = mysql.createPool({
@@ -25,7 +26,7 @@ const createDB = () => {
 
 /* 1. Reset tables. */
 // #region
-const { prepareForDrop, dropTables, createTables } = require('./utils.js');
+const { prepareLearnsetTableForDrop, dropTables, createTables } = require('./utils.js');
 
 // Drop tables if they exist, then recreate them.
 const resetTables = async () => {
@@ -34,33 +35,33 @@ const resetTables = async () => {
   let now;
 
   return prepareForDrop(db)
-  .then( () => {
+    .then( () => {
 
-    now = new Date().getTime();
-    console.log('Took', Math.floor((now - timer) / 1000), 'seconds.\n');
-    timer = now;
+      now = new Date().getTime();
+      console.log('Took', Math.floor((now - timer) / 1000), 'seconds.\n');
+      timer = now;
 
-    console.log('\nDropping tables...\n')
-    return dropTables(db, tableStatements);
-  })
-  .then( () => {
+      console.log('\nDropping tables...\n')
+      return dropTables(db, tableStatements);
+    })
+    .then( () => {
 
-    now = new Date().getTime();
-    console.log('Took', Math.floor((now - timer) / 1000), 'seconds.\n');
-    timer = now;
+      now = new Date().getTime();
+      console.log('Took', Math.floor((now - timer) / 1000), 'seconds.\n');
+      timer = now;
 
-    console.log('\nCreating tables...\n')
-    return createTables(db, tableStatements);
-  })
-  .then( () => {
+      console.log('\nCreating tables...\n')
+      return createTables(db, tableStatements);
+    })
+    .then( () => {
 
-    now = new Date().getTime();
-    console.log('Took', Math.floor((now - timer) / 1000), 'seconds.\n');
-    timer = now;
+      now = new Date().getTime();
+      console.log('Took', Math.floor((now - timer) / 1000), 'seconds.\n');
+      timer = now;
 
-    console.log('\nFinished resetting tables!\n');
-  })
-  .catch(console.log);
+      console.log('\nFinished resetting tables!\n');
+    })
+    .catch(console.log);
 }
 
 // resetTables();
@@ -68,96 +69,48 @@ const resetTables = async () => {
 // #endregion
 
 /* 2. Insert data for basic entities. */ 
+// #region
+const { resetBasicEntityTables } = require('./utils.js');
 
-const { insertBasicEntities } = require('./utils.js');
+const reinsertBasicEntityTables = async () => {
+  console.log('Re-inserting data for basic entities...\n');
+  let timer = new Date().getTime();
 
-let timer = new Date().getTime();
-insertBasicEntities(db, tableStatements)
-.then( () => {
-  let now = new Date().getTime();
-  console.log('Took', Math.floor((now - timer) / 1000), 'seconds.\n');
-  timer = now;
+  return resetBasicEntityTables(db, tableStatements)
+    .then( () => {
+      timer = timeElapsed(timer);
+    })
+    .then ( () => {
+      console.log('\nFinished inserting data for basic entities!\n');
+    })
+    .catch(console.log);
+}
 
-  console.log('\nFinished inserting basic entities!\n');
-})
-.catch(console.log);
+// reinsertBasicEntityTables();
 
-// const insertBasicEntities = async () => {
-  
-//   for (let tableName of basicEntityTableNames) {
-//     // Delete the tables to overcome foreign key constraints.
-//     console.log(tableName);
-//     db.promise().query(tableStatements.entityTables[tableName].delete)
-//     .then( ([results, fields]) => {
+// #endregion
 
-//       console.log(`${tableName} table deleted.`);
+/* 3. Insert data for gen-dependent entities. */
+// #region
+const { resetGenDependentEntityTables } = require('./utils.js');
 
-//     })
-//     .catch(console.log)
-//     .then( () => {
-//       db.promise().query(tableStatements.entityTables[tableName].reset_auto_inc)
-//       .then( ([results, fields]) => {
-        
-//         console.log(`Reset AUTO_INCREMENT index for ${tableName} table.`);
-//       })
-//       .catch(console.log)
-//       .then( () => {
-        
-//         // Determine values to be inserted.
-//         let values;
-//         switch (tableName) {
-//           // gen numbers and codes
-//           case 'generation':
-//             const { GEN_ARRAY } = require('./utils.js');
-//             values = GEN_ARRAY;
-//             break;
+const reinsertGenDependentEntityTables = async () => {
+  console.log('Re-inserting data for gen-dependent entities...\n');
+  let timer = new Date().getTime();
 
-//           // the description 
-//           case 'pdescription':
-//             const descriptions = require('./processing/processed_data/descriptions.json');
-//             values = descriptions.reduce((acc, descriptionObj) => {
-//               // extract entityName and description type
-//               const { entity_name: entityName, description_type: descriptionType } = descriptionObj;
-              
-//               // descriptionObj contains all the descriptions for entity name, so we need to split them up. The unique descriptions are indexed by numeric keys.
-//               return acc.concat(Object.keys(descriptionObj)
-//                 // numeric keys contain description info
-//                 .filter(key => !isNaN(key))
-//                 .map(descriptionIndex => {
-//                   // descriptionObj[descriptionIndex] is a two-element array, whose first element is the description itself, and whose second element is another array containing version group codes; we don't need the latter at this moment
-//                   const description = descriptionObj[descriptionIndex][0];
-                  
-//                   return [description, descriptionIndex, descriptionType, entityName];
-//                 }));
-//             }, []);
-//             break;
-          
-//           // status effects
-//           case 'pstatus':
-//             values = require('./processing/processed_data/statuses.json').map(data => [data.name, data.formatted_name]);
-//             break;
-          
-//           // battle stats
-//           case 'stat':
-//             values = require('./processing/processed_data/stats.json').map(data => [data.name, data.formatted_name]);
-//             break;
+  return resetGenDependentEntityTables(db, tableStatements)
+    .then( () => {
+      timer = timeElapsed(timer);
+    })
+    .then ( () => {
+      console.log('\nFinished inserting data for gen-dependent entities!\n');
+    })
+    .catch(console.log);
+}
 
-//           default:
-//             console.log(`${tableName} unhandled.`);
-//         }
+reinsertGenDependentEntityTables();
 
-//         db.promise().query(tableStatements.entityTables[tableName].insert, [values])
-//         .then( ([results, fields]) => {
-//           console.log(`${tableName} data inserted: ${results.affectedRows} rows.`);
-//         })
-//         .catch(console.log);
-//       })
-//       .catch(console.log);;
-//     });
-//   }
-
-//   return;
-// }
+// #endregion
 
 // Inserts data for entities which depend on generation, either through a composite primary key or through an 'introduced' column. 
 // WARNING: the junction tables all depend on one or more tables in here, so performing this will cause those tables to be deleted.

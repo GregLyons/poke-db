@@ -10,6 +10,13 @@ const GEN_ARRAY = [
 ];
 const NUMBER_OF_GENS = GEN_ARRAY.length;
 
+const timeElapsed = timer => {
+  let now = new Date().getTime();
+  console.log('Took', Math.floor((now - timer) / 1000), 'seconds.\n');
+  timer = now;
+  return timer;
+}
+
 // CREATING AND DROPPING TABLES
 // #region
 
@@ -142,7 +149,32 @@ const createTables = async (db, tableStatements) => {
 // INSERTING DATA
 // #region
 
-const insertBasicEntities = async(db, tableStatements) => {
+
+/* 
+  DELETE FROM tables for generation-independent entities, then INSERT INTO those tables. 
+  
+  WARNING: Will cause data in most other tables, which depend on generation, to be deleted as well. 
+*/
+const resetGenDependentEntityTables = async(db, tableStatements) => {
+  const entityTableNames = [
+    'ability',
+    'effect',
+    'item',
+    'pokemon',
+    'pmove',
+    'ptype',
+    'usage_method',
+    'version_group'
+  ];
+  return resetTableGroup(db, tableStatements, entityTableNames)
+}
+
+/*
+  DELETE FROM tables for generation-dependent entities, then INSERT INTO those tables.
+
+  WARNING: Will cause data in the junction tables to be deleted.
+*/
+const resetBasicEntityTables = async(db, tableStatements) => {
   // TODO add sprites
   const basicEntityTableNames = [
     'generation',
@@ -150,26 +182,29 @@ const insertBasicEntities = async(db, tableStatements) => {
     'pstatus',
     'stat',
   ];
+  return await resetTableGroup(db, tableStatements, basicEntityTableNames)
+}
 
+const resetTableGroup = async(
+  db,
+  tableStatements,
+  tableNameArr,
+) => {
   /*
     1. DELETE FROM tableName.
     2. Reset AUTO_INCREMENT counter for tableName.
     3. INSERT INTO tableName.
   */
   return await Promise.all(
-    basicEntityTableNames.map(async (tableName) => {
+    tableNameArr.map(async (tableName) => {
       // DELETE FROM tableName.
-      await db.promise().query(tableStatements.entityTables[tableName].delete)
-        .then( () => console.log(`${tableName} table deleted.`))
-        .catch(console.log);
+      await deleteTableRows(db, tableStatements, tableName);
 
       // Reset AUTO_INCREMENT counter for tableName.
-      await db.promise().query(tableStatements.entityTables[tableName].reset_auto_inc)
-        .then( () => console.log(`Reset AUTO_INCREMENT counter for ${tableName} table.`))
-        .catch(console.log)
+      await resetAutoIncrement(db, tableStatements, tableName);
 
       // INSERT INTO tableName.
-      const values = getValuesForBasicEntities(tableName);
+      const values = getValuesForTable(db, tableName);
       return db.promise()
         .query(tableStatements.entityTables[tableName].insert, [values])
         .then( ([results, fields]) => {
@@ -182,14 +217,48 @@ const insertBasicEntities = async(db, tableStatements) => {
   .catch(console.log);
 }
 
-const getValuesForBasicEntities = (tableName) => {
+// #endregion
+
+
+// DASDSADSADSA
+// #region
+const deleteTableRows = async(db, tableStatements, tableName) => {
+  return db.promise().query(tableStatements.entityTables[tableName].delete)
+    .then( () => console.log(`${tableName} table deleted.`))
+    .catch(console.log);
+}
+
+const resetAutoIncrement = async(db, tableStatements, tableName) => {
+  return db.promise().query(tableStatements.entityTables[tableName].reset_auto_inc)
+    .then( () => console.log(`Reset AUTO_INCREMENT counter for ${tableName} table.`))
+    .catch(console.log)
+}
+
+const getValuesForTable = (db, tableName) => {
   let values;
   switch(tableName) {
+    /*
+      BASIC ENTITIES
+    */
     case 'generation':
+      /*
+        Need (
+          generation_id,
+          generation_code
+        )
+      */
       values = GEN_ARRAY;
       break;
     
     case 'pdescription':
+      /*
+        Need (
+          pdescription_text,
+          pdescription_index,
+          pdescription_type,
+          entity_name
+        )
+      */
       const descriptions = require('./processing/processed_data/descriptions.json');
       values = descriptions.reduce((acc, descriptionObj) => {
         // extract entityName and description type
@@ -209,26 +278,192 @@ const getValuesForBasicEntities = (tableName) => {
       break;
     
     case 'pstatus':
+      /*
+        Need (
+          pstatus_name,
+          pstatus_formatted_name
+        )
+      */
       values = require('./processing/processed_data/statuses.json').map(data => [data.name, data.formatted_name]);
       break;
     
     case 'stat':
+      /*
+        Need (
+          stat_name,
+          stat_formatted_name
+        )
+      */
       values = require('./processing/processed_data/stats.json').map(data => [data.name, data.formatted_name]);
       break;
+
+    /*
+      GENERATION-DEPENDENT ENTITIES
+    */
+    case 'ability':
+      /*
+        Need (
+          generation_id,
+          ability_name,
+          ability_formatted_name,
+          introduced
+        )
+      */
+      values = require('./processing/processed_data/abilities.json')
+        .map(data => [data.gen, data.name, data.formatted_name, data.introduced]);
+      break;
+
+    case 'effect':
+      /* 
+        Need (
+          effect_name,
+          effect_formatted_name,
+          introduced
+        )
+      */
+      values = require('./processing/processed_data/effects.json')
+        .map(data => [data.name, data.formatted_name, data.introduced]);
+      break;
+
+    case 'item':
+      /* 
+        Need (
+          generation_id,
+          item_name,
+          item_formatted_name,
+          introduced,
+          item_class
+        ) 
+      */
+      values = require('./processing/processed_data/items.json')
+        .map(data => [data.gen, data.name, data.formatted_name, data.introduced, data.item_type]);
+      break;
+
+    case 'pokemon':
+      /* 
+        Need (
+          generation_id,
+          pokemon_name,
+          pokemon_formatted_name,
+          pokemon_species,
+          pokemon_dex,
+          pokemon_height,
+          pokemon_weight,
+          introduced,
+          pokemon_hp,
+          pokemon_attack,
+          pokemon_defense,
+          pokemon_special_defense,
+          pokemon_special_attack,
+          pokemon_speed
+        )
+      */
+      values = require('./processing/processed_data/pokemon.json')
+        // filter out cosmetic forms and lgpe_only pokemon
+        .filter(data => !data.cosmetic && !(data.gen == 'lgpe_only'))
+        .map(data => [
+          data.gen,
+          data.name,
+          data.formatted_name,
+          data.species,
+          data.dex_number,
+          data.height,
+          data.weight,
+          data.introduced,
+          data.hp,
+          data.attack,
+          data.defense,
+          data.special_defense,
+          data.special_attack,
+          data.speed,
+        ]);
+      break;
     
-      default:
+    case 'pmove':
+      /*
+        Need (
+          generation_id,
+          pmove_name,
+          pmove_formatted_name,
+          introduced,
+          pmove_power,
+          pmove_pp,
+          pmove_accuracy,
+          pmove_category,
+          pmove_priority,
+          pmove_contact,
+          pmove_target
+        )
+      */
+      values = require('./processing/processed_data/moves.json')
+        .map(data => [
+          data.gen,
+          data.name,
+          data.formatted_name,
+          data.introduced,
+          data.power,
+          data.pp,
+          data.accuracy,
+          data.category,
+          data.priority,
+          data.contact,
+          data.target
+        ]);
+      break;
+
+    case 'ptype':
+      /*
+        Need (
+          generation_id,
+          ptype_name,
+          ptype_formatted_name,
+          introduced
+        )
+      */
+      values = require('./processing/processed_data/pTypes.json')
+        .map(data => [data.gen, data.name, data.formatted_name, data.introduced]);
+      break;
+
+    case 'usage_method':
+      /*
+        Need (
+          usage_method_name
+          usage_method_formatted_name
+          introduced
+        )
+      */
+      values = require('./processing/processed_data/usageMethods.json')
+        .map(data => [data.name, data.formatted_name, data.introduced]);
+      break;
+
+    case 'version_group':
+      /*
+        Need (
+          version_group_code,
+          version_group_formatted_name
+          introduced
+        )
+      */
+      values = require('./processing/processed_data/versionGroups.json').map(data => [data.name, data.formatted_name, data.introduced]);
+      break;
+
+    default:
         console.log(`${tableName} unhandled.`);
   }
   return values;
 }
+
+
 
 // #endregion
 
 module.exports = {
   NUMBER_OF_GENS,
   GEN_ARRAY,
-  prepareForDrop: prepareLearnsetTableForDrop,
+  timeElapsed,
+  prepareLearnsetTableForDrop,
   dropTables,
   createTables,
-  insertBasicEntities,
+  resetBasicEntityTables,
+  resetGenDependentEntityTables,
 }
