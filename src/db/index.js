@@ -8,7 +8,7 @@ const db = mysql.createPool({
   user: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  connectionLimit: 40,
+  connectionLimit: 30,
   connectTimeout: 20000,
 });
 
@@ -23,55 +23,53 @@ const createDB = () => {
   console.log('Database created.');
 } 
 
-// Initializes all tables; will only create tables that don't already exist.
-const createTables = async () => {
-  // Create entity tables first for foreign keys in junction tables.
-  console.log('Creating entity tables if they don\'t already exist.');
+/* 1. Reset tables. */
+// #region
+// Drop tables if they exist, then recreate them.
+const { prepareForDrop, dropTables, createTables } = require('./utils.js');
 
-  // Create generation table before everything else
-  db.promise().query(tableStatements.entityTables.generation.create)
-    .then(
-      () => {
-        console.log('generation table created.');
-  
-        Promise.all(Object.keys(tableStatements.entityTables).filter(tableName => tableName !== 'generation').map(tableName => {
-          const statement = tableStatements.entityTables[tableName].create;
-      
-          console.log(`Creating ${tableName} if it doesn't already exist...`)
-          return db.promise().query(statement);
-        }))
-        // Once the entity tables are complete, we can create the junction tables in any order.
-        .then(
-          () => {
-            console.log('\nEntity tables finished, adding junction tables.\n');
-            
-            // Create the junction tables
-            Object.keys(tableStatements).map(tableGroup => {
-              // We've already handled entity tables
-              if (tableGroup === 'entityTables') return;
-              
-              Object.keys(tableStatements[tableGroup]).map(tableName=> {
-                const statement = tableStatements[tableGroup][tableName].create;
-                
-                db.execute(statement, (err, results, fields) => {
-                  if (err && err.errno != 1065) {
-                    console.log(err);
-                  }
-                  console.log(`${tableName} created if it didn't already exist.`);
-                });
-              });
-            });
-          }
-        )
-        .catch(console.log);
-      }
-    ).catch(console.log);
-  
-  return;
-};
+// Drops all tables.
+const resetTables = async () => {
+  console.log('Resetting tables...\n');
+  let timer = new Date().getTime();
+  let now;
 
-// Inserts generation, version group, description, and sprite data; these are entities which don't depend on generation.
-// WARNING: most of the data depends on generation, so performing this will cause most of the other data to be deleted.
+  return prepareForDrop(db)
+  .then( () => {
+
+    now = new Date().getTime();
+    console.log('Took', Math.floor((now - timer) / 1000), 'seconds.\n');
+    timer = now;
+
+    console.log('\nDropping tables...\n')
+    return dropTables(db, tableStatements);
+  })
+  .then( () => {
+
+    now = new Date().getTime();
+    console.log('Took', Math.floor((now - timer) / 1000), 'seconds.\n');
+    timer = now;
+
+    console.log('\nCreating tables...\n')
+    return createTables(db, tableStatements);
+  })
+  .then( () => {
+
+    now = new Date().getTime();
+    console.log('Took', Math.floor((now - timer) / 1000), 'seconds.\n');
+    timer = now;
+
+    console.log('\nFinished resetting tables!\n');
+  })
+  .catch(console.log);
+}
+
+resetTables();
+
+// #endregion
+
+
+
 const insertBasicEntities = async () => {
   // TODO add sprites
   const basicEntityTableNames = [
@@ -1465,7 +1463,7 @@ const insertPokemonLearnsetData = async () => {
     .catch(console.log)
     // Insert data into the tables. No need to reset AUTO_INCREMENT values.
     .then( () => {
-      
+
       // Determine values to be inserted.
       let values
       const pokemonData = require('./processing/processed_data/pokemon.json')
@@ -1485,7 +1483,7 @@ const insertPokemonLearnsetData = async () => {
         */
         values = pokemonData.slice(i, Math.min(i + chunk, pokemonData.length)).reduce((acc, curr) => {
           const { gen: gen, name: pokemonName, learnset: learnsetData } = curr;
-  
+
           const { pokemon_id: pokemonID } = pokemon_FKM.get(makeMapKey([gen, pokemonName]));
           
           return acc.concat(
@@ -1505,12 +1503,13 @@ const insertPokemonLearnsetData = async () => {
         .filter(data => data.length > 0);
 
         console.log('Inserting rows', i, 'to', Math.min(i + chunk, pokemonData.length));
-  
+
         db.promise().query(tableStatements.pokemonJunctionTables['pokemon_pmove'].insert, [values])
         .then( ([results, fields]) => {
           console.log(`pokemon_pmove data inserted: ${results.affectedRows} rows.`);
-        })
-        .catch(console.log);
+      })
+      .catch(console.log);
+      
       }
     })
     .catch(console.log);
@@ -1645,6 +1644,7 @@ const getForeignKeyMap = async (tableName) => {
 
 const makeMapKey = arr => arr.join(' ');
 
+// dropTables();
 // createTables();
 // insertBasicEntities();
 // insertGenDependentEntities();
@@ -1652,4 +1652,4 @@ const makeMapKey = arr => arr.join(' ');
 // insertItemJunctionData();
 // insertMoveJunctionData();
 // insertPokemonJunctionData();
-insertPokemonLearnsetData();
+// insertPokemonLearnsetData();

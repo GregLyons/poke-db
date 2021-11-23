@@ -58,6 +58,8 @@ function getStatementObj(fname) {
 
       // delete data from a table 
       const deleteStatement = `DELETE FROM ${tableName}`;
+      // DROP TABLE
+      const dropStatement = `DROP TABLE IF EXISTS ${tableName}`;
       // reset auto_increment
       const resetStatement = `ALTER TABLE ${tableName} AUTO_INCREMENT = 1`;
 
@@ -68,6 +70,7 @@ function getStatementObj(fname) {
           "truncate": truncateStatement,
           "select": selectColumns,
           "delete": deleteStatement,
+          "drop": dropStatement,
           "reset_auto_inc": resetStatement,
           "foreign_keys": dependencies,
         }
