@@ -14,7 +14,7 @@ const NUMBER_OF_GENS = GEN_ARRAY.length;
 // #region
 
 // Drops foreign keys and indices from pokemon_pmove to facilitate deleting data, as pokemon_pmove has the most rows by far.
-const prepareForDrop = async (db) => {
+const prepareLearnsetTableForDrop = async (db) => {
   console.log('Dropping foreign keys and indices from pokemon_pmove--if they exist--to improve DELETE performance...');
 
   // Delete foreign keys, if they exist; the index opposite_pokemon_pmove references them, so we must delete them first.
@@ -142,12 +142,93 @@ const createTables = async (db, tableStatements) => {
 // INSERTING DATA
 // #region
 
+const insertBasicEntities = async(db, tableStatements) => {
+  // TODO add sprites
+  const basicEntityTableNames = [
+    'generation',
+    'pdescription',
+    'pstatus',
+    'stat',
+  ];
+
+  /*
+    1. DELETE FROM tableName.
+    2. Reset AUTO_INCREMENT counter for tableName.
+    3. INSERT INTO tableName.
+  */
+  return await Promise.all(
+    basicEntityTableNames.map(async (tableName) => {
+      // DELETE FROM tableName.
+      await db.promise().query(tableStatements.entityTables[tableName].delete)
+        .then( () => console.log(`${tableName} table deleted.`))
+        .catch(console.log);
+
+      // Reset AUTO_INCREMENT counter for tableName.
+      await db.promise().query(tableStatements.entityTables[tableName].reset_auto_inc)
+        .then( () => console.log(`Reset AUTO_INCREMENT counter for ${tableName} table.`))
+        .catch(console.log)
+
+      // INSERT INTO tableName.
+      const values = getValuesForBasicEntities(tableName);
+      return db.promise()
+        .query(tableStatements.entityTables[tableName].insert, [values])
+        .then( ([results, fields]) => {
+          console.log(`${tableName} data inserted: ${results.affectedRows} rows.`);
+        })
+        .catch(console.log);
+    })
+  )
+  .then( () => console.log('Inserted basic entity data.'))
+  .catch(console.log);
+}
+
+const getValuesForBasicEntities = (tableName) => {
+  let values;
+  switch(tableName) {
+    case 'generation':
+      values = GEN_ARRAY;
+      break;
+    
+    case 'pdescription':
+      const descriptions = require('./processing/processed_data/descriptions.json');
+      values = descriptions.reduce((acc, descriptionObj) => {
+        // extract entityName and description type
+        const { entity_name: entityName, description_type: descriptionType } = descriptionObj;
+        
+        // descriptionObj contains all the descriptions for entity name, so we need to split them up. The unique descriptions are indexed by numeric keys.
+        return acc.concat(Object.keys(descriptionObj)
+          // numeric keys contain description info
+          .filter(key => !isNaN(key))
+          .map(descriptionIndex => {
+            // descriptionObj[descriptionIndex] is a two-element array, whose first element is the description itself, and whose second element is another array containing version group codes; we don't need the latter at this moment
+            const description = descriptionObj[descriptionIndex][0];
+            
+            return [description, descriptionIndex, descriptionType, entityName];
+          }));
+      }, []);
+      break;
+    
+    case 'pstatus':
+      values = require('./processing/processed_data/statuses.json').map(data => [data.name, data.formatted_name]);
+      break;
+    
+    case 'stat':
+      values = require('./processing/processed_data/stats.json').map(data => [data.name, data.formatted_name]);
+      break;
+    
+      default:
+        console.log(`${tableName} unhandled.`);
+  }
+  return values;
+}
+
 // #endregion
 
 module.exports = {
   NUMBER_OF_GENS,
   GEN_ARRAY,
-  prepareForDrop,
+  prepareForDrop: prepareLearnsetTableForDrop,
   dropTables,
   createTables,
+  insertBasicEntities,
 }

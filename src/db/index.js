@@ -25,10 +25,9 @@ const createDB = () => {
 
 /* 1. Reset tables. */
 // #region
-// Drop tables if they exist, then recreate them.
 const { prepareForDrop, dropTables, createTables } = require('./utils.js');
 
-// Drops all tables.
+// Drop tables if they exist, then recreate them.
 const resetTables = async () => {
   console.log('Resetting tables...\n');
   let timer = new Date().getTime();
@@ -64,94 +63,101 @@ const resetTables = async () => {
   .catch(console.log);
 }
 
-resetTables();
+// resetTables();
 
 // #endregion
 
+/* 2. Insert data for basic entities. */ 
 
+const { insertBasicEntities } = require('./utils.js');
 
-const insertBasicEntities = async () => {
-  // TODO add sprites
-  const basicEntityTableNames = [
-    'generation',
-    'pdescription',
-    'pstatus',
-    'stat',
-  ];
-  for (let tableName of basicEntityTableNames) {
-    // Delete the tables to overcome foreign key constraints.
-    console.log(tableName);
-    db.promise().query(tableStatements.entityTables[tableName].delete)
-    .then( ([results, fields]) => {
+let timer = new Date().getTime();
+insertBasicEntities(db, tableStatements)
+.then( () => {
+  let now = new Date().getTime();
+  console.log('Took', Math.floor((now - timer) / 1000), 'seconds.\n');
+  timer = now;
 
-      console.log(`${tableName} table deleted.`);
+  console.log('\nFinished inserting basic entities!\n');
+})
+.catch(console.log);
 
-    })
-    .catch(console.log)
-    .then( () => {
-      db.promise().query(tableStatements.entityTables[tableName].reset_auto_inc)
-      .then( ([results, fields]) => {
+// const insertBasicEntities = async () => {
+  
+//   for (let tableName of basicEntityTableNames) {
+//     // Delete the tables to overcome foreign key constraints.
+//     console.log(tableName);
+//     db.promise().query(tableStatements.entityTables[tableName].delete)
+//     .then( ([results, fields]) => {
+
+//       console.log(`${tableName} table deleted.`);
+
+//     })
+//     .catch(console.log)
+//     .then( () => {
+//       db.promise().query(tableStatements.entityTables[tableName].reset_auto_inc)
+//       .then( ([results, fields]) => {
         
-        console.log(`Reset AUTO_INCREMENT index for ${tableName} table.`);
-      })
-      .catch(console.log)
-      .then( () => {
+//         console.log(`Reset AUTO_INCREMENT index for ${tableName} table.`);
+//       })
+//       .catch(console.log)
+//       .then( () => {
         
-        // Determine values to be inserted.
-        let values;
-        switch (tableName) {
-          // gen numbers and codes
-          case 'generation':
-            const { GEN_ARRAY } = require('./utils.js');
-            values = GEN_ARRAY;
-            break;
+//         // Determine values to be inserted.
+//         let values;
+//         switch (tableName) {
+//           // gen numbers and codes
+//           case 'generation':
+//             const { GEN_ARRAY } = require('./utils.js');
+//             values = GEN_ARRAY;
+//             break;
 
-          // the description 
-          case 'pdescription':
-            const descriptions = require('./processing/processed_data/descriptions.json');
-            values = descriptions.reduce((acc, descriptionObj) => {
-              // extract entityName and description type
-              const { entity_name: entityName, description_type: descriptionType } = descriptionObj;
+//           // the description 
+//           case 'pdescription':
+//             const descriptions = require('./processing/processed_data/descriptions.json');
+//             values = descriptions.reduce((acc, descriptionObj) => {
+//               // extract entityName and description type
+//               const { entity_name: entityName, description_type: descriptionType } = descriptionObj;
               
-              // descriptionObj contains all the descriptions for entity name, so we need to split them up. The unique descriptions are indexed by numeric keys.
-              return acc.concat(Object.keys(descriptionObj)
-                // numeric keys contain description info
-                .filter(key => !isNaN(key))
-                .map(descriptionIndex => {
-                  // descriptionObj[descriptionIndex] is a two-element array, whose first element is the description itself, and whose second element is another array containing version group codes; we don't need the latter at this moment
-                  const description = descriptionObj[descriptionIndex][0];
+//               // descriptionObj contains all the descriptions for entity name, so we need to split them up. The unique descriptions are indexed by numeric keys.
+//               return acc.concat(Object.keys(descriptionObj)
+//                 // numeric keys contain description info
+//                 .filter(key => !isNaN(key))
+//                 .map(descriptionIndex => {
+//                   // descriptionObj[descriptionIndex] is a two-element array, whose first element is the description itself, and whose second element is another array containing version group codes; we don't need the latter at this moment
+//                   const description = descriptionObj[descriptionIndex][0];
                   
-                  return [description, descriptionIndex, descriptionType, entityName];
-                }));
-            }, []);
-            break;
+//                   return [description, descriptionIndex, descriptionType, entityName];
+//                 }));
+//             }, []);
+//             break;
           
-          // status effects
-          case 'pstatus':
-            values = require('./processing/processed_data/statuses.json').map(data => [data.name, data.formatted_name]);
-            break;
+//           // status effects
+//           case 'pstatus':
+//             values = require('./processing/processed_data/statuses.json').map(data => [data.name, data.formatted_name]);
+//             break;
           
-          // battle stats
-          case 'stat':
-            values = require('./processing/processed_data/stats.json').map(data => [data.name, data.formatted_name]);
-            break;
+//           // battle stats
+//           case 'stat':
+//             values = require('./processing/processed_data/stats.json').map(data => [data.name, data.formatted_name]);
+//             break;
 
-          default:
-            console.log(`${tableName} unhandled.`);
-        }
+//           default:
+//             console.log(`${tableName} unhandled.`);
+//         }
 
-        db.promise().query(tableStatements.entityTables[tableName].insert, [values])
-        .then( ([results, fields]) => {
-          console.log(`${tableName} data inserted: ${results.affectedRows} rows.`);
-        })
-        .catch(console.log);
-      })
-      .catch(console.log);;
-    });
-  }
+//         db.promise().query(tableStatements.entityTables[tableName].insert, [values])
+//         .then( ([results, fields]) => {
+//           console.log(`${tableName} data inserted: ${results.affectedRows} rows.`);
+//         })
+//         .catch(console.log);
+//       })
+//       .catch(console.log);;
+//     });
+//   }
 
-  return;
-}
+//   return;
+// }
 
 // Inserts data for entities which depend on generation, either through a composite primary key or through an 'introduced' column. 
 // WARNING: the junction tables all depend on one or more tables in here, so performing this will cause those tables to be deleted.
