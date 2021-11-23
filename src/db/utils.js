@@ -189,20 +189,25 @@ const resetBasicEntityTables = async(db, tableStatements) => {
 
 */
 const resetAbilityJunctionTables = async(db, tableStatements) => {
-  const abilityJunctionTableNames = [
-    'ability_boosts_ptype',
-    'ability_resists_ptype',
-    'ability_boosts_usage_method',
-    'ability_resists_usage_method',
-    'ability_modifies_stat',
-    'ability_effect',
-    'ability_causes_pstatus',
-    'ability_resists_pstatus',
-  ];
+  /*
+    [
+      'ability_boosts_ptype',
+      'ability_resists_ptype',
+      'ability_boosts_usage_method',
+      'ability_resists_usage_method',
+      'ability_modifies_stat',
+      'ability_effect',
+      'ability_causes_pstatus',
+      'ability_resists_pstatus',
+    ]
+  */
+  const abilityJunctionTableNames = Object.keys(tableStatements.abilityJunctionTables);
 
   /* 
-    Unpacks as 
+    Unpacks as:
+
       [ability_FKM, pType_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM]
+
   */ 
   const foreignKeyMaps = await Promise.all(
     // Array of relevant entity tableNames.
@@ -221,6 +226,51 @@ const resetAbilityJunctionTables = async(db, tableStatements) => {
     abilityJunctionTableNames,
     'abilityJunctionTables',
     abilityData,
+    foreignKeyMaps);
+}
+
+const resetItemJunctionTables = async(db, tableStatements) => {
+  /*
+    [
+      'natural_gift',
+      'item_boosts_ptype',
+      'item_resists_ptype',
+      'item_boosts_usage_method',
+      'item_resists_usage_method',
+      'item_modifies_stat',
+      'item_effect',
+      'item_causes_pstatus',
+      'item_resists_pstatus',
+      'item_requires_pokemon',
+    ]
+  */
+  const itemJunctionTableNames = Object.keys(tableStatements.itemJunctionTables)
+    // Currently no items boost usage methods; remove if a new game adds it.
+    .filter(tableName => tableName != 'item_boosts_usage_method');
+
+  /* 
+    Unpacks as:
+
+      [item_FKM, pType_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM, pokemon_FKM]
+
+  */ 
+  const foreignKeyMaps = await Promise.all(
+    // Array of relevant entity tableNames.
+    ['item', 'ptype', 'usage_method', 'stat', 'pstatus', 'effect', 'pokemon']
+    .map(async (tableName) => {
+        console.log(`Getting foreign key map for ${tableName}...`)
+        return await getForeignKeyMap(db, tableStatements, tableName);
+      })
+  );
+  
+  const itemData = require('./processing/processed_data/items.json');
+
+  return await resetTableGroup(
+    db,
+    tableStatements,
+    itemJunctionTableNames,
+    'itemJunctionTables',
+    itemData,
     foreignKeyMaps);
 }
 
@@ -287,22 +337,27 @@ const getValuesForTable = (
   entityData, 
   foreignKeyMaps
 ) => {
-
+  // 
   // Declarations for foreign key maps.
-  let ability_FKM, pType_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM;
+  let ability_FKM, item_FKM, pokemon_FKM, pType_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM;
   // Declarations for entity data.
-  let abilityData;
+  let abilityData, itemData;
   switch(tableGroup) {
     case 'abilityJunctionTables':
       [ability_FKM, pType_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM] = foreignKeyMaps;
       abilityData = entityData;
       break;
 
+    case 'itemJunctionTables':
+      [item_FKM, pType_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM, pokemon_FKM] = foreignKeyMaps;
+      itemData = entityData;
+      break;
+
     default: 
       console.log('No foreign key maps necessary for this table group.')
   }
 
-  let values, boostOrResist, boostOrResistKey;
+  let values, boostOrResist, boostOrResistKey, causeOrResist, causeOrResistKey;
   switch(tableName) {
     /*
       BASIC ENTITIES
@@ -673,8 +728,8 @@ const getValuesForTable = (
           pstatus_id
         )
       */
-      const causeOrResist = tableName.split('_')[1];
-      const causeOrResistKey = causeOrResist + '_status';
+      causeOrResist = tableName.split('_')[1];
+      causeOrResistKey = causeOrResist + '_status';
 
       values = abilityData.reduce((acc, curr) => {
         // Get ability data from curr.
@@ -705,6 +760,254 @@ const getValuesForTable = (
       .filter(data => data.length > 0);
       break;
 
+    /*
+      ITEM JUNCTION TABLES
+    */
+    case 'natural_gift':
+      /*
+        Need (
+          item_generation_id,
+          item_id
+          ptype_generation_id,
+          ptype_id,
+          item_power
+        )
+      */
+      
+      values = itemData.reduce((acc, curr) => {
+        // Get item data from curr.
+        const { gen: gen, name: itemName, natural_gift: naturalGiftData } = curr;
+
+        if (!naturalGiftData) return acc;
+
+        const { item_id: itemID } = item_FKM.get(makeMapKey([gen, itemName]));
+        
+        // Only berries have data for Natural Gift.
+        const [pTypeName, power] = naturalGiftData;
+        const { ptype_id: pTypeID } = pType_FKM.get(makeMapKey([gen, pTypeName]));
+
+        return acc.concat([
+          [gen, itemID, gen, pTypeID, power]
+        ]);
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+
+    case 'item_boosts_ptype':
+    case 'item_resists_ptype':
+      /*
+        Need (
+          item_generation_id,
+          item_id,
+          ptype_generation_id,
+          ptype_id,
+          multiplier
+        )
+      */
+      boostOrResist = tableName.split('_')[1];
+      boostOrResistKey = boostOrResist + '_type';
+
+      values = itemData.reduce((acc, curr) => {
+        // Get item data from curr.
+        const { gen: gen, name: itemName, [boostOrResistKey]: typeData } = curr;
+        const { item_id: itemID } = item_FKM.get(makeMapKey([gen, itemName]));
+        
+        return acc.concat(
+          Object.keys(typeData).map(pTypeName => {
+            // We always compare entities of the same generation.
+            const { ptype_id: pTypeID } = pType_FKM.get(makeMapKey([gen, pTypeName]));
+            const multiplier = typeData[pTypeName];
+
+            return multiplier != 1 
+              ? [gen, itemID, gen, pTypeID, multiplier]
+              : [];
+          })
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+
+      
+    // No items boost usage methods yet, but the code is there. Uncomment if any items are introduced which boost usage methods.
+    // case 'item_boosts_usage_method':
+    case 'item_resists_usage_method':
+      /* 
+        Need (
+          item_generation_id,
+          item_id,
+          usage_method_id,
+          multiplier
+        ) 
+      */
+      boostOrResist = tableName.split('_')[1];
+      boostOrResistKey = boostOrResist + '_usage_method';
+
+      values = itemData.reduce((acc, curr) => {
+        // Get item data from curr.
+        const { gen: gen, name: itemName, [boostOrResistKey]: usageMethodData } = curr;
+        const { item_id: itemID } = item_FKM.get(makeMapKey([gen, itemName]));
+        
+        return acc.concat(
+          Object.keys(usageMethodData).map(usageMethodName => {
+            // We always compare entities of the same generation.
+            const { usage_method_id: usageMethodID } = usageMethod_FKM.get(makeMapKey([usageMethodName]));
+            const multiplier = usageMethodData[usageMethodName];
+
+            return multiplier != 1 
+            ? [gen, itemID, usageMethodID, multiplier]
+            : [];
+          })
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+
+    case 'item_modifies_stat':
+      /* 
+        Need (
+          item_generation_id,
+          item_id,
+          state_id,
+          stage,
+          multiplier,
+          chance,
+          recipient
+        )
+      */
+      values = itemData.reduce((acc, curr) => {
+        // Get item data from curr.
+        const { gen: gen, name: itemName, stat_modifications: statModData } = curr;
+        const { item_id: itemID } = item_FKM.get(makeMapKey([gen, itemName]));
+
+        return acc.concat(
+          Object.keys(statModData).map(statName => {
+            // We always compare entities of the same generation.
+            const { stat_id: statID } = stat_FKM.get(makeMapKey([statName]));
+            let [modifier, recipient] = statModData[statName]
+
+            // True if stage modification, False if multiplier.
+            const stageOrMultiplier = typeof modifier == 'string';
+
+            // stage
+            if (stageOrMultiplier) {
+              modifier = parseInt(modifier.slice(1), 10);
+              return modifier != 0 
+              ? [gen, itemID, statID, modifier, 1.0, 100.00, recipient]
+              : [];
+            }
+            // multiplier
+            else {
+              return modifier != 1.0
+              ? [gen, itemID, statID, 0, modifier, 100.00, recipient]
+              : [];
+            }
+          })
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+    
+    case 'item_effect':
+      /*
+        Need (
+          item_generation_id,
+          item_id,
+          effect_id
+        )
+      */
+      values = itemData.reduce((acc, curr) => {
+        // Get item data from curr.
+        const { gen: gen, name: itemName, effects: effectData } = curr;
+        const { item_id: itemID } = item_FKM.get(makeMapKey([gen, itemName]));
+        return acc.concat(
+          Object.keys(effectData).map(effectName => {
+            // We always compare entities of the same generation.
+            const { effect_id: effectID } = effect_FKM.get(makeMapKey([effectName]));
+
+            // True if effect is present, False otherwise.
+            return effectData[effectName]
+            ? [gen, itemID, effectID]
+            : [];
+          })
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+
+    case 'item_causes_pstatus':
+    case 'item_resists_pstatus':
+      /*
+        Need (
+          item_generation_id,
+          item_id,
+          pstatus_id
+        ) or (
+          item_generation_id,
+          item_id,
+          pstatus_id
+        )
+      */
+      causeOrResist = tableName.split('_')[1];
+      causeOrResistKey = causeOrResist + '_status';
+
+      values = itemData.reduce((acc, curr) => {
+        // Get item data from curr.
+        const { gen: gen, name: itemName, [causeOrResistKey]: statusData } = curr;
+        const { item_id: itemID } = item_FKM.get(makeMapKey([gen, itemName]));
+        
+        return acc.concat(
+          Object.keys(statusData).map(statusName => {
+            // We always compare entities of the same generation.
+            const { pstatus_id: statusID } = pstatus_FKM.get(makeMapKey([statusName]));
+
+            return statusData[statusName] 
+            ? [gen, itemID, statusID]
+            : [];
+          })
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+    
+    case 'item_requires_pokemon':
+      /*
+        Need (
+          item_generation_id,
+          item_id,
+          pokemon_generation_id,
+          pokemon_id
+        )
+      */
+      
+      values = itemData.reduce((acc, curr) => {
+        // Get item data from curr.
+        const { gen: gen, name: itemName, pokemon_specific: pokemonData } = curr;
+        const { item_id: itemID } = item_FKM.get(makeMapKey([gen, itemName]));
+
+        
+        // If item is not Pokemon-specific
+        if (!pokemonData) { return acc; }
+        
+        return acc.concat(
+          Object.keys(pokemonData).map(pokemonName => {
+            // We always compare entities of the same generation.
+            const { pokemon_id: pokemonID } = pokemon_FKM.get(makeMapKey([gen, pokemonName]));
+
+            return pokemonData[pokemonName] 
+            ? [gen, itemID, gen, pokemonID]
+            : [];
+          })
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
     default:
         console.log(`${tableName} unhandled.`);
   }
@@ -846,13 +1149,18 @@ const makeMapKey = arr => arr.join(' ');
 
 
 module.exports = {
+  // Miscellaneous utilities
   NUMBER_OF_GENS,
   GEN_ARRAY,
   timeElapsed,
+  // Create and drop statements
   prepareLearnsetTableForDrop,
   dropTables,
   createTables,
+  // Entity tables
   resetBasicEntityTables,
   resetGenDependentEntityTables,
+  // Junction tables
   resetAbilityJunctionTables,
+  resetItemJunctionTables,
 }

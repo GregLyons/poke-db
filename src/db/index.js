@@ -130,260 +130,29 @@ const reinsertAbilityJunctionTables = async () => {
     .catch(console.log);
 }
 
-reinsertAbilityJunctionTables();
+// reinsertAbilityJunctionTables();
 
 // #endregion
 
+/* 5. Insert data for item junction tables. */
+// #region
+const { resetItemJunctionTables } = require('./utils.js');
 
+const reinsertItemJunctionTables = async () => {
+  console.log('Re-inserting data for item junction tables...\n');
+  let timer = new Date().getTime();
 
-
-// Inserts data for ability junction tables.
-const insertAbilityJunctionData = async () => {
-  const relevantEntityTables = ['ability', 'ptype', 'usage_method', 'stat', 'pstatus', 'effect']
-
-  // Get foreign key maps.
-  Promise.all(relevantEntityTables.map(async (tableName) => {
-    const statement = tableStatements.entityTables[tableName].create;
-
-    console.log(`Getting foreign key map for ${tableName}.`);
-    return await getForeignKeyMap(tableName);
-  }))
-  .then( result => {
-    // Assign foreign key maps (FKM). Order is preserved by Promise.all().
-    const [ability_FKM, pType_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM] = result;
-
-    const abilityJunctionTables = [
-      'ability_boosts_ptype',
-      'ability_resists_ptype',
-      'ability_boosts_usage_method',
-      'ability_resists_usage_method',
-      'ability_modifies_stat',
-      'ability_effect',
-      'ability_causes_pstatus',
-      'ability_resists_pstatus',
-    ];
-    for (let tableName of abilityJunctionTables) {
-      // Delete the tables.
-      console.log(tableName);
-      db.promise().query(tableStatements.abilityJunctionTables[tableName].delete)
-      .then( ([results, fields]) => {
-  
-        console.log(`${tableName} table deleted.`);
-  
-      })
-      .catch(console.log)
-      // Insert data into the tables. No need to reset AUTO_INCREMENT values.
-      .then( () => {
-        
-        // Determine values to be inserted.
-        let values, boostOrResist, boostOrResistKey;
-        const abilityData = require('./processing/processed_data/abilities.json')
-        switch (tableName) {
-          case 'ability_boosts_ptype':
-          case 'ability_resists_ptype':
-            /*
-              Need (
-                ability_generation_id,
-                ability_id,
-                ptype_generation_id,
-                ptype_id,
-                multiplier
-              )
-            */
-           boostOrResist = tableName.split('_')[1];
-           boostOrResistKey = boostOrResist + '_type';
-            values = abilityData.reduce((acc, curr) => {
-              // Get ability data from curr.
-              const { gen: gen, name: abilityName, [boostOrResistKey]: typeData } = curr;
-              const { ability_id: abilityID } = ability_FKM.get(makeMapKey([abilityName, gen]));
-              
-              return acc.concat(
-                Object.keys(typeData).map(pTypeName => {
-                  // We always compare entities of the same generation.
-                  const { ptype_id: pTypeID } = pType_FKM.get(makeMapKey([gen, pTypeName]));
-                  const multiplier = typeData[pTypeName];
-
-                  return multiplier != 1 
-                    ? [gen, abilityID, gen, pTypeID, multiplier]
-                    : [];
-                })
-              )
-            }, [])
-            // Filter out empty entries
-            .filter(data => data.length > 0);
-            break;
-
-          case 'ability_boosts_usage_method':
-          case 'ability_resists_usage_method':
-            /* 
-              Need (
-                ability_generation_id,
-                ability_id,
-                usage_method_id,
-                multiplier
-              ) 
-            */
-            boostOrResist = tableName.split('_')[1];
-            boostOrResistKey = boostOrResist + '_usage_method';
-
-            values = abilityData.reduce((acc, curr) => {
-              // Get ability data from curr.
-              const { gen: gen, name: abilityName, [boostOrResistKey]: usageMethodData } = curr;
-              const { ability_id: abilityID } = ability_FKM.get(makeMapKey([abilityName, gen]));
-              
-              return acc.concat(
-                Object.keys(usageMethodData).map(usageMethodName => {
-                  // We always compare entities of the same generation.
-                  const { usage_method_id: usageMethodID } = usageMethod_FKM.get(makeMapKey([usageMethodName]));
-                  const multiplier = usageMethodData[usageMethodName];
-
-                  return multiplier != 1 
-                  ? [gen, abilityID, usageMethodID, multiplier]
-                  : [];
-                })
-              )
-            }, [])
-            // Filter out empty entries
-            .filter(data => data.length > 0);
-            break;
-
-          case 'ability_modifies_stat':
-            /* 
-              Need (
-                ability_generation_id,
-                ability_id,
-                state_id,
-                stage,
-                multiplier,
-                chance,
-                recipient
-              )
-            */
-            values = abilityData.reduce((acc, curr) => {
-              // Get ability data from curr.
-              const { gen: gen, name: abilityName, stat_modifications: statModData } = curr;
-              const { ability_id: abilityID } = ability_FKM.get(makeMapKey([abilityName, gen]));
-
-              return acc.concat(
-                Object.keys(statModData).map(statName => {
-                  // We always compare entities of the same generation.
-                  const { stat_id: statID } = stat_FKM.get(makeMapKey([statName]));
-                  let [modifier, recipient] = statModData[statName]
-
-                  // True if stage modification, False if multiplier.
-                  const stageOrMultiplier = typeof modifier == 'string';
-
-                  // stage
-                  if (stageOrMultiplier) {
-                    modifier = parseInt(modifier.slice(1), 0);
-                    return modifier != 0 
-                    ? [gen, abilityID, statID, modifier, 1.0, 100.00, recipient]
-                    : [];
-                  }
-                  // multiplier
-                  else {
-                    return modifier != 1.0
-                    ? [gen, abilityID, statID, 0, modifier, 100.00, recipient]
-                    : [];
-                  }
-                })
-              )
-            }, [])
-            // Filter out empty entries
-            .filter(data => data.length > 0);
-            break;
-          
-          case 'ability_effect':
-            /*
-              Need (
-                ability_generation_id,
-                ability_id,
-                effect_id
-              )
-            */
-            values = abilityData.reduce((acc, curr) => {
-              // Get ability data from curr.
-              const { gen: gen, name: abilityName, effects: effectData } = curr;
-              const { ability_id: abilityID } = ability_FKM.get(makeMapKey([abilityName, gen]));
-              return acc.concat(
-                Object.keys(effectData).map(effectName => {
-                  // We always compare entities of the same generation.
-                  const { effect_id: effectID } = effect_FKM.get(makeMapKey([effectName]));
-
-                  // True if effect is present, False otherwise.
-                  return effectData[effectName]
-                  ? [gen, abilityID, effectID]
-                  : [];
-                })
-              )
-            }, [])
-            // Filter out empty entries
-            .filter(data => data.length > 0);
-            break;
-
-          case 'ability_causes_pstatus':
-          case 'ability_resists_pstatus':
-            /*
-              Need (
-                ability_generation_id,
-                ability_id,
-                pstatus_id,
-                chance
-              ) or (
-                ability_generation_id,
-                ability_id,
-                pstatus_id
-              )
-            */
-            const causeOrResist = tableName.split('_')[1];
-            const causeOrResistKey = causeOrResist + '_status';
-
-            values = abilityData.reduce((acc, curr) => {
-              // Get ability data from curr.
-              const { gen: gen, name: abilityName, [causeOrResistKey]: statusData } = curr;
-              const { ability_id: abilityID } = ability_FKM.get(makeMapKey([abilityName, gen]));
-              
-              return acc.concat(
-                Object.keys(statusData).map(statusName => {
-                  // We always compare entities of the same generation.
-                  const { pstatus_id: statusID } = pstatus_FKM.get(makeMapKey([statusName]));
-                  if (causeOrResist === 'causes') {
-                    // In case of causes, statusData[statusName] is probability of causing status.
-                    const chance = statusData[statusName];
-  
-                    return chance != 0.0 
-                    ? [gen, abilityID, statusID, chance]
-                    : [];
-                  } else {
-                    // In case of resists, statusData[statusName] is either True or False.
-                    return statusData[statusName] 
-                    ? [gen, abilityID, statusID]
-                    : [];
-                  }
-                })
-              )
-            }, [])
-            // Filter out empty entries
-            .filter(data => data.length > 0);
-            break;
-
-          default:
-            console.log(`${tableName} unhandled.`);
-        }
-
-        db.promise().query(tableStatements.abilityJunctionTables[tableName].insert, [values])
-        .then( ([results, fields]) => {
-          console.log(`${tableName} data inserted: ${results.affectedRows} rows.`);
-        })
-        .catch(console.log);
-      })
-      .catch(console.log);
-    }
-  })
-  .catch(console.log);
-
-  return;
+  return resetItemJunctionTables(db, tableStatements)
+    .then( () => {
+      timer = timeElapsed(timer);
+    })
+    .then ( () => {
+      console.log('\nFinished inserting data for item junction tables!\n');
+    })
+    .catch(console.log);
 }
+
+reinsertItemJunctionTables();
 
 // Inserts data for item junction tables.
 const insertItemJunctionData = async () => {
