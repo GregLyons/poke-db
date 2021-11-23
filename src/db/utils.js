@@ -229,6 +229,9 @@ const resetAbilityJunctionTables = async(db, tableStatements) => {
     foreignKeyMaps);
 }
 
+/*
+
+*/
 const resetItemJunctionTables = async(db, tableStatements) => {
   /*
     [
@@ -273,6 +276,53 @@ const resetItemJunctionTables = async(db, tableStatements) => {
     itemData,
     foreignKeyMaps);
 }
+
+/*
+
+*/
+const resetMoveJunctionTables = async(db, tableStatements) => {
+  /*
+    [
+      'pmove_has_ptype',
+      'pmove_requires_ptype',
+      'pmove_requires_pmove',
+      'pmove_requires_pokemon',
+      'pmove_requires_item',
+      'pmove_usage_method',
+      'pmove_modifies_stat',
+      'pmove_effect',
+      'pmove_causes_pstatus',
+      'pmove_resists_pstatus',
+    ]
+  */
+  const moveJunctionTableNames = Object.keys(tableStatements.moveJunctionTables);
+
+  /* 
+    Unpacks as:
+
+      [move_FKM, pokemon_FKM, pType_FKM, item_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM]
+
+  */ 
+  const foreignKeyMaps = await Promise.all(
+    // Array of relevant entity tableNames.
+    ['pmove', 'pokemon', 'ptype', 'item', 'usage_method', 'stat', 'pstatus', 'effect']
+    .map(async (tableName) => {
+        console.log(`Getting foreign key map for ${tableName}...`)
+        return await getForeignKeyMap(db, tableStatements, tableName);
+      })
+  );
+  
+  const itemData = require('./processing/processed_data/moves.json');
+
+  return await resetTableGroup(
+    db,
+    tableStatements,
+    moveJunctionTableNames,
+    'moveJunctionTables',
+    itemData,
+    foreignKeyMaps);
+}
+
 
 const resetTableGroup = async(
   db,
@@ -339,9 +389,9 @@ const getValuesForTable = (
 ) => {
   // 
   // Declarations for foreign key maps.
-  let ability_FKM, item_FKM, pokemon_FKM, pType_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM;
+  let ability_FKM, item_FKM, move_FKM, pokemon_FKM, pType_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM;
   // Declarations for entity data.
-  let abilityData, itemData;
+  let abilityData, itemData, moveData;
   switch(tableGroup) {
     case 'abilityJunctionTables':
       [ability_FKM, pType_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM] = foreignKeyMaps;
@@ -353,6 +403,11 @@ const getValuesForTable = (
       itemData = entityData;
       break;
 
+    case 'moveJunctionTables':
+      [move_FKM, pokemon_FKM, pType_FKM, item_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM] = foreignKeyMaps;
+      moveData = entityData;
+      break;
+    
     default: 
       console.log('No foreign key maps necessary for this table group.')
   }
@@ -1008,6 +1063,252 @@ const getValuesForTable = (
       // Filter out empty entries
       .filter(data => data.length > 0);
       break;
+    
+    /*
+      MOVE JUNCTION TABLES
+    */
+    case 'pmove_has_ptype':
+      /*
+        Need (
+          pmove_generation_id,
+          pmove_id
+          ptype_generation_id,
+          ptype_id
+        )
+      */
+      
+      values = moveData.reduce((acc, curr) => {
+        const { gen: gen, name: moveName, type: pTypeName } = curr;
+
+        const { pmove_id: moveID } = move_FKM.get(makeMapKey([gen, moveName]));
+        
+        const { ptype_id: pTypeID } = pType_FKM.get(makeMapKey([gen, pTypeName]));
+
+        return acc.concat([
+          [gen, moveID, gen, pTypeID]
+        ]);
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+
+    case 'pmove_requires_ptype':
+    case 'pmove_requires_pmove':
+    case 'pmove_requires_pokemon':
+    case 'pmove_requires_item':
+      /*
+        Need (
+          pmove_generation_id,
+          pmove_id,
+          <entity>_generation_id,
+          <entity>_id,
+          multiplier
+        ), where <entity> is ptype, pmove, pokemon, or item.
+      */
+
+      // Whether the requirement is a type, move, Pokemon, or item. Choose the foreign key map accordingly.
+      // dictKey refers to how the data is stored in moves.json; we need the key to extract the requirement data from moveData.
+      const entityClass = tableName.split('_')[2];
+      const entity_id = entityClass + '_id';
+      let entity_FKM, dictKey;
+      switch (entityClass) {
+        case 'ptype':
+          entity_FKM = pType_FKM;
+          dictKey = 'type';
+          break;
+        case 'pmove':
+          entity_FKM = move_FKM;
+          dictKey = 'move';
+          break;
+        case 'pokemon':
+          entity_FKM = pokemon_FKM;
+          dictKey = 'pokemon';
+          break;
+        case 'item':
+          entity_FKM = item_FKM;
+          dictKey = 'item'
+          break;
+        default:
+          throw 'Invalid entity class, ' + entityClass;
+      }
+
+      values = moveData.reduce((acc, curr) => {
+        // Get item data from curr.
+        const { gen: gen, name: moveName, requirements: requirementData } = curr;
+        const { pmove_id: moveID } = move_FKM.get(makeMapKey([gen, moveName]));
+
+        // Check whether requirementData exists AND has the relevant entity, dictKey. If not, return.
+        if (!requirementData || !requirementData[dictKey]) return acc;
+        
+        return acc.concat(
+          requirementData[dictKey].map(entityName => {
+            // All the possible entity classes come alphabetically before 'generation_id', so the order [gen, entityName] is correct.
+            if (entity_FKM.get(makeMapKey([gen, entityName])) == undefined) {
+              console.log(requirementData, entityName);
+            }
+            const { [entity_id]: entityID } = entity_FKM.get(makeMapKey([gen, entityName]));
+
+            return [gen, moveID, gen, entityID]
+          })
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+
+    case 'pmove_usage_method':
+      /* 
+        Need (
+          pmove_generation_id,
+          pmove_id,
+          usage_method_id
+        ) 
+      */
+      values = moveData.reduce((acc, curr) => {
+        // Get entity data from curr.
+        const { gen: gen, name: moveName, usage_method: usageMethodData } = curr;
+        const { pmove_id: moveID } = move_FKM.get(makeMapKey([gen, moveName]));
+
+        // Move has no usage method.
+        if (!usageMethodData) { return acc; }
+        
+        return acc.concat(
+          Object.keys(usageMethodData).map(usageMethodName => {
+            // We always compare entities of the same generation.
+            const { usage_method_id: usageMethodID } = usageMethod_FKM.get(makeMapKey([usageMethodName]));
+            
+            // A move may lose a usage method. 
+            const present = usageMethodData[usageMethodName];
+
+            return present
+            ? [gen, moveID, usageMethodID]
+            : [];
+          })
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+
+    case 'pmove_modifies_stat':
+      /* 
+        Need (
+          pmove_generation_id,
+          pmove_id,
+          state_id,
+          stage,
+          multiplier,
+          chance,
+          recipient
+        )
+      */
+      values = moveData.reduce((acc, curr) => {
+        // Get move data from curr.
+        const { gen: gen, name: moveName, stat_modifications: statModData } = curr;
+        const { pmove_id: moveID } = move_FKM.get(makeMapKey([gen, moveName]));
+
+        return acc.concat(
+          Object.keys(statModData).map(statName => {
+            // We always compare entities of the same generation.
+            const { stat_id: statID } = stat_FKM.get(makeMapKey([statName]));
+            let [modifier, recipient, chance] = statModData[statName]
+
+            // True if stage modification, False if multiplier.
+            const stageOrMultiplier = typeof modifier == 'string';
+            
+            // stage
+            if (stageOrMultiplier) {
+              modifier = parseInt(modifier.slice(1), 10);
+              return modifier != 0 
+              ? [gen, moveID, statID, modifier, 1.0, chance, recipient]
+              : [];
+            }
+            // multiplier
+            else {
+              return modifier != 1.0
+              ? [gen, moveID, statID, 0, modifier, chance, recipient]
+              : [];
+            }
+          })
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+    
+    case 'pmove_effect':
+      /*
+        Need (
+          pmove_generation_id,
+          pmove_id,
+          effect_id
+        )
+      */
+      values = moveData.reduce((acc, curr) => {
+        // Get move data from curr.
+        const { gen: gen, name: moveName, effects: effectData } = curr;
+        const { pmove_id: moveID } = move_FKM.get(makeMapKey([gen, moveName]));
+        return acc.concat(
+          Object.keys(effectData).map(effectName => {
+            // We always compare entities of the same generation.
+            const { effect_id: effectID } = effect_FKM.get(makeMapKey([effectName]));
+
+            // True if effect is present, False otherwise.
+            return effectData[effectName]
+            ? [gen, moveID, effectID]
+            : [];
+          })
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+
+    case 'pmove_causes_pstatus':
+    case 'pmove_resists_pstatus':
+      /*
+        Need (
+          pmove_generation_id,
+          pmove_id,
+          pstatus_id,
+          chance
+        ) or (
+          pmove_generation_id,
+          pmove_id,
+          pstatus_id
+        )
+      */
+      causeOrResist = tableName.split('_')[1];
+      causeOrResistKey = causeOrResist + '_status';
+
+      values = moveData.reduce((acc, curr) => {
+        // Get move data from curr.
+        const { gen: gen, name: moveName, [causeOrResistKey]: statusData } = curr;
+        const { pmove_id: moveID } = move_FKM.get(makeMapKey([gen, moveName]));
+        
+        return acc.concat(
+          Object.keys(statusData).map(statusName => {
+            // We always compare entities of the same generation.
+            const { pstatus_id: statusID } = pstatus_FKM.get(makeMapKey([statusName]));
+            if (causeOrResist === 'causes') {
+              // In case of causes, statusData[statusName] is probability of causing status.
+              const chance = statusData[statusName];
+
+              return chance != 0.0 
+              ? [gen, moveID, statusID, chance]
+              : [];
+            } else {
+              // In case of resists, statusData[statusName] is either True or False.
+              return statusData[statusName] 
+              ? [gen, moveID, statusID]
+              : [];
+            }
+          })
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
     default:
         console.log(`${tableName} unhandled.`);
   }
@@ -1163,4 +1464,5 @@ module.exports = {
   // Junction tables
   resetAbilityJunctionTables,
   resetItemJunctionTables,
+  resetMoveJunctionTables,
 }
