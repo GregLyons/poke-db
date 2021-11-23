@@ -8,7 +8,8 @@ const db = mysql.createPool({
   user: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  connectionLimit: 20,
+  connectionLimit: 40,
+  connectTimeout: 20000,
 });
 
 // initializes database
@@ -1214,7 +1215,7 @@ const insertMoveJunctionData = async () => {
 
 // Inserts data for move junction tables.
 const insertPokemonJunctionData = async () => {
-  const relevantEntityTables = ['pokemon', 'pmove', 'ptype', 'ability']
+  const relevantEntityTables = ['pokemon', 'ptype', 'ability']
 
   // Get foreign key maps.
   Promise.all(relevantEntityTables.map(async (tableName) => {
@@ -1225,13 +1226,12 @@ const insertPokemonJunctionData = async () => {
   }))
   .then( result => {
     // Assign foreign key maps (FKM). Order is preserved by Promise.all().
-    const [pokemon_FKM, move_FKM, pType_FKM, ability_FKM] = result;
+    const [pokemon_FKM, pType_FKM, ability_FKM] = result;
 
     const pokemonJunctionTables = [
       'pokemon_evolution',
       'pokemon_form',
       'pokemon_ptype',
-      // 'pokemon_pmove',
       'pokemon_ability',
     ];
     for (let tableName of pokemonJunctionTables) {
@@ -1438,6 +1438,89 @@ const insertPokemonJunctionData = async () => {
   return;
 }
 
+// Inserts data for Pokemon learnsets.
+const insertPokemonLearnsetData = async () => {
+  const relevantEntityTables = ['pokemon', 'pmove']
+
+  // Get foreign key maps.
+  Promise.all(relevantEntityTables.map(async (tableName) => {
+    const statement = tableStatements.entityTables[tableName].create;
+
+    console.log(`Getting foreign key map for ${tableName}.`);
+    return await getForeignKeyMap(tableName);
+  }))
+  .then( result => {
+    // Assign foreign key maps (FKM). Order is preserved by Promise.all().
+    const [pokemon_FKM, move_FKM] = result;
+
+    console.log('Deleting pokemon_pmove table...');
+
+    // Truncate the table rather than delete, since there are so many rows.
+    db.promise().query(tableStatements.pokemonJunctionTables['pokemon_pmove'].delete)
+    .then( ([results, fields]) => {
+
+      console.log(`pokemon_pmove table deleted.`);
+
+    })
+    .catch(console.log)
+    // Insert data into the tables. No need to reset AUTO_INCREMENT values.
+    .then( () => {
+      
+      // Determine values to be inserted.
+      let values
+      const pokemonData = require('./processing/processed_data/pokemon.json')
+
+      // Number of Pokemon to process at each step.
+      const chunk = 250;
+
+      for (let i = 0; i < pokemonData.length; i += chunk) {
+        /*
+          Need (
+            pokemon_generation_id,
+            pokemon_id,
+            pmove_generation_id,
+            pmove_id,
+            learn_method
+          )
+        */
+        values = pokemonData.slice(i, Math.min(i + chunk, pokemonData.length)).reduce((acc, curr) => {
+          const { gen: gen, name: pokemonName, learnset: learnsetData } = curr;
+  
+          const { pokemon_id: pokemonID } = pokemon_FKM.get(makeMapKey([gen, pokemonName]));
+          
+          return acc.concat(
+            Object.keys(learnsetData).reduce((innerAcc, moveName)=> {
+              const { pmove_id: moveID } = move_FKM.get(makeMapKey([gen, moveName]));
+              
+              return innerAcc.concat(
+                // We can have multiple different learn methods within the same generation.
+                learnsetData[moveName].map(learnMethod => {
+                  return [gen, pokemonID, gen, moveID, learnMethod];
+                })
+              );
+            }, [])
+          );
+        }, [])
+        // Filter out empty entries
+        .filter(data => data.length > 0);
+
+        console.log('Inserting rows', i, 'to', Math.min(i + chunk, pokemonData.length));
+  
+        db.promise().query(tableStatements.pokemonJunctionTables['pokemon_pmove'].insert, [values])
+        .then( ([results, fields]) => {
+          console.log(`pokemon_pmove data inserted: ${results.affectedRows} rows.`);
+        })
+        .catch(console.log);
+      }
+    })
+    .catch(console.log);
+    
+  })
+  .catch(console.log);
+
+  return;
+}
+
 /*
   Given a table name, tableName, with an AUTO_INCREMENT column, select identifying columns for the purpose of data insertion. E.g.
 
@@ -1568,4 +1651,5 @@ const makeMapKey = arr => arr.join(' ');
 // insertAbilityJunctionData();
 // insertItemJunctionData();
 // insertMoveJunctionData();
-insertPokemonJunctionData();
+// insertPokemonJunctionData();
+insertPokemonLearnsetData();
