@@ -185,10 +185,52 @@ const resetBasicEntityTables = async(db, tableStatements) => {
   return await resetTableGroup(db, tableStatements, basicEntityTableNames)
 }
 
+/*
+
+*/
+const resetAbilityJunctionTables = async(db, tableStatements) => {
+  const abilityJunctionTableNames = [
+    'ability_boosts_ptype',
+    'ability_resists_ptype',
+    'ability_boosts_usage_method',
+    'ability_resists_usage_method',
+    'ability_modifies_stat',
+    'ability_effect',
+    'ability_causes_pstatus',
+    'ability_resists_pstatus',
+  ];
+
+  /* 
+    Unpacks as 
+      [ability_FKM, pType_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM]
+  */ 
+  const foreignKeyMaps = await Promise.all(
+    // Array of relevant entity tableNames.
+    ['ability', 'ptype', 'usage_method', 'stat', 'pstatus', 'effect']
+    .map(async (tableName) => {
+        console.log(`Getting foreign key map for ${tableName}...`)
+        return await getForeignKeyMap(db, tableStatements, tableName);
+      })
+  );
+  
+  const abilityData = require('./processing/processed_data/abilities.json');
+
+  return await resetTableGroup(
+    db,
+    tableStatements,
+    abilityJunctionTableNames,
+    'abilityJunctionTables',
+    abilityData,
+    foreignKeyMaps);
+}
+
 const resetTableGroup = async(
   db,
   tableStatements,
   tableNameArr,
+  tableGroup,
+  entityData,
+  foreignKeyMaps,
 ) => {
   /*
     1. DELETE FROM tableName.
@@ -198,22 +240,27 @@ const resetTableGroup = async(
   return await Promise.all(
     tableNameArr.map(async (tableName) => {
       // DELETE FROM tableName.
-      await deleteTableRows(db, tableStatements, tableName);
+      await deleteTableRows(db, tableStatements, tableGroup, tableName);
 
       // Reset AUTO_INCREMENT counter for tableName.
-      await resetAutoIncrement(db, tableStatements, tableName);
+      await resetAutoIncrement(db, tableStatements, tableGroup, tableName);
 
       // INSERT INTO tableName.
-      const values = getValuesForTable(db, tableName);
-      return db.promise()
-        .query(tableStatements.entityTables[tableName].insert, [values])
+      const values = getValuesForTable(
+        tableName,
+        tableGroup,
+        entityData,
+        foreignKeyMaps
+      );
+
+      return await db.promise()
+        .query(tableStatements[tableGroup][tableName].insert, [values])
         .then( ([results, fields]) => {
-          console.log(`${tableName} data inserted: ${results.affectedRows} rows.`);
+          console.log(`${tableName} data inserted: ${results.affectedRows} rows.\n`);
         })
         .catch(console.log);
     })
   )
-  .then( () => console.log('Inserted basic entity data.'))
   .catch(console.log);
 }
 
@@ -222,20 +269,40 @@ const resetTableGroup = async(
 
 // DASDSADSADSA
 // #region
-const deleteTableRows = async(db, tableStatements, tableName) => {
-  return db.promise().query(tableStatements.entityTables[tableName].delete)
+const deleteTableRows = async(db, tableStatements, tableGroup, tableName) => {
+  return db.promise().query(tableStatements[tableGroup][tableName].delete)
     .then( () => console.log(`${tableName} table deleted.`))
     .catch(console.log);
 }
 
-const resetAutoIncrement = async(db, tableStatements, tableName) => {
-  return db.promise().query(tableStatements.entityTables[tableName].reset_auto_inc)
+const resetAutoIncrement = async(db, tableStatements, tableGroup, tableName) => {
+  return db.promise().query(tableStatements[tableGroup][tableName].reset_auto_inc)
     .then( () => console.log(`Reset AUTO_INCREMENT counter for ${tableName} table.`))
     .catch(console.log)
 }
 
-const getValuesForTable = (db, tableName) => {
-  let values;
+const getValuesForTable = (
+  tableName, 
+  tableGroup, 
+  entityData, 
+  foreignKeyMaps
+) => {
+
+  // Declarations for foreign key maps.
+  let ability_FKM, pType_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM;
+  // Declarations for entity data.
+  let abilityData;
+  switch(tableGroup) {
+    case 'abilityJunctionTables':
+      [ability_FKM, pType_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM] = foreignKeyMaps;
+      abilityData = entityData;
+      break;
+
+    default: 
+      console.log('No foreign key maps necessary for this table group.')
+  }
+
+  let values, boostOrResist, boostOrResistKey;
   switch(tableName) {
     /*
       BASIC ENTITIES
@@ -447,6 +514,197 @@ const getValuesForTable = (db, tableName) => {
       values = require('./processing/processed_data/versionGroups.json').map(data => [data.name, data.formatted_name, data.introduced]);
       break;
 
+    /*
+      ABILITY JUNCTION TABLES
+    */
+    case 'ability_boosts_ptype':
+    case 'ability_resists_ptype':
+      /*
+        Need (
+          ability_generation_id,
+          ability_id,
+          ptype_generation_id,
+          ptype_id,
+          multiplier
+        )
+      */
+      boostOrResist = tableName.split('_')[1];
+      boostOrResistKey = boostOrResist + '_type';
+      values = abilityData.reduce((acc, curr) => {
+        // Get ability data from curr.
+        const { gen: gen, name: abilityName, [boostOrResistKey]: typeData } = curr;
+        const { ability_id: abilityID } = ability_FKM.get(makeMapKey([abilityName, gen]));
+        
+        return acc.concat(
+          Object.keys(typeData).map(pTypeName => {
+            // We always compare entities of the same generation.
+            const { ptype_id: pTypeID } = pType_FKM.get(makeMapKey([gen, pTypeName]));
+            const multiplier = typeData[pTypeName];
+
+            return multiplier != 1 
+              ? [gen, abilityID, gen, pTypeID, multiplier]
+              : [];
+          })
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+
+    case 'ability_boosts_usage_method':
+    case 'ability_resists_usage_method':
+      /* 
+        Need (
+          ability_generation_id,
+          ability_id,
+          usage_method_id,
+          multiplier
+        ) 
+      */
+      boostOrResist = tableName.split('_')[1];
+      boostOrResistKey = boostOrResist + '_usage_method';
+
+      values = abilityData.reduce((acc, curr) => {
+        // Get ability data from curr.
+        const { gen: gen, name: abilityName, [boostOrResistKey]: usageMethodData } = curr;
+        const { ability_id: abilityID } = ability_FKM.get(makeMapKey([abilityName, gen]));
+        
+        return acc.concat(
+          Object.keys(usageMethodData).map(usageMethodName => {
+            // We always compare entities of the same generation.
+            const { usage_method_id: usageMethodID } = usageMethod_FKM.get(makeMapKey([usageMethodName]));
+            const multiplier = usageMethodData[usageMethodName];
+
+            return multiplier != 1 
+            ? [gen, abilityID, usageMethodID, multiplier]
+            : [];
+          })
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+
+    case 'ability_modifies_stat':
+      /* 
+        Need (
+          ability_generation_id,
+          ability_id,
+          state_id,
+          stage,
+          multiplier,
+          chance,
+          recipient
+        )
+      */
+      values = abilityData.reduce((acc, curr) => {
+        // Get ability data from curr.
+        const { gen: gen, name: abilityName, stat_modifications: statModData } = curr;
+        const { ability_id: abilityID } = ability_FKM.get(makeMapKey([abilityName, gen]));
+
+        return acc.concat(
+          Object.keys(statModData).map(statName => {
+            // We always compare entities of the same generation.
+            const { stat_id: statID } = stat_FKM.get(makeMapKey([statName]));
+            let [modifier, recipient] = statModData[statName]
+
+            // True if stage modification, False if multiplier.
+            const stageOrMultiplier = typeof modifier == 'string';
+
+            // stage
+            if (stageOrMultiplier) {
+              modifier = parseInt(modifier.slice(1), 0);
+              return modifier != 0 
+              ? [gen, abilityID, statID, modifier, 1.0, 100.00, recipient]
+              : [];
+            }
+            // multiplier
+            else {
+              return modifier != 1.0
+              ? [gen, abilityID, statID, 0, modifier, 100.00, recipient]
+              : [];
+            }
+          })
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+    
+    case 'ability_effect':
+      /*
+        Need (
+          ability_generation_id,
+          ability_id,
+          effect_id
+        )
+      */
+      values = abilityData.reduce((acc, curr) => {
+        // Get ability data from curr.
+        const { gen: gen, name: abilityName, effects: effectData } = curr;
+        const { ability_id: abilityID } = ability_FKM.get(makeMapKey([abilityName, gen]));
+        return acc.concat(
+          Object.keys(effectData).map(effectName => {
+            // We always compare entities of the same generation.
+            const { effect_id: effectID } = effect_FKM.get(makeMapKey([effectName]));
+
+            // True if effect is present, False otherwise.
+            return effectData[effectName]
+            ? [gen, abilityID, effectID]
+            : [];
+          })
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+
+    case 'ability_causes_pstatus':
+    case 'ability_resists_pstatus':
+      /*
+        Need (
+          ability_generation_id,
+          ability_id,
+          pstatus_id,
+          chance
+        ) or (
+          ability_generation_id,
+          ability_id,
+          pstatus_id
+        )
+      */
+      const causeOrResist = tableName.split('_')[1];
+      const causeOrResistKey = causeOrResist + '_status';
+
+      values = abilityData.reduce((acc, curr) => {
+        // Get ability data from curr.
+        const { gen: gen, name: abilityName, [causeOrResistKey]: statusData } = curr;
+        const { ability_id: abilityID } = ability_FKM.get(makeMapKey([abilityName, gen]));
+        
+        return acc.concat(
+          Object.keys(statusData).map(statusName => {
+            // We always compare entities of the same generation.
+            const { pstatus_id: statusID } = pstatus_FKM.get(makeMapKey([statusName]));
+            if (causeOrResist === 'causes') {
+              // In case of causes, statusData[statusName] is probability of causing status.
+              const chance = statusData[statusName];
+
+              return chance != 0.0 
+              ? [gen, abilityID, statusID, chance]
+              : [];
+            } else {
+              // In case of resists, statusData[statusName] is either True or False.
+              return statusData[statusName] 
+              ? [gen, abilityID, statusID]
+              : [];
+            }
+          })
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+
     default:
         console.log(`${tableName} unhandled.`);
   }
@@ -457,6 +715,136 @@ const getValuesForTable = (db, tableName) => {
 
 // #endregion
 
+// FOREIGN KEY MAPS AND KEYS
+// #region
+
+/*
+  Given a table name, tableName, with an AUTO_INCREMENT column, select identifying columns for the purpose of data insertion. E.g.
+
+    If tableName = 'pokemon', select 'pokemon_id', the AUTO_INCREMENT column, as well as 'generation_id' and 'pokemon_name'. 
+*/
+const getIdentifyingColumnNames = (tableName) => {
+  let identifyingColumns;
+  switch(tableName) {
+    case 'pdescription':
+      identifyingColumns = 'pdescription_index, pdescription_type, entity_name';
+      break;
+    case 'sprite':
+      identifyingColumns = 'sprite_path, entity_name';
+      break;
+    case 'version_group':
+      identifyingColumns = 'version_group_code';
+      break;
+    case 'ability': 
+    case 'effect':
+    case 'item':
+    case 'pmove':
+    case 'pokemon':
+    case 'pstatus':
+    case 'ptype':
+    case 'stat':
+    case 'usage_method':
+      identifyingColumns = tableName + '_name';
+      break;
+    default:
+      throw `Invalid table name: ${tableName}.`
+  } 
+
+  return identifyingColumns;
+}
+
+/* 
+  Given a table name, tableName, with an AUTO_INCREMENT column, select the AUTO_INCREMENT column, as well as any other identifying columns for the purpose of data insertion. E.g.
+
+    If tableName = 'pokemon', select 'pokemon_id', the AUTO_INCREMENT column, as well as 'generation_id' and 'pokemon_name'. 
+    
+  We will use this to build Maps for inserting into junction tables. E.g.
+  
+    To insert rows into 'pokemon_ability', we use getIdentifyingColumns('pokemon') to (in another function) build a map which sends (pokemon_name, generation_id) to (generation_id, pokemon_id), which is one of the foreign keys for 'pokemon_ability'. 
+*/
+const queryIdentifyingColumns = async (db, tableStatements, tableName) => {
+  // Whether the entity corresponding to tableName is generation-dependent.
+  let hasGenID;
+  switch (tableName) {
+    case 'pdescription':
+    case 'sprite':
+    case 'version_group':
+    case 'stat':
+    case 'pstatus':
+    case 'usage_method':
+    case 'effect':
+      hasGenID = false;
+      break;
+    default:
+      hasGenID = true;
+  }
+
+  // The column of tableName which AUTO_INCREMENTs.
+  const autoIncColumn = `${tableName}_id`;
+
+  // The other columns of tableName which help identify a given row for the purpose of data insertion.
+  const identifyingColumns = getIdentifyingColumnNames(tableName);
+
+  return hasGenID 
+    ? db.promise().query(tableStatements.entityTables[tableName].select(`generation_id, ${autoIncColumn}, ${identifyingColumns}`))
+    : db.promise().query(tableStatements.entityTables[tableName].select(`${autoIncColumn}, ${identifyingColumns}`));
+};
+
+/*
+  Given a table name, tableName, build a Map, foreignKeyMap, which maps identifying column values to primary key column values. E.g.
+
+    If tableName = 'pokemon', foreignKeyMap maps { generation_id, pokemon_name } to { pokemon_id, generation_id }.
+
+  This will facilitate inserting data into junction tables, indeed into any table with a foreign key.
+*/
+const getForeignKeyMap = async (db, tableStatements, tableName) => {
+  const foreignKeyMap = new Map();
+  const results = await queryIdentifyingColumns(db, tableStatements,tableName).then( ([results, fields]) => {
+    // Maps values in identifying columns of tableName to values in primary key columns of tableName.
+
+    results.map(row => {
+      // Check whether tableName depends on 'generation'.
+      const hasGenID = row.generation_id != undefined;
+
+      // Name of the AUTO_INCREMENT column.
+      const autoIncColumnName = `${tableName}_id`;
+      const autoIncColumnValue = row[autoIncColumnName];
+
+      // Compute the primary key column(s).
+      const primaryKeyColumns = { [autoIncColumnName]: autoIncColumnValue }
+      if (hasGenID) primaryKeyColumns.generation_id = row.generation_id
+
+      // Get the non-AUTO_INCREMENT columns from the given row.
+      const identifyingColumns = Object.keys(row).reduce((acc, curr) => {
+        // Ignore AUTO_INCREMENT column.
+        if (curr === `${tableName}_id`) return acc;
+
+        return {
+          ...acc,
+          [curr]: row[curr],
+        }
+      }, {});
+
+      // We can't use objects or arrays as keys for a Map, so we need to use a string (AGHHHHHHHHHHHHHHHHHHHHHHHHHH). Since we aren't guaranteed the order of the object keys, we sort them alphabetically.
+      const identifyingColumnsString = Object.keys(identifyingColumns)
+        .sort()
+        .reduce((acc, curr) => {
+          return acc + identifyingColumns[curr] + ' ';
+        }, '')
+        // Slice to remove space.
+        .slice(0, -1);
+      foreignKeyMap.set(identifyingColumnsString, primaryKeyColumns);
+    });
+  });
+
+  return foreignKeyMap;
+}
+
+const makeMapKey = arr => arr.join(' ');
+
+// #endregion
+
+
 module.exports = {
   NUMBER_OF_GENS,
   GEN_ARRAY,
@@ -466,4 +854,5 @@ module.exports = {
   createTables,
   resetBasicEntityTables,
   resetGenDependentEntityTables,
+  resetAbilityJunctionTables,
 }

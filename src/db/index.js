@@ -108,208 +108,34 @@ const reinsertGenDependentEntityTables = async () => {
     .catch(console.log);
 }
 
-reinsertGenDependentEntityTables();
+// reinsertGenDependentEntityTables();
 
 // #endregion
 
-// Inserts data for entities which depend on generation, either through a composite primary key or through an 'introduced' column. 
-// WARNING: the junction tables all depend on one or more tables in here, so performing this will cause those tables to be deleted.
-const insertGenDependentEntities = async () => {
-  const entityTableNames = [
-    'ability',
-    'effect',
-    'item',
-    'pokemon',
-    'pmove',
-    'ptype',
-    'usage_method',
-    'version_group'
-  ];
-  for (let tableName of entityTableNames) {
-    // Delete the tables to overcome foreign key constraints.
-    console.log(tableName);
-    db.promise().query(tableStatements.entityTables[tableName].delete)
-    .then( ([results, fields]) => {
+/* 4. Insert data for ability junction tables. */
+// #region
+const { resetAbilityJunctionTables } = require('./utils.js');
 
-      console.log(`${tableName} table deleted.`);
+const reinsertAbilityJunctionTables = async () => {
+  console.log('Re-inserting data for ability junction tables...\n');
+  let timer = new Date().getTime();
 
-    })
-    .catch(console.log)
+  return resetAbilityJunctionTables(db, tableStatements)
     .then( () => {
-      db.promise().query(tableStatements.entityTables[tableName].reset_auto_inc)
-      .then( ([results, fields]) => {
-        
-        console.log(`Reset AUTO_INCREMENT index for ${tableName} table.`);
-      })
-      .catch(console.log)
-      .then( () => {
-        
-        // Determine values to be inserted.
-        let values;
-        switch (tableName) {
-          case 'ability':
-            /*
-              Need (
-                generation_id,
-                ability_name,
-                ability_formatted_name,
-                introduced
-              )
-            */
-            values = require('./processing/processed_data/abilities.json')
-              .map(data => [data.gen, data.name, data.formatted_name, data.introduced]);
-            break;
-
-          case 'effect':
-            /* 
-              Need (
-                effect_name,
-                effect_formatted_name,
-                introduced
-              )
-            */
-            values = require('./processing/processed_data/effects.json')
-              .map(data => [data.name, data.formatted_name, data.introduced]);
-            break;
-
-          case 'item':
-            /* 
-              Need (
-                generation_id,
-                item_name,
-                item_formatted_name,
-                introduced,
-                item_class
-              ) 
-            */
-            values = require('./processing/processed_data/items.json')
-              .map(data => [data.gen, data.name, data.formatted_name, data.introduced, data.item_type]);
-            break;
-
-          case 'pokemon':
-            /* 
-              Need (
-                generation_id,
-                pokemon_name,
-                pokemon_formatted_name,
-                pokemon_species,
-                pokemon_dex,
-                pokemon_height,
-                pokemon_weight,
-                introduced,
-                pokemon_hp,
-                pokemon_attack,
-                pokemon_defense,
-                pokemon_special_defense,
-                pokemon_special_attack,
-                pokemon_speed
-              )
-            */
-            values = require('./processing/processed_data/pokemon.json')
-              // filter out cosmetic forms and lgpe_only pokemon
-              .filter(data => !data.cosmetic && !(data.gen == 'lgpe_only'))
-              .map(data => [
-                data.gen,
-                data.name,
-                data.formatted_name,
-                data.species,
-                data.dex_number,
-                data.height,
-                data.weight,
-                data.introduced,
-                data.hp,
-                data.attack,
-                data.defense,
-                data.special_defense,
-                data.special_attack,
-                data.speed,
-              ]);
-            break;
-          
-          case 'pmove':
-            /*
-              Need (
-                generation_id,
-                pmove_name,
-                pmove_formatted_name,
-                introduced,
-                pmove_power,
-                pmove_pp,
-                pmove_accuracy,
-                pmove_category,
-                pmove_priority,
-                pmove_contact,
-                pmove_target
-              )
-            */
-            values = require('./processing/processed_data/moves.json')
-              .map(data => [
-                data.gen,
-                data.name,
-                data.formatted_name,
-                data.introduced,
-                data.power,
-                data.pp,
-                data.accuracy,
-                data.category,
-                data.priority,
-                data.contact,
-                data.target
-              ]);
-            break;
-
-          case 'ptype':
-            /*
-              Need (
-                generation_id,
-                ptype_name,
-                ptype_formatted_name,
-                introduced
-              )
-            */
-            values = require('./processing/processed_data/pTypes.json')
-              .map(data => [data.gen, data.name, data.formatted_name, data.introduced]);
-            break;
-
-          case 'usage_method':
-            /*
-              Need (
-                usage_method_name
-                usage_method_formatted_name
-                introduced
-              )
-            */
-            values = require('./processing/processed_data/usageMethods.json')
-              .map(data => [data.name, data.formatted_name, data.introduced]);
-            break;
-
-          case 'version_group':
-            /*
-              Need (
-                version_group_code,
-                version_group_formatted_name
-                introduced
-              )
-            */
-            values = require('./processing/processed_data/versionGroups.json').map(data => [data.name, data.formatted_name, data.introduced]);
-            break;
-
-          default:
-            console.log(`${tableName} unhandled.`);
-        }
-
-        db.promise().query(tableStatements.entityTables[tableName].insert, [values])
-        .then( ([results, fields]) => {
-          console.log(`${tableName} data inserted: ${results.affectedRows} rows.`);
-        })
-        .catch(console.log);
-      })
-      .catch(console.log);
-    });
-  }
-
-  return;
+      timer = timeElapsed(timer);
+    })
+    .then ( () => {
+      console.log('\nFinished inserting data for ability junction tables!\n');
+    })
+    .catch(console.log);
 }
+
+reinsertAbilityJunctionTables();
+
+// #endregion
+
+
+
 
 // Inserts data for ability junction tables.
 const insertAbilityJunctionData = async () => {
