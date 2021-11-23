@@ -166,7 +166,13 @@ const resetGenDependentEntityTables = async(db, tableStatements) => {
     'usage_method',
     'version_group'
   ];
-  return resetTableGroup(db, tableStatements, entityTableNames)
+  return resetTableGroup(
+    db,
+    tableStatements,
+    entityTableNames,
+    undefined,
+    undefined
+  )
 }
 
 /*
@@ -182,7 +188,14 @@ const resetBasicEntityTables = async(db, tableStatements) => {
     'pstatus',
     'stat',
   ];
-  return await resetTableGroup(db, tableStatements, basicEntityTableNames)
+
+  return await resetTableGroup(
+    db,
+    tableStatements,
+    basicEntityTableNames,
+    undefined,
+    undefined
+  );
 }
 
 /*
@@ -226,7 +239,8 @@ const resetAbilityJunctionTables = async(db, tableStatements) => {
     abilityJunctionTableNames,
     'abilityJunctionTables',
     abilityData,
-    foreignKeyMaps);
+    foreignKeyMaps
+  );
 }
 
 /*
@@ -274,7 +288,8 @@ const resetItemJunctionTables = async(db, tableStatements) => {
     itemJunctionTableNames,
     'itemJunctionTables',
     itemData,
-    foreignKeyMaps);
+    foreignKeyMaps
+  );
 }
 
 /*
@@ -320,9 +335,43 @@ const resetMoveJunctionTables = async(db, tableStatements) => {
     moveJunctionTableNames,
     'moveJunctionTables',
     itemData,
-    foreignKeyMaps);
+    foreignKeyMaps
+  );
 }
 
+const resetTypeJunctionTables = async(db, tableStatements) => {
+  /*
+    [
+      'ptype_matchup',
+    ]
+  */
+  const typeJunctionTableNames = Object.keys(tableStatements.typeJunctionTables);
+
+  /* 
+    Unpacks as:
+
+      [pType_FKM]
+
+  */ 
+  const foreignKeyMaps = await Promise.all(
+    // Array of relevant entity tableNames.
+    ['ptype']
+    .map(async (tableName) => {
+        console.log(`Getting foreign key map for ${tableName}...`)
+        return await getForeignKeyMap(db, tableStatements, tableName);
+      })
+  );
+  
+  const pTypeData = require('./processing/processed_data/pTypes.json');
+
+  return await resetTableGroup(
+    db,
+    tableStatements,
+    typeJunctionTableNames,
+    'typeJunctionTables',
+    pTypeData,
+    foreignKeyMaps);
+}
 
 const resetTableGroup = async(
   db,
@@ -387,11 +436,14 @@ const getValuesForTable = (
   entityData, 
   foreignKeyMaps
 ) => {
-  // 
+
+  // UNPACK foreignKeyMaps AND ASSIGN entityData BASED ON tableGroup
+  // #region
+
   // Declarations for foreign key maps.
   let ability_FKM, item_FKM, move_FKM, pokemon_FKM, pType_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM;
   // Declarations for entity data.
-  let abilityData, itemData, moveData;
+  let abilityData, itemData, moveData, pokemonData, pTypeData;
   switch(tableGroup) {
     case 'abilityJunctionTables':
       [ability_FKM, pType_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM] = foreignKeyMaps;
@@ -408,11 +460,25 @@ const getValuesForTable = (
       moveData = entityData;
       break;
     
+    case 'typeJunctionTables':
+      [pType_FKM] = foreignKeyMaps;
+      pTypeData = entityData;
+      break;
+
     default: 
       console.log('No foreign key maps necessary for this table group.')
   }
 
-  let values, boostOrResist, boostOrResistKey, causeOrResist, causeOrResistKey;
+  // #endregion
+
+  // This is where we will store the array representing the data to be inserted.
+  let values;
+
+  // COMPUTE values BASED ON tableName
+  // #region
+
+  // Calculating values is very similar for, e.g. '<entity class>_boosts_ptype' and '<entity_class>_resists_ptype'. We declare these variables for use in multiple places in the following switch-statement.
+  let boostOrResist, boostOrResistKey, causeOrResist, causeOrResistKey;
   switch(tableName) {
     /*
       BASIC ENTITIES
@@ -1309,9 +1375,54 @@ const getValuesForTable = (
       // Filter out empty entries
       .filter(data => data.length > 0);
       break;
+    
+    /*
+      POKEMON JUNCTION TABLES
+    */
+  
+    /*
+      TYPE JUNCTION TABLES
+    */
+    case 'ptype_matchup':
+      /*
+        Need (
+          attacking_ptype_generation_id,
+          attacking_ptype_id,
+          defending_ptype_generation_id,
+          defending_ptype_id,
+          multiplier          
+        )
+      */ 
+      values = pTypeData.reduce((acc, curr) => {
+        // Get offensive type data from curr.
+        const { gen: gen, name: pTypeName_att, damage_to: matchupData } = curr;
+        const { ptype_id: pTypeID_att } = pType_FKM.get(makeMapKey([gen, pTypeName_att]));
+        
+        return acc.concat(
+          Object.keys(matchupData).map(pTypeName_def => {
+            // if (pType_FKM.get(makeMapKey([gen, pTypeName_def])) == undefined) {
+            //   console.log(requirementData, pTypeName_def);
+            // }
+            const { ptype_id: pTypeID_def } = pType_FKM.get(makeMapKey([gen, pTypeName_def]));
+
+            const multiplier = curr.damage_to[pTypeName_def];
+
+            return multiplier != 1
+              ? [gen, pTypeID_att, gen, pTypeID_def, multiplier]
+              : [];
+          })
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+
     default:
-        console.log(`${tableName} unhandled.`);
+      console.log(`${tableName} unhandled.`);
   }
+
+  // #endregion
+
   return values;
 }
 
@@ -1465,4 +1576,5 @@ module.exports = {
   resetAbilityJunctionTables,
   resetItemJunctionTables,
   resetMoveJunctionTables,
+  resetTypeJunctionTables,
 }
