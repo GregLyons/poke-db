@@ -1,9 +1,9 @@
 import csv
 import re
-from utils import openLink, getCSVDataPath, parseName, versionDictionary, genSymbolToNumber
+from utils import openLink, getCSVDataPath, parseName, versionGroupDictionary, genSymbolToNumber
 
 # keeps track of version groups and corresponding gens
-versionDict = versionDictionary()
+versionDict = versionGroupDictionary()
 
 # given category, e.g. move or ability, return the relevant Bulbapedia table/list for that category, along with column indices for the desired data
 # all but the non-berry held items lie in tables; non-berry held item links are spread across multiple <ul>'s

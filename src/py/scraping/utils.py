@@ -3,6 +3,10 @@ from bs4 import BeautifulSoup
 import csv
 import re
 
+#
+def getCSVDataPath():
+  return 'src\\data\\raw_data\\csv\\'
+
 # Used for a few calculations--need to alter when gen 9 comes
 def numberOfGens():
   return 8
@@ -65,7 +69,7 @@ def dexNumberToGen(dexNumber):
     return 8
 
 # 
-def versionDictionary():
+def versionGroupDictionary():
   versionDict = {
     "Stad": ["Stadium", 1],
     "GS": ["Gold/Silver", 2],
@@ -92,21 +96,18 @@ def versionDictionary():
 
   return versionDict
 
-#
+# given gen, returns list of version group codes for that gen
 def getVersionGroupsInGen(gen):
   if gen in range(numberOfGens() + 1):
-    versionDict = versionDictionary()
-    return [versionGroup for versionGroup in versionDict.keys() if versionDict[versionGroup][-1] == gen]
+    versionGroupProtoDict = versionGroupDictionary()
+
+    return [versionGroup for versionGroup in versionGroupProtoDict.keys() if versionGroupProtoDict[versionGroup][-1] == gen]
   else:
     raise ValueError("Not a valid Gen!")
 
 # list of shadow moves
 def isShadowMove(moveName):
   return moveName in ['shadow_blitz', 'shadow_rush', 'shadow_break', 'shadow_end', 'shadow_wave', 'shadow_rave', 'shadow_storm', 'shadow_fire', 'shadow_bolt', 'shadow_chill', 'shadow_blast', 'shadow_sky', 'shadow_hold', 'shadow_mist', 'shadow_panic', 'shadow_down', 'shadow_shed', 'shadow_half']
-
-#
-def getCSVDataPath():
-  return 'src\\raw_data\\csv\\'
 
 # parse names in different forms from Bulbapedia and Smogon API to a common, snake_case form
 def parseName(text, mode='normal'):

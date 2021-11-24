@@ -106,7 +106,7 @@ def isShadowMove(moveName):
 
 #
 def getCSVDataPath():
-  return 'src\\data\\csv\\'
+  return 'src\\data\\raw_data\\csv\\'
 
 # parse names in different forms from Bulbapedia and Smogon API to a common, snake_case form
 def parseName(text, mode='normal'):

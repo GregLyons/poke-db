@@ -1,34 +1,14 @@
 import re
 
 def getCSVDataPath():
-  return 'src\\raw_data\\csv\\'
+  return 'src\\data\\raw_data\\csv\\'
 
 def getJSONDataPath():
-  return 'src\\raw_data\\json\\'
+  return 'src\\data\\raw_data\\json\\'
 
 # Used for a few calculations--need to alter when gen 9 comes
 def numberOfGens():
   return 8
-
-# converts dex number to gen
-def dexNumberToGen(dexNumber):
-  dexNumber = int(dexNumber)
-  if dexNumber <= 151:
-    return 1
-  elif dexNumber <= 251:
-    return 2
-  elif dexNumber <= 386:
-    return 3
-  elif dexNumber <= 493: 
-    return 4
-  elif dexNumber <= 649:
-    return 5
-  elif dexNumber <= 721:
-    return 6
-  elif dexNumber <= 809:
-    return 7
-  else:
-    return 8
 
 # converts roman numeral for gen to arabic numeral
 def genSymbolToNumber(roman):
@@ -53,39 +33,34 @@ def genSymbolToNumber(roman):
   else:
     raise ValueError('Not a valid gen.')
 
-# 
-def versionGroupProtoDict():
-  versionGroupProtoDict = {
-    "Stad": ["Stadium", 1],
-    "GS": ["Gold/Silver", 2],
-    "C": ["Crystal", 2],
-    "Stad2": ["Stadium 2", 2],
-    "RS": ["Ruby/Sapphire", 3],
-    "E": ["Emerald", 3],
-    "Colo": ["Colosseum", 3],
-    "XD": ["XD: Gale of Darkness", 3],
-    "FRLG": ["Fire Red/Leaf Green", 3],
-    "DP": ["Diamond/Pearl", 4],
-    "Pt": ["Platinum", 4],
-    "HGSS": ["Heart Gold/Soul Silver", 4],
-    "PBR": ["Pokemon Battle Revolution", 4],
-    "BW": ["Black/White", 5],
-    "B2W2": ["Black 2/White 2", 5],
-    "XY": ["X/Y", 6],
-    "ORAS": ["Omega Ruby/Alpha Sapphire", 6],
-    "SM": ["Sun/Moon", 7],
-    "USUM": ["Ultra Sun/Ultra Moon", 7],
-    "PE": ["Let's Go Pikachu/Let's Go Eeevee", 7],
-    "SwSh": ["Sword/Shield", 8]
-  }
-
-  return versionGroupProtoDict
-
-#
+# given gen, returns list of version group codes for that gen
 def getVersionGroupsInGen(gen):
   if gen in range(numberOfGens() + 1):
-    versionGroupDict = versionGroupProtoDict()
-    return [versionGroup for versionGroup in versionGroupDict.keys() if versionGroupDict[versionGroup][-1] == gen]
+    versionGroupProtoDict = {
+      "Stad": ["Stadium", 1],
+      "GS": ["Gold/Silver", 2],
+      "C": ["Crystal", 2],
+      "Stad2": ["Stadium 2", 2],
+      "RS": ["Ruby/Sapphire", 3],
+      "E": ["Emerald", 3],
+      "Colo": ["Colosseum", 3],
+      "XD": ["XD: Gale of Darkness", 3],
+      "FRLG": ["Fire Red/Leaf Green", 3],
+      "DP": ["Diamond/Pearl", 4],
+      "Pt": ["Platinum", 4],
+      "HGSS": ["Heart Gold/Soul Silver", 4],
+      "PBR": ["Pokemon Battle Revolution", 4],
+      "BW": ["Black/White", 5],
+      "B2W2": ["Black 2/White 2", 5],
+      "XY": ["X/Y", 6],
+      "ORAS": ["Omega Ruby/Alpha Sapphire", 6],
+      "SM": ["Sun/Moon", 7],
+      "USUM": ["Ultra Sun/Ultra Moon", 7],
+      "PE": ["Let's Go Pikachu/Let's Go Eeevee", 7],
+      "SwSh": ["Sword/Shield", 8]
+    }
+
+    return [versionGroup for versionGroup in versionGroupProtoDict.keys() if versionGroupProtoDict[versionGroup][-1] == gen]
   else:
     raise ValueError("Not a valid Gen!")
 
@@ -97,14 +72,14 @@ def statList():
   ]
   return stats
 
-# weather
+# list of weather effects
 def weatherList():
   weathers = [
     'rain', 'hail', 'sandstorm', 'harsh_sunlight', 'extremely_harsh_sunlight', 'heavy_rain', 'strong_winds'
   ]
   return weathers
 
-# terrain
+# list of terrain effects
 def terrainList():
   terrains = [
     'electric', 'grassy', 'misty', 'psychic', 

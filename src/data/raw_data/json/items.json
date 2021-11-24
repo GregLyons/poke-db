@@ -3560,7 +3560,7 @@
   "smoke_ball": {
     "item_type": "",
     "pokemon_specific": {},
-    "gen": 2,
+    "gen": 3,
     "gen2_exclusive": false,
     "knock_off": true,
     "effects": {},

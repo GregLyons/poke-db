@@ -1,5 +1,5 @@
 import csv
-from utils import genSymbolToNumber, getCSVDataPath, versionGroupProtoDict, getVersionGroupsInGen
+from utils import getCSVDataPath
 
 def makeDescriptionDict(dataPath):
   descriptionDict = {}
