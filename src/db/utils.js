@@ -1,5 +1,3 @@
-const tableStatements = require('./sql');
-
 // MISCELLANEOUS HELPERS 
 // #region
 
@@ -71,7 +69,7 @@ const timeElapsed = timer => {
 
 // Drops all tables.
 const dropAllTables = async (db, tableStatements) => {
-  console.log('Dropping all tables...\n')
+  console.log('\nDropping all tables...\n')
 
   // Drop junction tables.
   await dropAllJunctionTables(db, tableStatements);
@@ -80,7 +78,9 @@ const dropAllTables = async (db, tableStatements) => {
   await dropTablesInGroup(db, tableStatements, 'entityTables', ['generation']);
 
   // Finally, drop generation table.
-  return await dropTable(db, tableStatements, 'entityTables', 'generation');
+  return dropSingleTableInGroup(db, tableStatements, 'entityTables', 'generation')
+  .then( () => console.log('\nDropped all tables.\n'))
+  .catch(console.log);
 }
 
 // Drops junction tables and entity tables that aren't relevant to 'pokemon_pmove', which is where learnset data is stored. 
@@ -88,9 +88,13 @@ const dropTablesNotRelevantToLearnsets = async (
   db,
   tableStatements
 ) => {
+  console.log(`\nDropping all tables not relevant to 'pokemon_pmove'...\n
+  `)
   await dropAllJunctionTables(db, tableStatements, ['pokemon_pmove']);
   
-  return await dropTablesInGroup(db, tableStatements, ['pokemon', 'pmove']);
+  return dropTablesInGroup(db, tableStatements, ['pokemon', 'pmove'])
+  .then( () => console.log(`\nDropped all tables not relevant to 'pokemon_pmove'.`))
+  .catch(console.log);
 }
 
 // Drops junction tables that aren't listed in ignoreTables.
@@ -99,7 +103,7 @@ const dropAllJunctionTables = async (
   tableStatements,
   ignoreTables = []
 ) => {
-  console.log(`Dropping all junction tables...\n`)
+  console.log(`\nDropping all junction tables...\n`)
 
   return Promise.all(
     Object.keys(tableStatements)
@@ -108,7 +112,7 @@ const dropAllJunctionTables = async (
         return dropTablesInGroup(db, tableStatements, tableGroup, ignoreTables);
       })
   )
-  .then( () => console.log(`Dropped junction tables.\n`))
+  .then( () => console.log(`\nDropped junction tables.\n`))
   .catch(console.log);
 }
 
@@ -119,20 +123,20 @@ const dropTablesInGroup = async (
   tableGroup,
   ignoreTables = []
 ) => {
-  console.log(`Dropping tables in '${tableGroup}'...\n`);
+  console.log(`\nDropping tables in '${tableGroup}'...\n`);
 
   return Promise.all(
     Object.keys(tableStatements[tableGroup])
       .map(async (tableName) => {
         if (ignoreTables.includes(tableName)) {
           return Promise.resolve()
-            .then( () => { console.log(`Skipping over '${tableName}''.`) });
+            .then( () => { console.log(`Skipping over '${tableName}' table.`) });
         }
 
         return dropSingleTableInGroup(db, tableStatements, tableGroup, tableName);
       })
   )
-  .then( () => console.log(`Dropped all tables in '${tableGroup}'.\n`))
+  .then( () => console.log(`\nDropped all tables in '${tableGroup}'.\n`))
   .catch(console.log);
 }
 
@@ -157,16 +161,16 @@ const dropSingleTableInGroup = async (
 
 // Drops foreign keys and indices from pokemon_pmove to facilitate deleting data, as pokemon_pmove has the most rows by far.
 const prepareLearnsetTableForDrop = async (db) => {
-  console.log(`Dropping foreign keys and indices from 'pokemon_pmove'--if they exist--to improve performance...`);
+  console.log(`\nDropping foreign keys and indices from 'pokemon_pmove'--if they exist--to improve performance...\n`);
 
   // Delete foreign keys, if they exist; the index opposite_pokemon_pmove references them, so we must delete them first.
   await db.promise()
     // Selects foreign keys
     .query(`
-    SELECT * FROM information_schema.TABLE_CONSTRAINTS 
-    WHERE information_schema.TABLE_CONSTRAINTS.CONSTRAINT_TYPE = 'FOREIGN KEY' 
-    AND information_schema.TABLE_CONSTRAINTS.TABLE_SCHEMA = '${process.env.DB_NAME}'
-    AND information_schema.TABLE_CONSTRAINTS.TABLE_NAME = 'pokemon_pmove'
+      SELECT * FROM information_schema.TABLE_CONSTRAINTS 
+      WHERE information_schema.TABLE_CONSTRAINTS.CONSTRAINT_TYPE = 'FOREIGN KEY' 
+      AND information_schema.TABLE_CONSTRAINTS.TABLE_SCHEMA = '${process.env.DB_NAME}'
+      AND information_schema.TABLE_CONSTRAINTS.TABLE_NAME = 'pokemon_pmove'
     `)
     .then( ([results, fields]) => {
       if (results.length == 0) { return; }
@@ -174,7 +178,9 @@ const prepareLearnsetTableForDrop = async (db) => {
       // Deletes each returned foreign key.
       return Promise.all(
         results.map(result => {
-          return db.promise().query(`ALTER TABLE pokemon_pmove DROP FOREIGN KEY ${result.CONSTRAINT_NAME}`);
+          return db.promise().query(`
+            ALTER TABLE pokemon_pmove DROP FOREIGN KEY ${result.CONSTRAINT_NAME}
+          `);
         })
       )
     })
@@ -204,7 +210,7 @@ const prepareLearnsetTableForDrop = async (db) => {
   ])
   .then( () => console.log(`Indices deleted from 'pokemon_pmove'.`));
 
-  return Promise.resolve().then( () => console.log(`'pokemon_pmove' prepared for dropping.\n`));
+  return Promise.resolve().then( () => console.log(`\n'pokemon_pmove' prepared for dropping.\n`));
 }
 
 // #endregion
@@ -229,7 +235,7 @@ const createAllTables = async (db, tableStatements) => {
   await createTablesInGroup(db, tableStatements, 'entityTables');
   
   // Create junction tables.
-  return dropAllJunctionTables(db, tableStatements);
+  return createAllJunctionTables(db, tableStatements);
 };
 
 // Creates all junction tables.
@@ -237,16 +243,16 @@ const createAllJunctionTables = async (
   db,
   tableStatements
 ) => {
-  console.log(`Creating all junction tables...\n`)
+  console.log(`\nCreating all junction tables...\n`)
 
   return Promise.all(
     Object.keys(tableStatements)
       .filter(tableGroup => tableGroup != 'entityTables')
       .map(tableGroup => {
-        return dropTablesInGroup(db, tableStatements, tableGroup);
+        return createTablesInGroup(db, tableStatements, tableGroup);
       })
   )
-  .then( () => console.log(`Created all junction tables.\n`))
+  .then( () => console.log(`\nCreated all junction tables.\n`))
   .catch(console.log);
 }
 
@@ -256,14 +262,14 @@ const createTablesInGroup = async (
   tableStatements,
   tableGroup
 ) => {
-  console.log(`Creating tables in '${tableGroup}'...\n`);
+  console.log(`\nCreating tables in '${tableGroup}'...\n`);
   return Promise.all(
     Object.keys(tableStatements[tableGroup])
       .map(tableName => {
         return createSingleTableInGroup(db, tableStatements, tableGroup, tableName);
       })
   )
-  .then( () => console.log(`Created all tables in '${tableGroup}'.\n`))
+  .then( () => console.log(`\nCreated all tables in '${tableGroup}'.\n`))
   .catch(console.log);
 }
 
@@ -275,7 +281,7 @@ const createSingleTableInGroup = async (
   tableName
 ) => {
   return db.promise().query(tableStatements[tableGroup][tableName].create)
-    .then( () => console.log(`'${tableName}' created if it didn't already exist.`))
+    .then( () => console.log(`'${tableName}' table created if it didn't already exist.`))
     .catch(console.log);
 }
 
@@ -301,7 +307,7 @@ const createSingleTableInGroup = async (
   
   WARNING: Will cause data in most other tables, which depend on generation, to be deleted as well. 
 */
-const resetBasicEntityTables = async(db, tableStatements, ignoreTables = []) => {
+const reinsertBasicEntityData = async(db, tableStatements, ignoreTables = []) => {
   // TODO add sprites
   const basicEntityTableNames = [
     'generation',
@@ -310,7 +316,7 @@ const resetBasicEntityTables = async(db, tableStatements, ignoreTables = []) => 
     'stat',
   ].filter(tableName => !ignoreTables.includes(tableName));;
 
-  return await resetTableGroup(
+  return reinsertDataForTableGroup(
     db,
     tableStatements,
     basicEntityTableNames,
@@ -324,7 +330,7 @@ const resetBasicEntityTables = async(db, tableStatements, ignoreTables = []) => 
 
   WARNING: Will cause data in the junction tables to be deleted.
 */
-const resetGenDependentEntityTables = async(db, tableStatements, ignoreTables = []) => {
+const reinsertGenDependentEntityData = async(db, tableStatements, ignoreTables = []) => {
   const entityTableNames = [
     'ability',
     'effect',
@@ -336,7 +342,7 @@ const resetGenDependentEntityTables = async(db, tableStatements, ignoreTables = 
     'version_group'
   ].filter(tableName => !ignoreTables.includes(tableName));
 
-  return resetTableGroup(
+  return reinsertDataForTableGroup(
     db,
     tableStatements,
     entityTableNames,
@@ -348,7 +354,7 @@ const resetGenDependentEntityTables = async(db, tableStatements, ignoreTables = 
 /*
   DELETE FROM ability junction tables, then INSERT INTO those tables.
 */
-const resetAbilityJunctionTables = async(db, tableStatements) => {
+const reinsertAbilityJunctionData = async(db, tableStatements) => {
   /*
     [
       'ability_boosts_ptype',
@@ -380,7 +386,7 @@ const resetAbilityJunctionTables = async(db, tableStatements) => {
   
   const abilityData = require('./processing/processed_data/abilities.json');
 
-  return await resetTableGroup(
+  return await reinsertDataForTableGroup(
     db,
     tableStatements,
     abilityJunctionTableNames,
@@ -393,7 +399,7 @@ const resetAbilityJunctionTables = async(db, tableStatements) => {
 /*
   DELETE FROM item junction tables, then INSERT INTO those tables.
 */
-const resetItemJunctionTables = async(db, tableStatements) => {
+const reinsertItemJunctionData = async(db, tableStatements) => {
   /*
     [
       'natural_gift',
@@ -429,7 +435,7 @@ const resetItemJunctionTables = async(db, tableStatements) => {
   
   const itemData = require('./processing/processed_data/items.json');
 
-  return await resetTableGroup(
+  return await reinsertDataForTableGroup(
     db,
     tableStatements,
     itemJunctionTableNames,
@@ -442,7 +448,7 @@ const resetItemJunctionTables = async(db, tableStatements) => {
 /*
   DELETE FROM move junction tables, then INSERT INTO those tables.
 */
-const resetMoveJunctionTables = async(db, tableStatements) => {
+const reinsertMoveJunctionData = async(db, tableStatements) => {
   /*
     [
       'pmove_has_ptype',
@@ -476,7 +482,7 @@ const resetMoveJunctionTables = async(db, tableStatements) => {
   
   const itemData = require('./processing/processed_data/moves.json');
 
-  return await resetTableGroup(
+  return await reinsertDataForTableGroup(
     db,
     tableStatements,
     moveJunctionTableNames,
@@ -489,7 +495,7 @@ const resetMoveJunctionTables = async(db, tableStatements) => {
 /*
   DELETE FROM type junction tables, then INSERT INTO those tables.
 */
-const resetTypeJunctionTables = async(db, tableStatements) => {
+const reinsertTypeJunctionData = async(db, tableStatements) => {
   /*
     [
       'ptype_matchup',
@@ -514,7 +520,7 @@ const resetTypeJunctionTables = async(db, tableStatements) => {
   
   const pTypeData = require('./processing/processed_data/pTypes.json');
 
-  return await resetTableGroup(
+  return await reinsertDataForTableGroup(
     db,
     tableStatements,
     typeJunctionTableNames,
@@ -526,7 +532,7 @@ const resetTypeJunctionTables = async(db, tableStatements) => {
 /*
   DELETE FROM pokemon junction tables (except learnset table, 'pokemon_pmove'), then INSERT INTO those tables.
 */
-const resetPokemonJunctionTables = async(db, tableStatements) => {
+const reinsertPokemonJunctionData = async(db, tableStatements) => {
   /*
     [
       'pokemon_evolution',
@@ -556,7 +562,7 @@ const resetPokemonJunctionTables = async(db, tableStatements) => {
   
   const pokemonData = require('./processing/processed_data/pokemon.json');
 
-  return await resetTableGroup(
+  return await reinsertDataForTableGroup(
     db,
     tableStatements,
     pokemonJunctionTableNames,
@@ -569,7 +575,7 @@ const resetPokemonJunctionTables = async(db, tableStatements) => {
 /*
   DELETE FROM version group junction tables, then INSERT INTO those tables.
 */
-const resetVersionGroupJunctionTables = async(db, tableStatements) => {
+const reinsertVersionGroupJunctionData = async(db, tableStatements) => {
   /*
     [
       'version_group_pdescription',
@@ -603,7 +609,7 @@ const resetVersionGroupJunctionTables = async(db, tableStatements) => {
 
   const descriptionData = require('./processing/processed_data/descriptions.json');
 
-  return await resetTableGroup(
+  return await reinsertDataForTableGroup(
     db,
     tableStatements,
     versionGroupJunctionTableNames,
@@ -618,7 +624,7 @@ const resetVersionGroupJunctionTables = async(db, tableStatements) => {
 
   WARNING: Takes a long time.
 */
-const resetLearnsetTable = async(db, tableStatements) => {
+const reinsertLearnsetData = async(db, tableStatements) => {
   /*
     [
       'pokemon_pmove'
@@ -645,7 +651,7 @@ const resetLearnsetTable = async(db, tableStatements) => {
   
   const pokemonData = require('./processing/processed_data/pokemon.json');
 
-  return await resetTableGroup(
+  return await reinsertDataForTableGroup(
     db,
     tableStatements,
     pokemonJunctionTableNames,
@@ -666,7 +672,7 @@ const resetLearnsetTable = async(db, tableStatements) => {
 
     foreignKeyMaps is an array of Maps, each of which takes identifying information from an entry in entityData and maps it to the primary key for that entity in the database. We unpack it when computing the actual values to be inserted. Refer to the foreign key map section for more.
 */
-const resetTableGroup = async(
+const reinsertDataForTableGroup = async(
   db,
   tableStatements,
   tableNameArr,
@@ -703,7 +709,7 @@ const resetTableGroup = async(
       return insertIntoTable(db, tableStatements, tableGroup, tableName, values);
     })
   )
-  .then( () => console.log(`Reset the following tables: ${tableNameArr}.\n`))
+  .then( () => console.log(`\nReset the following tables:\n\n[\n  ${tableNameArr.join(',\n  ')}\n].\n`))
   .catch(console.log);
 }
 
@@ -738,8 +744,7 @@ const insertIntoTable = async(
 
 // #endregion
 
-
-// DASDSADSADSA
+// COMPUTING VALUES TO BE INSERTED FOR A GIVEN TABLE
 // #region
 
 // Use entityData and foreignKeyMaps to determine the array, values, which will be inserted into tableName.
@@ -2187,16 +2192,18 @@ module.exports = {
   createAllJunctionTables,
   createAllTables,
 
+  // Reinserting data
+
   // Entity tables
-  resetBasicEntityTables,
-  resetGenDependentEntityTables,
+  reinsertBasicEntityData,
+  reinsertGenDependentEntityData,
 
   // Junction tables
-  resetAbilityJunctionTables,
-  resetItemJunctionTables,
-  resetMoveJunctionTables,
-  resetTypeJunctionTables,
-  resetPokemonJunctionTables,
-  resetLearnsetTable,
-  resetVersionGroupJunctionTables,
+  reinsertAbilityJunctionData,
+  reinsertItemJunctionData,
+  reinsertMoveJunctionData,
+  reinsertTypeJunctionData,
+  reinsertPokemonJunctionData,
+  reinsertVersionGroupJunctionData,
+  reinsertLearnsetData,
 }

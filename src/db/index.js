@@ -24,17 +24,17 @@ const createDB = () => {
   console.log('Database created.');
 } 
 
-/* 1. Reset tables. ~3 min without learnset data. */
+/* 1. Recreate all tables. */
 // #region
 const { dropAllTables, createAllTables } = require('./utils.js');
 
 // Drop tables if they exist, then recreate them.
-const resetAllTables = async () => {
+const recreateAllTables = async () => {
   console.log('Resetting tables...\n');
   let timer = new Date().getTime();
   let now;
 
-  return dropAllTables(db)
+  return dropAllTables(db, tableStatements)
     .then( () => {
 
       now = new Date().getTime();
@@ -50,24 +50,24 @@ const resetAllTables = async () => {
       console.log('Took', Math.floor((now - timer) / 1000), 'seconds.\n');
       timer = now;
 
-      console.log('\nFinished resetting tables!\n');
+      console.log('\nFinished recreating all tables!\n');
     })
     .catch(console.log);
 }
 
-// resetAllTables();
+// recreateAllTables();
 
 // #endregion
 
-/* 2. Insert data for basic entities. */ 
+/* 2. Re-insert data for basic entities. */ 
 // #region
-const { resetBasicEntityTables } = require('./utils.js');
+const { reinsertBasicEntityData } = require('./utils.js');
 
-const reinsertBasicEntityTables = async () => {
+const resetBasicEntityTables = async () => {
   console.log('Re-inserting data for basic entities...\n');
   let timer = new Date().getTime();
 
-  return resetBasicEntityTables(db, tableStatements)
+  return reinsertBasicEntityData(db, tableStatements)
     .then( () => {
       timer = timeElapsed(timer);
     })
@@ -77,19 +77,19 @@ const reinsertBasicEntityTables = async () => {
     .catch(console.log);
 }
 
-// reinsertBasicEntityTables();
+// resetBasicEntityTables();
 
 // #endregion
 
-/* 3. Insert data for gen-dependent entities. */
+/* 3. Re-insert data for gen-dependent entities. */
 // #region
-const { resetGenDependentEntityTables } = require('./utils.js');
+const { reinsertGenDependentEntityData } = require('./utils.js');
 
-const reinsertGenDependentEntityTables = async () => {
+const resetGenDependentEntityTables = async () => {
   console.log('Re-inserting data for gen-dependent entities...\n');
   let timer = new Date().getTime();
 
-  return resetGenDependentEntityTables(db, tableStatements)
+  return reinsertGenDependentEntityData(db, tableStatements)
     .then( () => {
       timer = timeElapsed(timer);
     })
@@ -99,19 +99,19 @@ const reinsertGenDependentEntityTables = async () => {
     .catch(console.log);
 }
 
-// reinsertGenDependentEntityTables();
+// resetGenDependentEntityTables();
 
 // #endregion
 
-/* 4. Insert data for ability junction tables. */
+/* 4. Re-insert data for ability junction tables. */
 // #region
-const { resetAbilityJunctionTables } = require('./utils.js');
+const { reinsertAbilityJunctionData } = require('./utils.js');
 
-const reinsertAbilityJunctionTables = async () => {
+const resetAbilityJunctionTables = async () => {
   console.log('Re-inserting data for ability junction tables...\n');
   let timer = new Date().getTime();
 
-  return resetAbilityJunctionTables(db, tableStatements)
+  return reinsertAbilityJunctionData(db, tableStatements)
     .then( () => {
       timer = timeElapsed(timer);
     })
@@ -121,19 +121,19 @@ const reinsertAbilityJunctionTables = async () => {
     .catch(console.log);
 }
 
-// reinsertAbilityJunctionTables();
+// resetAbilityJunctionTables();
 
 // #endregion
 
-/* 5. Insert data for item junction tables. */
+/* 5. Re-insert data for item junction tables. */
 // #region
-const { resetItemJunctionTables } = require('./utils.js');
+const { reinsertItemJunctionData } = require('./utils.js');
 
-const reinsertItemJunctionTables = async () => {
+const resetItemJunctionTables = async () => {
   console.log('Re-inserting data for item junction tables...\n');
   let timer = new Date().getTime();
 
-  return resetItemJunctionTables(db, tableStatements)
+  return reinsertItemJunctionData(db, tableStatements)
     .then( () => {
       timer = timeElapsed(timer);
     })
@@ -143,19 +143,19 @@ const reinsertItemJunctionTables = async () => {
     .catch(console.log);
 }
 
-// reinsertItemJunctionTables();
+// resetItemJunctionTables();
 
 // #endregion
 
-/* 6. Insert data for move junction tables. */
+/* 6. Re-insert data for move junction tables. */
 // #region
-const { resetMoveJunctionTables } = require('./utils.js');
+const { reinsertMoveJunctionData } = require('./utils.js');
 
-const reinsertMoveJunctionTables = async () => {
+const resetMoveJunctionTables = async () => {
   console.log('Re-inserting data for move junction tables...\n');
   let timer = new Date().getTime();
 
-  return resetMoveJunctionTables(db, tableStatements)
+  return reinsertMoveJunctionData(db, tableStatements)
     .then( () => {
       timer = timeElapsed(timer);
     })
@@ -165,18 +165,19 @@ const reinsertMoveJunctionTables = async () => {
     .catch(console.log);
 }
 
-// reinsertMoveJunctionTables();
+// resetMoveJunctionTables();
+
 // #endregion
 
-/* 7. Insert data for type junction tables. */
+/* 7. Re-insert data for type junction tables. */
 // #region
-const { resetTypeJunctionTables } = require('./utils.js');
+const { reinsertTypeJunctionData } = require('./utils.js');
 
-const reinsertTypeJunctionTables = async () => {
+const resetTypeJunctionTables = async () => {
   console.log('Re-inserting data for type junction tables...\n');
   let timer = new Date().getTime();
 
-  return resetTypeJunctionTables(db, tableStatements)
+  return reinsertTypeJunctionData(db, tableStatements)
     .then( () => {
       timer = timeElapsed(timer);
     })
@@ -186,19 +187,19 @@ const reinsertTypeJunctionTables = async () => {
     .catch(console.log);
 }
 
-// reinsertTypeJunctionTables();
+// resetTypeJunctionTables();
 
 // #endregion
 
-/* 8. Insert data for Pokemon junction tables. */
+/* 8. Re-insert data for Pokemon junction tables. */
 // #region
-const { resetPokemonJunctionTables } = require('./utils.js');
+const { reinsertPokemonJunctionData } = require('./utils.js');
 
-const reinsertPokemonJunctionTables = async () => {
+const resetPokemonJunctionTables = async () => {
   console.log('Re-inserting data for Pokemon junction tables...\n');
   let timer = new Date().getTime();
 
-  return resetPokemonJunctionTables(db, tableStatements)
+  return reinsertPokemonJunctionData(db, tableStatements)
     .then( () => {
       timer = timeElapsed(timer);
     })
@@ -208,19 +209,19 @@ const reinsertPokemonJunctionTables = async () => {
     .catch(console.log);
 }
 
-// reinsertPokemonJunctionTables();
+// resetPokemonJunctionTables();
 
 // #endregion
 
-/* 9. Insert data for version group junction tables. */
+/* 9. Re-insert data for version group junction tables. */
 // #region
-const { resetVersionGroupJunctionTables } = require('./utils.js');
+const { reinsertVersionGroupJunctionData } = require('./utils.js');
 
-const reinsertVersionGroupJunctionTables = async () => {
+const resetVersionGroupJunctionTables = async () => {
   console.log('Re-inserting data for version group junction tables...\n');
   let timer = new Date().getTime();
 
-  return resetVersionGroupJunctionTables(db, tableStatements)
+  return reinsertVersionGroupJunctionData(db, tableStatements)
     .then( () => {
       timer = timeElapsed(timer);
     })
@@ -230,11 +231,11 @@ const reinsertVersionGroupJunctionTables = async () => {
     .catch(console.log);
 }
 
-// reinsertVersionGroupJunctionTables();
+// resetVersionGroupJunctionTables();
 
 // #endregion
 
-/* 10. Insert data for Pokemon learnset table. */
+/* 10. Re-insert data for Pokemon learnset table. */
 // #region
 const { resetPokemonLearnsetTable } = require('./utils.js');
 
@@ -252,7 +253,7 @@ const reinsertLearnsetJunctionTable = async () => {
     .catch(console.log);
 }
 
-// reinsertPokemonJunctionTables();
+// resetPokemonJunctionTables();
 
 // #endregion
 
