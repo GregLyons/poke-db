@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS pdescription (
   pdescription_id MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT,
   pdescription_text VARCHAR(255) NOT NULL,
   pdescription_index TINYINT UNSIGNED NOT NULL,
-  pdescription_type ENUM('ability', 'item', 'move') NOT NULL,
+  pdescription_class ENUM('ability', 'item', 'move') NOT NULL,
   entity_name VARCHAR(255) NOT NULL,
 
   PRIMARY KEY (pdescription_id)

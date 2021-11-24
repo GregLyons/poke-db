@@ -3395,7 +3395,7 @@
   "scope_lens": {
     "item_type": "",
     "pokemon_specific": {},
-    "gen": 3,
+    "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
     "effects": {},
@@ -3406,7 +3406,7 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "critical_hit_ratio": [["+1", "user", 3]]
+      "critical_hit_ratio": [["+1", "user", 2]]
     },
     "formatted_name": "Scope Lens"
   },
@@ -3560,7 +3560,7 @@
   "smoke_ball": {
     "item_type": "",
     "pokemon_specific": {},
-    "gen": 3,
+    "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
     "effects": {},
@@ -5688,7 +5688,7 @@
   },
   "abomasite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/e/e5/Bag_Abomasite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/e/e5/Bag_Abomasite_Sprite.png",
     "sprite_url": "Mega stone for Abomasnow.",
     "pokemon_specific": {
       "abomasnow": [[true, 6]]
@@ -5710,7 +5710,7 @@
   },
   "absolite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/d/d8/Bag_Absolite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/d/d8/Bag_Absolite_Sprite.png",
     "sprite_url": "Mega stone for Absol.",
     "pokemon_specific": {
       "absol": [[true, 6]]
@@ -5732,7 +5732,7 @@
   },
   "aerodactylite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/0/02/Bag_Aerodactylite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/0/02/Bag_Aerodactylite_Sprite.png",
     "sprite_url": "Mega stone for Aerodactyl.",
     "pokemon_specific": {
       "aerodactyl": [[true, 6]]
@@ -5754,7 +5754,7 @@
   },
   "aggronite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/c/c1/Bag_Aggronite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/c/c1/Bag_Aggronite_Sprite.png",
     "sprite_url": "Mega stone for Aggron.",
     "pokemon_specific": {
       "aggron": [[true, 6]]
@@ -5776,7 +5776,7 @@
   },
   "alakazite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/9/9c/Bag_Alakazite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/9/9c/Bag_Alakazite_Sprite.png",
     "sprite_url": "Mega stone for Alakazam.",
     "pokemon_specific": {
       "alakazam": [[true, 6]]
@@ -5798,7 +5798,7 @@
   },
   "altarianite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/2/2d/Bag_Altarianite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/2/2d/Bag_Altarianite_Sprite.png",
     "sprite_url": "Mega stone for Altaria.",
     "pokemon_specific": {
       "altaria": [[true, 6]]
@@ -5820,7 +5820,7 @@
   },
   "ampharosite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/2/2c/Bag_Ampharosite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/2/2c/Bag_Ampharosite_Sprite.png",
     "sprite_url": "Mega stone for Ampharos.",
     "pokemon_specific": {
       "ampharos": [[true, 6]]
@@ -5842,7 +5842,7 @@
   },
   "audinite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/e/e9/Bag_Audinite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/e/e9/Bag_Audinite_Sprite.png",
     "sprite_url": "Mega stone for Audino.",
     "pokemon_specific": {
       "audino": [[true, 6]]
@@ -5864,7 +5864,7 @@
   },
   "banettite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/3/35/Bag_Banettite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/3/35/Bag_Banettite_Sprite.png",
     "sprite_url": "Mega stone for Banette.",
     "pokemon_specific": {
       "banette": [[true, 6]]
@@ -5886,7 +5886,7 @@
   },
   "beedrillite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/1/1c/Bag_Beedrillite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/1/1c/Bag_Beedrillite_Sprite.png",
     "sprite_url": "Mega stone for Beedrill.",
     "pokemon_specific": {
       "beedrill": [[true, 6]]
@@ -5908,7 +5908,7 @@
   },
   "blastoisinite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/6/62/Bag_Blastoisinite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/6/62/Bag_Blastoisinite_Sprite.png",
     "sprite_url": "Mega stone for Blastoise.",
     "pokemon_specific": {
       "blastoise": [[true, 6]]
@@ -5930,7 +5930,7 @@
   },
   "blazikenite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/1/14/Bag_Blazikenite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/1/14/Bag_Blazikenite_Sprite.png",
     "sprite_url": "Mega stone for Blaziken.",
     "pokemon_specific": {
       "blaziken": [[true, 6]]
@@ -5952,7 +5952,7 @@
   },
   "cameruptite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/3/3e/Bag_Cameruptite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/3/3e/Bag_Cameruptite_Sprite.png",
     "sprite_url": "Mega stone for Camerupt.",
     "pokemon_specific": {
       "camerupt": [[true, 6]]
@@ -5974,7 +5974,7 @@
   },
   "charizardite_x": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/1/1c/Bag_Charizardite_X_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/1/1c/Bag_Charizardite_X_Sprite.png",
     "sprite_url": "Mega stone for Charizard.",
     "pokemon_specific": {
       "charizard": [[true, 6]]
@@ -5996,7 +5996,7 @@
   },
   "charizardite_y": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/c/c8/Bag_Charizardite_Y_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/c/c8/Bag_Charizardite_Y_Sprite.png",
     "sprite_url": "Mega stone for Charizard.",
     "pokemon_specific": {
       "charizard": [[true, 6]]
@@ -6018,7 +6018,7 @@
   },
   "diancite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/a/aa/Bag_Diancite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/a/aa/Bag_Diancite_Sprite.png",
     "sprite_url": "Mega stone for Diancie.",
     "pokemon_specific": {
       "diancie": [[true, 6]]
@@ -6040,7 +6040,7 @@
   },
   "galladite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/9/9f/Bag_Galladite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/9/9f/Bag_Galladite_Sprite.png",
     "sprite_url": "Mega stone for Gallade.",
     "pokemon_specific": {
       "gallade": [[true, 6]]
@@ -6062,7 +6062,7 @@
   },
   "garchompite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/4/4c/Bag_Garchompite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/4/4c/Bag_Garchompite_Sprite.png",
     "sprite_url": "Mega stone for Garchomp.",
     "pokemon_specific": {
       "garchomp": [[true, 6]]
@@ -6084,7 +6084,7 @@
   },
   "gardevoirite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/4/49/Bag_Gardevoirite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/4/49/Bag_Gardevoirite_Sprite.png",
     "sprite_url": "Mega stone for Gardevoir.",
     "pokemon_specific": {
       "gardevoir": [[true, 6]]
@@ -6106,7 +6106,7 @@
   },
   "gengarite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/2/27/Bag_Gengarite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/2/27/Bag_Gengarite_Sprite.png",
     "sprite_url": "Mega stone for Gengar.",
     "pokemon_specific": {
       "gengar": [[true, 6]]
@@ -6128,7 +6128,7 @@
   },
   "glalitite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/8/81/Bag_Glalitite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/8/81/Bag_Glalitite_Sprite.png",
     "sprite_url": "Mega stone for Glalie.",
     "pokemon_specific": {
       "glalie": [[true, 6]]
@@ -6150,7 +6150,7 @@
   },
   "gyaradosite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/9/9f/Bag_Gyaradosite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/9/9f/Bag_Gyaradosite_Sprite.png",
     "sprite_url": "Mega stone for Gyarados.",
     "pokemon_specific": {
       "gyarados": [[true, 6]]
@@ -6172,7 +6172,7 @@
   },
   "heracronite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/8/8c/Bag_Heracronite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/8/8c/Bag_Heracronite_Sprite.png",
     "sprite_url": "Mega stone for Heracross.",
     "pokemon_specific": {
       "heracross": [[true, 6]]
@@ -6194,7 +6194,7 @@
   },
   "houndoominite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/a/ae/Bag_Houndoominite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/a/ae/Bag_Houndoominite_Sprite.png",
     "sprite_url": "Mega stone for Houndoom.",
     "pokemon_specific": {
       "houndoom": [[true, 6]]
@@ -6216,7 +6216,7 @@
   },
   "kangaskhanite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/c/c5/Bag_Kangaskhanite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/c/c5/Bag_Kangaskhanite_Sprite.png",
     "sprite_url": "Mega stone for Kangaskhan.",
     "pokemon_specific": {
       "kangaskhan": [[true, 6]]
@@ -6238,7 +6238,7 @@
   },
   "latiasite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/3/39/Bag_Latiasite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/3/39/Bag_Latiasite_Sprite.png",
     "sprite_url": "Mega stone for Latias.",
     "pokemon_specific": {
       "latias": [[true, 6]]
@@ -6260,7 +6260,7 @@
   },
   "latiosite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/6/69/Bag_Latiosite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/6/69/Bag_Latiosite_Sprite.png",
     "sprite_url": "Mega stone for Latios.",
     "pokemon_specific": {
       "latios": [[true, 6]]
@@ -6282,7 +6282,7 @@
   },
   "lopunnite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/4/4d/Bag_Lopunnite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/4/4d/Bag_Lopunnite_Sprite.png",
     "sprite_url": "Mega stone for Lopunny.",
     "pokemon_specific": {
       "lopunny": [[true, 6]]
@@ -6304,7 +6304,7 @@
   },
   "lucarionite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/7/76/Bag_Lucarionite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/7/76/Bag_Lucarionite_Sprite.png",
     "sprite_url": "Mega stone for Lucario.",
     "pokemon_specific": {
       "lucario": [[true, 6]]
@@ -6326,7 +6326,7 @@
   },
   "manectite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/9/98/Bag_Manectite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/9/98/Bag_Manectite_Sprite.png",
     "sprite_url": "Mega stone for Manectric.",
     "pokemon_specific": {
       "manectric": [[true, 6]]
@@ -6348,7 +6348,7 @@
   },
   "mawilite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/e/ed/Bag_Mawilite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/e/ed/Bag_Mawilite_Sprite.png",
     "sprite_url": "Mega stone for Mawile.",
     "pokemon_specific": {
       "mawile": [[true, 6]]
@@ -6370,7 +6370,7 @@
   },
   "medichamite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/e/ed/Bag_Medichamite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/e/ed/Bag_Medichamite_Sprite.png",
     "sprite_url": "Mega stone for Medicham.",
     "pokemon_specific": {
       "medicham": [[true, 6]]
@@ -6392,7 +6392,7 @@
   },
   "metagrossite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/2/2a/Bag_Metagrossite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/2/2a/Bag_Metagrossite_Sprite.png",
     "sprite_url": "Mega stone for Metagross.",
     "pokemon_specific": {
       "metagross": [[true, 6]]
@@ -6414,7 +6414,7 @@
   },
   "mewtwonite_x": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/0/0d/Bag_Mewtwonite_X_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/0/0d/Bag_Mewtwonite_X_Sprite.png",
     "sprite_url": "Mega stone for Mewtwo.",
     "pokemon_specific": {
       "mewtwo": [[true, 6]]
@@ -6436,7 +6436,7 @@
   },
   "mewtwonite_y": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/4/4a/Bag_Mewtwonite_Y_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/4/4a/Bag_Mewtwonite_Y_Sprite.png",
     "sprite_url": "Mega stone for Mewtwo.",
     "pokemon_specific": {
       "mewtwo": [[true, 6]]
@@ -6458,7 +6458,7 @@
   },
   "pidgeotite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/8/87/Bag_Pidgeotite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/8/87/Bag_Pidgeotite_Sprite.png",
     "sprite_url": "Mega stone for Pidgeot.",
     "pokemon_specific": {
       "pidgeot": [[true, 6]]
@@ -6480,7 +6480,7 @@
   },
   "pinsirite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/1/15/Bag_Pinsirite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/1/15/Bag_Pinsirite_Sprite.png",
     "sprite_url": "Mega stone for Pinsir.",
     "pokemon_specific": {
       "pinsir": [[true, 6]]
@@ -6502,7 +6502,7 @@
   },
   "sablenite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/2/2f/Bag_Sablenite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/2/2f/Bag_Sablenite_Sprite.png",
     "sprite_url": "Mega stone for Sableye.",
     "pokemon_specific": {
       "sableye": [[true, 6]]
@@ -6524,7 +6524,7 @@
   },
   "salamencite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/d/d0/Bag_Salamencite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/d/d0/Bag_Salamencite_Sprite.png",
     "sprite_url": "Mega stone for Salamence.",
     "pokemon_specific": {
       "salamence": [[true, 6]]
@@ -6546,7 +6546,7 @@
   },
   "sceptilite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/5/5b/Bag_Sceptilite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/5/5b/Bag_Sceptilite_Sprite.png",
     "sprite_url": "Mega stone for Sceptile.",
     "pokemon_specific": {
       "sceptile": [[true, 6]]
@@ -6568,7 +6568,7 @@
   },
   "scizorite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/7/73/Bag_Scizorite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/7/73/Bag_Scizorite_Sprite.png",
     "sprite_url": "Mega stone for Scizor.",
     "pokemon_specific": {
       "scizor": [[true, 6]]
@@ -6590,7 +6590,7 @@
   },
   "sharpedonite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/f/fb/Bag_Sharpedonite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/f/fb/Bag_Sharpedonite_Sprite.png",
     "sprite_url": "Mega stone for Sharpedo.",
     "pokemon_specific": {
       "sharpedo": [[true, 6]]
@@ -6612,7 +6612,7 @@
   },
   "slowbronite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/9/9e/Bag_Slowbronite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/9/9e/Bag_Slowbronite_Sprite.png",
     "sprite_url": "Mega stone for Slowbro.",
     "pokemon_specific": {
       "slowbro": [[true, 6]]
@@ -6634,7 +6634,7 @@
   },
   "steelixite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/6/6c/Bag_Steelixite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/6/6c/Bag_Steelixite_Sprite.png",
     "sprite_url": "Mega stone for Steelix.",
     "pokemon_specific": {
       "steelix": [[true, 6]]
@@ -6656,7 +6656,7 @@
   },
   "swampertite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/f/f3/Bag_Swampertite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/f/f3/Bag_Swampertite_Sprite.png",
     "sprite_url": "Mega stone for Swampert.",
     "pokemon_specific": {
       "swampert": [[true, 6]]
@@ -6678,7 +6678,7 @@
   },
   "tyranitarite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/e/e3/Bag_Tyranitarite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/e/e3/Bag_Tyranitarite_Sprite.png",
     "sprite_url": "Mega stone for Tyranitar.",
     "pokemon_specific": {
       "tyranitar": [[true, 6]]
@@ -6700,7 +6700,7 @@
   },
   "venusaurite": {
     "item_type": "mega_stone",
-    "description": "//cdn2.bulbagarden.net/upload/0/0b/Bag_Venusaurite_Sprite.png",
+    "description": "//archives.bulbagarden.net/media/upload/0/0b/Bag_Venusaurite_Sprite.png",
     "sprite_url": "Mega stone for Venusaur.",
     "pokemon_specific": {
       "venusaur": [[true, 6]]
@@ -6723,11 +6723,11 @@
   "berry_juice": {
     "item_type": "other",
     "pokemon_specific": {},
-    "gen": 5,
+    "gen": 2,
     "gen2_exclusive": false,
     "knock_off": true,
     "effects": {
-      "restores_hp": [[true, 5]]
+      "restores_hp": [[true, 2]]
     },
     "causes_status": {},
     "resists_status": {},

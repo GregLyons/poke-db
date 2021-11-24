@@ -78,10 +78,10 @@ def makeInitialItemDict(fnamePrefix):
   itemDict["berry_juice"] = {
         "item_type": 'other',
         "pokemon_specific": {},
-        "gen": 5,
+        "gen": 2,
         "gen2_exclusive": False,
         "knock_off": True,
-        "effects": {"restores_hp": [[True, 5]]},
+        "effects": {"restores_hp": [[True, 2]]},
         "causes_status": {},
         "resists_status": {},
         "boosts_usage_method": {},

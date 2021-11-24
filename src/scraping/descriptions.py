@@ -509,7 +509,7 @@ def handleBerryLink(link, descriptionDict, berryGen):
         versionGroupCodes = []
         
         # for some reason rows with no display are still sometimes selected, so we skip them.
-        if '—' in berryDescription:
+        if '—' in berryDescription or 'Unknown' in berryDescription:
           continue
 
         for versionGroup in versionDict.keys():

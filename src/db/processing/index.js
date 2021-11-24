@@ -67,8 +67,9 @@ addLearnsetsToPokemonArr(learnsets, moves, pokemon, pokemonArr);
 // Separate out LGPE only Pokemon
 const lgpeOnlyPokemon = pokemonArr.filter(data => data.gen == 'lgpe_only');
 pokemonArr = pokemonArr.filter(data => data.gen !== 'lgpe_only');
-console.log(lgpeOnlyPokemon.map(data => data.name));
 const lgpeOnlyMoves = moveArr.filter(data => data.gen == 7 && Object.keys(data.lgpe_exclusive_values).length == 5);
+
+
 moveArr = moveArr.filter(data => !(data.gen == 7 && Object.keys(data.lgpe_exclusive_values).length == 5));
 
 // #endregion
@@ -113,7 +114,10 @@ Entries in descriptionArr are objects of the form:
 */
 const descriptions = require('../../raw_data/json/descriptions.json');
 const { serializeDescriptions } = require('./utils.js');
-const descriptionArr = serializeDescriptions(descriptions);
+let descriptionArr = serializeDescriptions(descriptions);
+const lgpeOnlyMoveNames = lgpeOnlyMoves.map(data => data.name);
+descriptionArr = descriptionArr.filter(data => data.description_class != 'move' || !lgpeOnlyMoveNames.includes(data.entity_name));
+
 
 // Serialize simpler objects.
 

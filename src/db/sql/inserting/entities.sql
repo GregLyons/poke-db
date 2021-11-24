@@ -11,7 +11,7 @@ INSERT INTO generation (
 INSERT INTO pdescription (
   pdescription_text,
   pdescription_index,
-  pdescription_type,
+  pdescription_class,
   entity_name
 ) VALUES ?;
 

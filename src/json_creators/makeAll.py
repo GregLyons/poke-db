@@ -265,7 +265,7 @@ def checkMoveRequirements(moveDict, typeDict, pokemonDict, itemDict):
 def checkDescriptionsAgainstEntities(descriptionDict, entityDict, entityType):
   print('Checking consistency of descriptionDict with ' + entityType + ' names...')
 
-  entityDescriptionNames = set([entityName for entityName in descriptionDict if descriptionDict[entityName]["description_type"] == entityType])
+  entityDescriptionNames = set([entityName for entityName in descriptionDict if descriptionDict[entityName]["description_class"] == entityType])
   entityNames = set(entityDict.keys())
 
   if entityDescriptionNames - entityNames:

@@ -1,3 +1,5 @@
+const tableStatements = require('./sql');
+
 const GEN_ARRAY = [
   [1, 'I'],
   [2, 'II'],
@@ -9,6 +11,42 @@ const GEN_ARRAY = [
   [8, 'VIII'],
 ];
 const NUMBER_OF_GENS = GEN_ARRAY.length;
+
+const getGenOfVersionGroup = (versionGroupCode) => {
+  switch(versionGroupCode) {
+    case 'Stad':
+      return 1;
+    case 'GS':
+    case 'C':
+    case 'Stad2':
+      return 2;
+    case 'RS':
+    case 'E':
+    case 'Colo':
+    case 'XD':
+    case 'FRLG':
+      return 3;
+    case 'DP':
+    case 'Pt':
+    case 'HGSS':
+    case 'PBR':
+      return 4;
+    case 'BW':
+    case 'B2W2':
+      return 5;
+    case 'XY':
+    case 'ORAS':
+      return 6;
+    case 'SM':
+    case 'USUM':
+    case 'PE':
+      return 7;
+    case 'SwSh':
+      return 8;
+    default:
+      throw `Invalid version group code: ${versionGroupCode}.`
+  }
+}
 
 const timeElapsed = timer => {
   let now = new Date().getTime();
@@ -149,6 +187,28 @@ const createTables = async (db, tableStatements) => {
 // INSERTING DATA
 // #region
 
+/*
+  DELETE FROM tables for generation-dependent entities, then INSERT INTO those tables.
+
+  WARNING: Will cause data in the junction tables to be deleted.
+*/
+const resetBasicEntityTables = async(db, tableStatements) => {
+  // TODO add sprites
+  const basicEntityTableNames = [
+    'generation',
+    'pdescription',
+    'pstatus',
+    'stat',
+  ];
+
+  return await resetTableGroup(
+    db,
+    tableStatements,
+    basicEntityTableNames,
+    'entityTables',
+    undefined
+  );
+}
 
 /* 
   DELETE FROM tables for generation-independent entities, then INSERT INTO those tables. 
@@ -170,32 +230,9 @@ const resetGenDependentEntityTables = async(db, tableStatements) => {
     db,
     tableStatements,
     entityTableNames,
-    undefined,
+    'entityTables',
     undefined
   )
-}
-
-/*
-  DELETE FROM tables for generation-dependent entities, then INSERT INTO those tables.
-
-  WARNING: Will cause data in the junction tables to be deleted.
-*/
-const resetBasicEntityTables = async(db, tableStatements) => {
-  // TODO add sprites
-  const basicEntityTableNames = [
-    'generation',
-    'pdescription',
-    'pstatus',
-    'stat',
-  ];
-
-  return await resetTableGroup(
-    db,
-    tableStatements,
-    basicEntityTableNames,
-    undefined,
-    undefined
-  );
 }
 
 /*
@@ -217,7 +254,7 @@ const resetAbilityJunctionTables = async(db, tableStatements) => {
   const abilityJunctionTableNames = Object.keys(tableStatements.abilityJunctionTables);
 
   /* 
-    Unpacks as:
+    Since Promise.all() preserves order, foreignKeyMaps unpacks as:
 
       [ability_FKM, pType_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM]
 
@@ -266,7 +303,7 @@ const resetItemJunctionTables = async(db, tableStatements) => {
     .filter(tableName => tableName != 'item_boosts_usage_method');
 
   /* 
-    Unpacks as:
+    Since Promise.all() preserves order, foreignKeyMaps unpacks as:
 
       [item_FKM, pType_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM, pokemon_FKM]
 
@@ -313,7 +350,7 @@ const resetMoveJunctionTables = async(db, tableStatements) => {
   const moveJunctionTableNames = Object.keys(tableStatements.moveJunctionTables);
 
   /* 
-    Unpacks as:
+    Since Promise.all() preserves order, foreignKeyMaps unpacks as:
 
       [move_FKM, pokemon_FKM, pType_FKM, item_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM]
 
@@ -339,6 +376,9 @@ const resetMoveJunctionTables = async(db, tableStatements) => {
   );
 }
 
+/*
+
+*/
 const resetTypeJunctionTables = async(db, tableStatements) => {
   /*
     [
@@ -348,7 +388,7 @@ const resetTypeJunctionTables = async(db, tableStatements) => {
   const typeJunctionTableNames = Object.keys(tableStatements.typeJunctionTables);
 
   /* 
-    Unpacks as:
+    Since Promise.all() preserves order, foreignKeyMaps unpacks as:
 
       [pType_FKM]
 
@@ -371,6 +411,133 @@ const resetTypeJunctionTables = async(db, tableStatements) => {
     'typeJunctionTables',
     pTypeData,
     foreignKeyMaps);
+}
+
+/*
+
+*/
+const resetPokemonJunctionTables = async(db, tableStatements) => {
+  /*
+    [
+      'pokemon_evolution',
+      'pokemon_form',
+      'pokemon_ptype',
+      'pokemon_ability',
+    ]
+  */
+  const pokemonJunctionTableNames = Object.keys(tableStatements.pokemonJunctionTables)
+    // Due to the size of the learnset data, we handle that separately.
+    .filter(tableName => tableName != 'pokemon_pmove');
+
+  /* 
+    Since Promise.all() preserves order, foreignKeyMaps unpacks as:
+
+      [pokemon_FKM, pType_FKM, ability_FKM]
+
+  */ 
+  const foreignKeyMaps = await Promise.all(
+    // Array of relevant entity tableNames.
+    ['pokemon', 'ptype', 'ability']
+    .map(async (tableName) => {
+        console.log(`Getting foreign key map for ${tableName}...`)
+        return await getForeignKeyMap(db, tableStatements, tableName);
+      })
+  );
+  
+  const pokemonData = require('./processing/processed_data/pokemon.json');
+
+  return await resetTableGroup(
+    db,
+    tableStatements,
+    pokemonJunctionTableNames,
+    'pokemonJunctionTables',
+    pokemonData,
+    foreignKeyMaps
+  );
+}
+
+const resetVersionGroupJunctionTables = async(db, tableStatements) => {
+  /*
+    [
+      'version_group_pdescription',
+      'version_group_sprite',
+      'pdescription_ability',
+      'pdescription_pmove',
+      'pdescription_item',
+      'sprite_pokemon',
+      'sprite_item'
+    ]
+  */
+ const versionGroupJunctionTableNames = Object.keys(tableStatements.versionGroupJunctionTables)
+    // TODO handle sprite tables
+    .filter(tableName => tableName.split('_')[0] == 'pdescription');
+    
+
+  /* 
+    Since Promise.all() preserves order, foreignKeyMaps unpacks as:
+
+      [description_FKM, ability_FKM, move_FKM, item_FKM, versionGroup_FKM]
+
+  */ 
+  const foreignKeyMaps = await Promise.all(
+    // Array of relevant entity tableNames.
+    ['pdescription', 'ability', 'pmove', 'item', 'version_group']
+    .map(async (tableName) => {
+        console.log(`Getting foreign key map for ${tableName}...`)
+        return await getForeignKeyMap(db, tableStatements, tableName);
+      })
+  );
+
+  const descriptionData = require('./processing/processed_data/descriptions.json');
+
+  return await resetTableGroup(
+    db,
+    tableStatements,
+    versionGroupJunctionTableNames,
+    'versionGroupJunctionTables',
+    descriptionData,
+    foreignKeyMaps
+  );
+}
+
+const resetLearnsetTable = async(db, tableStatements) => {
+  /*
+    [
+      'pokemon_evolution',
+      'pokemon_form',
+      'pokemon_ptype',
+      'pokemon_ability',
+    ]
+  */
+  const pokemonJunctionTableNames = Object.keys(tableStatements.pokemonJunctionTables)
+    // Due to the size of the learnset data, we handle that separately.
+    .filter(tableName => tableName == 'pokemon_pmove');
+
+  /* 
+    Since Promise.all() preserves order, foreignKeyMaps unpacks as:
+
+      [pokemon_FKM, move_FKM]
+
+  */ 
+  const foreignKeyMaps = await Promise.all(
+    // Array of relevant entity tableNames.
+    ['pokemon', 'pmove']
+    .map(async (tableName) => {
+        console.log(`Getting foreign key map for ${tableName}...`)
+        return await getForeignKeyMap(db, tableStatements, tableName);
+      })
+  );
+  
+  const pokemonData = require('./processing/processed_data/pokemon.json');
+
+  return await resetTableGroup(
+    db,
+    tableStatements,
+    pokemonJunctionTableNames,
+    'pokemonJunctionTables',
+    pokemonData,
+    foreignKeyMaps
+  );
 }
 
 const resetTableGroup = async(
@@ -441,9 +608,9 @@ const getValuesForTable = (
   // #region
 
   // Declarations for foreign key maps.
-  let ability_FKM, item_FKM, move_FKM, pokemon_FKM, pType_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM;
+  let ability_FKM, item_FKM, move_FKM, pokemon_FKM, pType_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM, description_FKM, sprite_FKM, versionGroup_FKM;
   // Declarations for entity data.
-  let abilityData, itemData, moveData, pokemonData, pTypeData;
+  let abilityData, metaEntityData, itemData, moveData, pokemonData, pTypeData;
   switch(tableGroup) {
     case 'abilityJunctionTables':
       [ability_FKM, pType_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM] = foreignKeyMaps;
@@ -465,6 +632,23 @@ const getValuesForTable = (
       pTypeData = entityData;
       break;
 
+    case 'pokemonJunctionTables':
+      // We handle pokemon_pmove separately since it is so large.
+      if (tableName == 'pokemon_pmove') {
+        [pokemon_FKM, move_FKM] = foreignKeyMaps;
+      } else {
+        [pokemon_FKM, pType_FKM, ability_FKM] = foreignKeyMaps;
+      }
+      pokemonData = entityData;
+      break;
+    case 'versionGroupJunctionTables':
+      if (tableName.split('_')[0] == 'pdescription') {
+        [description_FKM, ability_FKM, move_FKM, item_FKM, versionGroup_FKM] = foreignKeyMaps;
+        metaEntityData = entityData;
+      } else {
+        throw `Sprites not handled yet! ${tableName}`;
+      }
+      break;
     default: 
       console.log('No foreign key maps necessary for this table group.')
   }
@@ -498,14 +682,14 @@ const getValuesForTable = (
         Need (
           pdescription_text,
           pdescription_index,
-          pdescription_type,
+          pdescription_class,
           entity_name
         )
       */
       const descriptions = require('./processing/processed_data/descriptions.json');
       values = descriptions.reduce((acc, descriptionObj) => {
         // extract entityName and description type
-        const { entity_name: entityName, description_type: descriptionType } = descriptionObj;
+        const { entity_name: entityName, description_class: descriptionClass } = descriptionObj;
         
         // descriptionObj contains all the descriptions for entity name, so we need to split them up. The unique descriptions are indexed by numeric keys.
         return acc.concat(Object.keys(descriptionObj)
@@ -515,7 +699,7 @@ const getValuesForTable = (
             // descriptionObj[descriptionIndex] is a two-element array, whose first element is the description itself, and whose second element is another array containing version group codes; we don't need the latter at this moment
             const description = descriptionObj[descriptionIndex][0];
             
-            return [description, descriptionIndex, descriptionType, entityName];
+            return [description, descriptionIndex, descriptionClass, entityName];
           }));
       }, []);
       break;
@@ -1377,10 +1561,6 @@ const getValuesForTable = (
       break;
     
     /*
-      POKEMON JUNCTION TABLES
-    */
-  
-    /*
       TYPE JUNCTION TABLES
     */
     case 'ptype_matchup':
@@ -1417,6 +1597,286 @@ const getValuesForTable = (
       .filter(data => data.length > 0);
       break;
 
+    /*
+      POKEMON JUNCTION TABLES
+    */
+    case 'pokemon_evolution':
+      /*
+        Need (
+          prevolution_generation_id,
+          prevolution_id,
+          evolution_generation_id,
+          evolution_id,
+          evolution_method
+        )
+      */
+
+      values = pokemonData.reduce((acc, curr) => {
+        const { gen: gen, name: pokemonName, evolves_to: evolvesToData } = curr;
+
+        const { pokemon_id: pokemonID } = pokemon_FKM.get(makeMapKey([gen, pokemonName]));
+        
+        return acc.concat(
+          Object.keys(evolvesToData).map(evolutionName => {
+            const { pokemon_id: evolutionID } = pokemon_FKM.get(makeMapKey([gen, evolutionName]));
+            
+            const evolutionMethod = evolvesToData[evolutionName];
+
+            return [gen, pokemonID, gen, evolutionID, evolutionMethod];
+          })
+        );
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+    
+    case 'pokemon_form':
+      /*
+        Need (
+          base_form_generation_id,
+          base_form_id,
+          form_generation_id,
+          form_id,
+          form_class
+        )
+      */
+
+      values = pokemonData.reduce((acc, curr) => {
+        const { gen: gen, name: pokemonName, form_data: formData } = curr;
+
+        const { pokemon_id: pokemonID } = pokemon_FKM.get(makeMapKey([gen, pokemonName]));
+        
+        return acc.concat(
+          Object.keys(formData).map(formName => {
+            const { pokemon_id: formID } = pokemon_FKM.get(makeMapKey([gen, formName]));
+            
+            const formClass = formData[formName];
+
+            return [gen, pokemonID, gen, formID, formClass];
+          })
+        );
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+
+    case 'pokemon_ptype':
+      /*
+        Need (
+          pokemon_generation_id,
+          pokemon_id,
+          ptype_generation_id,
+          ptype_id
+        )
+      */
+      
+      values = pokemonData.reduce((acc, curr) => {
+        const { gen: gen, name: pokemonName, type_1: pType1Name, type_2: pType2Name } = curr;
+
+        const { pokemon_id: pokemonID } = pokemon_FKM.get(makeMapKey([gen, pokemonName]));
+        
+        // Filter out empty type name, e.g. for monotype Pokemon.
+        return acc.concat(
+          [pType1Name, pType2Name]
+          .filter(pTypeName => pTypeName.length > 0)
+          .map(pTypeName => {
+            const { ptype_id: pTypeID } = pType_FKM.get(makeMapKey([gen, pTypeName]));
+            
+            return [gen, pokemonID, gen, pTypeID];
+          })
+        );
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+
+    case 'pokemon_pmove': 
+      /*
+        Need (
+          pokemon_generation_id,
+          pokemon_id,
+          pmove_generation_id,
+          pmove_id,
+          learn_method
+        )
+      */
+      
+      values = pokemonData.reduce((acc, curr) => {
+        const { gen: gen, name: pokemonName, learnset: learnsetData } = curr;
+
+        const { pokemon_id: pokemonID } = pokemon_FKM.get(makeMapKey([gen, pokemonName]));
+        
+        return acc.concat(
+          Object.keys(learnsetData).reduce((innerAcc, moveName)=> {
+            const { pmove_id: moveID } = move_FKM.get(makeMapKey([gen, moveName]));
+            
+            return innerAcc.concat([
+              // We can have multiple different learn methods within the same generation.
+              learnsetData[moveName].map(learnMethod => {
+                return [gen, pokemonID, gen, moveID, learnMethod];
+              })
+            ]);
+          }, [])
+        );
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+
+    case 'pokemon_ability':
+      /*
+        Need (
+          pokemon_generation_id,
+          pokemon_id,
+          ability_generation_id,
+          ability_id,
+          ability_slot
+        )
+      */
+      
+      values = pokemonData.reduce((acc, curr) => {
+        const { gen: gen, name: pokemonName, ability_1: ability1Name, ability_2: ability2Name, ability_hidden: abilityHiddenName } = curr;
+
+        // No abilities in Gen 3
+        if (gen < 3) { return acc; }
+
+        const { pokemon_id: pokemonID } = pokemon_FKM.get(makeMapKey([gen, pokemonName]));
+        
+        // Filter out empty ability slots, e.g. for Mimikyu, who only has one ability.
+        return acc.concat(
+          [ability1Name, ability2Name, abilityHiddenName]
+          .filter(abilityName => abilityName && abilityName.length > 0)
+          .map(abilityName => {
+            const { ability_id: abilityID } = ability_FKM.get(makeMapKey([abilityName, gen]));
+
+            let abilitySlot;
+            switch (abilityName) {
+              case ability1Name:
+                abilitySlot = '1';
+                break;
+              case ability2Name:
+                abilitySlot = '2';
+                break;
+              case abilityHiddenName:
+                abilitySlot = 'hidden';
+                break;
+            }
+            
+            return [gen, pokemonID, gen, abilityID, abilitySlot];
+          })
+        );
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+    
+    /*
+      VERSION GROUP JUNCTION TABLES
+    */ 
+    case 'pdescription_ability':
+    case 'pdescription_item':
+    case 'pdescription_pmove':
+    // case 'sprite_item':
+    // case 'sprite_pokemon':
+      /*
+        Need (
+          <base entity>_generation_id
+          <base entity>_id
+          version_group_id
+          <meta entity>_id
+        ), where <entity> is an ability, item, pmove, or pokemon, and <meta entity> is a pdescription or sprite.
+      */
+      
+      // 
+      // #region
+
+      const metaEntityClass = tableName.split('_')[0];
+      const metaEntity_id = metaEntityClass + '_id';
+      
+      // Whether the pdescription/sprite is of an ability, item, pokemon, or pmove. Choose the foreign key map accordingly.
+      // baseEntityDataClass refers to how the data is stored in descriptions.json or sprites.json.
+      const baseEntityClass = tableName.split('_')[1];
+      const baseEntity_id = baseEntityClass + '_id';
+
+      let baseEntity_FKM, baseEntityDataClass;
+      switch (baseEntityClass) {
+        case 'ability':
+          baseEntity_FKM = ability_FKM;
+          baseEntityDataClass = 'ability';
+          break;
+        case 'item':
+          baseEntity_FKM = item_FKM;
+          baseEntityDataClass = 'item'
+          break;
+        case 'pmove':
+          baseEntity_FKM = move_FKM;
+          baseEntityDataClass = 'move';
+          break;
+        case 'pokemon':
+          baseEntity_FKM = pokemon_FKM;
+          baseEntityDataClass = 'pokemon';
+          break;
+        default:
+          throw 'Invalid base entity class, ' + baseEntityClass;
+      }
+
+      let metaEntity_FKM, metaEntityKey;
+      switch (metaEntityClass) {
+        case 'pdescription':
+          metaEntity_FKM = description_FKM;
+          metaEntityKey = 'description_class'
+          break;
+        case 'sprite':
+          metaEntity_FKM = sprite_FKM;
+          metaEntityKey = 'sprite_class';
+          break;
+        default:
+          throw 'Invalid meta entity class, ' + metaEntityClass;
+      }
+
+      // #endregion
+
+      values = metaEntityData.filter(data => data[metaEntityKey] == baseEntityDataClass).reduce((acc, curr) => {
+        // Get item data from curr.
+        const { entity_name: baseEntityName } = curr;
+        
+        return acc.concat(
+          Object.keys(curr)
+            .filter(key => !isNaN(key))
+            .reduce((innerAcc, metaEntityIndex) => {
+              const [metaEntityContent, versionGroups] = curr[metaEntityIndex];
+
+              // 'pdescription_index, pdescription_class, entity_name' sorted alphabetically is 'entity_name, pdescription_index, pdescription_class'
+              const { [metaEntity_id]: metaEntityID } = metaEntity_FKM.get(makeMapKey([baseEntityName, baseEntityDataClass, metaEntityIndex]));
+
+              return innerAcc.concat(
+                versionGroups.map(versionGroupCode => {
+
+                  const { version_group_id: versionGroupID } = versionGroup_FKM.get(versionGroupCode);
+
+                  const versionGroupGen = getGenOfVersionGroup(versionGroupCode);
+
+                  const { [baseEntity_id]: baseEntityID } = 
+                  baseEntityClass == 'ability' 
+                    // 'ability_id' comes before 'generation_id' alphabetically.
+                    ? baseEntity_FKM.get(makeMapKey([baseEntityName, versionGroupGen]))
+                    // Otherwise, 'generation_id' comes first alphabetically.
+                    : baseEntity_FKM.get(makeMapKey([versionGroupGen, baseEntityName]));
+      
+                  // <base entity>_generation_id
+                  // <base entity>_id
+                  // version_group_id
+                  // <meta entity>_id
+                  return [versionGroupGen, baseEntityID, versionGroupID, metaEntityID];
+                })
+              );
+            }, [])
+        );
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+
     default:
       console.log(`${tableName} unhandled.`);
   }
@@ -1442,7 +1902,7 @@ const getIdentifyingColumnNames = (tableName) => {
   let identifyingColumns;
   switch(tableName) {
     case 'pdescription':
-      identifyingColumns = 'pdescription_index, pdescription_type, entity_name';
+      identifyingColumns = 'pdescription_index, pdescription_class, entity_name';
       break;
     case 'sprite':
       identifyingColumns = 'sprite_path, entity_name';
@@ -1577,4 +2037,7 @@ module.exports = {
   resetItemJunctionTables,
   resetMoveJunctionTables,
   resetTypeJunctionTables,
+  resetPokemonJunctionTables,
+  resetLearnsetTable,
+  resetVersionGroupJunctionTables,
 }
