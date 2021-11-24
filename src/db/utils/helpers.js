@@ -15,7 +15,7 @@ const GEN_ARRAY = [
 
 const NUMBER_OF_GENS = GEN_ARRAY.length;
 
-const PROCESSED_DATA_PATH = './../processing/processed_data/'
+const PROCESSED_DATA_PATH = './../../processed_data/';
 
 // Given a version group code, return the generation of that version group. E.g. 'GS' -> 2, 'BW' -> 5.
 const getGenOfVersionGroup = (versionGroupCode) => {

@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon --ignore src/db/processing/processed_data --exec babel-node src/db/index.js",
+    "start": "nodemon --ignore src/processed_data --exec babel-node src/processing/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -29,15 +29,16 @@ Note that, due to the complicated structure of the evolution data, the 'evolves_
 
 /* 1. Extend patch notes and serialize. */
 // #region
-const abilities = require('../../raw_data/json/abilities.json');
-const pTypes = require('../../raw_data/json/elementalTypes.json');
-const items = require('../../raw_data/json/items.json');
-const moves = require('../../raw_data/json/moves.json');
-const pokemon = require('../../raw_data/json/pokemon.json');
+const { RAW_JSON_DATA_PATH } = require('./utils/helpers.js');
+const abilities = require(RAW_JSON_DATA_PATH + 'abilities.json');
+const pTypes = require(RAW_JSON_DATA_PATH + 'elementalTypes.json');
+const items = require(RAW_JSON_DATA_PATH + 'items.json');
+const moves = require(RAW_JSON_DATA_PATH + 'moves.json');
+const pokemon = require(RAW_JSON_DATA_PATH + 'pokemon.json');
 
 
 
-const { serializeDict } = require('./utils.js');
+const { serializeDict } = require('./utils/serializing.js');
 
 // these entities depend on generation, and so will be split later
 const abilityArr = serializeDict(abilities);
@@ -52,16 +53,17 @@ const pTypeArr = serializeDict(pTypes);
 
 /* 2. Merge learnset data. */
 // #region
-const { mergeLearnsets } = require('./utils.js');
-const gen2Learnsets = require('../../raw_data/gen2learnsets.js');
-const laterLearnsets = require('../../raw_data/learnsets.js');
+const { RAW_DATA_PATH } = require('./utils/helpers.js');
+const { mergeLearnsets } = require('./utils/learnsets.js');
+const gen2Learnsets = require(RAW_DATA_PATH + 'gen2learnsets.js');
+const laterLearnsets = require(RAW_DATA_PATH + 'learnsets.js');
 const learnsets = mergeLearnsets(gen2Learnsets, laterLearnsets);
 
 // #endregion
 
 /* 3. Add merged learnset data. */
 // #region
-const { addLearnsetsToPokemonArr } = require('./utils.js');
+const { addLearnsetsToPokemonArr } = require('./utils/learnsets.js');
 addLearnsetsToPokemonArr(learnsets, moves, pokemon, pokemonArr);
 
 // Separate out LGPE only Pokemon
@@ -76,7 +78,7 @@ moveArr = moveArr.filter(data => !(data.gen == 7 && Object.keys(data.lgpe_exclus
 
 /* 4. Split entities by generation. */
 // #region
-const { splitArr } = require('./utils.js');
+const { splitArr } = require('./utils/splitting.js');
 const splitAbilityArr = splitArr(abilityArr);
 const splitItemArr = splitArr(itemArr);
 const splitMoveArr = splitArr(moveArr);
@@ -112,8 +114,8 @@ Entries in descriptionArr are objects of the form:
       '2': [...]
   }
 */
-const descriptions = require('../../raw_data/json/descriptions.json');
-const { serializeDescriptions } = require('./utils.js');
+const descriptions = require(RAW_JSON_DATA_PATH + 'descriptions.json');
+const { serializeDescriptions } = require('./utils/serializing.js');
 let descriptionArr = serializeDescriptions(descriptions);
 const lgpeOnlyMoveNames = lgpeOnlyMoves.map(data => data.name);
 descriptionArr = descriptionArr.filter(data => data.description_class != 'move' || !lgpeOnlyMoveNames.includes(data.entity_name));
@@ -121,13 +123,13 @@ descriptionArr = descriptionArr.filter(data => data.description_class != 'move' 
 
 // Serialize simpler objects.
 
-const effects = require('../../raw_data/json/effects.json');
-const usageMethods = require('../../raw_data/json/usageMethods.json');
-const stats= require('../../raw_data/json/stats.json');
-const statuses = require('../../raw_data/json/statuses.json');
-const versionGroups = require('../../raw_data/json/versionGroups.json');
+const effects = require(RAW_JSON_DATA_PATH + 'effects.json');
+const usageMethods = require(RAW_JSON_DATA_PATH + 'usageMethods.json');
+const stats= require(RAW_JSON_DATA_PATH + 'stats.json');
+const statuses = require(RAW_JSON_DATA_PATH + 'statuses.json');
+const versionGroups = require(RAW_JSON_DATA_PATH + 'versionGroups.json');
 
-const { serializeSimpleDict } = require('./utils.js');
+const { serializeSimpleDict } = require('./utils/serializing.js');
 
 const effectArr = serializeSimpleDict(effects);
 const statArr = serializeSimpleDict(stats);
@@ -143,7 +145,7 @@ const fs = require('fs');
 
 // We get list of stats as well
 
-const PROCESSED_DATA_PATH = './src/db/processing/processed_data/';
+const { PROCESSED_DATA_PATH } = require('./utils/helpers.js');
 const FILENAMES_AND_ARRAYS = [
   ['abilities.json', splitAbilityArr],
   ['items.json', splitItemArr],
@@ -161,7 +163,7 @@ const FILENAMES_AND_ARRAYS = [
 FILENAMES_AND_ARRAYS.map(pair => {
   const [fname, arr] = pair;
 
-  fs.writeFileSync(PROCESSED_DATA_PATH + fname, JSON.stringify(arr), (err) => {
+  fs.writeFileSync(__dirname + PROCESSED_DATA_PATH + fname, JSON.stringify(arr), (err) => {
     if (err) {
       throw err;
     }
@@ -174,7 +176,7 @@ FILENAMES_AND_ARRAYS.map(pair => {
 
 /* 7. Validate data. */
 // #region
-console.log('\nValidating data.\n');
+console.log('\nValidating data...\n');
 
 console.log('Checking abilities...');
 splitAbilityArr.map(data => {
