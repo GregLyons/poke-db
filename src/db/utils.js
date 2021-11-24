@@ -1,5 +1,8 @@
 const tableStatements = require('./sql');
 
+// MISCELLANEOUS HELPERS 
+// #region
+
 const GEN_ARRAY = [
   [1, 'I'],
   [2, 'II'],
@@ -55,12 +58,107 @@ const timeElapsed = timer => {
   return timer;
 }
 
-// CREATING AND DROPPING TABLES
+// #endregion
+
+// DROPPING TABLES
 // #region
+
+/*
+  Throughout, db refers to the MySQL database, and tableStatements refers to the object of MySQL statements created in the ./sql folder. 
+  
+  tableGroup will refer to keys of this object, and tableName will refer to keys of nested object tableStatements[tableGroup].
+*/
+
+// Drops all tables.
+const dropAllTables = async (db, tableStatements) => {
+  console.log('Dropping all tables...\n')
+
+  // Drop junction tables.
+  await dropAllJunctionTables(db, tableStatements);
+
+  // Drop entity tables except for generation.
+  await dropTablesInGroup(db, tableStatements, 'entityTables', ['generation']);
+
+  // Finally, drop generation table.
+  return await dropTable(db, tableStatements, 'entityTables', 'generation');
+}
+
+// Drops junction tables and entity tables that aren't relevant to 'pokemon_pmove', which is where learnset data is stored. 
+const dropTablesNotRelevantToLearnsets = async (
+  db,
+  tableStatements
+) => {
+  await dropAllJunctionTables(db, tableStatements, ['pokemon_pmove']);
+  
+  return await dropTablesInGroup(db, tableStatements, ['pokemon', 'pmove']);
+}
+
+// Drops junction tables that aren't listed in ignoreTables.
+const dropAllJunctionTables = async (
+  db,
+  tableStatements,
+  ignoreTables = []
+) => {
+  console.log(`Dropping all junction tables...\n`)
+
+  return Promise.all(
+    Object.keys(tableStatements)
+      .filter(tableGroup => tableGroup != 'entityTables')
+      .map(tableGroup => {
+        return dropTablesInGroup(db, tableStatements, tableGroup, ignoreTables);
+      })
+  )
+  .then( () => console.log(`Dropped junction tables.\n`))
+  .catch(console.log);
+}
+
+// Drops tables in a given tableGroup that aren't listed in ignoreTables.
+const dropTablesInGroup = async (
+  db,
+  tableStatements,
+  tableGroup,
+  ignoreTables = []
+) => {
+  console.log(`Dropping tables in '${tableGroup}''...\n`);
+
+  return Promise.all(
+    Object.keys(tableStatements[tableGroup])
+      .map(async (tableName) => {
+        // If !ignoreTables, then user has indicated they don't want to delete 'pokemon_pmove'.
+        if (ignoreTables.includes(tableName)) {
+          return Promise.resolve()
+            .then( () => { console.log(`Skipping over '${tableName}''.`) });
+        }
+
+        return dropSingleTableInGroup(db, tableStatements, tableGroup, tableName);
+      })
+  )
+  .then( () => console.log(`Dropped all tables in '${tableGroup}''.\n`))
+  .catch(console.log);
+}
+
+// Drops the table named tableName, and which is part of tableGroup. If the table is the learnset table, removes the indices and foreign keys before dropping.
+const dropSingleTableInGroup = async (
+  db,
+  tableStatements,
+  tableGroup,
+  tableName
+) => {
+  // If asked to drop learnset table, delete keys and indices first to make it drop more quickly.
+  if (tableName == 'pokemon_pmove') {
+    await prepareLearnsetTableForDrop(db);
+  }
+
+  const dropStatement = tableStatements[tableGroup][tableName].drop
+
+  return db.promise().query(dropStatement)
+    .then( () => console.log(`'${tableName}'' table dropped.`))
+    .catch(console.log);
+}
 
 // Drops foreign keys and indices from pokemon_pmove to facilitate deleting data, as pokemon_pmove has the most rows by far.
 const prepareLearnsetTableForDrop = async (db) => {
-  console.log('Dropping foreign keys and indices from pokemon_pmove--if they exist--to improve DELETE performance...');
+  console.log(`Dropping foreign keys and indices from 'pokemon_pmove'--if they exist--to improve performance...`);
 
   // Delete foreign keys, if they exist; the index opposite_pokemon_pmove references them, so we must delete them first.
   await db.promise()
@@ -81,7 +179,7 @@ const prepareLearnsetTableForDrop = async (db) => {
         })
       )
     })
-    .then( () => console.log('Foreign keys deleted from pokemon_pmove.'))
+    .then( () => console.log(`Foreign keys deleted from 'pokemon_pmove'.`))
     .catch(console.log)
 
   // Deletes the indices.
@@ -105,49 +203,23 @@ const prepareLearnsetTableForDrop = async (db) => {
         else console.log(err);
       })
   ])
-  .then( () => console.log('Indices deleted from pokemon_pmove.'));
+  .then( () => console.log(`Indices deleted from 'pokemon_pmove'.`));
 
-  return;
+  return Promise.resolve().then( () => console.log(`'pokemon_pmove' prepared for dropping.\n`));
 }
 
-// Drops all tables, if they exist.
-const dropTables = async (db, tableStatements) => {
-  // Drop junction tables.
-  await Promise.all(
-    Object.keys(tableStatements)
-      .filter(tableGroup => tableGroup != 'entityTables')
-      .map(tableGroup => {
-        return Promise.all(
-          Object.keys(tableStatements[tableGroup]).map(tableName=> {
-            const statement = tableStatements[tableGroup][tableName].drop;
-            
-            return db.promise().query(statement).then( () => console.log(`${tableName} dropped.`));
-          })
-        );
-      })
-    )
-    .then( () => console.log('\nJunction tables dropped.\n'))
-    .catch(console.log);
+// #endregion
 
-  // Drop basic entity tables.
-  await Promise.all(Object.keys(tableStatements.entityTables)
-    .filter(tableName => tableName !== 'generation').map(tableName => {
-      const statement = tableStatements.entityTables[tableName].drop;
 
-      return db.promise().query(statement)
-        .then( () => console.log(`${tableName} dropped.`));
-    }))
-    .then( () => console.log(`\nEntity tables dropped.\n`))
-    .catch(console.log);
 
-  // Finally, drop generation table.
-  return await db.promise().query(tableStatements.entityTables.generation.drop)
-    .then( () => console.log('\ngeneration table dropped.\n'))
-    .catch(console.log);
-}
+
+
+
+
+
 
 // Creates all tables, if they don't already exist.
-const createTables = async (db, tableStatements) => {
+const createAllTables = async (db, tableStatements) => {
   // Create generation table, which most other tables reference.
   await db.promise().query(tableStatements.entityTables.generation.create)
     .then( () => console.log('\ngeneration table created.\n'))
@@ -182,7 +254,7 @@ const createTables = async (db, tableStatements) => {
   .catch(console.log);
 };
 
-// #endregion
+
 
 // INSERTING DATA
 // #region
@@ -2026,9 +2098,9 @@ module.exports = {
   GEN_ARRAY,
   timeElapsed,
   // Create and drop statements
-  prepareLearnsetTableForDrop,
-  dropTables,
-  createTables,
+  dropTablesNotRelevantToLearnsets,
+  dropAllTables,
+  createAllTables,
   // Entity tables
   resetBasicEntityTables,
   resetGenDependentEntityTables,

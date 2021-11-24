@@ -26,24 +26,16 @@ const createDB = () => {
 
 /* 1. Reset tables. ~3 min without learnset data. */
 // #region
-const { prepareLearnsetTableForDrop, dropTables, createTables } = require('./utils.js');
+const { dropAllTables, createAllTables } = require('./utils.js');
 
 // Drop tables if they exist, then recreate them.
-const resetTables = async () => {
+const resetAllTables = async () => {
   console.log('Resetting tables...\n');
   let timer = new Date().getTime();
   let now;
 
-  return prepareLearnsetTableForDrop(db)
-    .then( () => {
 
-      now = new Date().getTime();
-      console.log('Took', Math.floor((now - timer) / 1000), 'seconds.\n');
-      timer = now;
-
-      console.log('\nDropping tables...\n')
-      return dropTables(db, tableStatements);
-    })
+  return dropAllTables(db)
     .then( () => {
 
       now = new Date().getTime();
@@ -51,7 +43,7 @@ const resetTables = async () => {
       timer = now;
 
       console.log('\nCreating tables...\n')
-      return createTables(db, tableStatements);
+      return createAllTables(db, tableStatements);
     })
     .then( () => {
 
@@ -64,7 +56,7 @@ const resetTables = async () => {
     .catch(console.log);
 }
 
-// resetTables();
+// resetAllTables();
 
 // #endregion
 
@@ -154,6 +146,8 @@ const reinsertItemJunctionTables = async () => {
 
 // reinsertItemJunctionTables();
 
+// #endregion
+
 /* 6. Insert data for move junction tables. */
 // #region
 const { resetMoveJunctionTables } = require('./utils.js');
@@ -237,7 +231,7 @@ const reinsertVersionGroupJunctionTables = async () => {
     .catch(console.log);
 }
 
-reinsertVersionGroupJunctionTables();
+// reinsertVersionGroupJunctionTables();
 
 // #endregion
 
@@ -260,11 +254,12 @@ const reinsertLearnsetJunctionTable = async () => {
 }
 
 // reinsertPokemonJunctionTables();
+
 // #endregion
 
 
-// dropTables();
-// createTables();
+// dropAllTables();
+// createAllTables();
 // insertBasicEntities();
 // insertGenDependentEntities();
 // insertAbilityJunctionData();
