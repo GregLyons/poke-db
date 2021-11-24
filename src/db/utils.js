@@ -119,12 +119,11 @@ const dropTablesInGroup = async (
   tableGroup,
   ignoreTables = []
 ) => {
-  console.log(`Dropping tables in '${tableGroup}''...\n`);
+  console.log(`Dropping tables in '${tableGroup}'...\n`);
 
   return Promise.all(
     Object.keys(tableStatements[tableGroup])
       .map(async (tableName) => {
-        // If !ignoreTables, then user has indicated they don't want to delete 'pokemon_pmove'.
         if (ignoreTables.includes(tableName)) {
           return Promise.resolve()
             .then( () => { console.log(`Skipping over '${tableName}''.`) });
@@ -133,7 +132,7 @@ const dropTablesInGroup = async (
         return dropSingleTableInGroup(db, tableStatements, tableGroup, tableName);
       })
   )
-  .then( () => console.log(`Dropped all tables in '${tableGroup}''.\n`))
+  .then( () => console.log(`Dropped all tables in '${tableGroup}'.\n`))
   .catch(console.log);
 }
 
@@ -152,7 +151,7 @@ const dropSingleTableInGroup = async (
   const dropStatement = tableStatements[tableGroup][tableName].drop
 
   return db.promise().query(dropStatement)
-    .then( () => console.log(`'${tableName}'' table dropped.`))
+    .then( () => console.log(`'${tableName}' table dropped.`))
     .catch(console.log);
 }
 
@@ -210,68 +209,106 @@ const prepareLearnsetTableForDrop = async (db) => {
 
 // #endregion
 
-
-
-
-
-
-
-
-
-// Creates all tables, if they don't already exist.
-const createAllTables = async (db, tableStatements) => {
-  // Create generation table, which most other tables reference.
-  await db.promise().query(tableStatements.entityTables.generation.create)
-    .then( () => console.log('\ngeneration table created.\n'))
-    .catch(console.log);
-
-  // Create basic entity tables, e.g. stat, pokemon, pmove, which the junction tables reference.
-  await Promise.all(Object.keys(tableStatements.entityTables)
-    .filter(tableName => tableName !== 'generation').map(tableName => {
-      const statement = tableStatements.entityTables[tableName].create;
-
-      return db.promise().query(statement)
-        .then( () => console.log(`${tableName} created.`));
-    }))
-    .then( () => console.log(`\nEntity tables created.\n`))
-    .catch(console.log);
-  
-  // Create junction tables.
-  return await Promise.all(
-    Object.keys(tableStatements)
-      .filter(tableGroup => tableGroup != 'entityTables')
-      .map(tableGroup => {
-        return Promise.all(
-          Object.keys(tableStatements[tableGroup]).map(tableName=> {
-            const statement = tableStatements[tableGroup][tableName].create;
-            
-            return db.promise().query(statement).then( () => console.log(`${tableName} created.`));
-          })
-        );
-      })
-  )
-  .then( () => console.log('\nJunction tables created.\n'))
-  .catch(console.log);
-};
-
-
-
-// INSERTING DATA
+// CREATING TABLES
 // #region
 
 /*
-  DELETE FROM tables for generation-dependent entities, then INSERT INTO those tables.
+  Throughout, db refers to the MySQL database, and tableStatements refers to the object of MySQL statements created in the ./sql folder. 
+  
+  tableGroup will refer to keys of this object, and tableName will refer to keys of nested object tableStatements[tableGroup].
 
-  WARNING: Will cause data in the junction tables to be deleted.
+  If a given table already exists, then this code will do nothing to that table, since the MySQL statements are of the form 'CREATE TABLE IF NOT EXISTS...'
 */
-const resetBasicEntityTables = async(db, tableStatements) => {
+
+// Creates all tables.
+const createAllTables = async (db, tableStatements) => {
+  // Create generation table, which most other tables reference.
+  await createSingleTableInGroup(db, tableStatements, 'entityTables', 'generation');
+
+  // Create basic entity tables, e.g. stat, pokemon, pmove, which the junction tables reference.
+  await createTablesInGroup(db, tableStatements, 'entityTables');
+  
+  // Create junction tables.
+  return dropAllJunctionTables(db, tableStatements);
+};
+
+// Creates all junction tables.
+const createAllJunctionTables = async (
+  db,
+  tableStatements
+) => {
+  console.log(`Creating all junction tables...\n`)
+
+  return Promise.all(
+    Object.keys(tableStatements)
+      .filter(tableGroup => tableGroup != 'entityTables')
+      .map(tableGroup => {
+        return dropTablesInGroup(db, tableStatements, tableGroup);
+      })
+  )
+  .then( () => console.log(`Created all junction tables.\n`))
+  .catch(console.log);
+}
+
+// Creates all tables in tableGroup.
+const createTablesInGroup = async (
+  db,
+  tableStatements,
+  tableGroup
+) => {
+  console.log(`Creating tables in '${tableGroup}'...\n`);
+  return Promise.all(
+    Object.keys(tableStatements[tableGroup])
+      .map(tableName => {
+        return createSingleTableInGroup(db, tableStatements, tableGroup, tableName);
+      })
+  )
+  .then( () => console.log(`Created all tables in '${tableGroup}'.\n`))
+  .catch(console.log);
+}
+
+// Creates tableName in tableGroup.
+const createSingleTableInGroup = async (
+  db,
+  tableStatements,
+  tableGroup,
+  tableName
+) => {
+  return db.promise().query(tableStatements[tableGroup][tableName].create)
+    .then( () => console.log(`'${tableName}' created if it didn't already exist.`))
+    .catch(console.log);
+}
+
+// #endregion
+
+// RESETTING TABLES/INSERTING DATA
+// #region
+
+/*
+  Each function in this section:
+    
+    1. Performs DELETE FROM on the relevant tables. (This will cascade.)
+    2. Resets the AUTO_INCREMENT counter on those same tables.
+    3. Performs INSERT INTO of all relevant data into those same tables.
+
+  Most of these operations each take less than a minute. Moreover, because of how the data is gathered and processed in previous steps, an error in one data point can affect multiple different tables. Also, this is not sensitive data, and can easily be recovered. Finally, we want to overwrite any incorrect data with the correct data. Taking all of this into account, I have judged it best to focus on bulk inserts rather than writing ON DUPLICATE KEY behavior. 
+
+  The one exception to this is the learnset junction table, 'pokemon_pmove'. The bulk insert function for that table has been isolated from the rest, and 'resetPokemonJunctionTables' does not affect 'pokemon_pmove'. Resetting the entity tables WILL affect it, however, so there are ignoreTables arguments in those functions to allow the user to specify which tables to avoid. They would be 'generation' (basic entity), and 'pokemon' and 'pmove' (gen-dependent entities). 
+*/
+
+/* 
+  DELETE FROM tables for generation-independent entities, then INSERT INTO those tables. 
+  
+  WARNING: Will cause data in most other tables, which depend on generation, to be deleted as well. 
+*/
+const resetBasicEntityTables = async(db, tableStatements, ignoreTables = []) => {
   // TODO add sprites
   const basicEntityTableNames = [
     'generation',
     'pdescription',
     'pstatus',
     'stat',
-  ];
+  ].filter(tableName => !ignoreTables.includes(tableName));;
 
   return await resetTableGroup(
     db,
@@ -282,12 +319,12 @@ const resetBasicEntityTables = async(db, tableStatements) => {
   );
 }
 
-/* 
-  DELETE FROM tables for generation-independent entities, then INSERT INTO those tables. 
-  
-  WARNING: Will cause data in most other tables, which depend on generation, to be deleted as well. 
+/*
+  DELETE FROM tables for generation-dependent entities, then INSERT INTO those tables.
+
+  WARNING: Will cause data in the junction tables to be deleted.
 */
-const resetGenDependentEntityTables = async(db, tableStatements) => {
+const resetGenDependentEntityTables = async(db, tableStatements, ignoreTables = []) => {
   const entityTableNames = [
     'ability',
     'effect',
@@ -297,7 +334,8 @@ const resetGenDependentEntityTables = async(db, tableStatements) => {
     'ptype',
     'usage_method',
     'version_group'
-  ];
+  ].filter(tableName => !ignoreTables.includes(tableName));
+
   return resetTableGroup(
     db,
     tableStatements,
@@ -308,7 +346,7 @@ const resetGenDependentEntityTables = async(db, tableStatements) => {
 }
 
 /*
-
+  DELETE FROM ability junction tables, then INSERT INTO those tables.
 */
 const resetAbilityJunctionTables = async(db, tableStatements) => {
   /*
@@ -353,7 +391,7 @@ const resetAbilityJunctionTables = async(db, tableStatements) => {
 }
 
 /*
-
+  DELETE FROM item junction tables, then INSERT INTO those tables.
 */
 const resetItemJunctionTables = async(db, tableStatements) => {
   /*
@@ -402,7 +440,7 @@ const resetItemJunctionTables = async(db, tableStatements) => {
 }
 
 /*
-
+  DELETE FROM move junction tables, then INSERT INTO those tables.
 */
 const resetMoveJunctionTables = async(db, tableStatements) => {
   /*
@@ -449,7 +487,7 @@ const resetMoveJunctionTables = async(db, tableStatements) => {
 }
 
 /*
-
+  DELETE FROM type junction tables, then INSERT INTO those tables.
 */
 const resetTypeJunctionTables = async(db, tableStatements) => {
   /*
@@ -486,7 +524,7 @@ const resetTypeJunctionTables = async(db, tableStatements) => {
 }
 
 /*
-
+  DELETE FROM pokemon junction tables (except learnset table, 'pokemon_pmove'), then INSERT INTO those tables.
 */
 const resetPokemonJunctionTables = async(db, tableStatements) => {
   /*
@@ -528,6 +566,9 @@ const resetPokemonJunctionTables = async(db, tableStatements) => {
   );
 }
 
+/*
+  DELETE FROM version group junction tables, then INSERT INTO those tables.
+*/
 const resetVersionGroupJunctionTables = async(db, tableStatements) => {
   /*
     [
@@ -572,13 +613,15 @@ const resetVersionGroupJunctionTables = async(db, tableStatements) => {
   );
 }
 
+/*
+  DELETE FROM learnset table, then INSERT INTO that table.
+
+  WARNING: Takes a long time.
+*/
 const resetLearnsetTable = async(db, tableStatements) => {
   /*
     [
-      'pokemon_evolution',
-      'pokemon_form',
-      'pokemon_ptype',
-      'pokemon_ability',
+      'pokemon_pmove'
     ]
   */
   const pokemonJunctionTableNames = Object.keys(tableStatements.pokemonJunctionTables)
@@ -612,6 +655,17 @@ const resetLearnsetTable = async(db, tableStatements) => {
   );
 }
 
+/*
+  Invoked by all the above statements to reset data for the appropriate tables.
+
+    Refer to the creating/dropping sections for what db, tableSDtatements, and tableGroup are.
+
+    tableNameArr is a subset of tableGroup consisting of the tables to be reset.
+
+    entityData is an array of objects for data used to compute the values to be inserted. This is used mainly for junction tables. E.g. for ability junction tables, this is abilities.json.
+
+    foreignKeyMaps is an array of Maps, each of which takes identifying information from an entry in entityData and maps it to the primary key for that entity in the database. We unpack it when computing the actual values to be inserted. Refer to the foreign key map section for more.
+*/
 const resetTableGroup = async(
   db,
   tableStatements,
@@ -621,10 +675,14 @@ const resetTableGroup = async(
   foreignKeyMaps,
 ) => {
   /*
-    1. DELETE FROM tableName.
-    2. Reset AUTO_INCREMENT counter for tableName.
-    3. INSERT INTO tableName.
+    For each tableName in tableNameArr:
+
+      1. DELETE FROM tableName.
+      2. Reset AUTO_INCREMENT counter for tableName.
+      3. INSERT INTO tableName.
+
   */
+
   return await Promise.all(
     tableNameArr.map(async (tableName) => {
       // DELETE FROM tableName.
@@ -633,23 +691,49 @@ const resetTableGroup = async(
       // Reset AUTO_INCREMENT counter for tableName.
       await resetAutoIncrement(db, tableStatements, tableGroup, tableName);
 
-      // INSERT INTO tableName.
+      // Get the values to be inserted using entityData and foreignKeyMaps.
       const values = getValuesForTable(
         tableName,
         tableGroup,
         entityData,
         foreignKeyMaps
       );
-
-      return await db.promise()
-        .query(tableStatements[tableGroup][tableName].insert, [values])
-        .then( ([results, fields]) => {
-          console.log(`${tableName} data inserted: ${results.affectedRows} rows.\n`);
-        })
-        .catch(console.log);
+        
+      // INSERT INTO tableName.
+      return insertIntoTable(db, tableStatements, tableGroup, tableName, values);
     })
   )
+  .then( () => console.log(`Reset the following tables: ${tableNameArr}.\n`))
   .catch(console.log);
+}
+
+// DELETE FROM tableName.
+const deleteTableRows = async(db, tableStatements, tableGroup, tableName) => {
+  return db.promise().query(tableStatements[tableGroup][tableName].delete)
+    .then( () => console.log(`${tableName} table deleted.`))
+    .catch(console.log);
+}
+
+// Reset AUTO_INCREMENT counter for tableName.
+const resetAutoIncrement = async(db, tableStatements, tableGroup, tableName) => {
+  return db.promise().query(tableStatements[tableGroup][tableName].reset_auto_inc)
+    .then( () => console.log(`Reset AUTO_INCREMENT counter for ${tableName} table.`))
+    .catch(console.log)
+}
+
+// INSERT INTO tableName the array, values.
+const insertIntoTable = async(
+  db,
+  tableStatements,
+  tableGroup,
+  tableName, 
+  values
+) => {
+  return await db.promise().query(tableStatements[tableGroup][tableName].insert, [values])
+    .then( ([results, fields]) => {
+      console.log(`Inserted data for ${tableName}: ${results.affectedRows} rows.`);
+    })
+    .catch(console.log);
 }
 
 // #endregion
@@ -657,18 +741,8 @@ const resetTableGroup = async(
 
 // DASDSADSADSA
 // #region
-const deleteTableRows = async(db, tableStatements, tableGroup, tableName) => {
-  return db.promise().query(tableStatements[tableGroup][tableName].delete)
-    .then( () => console.log(`${tableName} table deleted.`))
-    .catch(console.log);
-}
 
-const resetAutoIncrement = async(db, tableStatements, tableGroup, tableName) => {
-  return db.promise().query(tableStatements[tableGroup][tableName].reset_auto_inc)
-    .then( () => console.log(`Reset AUTO_INCREMENT counter for ${tableName} table.`))
-    .catch(console.log)
-}
-
+// Use entityData and foreignKeyMaps to determine the array, values, which will be inserted into tableName.
 const getValuesForTable = (
   tableName, 
   tableGroup, 
@@ -735,6 +809,8 @@ const getValuesForTable = (
 
   // Calculating values is very similar for, e.g. '<entity class>_boosts_ptype' and '<entity_class>_resists_ptype'. We declare these variables for use in multiple places in the following switch-statement.
   let boostOrResist, boostOrResistKey, causeOrResist, causeOrResistKey;
+
+  // Assign values based on tableName
   switch(tableName) {
     /*
       BASIC ENTITIES
@@ -1958,84 +2034,13 @@ const getValuesForTable = (
   return values;
 }
 
-
-
 // #endregion
 
 // FOREIGN KEY MAPS AND KEYS
 // #region
 
-/*
-  Given a table name, tableName, with an AUTO_INCREMENT column, select identifying columns for the purpose of data insertion. E.g.
-
-    If tableName = 'pokemon', select 'pokemon_id', the AUTO_INCREMENT column, as well as 'generation_id' and 'pokemon_name'. 
-*/
-const getIdentifyingColumnNames = (tableName) => {
-  let identifyingColumns;
-  switch(tableName) {
-    case 'pdescription':
-      identifyingColumns = 'pdescription_index, pdescription_class, entity_name';
-      break;
-    case 'sprite':
-      identifyingColumns = 'sprite_path, entity_name';
-      break;
-    case 'version_group':
-      identifyingColumns = 'version_group_code';
-      break;
-    case 'ability': 
-    case 'effect':
-    case 'item':
-    case 'pmove':
-    case 'pokemon':
-    case 'pstatus':
-    case 'ptype':
-    case 'stat':
-    case 'usage_method':
-      identifyingColumns = tableName + '_name';
-      break;
-    default:
-      throw `Invalid table name: ${tableName}.`
-  } 
-
-  return identifyingColumns;
-}
-
-/* 
-  Given a table name, tableName, with an AUTO_INCREMENT column, select the AUTO_INCREMENT column, as well as any other identifying columns for the purpose of data insertion. E.g.
-
-    If tableName = 'pokemon', select 'pokemon_id', the AUTO_INCREMENT column, as well as 'generation_id' and 'pokemon_name'. 
-    
-  We will use this to build Maps for inserting into junction tables. E.g.
-  
-    To insert rows into 'pokemon_ability', we use getIdentifyingColumns('pokemon') to (in another function) build a map which sends (pokemon_name, generation_id) to (generation_id, pokemon_id), which is one of the foreign keys for 'pokemon_ability'. 
-*/
-const queryIdentifyingColumns = async (db, tableStatements, tableName) => {
-  // Whether the entity corresponding to tableName is generation-dependent.
-  let hasGenID;
-  switch (tableName) {
-    case 'pdescription':
-    case 'sprite':
-    case 'version_group':
-    case 'stat':
-    case 'pstatus':
-    case 'usage_method':
-    case 'effect':
-      hasGenID = false;
-      break;
-    default:
-      hasGenID = true;
-  }
-
-  // The column of tableName which AUTO_INCREMENTs.
-  const autoIncColumn = `${tableName}_id`;
-
-  // The other columns of tableName which help identify a given row for the purpose of data insertion.
-  const identifyingColumns = getIdentifyingColumnNames(tableName);
-
-  return hasGenID 
-    ? db.promise().query(tableStatements.entityTables[tableName].select(`generation_id, ${autoIncColumn}, ${identifyingColumns}`))
-    : db.promise().query(tableStatements.entityTables[tableName].select(`${autoIncColumn}, ${identifyingColumns}`));
-};
+// Helper function for taking an array of strings and making a key for a foreign key map. We need this since the keys of a Map cannot be an array or an object.
+const makeMapKey = arr => arr.join(' ');
 
 /*
   Given a table name, tableName, build a Map, foreignKeyMap, which maps identifying column values to primary key column values. E.g.
@@ -2087,7 +2092,78 @@ const getForeignKeyMap = async (db, tableStatements, tableName) => {
   return foreignKeyMap;
 }
 
-const makeMapKey = arr => arr.join(' ');
+
+/* 
+  Given a table name, tableName, with an AUTO_INCREMENT column, select the AUTO_INCREMENT column, as well as any other identifying columns for the purpose of data insertion. E.g.
+
+    If tableName = 'pokemon', select 'pokemon_id', the AUTO_INCREMENT column, as well as 'generation_id' and 'pokemon_name'. 
+    
+  We will use this to build Maps for inserting into junction tables. E.g.
+  
+    To insert rows into 'pokemon_ability', we use getIdentifyingColumns('pokemon') to (in another function) build a map which sends (pokemon_name, generation_id) to (generation_id, pokemon_id), which is one of the foreign keys for 'pokemon_ability'. 
+*/
+const queryIdentifyingColumns = async (db, tableStatements, tableName) => {
+  // Whether the entity corresponding to tableName is generation-dependent.
+  let hasGenID;
+  switch (tableName) {
+    case 'pdescription':
+    case 'sprite':
+    case 'version_group':
+    case 'stat':
+    case 'pstatus':
+    case 'usage_method':
+    case 'effect':
+      hasGenID = false;
+      break;
+    default:
+      hasGenID = true;
+  }
+
+  // The column of tableName which AUTO_INCREMENTs.
+  const autoIncColumn = `${tableName}_id`;
+
+  // The other columns of tableName which help identify a given row for the purpose of data insertion.
+  const identifyingColumns = getIdentifyingColumnNames(tableName);
+
+  return hasGenID 
+    ? db.promise().query(tableStatements.entityTables[tableName].select(`generation_id, ${autoIncColumn}, ${identifyingColumns}`))
+    : db.promise().query(tableStatements.entityTables[tableName].select(`${autoIncColumn}, ${identifyingColumns}`));
+};
+
+/*
+  Given a table name, tableName, with an AUTO_INCREMENT column, select identifying columns for the purpose of data insertion. E.g.
+
+    If tableName = 'pokemon', select 'pokemon_id', the AUTO_INCREMENT column, as well as 'generation_id' and 'pokemon_name'. 
+*/
+const getIdentifyingColumnNames = (tableName) => {
+  let identifyingColumns;
+  switch(tableName) {
+    case 'pdescription':
+      identifyingColumns = 'pdescription_index, pdescription_class, entity_name';
+      break;
+    case 'sprite':
+      identifyingColumns = 'sprite_path, entity_name';
+      break;
+    case 'version_group':
+      identifyingColumns = 'version_group_code';
+      break;
+    case 'ability': 
+    case 'effect':
+    case 'item':
+    case 'pmove':
+    case 'pokemon':
+    case 'pstatus':
+    case 'ptype':
+    case 'stat':
+    case 'usage_method':
+      identifyingColumns = tableName + '_name';
+      break;
+    default:
+      throw `Invalid table name: ${tableName}.`
+  } 
+
+  return identifyingColumns;
+}
 
 // #endregion
 
@@ -2097,13 +2173,24 @@ module.exports = {
   NUMBER_OF_GENS,
   GEN_ARRAY,
   timeElapsed,
-  // Create and drop statements
+
+  // Drop statements
+  dropSingleTableInGroup,
+  dropTablesInGroup,
+  dropAllJunctionTables,
   dropTablesNotRelevantToLearnsets,
   dropAllTables,
+
+  // Create statements
+  createSingleTableInGroup,
+  createTablesInGroup,
+  createAllJunctionTables,
   createAllTables,
+
   // Entity tables
   resetBasicEntityTables,
   resetGenDependentEntityTables,
+
   // Junction tables
   resetAbilityJunctionTables,
   resetItemJunctionTables,

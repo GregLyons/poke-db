@@ -34,7 +34,6 @@ const resetAllTables = async () => {
   let timer = new Date().getTime();
   let now;
 
-
   return dropAllTables(db)
     .then( () => {
 
