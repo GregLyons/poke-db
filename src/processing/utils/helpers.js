@@ -5,9 +5,9 @@
 const NUMBER_OF_GENS = 8
 
 // Filepath prefixes
-const RAW_DATA_PATH = './../raw_data/'
+const RAW_DATA_PATH = './../data/raw_data/'
 const RAW_JSON_DATA_PATH = RAW_DATA_PATH + 'json/';
-const PROCESSED_DATA_PATH = './../processed_data/';
+const PROCESSED_DATA_PATH = './../data/processed_data/';
 
 // #endregion
 
@@ -39,6 +39,15 @@ const getGMaxMoves = moveArr => moveArr.filter(move => move.g_max_move).map(move
 
 // #endregion
 
+// From Sean Bright's answer on SO: https://stackoverflow.com/questions/1144783/how-to-replace-all-occurrences-of-a-string-in-javascript
+function escapeRegExp(string) {
+  return string.replace(/[.*+\-?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+}
+
+function replaceAll(str, find, replace) {
+  return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
+}
+
 module.exports = {
   NUMBER_OF_GENS,
   RAW_DATA_PATH,
@@ -48,4 +57,5 @@ module.exports = {
   getStatusZMoves,
   getMaxMoves,
   getGMaxMoves,
+  replaceAll,
 }

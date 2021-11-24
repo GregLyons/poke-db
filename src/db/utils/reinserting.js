@@ -3,7 +3,7 @@
 */
 
 const { PROCESSED_DATA_PATH } = require('./helpers.js');
-const { getForeignKeyMap } = require('./foreignKeyMaps.js'); 
+const { getForeignKeyMaps } = require('./foreignKeyMaps.js'); 
 const { getValuesForTable } = require('./values.js');
 
 /*
@@ -58,13 +58,15 @@ const reinsertGenDependentEntityData = async(db, tableStatements, ignoreTables =
     'version_group'
   ].filter(tableName => !ignoreTables.includes(tableName));
 
+  console.log(entityTableNames);
+
   return reinsertDataForTableGroup(
     db,
     tableStatements,
     entityTableNames,
     'entityTables',
     undefined
-  )
+  );
 }
 
 /*
@@ -91,14 +93,8 @@ const reinsertAbilityJunctionData = async(db, tableStatements) => {
       [ability_FKM, pType_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM]
 
   */ 
-  const foreignKeyMaps = await Promise.all(
-    // Array of relevant entity tableNames.
-    ['ability', 'ptype', 'usage_method', 'stat', 'pstatus', 'effect']
-    .map(async (tableName) => {
-        console.log(`Getting foreign key map for ${tableName}...`)
-        return await getForeignKeyMap(db, tableStatements, tableName);
-      })
-  );
+  const foreignKeyTables = ['ability', 'ptype', 'usage_method', 'stat', 'pstatus', 'effect'];
+  const foreignKeyMaps = await getForeignKeyMaps(db, tableStatements, foreignKeyTables);
   
   const abilityData = require(PROCESSED_DATA_PATH + 'abilities.json');
 
@@ -140,14 +136,8 @@ const reinsertItemJunctionData = async(db, tableStatements) => {
       [item_FKM, pType_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM, pokemon_FKM]
 
   */ 
-  const foreignKeyMaps = await Promise.all(
-    // Array of relevant entity tableNames.
-    ['item', 'ptype', 'usage_method', 'stat', 'pstatus', 'effect', 'pokemon']
-    .map(async (tableName) => {
-        console.log(`Getting foreign key map for ${tableName}...`)
-        return await getForeignKeyMap(db, tableStatements, tableName);
-      })
-  );
+  const foreignKeyTables = ['item', 'ptype', 'usage_method', 'stat', 'pstatus', 'effect', 'pokemon'];
+  const foreignKeyMaps = await getForeignKeyMaps(db, tableStatements, foreignKeyTables);
   
   const itemData = require(PROCESSED_DATA_PATH + 'items.json');
 
@@ -187,14 +177,8 @@ const reinsertMoveJunctionData = async(db, tableStatements) => {
       [move_FKM, pokemon_FKM, pType_FKM, item_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM]
 
   */ 
-  const foreignKeyMaps = await Promise.all(
-    // Array of relevant entity tableNames.
-    ['pmove', 'pokemon', 'ptype', 'item', 'usage_method', 'stat', 'pstatus', 'effect']
-    .map(async (tableName) => {
-        console.log(`Getting foreign key map for ${tableName}...`)
-        return await getForeignKeyMap(db, tableStatements, tableName);
-      })
-  );
+  const foreignKeyTables = ['pmove', 'pokemon', 'ptype', 'item', 'usage_method', 'stat', 'pstatus', 'effect'];
+  const foreignKeyMaps = await getForeignKeyMaps(db, tableStatements, foreignKeyTables);
   
   const itemData = require(PROCESSED_DATA_PATH + 'moves.json');
 
@@ -225,14 +209,8 @@ const reinsertTypeJunctionData = async(db, tableStatements) => {
       [pType_FKM]
 
   */ 
-  const foreignKeyMaps = await Promise.all(
-    // Array of relevant entity tableNames.
-    ['ptype']
-    .map(async (tableName) => {
-        console.log(`Getting foreign key map for ${tableName}...`)
-        return await getForeignKeyMap(db, tableStatements, tableName);
-      })
-  );
+  const foreignKeyTables = ['ptype'];
+  const foreignKeyMaps = await getForeignKeyMaps(db, tableStatements, foreignKeyTables);
   
   const pTypeData = require(PROCESSED_DATA_PATH + 'pTypes.json');
 
@@ -267,14 +245,8 @@ const reinsertPokemonJunctionData = async(db, tableStatements) => {
       [pokemon_FKM, pType_FKM, ability_FKM]
 
   */ 
-  const foreignKeyMaps = await Promise.all(
-    // Array of relevant entity tableNames.
-    ['pokemon', 'ptype', 'ability']
-    .map(async (tableName) => {
-        console.log(`Getting foreign key map for ${tableName}...`)
-        return await getForeignKeyMap(db, tableStatements, tableName);
-      })
-  );
+  const foreignKeyTables = ['pokemon', 'ptype', 'ability'];
+  const foreignKeyMaps = await getForeignKeyMaps(db, tableStatements, foreignKeyTables);
   
   const pokemonData = require(PROCESSED_DATA_PATH + 'pokemon.json');
 
@@ -314,15 +286,9 @@ const reinsertVersionGroupJunctionData = async(db, tableStatements) => {
       [description_FKM, ability_FKM, move_FKM, item_FKM, versionGroup_FKM]
 
   */ 
-  const foreignKeyMaps = await Promise.all(
-    // Array of relevant entity tableNames.
-    ['pdescription', 'ability', 'pmove', 'item', 'version_group']
-    .map(async (tableName) => {
-        console.log(`Getting foreign key map for ${tableName}...`)
-        return await getForeignKeyMap(db, tableStatements, tableName);
-      })
-  );
-
+  const foreignKeyTables = ['pdescription', 'ability', 'pmove', 'item', 'version_group'];
+  const foreignKeyMaps = await getForeignKeyMaps(db, tableStatements, foreignKeyTables);
+  
   const descriptionData = require(PROCESSED_DATA_PATH + 'descriptions.json');
 
   return await reinsertDataForTableGroup(
@@ -338,7 +304,9 @@ const reinsertVersionGroupJunctionData = async(db, tableStatements) => {
 /*
   DELETE FROM learnset table, then INSERT INTO that table.
 
-  WARNING: Takes a long time.
+  WARNING: Takes a long time, about 485 seconds (okay, long compared to everything else).
+
+  To perform, need to have max_allowed_packet size be around 16M.
 */
 const reinsertLearnsetData = async(db, tableStatements) => {
   /*
@@ -356,14 +324,8 @@ const reinsertLearnsetData = async(db, tableStatements) => {
       [pokemon_FKM, move_FKM]
 
   */ 
-  const foreignKeyMaps = await Promise.all(
-    // Array of relevant entity tableNames.
-    ['pokemon', 'pmove']
-    .map(async (tableName) => {
-        console.log(`Getting foreign key map for ${tableName}...`)
-        return await getForeignKeyMap(db, tableStatements, tableName);
-      })
-  );
+  const foreignKeyTables = ['pokemon', 'pmove'];
+  const foreignKeyMaps = await getForeignKeyMaps(db, tableStatements, foreignKeyTables);
   
   const pokemonData = require(PROCESSED_DATA_PATH + 'pokemon.json');
 
@@ -432,14 +394,14 @@ const reinsertDataForTableGroup = async(
 // DELETE FROM tableName.
 const deleteTableRows = async(db, tableStatements, tableGroup, tableName) => {
   return db.promise().query(tableStatements[tableGroup][tableName].delete)
-    .then( () => console.log(`${tableName} table deleted.`))
+    // .then( () => console.log(`${tableName} table deleted.`))
     .catch(console.log);
 }
 
 // Reset AUTO_INCREMENT counter for tableName.
 const resetAutoIncrement = async(db, tableStatements, tableGroup, tableName) => {
   return db.promise().query(tableStatements[tableGroup][tableName].reset_auto_inc)
-    .then( () => console.log(`Reset AUTO_INCREMENT counter for ${tableName} table.`))
+    // .then( () => console.log(`Reset AUTO_INCREMENT counter for ${tableName} table.`))
     .catch(console.log)
 }
 

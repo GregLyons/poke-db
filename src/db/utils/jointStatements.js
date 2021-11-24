@@ -16,23 +16,18 @@ const { createAllTables } = require('./creating.js');
 const recreateAllTables = async (db, tableStatements) => {
   console.log('Resetting tables...\n');
   let timer = new Date().getTime();
-  let now;
 
   return dropAllTables(db, tableStatements)
     .then( () => {
 
-      now = new Date().getTime();
-      console.log('Took', Math.floor((now - timer) / 1000), 'seconds.\n');
-      timer = now;
+      timer = timeElapsed(timer);
 
       console.log('\nCreating tables...\n')
       return createAllTables(db, tableStatements);
     })
     .then( () => {
 
-      now = new Date().getTime();
-      console.log('Took', Math.floor((now - timer) / 1000), 'seconds.\n');
-      timer = now;
+      timer = timeElapsed(timer);
 
       console.log('\nFinished recreating all tables!\n');
     })
@@ -45,11 +40,11 @@ const recreateAllTables = async (db, tableStatements) => {
 // #region
 const { reinsertBasicEntityData } = require('./reinserting.js');
 
-const resetBasicEntityTables = async (db, tableStatements) => {
+const resetBasicEntityTables = async (db, tableStatements, ignoreTables) => {
   console.log('Re-inserting data for basic entities...\n');
   let timer = new Date().getTime();
 
-  return reinsertBasicEntityData(db, tableStatements)
+  return reinsertBasicEntityData(db, tableStatements, ignoreTables)
     .then( () => {
       timer = timeElapsed(timer);
     })
@@ -65,11 +60,11 @@ const resetBasicEntityTables = async (db, tableStatements) => {
 // #region
 const { reinsertGenDependentEntityData } = require('./reinserting.js');
 
-const resetGenDependentEntityTables = async (db, tableStatements) => {
+const resetGenDependentEntityTables = async (db, tableStatements, ignoreTables) => {
   console.log('Re-inserting data for gen-dependent entities...\n');
   let timer = new Date().getTime();
 
-  return reinsertGenDependentEntityData(db, tableStatements)
+  return reinsertGenDependentEntityData(db, tableStatements, ignoreTables)
     .then( () => {
       timer = timeElapsed(timer);
     })

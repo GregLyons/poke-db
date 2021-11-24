@@ -155,6 +155,7 @@ const prepareLearnsetTableForDrop = async (db) => {
 }
 
 module.exports = {
+  prepareLearnsetTableForDrop,
   dropSingleTableInGroup,
   dropTablesInGroup,
   dropAllJunctionTables,

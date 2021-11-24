@@ -1,9 +1,13 @@
 /*
-Process the .json files in the raw_data/json folder into a form more amenable for inserting into a database. This includes extending patch lists to cover all generations, changing the objects to arrays, and splitting entries according to generation as necessary (e.g. 'bulbasaur' had one entry in pokemon.json before; now it will have an entry for each generation with the appropriate data).
+  Process the .json files the raw_data directory into a form more amenable for inserting into the database, then save to the processed_data directory.
+  
+  This processing includes extending patch lists to cover all generations, changing the objects to arrays, and splitting entries according to generation as necessary (e.g. 'bulbasaur' had one entry in pokemon.json before; now it will have an entry for each generation with the appropriate data).
+
+  The comment below gives a more detailed description of these steps.
 */
 
 /* 
-1. Take the .json files in the raw_data folder, extend the patch notes so that each gen has a patch in every relevant field, and then change each object to an array. This is done via serializeDict.
+1. Take the .json files in the raw_data directory, extend the patch notes so that each gen has a patch in every relevant field, and then change each object to an array. This is done via serializeDict.
 
   E.g. for the pokemon.json, update the 'hp' field from something like 
     [[50, 1], [60, 4]] 
@@ -29,7 +33,7 @@ Note that, due to the complicated structure of the evolution data, the 'evolves_
 
 /* 1. Extend patch notes and serialize. */
 // #region
-const { RAW_JSON_DATA_PATH } = require('./utils/helpers.js');
+const { RAW_JSON_DATA_PATH } = require('./utils/index.js');
 const abilities = require(RAW_JSON_DATA_PATH + 'abilities.json');
 const pTypes = require(RAW_JSON_DATA_PATH + 'elementalTypes.json');
 const items = require(RAW_JSON_DATA_PATH + 'items.json');
@@ -38,7 +42,7 @@ const pokemon = require(RAW_JSON_DATA_PATH + 'pokemon.json');
 
 
 
-const { serializeDict } = require('./utils/serializing.js');
+const { serializeDict } = require('./utils/index.js');
 
 // these entities depend on generation, and so will be split later
 const abilityArr = serializeDict(abilities);
@@ -53,8 +57,8 @@ const pTypeArr = serializeDict(pTypes);
 
 /* 2. Merge learnset data. */
 // #region
-const { RAW_DATA_PATH } = require('./utils/helpers.js');
-const { mergeLearnsets } = require('./utils/learnsets.js');
+const { RAW_DATA_PATH } = require('./utils/index.js');
+const { mergeLearnsets } = require('./utils/index.js');
 const gen2Learnsets = require(RAW_DATA_PATH + 'gen2learnsets.js');
 const laterLearnsets = require(RAW_DATA_PATH + 'learnsets.js');
 const learnsets = mergeLearnsets(gen2Learnsets, laterLearnsets);
@@ -63,7 +67,7 @@ const learnsets = mergeLearnsets(gen2Learnsets, laterLearnsets);
 
 /* 3. Add merged learnset data. */
 // #region
-const { addLearnsetsToPokemonArr } = require('./utils/learnsets.js');
+const { addLearnsetsToPokemonArr } = require('./utils/index.js');
 addLearnsetsToPokemonArr(learnsets, moves, pokemon, pokemonArr);
 
 // Separate out LGPE only Pokemon
@@ -78,7 +82,7 @@ moveArr = moveArr.filter(data => !(data.gen == 7 && Object.keys(data.lgpe_exclus
 
 /* 4. Split entities by generation. */
 // #region
-const { splitArr } = require('./utils/splitting.js');
+const { splitArr } = require('./utils/index.js');
 const splitAbilityArr = splitArr(abilityArr);
 const splitItemArr = splitArr(itemArr);
 const splitMoveArr = splitArr(moveArr);
@@ -115,7 +119,7 @@ Entries in descriptionArr are objects of the form:
   }
 */
 const descriptions = require(RAW_JSON_DATA_PATH + 'descriptions.json');
-const { serializeDescriptions } = require('./utils/serializing.js');
+const { serializeDescriptions } = require('./utils/index.js');
 let descriptionArr = serializeDescriptions(descriptions);
 const lgpeOnlyMoveNames = lgpeOnlyMoves.map(data => data.name);
 descriptionArr = descriptionArr.filter(data => data.description_class != 'move' || !lgpeOnlyMoveNames.includes(data.entity_name));
@@ -129,7 +133,7 @@ const stats= require(RAW_JSON_DATA_PATH + 'stats.json');
 const statuses = require(RAW_JSON_DATA_PATH + 'statuses.json');
 const versionGroups = require(RAW_JSON_DATA_PATH + 'versionGroups.json');
 
-const { serializeSimpleDict } = require('./utils/serializing.js');
+const { serializeSimpleDict } = require('./utils/index.js');
 
 const effectArr = serializeSimpleDict(effects);
 const statArr = serializeSimpleDict(stats);
@@ -139,43 +143,9 @@ const versionGroupArr = serializeSimpleDict(versionGroups);
 
 // #endregion
 
-/* 6. Write arrays to .json files. */
+/* 6. Validate data. */
 // #region
-const fs = require('fs');
 
-// We get list of stats as well
-
-const { PROCESSED_DATA_PATH } = require('./utils/helpers.js');
-const FILENAMES_AND_ARRAYS = [
-  ['abilities.json', splitAbilityArr],
-  ['items.json', splitItemArr],
-  ['moves.json', splitMoveArr],
-  ['pokemon.json', splitPokemonArr],
-  ['pTypes.json', splitPTypeArr],
-  ['descriptions.json', descriptionArr],
-  ['effects.json', effectArr],
-  ['stats.json', statArr],
-  ['statuses.json', statusArr],
-  ['usageMethods.json', usageMethodArr],
-  ['versionGroups.json', versionGroupArr],
-];
-
-FILENAMES_AND_ARRAYS.map(pair => {
-  const [fname, arr] = pair;
-
-  fs.writeFileSync(__dirname + PROCESSED_DATA_PATH + fname, JSON.stringify(arr), (err) => {
-    if (err) {
-      throw err;
-    }
-  });
-
-  console.log(`Saved ${fname}.`);
-});
-
-// #endregion
-
-/* 7. Validate data. */
-// #region
 console.log('\nValidating data...\n');
 
 console.log('Checking abilities...');
@@ -243,6 +213,44 @@ splitPTypeArr.map(data => {
   if (!data.name) console.log('Doesn\'t have a name!');
 
   if (isNaN(data.introduced)) console.log(`${data.name}: Debut gen ${data.introduced} is not a number.`);
+});
+
+// #endregion
+
+/* 7. Write arrays to .json files. */
+// #region
+
+const fs = require('fs');
+
+// We get list of stats as well
+
+console.log('\nSaving data...\n')
+
+const { PROCESSED_DATA_PATH } = require('./utils/index.js');
+const FILENAMES_AND_ARRAYS = [
+  ['abilities.json', splitAbilityArr],
+  ['items.json', splitItemArr],
+  ['moves.json', splitMoveArr],
+  ['pokemon.json', splitPokemonArr],
+  ['pTypes.json', splitPTypeArr],
+  ['descriptions.json', descriptionArr],
+  ['effects.json', effectArr],
+  ['stats.json', statArr],
+  ['statuses.json', statusArr],
+  ['usageMethods.json', usageMethodArr],
+  ['versionGroups.json', versionGroupArr],
+];
+
+FILENAMES_AND_ARRAYS.map(pair => {
+  const [fname, arr] = pair;
+
+  fs.writeFileSync(__dirname + PROCESSED_DATA_PATH + fname, JSON.stringify(arr), (err) => {
+    if (err) {
+      throw err;
+    }
+  });
+
+  console.log(`Saved ${fname}.`);
 });
 
 // #endregion

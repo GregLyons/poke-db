@@ -1,3 +1,5 @@
+const { replaceAll } = require('./helpers.js');
+
 // MERGE GEN 2 LEARNSETS WITH LATER LEARNSETS
 // #region
 
@@ -99,7 +101,7 @@ const computePokemonLearnsetName = pokemonName => {
     return 'lycanroc';
   }
 
-  else return pokemonName.replaceAll('_', '')
+  else return replaceAll(pokemonName, '_', '')
 }
 
 // return pokemonMap, which sends Pokemon names to the corresponding name in learnsets, and inversePokemonMap, which sends a name in learnsets to all Pokemon names which are mapped to it
@@ -202,11 +204,11 @@ const getUpdatedLearnsets = (learnsets, moves, pokemon) => {
   }
   // add all the moves which are already in learnsetMoveNameSet upon removing the underscores
   for (let moveName of Object.keys(moves)) {
-    if (learnsetMoveNameSet.has(moveName.replaceAll('_' ,''))) {
+    if (learnsetMoveNameSet.has(replaceAll(moveName, '_', ''))) {
       moveNameSet.add(moveName);
       // add moveName to moveMap and add its inverse to inverseMoveMap
-      moveMap.set(moveName, moveName.replaceAll('_', ''));
-      inverseMoveMap.set(moveName.replaceAll('_', ''), moveName);
+      moveMap.set(moveName, replaceAll(moveName, '_', ''));
+      inverseMoveMap.set(replaceAll(moveName, '_', ''), moveName);
     }
   }
 
@@ -219,7 +221,7 @@ const getUpdatedLearnsets = (learnsets, moves, pokemon) => {
   // handle status Z-moves 
   for (let moveName of getStatusZMoves(moveArr)) {
     // for potential debugging
-    if (moveMap.has(moveName.replaceAll('_', ''))) {
+    if (moveMap.has(replaceAll(moveName, '_', ''))) {
       console.log(`WARNING: moveMap already has ${moveName}, moving on...`);
     }
 
@@ -228,7 +230,7 @@ const getUpdatedLearnsets = (learnsets, moves, pokemon) => {
     else {
       moveNameSet.add(moveName);
 
-      const learnsetMoveName = moveName.replaceAll('_', '');
+      const learnsetMoveName = replaceAll(moveName, '_', '');
       moveMap.set(moveName, learnsetMoveName);
       inverseMoveMap.set(learnsetMoveName, moveName);
       
@@ -280,7 +282,7 @@ const getUpdatedLearnsets = (learnsets, moves, pokemon) => {
     // when moveName was introduced
     const moveGen = moves[moveName].gen;
     
-    const learnsetMoveName = moveName.replaceAll('_', '');
+    const learnsetMoveName = replaceAll(moveName, '_', '');
     moveMap.set(moveName, learnsetMoveName);
     inverseMoveMap.set(learnsetMoveName, moveName);
     

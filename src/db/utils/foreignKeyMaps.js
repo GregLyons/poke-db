@@ -53,6 +53,17 @@ const getForeignKeyMap = async (db, tableStatements, tableName) => {
   return foreignKeyMap;
 }
 
+/*
+  Given an array of table names, tableNameArr, get the foreign key match for each table.
+
+  Since Promise.all() preserves order, the foreign key maps will be returned in the same order as that of the table names in tableNameArr.
+*/ 
+const getForeignKeyMaps = async(db, tableStatements, tableNameArr) => {
+  return Promise.all(
+    tableNameArr.map(tableName => getForeignKeyMap(db, tableStatements, tableName))
+  )
+  .catch(console.log);
+}
 
 /* 
   Given a table name, tableName, with an AUTO_INCREMENT column, select the AUTO_INCREMENT column, as well as any other identifying columns for the purpose of data insertion. E.g.
@@ -128,5 +139,5 @@ const getIdentifyingColumnNames = (tableName) => {
 
 module.exports = {
   makeMapKey,
-  getForeignKeyMap,
+  getForeignKeyMaps
 }

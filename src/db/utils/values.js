@@ -59,7 +59,7 @@ const getValuesForTable = (
       }
       break;
     default: 
-      console.log('No foreign key maps necessary for this table group.')
+      // console.log('No foreign key maps necessary for this table group.')
   }
 
   // #endregion
@@ -1122,12 +1122,12 @@ const getValuesForTable = (
           Object.keys(learnsetData).reduce((innerAcc, moveName)=> {
             const { pmove_id: moveID } = move_FKM.get(makeMapKey([gen, moveName]));
             
-            return innerAcc.concat([
+            return innerAcc.concat(
               // We can have multiple different learn methods within the same generation.
               learnsetData[moveName].map(learnMethod => {
                 return [gen, pokemonID, gen, moveID, learnMethod];
               })
-            ]);
+            );
           }, [])
         );
       }, [])
