@@ -591,8 +591,8 @@ def main():
   fnamePrefix = dataPath + '___Descriptions'
   descriptionDict = {}
 
-  # print('Scraping ability descriptions...')
-  # scrapeDescriptions(fnamePrefix, 'ability', descriptionDict)
+  print('Scraping ability descriptions...')
+  scrapeDescriptions(fnamePrefix, 'ability', descriptionDict)
 
   print('Scraping berry descriptions...')
   scrapeDescriptions(fnamePrefix, 'berry', descriptionDict)
@@ -600,11 +600,11 @@ def main():
   print('Scraping gen 2 berry descriptions...')
   scrapeDescriptions(fnamePrefix, 'gen2berry', descriptionDict)
 
-  # print('Scraping item descriptions...')
-  # scrapeDescriptions(fnamePrefix, 'item', descriptionDict)
+  print('Scraping item descriptions...')
+  scrapeDescriptions(fnamePrefix, 'item', descriptionDict)
 
-  # print('Scraping move descriptions...')
-  # scrapeDescriptions(fnamePrefix, 'move', descriptionDict)
+  print('Scraping move descriptions...')
+  scrapeDescriptions(fnamePrefix, 'move', descriptionDict)
 
   return
 

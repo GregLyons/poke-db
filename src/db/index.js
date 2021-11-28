@@ -106,7 +106,7 @@ const resetEverything = async () => {
     .catch();
 }
 
-// resetEverything();
+resetEverything();
 
 // resetJunctionTables()
 // resetLearnsetTable(db, tableStatements);

@@ -22,7 +22,7 @@ def makeMainCSV(fname):
         value = cell.get_text().rstrip('\n')
 
         # As One takes up two IDs, and there is one unused ability in the table
-        if value == '266/267' or value == '—':
+        if value == '266' or value == '267' or value == '—' or '266' in value or '267' in value:
           skipRow = True
           continue
         else:
@@ -31,7 +31,8 @@ def makeMainCSV(fname):
           csvRow.append(value)
           headerIndex += 1
       
-      if not skipRow:
+      # Sometimes no values are found
+      if not skipRow and len(csvRow) > 0:
         writer.writerow(csvRow)
 
     writer.writerow(['266', 'as_one_glastrier', 'This Ability combines the effects of both Calyrex\'s Unnerve Ability and Glastrier\'s Chilling Neigh Ability', 'VIII'])

@@ -58,8 +58,6 @@ const reinsertGenDependentEntityData = async(db, tableStatements, ignoreTables =
     'version_group'
   ].filter(tableName => !ignoreTables.includes(tableName));
 
-  console.log(entityTableNames);
-
   return reinsertDataForTableGroup(
     db,
     tableStatements,
