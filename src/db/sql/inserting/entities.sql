@@ -22,11 +22,13 @@ INSERT INTO sprite (
 
 
 INSERT INTO pstatus (
+  generation_id,
   pstatus_name,
   pstatus_formatted_name
 ) VALUES ?;
 
 INSERT INTO stat (
+  generation_id,
   stat_name,
   stat_formatted_name
 ) VALUES ?;
@@ -42,12 +44,14 @@ INSERT INTO version_group (
 ) VALUES ?;
 
 INSERT INTO effect (
+  generation_id,
   effect_name,
   effect_formatted_name,
   introduced
 ) VALUES ?;
 
 INSERT INTO usage_method (
+  generation_id,
   usage_method_name,
   usage_method_formatted_name,
   introduced

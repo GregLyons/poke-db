@@ -28,8 +28,6 @@ const reinsertBasicEntityData = async(db, tableStatements, ignoreTables = []) =>
   const basicEntityTableNames = [
     'generation',
     'pdescription',
-    'pstatus',
-    'stat',
   ].filter(tableName => !ignoreTables.includes(tableName));;
 
   return reinsertDataForTableGroup(
@@ -53,7 +51,9 @@ const reinsertGenDependentEntityData = async(db, tableStatements, ignoreTables =
     'item',
     'pokemon',
     'pmove',
+    'pstatus',
     'ptype',
+    'stat',
     'usage_method',
     'version_group'
   ].filter(tableName => !ignoreTables.includes(tableName));

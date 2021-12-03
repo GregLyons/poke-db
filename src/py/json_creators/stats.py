@@ -5,6 +5,7 @@ def makeStatDict():
   for statName in statList():
     formattedEffectName = getFormattedName(statName)
     statDict[statName] = {
+      "gen": 1,
       "formatted_name": formattedEffectName
     }
 

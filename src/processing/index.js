@@ -41,6 +41,12 @@ const moves = require(RAW_JSON_DATA_PATH + 'moves.json');
 const pokemon = require(RAW_JSON_DATA_PATH + 'pokemon.json');
 
 
+const effects = require(RAW_JSON_DATA_PATH + 'effects.json');
+const usageMethods = require(RAW_JSON_DATA_PATH + 'usageMethods.json');
+const stats= require(RAW_JSON_DATA_PATH + 'stats.json');
+const statuses = require(RAW_JSON_DATA_PATH + 'statuses.json');
+
+
 
 const { serializeDict } = require('./utils/index.js');
 
@@ -52,6 +58,12 @@ let moveArr = serializeDict(moves);
 let pokemonArr = serializeDict(pokemon);
 
 const pTypeArr = serializeDict(pTypes);
+
+
+const effectArr = serializeDict(effects);
+const statArr = serializeDict(stats);
+const statusArr = serializeDict(statuses);
+const usageMethodArr = serializeDict(usageMethods);
 
 // #endregion
 
@@ -88,6 +100,12 @@ const splitItemArr = splitArr(itemArr);
 const splitMoveArr = splitArr(moveArr);
 const splitPokemonArr = splitArr(pokemonArr);
 const splitPTypeArr = splitArr(pTypeArr);
+
+
+const splitEffectArr = splitArr(effectArr);
+const splitStatArr = splitArr(statArr);
+const splitStatusArr = splitArr(statusArr);
+const splitUsageMethodArr = splitArr(usageMethodArr);
 
 // #endregion
 
@@ -126,19 +144,10 @@ descriptionArr = descriptionArr.filter(data => data.description_class != 'move' 
 
 
 // Serialize simpler objects.
-
-const effects = require(RAW_JSON_DATA_PATH + 'effects.json');
-const usageMethods = require(RAW_JSON_DATA_PATH + 'usageMethods.json');
-const stats= require(RAW_JSON_DATA_PATH + 'stats.json');
-const statuses = require(RAW_JSON_DATA_PATH + 'statuses.json');
 const versionGroups = require(RAW_JSON_DATA_PATH + 'versionGroups.json');
 
 const { serializeSimpleDict } = require('./utils/index.js');
 
-const effectArr = serializeSimpleDict(effects);
-const statArr = serializeSimpleDict(stats);
-const statusArr = serializeSimpleDict(statuses);
-const usageMethodArr = serializeSimpleDict(usageMethods);
 const versionGroupArr = serializeSimpleDict(versionGroups);
 
 // #endregion
@@ -234,10 +243,10 @@ const FILENAMES_AND_ARRAYS = [
   ['pokemon.json', splitPokemonArr],
   ['pTypes.json', splitPTypeArr],
   ['descriptions.json', descriptionArr],
-  ['effects.json', effectArr],
-  ['stats.json', statArr],
-  ['statuses.json', statusArr],
-  ['usageMethods.json', usageMethodArr],
+  ['effects.json', splitEffectArr],
+  ['stats.json', splitStatArr],
+  ['statuses.json', splitStatusArr],
+  ['usageMethods.json', splitUsageMethodArr],
   ['versionGroups.json', versionGroupArr],
 ];
 
@@ -262,8 +271,8 @@ module.exports = {
   splitPokemonArr,
   splitPTypeArr,
   descriptionArr,
-  effectArr,
-  statusArr,
-  usageMethodArr,
+  splitEffectArr,
+  splitStatusArr,
+  splitUsageMethodArr,
 };
 

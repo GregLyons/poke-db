@@ -81,10 +81,6 @@ const queryIdentifyingColumns = async (db, tableStatements, tableName) => {
     case 'pdescription':
     case 'sprite':
     case 'version_group':
-    case 'stat':
-    case 'pstatus':
-    case 'usage_method':
-    case 'effect':
       hasGenID = false;
       break;
     default:

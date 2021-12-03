@@ -17,6 +17,7 @@ INSERT INTO ability_resists_ptype (
 INSERT INTO ability_boosts_usage_method (
   ability_generation_id,
   ability_id,
+  usage_method_generation_id,
   usage_method_id,
   multiplier
 ) VALUES ?;
@@ -24,6 +25,7 @@ INSERT INTO ability_boosts_usage_method (
 INSERT INTO ability_resists_usage_method (
   ability_generation_id,
   ability_id,
+  usage_method_generation_id,
   usage_method_id,
   multiplier
 ) VALUES ?;
@@ -31,6 +33,7 @@ INSERT INTO ability_resists_usage_method (
 INSERT INTO ability_modifies_stat (
   ability_generation_id,
   ability_id,
+  stat_generation_id,
   stat_id,
   stage,
   multiplier,
@@ -41,12 +44,14 @@ INSERT INTO ability_modifies_stat (
 INSERT INTO ability_effect (
   ability_generation_id,
   ability_id,
+  effect_generation_id,
   effect_id
 ) VALUES ?;
 
 INSERT INTO ability_causes_pstatus (
   ability_generation_id,
   ability_id,
+  pstatus_generation_id,
   pstatus_id,
   chance
 ) VALUES ?;
@@ -54,5 +59,6 @@ INSERT INTO ability_causes_pstatus (
 INSERT INTO ability_resists_pstatus (
   ability_generation_id,
   ability_id,
+  pstatus_generation_id,
   pstatus_id
 ) VALUES ?;

@@ -119,21 +119,23 @@ const getValuesForTable = (
     case 'pstatus':
       /*
         Need (
+          generation_id,
           pstatus_name,
           pstatus_formatted_name
         )
       */
-      values = require(PROCESSED_DATA_PATH + 'statuses.json').map(data => [data.name, data.formatted_name]);
+      values = require(PROCESSED_DATA_PATH + 'statuses.json').map(data => [data.gen, data.name, data.formatted_name]);
       break;
     
     case 'stat':
       /*
         Need (
+          generation_id
           stat_name,
           stat_formatted_name
         )
       */
-      values = require(PROCESSED_DATA_PATH + 'stats.json').map(data => [data.name, data.formatted_name]);
+      values = require(PROCESSED_DATA_PATH + 'stats.json').map(data => [data.gen, data.name, data.formatted_name]);
       break;
 
     /*
@@ -155,13 +157,14 @@ const getValuesForTable = (
     case 'effect':
       /* 
         Need (
+          generation_id
           effect_name,
           effect_formatted_name,
           introduced
         )
       */
       values = require(PROCESSED_DATA_PATH + 'effects.json')
-        .map(data => [data.name, data.formatted_name, data.introduced]);
+        .map(data => [data.gen, data.name, data.formatted_name, data.introduced]);
       break;
 
     case 'item':
@@ -266,13 +269,14 @@ const getValuesForTable = (
     case 'usage_method':
       /*
         Need (
+          generation_id,
           usage_method_name
           usage_method_formatted_name
           introduced
         )
       */
       values = require(PROCESSED_DATA_PATH + 'usageMethods.json')
-        .map(data => [data.name, data.formatted_name, data.introduced]);
+        .map(data => [data.gen, data.name, data.formatted_name, data.introduced]);
       break;
 
     case 'version_group':
@@ -344,11 +348,11 @@ const getValuesForTable = (
         return acc.concat(
           Object.keys(usageMethodData).map(usageMethodName => {
             // We always compare entities of the same generation.
-            const { usage_method_id: usageMethodID } = usageMethod_FKM.get(makeMapKey([usageMethodName]));
+            const { usage_method_id: usageMethodID } = usageMethod_FKM.get(makeMapKey([gen, usageMethodName]));
             const multiplier = usageMethodData[usageMethodName];
 
             return multiplier != 1 
-            ? [gen, abilityID, usageMethodID, multiplier]
+            ? [gen, abilityID, gen, usageMethodID, multiplier]
             : [];
           })
         )
@@ -377,7 +381,7 @@ const getValuesForTable = (
         return acc.concat(
           Object.keys(statModData).map(statName => {
             // We always compare entities of the same generation.
-            const { stat_id: statID } = stat_FKM.get(makeMapKey([statName]));
+            const { stat_id: statID } = stat_FKM.get(makeMapKey([gen, statName]));
             let [modifier, recipient] = statModData[statName]
 
             // True if stage modification, False if multiplier.
@@ -387,13 +391,13 @@ const getValuesForTable = (
             if (stageOrMultiplier) {
               modifier = parseInt(modifier.slice(1), 0);
               return modifier != 0 
-              ? [gen, abilityID, statID, modifier, 1.0, 100.00, recipient]
+              ? [gen, abilityID, gen, statID, modifier, 1.0, 100.00, recipient]
               : [];
             }
             // multiplier
             else {
               return modifier != 1.0
-              ? [gen, abilityID, statID, 0, modifier, 100.00, recipient]
+              ? [gen, abilityID, gen, statID, 0, modifier, 100.00, recipient]
               : [];
             }
           })
@@ -407,7 +411,8 @@ const getValuesForTable = (
       /*
         Need (
           ability_generation_id,
-          ability_id,
+          ability_id,    
+          effect_generation_id
           effect_id
         )
       */
@@ -418,11 +423,11 @@ const getValuesForTable = (
         return acc.concat(
           Object.keys(effectData).map(effectName => {
             // We always compare entities of the same generation.
-            const { effect_id: effectID } = effect_FKM.get(makeMapKey([effectName]));
+            const { effect_id: effectID } = effect_FKM.get(makeMapKey([effectName, gen]));
 
             // True if effect is present, False otherwise.
             return effectData[effectName]
-            ? [gen, abilityID, effectID]
+            ? [gen, abilityID, gen, effectID]
             : [];
           })
         )
@@ -456,18 +461,18 @@ const getValuesForTable = (
         return acc.concat(
           Object.keys(statusData).map(statusName => {
             // We always compare entities of the same generation.
-            const { pstatus_id: statusID } = pstatus_FKM.get(makeMapKey([statusName]));
+            const { pstatus_id: statusID } = pstatus_FKM.get(makeMapKey([gen, statusName]));
             if (causeOrResist === 'causes') {
               // In case of causes, statusData[statusName] is probability of causing status.
               const chance = statusData[statusName];
 
               return chance != 0.0 
-              ? [gen, abilityID, statusID, chance]
+              ? [gen, abilityID, gen, statusID, chance]
               : [];
             } else {
               // In case of resists, statusData[statusName] is either True or False.
               return statusData[statusName] 
-              ? [gen, abilityID, statusID]
+              ? [gen, abilityID, gen, statusID]
               : [];
             }
           })
@@ -569,11 +574,11 @@ const getValuesForTable = (
         return acc.concat(
           Object.keys(usageMethodData).map(usageMethodName => {
             // We always compare entities of the same generation.
-            const { usage_method_id: usageMethodID } = usageMethod_FKM.get(makeMapKey([usageMethodName]));
+            const { usage_method_id: usageMethodID } = usageMethod_FKM.get(makeMapKey([gen, usageMethodName]));
             const multiplier = usageMethodData[usageMethodName];
 
             return multiplier != 1 
-            ? [gen, itemID, usageMethodID, multiplier]
+            ? [gen, itemID, gen, usageMethodID, multiplier]
             : [];
           })
         )
@@ -602,7 +607,7 @@ const getValuesForTable = (
         return acc.concat(
           Object.keys(statModData).map(statName => {
             // We always compare entities of the same generation.
-            const { stat_id: statID } = stat_FKM.get(makeMapKey([statName]));
+            const { stat_id: statID } = stat_FKM.get(makeMapKey([gen, statName]));
             let [modifier, recipient] = statModData[statName]
 
             // True if stage modification, False if multiplier.
@@ -612,13 +617,13 @@ const getValuesForTable = (
             if (stageOrMultiplier) {
               modifier = parseInt(modifier.slice(1), 10);
               return modifier != 0 
-              ? [gen, itemID, statID, modifier, 1.0, 100.00, recipient]
+              ? [gen, itemID, gen, statID, modifier, 1.0, 100.00, recipient]
               : [];
             }
             // multiplier
             else {
               return modifier != 1.0
-              ? [gen, itemID, statID, 0, modifier, 100.00, recipient]
+              ? [gen, itemID, gen, statID, 0, modifier, 100.00, recipient]
               : [];
             }
           })
@@ -633,6 +638,7 @@ const getValuesForTable = (
         Need (
           item_generation_id,
           item_id,
+          effect_generation_id,
           effect_id
         )
       */
@@ -643,11 +649,11 @@ const getValuesForTable = (
         return acc.concat(
           Object.keys(effectData).map(effectName => {
             // We always compare entities of the same generation.
-            const { effect_id: effectID } = effect_FKM.get(makeMapKey([effectName]));
+            const { effect_id: effectID } = effect_FKM.get(makeMapKey([effectName, gen]));
 
             // True if effect is present, False otherwise.
             return effectData[effectName]
-            ? [gen, itemID, effectID]
+            ? [gen, itemID, gen, effectID]
             : [];
           })
         )
@@ -680,10 +686,10 @@ const getValuesForTable = (
         return acc.concat(
           Object.keys(statusData).map(statusName => {
             // We always compare entities of the same generation.
-            const { pstatus_id: statusID } = pstatus_FKM.get(makeMapKey([statusName]));
+            const { pstatus_id: statusID } = pstatus_FKM.get(makeMapKey([gen, statusName]));
 
             return statusData[statusName] 
-            ? [gen, itemID, statusID]
+            ? [gen, itemID, gen, statusID]
             : [];
           })
         )
@@ -837,13 +843,13 @@ const getValuesForTable = (
         return acc.concat(
           Object.keys(usageMethodData).map(usageMethodName => {
             // We always compare entities of the same generation.
-            const { usage_method_id: usageMethodID } = usageMethod_FKM.get(makeMapKey([usageMethodName]));
+            const { usage_method_id: usageMethodID } = usageMethod_FKM.get(makeMapKey([gen, usageMethodName]));
             
             // A move may lose a usage method. 
             const present = usageMethodData[usageMethodName];
 
             return present
-            ? [gen, moveID, usageMethodID]
+            ? [gen, moveID, gen, usageMethodID]
             : [];
           })
         )
@@ -872,7 +878,7 @@ const getValuesForTable = (
         return acc.concat(
           Object.keys(statModData).map(statName => {
             // We always compare entities of the same generation.
-            const { stat_id: statID } = stat_FKM.get(makeMapKey([statName]));
+            const { stat_id: statID } = stat_FKM.get(makeMapKey([gen, statName]));
             let [modifier, recipient, chance] = statModData[statName]
 
             // True if stage modification, False if multiplier.
@@ -882,13 +888,13 @@ const getValuesForTable = (
             if (stageOrMultiplier) {
               modifier = parseInt(modifier.slice(1), 10);
               return modifier != 0 
-              ? [gen, moveID, statID, modifier, 1.0, chance, recipient]
+              ? [gen, moveID, gen, statID, modifier, 1.0, chance, recipient]
               : [];
             }
             // multiplier
             else {
               return modifier != 1.0
-              ? [gen, moveID, statID, 0, modifier, chance, recipient]
+              ? [gen, moveID, gen, statID, 0, modifier, chance, recipient]
               : [];
             }
           })
@@ -903,6 +909,7 @@ const getValuesForTable = (
         Need (
           pmove_generation_id,
           pmove_id,
+          effect_generation_id,
           effect_id
         )
       */
@@ -913,11 +920,11 @@ const getValuesForTable = (
         return acc.concat(
           Object.keys(effectData).map(effectName => {
             // We always compare entities of the same generation.
-            const { effect_id: effectID } = effect_FKM.get(makeMapKey([effectName]));
+            const { effect_id: effectID } = effect_FKM.get(makeMapKey([effectName, gen]));
 
             // True if effect is present, False otherwise.
             return effectData[effectName]
-            ? [gen, moveID, effectID]
+            ? [gen, moveID, gen, effectID]
             : [];
           })
         )
@@ -951,18 +958,18 @@ const getValuesForTable = (
         return acc.concat(
           Object.keys(statusData).map(statusName => {
             // We always compare entities of the same generation.
-            const { pstatus_id: statusID } = pstatus_FKM.get(makeMapKey([statusName]));
+            const { pstatus_id: statusID } = pstatus_FKM.get(makeMapKey([gen, statusName]));
             if (causeOrResist === 'causes') {
               // In case of causes, statusData[statusName] is probability of causing status.
               const chance = statusData[statusName];
 
               return chance != 0.0 
-              ? [gen, moveID, statusID, chance]
+              ? [gen, moveID, gen, statusID, chance]
               : [];
             } else {
               // In case of resists, statusData[statusName] is either True or False.
               return statusData[statusName] 
-              ? [gen, moveID, statusID]
+              ? [gen, moveID, gen, statusID]
               : [];
             }
           })

@@ -36,6 +36,7 @@ INSERT INTO pmove_requires_item (
 INSERT INTO pmove_modifies_stat (
   pmove_generation_id,
   pmove_id,
+  stat_generation_id,
   stat_id,
   stage,
   multiplier,
@@ -46,18 +47,21 @@ INSERT INTO pmove_modifies_stat (
 INSERT INTO pmove_effect (
   pmove_generation_id,
   pmove_id,
+  effect_generation_id,
   effect_id
 ) VALUES ?;
 
 INSERT INTO pmove_usage_method (
   pmove_generation_id,
   pmove_id,
+  usage_method_generation_id,
   usage_method_id
 ) VALUES ?;
 
 INSERT INTO pmove_causes_pstatus (
   pmove_generation_id,
   pmove_id,
+  pstatus_generation_id,
   pstatus_id,
   chance
 ) VALUES ?;
@@ -65,5 +69,6 @@ INSERT INTO pmove_causes_pstatus (
 INSERT INTO pmove_resists_pstatus (
   pmove_generation_id,
   pmove_id,
+  pstatus_generation_id,
   pstatus_id
 ) VALUES ?;

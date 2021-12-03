@@ -1,26 +1,34 @@
 {
   "attack": {
+    "gen": 1,
     "formatted_name": "Attack"
   },
   "defense": {
+    "gen": 1,
     "formatted_name": "Defense"
   },
   "special_attack": {
+    "gen": 1,
     "formatted_name": "Special attack"
   },
   "special_defense": {
+    "gen": 1,
     "formatted_name": "Special defense"
   },
   "speed": {
+    "gen": 1,
     "formatted_name": "Speed"
   },
   "accuracy": {
+    "gen": 1,
     "formatted_name": "Accuracy"
   },
   "evasion": {
+    "gen": 1,
     "formatted_name": "Evasion"
   },
   "critical_hit_ratio": {
+    "gen": 1,
     "formatted_name": "Critical-hit ratio"
   }
 }

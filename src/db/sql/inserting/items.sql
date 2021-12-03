@@ -25,6 +25,7 @@ INSERT INTO item_resists_ptype (
 INSERT INTO item_boosts_usage_method (
   item_generation_id,
   item_id,
+  usage_method_generation_id,
   usage_method_id,
   multiplier
 ) VALUES ?; 
@@ -32,6 +33,7 @@ INSERT INTO item_boosts_usage_method (
 INSERT INTO item_resists_usage_method (
   item_generation_id,
   item_id,
+  usage_method_generation_id,
   usage_method_id,
   multiplier
 ) VALUES ?; 
@@ -39,6 +41,7 @@ INSERT INTO item_resists_usage_method (
 INSERT INTO item_modifies_stat (
   item_generation_id,
   item_id,
+  stat_generation_id,
   stat_id,
   stage,
   multiplier,
@@ -49,18 +52,21 @@ INSERT INTO item_modifies_stat (
 INSERT INTO item_effect (
   item_generation_id,
   item_id,
+  effect_generation_id,
   effect_id
 ) VALUES ?;
 
 INSERT INTO item_causes_pstatus (
   item_generation_id,
   item_id,
+  pstatus_generation_id,
   pstatus_id
 ) VALUES ?;
 
 INSERT INTO item_resists_pstatus (
   item_generation_id,
   item_id,
+  pstatus_generation_id,
   pstatus_id
 ) VALUES ?;
 

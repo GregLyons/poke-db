@@ -87,37 +87,41 @@ CREATE TABLE IF NOT EXISTS item (
 );
 
 CREATE TABLE IF NOT EXISTS effect (
-  effect_id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
-  effect_name VARCHAR(45) NOT NULL UNIQUE,
-  effect_formatted_name VARCHAR(45) NOT NULL UNIQUE,
+  generation_id TINYINT UNSIGNED NOT NULL,
+  effect_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  effect_name VARCHAR(45) NOT NULL,
+  effect_formatted_name VARCHAR(45) NOT NULL,
   introduced TINYINT UNSIGNED NOT NULL,
 
-  PRIMARY KEY (effect_id),
+  PRIMARY KEY (generation_id, effect_id),
   FOREIGN KEY (introduced) REFERENCES generation(generation_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-
   INDEX (effect_id)
 );
 
 CREATE TABLE IF NOT EXISTS usage_method (
-  usage_method_id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
-  usage_method_name VARCHAR(45) NOT NULL UNIQUE,
-  usage_method_formatted_name VARCHAR(45) NOT NULL UNIQUE,
+  generation_id TINYINT UNSIGNED NOT NULL,
+  usage_method_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  usage_method_name VARCHAR(45) NOT NULL,
+  usage_method_formatted_name VARCHAR(45) NOT NULL,
   introduced TINYINT UNSIGNED NOT NULL,
 
-  PRIMARY KEY (usage_method_id),
+  PRIMARY KEY (generation_id, usage_method_id),
   FOREIGN KEY (introduced) REFERENCES generation(generation_id)
     ON DELETE CASCADE
-    ON UPDATE CASCADE
+    ON UPDATE CASCADE,
+  INDEX (usage_method_id)
 );
 
 CREATE TABLE IF NOT EXISTS pstatus (
-  pstatus_id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
-  pstatus_name VARCHAR(45) NOT NULL UNIQUE,
-  pstatus_formatted_name VARCHAR(45) NOT NULL UNIQUE,
+  generation_id TINYINT UNSIGNED NOT NULL,
+  pstatus_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  pstatus_name VARCHAR(45) NOT NULL,
+  pstatus_formatted_name VARCHAR(45) NOT NULL,
 
-  PRIMARY KEY (pstatus_id)
+  PRIMARY KEY (generation_id, pstatus_id),
+  INDEX (pstatus_id)
 );
 
 CREATE TABLE IF NOT EXISTS ptype (
@@ -169,11 +173,13 @@ CREATE TABLE IF NOT EXISTS pmove (
 
 -- stats in battle, i.e. attack, defense, evasion, accuracy, critical hit ratio, but not HP
 CREATE TABLE IF NOT EXISTS stat (
-  stat_id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
-  stat_name VARCHAR(45) NOT NULL UNIQUE,
-  stat_formatted_name VARCHAR(45) NOT NULL UNIQUE,
+  generation_id TINYINT UNSIGNED NOT NULL,
+  stat_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  stat_name VARCHAR(45) NOT NULL,
+  stat_formatted_name VARCHAR(45) NOT NULL,
 
-  PRIMARY KEY (stat_id)
+  PRIMARY KEY (generation_id, stat_id),
+  INDEX (stat_id)
 );
 
 -- does not include cosmetic forms
