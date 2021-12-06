@@ -13693,263 +13693,6 @@
     "form_data": {},
     "formatted_name": "Darkrai"
   },
-  "arceus_fighting": {
-    "dex_number": 493,
-    "species": "arceus",
-    "gen": 4,
-    "type_1": [["fighting", 4]],
-    "type_2": [["", 4]],
-    "evolves_to": {},
-    "evolves_from": {},
-    "hp": [[120, 4]],
-    "attack": [[120, 4]],
-    "defense": [[120, 4]],
-    "special_attack": [[120, 4]],
-    "special_defense": [[120, 4]],
-    "speed": [[120, 4]],
-    "ability_1": [["multitype", 4]],
-    "ability_2": [["", 4]],
-    "ability_hidden": [["", 5]],
-    "height": 3.2,
-    "weight": 320.0,
-    "pokeapi": [
-      "arceus-fighting", 10045
-    ],
-    "form_data": {
-      "arceus_normal": [["base_form", 4]]
-    },
-    "formatted_name": "Arceus (Fighting)"
-  },
-  "arceus_poison": {
-    "dex_number": 493,
-    "species": "arceus",
-    "gen": 4,
-    "type_1": [["poison", 4]],
-    "type_2": [["", 4]],
-    "evolves_to": {},
-    "evolves_from": {},
-    "hp": [[120, 4]],
-    "attack": [[120, 4]],
-    "defense": [[120, 4]],
-    "special_attack": [[120, 4]],
-    "special_defense": [[120, 4]],
-    "speed": [[120, 4]],
-    "ability_1": [["multitype", 4]],
-    "ability_2": [["", 4]],
-    "ability_hidden": [["", 5]],
-    "height": 3.2,
-    "weight": 320.0,
-    "pokeapi": [
-      "arceus-poison", 10052
-    ],
-    "form_data": {
-      "arceus_normal": [["base_form", 4]]
-    },
-    "formatted_name": "Arceus (Poison)"
-  },
-  "arceus_fire": {
-    "dex_number": 493,
-    "species": "arceus",
-    "gen": 4,
-    "type_1": [["fire", 4]],
-    "type_2": [["", 4]],
-    "evolves_to": {},
-    "evolves_from": {},
-    "hp": [[120, 4]],
-    "attack": [[120, 4]],
-    "defense": [[120, 4]],
-    "special_attack": [[120, 4]],
-    "special_defense": [[120, 4]],
-    "speed": [[120, 4]],
-    "ability_1": [["multitype", 4]],
-    "ability_2": [["", 4]],
-    "ability_hidden": [["", 5]],
-    "height": 3.2,
-    "weight": 320.0,
-    "pokeapi": [
-      "arceus-fire", 10046
-    ],
-    "form_data": {
-      "arceus_normal": [["base_form", 4]]
-    },
-    "formatted_name": "Arceus (Fire)"
-  },
-  "arceus_normal": {
-    "dex_number": 493,
-    "species": "arceus",
-    "gen": 4,
-    "type_1": [["normal", 4]],
-    "type_2": [["", 4]],
-    "evolves_to": {},
-    "evolves_from": {},
-    "hp": [[120, 4]],
-    "attack": [[120, 4]],
-    "defense": [[120, 4]],
-    "special_attack": [[120, 4]],
-    "special_defense": [[120, 4]],
-    "speed": [[120, 4]],
-    "ability_1": [["multitype", 4]],
-    "ability_2": [["", 4]],
-    "ability_hidden": [["", 5]],
-    "height": 3.2,
-    "weight": 320.0,
-    "pokeapi": [
-      "arceus-normal", 493
-    ],
-    "form_data": {
-      "arceus_fighting": [["other", 4]],
-      "arceus_poison": [["other", 4]],
-      "arceus_fire": [["other", 4]],
-      "arceus_ground": [["other", 4]],
-      "arceus_dragon": [["other", 4]],
-      "arceus_rock": [["other", 4]],
-      "arceus_dark": [["other", 4]],
-      "arceus_grass": [["other", 4]],
-      "arceus_fairy": [["other", 6]],
-      "arceus_steel": [["other", 4]],
-      "arceus_bug": [["other", 4]],
-      "arceus_flying": [["other", 4]],
-      "arceus_electric": [["other", 4]],
-      "arceus_psychic": [["other", 4]],
-      "arceus_water": [["other", 4]],
-      "arceus_ghost": [["other", 4]],
-      "arceus_unknown": [["other", 4]]
-    },
-    "formatted_name": "Arceus (Normal)"
-  },
-  "arceus_ground": {
-    "dex_number": 493,
-    "species": "arceus",
-    "gen": 4,
-    "type_1": [["ground", 4]],
-    "type_2": [["", 4]],
-    "evolves_to": {},
-    "evolves_from": {},
-    "hp": [[120, 4]],
-    "attack": [[120, 4]],
-    "defense": [[120, 4]],
-    "special_attack": [[120, 4]],
-    "special_defense": [[120, 4]],
-    "speed": [[120, 4]],
-    "ability_1": [["multitype", 4]],
-    "ability_2": [["", 4]],
-    "ability_hidden": [["", 5]],
-    "height": 3.2,
-    "weight": 320.0,
-    "pokeapi": [
-      "arceus-ground", 10050
-    ],
-    "form_data": {
-      "arceus_normal": [["base_form", 4]]
-    },
-    "formatted_name": "Arceus (Ground)"
-  },
-  "arceus_dragon": {
-    "dex_number": 493,
-    "species": "arceus",
-    "gen": 4,
-    "type_1": [["dragon", 4]],
-    "type_2": [["", 4]],
-    "evolves_to": {},
-    "evolves_from": {},
-    "hp": [[120, 4]],
-    "attack": [[120, 4]],
-    "defense": [[120, 4]],
-    "special_attack": [[120, 4]],
-    "special_defense": [[120, 4]],
-    "speed": [[120, 4]],
-    "ability_1": [["multitype", 4]],
-    "ability_2": [["", 4]],
-    "ability_hidden": [["", 5]],
-    "height": 3.2,
-    "weight": 320.0,
-    "pokeapi": [
-      "arceus-dragon", 10043
-    ],
-    "form_data": {
-      "arceus_normal": [["base_form", 4]]
-    },
-    "formatted_name": "Arceus (Dragon)"
-  },
-  "arceus_ice": {
-    "dex_number": 493,
-    "species": "arceus",
-    "gen": 4,
-    "type_1": [["ice", 4]],
-    "type_2": [["", 4]],
-    "evolves_to": {},
-    "evolves_from": {},
-    "hp": [[120, 4]],
-    "attack": [[120, 4]],
-    "defense": [[120, 4]],
-    "special_attack": [[120, 4]],
-    "special_defense": [[120, 4]],
-    "speed": [[120, 4]],
-    "ability_1": [["multitype", 4]],
-    "ability_2": [["", 4]],
-    "ability_hidden": [["", 5]],
-    "height": 3.2,
-    "weight": 320.0,
-    "pokeapi": [
-      "arceus-ice", 10051
-    ],
-    "form_data": {},
-    "formatted_name": "Arceus (Ice)"
-  },
-  "arceus_rock": {
-    "dex_number": 493,
-    "species": "arceus",
-    "gen": 4,
-    "type_1": [["rock", 4]],
-    "type_2": [["", 4]],
-    "evolves_to": {},
-    "evolves_from": {},
-    "hp": [[120, 4]],
-    "attack": [[120, 4]],
-    "defense": [[120, 4]],
-    "special_attack": [[120, 4]],
-    "special_defense": [[120, 4]],
-    "speed": [[120, 4]],
-    "ability_1": [["multitype", 4]],
-    "ability_2": [["", 4]],
-    "ability_hidden": [["", 5]],
-    "height": 3.2,
-    "weight": 320.0,
-    "pokeapi": [
-      "arceus-rock", 10054
-    ],
-    "form_data": {
-      "arceus_normal": [["base_form", 4]]
-    },
-    "formatted_name": "Arceus (Rock)"
-  },
-  "arceus_dark": {
-    "dex_number": 493,
-    "species": "arceus",
-    "gen": 4,
-    "type_1": [["dark", 4]],
-    "type_2": [["", 4]],
-    "evolves_to": {},
-    "evolves_from": {},
-    "hp": [[120, 4]],
-    "attack": [[120, 4]],
-    "defense": [[120, 4]],
-    "special_attack": [[120, 4]],
-    "special_defense": [[120, 4]],
-    "speed": [[120, 4]],
-    "ability_1": [["multitype", 4]],
-    "ability_2": [["", 4]],
-    "ability_hidden": [["", 5]],
-    "height": 3.2,
-    "weight": 320.0,
-    "pokeapi": [
-      "arceus-dark", 10042
-    ],
-    "form_data": {
-      "arceus_normal": [["base_form", 4]]
-    },
-    "formatted_name": "Arceus (Dark)"
-  },
   "arceus_grass": {
     "dex_number": 493,
     "species": "arceus",
@@ -14004,6 +13747,33 @@
     },
     "formatted_name": "Arceus (Fairy)"
   },
+  "arceus_electric": {
+    "dex_number": 493,
+    "species": "arceus",
+    "gen": 4,
+    "type_1": [["electric", 4]],
+    "type_2": [["", 4]],
+    "evolves_to": {},
+    "evolves_from": {},
+    "hp": [[120, 4]],
+    "attack": [[120, 4]],
+    "defense": [[120, 4]],
+    "special_attack": [[120, 4]],
+    "special_defense": [[120, 4]],
+    "speed": [[120, 4]],
+    "ability_1": [["multitype", 4]],
+    "ability_2": [["", 4]],
+    "ability_hidden": [["", 5]],
+    "height": 3.2,
+    "weight": 320.0,
+    "pokeapi": [
+      "arceus-electric", 10044
+    ],
+    "form_data": {
+      "arceus_normal": [["base_form", 4]]
+    },
+    "formatted_name": "Arceus (Electric)"
+  },
   "arceus_steel": {
     "dex_number": 493,
     "species": "arceus",
@@ -14030,33 +13800,6 @@
       "arceus_normal": [["base_form", 4]]
     },
     "formatted_name": "Arceus (Steel)"
-  },
-  "arceus_bug": {
-    "dex_number": 493,
-    "species": "arceus",
-    "gen": 4,
-    "type_1": [["bug", 4]],
-    "type_2": [["", 4]],
-    "evolves_to": {},
-    "evolves_from": {},
-    "hp": [[120, 4]],
-    "attack": [[120, 4]],
-    "defense": [[120, 4]],
-    "special_attack": [[120, 4]],
-    "special_defense": [[120, 4]],
-    "speed": [[120, 4]],
-    "ability_1": [["multitype", 4]],
-    "ability_2": [["", 4]],
-    "ability_hidden": [["", 5]],
-    "height": 3.2,
-    "weight": 320.0,
-    "pokeapi": [
-      "arceus-bug", 10041
-    ],
-    "form_data": {
-      "arceus_normal": [["base_form", 4]]
-    },
-    "formatted_name": "Arceus (Bug)"
   },
   "arceus_flying": {
     "dex_number": 493,
@@ -14085,11 +13828,11 @@
     },
     "formatted_name": "Arceus (Flying)"
   },
-  "arceus_electric": {
+  "arceus_dark": {
     "dex_number": 493,
     "species": "arceus",
     "gen": 4,
-    "type_1": [["electric", 4]],
+    "type_1": [["dark", 4]],
     "type_2": [["", 4]],
     "evolves_to": {},
     "evolves_from": {},
@@ -14105,12 +13848,188 @@
     "height": 3.2,
     "weight": 320.0,
     "pokeapi": [
-      "arceus-electric", 10044
+      "arceus-dark", 10042
     ],
     "form_data": {
       "arceus_normal": [["base_form", 4]]
     },
-    "formatted_name": "Arceus (Electric)"
+    "formatted_name": "Arceus (Dark)"
+  },
+  "arceus_ice": {
+    "dex_number": 493,
+    "species": "arceus",
+    "gen": 4,
+    "type_1": [["ice", 4]],
+    "type_2": [["", 4]],
+    "evolves_to": {},
+    "evolves_from": {},
+    "hp": [[120, 4]],
+    "attack": [[120, 4]],
+    "defense": [[120, 4]],
+    "special_attack": [[120, 4]],
+    "special_defense": [[120, 4]],
+    "speed": [[120, 4]],
+    "ability_1": [["multitype", 4]],
+    "ability_2": [["", 4]],
+    "ability_hidden": [["", 5]],
+    "height": 3.2,
+    "weight": 320.0,
+    "pokeapi": [
+      "arceus-ice", 10051
+    ],
+    "form_data": {},
+    "formatted_name": "Arceus (Ice)"
+  },
+  "arceus_poison": {
+    "dex_number": 493,
+    "species": "arceus",
+    "gen": 4,
+    "type_1": [["poison", 4]],
+    "type_2": [["", 4]],
+    "evolves_to": {},
+    "evolves_from": {},
+    "hp": [[120, 4]],
+    "attack": [[120, 4]],
+    "defense": [[120, 4]],
+    "special_attack": [[120, 4]],
+    "special_defense": [[120, 4]],
+    "speed": [[120, 4]],
+    "ability_1": [["multitype", 4]],
+    "ability_2": [["", 4]],
+    "ability_hidden": [["", 5]],
+    "height": 3.2,
+    "weight": 320.0,
+    "pokeapi": [
+      "arceus-poison", 10052
+    ],
+    "form_data": {
+      "arceus_normal": [["base_form", 4]]
+    },
+    "formatted_name": "Arceus (Poison)"
+  },
+  "arceus_bug": {
+    "dex_number": 493,
+    "species": "arceus",
+    "gen": 4,
+    "type_1": [["bug", 4]],
+    "type_2": [["", 4]],
+    "evolves_to": {},
+    "evolves_from": {},
+    "hp": [[120, 4]],
+    "attack": [[120, 4]],
+    "defense": [[120, 4]],
+    "special_attack": [[120, 4]],
+    "special_defense": [[120, 4]],
+    "speed": [[120, 4]],
+    "ability_1": [["multitype", 4]],
+    "ability_2": [["", 4]],
+    "ability_hidden": [["", 5]],
+    "height": 3.2,
+    "weight": 320.0,
+    "pokeapi": [
+      "arceus-bug", 10041
+    ],
+    "form_data": {
+      "arceus_normal": [["base_form", 4]]
+    },
+    "formatted_name": "Arceus (Bug)"
+  },
+  "arceus_normal": {
+    "dex_number": 493,
+    "species": "arceus",
+    "gen": 4,
+    "type_1": [["normal", 4]],
+    "type_2": [["", 4]],
+    "evolves_to": {},
+    "evolves_from": {},
+    "hp": [[120, 4]],
+    "attack": [[120, 4]],
+    "defense": [[120, 4]],
+    "special_attack": [[120, 4]],
+    "special_defense": [[120, 4]],
+    "speed": [[120, 4]],
+    "ability_1": [["multitype", 4]],
+    "ability_2": [["", 4]],
+    "ability_hidden": [["", 5]],
+    "height": 3.2,
+    "weight": 320.0,
+    "pokeapi": [
+      "arceus-normal", 493
+    ],
+    "form_data": {
+      "arceus_grass": [["other", 4]],
+      "arceus_fairy": [["other", 6]],
+      "arceus_electric": [["other", 4]],
+      "arceus_steel": [["other", 4]],
+      "arceus_flying": [["other", 4]],
+      "arceus_dark": [["other", 4]],
+      "arceus_poison": [["other", 4]],
+      "arceus_bug": [["other", 4]],
+      "arceus_ground": [["other", 4]],
+      "arceus_fighting": [["other", 4]],
+      "arceus_psychic": [["other", 4]],
+      "arceus_ghost": [["other", 4]],
+      "arceus_water": [["other", 4]],
+      "arceus_fire": [["other", 4]],
+      "arceus_rock": [["other", 4]],
+      "arceus_dragon": [["other", 4]],
+      "arceus_unknown": [["other", 4]]
+    },
+    "formatted_name": "Arceus (Normal)"
+  },
+  "arceus_ground": {
+    "dex_number": 493,
+    "species": "arceus",
+    "gen": 4,
+    "type_1": [["ground", 4]],
+    "type_2": [["", 4]],
+    "evolves_to": {},
+    "evolves_from": {},
+    "hp": [[120, 4]],
+    "attack": [[120, 4]],
+    "defense": [[120, 4]],
+    "special_attack": [[120, 4]],
+    "special_defense": [[120, 4]],
+    "speed": [[120, 4]],
+    "ability_1": [["multitype", 4]],
+    "ability_2": [["", 4]],
+    "ability_hidden": [["", 5]],
+    "height": 3.2,
+    "weight": 320.0,
+    "pokeapi": [
+      "arceus-ground", 10050
+    ],
+    "form_data": {
+      "arceus_normal": [["base_form", 4]]
+    },
+    "formatted_name": "Arceus (Ground)"
+  },
+  "arceus_fighting": {
+    "dex_number": 493,
+    "species": "arceus",
+    "gen": 4,
+    "type_1": [["fighting", 4]],
+    "type_2": [["", 4]],
+    "evolves_to": {},
+    "evolves_from": {},
+    "hp": [[120, 4]],
+    "attack": [[120, 4]],
+    "defense": [[120, 4]],
+    "special_attack": [[120, 4]],
+    "special_defense": [[120, 4]],
+    "speed": [[120, 4]],
+    "ability_1": [["multitype", 4]],
+    "ability_2": [["", 4]],
+    "ability_hidden": [["", 5]],
+    "height": 3.2,
+    "weight": 320.0,
+    "pokeapi": [
+      "arceus-fighting", 10045
+    ],
+    "form_data": {
+      "arceus_normal": [["base_form", 4]]
+    },
+    "formatted_name": "Arceus (Fighting)"
   },
   "arceus_psychic": {
     "dex_number": 493,
@@ -14139,6 +14058,33 @@
     },
     "formatted_name": "Arceus (Psychic)"
   },
+  "arceus_ghost": {
+    "dex_number": 493,
+    "species": "arceus",
+    "gen": 4,
+    "type_1": [["ghost", 4]],
+    "type_2": [["", 4]],
+    "evolves_to": {},
+    "evolves_from": {},
+    "hp": [[120, 4]],
+    "attack": [[120, 4]],
+    "defense": [[120, 4]],
+    "special_attack": [[120, 4]],
+    "special_defense": [[120, 4]],
+    "speed": [[120, 4]],
+    "ability_1": [["multitype", 4]],
+    "ability_2": [["", 4]],
+    "ability_hidden": [["", 5]],
+    "height": 3.2,
+    "weight": 320.0,
+    "pokeapi": [
+      "arceus-ghost", 10048
+    ],
+    "form_data": {
+      "arceus_normal": [["base_form", 4]]
+    },
+    "formatted_name": "Arceus (Ghost)"
+  },
   "arceus_water": {
     "dex_number": 493,
     "species": "arceus",
@@ -14166,11 +14112,11 @@
     },
     "formatted_name": "Arceus (Water)"
   },
-  "arceus_ghost": {
+  "arceus_fire": {
     "dex_number": 493,
     "species": "arceus",
     "gen": 4,
-    "type_1": [["ghost", 4]],
+    "type_1": [["fire", 4]],
     "type_2": [["", 4]],
     "evolves_to": {},
     "evolves_from": {},
@@ -14186,12 +14132,66 @@
     "height": 3.2,
     "weight": 320.0,
     "pokeapi": [
-      "arceus-ghost", 10048
+      "arceus-fire", 10046
     ],
     "form_data": {
       "arceus_normal": [["base_form", 4]]
     },
-    "formatted_name": "Arceus (Ghost)"
+    "formatted_name": "Arceus (Fire)"
+  },
+  "arceus_rock": {
+    "dex_number": 493,
+    "species": "arceus",
+    "gen": 4,
+    "type_1": [["rock", 4]],
+    "type_2": [["", 4]],
+    "evolves_to": {},
+    "evolves_from": {},
+    "hp": [[120, 4]],
+    "attack": [[120, 4]],
+    "defense": [[120, 4]],
+    "special_attack": [[120, 4]],
+    "special_defense": [[120, 4]],
+    "speed": [[120, 4]],
+    "ability_1": [["multitype", 4]],
+    "ability_2": [["", 4]],
+    "ability_hidden": [["", 5]],
+    "height": 3.2,
+    "weight": 320.0,
+    "pokeapi": [
+      "arceus-rock", 10054
+    ],
+    "form_data": {
+      "arceus_normal": [["base_form", 4]]
+    },
+    "formatted_name": "Arceus (Rock)"
+  },
+  "arceus_dragon": {
+    "dex_number": 493,
+    "species": "arceus",
+    "gen": 4,
+    "type_1": [["dragon", 4]],
+    "type_2": [["", 4]],
+    "evolves_to": {},
+    "evolves_from": {},
+    "hp": [[120, 4]],
+    "attack": [[120, 4]],
+    "defense": [[120, 4]],
+    "special_attack": [[120, 4]],
+    "special_defense": [[120, 4]],
+    "speed": [[120, 4]],
+    "ability_1": [["multitype", 4]],
+    "ability_2": [["", 4]],
+    "ability_hidden": [["", 5]],
+    "height": 3.2,
+    "weight": 320.0,
+    "pokeapi": [
+      "arceus-dragon", 10043
+    ],
+    "form_data": {
+      "arceus_normal": [["base_form", 4]]
+    },
+    "formatted_name": "Arceus (Dragon)"
   },
   "victini": {
     "dex_number": 494,
@@ -21664,280 +21664,6 @@
     "form_data": {},
     "formatted_name": "Type: Null"
   },
-  "silvally_fighting": {
-    "dex_number": 773,
-    "species": "silvally",
-    "gen": 7,
-    "type_1": [["fighting", 7]],
-    "type_2": [["", 7]],
-    "evolves_to": {},
-    "evolves_from": {
-      "type_null": [["Friendship", 7]]
-    },
-    "hp": [[95, 7]],
-    "attack": [[95, 7]],
-    "defense": [[95, 7]],
-    "special_attack": [[95, 7]],
-    "special_defense": [[95, 7]],
-    "speed": [[95, 7]],
-    "ability_1": [["rks_system", 7]],
-    "ability_2": [["", 7]],
-    "ability_hidden": [["", 7]],
-    "height": 2.3,
-    "weight": 100.5,
-    "pokeapi": [
-      "silvally-fighting", 10232
-    ],
-    "form_data": {
-      "silvally_normal": [["base_form", 7]]
-    },
-    "formatted_name": "Silvally (Fighting)"
-  },
-  "silvally_poison": {
-    "dex_number": 773,
-    "species": "silvally",
-    "gen": 7,
-    "type_1": [["poison", 7]],
-    "type_2": [["", 7]],
-    "evolves_to": {},
-    "evolves_from": {
-      "type_null": [["Friendship", 7]]
-    },
-    "hp": [[95, 7]],
-    "attack": [[95, 7]],
-    "defense": [[95, 7]],
-    "special_attack": [[95, 7]],
-    "special_defense": [[95, 7]],
-    "speed": [[95, 7]],
-    "ability_1": [["rks_system", 7]],
-    "ability_2": [["", 7]],
-    "ability_hidden": [["", 7]],
-    "height": 2.3,
-    "weight": 100.5,
-    "pokeapi": [
-      "silvally-poison", 10234
-    ],
-    "form_data": {
-      "silvally_normal": [["base_form", 7]]
-    },
-    "formatted_name": "Silvally (Poison)"
-  },
-  "silvally_fire": {
-    "dex_number": 773,
-    "species": "silvally",
-    "gen": 7,
-    "type_1": [["fire", 7]],
-    "type_2": [["", 7]],
-    "evolves_to": {},
-    "evolves_from": {
-      "type_null": [["Friendship", 7]]
-    },
-    "hp": [[95, 7]],
-    "attack": [[95, 7]],
-    "defense": [[95, 7]],
-    "special_attack": [[95, 7]],
-    "special_defense": [[95, 7]],
-    "speed": [[95, 7]],
-    "ability_1": [["rks_system", 7]],
-    "ability_2": [["", 7]],
-    "ability_hidden": [["", 7]],
-    "height": 2.3,
-    "weight": 100.5,
-    "pokeapi": [
-      "silvally-fire", 10240
-    ],
-    "form_data": {
-      "silvally_normal": [["base_form", 7]]
-    },
-    "formatted_name": "Silvally (Fire)"
-  },
-  "silvally_normal": {
-    "dex_number": 773,
-    "species": "silvally",
-    "gen": 7,
-    "type_1": [["normal", 7]],
-    "type_2": [["", 7]],
-    "evolves_to": {},
-    "evolves_from": {
-      "type_null": [["Friendship", 7]]
-    },
-    "hp": [[95, 7]],
-    "attack": [[95, 7]],
-    "defense": [[95, 7]],
-    "special_attack": [[95, 7]],
-    "special_defense": [[95, 7]],
-    "speed": [[95, 7]],
-    "ability_1": [["rks_system", 7]],
-    "ability_2": [["", 7]],
-    "ability_hidden": [["", 7]],
-    "height": 2.3,
-    "weight": 100.5,
-    "pokeapi": [
-      "silvally-normal", 773
-    ],
-    "form_data": {
-      "silvally_fighting": [["other", 7]],
-      "silvally_poison": [["other", 7]],
-      "silvally_fire": [["other", 7]],
-      "silvally_ground": [["other", 7]],
-      "silvally_dragon": [["other", 7]],
-      "silvally_rock": [["other", 7]],
-      "silvally_dark": [["other", 7]],
-      "silvally_grass": [["other", 7]],
-      "silvally_fairy": [["other", 7]],
-      "silvally_steel": [["other", 7]],
-      "silvally_bug": [["other", 7]],
-      "silvally_flying": [["other", 7]],
-      "silvally_electric": [["other", 7]],
-      "silvally_psychic": [["other", 7]],
-      "silvally_water": [["other", 7]],
-      "silvally_ghost": [["other", 7]]
-    },
-    "formatted_name": "Silvally (Normal)"
-  },
-  "silvally_ground": {
-    "dex_number": 773,
-    "species": "silvally",
-    "gen": 7,
-    "type_1": [["ground", 7]],
-    "type_2": [["", 7]],
-    "evolves_to": {},
-    "evolves_from": {
-      "type_null": [["Friendship", 7]]
-    },
-    "hp": [[95, 7]],
-    "attack": [[95, 7]],
-    "defense": [[95, 7]],
-    "special_attack": [[95, 7]],
-    "special_defense": [[95, 7]],
-    "speed": [[95, 7]],
-    "ability_1": [["rks_system", 7]],
-    "ability_2": [["", 7]],
-    "ability_hidden": [["", 7]],
-    "height": 2.3,
-    "weight": 100.5,
-    "pokeapi": [
-      "silvally-ground", 10235
-    ],
-    "form_data": {
-      "silvally_normal": [["base_form", 7]]
-    },
-    "formatted_name": "Silvally (Ground)"
-  },
-  "silvally_dragon": {
-    "dex_number": 773,
-    "species": "silvally",
-    "gen": 7,
-    "type_1": [["dragon", 7]],
-    "type_2": [["", 7]],
-    "evolves_to": {},
-    "evolves_from": {
-      "type_null": [["Friendship", 7]]
-    },
-    "hp": [[95, 7]],
-    "attack": [[95, 7]],
-    "defense": [[95, 7]],
-    "special_attack": [[95, 7]],
-    "special_defense": [[95, 7]],
-    "speed": [[95, 7]],
-    "ability_1": [["rks_system", 7]],
-    "ability_2": [["", 7]],
-    "ability_hidden": [["", 7]],
-    "height": 2.3,
-    "weight": 100.5,
-    "pokeapi": [
-      "silvally-dragon", 10246
-    ],
-    "form_data": {
-      "silvally_normal": [["base_form", 7]]
-    },
-    "formatted_name": "Silvally (Dragon)"
-  },
-  "silvally_ice": {
-    "dex_number": 773,
-    "species": "silvally",
-    "gen": 7,
-    "type_1": [["ice", 7]],
-    "type_2": [["", 7]],
-    "evolves_to": {},
-    "evolves_from": {
-      "type_null": [["Friendship", 7]]
-    },
-    "hp": [[95, 7]],
-    "attack": [[95, 7]],
-    "defense": [[95, 7]],
-    "special_attack": [[95, 7]],
-    "special_defense": [[95, 7]],
-    "speed": [[95, 7]],
-    "ability_1": [["rks_system", 7]],
-    "ability_2": [["", 7]],
-    "ability_hidden": [["", 7]],
-    "height": 2.3,
-    "weight": 100.5,
-    "pokeapi": [
-      "silvally-ice", 10245
-    ],
-    "form_data": {},
-    "formatted_name": "Silvally (Ice)"
-  },
-  "silvally_rock": {
-    "dex_number": 773,
-    "species": "silvally",
-    "gen": 7,
-    "type_1": [["rock", 7]],
-    "type_2": [["", 7]],
-    "evolves_to": {},
-    "evolves_from": {
-      "type_null": [["Friendship", 7]]
-    },
-    "hp": [[95, 7]],
-    "attack": [[95, 7]],
-    "defense": [[95, 7]],
-    "special_attack": [[95, 7]],
-    "special_defense": [[95, 7]],
-    "speed": [[95, 7]],
-    "ability_1": [["rks_system", 7]],
-    "ability_2": [["", 7]],
-    "ability_hidden": [["", 7]],
-    "height": 2.3,
-    "weight": 100.5,
-    "pokeapi": [
-      "silvally-rock", 10236
-    ],
-    "form_data": {
-      "silvally_normal": [["base_form", 7]]
-    },
-    "formatted_name": "Silvally (Rock)"
-  },
-  "silvally_dark": {
-    "dex_number": 773,
-    "species": "silvally",
-    "gen": 7,
-    "type_1": [["dark", 7]],
-    "type_2": [["", 7]],
-    "evolves_to": {},
-    "evolves_from": {
-      "type_null": [["Friendship", 7]]
-    },
-    "hp": [[95, 7]],
-    "attack": [[95, 7]],
-    "defense": [[95, 7]],
-    "special_attack": [[95, 7]],
-    "special_defense": [[95, 7]],
-    "speed": [[95, 7]],
-    "ability_1": [["rks_system", 7]],
-    "ability_2": [["", 7]],
-    "ability_hidden": [["", 7]],
-    "height": 2.3,
-    "weight": 100.5,
-    "pokeapi": [
-      "silvally-dark", 10247
-    ],
-    "form_data": {
-      "silvally_normal": [["base_form", 7]]
-    },
-    "formatted_name": "Silvally (Dark)"
-  },
   "silvally_grass": {
     "dex_number": 773,
     "species": "silvally",
@@ -21996,6 +21722,35 @@
     },
     "formatted_name": "Silvally (Fairy)"
   },
+  "silvally_electric": {
+    "dex_number": 773,
+    "species": "silvally",
+    "gen": 7,
+    "type_1": [["electric", 7]],
+    "type_2": [["", 7]],
+    "evolves_to": {},
+    "evolves_from": {
+      "type_null": [["Friendship", 7]]
+    },
+    "hp": [[95, 7]],
+    "attack": [[95, 7]],
+    "defense": [[95, 7]],
+    "special_attack": [[95, 7]],
+    "special_defense": [[95, 7]],
+    "speed": [[95, 7]],
+    "ability_1": [["rks_system", 7]],
+    "ability_2": [["", 7]],
+    "ability_hidden": [["", 7]],
+    "height": 2.3,
+    "weight": 100.5,
+    "pokeapi": [
+      "silvally-electric", 10243
+    ],
+    "form_data": {
+      "silvally_normal": [["base_form", 7]]
+    },
+    "formatted_name": "Silvally (Electric)"
+  },
   "silvally_steel": {
     "dex_number": 773,
     "species": "silvally",
@@ -22024,35 +21779,6 @@
       "silvally_normal": [["base_form", 7]]
     },
     "formatted_name": "Silvally (Steel)"
-  },
-  "silvally_bug": {
-    "dex_number": 773,
-    "species": "silvally",
-    "gen": 7,
-    "type_1": [["bug", 7]],
-    "type_2": [["", 7]],
-    "evolves_to": {},
-    "evolves_from": {
-      "type_null": [["Friendship", 7]]
-    },
-    "hp": [[95, 7]],
-    "attack": [[95, 7]],
-    "defense": [[95, 7]],
-    "special_attack": [[95, 7]],
-    "special_defense": [[95, 7]],
-    "speed": [[95, 7]],
-    "ability_1": [["rks_system", 7]],
-    "ability_2": [["", 7]],
-    "ability_hidden": [["", 7]],
-    "height": 2.3,
-    "weight": 100.5,
-    "pokeapi": [
-      "silvally-bug", 10237
-    ],
-    "form_data": {
-      "silvally_normal": [["base_form", 7]]
-    },
-    "formatted_name": "Silvally (Bug)"
   },
   "silvally_flying": {
     "dex_number": 773,
@@ -22083,11 +21809,11 @@
     },
     "formatted_name": "Silvally (Flying)"
   },
-  "silvally_electric": {
+  "silvally_dark": {
     "dex_number": 773,
     "species": "silvally",
     "gen": 7,
-    "type_1": [["electric", 7]],
+    "type_1": [["dark", 7]],
     "type_2": [["", 7]],
     "evolves_to": {},
     "evolves_from": {
@@ -22105,12 +21831,199 @@
     "height": 2.3,
     "weight": 100.5,
     "pokeapi": [
-      "silvally-electric", 10243
+      "silvally-dark", 10247
     ],
     "form_data": {
       "silvally_normal": [["base_form", 7]]
     },
-    "formatted_name": "Silvally (Electric)"
+    "formatted_name": "Silvally (Dark)"
+  },
+  "silvally_ice": {
+    "dex_number": 773,
+    "species": "silvally",
+    "gen": 7,
+    "type_1": [["ice", 7]],
+    "type_2": [["", 7]],
+    "evolves_to": {},
+    "evolves_from": {
+      "type_null": [["Friendship", 7]]
+    },
+    "hp": [[95, 7]],
+    "attack": [[95, 7]],
+    "defense": [[95, 7]],
+    "special_attack": [[95, 7]],
+    "special_defense": [[95, 7]],
+    "speed": [[95, 7]],
+    "ability_1": [["rks_system", 7]],
+    "ability_2": [["", 7]],
+    "ability_hidden": [["", 7]],
+    "height": 2.3,
+    "weight": 100.5,
+    "pokeapi": [
+      "silvally-ice", 10245
+    ],
+    "form_data": {},
+    "formatted_name": "Silvally (Ice)"
+  },
+  "silvally_poison": {
+    "dex_number": 773,
+    "species": "silvally",
+    "gen": 7,
+    "type_1": [["poison", 7]],
+    "type_2": [["", 7]],
+    "evolves_to": {},
+    "evolves_from": {
+      "type_null": [["Friendship", 7]]
+    },
+    "hp": [[95, 7]],
+    "attack": [[95, 7]],
+    "defense": [[95, 7]],
+    "special_attack": [[95, 7]],
+    "special_defense": [[95, 7]],
+    "speed": [[95, 7]],
+    "ability_1": [["rks_system", 7]],
+    "ability_2": [["", 7]],
+    "ability_hidden": [["", 7]],
+    "height": 2.3,
+    "weight": 100.5,
+    "pokeapi": [
+      "silvally-poison", 10234
+    ],
+    "form_data": {
+      "silvally_normal": [["base_form", 7]]
+    },
+    "formatted_name": "Silvally (Poison)"
+  },
+  "silvally_bug": {
+    "dex_number": 773,
+    "species": "silvally",
+    "gen": 7,
+    "type_1": [["bug", 7]],
+    "type_2": [["", 7]],
+    "evolves_to": {},
+    "evolves_from": {
+      "type_null": [["Friendship", 7]]
+    },
+    "hp": [[95, 7]],
+    "attack": [[95, 7]],
+    "defense": [[95, 7]],
+    "special_attack": [[95, 7]],
+    "special_defense": [[95, 7]],
+    "speed": [[95, 7]],
+    "ability_1": [["rks_system", 7]],
+    "ability_2": [["", 7]],
+    "ability_hidden": [["", 7]],
+    "height": 2.3,
+    "weight": 100.5,
+    "pokeapi": [
+      "silvally-bug", 10237
+    ],
+    "form_data": {
+      "silvally_normal": [["base_form", 7]]
+    },
+    "formatted_name": "Silvally (Bug)"
+  },
+  "silvally_normal": {
+    "dex_number": 773,
+    "species": "silvally",
+    "gen": 7,
+    "type_1": [["normal", 7]],
+    "type_2": [["", 7]],
+    "evolves_to": {},
+    "evolves_from": {
+      "type_null": [["Friendship", 7]]
+    },
+    "hp": [[95, 7]],
+    "attack": [[95, 7]],
+    "defense": [[95, 7]],
+    "special_attack": [[95, 7]],
+    "special_defense": [[95, 7]],
+    "speed": [[95, 7]],
+    "ability_1": [["rks_system", 7]],
+    "ability_2": [["", 7]],
+    "ability_hidden": [["", 7]],
+    "height": 2.3,
+    "weight": 100.5,
+    "pokeapi": [
+      "silvally-normal", 773
+    ],
+    "form_data": {
+      "silvally_grass": [["other", 7]],
+      "silvally_fairy": [["other", 7]],
+      "silvally_electric": [["other", 7]],
+      "silvally_steel": [["other", 7]],
+      "silvally_flying": [["other", 7]],
+      "silvally_dark": [["other", 7]],
+      "silvally_poison": [["other", 7]],
+      "silvally_bug": [["other", 7]],
+      "silvally_ground": [["other", 7]],
+      "silvally_fighting": [["other", 7]],
+      "silvally_psychic": [["other", 7]],
+      "silvally_ghost": [["other", 7]],
+      "silvally_water": [["other", 7]],
+      "silvally_fire": [["other", 7]],
+      "silvally_rock": [["other", 7]],
+      "silvally_dragon": [["other", 7]]
+    },
+    "formatted_name": "Silvally (Normal)"
+  },
+  "silvally_ground": {
+    "dex_number": 773,
+    "species": "silvally",
+    "gen": 7,
+    "type_1": [["ground", 7]],
+    "type_2": [["", 7]],
+    "evolves_to": {},
+    "evolves_from": {
+      "type_null": [["Friendship", 7]]
+    },
+    "hp": [[95, 7]],
+    "attack": [[95, 7]],
+    "defense": [[95, 7]],
+    "special_attack": [[95, 7]],
+    "special_defense": [[95, 7]],
+    "speed": [[95, 7]],
+    "ability_1": [["rks_system", 7]],
+    "ability_2": [["", 7]],
+    "ability_hidden": [["", 7]],
+    "height": 2.3,
+    "weight": 100.5,
+    "pokeapi": [
+      "silvally-ground", 10235
+    ],
+    "form_data": {
+      "silvally_normal": [["base_form", 7]]
+    },
+    "formatted_name": "Silvally (Ground)"
+  },
+  "silvally_fighting": {
+    "dex_number": 773,
+    "species": "silvally",
+    "gen": 7,
+    "type_1": [["fighting", 7]],
+    "type_2": [["", 7]],
+    "evolves_to": {},
+    "evolves_from": {
+      "type_null": [["Friendship", 7]]
+    },
+    "hp": [[95, 7]],
+    "attack": [[95, 7]],
+    "defense": [[95, 7]],
+    "special_attack": [[95, 7]],
+    "special_defense": [[95, 7]],
+    "speed": [[95, 7]],
+    "ability_1": [["rks_system", 7]],
+    "ability_2": [["", 7]],
+    "ability_hidden": [["", 7]],
+    "height": 2.3,
+    "weight": 100.5,
+    "pokeapi": [
+      "silvally-fighting", 10232
+    ],
+    "form_data": {
+      "silvally_normal": [["base_form", 7]]
+    },
+    "formatted_name": "Silvally (Fighting)"
   },
   "silvally_psychic": {
     "dex_number": 773,
@@ -22141,6 +22054,35 @@
     },
     "formatted_name": "Silvally (Psychic)"
   },
+  "silvally_ghost": {
+    "dex_number": 773,
+    "species": "silvally",
+    "gen": 7,
+    "type_1": [["ghost", 7]],
+    "type_2": [["", 7]],
+    "evolves_to": {},
+    "evolves_from": {
+      "type_null": [["Friendship", 7]]
+    },
+    "hp": [[95, 7]],
+    "attack": [[95, 7]],
+    "defense": [[95, 7]],
+    "special_attack": [[95, 7]],
+    "special_defense": [[95, 7]],
+    "speed": [[95, 7]],
+    "ability_1": [["rks_system", 7]],
+    "ability_2": [["", 7]],
+    "ability_hidden": [["", 7]],
+    "height": 2.3,
+    "weight": 100.5,
+    "pokeapi": [
+      "silvally-ghost", 10238
+    ],
+    "form_data": {
+      "silvally_normal": [["base_form", 7]]
+    },
+    "formatted_name": "Silvally (Ghost)"
+  },
   "silvally_water": {
     "dex_number": 773,
     "species": "silvally",
@@ -22170,11 +22112,11 @@
     },
     "formatted_name": "Silvally (Water)"
   },
-  "silvally_ghost": {
+  "silvally_fire": {
     "dex_number": 773,
     "species": "silvally",
     "gen": 7,
-    "type_1": [["ghost", 7]],
+    "type_1": [["fire", 7]],
     "type_2": [["", 7]],
     "evolves_to": {},
     "evolves_from": {
@@ -22192,12 +22134,70 @@
     "height": 2.3,
     "weight": 100.5,
     "pokeapi": [
-      "silvally-ghost", 10238
+      "silvally-fire", 10240
     ],
     "form_data": {
       "silvally_normal": [["base_form", 7]]
     },
-    "formatted_name": "Silvally (Ghost)"
+    "formatted_name": "Silvally (Fire)"
+  },
+  "silvally_rock": {
+    "dex_number": 773,
+    "species": "silvally",
+    "gen": 7,
+    "type_1": [["rock", 7]],
+    "type_2": [["", 7]],
+    "evolves_to": {},
+    "evolves_from": {
+      "type_null": [["Friendship", 7]]
+    },
+    "hp": [[95, 7]],
+    "attack": [[95, 7]],
+    "defense": [[95, 7]],
+    "special_attack": [[95, 7]],
+    "special_defense": [[95, 7]],
+    "speed": [[95, 7]],
+    "ability_1": [["rks_system", 7]],
+    "ability_2": [["", 7]],
+    "ability_hidden": [["", 7]],
+    "height": 2.3,
+    "weight": 100.5,
+    "pokeapi": [
+      "silvally-rock", 10236
+    ],
+    "form_data": {
+      "silvally_normal": [["base_form", 7]]
+    },
+    "formatted_name": "Silvally (Rock)"
+  },
+  "silvally_dragon": {
+    "dex_number": 773,
+    "species": "silvally",
+    "gen": 7,
+    "type_1": [["dragon", 7]],
+    "type_2": [["", 7]],
+    "evolves_to": {},
+    "evolves_from": {
+      "type_null": [["Friendship", 7]]
+    },
+    "hp": [[95, 7]],
+    "attack": [[95, 7]],
+    "defense": [[95, 7]],
+    "special_attack": [[95, 7]],
+    "special_defense": [[95, 7]],
+    "speed": [[95, 7]],
+    "ability_1": [["rks_system", 7]],
+    "ability_2": [["", 7]],
+    "ability_hidden": [["", 7]],
+    "height": 2.3,
+    "weight": 100.5,
+    "pokeapi": [
+      "silvally-dragon", 10246
+    ],
+    "form_data": {
+      "silvally_normal": [["base_form", 7]]
+    },
+    "formatted_name": "Silvally (Dragon)"
   },
   "minior": {
     "dex_number": 774,

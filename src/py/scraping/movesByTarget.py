@@ -12,7 +12,6 @@ def handleCategoryLink(link, writer):
 
   # remove extraneous words
   targetCategory = targetCategory.replace('the_', '').replace('an_', '').replace('one_', '').replace('any_', '')
-  print(targetCategory)
 
   # this is the majority of moves--we'll use at as the default for moveDict, for no further processing necessary; this way, we avoid having to navigate multiple pages
   if targetCategory == 'adjacent':

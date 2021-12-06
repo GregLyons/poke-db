@@ -126,7 +126,8 @@ def makeInitialMoveDict(fname):
           "power": [[row["Power"], 8]],
           "accuracy": [[row["Accuracy"].rstrip('%'), 8]],
           "gen": genSymbolToNumber(row["Gen"]),
-          "removed_from_gen8": False,
+          "removed_from_swsh": False,
+          "removed_from_bdsp": False,
           "fixed_damage": False,
           "z_move": isZMove,
           "lgpe_only": False,
@@ -693,7 +694,10 @@ def removedFromGen8(fname, moveDict):
   with open(fname, 'r', encoding='utf-8') as removedCSV:
     reader = csv.DictReader(removedCSV)
     for row in reader:
-      moveDict[row["Move Name"]]["removed_from_gen8"] = True
+      moveName, removedFromSwSh, removedFromBDSP = row["Move Name"], row["Removed from SwSh"] == 'True', row["Removed from BDSP"] == 'True'
+
+      moveDict[moveName]["removed_from_swsh"] = removedFromSwSh
+      moveDict[moveName]["removed_from_bdsp"] = removedFromBDSP
 
   return
 

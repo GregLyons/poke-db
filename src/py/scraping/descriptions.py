@@ -593,18 +593,23 @@ def main():
 
   print('Scraping ability descriptions...')
   scrapeDescriptions(fnamePrefix, 'ability', descriptionDict)
+  print()
 
   print('Scraping berry descriptions...')
   scrapeDescriptions(fnamePrefix, 'berry', descriptionDict)
+  print()
 
   print('Scraping gen 2 berry descriptions...')
   scrapeDescriptions(fnamePrefix, 'gen2berry', descriptionDict)
+  print()
 
   print('Scraping item descriptions...')
   scrapeDescriptions(fnamePrefix, 'item', descriptionDict)
+  print()
 
   print('Scraping move descriptions...')
   scrapeDescriptions(fnamePrefix, 'move', descriptionDict)
+  print()
 
   return
 

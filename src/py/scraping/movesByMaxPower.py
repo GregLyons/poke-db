@@ -11,7 +11,7 @@ def makePowerCSV(fname):
     dataRows = bs.find(id='Power').find_next('table').find_next('table').find_all('tr')[1:]
     for row in dataRows:
       cells = row.find_all(['td', 'th'])
-      moveName, maxPower = parseName(cells[0].get_text()), cells[-1].get_text().rstrip('\n')
+      moveName, maxPower = parseName(cells[1].get_text()), cells[-1].get_text().rstrip('\n')
 
       writer.writerow([moveName, maxPower])
 
