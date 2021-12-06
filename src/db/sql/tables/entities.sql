@@ -155,6 +155,8 @@ CREATE TABLE IF NOT EXISTS pmove (
   pmove_priority TINYINT NOT NULL,
   pmove_contact TINYINT UNSIGNED NOT NULL,
   pmove_target ENUM('adjacent_ally', 'adjacent_foe', 'all_adjacent','all_adjacent_foes', 'all', 'all_allies', 'all_foes', 'any', 'any_adjacent', 'user', 'user_and_all_allies', 'user_or_adjacent_ally'),
+  pmove_removed_from_swsh TINYINT UNSIGNED NOT NULL,
+  pmove_removed_from_bdsp TINYINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (generation_id, pmove_id),
   FOREIGN KEY (generation_id) REFERENCES generation(generation_id)

@@ -36,3 +36,10 @@ INSERT INTO pokemon_ability (
   ability_id,
   ability_slot
 ) VALUES ?;
+
+INSERT INTO pokemon_requires_itemp (
+  pokemon_generation_id,
+  pokemon_id,
+  item_generation_id,
+  item_id
+) VALUES ?;

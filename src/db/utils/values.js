@@ -234,7 +234,9 @@ const getValuesForTable = (
           pmove_category,
           pmove_priority,
           pmove_contact,
-          pmove_target
+          pmove_target,
+          pmove_removed_from_swsh
+          pmove_removed_from_bdsp
         )
       */
       values = require(PROCESSED_DATA_PATH + 'moves.json')
@@ -249,7 +251,9 @@ const getValuesForTable = (
           data.category,
           data.priority,
           data.contact,
-          data.target
+          data.target,
+          data.removed_from_swsh,
+          data.removed_from_bdsp
         ]);
       break;
 
@@ -810,10 +814,12 @@ const getValuesForTable = (
         
         return acc.concat(
           requirementData[dictKey].map(entityName => {
+
+            // if (entity_FKM.get(makeMapKey([gen, entityName])) == undefined) {
+            //   console.log(requirementData, entityName);
+            // }
+
             // All the possible entity classes come alphabetically before 'generation_id', so the order [gen, entityName] is correct.
-            if (entity_FKM.get(makeMapKey([gen, entityName])) == undefined) {
-              console.log(requirementData, entityName);
-            }
             const { [entity_id]: entityID } = entity_FKM.get(makeMapKey([gen, entityName]));
 
             return [gen, moveID, gen, entityID]
@@ -1189,6 +1195,40 @@ const getValuesForTable = (
       .filter(data => data.length > 0);
       break;
     
+    case 'pokemon_requires_item':
+      /*
+        Need (
+          pokemon_generation_id,
+          pokemon_id,
+          item_generation_id,
+          item_id
+        )
+      */
+      
+      values = pokemonData.reduce((acc, curr) => {
+        // Get item data from curr.
+        const { gen: gen, name: pokemonName, requirements: requirementData } = curr;
+        const { pokemon_id: pokemonID } = pokemon_FKM.get(makeMapKey([gen, pokemonName]));
+        
+        // If item is not Pokemon-specific
+        if (!requirementData || !requirementData["item"]) return acc;
+        
+        return acc.concat(
+          Object.keys(requirementData["item"]).map(itemName => {
+
+            // We always compare entities of the same generation.
+            const { item_id: itemID } = item_FKM.get(makeMapKey([gen, itemName]));
+
+            return pokemonData[pokemonName] 
+            ? [gen, pokemonID, gen, itemID]
+            : [];
+          })
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+
     /*
       VERSION GROUP JUNCTION TABLES
     */ 

@@ -91,7 +91,9 @@ INSERT INTO pmove (
   pmove_category,
   pmove_priority,
   pmove_contact,
-  pmove_target
+  pmove_target,
+  pmove_removed_from_swsh,
+  pmove_removed_from_bdsp
 ) VALUES ?;
 
 INSERT INTO pokemon (

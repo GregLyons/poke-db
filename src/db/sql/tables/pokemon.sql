@@ -85,3 +85,20 @@ CREATE TABLE IF NOT EXISTS pokemon_ability (
   
   INDEX opposite_pokemon_ability (ability_generation_id, ability_id, pokemon_generation_id, pokemon_id)
 );
+
+CREATE TABLE IF NOT EXISTS pokemon_requires_item (
+  pokemon_generation_id TINYINT UNSIGNED NOT NULL,
+  pokemon_id SMALLINT UNSIGNED NOT NULL,
+  item_generation_id TINYINT UNSIGNED NOT NULL,
+  item_id SMALLINT UNSIGNED NOT NULL,
+
+  PRIMARY KEY (pokemon_generation_id, pokemon_id, item_generation_id, item_id), 
+  FOREIGN KEY (pokemon_generation_id, pokemon_id) REFERENCES pokemon(generation_id, pokemon_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX opposite_pokemon_item (item_generation_id, item_id, pokemon_generation_id, pokemon_id)
+);
