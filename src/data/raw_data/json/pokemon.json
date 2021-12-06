@@ -25561,6 +25561,36 @@
     "form_data": {
       "venusaur": [["base_form", 6]]
     },
+    "requirements": {
+      "item": {
+        "venusaurite": [[true, 6]]
+      }
+    },
+    "kyogre_primal": {
+      "item": {
+        "blue_orb": [[true, 6]]
+      }
+    },
+    "groudon_primal": {
+      "item": {
+        "red_orb": [[true, 6]]
+      }
+    },
+    "necrozma_ultra": {
+      "item": {
+        "ultranecrozium_z": [[true, 7]]
+      }
+    },
+    "zacian_crowned": {
+      "item": {
+        "rusted_sword": [[true, 8]]
+      }
+    },
+    "zamazenta_crowned": {
+      "item": {
+        "rusted_shield": [[true, 8]]
+      }
+    },
     "formatted_name": "Venusaur (Mega)"
   },
   "charizard_mega_x": {
@@ -25615,6 +25645,11 @@
     "form_data": {
       "charizard": [["base_form", 6]]
     },
+    "requirements": {
+      "item": {
+        "charizardite_y": [[true, 6]]
+      }
+    },
     "formatted_name": "Charizard (Mega Y)"
   },
   "blastoise_mega": {
@@ -25641,6 +25676,11 @@
     ],
     "form_data": {
       "blastoise": [["base_form", 6]]
+    },
+    "requirements": {
+      "item": {
+        "blastoisinite": [[true, 6]]
+      }
     },
     "formatted_name": "Blastoise (Mega)"
   },
@@ -25669,6 +25709,11 @@
     "form_data": {
       "alakazam": [["base_form", 6]]
     },
+    "requirements": {
+      "item": {
+        "alakazite": [[true, 6]]
+      }
+    },
     "formatted_name": "Alakazam (Mega)"
   },
   "gengar_mega": {
@@ -25695,6 +25740,11 @@
     ],
     "form_data": {
       "gengar": [["base_form", 6]]
+    },
+    "requirements": {
+      "item": {
+        "gengarite": [[true, 6]]
+      }
     },
     "formatted_name": "Gengar (Mega)"
   },
@@ -25723,6 +25773,11 @@
     "form_data": {
       "kangaskhan": [["base_form", 6]]
     },
+    "requirements": {
+      "item": {
+        "kangaskhanite": [[true, 6]]
+      }
+    },
     "formatted_name": "Kangaskhan (Mega)"
   },
   "pinsir_mega": {
@@ -25749,6 +25804,11 @@
     ],
     "form_data": {
       "pinsir": [["base_form", 6]]
+    },
+    "requirements": {
+      "item": {
+        "pinsirite": [[true, 6]]
+      }
     },
     "formatted_name": "Pinsir (Mega)"
   },
@@ -25777,6 +25837,11 @@
     "form_data": {
       "gyarados": [["base_form", 6]]
     },
+    "requirements": {
+      "item": {
+        "gyaradosite": [[true, 6]]
+      }
+    },
     "formatted_name": "Gyarados (Mega)"
   },
   "aerodactyl_mega": {
@@ -25803,6 +25868,11 @@
     ],
     "form_data": {
       "aerodactyl": [["base_form", 6]]
+    },
+    "requirements": {
+      "item": {
+        "aerodactylite": [[true, 6]]
+      }
     },
     "formatted_name": "Aerodactyl (Mega)"
   },
@@ -25858,6 +25928,11 @@
     "form_data": {
       "mewtwo": [["base_form", 6]]
     },
+    "requirements": {
+      "item": {
+        "mewtwonite_y": [[true, 6]]
+      }
+    },
     "formatted_name": "Mewtwo (Mega Y)"
   },
   "ampharos_mega": {
@@ -25884,6 +25959,11 @@
     ],
     "form_data": {
       "ampharos": [["base_form", 6]]
+    },
+    "requirements": {
+      "item": {
+        "ampharosite": [[true, 6]]
+      }
     },
     "formatted_name": "Ampharos (Mega)"
   },
@@ -25912,6 +25992,11 @@
     "form_data": {
       "scizor": [["base_form", 6]]
     },
+    "requirements": {
+      "item": {
+        "scizorite": [[true, 6]]
+      }
+    },
     "formatted_name": "Scizor (Mega)"
   },
   "heracross_mega": {
@@ -25938,6 +26023,11 @@
     ],
     "form_data": {
       "heracross": [["base_form", 6]]
+    },
+    "requirements": {
+      "item": {
+        "heracronite": [[true, 6]]
+      }
     },
     "formatted_name": "Heracross (Mega)"
   },
@@ -25966,6 +26056,11 @@
     "form_data": {
       "houndoom": [["base_form", 6]]
     },
+    "requirements": {
+      "item": {
+        "houndoominite": [[true, 6]]
+      }
+    },
     "formatted_name": "Houndoom (Mega)"
   },
   "tyranitar_mega": {
@@ -25992,6 +26087,11 @@
     ],
     "form_data": {
       "tyranitar": [["base_form", 6]]
+    },
+    "requirements": {
+      "item": {
+        "tyranitarite": [[true, 6]]
+      }
     },
     "formatted_name": "Tyranitar (Mega)"
   },
@@ -26020,6 +26120,11 @@
     "form_data": {
       "blaziken": [["base_form", 6]]
     },
+    "requirements": {
+      "item": {
+        "blazikenite": [[true, 6]]
+      }
+    },
     "formatted_name": "Blaziken (Mega)"
   },
   "gardevoir_mega": {
@@ -26046,6 +26151,11 @@
     ],
     "form_data": {
       "gardevoir": [["base_form", 6]]
+    },
+    "requirements": {
+      "item": {
+        "gardevoirite": [[true, 6]]
+      }
     },
     "formatted_name": "Gardevoir (Mega)"
   },
@@ -26074,6 +26184,11 @@
     "form_data": {
       "mawile": [["base_form", 6]]
     },
+    "requirements": {
+      "item": {
+        "mawilite": [[true, 6]]
+      }
+    },
     "formatted_name": "Mawile (Mega)"
   },
   "aggron_mega": {
@@ -26100,6 +26215,11 @@
     ],
     "form_data": {
       "aggron": [["base_form", 6]]
+    },
+    "requirements": {
+      "item": {
+        "aggronite": [[true, 6]]
+      }
     },
     "formatted_name": "Aggron (Mega)"
   },
@@ -26128,6 +26248,11 @@
     "form_data": {
       "medicham": [["base_form", 6]]
     },
+    "requirements": {
+      "item": {
+        "medichamite": [[true, 6]]
+      }
+    },
     "formatted_name": "Medicham (Mega)"
   },
   "manectric_mega": {
@@ -26154,6 +26279,11 @@
     ],
     "form_data": {
       "manectric": [["base_form", 6]]
+    },
+    "requirements": {
+      "item": {
+        "manectite": [[true, 6]]
+      }
     },
     "formatted_name": "Manectric (Mega)"
   },
@@ -26182,6 +26312,11 @@
     "form_data": {
       "banette": [["base_form", 6]]
     },
+    "requirements": {
+      "item": {
+        "banettite": [[true, 6]]
+      }
+    },
     "formatted_name": "Banette (Mega)"
   },
   "absol_mega": {
@@ -26208,6 +26343,11 @@
     ],
     "form_data": {
       "absol": [["base_form", 6]]
+    },
+    "requirements": {
+      "item": {
+        "absolite": [[true, 6]]
+      }
     },
     "formatted_name": "Absol (Mega)"
   },
@@ -26236,6 +26376,11 @@
     "form_data": {
       "latias": [["base_form", 6]]
     },
+    "requirements": {
+      "item": {
+        "latiasite": [[true, 6]]
+      }
+    },
     "formatted_name": "Latias (Mega)"
   },
   "latios_mega": {
@@ -26262,6 +26407,11 @@
     ],
     "form_data": {
       "latios": [["base_form", 6]]
+    },
+    "requirements": {
+      "item": {
+        "latiosite": [[true, 6]]
+      }
     },
     "formatted_name": "Latios (Mega)"
   },
@@ -26290,6 +26440,11 @@
     "form_data": {
       "garchomp": [["base_form", 6]]
     },
+    "requirements": {
+      "item": {
+        "garchompite": [[true, 6]]
+      }
+    },
     "formatted_name": "Garchomp (Mega)"
   },
   "lucario_mega": {
@@ -26316,6 +26471,11 @@
     ],
     "form_data": {
       "lucario": [["base_form", 6]]
+    },
+    "requirements": {
+      "item": {
+        "lucarionite": [[true, 6]]
+      }
     },
     "formatted_name": "Lucario (Mega)"
   },
@@ -26344,6 +26504,11 @@
     "form_data": {
       "abomasnow": [["base_form", 6]]
     },
+    "requirements": {
+      "item": {
+        "abomasite": [[true, 6]]
+      }
+    },
     "formatted_name": "Abomasnow (Mega)"
   },
   "beedrill_mega": {
@@ -26370,6 +26535,11 @@
     ],
     "form_data": {
       "beedrill": [["base_form", 6]]
+    },
+    "requirements": {
+      "item": {
+        "beedrillite": [[true, 6]]
+      }
     },
     "formatted_name": "Beedrill (Mega)"
   },
@@ -26398,6 +26568,11 @@
     "form_data": {
       "pidgeot": [["base_form", 6]]
     },
+    "requirements": {
+      "item": {
+        "pidgeotite": [[true, 6]]
+      }
+    },
     "formatted_name": "Pidgeot (Mega)"
   },
   "slowbro_mega": {
@@ -26424,6 +26599,11 @@
     ],
     "form_data": {
       "slowbro": [["base_form", 6]]
+    },
+    "requirements": {
+      "item": {
+        "slowbronite": [[true, 6]]
+      }
     },
     "formatted_name": "Slowbro (Mega)"
   },
@@ -26452,6 +26632,11 @@
     "form_data": {
       "steelix": [["base_form", 6]]
     },
+    "requirements": {
+      "item": {
+        "steelixite": [[true, 6]]
+      }
+    },
     "formatted_name": "Steelix (Mega)"
   },
   "sceptile_mega": {
@@ -26478,6 +26663,11 @@
     ],
     "form_data": {
       "sceptile": [["base_form", 6]]
+    },
+    "requirements": {
+      "item": {
+        "sceptilite": [[true, 6]]
+      }
     },
     "formatted_name": "Sceptile (Mega)"
   },
@@ -26506,6 +26696,11 @@
     "form_data": {
       "swampert": [["base_form", 6]]
     },
+    "requirements": {
+      "item": {
+        "swampertite": [[true, 6]]
+      }
+    },
     "formatted_name": "Swampert (Mega)"
   },
   "sableye_mega": {
@@ -26532,6 +26727,11 @@
     ],
     "form_data": {
       "sableye": [["base_form", 6]]
+    },
+    "requirements": {
+      "item": {
+        "sablenite": [[true, 6]]
+      }
     },
     "formatted_name": "Sableye (Mega)"
   },
@@ -26560,6 +26760,11 @@
     "form_data": {
       "sharpedo": [["base_form", 6]]
     },
+    "requirements": {
+      "item": {
+        "sharpedonite": [[true, 6]]
+      }
+    },
     "formatted_name": "Sharpedo (Mega)"
   },
   "camerupt_mega": {
@@ -26586,6 +26791,11 @@
     ],
     "form_data": {
       "camerupt": [["base_form", 6]]
+    },
+    "requirements": {
+      "item": {
+        "cameruptite": [[true, 6]]
+      }
     },
     "formatted_name": "Camerupt (Mega)"
   },
@@ -26614,6 +26824,11 @@
     "form_data": {
       "altaria": [["base_form", 6]]
     },
+    "requirements": {
+      "item": {
+        "altarianite": [[true, 6]]
+      }
+    },
     "formatted_name": "Altaria (Mega)"
   },
   "glalie_mega": {
@@ -26640,6 +26855,11 @@
     ],
     "form_data": {
       "glalie": [["base_form", 6]]
+    },
+    "requirements": {
+      "item": {
+        "glalitite": [[true, 6]]
+      }
     },
     "formatted_name": "Glalie (Mega)"
   },
@@ -26668,6 +26888,11 @@
     "form_data": {
       "salamence": [["base_form", 6]]
     },
+    "requirements": {
+      "item": {
+        "salamencite": [[true, 6]]
+      }
+    },
     "formatted_name": "Salamence (Mega)"
   },
   "metagross_mega": {
@@ -26694,6 +26919,11 @@
     ],
     "form_data": {
       "metagross": [["base_form", 6]]
+    },
+    "requirements": {
+      "item": {
+        "metagrossite": [[true, 6]]
+      }
     },
     "formatted_name": "Metagross (Mega)"
   },
@@ -26749,6 +26979,11 @@
     "form_data": {
       "lopunny": [["base_form", 6]]
     },
+    "requirements": {
+      "item": {
+        "lopunnite": [[true, 6]]
+      }
+    },
     "formatted_name": "Lopunny (Mega)"
   },
   "gallade_mega": {
@@ -26775,6 +27010,11 @@
     ],
     "form_data": {
       "gallade": [["base_form", 6]]
+    },
+    "requirements": {
+      "item": {
+        "galladite": [[true, 6]]
+      }
     },
     "formatted_name": "Gallade (Mega)"
   },
@@ -26803,6 +27043,11 @@
     "form_data": {
       "audino": [["base_form", 6]]
     },
+    "requirements": {
+      "item": {
+        "audinite": [[true, 6]]
+      }
+    },
     "formatted_name": "Audino (Mega)"
   },
   "diancie_mega": {
@@ -26829,6 +27074,11 @@
     ],
     "form_data": {
       "diancie": [["base_form", 6]]
+    },
+    "requirements": {
+      "item": {
+        "diancite": [[true, 6]]
+      }
     },
     "formatted_name": "Diancie (Mega)"
   },

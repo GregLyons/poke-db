@@ -580,7 +580,11 @@ def checkPokeAPIForms(fname, pokemonDict):
   return
 
 # add mega/regional/gmax flags, and restore dex numbers to such forms
+# For mega evolutions, add mega-stone requirements
 def addFormFlags(pokemonDict):
+  # Dictionary for keeping track of Megas; will add mega stone requirements at end
+  megas = {}
+
   # initialization
   for pokemonName in pokemonDict.keys():
     pokemonDict[pokemonName]["form_data"] = {}
@@ -593,6 +597,10 @@ def addFormFlags(pokemonDict):
       # will include '_x' and '_y' forms
       baseFormName = pokemonName.split('_')[0]
       formType = 'mega'
+
+      # Keep track of megas for later
+      megas[baseFormName] = pokemonName
+
     # ignore pikachu_alola_cap
     elif '_alola' in pokemonName and '_alola_cap' not in pokemonName:
       baseFormName = '_'.join(pokemonName.split('_')[:-1])
@@ -670,6 +678,54 @@ def addFormFlags(pokemonDict):
         pokemonDict[pokemonName]["height"] = 0
       else:
         pokemonDict[pokemonName]["height"] = pokemonDict[baseFormName]["height"]
+
+  # Add mega stone requirements
+  with open(getCSVDataPath() + '/items/megaStones.csv', encoding='utf-8') as megasCSV: 
+    reader = csv.DictReader(megasCSV)
+
+    for row in reader:
+      itemName, baseFormName = row["Item Name"], row["Pokemon Name"]
+      pokemonName = megas[baseFormName]
+      pokemonDict[pokemonName]["requirements"] = {
+        "item": { 
+          itemName: [[True, 6]]
+        }
+      }
+
+    # Add blue and red orb for Primal Reversion kyogre and groudon
+    pokemonDict[pokemonName]["kyogre_primal"] = {
+        "item": { 
+          'blue_orb': [[True, 6]]
+        }
+      }
+
+    pokemonDict[pokemonName]["groudon_primal"] = {
+        "item": { 
+          'red_orb': [[True, 6]]
+        }
+      }
+
+    # Ultra necrozma
+    pokemonDict[pokemonName]["necrozma_ultra"] = {
+        "item": { 
+          'ultranecrozium_z': [[True, 7]]
+        }
+      }
+
+    # Zacian
+    pokemonDict[pokemonName]["zacian_crowned"] = {
+        "item": { 
+          'rusted_sword': [[True, 8]]
+        }
+      }
+
+    # Zamazenta
+    pokemonDict[pokemonName]["zamazenta_crowned"] = {
+        "item": { 
+          'rusted_shield': [[True, 8]]
+        }
+      }
+
   return
 
 def addFullName(pokemonDict):

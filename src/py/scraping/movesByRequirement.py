@@ -67,7 +67,6 @@ def makeRequirementCSV(fname):
         pokemonNames = []
         for suffix in ['_original', '_kalos', '_alola', '_hoenn', '_sinnoh', '_unova', '_partner', '_world']:
           pokemonNames.append('pikachu' + suffix + '_cap')
-        print(pokemonNames)
       elif 'sparksurfer' in moveName:
         pokemonNames = ['raichu_alola']
       elif 'guardian_of_alola' in moveName:
@@ -91,6 +90,15 @@ def makeRequirementCSV(fname):
       cells = row.find_all(['th', 'td'])
       baseMove = parseName(cells[0].get_text())
       writer.writerow(['z_' + baseMove, 'move', baseMove, '', ''])
+
+    # Exceptions
+    writer.writerow(['behemoth_bash', 'move', 'iron_head', '', ''])
+    writer.writerow(['behemoth_bash', 'item', 'rusted_shield', '', ''])
+    writer.writerow(['behemoth_bash', 'pokemon', 'zamazenta', '', ''])
+    writer.writerow(['behemoth_blade', 'move', 'iron_head', '', ''])
+    writer.writerow(['behemoth_blade', 'item', 'rusted_sword', '', ''])
+    writer.writerow(['behemoth_blade', 'pokemon', 'zacian', '', ''])
+  
   return
 
 def main():

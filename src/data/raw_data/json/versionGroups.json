@@ -1,4 +1,12 @@
 {
+  "RB": {
+    "gen": 1,
+    "formatted_name": "Red/Blue"
+  },
+  "Y": {
+    "gen": 1,
+    "formatted_name": "Yellow"
+  },
   "Stad": {
     "gen": 1,
     "formatted_name": "Stadium"
@@ -82,5 +90,9 @@
   "SwSh": {
     "gen": 8,
     "formatted_name": "Sword/Shield"
+  },
+  "BDSP": {
+    "gen": 8,
+    "formatted_name": "Brilliant Diamond/Shining Pearl"
   }
 }

@@ -123,6 +123,14 @@ def makeInitialItemDict(fnamePrefix):
   for itemName in ['psn_cure_berry', 'prz_cure_berry']:
     itemDict[itemName]["gen"] = 2
 
+  # Associate rusted sword/rusted shield with zacian/zamazenta, respectively
+  itemDict['rusted_sword']['pokemon_specific'] = {
+    'zacian': [[True, 8]]
+  }
+  itemDict['rusted_shield']['pokemon_specific'] = {
+    'zamazenta': [[True, 8]]
+  }
+
   return itemDict
 
 # add berry data to item dictionary, including nature power data, type resistances, status resistances, and any other effects

@@ -35379,6 +35379,17 @@
     "priority": [[0, 8]],
     "target": [["any_adjacent", 8]],
     "lgpe_exclusive_values": {},
+    "requirements": {
+      "move": {
+        "iron_head": [[true, 8]]
+      },
+      "item": {
+        "rusted_sword": [[true, 8]]
+      },
+      "pokemon": {
+        "zacian": [[true, 8]]
+      }
+    },
     "max_power": 130,
     "g_max_power": 130,
     "move_interactions": {
@@ -35424,6 +35435,17 @@
     "priority": [[0, 8]],
     "target": [["any_adjacent", 8]],
     "lgpe_exclusive_values": {},
+    "requirements": {
+      "move": {
+        "iron_head": [[true, 8]]
+      },
+      "item": {
+        "rusted_shield": [[true, 8]]
+      },
+      "pokemon": {
+        "zamazenta": [[true, 8]]
+      }
+    },
     "max_power": 130,
     "g_max_power": 130,
     "move_interactions": {

@@ -71,6 +71,8 @@ def dexNumberToGen(dexNumber):
 # 
 def versionGroupDictionary():
   versionDict = {
+    "RB": ["Red/Blue", 1],
+    "Y": ["Yellow", 1],
     "Stad": ["Stadium", 1],
     "GS": ["Gold/Silver", 2],
     "C": ["Crystal", 2],
@@ -91,7 +93,8 @@ def versionGroupDictionary():
     "SM": ["Sun/Moon", 7],
     "USUM": ["Ultra Sun/Ultra Moon", 7],
     "PE": ["Let's Go Pikachu/Let's Go Eeevee", 7],
-    "SwSh": ["Sword/Shield", 8]
+    "SwSh": ["Sword/Shield", 8],
+    "BDSP": ["Brilliant Diamond/Shining Pearl", 8]
   }
 
   return versionDict

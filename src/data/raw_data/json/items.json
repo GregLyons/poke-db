@@ -3338,7 +3338,9 @@
   },
   "rusted_shield": {
     "item_class": "other",
-    "pokemon_specific": {},
+    "pokemon_specific": {
+      "zamazenta": [[true, 8]]
+    },
     "gen": 8,
     "gen2_exclusive": false,
     "knock_off": true,
@@ -3356,7 +3358,9 @@
   },
   "rusted_sword": {
     "item_class": "other",
-    "pokemon_specific": {},
+    "pokemon_specific": {
+      "zacian": [[true, 8]]
+    },
     "gen": 8,
     "gen2_exclusive": false,
     "knock_off": true,

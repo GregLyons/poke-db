@@ -178,7 +178,7 @@ const getValuesForTable = (
         ) 
       */
       values = require(PROCESSED_DATA_PATH + 'items.json')
-        .map(data => [data.gen, data.name, data.formatted_name, data.introduced, data.item_type]);
+        .map(data => [data.gen, data.name, data.formatted_name, data.introduced, data.item_class]);
       break;
 
     case 'pokemon':
