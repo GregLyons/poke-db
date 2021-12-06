@@ -1,236 +1,236 @@
-Item Name,Item Type,Description,Sprite URL
-absorb_bulb,boost_stat_sp_atk,An item to be held by a Pokémon. It boosts Sp. Atk if the holder is hit with a Water-type attack. It can only be used once.,/itemdex/sprites/absorbbulb.png
-adamant_orb,boost_type_specific,A brightly gleaming orb to be held by Dialga. It boosts the power of Dragon- and Steel-type moves when it is held.,/itemdex/sprites/adamantorb.png
-air_balloon,other,"An item to be held by a Pokémon. The holder will float in the air until hit. Once the holder is hit, this item will burst.",/itemdex/sprites/airballoon.png
-aloraichium_z,z_crystal_exclusive,It converts Z-Power into crystals that upgrade Alolan Raichu's Thunderbolt to an exclusive Z-Move.,/itemdex/sprites/aloraichiumz.png
-amulet_coin,other,An item to be held by a Pokémon. It doubles any prize money received if the holding Pokémon joins a battle.,/itemdex/sprites/amuletcoin.png
-assault_vest,boost_stat_sp_def,An item to be held by a Pokémon. This offensive vest raises Sp. Def but prevents the use of status moves.,/itemdex/sprites/assaultvest.png
-berry_sweet,other,"A berry-shaped sweet. When a Milcery holds this, it spins around happily.",/itemdex/sprites/berrysweet.png
-berserk_gene,gen2_boost_stat_attack,Boosts ATTACK but causes confusion.,
-big_root,other,An item to be held by a Pokémon. It boosts the amount of HP the holder restores from HP-stealing moves.,/itemdex/sprites/bigroot.png
-binding_band,other,An item to be held by a Pokémon. It's a band that increases the power of binding moves used by the holder.,/itemdex/sprites/bindingband.png
-black_belt,boost_type_fighting,An item to be held by a Pokémon. This belt helps the wearer to focus and boosts the power of Fighting-type moves.,/itemdex/sprites/blackbelt.png
-black_glasses,boost_type_dark,An item to be held by a Pokémon. It's a pair of shady-looking glasses that boost the power of Dark-type moves.,/itemdex/sprites/blackglasses.png
-black_sludge,restore_hp,An item to be held by a Pokémon. It gradually restores HP to Poison-type Pokémon. It damages any other type.,/itemdex/sprites/blacksludge.png
-blue_orb,other,A shiny blue orb that is said to have a legend tied to it. It's known to have a deep connection with the Hoenn region.,/itemdex/sprites/blueorb.png
-blue_scarf,contest_item,"An item to be held by a Pokémon. During a contest, it raises the Beauty aspect of the Pokémon holding it.",/itemdex/sprites/bluescarf.png
-blunder_policy,boost_stat_two_stages,Raises Speed sharply when a Pokémon misses with a move because of accuracy.,/itemdex/sprites/blunderpolicy.png
-bright_powder,other,An item to be held by a Pokémon. It casts a tricky glare that lowers the opposing Pokémon's accuracy.,/itemdex/sprites/brightpowder.png
-bug_gem,gem_bug,"A gem with an insect-like essence. When held, it strengthens the power of a Bug-type move one time.",/itemdex/sprites/buggem.png
-bug_memory,memory_bug,A memory disc that contains Bug-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/bugmemory.png
-buginium_z,z_crystal_bug,It converts Z-Power into crystals that upgrade Bug-type moves to Bug-type Z-Moves.,/itemdex/sprites/buginiumz.png
-burn_drive,drive_fire,A cassette to be held by Genesect. It changes Genesect's Techno Blast move so it becomes Fire type.,/itemdex/sprites/burndrive.png
-cell_battery,boost_stat_attack,An item to be held by a Pokémon. It boosts Attack if the holder is hit with an Electric-type attack. It can only be used once.,/itemdex/sprites/cellbattery.png
-charcoal,boost_type_fire,An item to be held by a Pokémon. It's a combustible fuel that boosts the power of Fire-type moves.,/itemdex/sprites/charcoal.png
-chill_drive,drive_ice,A cassette to be held by Genesect. It changes Genesect's Techno Blast move so it becomes Ice type.,/itemdex/sprites/chilldrive.png
-choice_band,boost_stat_attack,An item to be held by a Pokémon. This curious headband boosts Attack but only allows the use of one move.,/itemdex/sprites/choiceband.png
-choice_scarf,boost_stat_speed,An item to be held by a Pokémon. This curious scarf boosts Speed but only allows the use of one move.,/itemdex/sprites/choicescarf.png
-choice_specs,other,An item to be held by a Pokémon. These curious glasses boost Sp. Atk but only allow the use of one move.,/itemdex/sprites/choicespecs.png
-cleanse_tag,other,An item to be held by a Pokémon. It helps keep wild Pokémon away if the holder is the head of the party.,/itemdex/sprites/cleansetag.png
-clover_sweet,other,"A clover-shaped sweet. When a Milcery holds this, it spins around happily.",/itemdex/sprites/cloversweet.png
-damp_rock,extender,An item to be held by a Pokémon. It extends the duration of the move Rain Dance when used by the holder.,/itemdex/sprites/damprock.png
-dark_gem,gem_dark,"A gem with an essence of darkness. When held, it strengthens the power of a Dark-type move one time.",/itemdex/sprites/darkgem.png
-dark_memory,memory_dark,A memory disc that contains Dark-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/darkmemory.png
-darkinium_z,z_crystal_dark,It converts Z-Power into crystals that upgrade Dark-type moves to Dark-type Z-Moves.,/itemdex/sprites/darkiniumz.png
-decidium_z,z_crystal_exclusive,It converts Z-Power into crystals that upgrade Decidueye's Spirit Shackle to an exclusive Z-Move.,/itemdex/sprites/decidiumz.png
-deep_sea_scale,other,An item to be held by Clamperl. This scale shines with a faint pink and raises the holder's Sp. Def stat.,/itemdex/sprites/deepseascale.png
-deep_sea_tooth,other,An item to be held by Clamperl. This fang gleams a sharp silver and raises the holder's Sp. Atk stat.,/itemdex/sprites/deepseatooth.png
-destiny_knot,other,"An item to be held by a Pokémon. If the holder becomes infatuated, the opposing Pokémon will be, too.",/itemdex/sprites/destinyknot.png
-douse_drive,drive_water,A cassette to be held by Genesect. It changes Genesect's Techno Blast move so it becomes Water type.,/itemdex/sprites/dousedrive.png
-draco_plate,plate_dragon,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Dragon-type moves.,/itemdex/sprites/dracoplate.png
-dragon_fang,boost_type_dragon,An item to be held by a Pokémon. This hard and sharp fang boosts the power of Dragon-type moves.,/itemdex/sprites/dragonfang.png
-dragon_gem,gem_dragon,"A gem with a draconic essence. When held, it strengthens the power of a Dragon-type move one time.",/itemdex/sprites/dragongem.png
-dragon_memory,memory_dragon,A memory disc that contains Dragon-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/dragonmemory.png
-dragonium_z,z_crystal_dragon,It converts Z-Power into crystals that upgrade Dragon-type moves to Dragon-type Z-Moves.,/itemdex/sprites/dragoniumz.png
-dread_plate,plate_dark,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Dark-type moves.,/itemdex/sprites/dreadplate.png
-dubious_disc,other,A transparent device overflowing with dubious data. Its producer is unknown.,/itemdex/sprites/dubiousdisc.png
-earth_plate,plate_ground,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Ground-type moves.,/itemdex/sprites/earthplate.png
-eevium_z,z_crystal_exclusive,It converts Z-Power into crystals that upgrade Eevee's Last Resort to an exclusive Z-Move.,/itemdex/sprites/eeviumz.png
-eject_button,other,"An item to be held by a Pokémon. If the holder is hit by an attack, it will be switched out of battle.",/itemdex/sprites/ejectbutton.png
-eject_pack,other,"An item to be held by a Pokémon. When the holder's stats are lowered, it will be switched out of battle.",/itemdex/sprites/ejectpack.png
-electirizer,other,A box packed with a tremendous amount of electric energy. It's loved by a certain Pokémon.,/itemdex/sprites/electirizer.png
-electric_gem,gem_electric,"A gem with an essence of electricity. When held, it strengthens the power of an Electric-type move one time.",/itemdex/sprites/electricgem.png
-electric_memory,memory_electric,A memory disc that contains Electric-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/electricmemory.png
-electric_seed,boost_stat_defense,An item to be held by a Pokémon. It boosts Defense on Electric Terrain. It can only be used once.,/itemdex/sprites/electricseed.png
-electrium_z,z_crystal_electric,It converts Z-Power into crystals that upgrade Electric-type moves to Electric-type Z-Moves.,/itemdex/sprites/electriumz.png
-everstone,other,An item to be held by a Pokémon. A Pokémon holding this peculiar stone is prevented from evolving.,/itemdex/sprites/everstone.png
-eviolite,other,"A mysterious evolutionary lump. When held by a Pokémon that can still evolve, it raises both Defense and Sp. Def.",/itemdex/sprites/eviolite.png
-exp_share,other,Turning on this special device will allow all the Pokémon on your team to receive Exp. Points from battles.,/itemdex/sprites/exp.share.png
-expert_belt,other,An item to be held by a Pokémon. It's a well-worn belt that slightly boosts the power of supereffective moves.,/itemdex/sprites/expertbelt.png
-fairium_z,z_crystal_fairy,It converts Z-Power into crystals that upgrade Fairy-type moves to Fairy-type Z-Moves.,/itemdex/sprites/fairiumz.png
-fairy_gem,gem_fairy,"A gem with an essence of the fey. When held, it strengthens the power of a Fairy-type move one time.",/itemdex/sprites/fairygem.png
-fairy_memory,memory_fairy,A memory disc that contains Fairy-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/fairymemory.png
-fighting_gem,gem_fighting,"A gem with an essence of combat. When held, it strengthens the power of a Fighting-type move one time.",/itemdex/sprites/fightinggem.png
-fighting_memory,memory_fighting,A memory disc that contains Fighting-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/fightingmemory.png
-fightinium_z,z_crystal_fighting,It converts Z-Power into crystals that upgrade Fighting-type moves to Fighting-type Z-Moves.,/itemdex/sprites/fightiniumz.png
-fire_gem,gem_fire,"A gem with an essence of fire. When held, it strengthens the power of a Fire-type move one time.",/itemdex/sprites/firegem.png
-fire_memory,memory_fire,A memory disc that contains Fire-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/firememory.png
-firium_z,z_crystal_fire,It converts Z-Power into crystals that upgrade Fire-type moves to Fire-type Z-Moves.,/itemdex/sprites/firiumz.png
-fist_plate,plate_fighting,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Fighting-type moves.,/itemdex/sprites/fistplate.png
-flame_orb,status_orb,An item to be held by a Pokémon. It's a bizarre orb that will afflict the holder with a burn during battle.,/itemdex/sprites/flameorb.png
-flame_plate,plate_fire,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Fire-type moves.,/itemdex/sprites/flameplate.png
-float_stone,other,An item to be held by a Pokémon. This very light stone reduces the weight of a Pokémon when held.,/itemdex/sprites/floatstone.png
-flower_sweet,other,"A flower-shaped sweet. When a Milcery holds this, it spins around happily.",/itemdex/sprites/flowersweet.png
-flying_gem,gem_flying,"A gem with an essence of air. When held, it strengthens the power of a Flying-type move one time.",/itemdex/sprites/flyinggem.png
-flying_memory,memory_flying,A memory disc that contains Flying-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/flyingmemory.png
-flyinium_z,z_crystal_flying,It converts Z-Power into crystals that upgrade Flying-type moves to Flying-type Z-Moves.,/itemdex/sprites/flyiniumz.png
-focus_band,other,"An item to be held by a Pokémon. The holder may endure a potential KO attack, leaving it with just 1 HP.",/itemdex/sprites/focusband.png
-focus_sash,other,"An item to be held by a Pokémon. If the holder has full HP, it will endure a potential KO attack with 1 HP. The item then disappears.",/itemdex/sprites/focussash.png
-full_incense,incense,An item to be held by a Pokémon. This exotic-smelling incense makes the holder bloated and slow moving.,/itemdex/sprites/fullincense.png
-ghost_gem,gem_ghost,"A gem with a spectral essence. When held, it strengthens the power of a Ghost-type move one time.",/itemdex/sprites/ghostgem.png
-ghost_memory,memory_ghost,A memory disc that contains Ghost-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/ghostmemory.png
-ghostium_z,z_crystal_ghost,It converts Z-Power into crystals that upgrade Ghost-type moves to Ghost-type Z-Moves.,/itemdex/sprites/ghostiumz.png
-grass_gem,gem_grass,"A gem with an essence of nature. When held, it strengthens the power of a Grass-type move one time.",/itemdex/sprites/grassgem.png
-grass_memory,memory_grass,A memory disc that contains Grass-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/grassmemory.png
-grassium_z,z_crystal_grass,It converts Z-Power into crystals that upgrade Grass-type moves to Grass-type Z-Moves.,/itemdex/sprites/grassiumz.png
-grassy_seed,boost_stat_defense,An item to be held by a Pokémon. It boosts Defense on Grassy Terrain. It can only be used once.,/itemdex/sprites/grassyseed.png
-green_scarf,contest_item,"An item to be held by a Pokémon. During a contest, it raises the Clever aspect of the Pokémon holding it.",/itemdex/sprites/greenscarf.png
-grip_claw,extender,"An item to be held by a Pokémon. It extends the duration of multi-turn attacks, such as Bind and Wrap.",/itemdex/sprites/gripclaw.png
-griseous_orb,boost_type_specific,A glowing orb to be held by Giratina. It boosts the power of Dragon- and Ghost-type moves when it is held.,/itemdex/sprites/griseousorb.png
-ground_gem,gem_ground,"A gem with an essence of land. When held, it strengthens the power of a Ground-type move one time.",/itemdex/sprites/groundgem.png
-ground_memory,memory_ground,A memory disc that contains Ground-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/groundmemory.png
-groundium_z,z_crystal_ground,It converts Z-Power into crystals that upgrade Ground-type moves to Ground-type Z-Moves.,/itemdex/sprites/groundiumz.png
-hard_stone,boost_type_rock,An item to be held by a Pokémon. It's a durable stone that boosts the power of Rock-type moves.,/itemdex/sprites/hardstone.png
-heat_rock,extender,An item to be held by a Pokémon. It extends the duration of the move Sunny Day when used by the holder.,/itemdex/sprites/heatrock.png
-heavy_duty_boots,other,These boots prevent the effects of traps set on the battlefield.,/itemdex/sprites/heavy-dutyboots.png
-ice_gem,gem_ice,"A gem with an essence of ice. When held, it strengthens the power of an Ice-type move one time.",/itemdex/sprites/icegem.png
-ice_memory,memory_ice,A memory disc that contains Ice-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/icememory.png
-icicle_plate,plate_ice,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Ice-type moves.,/itemdex/sprites/icicleplate.png
-icium_z,z_crystal_ice,It converts Z-Power into crystals that upgrade Ice-type moves to Ice-type Z-Moves.,/itemdex/sprites/iciumz.png
-icy_rock,extender,An item to be held by a Pokémon. It extends the duration of the move Hail when used by the holder.,/itemdex/sprites/icyrock.png
-incinium_z,z_crystal_exclusive,It converts Z-Power into crystals that upgrade Incineroar's Darkest Lariat to an exclusive Z-Move.,/itemdex/sprites/inciniumz.png
-insect_plate,plate_bug,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Bug-type moves.,/itemdex/sprites/insectplate.png
-iron_ball,other,An item to be held by a Pokémon. It lowers Speed and allows Ground-type moves to hit Flying types and holders that are levitating.,/itemdex/sprites/ironball.png
-iron_plate,plate_steel,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Steel-type moves.,/itemdex/sprites/ironplate.png
-kings_rock,other,"An item to be held by a Pokémon. When the holder successfully inflicts damage, the target may also flinch.",/itemdex/sprites/king'srock.png
-kommonium_z,z_crystal_exclusive,It converts Z-Power into crystals that upgrade Kommo-o's Clanging Scales to an exclusive Z-Move.,/itemdex/sprites/kommoniumz.png
-lagging_tail,other,An item to be held by a Pokémon. It is tremendously heavy and makes the holder move slower than usual.,/itemdex/sprites/laggingtail.png
-lax_incense,incense,An item to be held by a Pokémon. The beguiling aroma of this incense may cause attacks to miss its holder.,/itemdex/sprites/laxincense.png
-leek,other,An item to be held by Farfetch'd. This very long and stiff stalk of leek boosts its critical-hit ratio.,/itemdex/sprites/leek.png
-leftovers,restore_hp,An item to be held by a Pokémon. The holder's HP is slowly but steadily restored throughout every battle.,/itemdex/sprites/leftovers.png
-life_orb,other,An item to be held by a Pokémon. It boosts the power of moves but at the cost of some HP on each hit.,/itemdex/sprites/lifeorb.png
-light_ball,other,An item to be held by Pikachu. It's a puzzling orb that boosts its Attack and Sp. Atk stats.,/itemdex/sprites/lightball.png
-light_clay,other,An item to be held by a Pokémon. Protective moves like Light Screen and Reflect will be effective longer.,/itemdex/sprites/lightclay.png
-love_sweet,other,"A heart-shaped sweet. When a Milcery holds this, it spins around happily.",/itemdex/sprites/lovesweet.png
-luck_incense,other,An item to be held by a Pokémon. It doubles any prize money received if the holding Pokémon joins a battle.,/itemdex/sprites/luckincense.png
-lucky_egg,other,An item to be held by a Pokémon. It's an egg filled with happiness that earns the holder extra Exp. Points in battle.,/itemdex/sprites/luckyegg.png
-lucky_punch,other,An item to be held by Chansey. This pair of lucky boxing gloves will boost Chansey's critical-hit ratio.,/itemdex/sprites/luckypunch.png
-luminous_moss,boost_stat_sp_def,An item to be held by a Pokémon. It boosts Sp. Def if the holder is hit with a Water-type attack. It can only be used once.,/itemdex/sprites/luminousmoss.png
-lunalium_z,z_crystal_exclusive,It converts Z-Power into crystals that upgrade Lunala's Moongeist Beam to an exclusive Z-Move.,/itemdex/sprites/lunaliumz.png
-lustrous_orb,boost_type_specific,A beautifully glowing orb to be held by Palkia. It boosts the power of Dragon- and Water-type moves when it is held.,/itemdex/sprites/lustrousorb.png
-lycanium_z,z_crystal_exclusive,It converts Z-Power into crystals that upgrade Lycanroc's Stone Edge to an exclusive Z-Move.,/itemdex/sprites/lycaniumz.png
-macho_brace,other,"An item to be held by a Pokémon. This stiff, heavy brace helps Pokémon grow strong but cuts Speed in battle.",/itemdex/sprites/machobrace.png
-magmarizer,other,A box packed with a tremendous amount of magma energy. It's loved by a certain Pokémon.,/itemdex/sprites/magmarizer.png
-magnet,boost_type_electric,An item to be held by a Pokémon. It's a powerful magnet that boosts the power of Electric-type moves.,/itemdex/sprites/magnet.png
-marshadium_z,z_crystal_exclusive,It converts Z-Power into crystals that upgrade Marshadow's Spectral Thief to an exclusive Z-Move.,/itemdex/sprites/marshadiumz.png
-meadow_plate,plate_grass,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Grass-type moves.,/itemdex/sprites/meadowplate.png
-mental_herb,other,An item to be held by a Pokémon. The holder shakes off move-binding effects to move freely. It can be used only once.,/itemdex/sprites/mentalherb.png
-metal_coat,boost_type_steel,An item to be held by a Pokémon. It's a special metallic film that can boost the power of Steel-type moves.,/itemdex/sprites/metalcoat.png
-metal_powder,other,"An item to be held by Ditto. Extremely fine yet hard, this odd powder boosts the Defense stat.",/itemdex/sprites/metalpowder.png
-metronome_item,other,An item to be held by a Pokémon. It boosts moves used consecutively but only until a different move is used.,/itemdex/sprites/metronome.png
-mewnium_z,z_crystal_exclusive,It converts Z-Power into crystals that upgrade Mew's Psychic to an exclusive Z-Move.,/itemdex/sprites/mewniumz.png
-mimikium_z,z_crystal_exclusive,It converts Z-Power into crystals that upgrade Mimikyu's Play Rough to an exclusive Z-Move.,/itemdex/sprites/mimikiumz.png
-mind_plate,plate_psychic,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Psychic-type moves.,/itemdex/sprites/mindplate.png
-miracle_seed,boost_type_grass,An item to be held by a Pokémon. It's a seed imbued with life-force that boosts the power of Grass-type moves.,/itemdex/sprites/miracleseed.png
-misty_seed,boost_stat_sp_def,An item to be held by a Pokémon. It boosts Sp. Def on Misty Terrain. It can only be used once.,/itemdex/sprites/mistyseed.png
-muscle_band,other,"An item to be held by a Pokémon. This headband exudes strength, slightly boosting the power of physical moves.",/itemdex/sprites/muscleband.png
-mystic_water,boost_type_water,An item to be held by a Pokémon. This teardrop-shaped gem boosts the power of Water-type moves.,/itemdex/sprites/mysticwater.png
-never_melt_ice,boost_type_ice,An item to be held by a Pokémon. It's a heat- repelling piece of ice that boosts the power of Ice-type moves.,/itemdex/sprites/never-meltice.png
-normal_gem,gem_normal,"A gem with an ordinary essence. When held, it strengthens the power of a Normal-type move one time.",/itemdex/sprites/normalgem.png
-normalium_z,z_crystal_normal,It converts Z-Power into crystals that upgrade Normal-type moves to Normal-type Z-Moves.,/itemdex/sprites/normaliumz.png
-odd_incense,incense,An item to be held by a Pokémon. This exotic-smelling incense boosts the power of Psychic-type moves.,/itemdex/sprites/oddincense.png
-pikanium_z,z_crystal_exclusive,It converts Z-Power into crystals that upgrade Pikachu's Volt Tackle to an exclusive Z-Move.,/itemdex/sprites/pikaniumz.png
-pikashunium_z,other,This is a crystallized form of Z-Power. It upgrades a Thunderbolt by Pikachu in a cap to a Z-Move.,/itemdex/sprites/pikashuniumz.png
-pink_bow,gen2_boost_type_normal,Powers up normal-type moves.,
-pink_scarf,contest_item,"An item to be held by a Pokémon. During a contest, it raises the Cute aspect of the Pokémon holding it.",/itemdex/sprites/pinkscarf.png
-pixie_plate,plate_fairy,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Fairy-type moves.,/itemdex/sprites/pixieplate.png
-poison_barb,boost_type_poison,"An item to be held by a Pokémon. This small, poisonous barb boosts the power of Poison-type moves.",/itemdex/sprites/poisonbarb.png
-poison_gem,gem_poison,"A gem with an essence of poison. When held, it strengthens the power of a Poison-type move one time.",/itemdex/sprites/poisongem.png
-poison_memory,memory_poison,A memory disc that contains Poison-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/poisonmemory.png
-poisonium_z,z_crystal_poison,It converts Z-Power into crystals that upgrade Poison-type moves to Poison-type Z-Moves.,/itemdex/sprites/poisoniumz.png
-polkadot_bow,gen2_boost_type_normal,Powers up normal-type moves.,
-power_anklet,power_item,An item to be held by a Pokémon. It reduces Speed but allows the holder's Speed stat to grow more after battling.,/itemdex/sprites/poweranklet.png
-power_band,power_item,An item to be held by a Pokémon. It reduces Speed but allows the holder's Sp. Def stat to grow more after battling.,/itemdex/sprites/powerband.png
-power_belt,power_item,An item to be held by a Pokémon. It reduces Speed but allows the holder's Defense stat to grow more after battling.,/itemdex/sprites/powerbelt.png
-power_bracer,power_item,An item to be held by a Pokémon. It reduces Speed but allows the holder's Attack stat to grow more after battling.,/itemdex/sprites/powerbracer.png
-power_herb,other,A single-use item to be held by a Pokémon. It allows the holder to immediately use a move that normally requires a turn to charge.,/itemdex/sprites/powerherb.png
-power_lens,power_item,An item to be held by a Pokémon. It reduces Speed but allows the holder's Sp. Atk stat to grow more after battling.,/itemdex/sprites/powerlens.png
-power_weight,power_item,An item to be held by a Pokémon. It reduces Speed but allows the holder's max HP to grow more after battling.,/itemdex/sprites/powerweight.png
-primarium_z,z_crystal_exclusive,It converts Z-Power into crystals that upgrade Primarina's Sparkling Aria to an exclusive Z-Move.,/itemdex/sprites/primariumz.png
-protective_pads,other,An item to be held by a Pokémon. These pads protect the holder from effects caused by making direct contact with the target.,/itemdex/sprites/protectivepads.png
-protector,other,A protective item of some sort. It is extremely stiff and heavy. It's loved by a certain Pokémon.,/itemdex/sprites/protector.png
-psychic_gem,gem_psychic,"A gem with an essence of the mind. When held, it strengthens the power of a Psychic-type move one time.",/itemdex/sprites/psychicgem.png
-psychic_memory,memory_psychic,A memory disc that contains Psychic-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/psychicmemory.png
-psychic_seed,boost_stat_sp_def,An item to be held by a Pokémon. It boosts Sp. Def on Psychic Terrain. It can only be used once.,/itemdex/sprites/psychicseed.png
-psychium_z,z_crystal_psychic,It converts Z-Power into crystals that upgrade Psychic-type moves to Psychic-type Z-Moves.,/itemdex/sprites/psychiumz.png
-pure_incense,other,An item to be held by a Pokémon. It helps keep wild Pokémon away if the holder is the head of the party.,/itemdex/sprites/pureincense.png
-quick_claw,other,"An item to be held by a Pokémon. This light, sharp claw lets the bearer move first occasionally.",/itemdex/sprites/quickclaw.png
-quick_powder,other,"An item to be held by Ditto. Extremely fine yet hard, this odd powder boosts the Speed stat.",/itemdex/sprites/quickpowder.png
-razor_claw,boost_stat_two_stages,An item to be held by a Pokémon. This sharply hooked claw increases the holder's critical-hit ratio.,/itemdex/sprites/razorclaw.png
-razor_fang,other,"An item to be held by a Pokémon. When the holder successfully inflicts damage, the target may also flinch.",/itemdex/sprites/razorfang.png
-reaper_cloth,other,A cloth imbued with horrifyingly strong spiritual energy. It's loved by a certain Pokémon.,/itemdex/sprites/reapercloth.png
-red_card,other,"An item to be held by a Pokémon. When the holder is hit by an attack, the attacker is removed from battle.",/itemdex/sprites/redcard.png
-red_orb,other,A shiny red orb that is said to have a legend tied to it. It's known to have a deep connection with the Hoenn region.,/itemdex/sprites/redorb.png
-red_scarf,contest_item,"An item to be held by a Pokémon. During a contest, it raises the Cool aspect of the Pokémon holding it.",/itemdex/sprites/redscarf.png
-ribbon_sweet,other,"A ribbon-shaped sweet. When a Milcery holds this, it spins around happily.",/itemdex/sprites/ribbonsweet.png
-ring_target,other,An item to be held by a Pokémon. Moves that normally have no effect will land on a Pokémon holding it.,/itemdex/sprites/ringtarget.png
-rock_gem,gem_rock,"A gem with an essence of rock. When held, it strengthens the power of a Rock-type move one time.",/itemdex/sprites/rockgem.png
-rock_incense,incense,An item to be held by a Pokémon. This exotic-smelling incense boosts the power of Rock-type moves.,/itemdex/sprites/rockincense.png
-rock_memory,memory_rock,A memory disc that contains Rock-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/rockmemory.png
-rockium_z,z_crystal_rock,It converts Z-Power into crystals that upgrade Rock-type moves to Rock-type Z-Moves.,/itemdex/sprites/rockiumz.png
-rocky_helmet,other,"An item to be held by a Pokémon. If the holder is hit, the attacker will also be damaged upon contact.",/itemdex/sprites/rockyhelmet.png
-room_service,other,An item to be held by a Pokémon. Lowers Speed when Trick Room takes effect.,/itemdex/sprites/roomservice.png
-rose_incense,incense,An item to be held by a Pokémon. This exotic-smelling incense boosts the power of Grass-type moves.,/itemdex/sprites/roseincense.png
-rusted_shield,other,It is said that a hero used this shield to halt a terrible disaster in ancient times. But it's grown rusty and worn.,/itemdex/sprites/rustedshield.png
-rusted_sword,other,It is said that a hero used this sword to halt a terrible disaster in ancient times. But it's grown rusty and worn.,/itemdex/sprites/rustedsword.png
-safety_goggles,other,An item to be held by a Pokémon. These goggles protect the holder from both weather-related damage and powder.,/itemdex/sprites/safetygoggles.png
-scope_lens,other,An item to be held by a Pokémon. It's a lens for scoping out weak points. It boosts the holder's critical-hit ratio.,/itemdex/sprites/scopelens.png
-sea_incense,incense,An item to be held by a Pokémon. This incense has a curious aroma that boosts the power of Water-type moves.,/itemdex/sprites/seaincense.png
-sharp_beak,boost_type_flying,"An item to be held by a Pokémon. It's a long, sharp beak that boosts the power of Flying-type moves.",/itemdex/sprites/sharpbeak.png
-shed_shell,other,An item to be held by a Pokémon. This discarded carapace enables the holder to switch out of battle without fail.,/itemdex/sprites/shedshell.png
-shell_bell,restore_hp,An item to be held by a Pokémon. The holder restores a little HP every time it inflicts damage on others.,/itemdex/sprites/shellbell.png
-shock_drive,drive_electric,A cassette to be held by Genesect. It changes Genesect's Techno Blast move so it becomes Electric type.,/itemdex/sprites/shockdrive.png
-silk_scarf,boost_type_normal,An item to be held by a Pokémon. It's a sumptuous scarf that boosts the power of Normal-type moves.,/itemdex/sprites/silkscarf.png
-silver_powder,boost_type_bug,An item to be held by a Pokémon. It's a shiny silver powder that will boost the power of Bug-type moves.,/itemdex/sprites/silverpowder.png
-sky_plate,plate_flying,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Flying-type moves.,/itemdex/sprites/skyplate.png
-smoke_ball,other,An item to be held by a Pokémon. It enables the holder to flee from any wild Pokémon encounter without fail.,/itemdex/sprites/smokeball.png
-smooth_rock,extender,An item to be held by a Pokémon. It extends the duration of the move Sandstorm when used by the holder.,/itemdex/sprites/smoothrock.png
-snorlium_z,z_crystal_exclusive,It converts Z-Power into crystals that upgrade Snorlax's Giga Impact to an exclusive Z-Move.,/itemdex/sprites/snorliumz.png
-snowball,boost_stat_attack,An item to be held by a Pokémon. It boosts Attack if the holder is hit with an Ice-type attack. It can only be used once.,/itemdex/sprites/snowball.png
-soft_sand,boost_type_ground,"An item to be held by a Pokémon. It's a loose, silky sand that boosts the power of Ground-type moves.",/itemdex/sprites/softsand.png
-solganium_z,z_crystal_exclusive,It converts Z-Power into crystals that upgrade Solgaleo's Sunsteel Strike to an exclusive Z-Move.,/itemdex/sprites/solganiumz.png
-soothe_bell,other,"An item to be held by a Pokémon. The comforting chime of this bell calms the holder, making it friendly.",/itemdex/sprites/soothebell.png
-soul_dew,boost_type_specific,A wondrous orb to be held by either Latios or Latias. It raises the power of Psychic- and Dragon-type moves.,/itemdex/sprites/souldew.png
-spell_tag,boost_type_ghost,"An item to be held by a Pokémon. It's a sinister, eerie tag that boosts the power of Ghost-type moves.",/itemdex/sprites/spelltag.png
-splash_plate,plate_water,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Water-type moves.,/itemdex/sprites/splashplate.png
-spooky_plate,plate_ghost,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Ghost-type moves.,/itemdex/sprites/spookyplate.png
-star_sweet,other,"A star-shaped sweet. When a Milcery holds this, it spins around happily.",/itemdex/sprites/starsweet.png
-steel_gem,gem_steel,"A gem with an essence of steel. When held, it strengthens the power of a Steel-type move one time.",/itemdex/sprites/steelgem.png
-steel_memory,memory_steel,A memory disc that contains Steel-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/steelmemory.png
-steelium_z,z_crystal_steel,It converts Z-Power into crystals that upgrade Steel-type moves to Steel-type Z-Moves.,/itemdex/sprites/steeliumz.png
-sticky_barb,other,An item to be held by a Pokémon. It damages the holder every turn and may latch on to Pokémon that touch the holder.,/itemdex/sprites/stickybarb.png
-stone_plate,plate_rock,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Rock-type moves.,/itemdex/sprites/stoneplate.png
-strawberry_sweet,other,"A strawberry-shaped sweet. When a Milcery holds this, it will spin around happily.",/itemdex/sprites/strawberrysweet.png
-tapunium_z,z_crystal_exclusive,It converts Z-Power into crystals that upgrade the tapu's Nature's Madness to an exclusive Z-Move.,/itemdex/sprites/tapuniumz.png
-terrain_extender,extender,An item to be held by a Pokémon. It extends the duration of the terrain caused by the holder's move or Ability.,/itemdex/sprites/terrainextender.png
-thick_club,other,An item to be held by Cubone or Marowak. It's a hard bone of some sort that boosts the Attack stat.,/itemdex/sprites/thickclub.png
-throat_spray,boost_stat_sp_atk,Raises Sp. Atk when a Pokémon uses a sound-based move.,/itemdex/sprites/throatspray.png
-toxic_orb,status_orb,An item to be held by a Pokémon. It's a bizarre orb that will badly poison the holder during battle.,/itemdex/sprites/toxicorb.png
-toxic_plate,plate_poison,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Poison-type moves.,/itemdex/sprites/toxicplate.png
-twisted_spoon,boost_type_psychic,An item to be held by a Pokémon. This spoon is imbued with telekinetic power and boosts Psychic-type moves.,/itemdex/sprites/twistedspoon.png
-ultranecrozium_z,other,It's a crystal that turns Necrozma fused with Solgaleo or Lunala into a new form.,/itemdex/sprites/ultranecroziumz.png
-utility_umbrella,other,An item to be held by a Pokémon. This sturdy umbrella protects the holder from the effects of weather.,/itemdex/sprites/utilityumbrella.png
-water_gem,gem_water,"A gem with an essence of water. When held, it strengthens the power of a Water-type move one time.",/itemdex/sprites/watergem.png
-water_memory,memory_water,A memory disc that contains Water-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/watermemory.png
-waterium_z,z_crystal_water,It converts Z-Power into crystals that upgrade Water-type moves to Water-type Z-Moves.,/itemdex/sprites/wateriumz.png
-wave_incense,incense,An item to be held by a Pokémon. This incense has a curious aroma that boosts the power of Water-type moves.,/itemdex/sprites/waveincense.png
-weakness_policy,boost_stat_two_stages,An item to be held by a Pokémon. Attack and Sp. Atk sharply increase if the holder is hit with a move it's weak to.,/itemdex/sprites/weaknesspolicy.png
-white_herb,other,An item to be held by a Pokémon. It will restore any lowered stat in battle. It can be used only once.,/itemdex/sprites/whiteherb.png
-wide_lens,other,An item to be held by a Pokémon. It's a magnifying lens that slightly boosts the accuracy of moves.,/itemdex/sprites/widelens.png
-wise_glasses,other,An item to be held by a Pokémon. This thick pair of glasses slightly boosts the power of special moves.,/itemdex/sprites/wiseglasses.png
-yellow_scarf,contest_item,"An item to be held by a Pokémon. During a contest, it raises the Tough aspect of the Pokémon holding it.",/itemdex/sprites/yellowscarf.png
-zap_plate,plate_electric,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Electric-type moves.,/itemdex/sprites/zapplate.png
-zoom_lens,other,"An item to be held by a Pokémon. If the holder moves after its target moves, its accuracy will be boosted.",/itemdex/sprites/zoomlens.png
+Item Name,Description,Sprite URL
+absorb_bulb,An item to be held by a Pokémon. It boosts Sp. Atk if the holder is hit with a Water-type attack. It can only be used once.,/itemdex/sprites/absorbbulb.png
+adamant_orb,A brightly gleaming orb to be held by Dialga. It boosts the power of Dragon- and Steel-type moves when it is held.,/itemdex/sprites/adamantorb.png
+air_balloon,"An item to be held by a Pokémon. The holder will float in the air until hit. Once the holder is hit, this item will burst.",/itemdex/sprites/airballoon.png
+aloraichium_z,It converts Z-Power into crystals that upgrade Alolan Raichu's Thunderbolt to an exclusive Z-Move.,/itemdex/sprites/aloraichiumz.png
+amulet_coin,An item to be held by a Pokémon. It doubles any prize money received if the holding Pokémon joins a battle.,/itemdex/sprites/amuletcoin.png
+assault_vest,An item to be held by a Pokémon. This offensive vest raises Sp. Def but prevents the use of status moves.,/itemdex/sprites/assaultvest.png
+berry_sweet,"A berry-shaped sweet. When a Milcery holds this, it spins around happily.",/itemdex/sprites/berrysweet.png
+berserk_gene,Boosts ATTACK but causes confusion.,
+big_root,An item to be held by a Pokémon. It boosts the amount of HP the holder restores from HP-stealing moves.,/itemdex/sprites/bigroot.png
+binding_band,An item to be held by a Pokémon. It's a band that increases the power of binding moves used by the holder.,/itemdex/sprites/bindingband.png
+black_belt,An item to be held by a Pokémon. This belt helps the wearer to focus and boosts the power of Fighting-type moves.,/itemdex/sprites/blackbelt.png
+black_glasses,An item to be held by a Pokémon. It's a pair of shady-looking glasses that boost the power of Dark-type moves.,/itemdex/sprites/blackglasses.png
+black_sludge,An item to be held by a Pokémon. It gradually restores HP to Poison-type Pokémon. It damages any other type.,/itemdex/sprites/blacksludge.png
+blue_orb,A shiny blue orb that is said to have a legend tied to it. It's known to have a deep connection with the Hoenn region.,/itemdex/sprites/blueorb.png
+blue_scarf,"An item to be held by a Pokémon. During a contest, it raises the Beauty aspect of the Pokémon holding it.",/itemdex/sprites/bluescarf.png
+blunder_policy,Raises Speed sharply when a Pokémon misses with a move because of accuracy.,/itemdex/sprites/blunderpolicy.png
+bright_powder,An item to be held by a Pokémon. It casts a tricky glare that lowers the opposing Pokémon's accuracy.,/itemdex/sprites/brightpowder.png
+bug_gem,"A gem with an insect-like essence. When held, it strengthens the power of a Bug-type move one time.",/itemdex/sprites/buggem.png
+bug_memory,A memory disc that contains Bug-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/bugmemory.png
+buginium_z,It converts Z-Power into crystals that upgrade Bug-type moves to Bug-type Z-Moves.,/itemdex/sprites/buginiumz.png
+burn_drive,A cassette to be held by Genesect. It changes Genesect's Techno Blast move so it becomes Fire type.,/itemdex/sprites/burndrive.png
+cell_battery,An item to be held by a Pokémon. It boosts Attack if the holder is hit with an Electric-type attack. It can only be used once.,/itemdex/sprites/cellbattery.png
+charcoal,An item to be held by a Pokémon. It's a combustible fuel that boosts the power of Fire-type moves.,/itemdex/sprites/charcoal.png
+chill_drive,A cassette to be held by Genesect. It changes Genesect's Techno Blast move so it becomes Ice type.,/itemdex/sprites/chilldrive.png
+choice_band,An item to be held by a Pokémon. This curious headband boosts Attack but only allows the use of one move.,/itemdex/sprites/choiceband.png
+choice_scarf,An item to be held by a Pokémon. This curious scarf boosts Speed but only allows the use of one move.,/itemdex/sprites/choicescarf.png
+choice_specs,An item to be held by a Pokémon. These curious glasses boost Sp. Atk but only allow the use of one move.,/itemdex/sprites/choicespecs.png
+cleanse_tag,An item to be held by a Pokémon. It helps keep wild Pokémon away if the holder is the head of the party.,/itemdex/sprites/cleansetag.png
+clover_sweet,"A clover-shaped sweet. When a Milcery holds this, it spins around happily.",/itemdex/sprites/cloversweet.png
+damp_rock,An item to be held by a Pokémon. It extends the duration of the move Rain Dance when used by the holder.,/itemdex/sprites/damprock.png
+dark_gem,"A gem with an essence of darkness. When held, it strengthens the power of a Dark-type move one time.",/itemdex/sprites/darkgem.png
+dark_memory,A memory disc that contains Dark-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/darkmemory.png
+darkinium_z,It converts Z-Power into crystals that upgrade Dark-type moves to Dark-type Z-Moves.,/itemdex/sprites/darkiniumz.png
+decidium_z,It converts Z-Power into crystals that upgrade Decidueye's Spirit Shackle to an exclusive Z-Move.,/itemdex/sprites/decidiumz.png
+deep_sea_scale,An item to be held by Clamperl. This scale shines with a faint pink and raises the holder's Sp. Def stat.,/itemdex/sprites/deepseascale.png
+deep_sea_tooth,An item to be held by Clamperl. This fang gleams a sharp silver and raises the holder's Sp. Atk stat.,/itemdex/sprites/deepseatooth.png
+destiny_knot,"An item to be held by a Pokémon. If the holder becomes infatuated, the opposing Pokémon will be, too.",/itemdex/sprites/destinyknot.png
+douse_drive,A cassette to be held by Genesect. It changes Genesect's Techno Blast move so it becomes Water type.,/itemdex/sprites/dousedrive.png
+draco_plate,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Dragon-type moves.,/itemdex/sprites/dracoplate.png
+dragon_fang,An item to be held by a Pokémon. This hard and sharp fang boosts the power of Dragon-type moves.,/itemdex/sprites/dragonfang.png
+dragon_gem,"A gem with a draconic essence. When held, it strengthens the power of a Dragon-type move one time.",/itemdex/sprites/dragongem.png
+dragon_memory,A memory disc that contains Dragon-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/dragonmemory.png
+dragonium_z,It converts Z-Power into crystals that upgrade Dragon-type moves to Dragon-type Z-Moves.,/itemdex/sprites/dragoniumz.png
+dread_plate,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Dark-type moves.,/itemdex/sprites/dreadplate.png
+dubious_disc,A transparent device overflowing with dubious data. Its producer is unknown.,/itemdex/sprites/dubiousdisc.png
+earth_plate,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Ground-type moves.,/itemdex/sprites/earthplate.png
+eevium_z,It converts Z-Power into crystals that upgrade Eevee's Last Resort to an exclusive Z-Move.,/itemdex/sprites/eeviumz.png
+eject_button,"An item to be held by a Pokémon. If the holder is hit by an attack, it will be switched out of battle.",/itemdex/sprites/ejectbutton.png
+eject_pack,"An item to be held by a Pokémon. When the holder's stats are lowered, it will be switched out of battle.",/itemdex/sprites/ejectpack.png
+electirizer,A box packed with a tremendous amount of electric energy. It's loved by a certain Pokémon.,/itemdex/sprites/electirizer.png
+electric_gem,"A gem with an essence of electricity. When held, it strengthens the power of an Electric-type move one time.",/itemdex/sprites/electricgem.png
+electric_memory,A memory disc that contains Electric-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/electricmemory.png
+electric_seed,An item to be held by a Pokémon. It boosts Defense on Electric Terrain. It can only be used once.,/itemdex/sprites/electricseed.png
+electrium_z,It converts Z-Power into crystals that upgrade Electric-type moves to Electric-type Z-Moves.,/itemdex/sprites/electriumz.png
+everstone,An item to be held by a Pokémon. A Pokémon holding this peculiar stone is prevented from evolving.,/itemdex/sprites/everstone.png
+eviolite,"A mysterious evolutionary lump. When held by a Pokémon that can still evolve, it raises both Defense and Sp. Def.",/itemdex/sprites/eviolite.png
+exp_share,Turning on this special device will allow all the Pokémon on your team to receive Exp. Points from battles.,/itemdex/sprites/exp.share.png
+expert_belt,An item to be held by a Pokémon. It's a well-worn belt that slightly boosts the power of supereffective moves.,/itemdex/sprites/expertbelt.png
+fairium_z,It converts Z-Power into crystals that upgrade Fairy-type moves to Fairy-type Z-Moves.,/itemdex/sprites/fairiumz.png
+fairy_gem,"A gem with an essence of the fey. When held, it strengthens the power of a Fairy-type move one time.",/itemdex/sprites/fairygem.png
+fairy_memory,A memory disc that contains Fairy-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/fairymemory.png
+fighting_gem,"A gem with an essence of combat. When held, it strengthens the power of a Fighting-type move one time.",/itemdex/sprites/fightinggem.png
+fighting_memory,A memory disc that contains Fighting-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/fightingmemory.png
+fightinium_z,It converts Z-Power into crystals that upgrade Fighting-type moves to Fighting-type Z-Moves.,/itemdex/sprites/fightiniumz.png
+fire_gem,"A gem with an essence of fire. When held, it strengthens the power of a Fire-type move one time.",/itemdex/sprites/firegem.png
+fire_memory,A memory disc that contains Fire-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/firememory.png
+firium_z,It converts Z-Power into crystals that upgrade Fire-type moves to Fire-type Z-Moves.,/itemdex/sprites/firiumz.png
+fist_plate,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Fighting-type moves.,/itemdex/sprites/fistplate.png
+flame_orb,An item to be held by a Pokémon. It's a bizarre orb that will afflict the holder with a burn during battle.,/itemdex/sprites/flameorb.png
+flame_plate,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Fire-type moves.,/itemdex/sprites/flameplate.png
+float_stone,An item to be held by a Pokémon. This very light stone reduces the weight of a Pokémon when held.,/itemdex/sprites/floatstone.png
+flower_sweet,"A flower-shaped sweet. When a Milcery holds this, it spins around happily.",/itemdex/sprites/flowersweet.png
+flying_gem,"A gem with an essence of air. When held, it strengthens the power of a Flying-type move one time.",/itemdex/sprites/flyinggem.png
+flying_memory,A memory disc that contains Flying-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/flyingmemory.png
+flyinium_z,It converts Z-Power into crystals that upgrade Flying-type moves to Flying-type Z-Moves.,/itemdex/sprites/flyiniumz.png
+focus_band,"An item to be held by a Pokémon. The holder may endure a potential KO attack, leaving it with just 1 HP.",/itemdex/sprites/focusband.png
+focus_sash,"An item to be held by a Pokémon. If the holder has full HP, it will endure a potential KO attack with 1 HP. The item then disappears.",/itemdex/sprites/focussash.png
+full_incense,An item to be held by a Pokémon. This exotic-smelling incense makes the holder bloated and slow moving.,/itemdex/sprites/fullincense.png
+ghost_gem,"A gem with a spectral essence. When held, it strengthens the power of a Ghost-type move one time.",/itemdex/sprites/ghostgem.png
+ghost_memory,A memory disc that contains Ghost-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/ghostmemory.png
+ghostium_z,It converts Z-Power into crystals that upgrade Ghost-type moves to Ghost-type Z-Moves.,/itemdex/sprites/ghostiumz.png
+grass_gem,"A gem with an essence of nature. When held, it strengthens the power of a Grass-type move one time.",/itemdex/sprites/grassgem.png
+grass_memory,A memory disc that contains Grass-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/grassmemory.png
+grassium_z,It converts Z-Power into crystals that upgrade Grass-type moves to Grass-type Z-Moves.,/itemdex/sprites/grassiumz.png
+grassy_seed,An item to be held by a Pokémon. It boosts Defense on Grassy Terrain. It can only be used once.,/itemdex/sprites/grassyseed.png
+green_scarf,"An item to be held by a Pokémon. During a contest, it raises the Clever aspect of the Pokémon holding it.",/itemdex/sprites/greenscarf.png
+grip_claw,"An item to be held by a Pokémon. It extends the duration of multi-turn attacks, such as Bind and Wrap.",/itemdex/sprites/gripclaw.png
+griseous_orb,A glowing orb to be held by Giratina. It boosts the power of Dragon- and Ghost-type moves when it is held.,/itemdex/sprites/griseousorb.png
+ground_gem,"A gem with an essence of land. When held, it strengthens the power of a Ground-type move one time.",/itemdex/sprites/groundgem.png
+ground_memory,A memory disc that contains Ground-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/groundmemory.png
+groundium_z,It converts Z-Power into crystals that upgrade Ground-type moves to Ground-type Z-Moves.,/itemdex/sprites/groundiumz.png
+hard_stone,An item to be held by a Pokémon. It's a durable stone that boosts the power of Rock-type moves.,/itemdex/sprites/hardstone.png
+heat_rock,An item to be held by a Pokémon. It extends the duration of the move Sunny Day when used by the holder.,/itemdex/sprites/heatrock.png
+heavy_duty_boots,These boots prevent the effects of traps set on the battlefield.,/itemdex/sprites/heavy-dutyboots.png
+ice_gem,"A gem with an essence of ice. When held, it strengthens the power of an Ice-type move one time.",/itemdex/sprites/icegem.png
+ice_memory,A memory disc that contains Ice-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/icememory.png
+icicle_plate,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Ice-type moves.,/itemdex/sprites/icicleplate.png
+icium_z,It converts Z-Power into crystals that upgrade Ice-type moves to Ice-type Z-Moves.,/itemdex/sprites/iciumz.png
+icy_rock,An item to be held by a Pokémon. It extends the duration of the move Hail when used by the holder.,/itemdex/sprites/icyrock.png
+incinium_z,It converts Z-Power into crystals that upgrade Incineroar's Darkest Lariat to an exclusive Z-Move.,/itemdex/sprites/inciniumz.png
+insect_plate,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Bug-type moves.,/itemdex/sprites/insectplate.png
+iron_ball,An item to be held by a Pokémon. It lowers Speed and allows Ground-type moves to hit Flying types and holders that are levitating.,/itemdex/sprites/ironball.png
+iron_plate,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Steel-type moves.,/itemdex/sprites/ironplate.png
+kings_rock,"An item to be held by a Pokémon. When the holder successfully inflicts damage, the target may also flinch.",/itemdex/sprites/king'srock.png
+kommonium_z,It converts Z-Power into crystals that upgrade Kommo-o's Clanging Scales to an exclusive Z-Move.,/itemdex/sprites/kommoniumz.png
+lagging_tail,An item to be held by a Pokémon. It is tremendously heavy and makes the holder move slower than usual.,/itemdex/sprites/laggingtail.png
+lax_incense,An item to be held by a Pokémon. The beguiling aroma of this incense may cause attacks to miss its holder.,/itemdex/sprites/laxincense.png
+leek,An item to be held by Farfetch'd. This very long and stiff stalk of leek boosts its critical-hit ratio.,/itemdex/sprites/leek.png
+leftovers,An item to be held by a Pokémon. The holder's HP is slowly but steadily restored throughout every battle.,/itemdex/sprites/leftovers.png
+life_orb,An item to be held by a Pokémon. It boosts the power of moves but at the cost of some HP on each hit.,/itemdex/sprites/lifeorb.png
+light_ball,An item to be held by Pikachu. It's a puzzling orb that boosts its Attack and Sp. Atk stats.,/itemdex/sprites/lightball.png
+light_clay,An item to be held by a Pokémon. Protective moves like Light Screen and Reflect will be effective longer.,/itemdex/sprites/lightclay.png
+love_sweet,"A heart-shaped sweet. When a Milcery holds this, it spins around happily.",/itemdex/sprites/lovesweet.png
+luck_incense,An item to be held by a Pokémon. It doubles any prize money received if the holding Pokémon joins a battle.,/itemdex/sprites/luckincense.png
+lucky_egg,An item to be held by a Pokémon. It's an egg filled with happiness that earns the holder extra Exp. Points in battle.,/itemdex/sprites/luckyegg.png
+lucky_punch,An item to be held by Chansey. This pair of lucky boxing gloves will boost Chansey's critical-hit ratio.,/itemdex/sprites/luckypunch.png
+luminous_moss,An item to be held by a Pokémon. It boosts Sp. Def if the holder is hit with a Water-type attack. It can only be used once.,/itemdex/sprites/luminousmoss.png
+lunalium_z,It converts Z-Power into crystals that upgrade Lunala's Moongeist Beam to an exclusive Z-Move.,/itemdex/sprites/lunaliumz.png
+lustrous_orb,A beautifully glowing orb to be held by Palkia. It boosts the power of Dragon- and Water-type moves when it is held.,/itemdex/sprites/lustrousorb.png
+lycanium_z,It converts Z-Power into crystals that upgrade Lycanroc's Stone Edge to an exclusive Z-Move.,/itemdex/sprites/lycaniumz.png
+macho_brace,"An item to be held by a Pokémon. This stiff, heavy brace helps Pokémon grow strong but cuts Speed in battle.",/itemdex/sprites/machobrace.png
+magmarizer,A box packed with a tremendous amount of magma energy. It's loved by a certain Pokémon.,/itemdex/sprites/magmarizer.png
+magnet,An item to be held by a Pokémon. It's a powerful magnet that boosts the power of Electric-type moves.,/itemdex/sprites/magnet.png
+marshadium_z,It converts Z-Power into crystals that upgrade Marshadow's Spectral Thief to an exclusive Z-Move.,/itemdex/sprites/marshadiumz.png
+meadow_plate,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Grass-type moves.,/itemdex/sprites/meadowplate.png
+mental_herb,An item to be held by a Pokémon. The holder shakes off move-binding effects to move freely. It can be used only once.,/itemdex/sprites/mentalherb.png
+metal_coat,An item to be held by a Pokémon. It's a special metallic film that can boost the power of Steel-type moves.,/itemdex/sprites/metalcoat.png
+metal_powder,"An item to be held by Ditto. Extremely fine yet hard, this odd powder boosts the Defense stat.",/itemdex/sprites/metalpowder.png
+metronome_item,An item to be held by a Pokémon. It boosts moves used consecutively but only until a different move is used.,/itemdex/sprites/metronome.png
+mewnium_z,It converts Z-Power into crystals that upgrade Mew's Psychic to an exclusive Z-Move.,/itemdex/sprites/mewniumz.png
+mimikium_z,It converts Z-Power into crystals that upgrade Mimikyu's Play Rough to an exclusive Z-Move.,/itemdex/sprites/mimikiumz.png
+mind_plate,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Psychic-type moves.,/itemdex/sprites/mindplate.png
+miracle_seed,An item to be held by a Pokémon. It's a seed imbued with life-force that boosts the power of Grass-type moves.,/itemdex/sprites/miracleseed.png
+misty_seed,An item to be held by a Pokémon. It boosts Sp. Def on Misty Terrain. It can only be used once.,/itemdex/sprites/mistyseed.png
+muscle_band,"An item to be held by a Pokémon. This headband exudes strength, slightly boosting the power of physical moves.",/itemdex/sprites/muscleband.png
+mystic_water,An item to be held by a Pokémon. This teardrop-shaped gem boosts the power of Water-type moves.,/itemdex/sprites/mysticwater.png
+never_melt_ice,An item to be held by a Pokémon. It's a heat- repelling piece of ice that boosts the power of Ice-type moves.,/itemdex/sprites/never-meltice.png
+normal_gem,"A gem with an ordinary essence. When held, it strengthens the power of a Normal-type move one time.",/itemdex/sprites/normalgem.png
+normalium_z,It converts Z-Power into crystals that upgrade Normal-type moves to Normal-type Z-Moves.,/itemdex/sprites/normaliumz.png
+odd_incense,An item to be held by a Pokémon. This exotic-smelling incense boosts the power of Psychic-type moves.,/itemdex/sprites/oddincense.png
+pikanium_z,It converts Z-Power into crystals that upgrade Pikachu's Volt Tackle to an exclusive Z-Move.,/itemdex/sprites/pikaniumz.png
+pikashunium_z,This is a crystallized form of Z-Power. It upgrades a Thunderbolt by Pikachu in a cap to a Z-Move.,/itemdex/sprites/pikashuniumz.png
+pink_bow,Powers up normal-type moves.,
+pink_scarf,"An item to be held by a Pokémon. During a contest, it raises the Cute aspect of the Pokémon holding it.",/itemdex/sprites/pinkscarf.png
+pixie_plate,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Fairy-type moves.,/itemdex/sprites/pixieplate.png
+poison_barb,"An item to be held by a Pokémon. This small, poisonous barb boosts the power of Poison-type moves.",/itemdex/sprites/poisonbarb.png
+poison_gem,"A gem with an essence of poison. When held, it strengthens the power of a Poison-type move one time.",/itemdex/sprites/poisongem.png
+poison_memory,A memory disc that contains Poison-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/poisonmemory.png
+poisonium_z,It converts Z-Power into crystals that upgrade Poison-type moves to Poison-type Z-Moves.,/itemdex/sprites/poisoniumz.png
+polkadot_bow,Powers up normal-type moves.,
+power_anklet,An item to be held by a Pokémon. It reduces Speed but allows the holder's Speed stat to grow more after battling.,/itemdex/sprites/poweranklet.png
+power_band,An item to be held by a Pokémon. It reduces Speed but allows the holder's Sp. Def stat to grow more after battling.,/itemdex/sprites/powerband.png
+power_belt,An item to be held by a Pokémon. It reduces Speed but allows the holder's Defense stat to grow more after battling.,/itemdex/sprites/powerbelt.png
+power_bracer,An item to be held by a Pokémon. It reduces Speed but allows the holder's Attack stat to grow more after battling.,/itemdex/sprites/powerbracer.png
+power_herb,A single-use item to be held by a Pokémon. It allows the holder to immediately use a move that normally requires a turn to charge.,/itemdex/sprites/powerherb.png
+power_lens,An item to be held by a Pokémon. It reduces Speed but allows the holder's Sp. Atk stat to grow more after battling.,/itemdex/sprites/powerlens.png
+power_weight,An item to be held by a Pokémon. It reduces Speed but allows the holder's max HP to grow more after battling.,/itemdex/sprites/powerweight.png
+primarium_z,It converts Z-Power into crystals that upgrade Primarina's Sparkling Aria to an exclusive Z-Move.,/itemdex/sprites/primariumz.png
+protective_pads,An item to be held by a Pokémon. These pads protect the holder from effects caused by making direct contact with the target.,/itemdex/sprites/protectivepads.png
+protector,A protective item of some sort. It is extremely stiff and heavy. It's loved by a certain Pokémon.,/itemdex/sprites/protector.png
+psychic_gem,"A gem with an essence of the mind. When held, it strengthens the power of a Psychic-type move one time.",/itemdex/sprites/psychicgem.png
+psychic_memory,A memory disc that contains Psychic-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/psychicmemory.png
+psychic_seed,An item to be held by a Pokémon. It boosts Sp. Def on Psychic Terrain. It can only be used once.,/itemdex/sprites/psychicseed.png
+psychium_z,It converts Z-Power into crystals that upgrade Psychic-type moves to Psychic-type Z-Moves.,/itemdex/sprites/psychiumz.png
+pure_incense,An item to be held by a Pokémon. It helps keep wild Pokémon away if the holder is the head of the party.,/itemdex/sprites/pureincense.png
+quick_claw,"An item to be held by a Pokémon. This light, sharp claw lets the bearer move first occasionally.",/itemdex/sprites/quickclaw.png
+quick_powder,"An item to be held by Ditto. Extremely fine yet hard, this odd powder boosts the Speed stat.",/itemdex/sprites/quickpowder.png
+razor_claw,An item to be held by a Pokémon. This sharply hooked claw increases the holder's critical-hit ratio.,/itemdex/sprites/razorclaw.png
+razor_fang,"An item to be held by a Pokémon. When the holder successfully inflicts damage, the target may also flinch.",/itemdex/sprites/razorfang.png
+reaper_cloth,A cloth imbued with horrifyingly strong spiritual energy. It's loved by a certain Pokémon.,/itemdex/sprites/reapercloth.png
+red_card,"An item to be held by a Pokémon. When the holder is hit by an attack, the attacker is removed from battle.",/itemdex/sprites/redcard.png
+red_orb,A shiny red orb that is said to have a legend tied to it. It's known to have a deep connection with the Hoenn region.,/itemdex/sprites/redorb.png
+red_scarf,"An item to be held by a Pokémon. During a contest, it raises the Cool aspect of the Pokémon holding it.",/itemdex/sprites/redscarf.png
+ribbon_sweet,"A ribbon-shaped sweet. When a Milcery holds this, it spins around happily.",/itemdex/sprites/ribbonsweet.png
+ring_target,An item to be held by a Pokémon. Moves that normally have no effect will land on a Pokémon holding it.,/itemdex/sprites/ringtarget.png
+rock_gem,"A gem with an essence of rock. When held, it strengthens the power of a Rock-type move one time.",/itemdex/sprites/rockgem.png
+rock_incense,An item to be held by a Pokémon. This exotic-smelling incense boosts the power of Rock-type moves.,/itemdex/sprites/rockincense.png
+rock_memory,A memory disc that contains Rock-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/rockmemory.png
+rockium_z,It converts Z-Power into crystals that upgrade Rock-type moves to Rock-type Z-Moves.,/itemdex/sprites/rockiumz.png
+rocky_helmet,"An item to be held by a Pokémon. If the holder is hit, the attacker will also be damaged upon contact.",/itemdex/sprites/rockyhelmet.png
+room_service,An item to be held by a Pokémon. Lowers Speed when Trick Room takes effect.,/itemdex/sprites/roomservice.png
+rose_incense,An item to be held by a Pokémon. This exotic-smelling incense boosts the power of Grass-type moves.,/itemdex/sprites/roseincense.png
+rusted_shield,It is said that a hero used this shield to halt a terrible disaster in ancient times. But it's grown rusty and worn.,/itemdex/sprites/rustedshield.png
+rusted_sword,It is said that a hero used this sword to halt a terrible disaster in ancient times. But it's grown rusty and worn.,/itemdex/sprites/rustedsword.png
+safety_goggles,An item to be held by a Pokémon. These goggles protect the holder from both weather-related damage and powder.,/itemdex/sprites/safetygoggles.png
+scope_lens,An item to be held by a Pokémon. It's a lens for scoping out weak points. It boosts the holder's critical-hit ratio.,/itemdex/sprites/scopelens.png
+sea_incense,An item to be held by a Pokémon. This incense has a curious aroma that boosts the power of Water-type moves.,/itemdex/sprites/seaincense.png
+sharp_beak,"An item to be held by a Pokémon. It's a long, sharp beak that boosts the power of Flying-type moves.",/itemdex/sprites/sharpbeak.png
+shed_shell,An item to be held by a Pokémon. This discarded carapace enables the holder to switch out of battle without fail.,/itemdex/sprites/shedshell.png
+shell_bell,An item to be held by a Pokémon. The holder restores a little HP every time it inflicts damage on others.,/itemdex/sprites/shellbell.png
+shock_drive,A cassette to be held by Genesect. It changes Genesect's Techno Blast move so it becomes Electric type.,/itemdex/sprites/shockdrive.png
+silk_scarf,An item to be held by a Pokémon. It's a sumptuous scarf that boosts the power of Normal-type moves.,/itemdex/sprites/silkscarf.png
+silver_powder,An item to be held by a Pokémon. It's a shiny silver powder that will boost the power of Bug-type moves.,/itemdex/sprites/silverpowder.png
+sky_plate,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Flying-type moves.,/itemdex/sprites/skyplate.png
+smoke_ball,An item to be held by a Pokémon. It enables the holder to flee from any wild Pokémon encounter without fail.,/itemdex/sprites/smokeball.png
+smooth_rock,An item to be held by a Pokémon. It extends the duration of the move Sandstorm when used by the holder.,/itemdex/sprites/smoothrock.png
+snorlium_z,It converts Z-Power into crystals that upgrade Snorlax's Giga Impact to an exclusive Z-Move.,/itemdex/sprites/snorliumz.png
+snowball,An item to be held by a Pokémon. It boosts Attack if the holder is hit with an Ice-type attack. It can only be used once.,/itemdex/sprites/snowball.png
+soft_sand,"An item to be held by a Pokémon. It's a loose, silky sand that boosts the power of Ground-type moves.",/itemdex/sprites/softsand.png
+solganium_z,It converts Z-Power into crystals that upgrade Solgaleo's Sunsteel Strike to an exclusive Z-Move.,/itemdex/sprites/solganiumz.png
+soothe_bell,"An item to be held by a Pokémon. The comforting chime of this bell calms the holder, making it friendly.",/itemdex/sprites/soothebell.png
+soul_dew,A wondrous orb to be held by either Latios or Latias. It raises the power of Psychic- and Dragon-type moves.,/itemdex/sprites/souldew.png
+spell_tag,"An item to be held by a Pokémon. It's a sinister, eerie tag that boosts the power of Ghost-type moves.",/itemdex/sprites/spelltag.png
+splash_plate,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Water-type moves.,/itemdex/sprites/splashplate.png
+spooky_plate,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Ghost-type moves.,/itemdex/sprites/spookyplate.png
+star_sweet,"A star-shaped sweet. When a Milcery holds this, it spins around happily.",/itemdex/sprites/starsweet.png
+steel_gem,"A gem with an essence of steel. When held, it strengthens the power of a Steel-type move one time.",/itemdex/sprites/steelgem.png
+steel_memory,A memory disc that contains Steel-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/steelmemory.png
+steelium_z,It converts Z-Power into crystals that upgrade Steel-type moves to Steel-type Z-Moves.,/itemdex/sprites/steeliumz.png
+sticky_barb,An item to be held by a Pokémon. It damages the holder every turn and may latch on to Pokémon that touch the holder.,/itemdex/sprites/stickybarb.png
+stone_plate,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Rock-type moves.,/itemdex/sprites/stoneplate.png
+strawberry_sweet,"A strawberry-shaped sweet. When a Milcery holds this, it will spin around happily.",/itemdex/sprites/strawberrysweet.png
+tapunium_z,It converts Z-Power into crystals that upgrade the tapu's Nature's Madness to an exclusive Z-Move.,/itemdex/sprites/tapuniumz.png
+terrain_extender,An item to be held by a Pokémon. It extends the duration of the terrain caused by the holder's move or Ability.,/itemdex/sprites/terrainextender.png
+thick_club,An item to be held by Cubone or Marowak. It's a hard bone of some sort that boosts the Attack stat.,/itemdex/sprites/thickclub.png
+throat_spray,Raises Sp. Atk when a Pokémon uses a sound-based move.,/itemdex/sprites/throatspray.png
+toxic_orb,An item to be held by a Pokémon. It's a bizarre orb that will badly poison the holder during battle.,/itemdex/sprites/toxicorb.png
+toxic_plate,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Poison-type moves.,/itemdex/sprites/toxicplate.png
+twisted_spoon,An item to be held by a Pokémon. This spoon is imbued with telekinetic power and boosts Psychic-type moves.,/itemdex/sprites/twistedspoon.png
+ultranecrozium_z,It's a crystal that turns Necrozma fused with Solgaleo or Lunala into a new form.,/itemdex/sprites/ultranecroziumz.png
+utility_umbrella,An item to be held by a Pokémon. This sturdy umbrella protects the holder from the effects of weather.,/itemdex/sprites/utilityumbrella.png
+water_gem,"A gem with an essence of water. When held, it strengthens the power of a Water-type move one time.",/itemdex/sprites/watergem.png
+water_memory,A memory disc that contains Water-type data. It changes the type of the holder if held by a certain species of Pokémon.,/itemdex/sprites/watermemory.png
+waterium_z,It converts Z-Power into crystals that upgrade Water-type moves to Water-type Z-Moves.,/itemdex/sprites/wateriumz.png
+wave_incense,An item to be held by a Pokémon. This incense has a curious aroma that boosts the power of Water-type moves.,/itemdex/sprites/waveincense.png
+weakness_policy,An item to be held by a Pokémon. Attack and Sp. Atk sharply increase if the holder is hit with a move it's weak to.,/itemdex/sprites/weaknesspolicy.png
+white_herb,An item to be held by a Pokémon. It will restore any lowered stat in battle. It can be used only once.,/itemdex/sprites/whiteherb.png
+wide_lens,An item to be held by a Pokémon. It's a magnifying lens that slightly boosts the accuracy of moves.,/itemdex/sprites/widelens.png
+wise_glasses,An item to be held by a Pokémon. This thick pair of glasses slightly boosts the power of special moves.,/itemdex/sprites/wiseglasses.png
+yellow_scarf,"An item to be held by a Pokémon. During a contest, it raises the Tough aspect of the Pokémon holding it.",/itemdex/sprites/yellowscarf.png
+zap_plate,An item to be held by a Pokémon. It's a stone tablet that boosts the power of Electric-type moves.,/itemdex/sprites/zapplate.png
+zoom_lens,"An item to be held by a Pokémon. If the holder moves after its target moves, its accuracy will be boosted.",/itemdex/sprites/zoomlens.png
 aguav_berry,berry,"If held by a Pokémon, it restores the user's HP in a pinch, but it will cause confusion if the user hates the taste.",/itemdex/sprites/aguavberry.png
 apicot_berry,berry,"A Berry to be consumed by Pokémon. If a Pokémon holds one, its Sp. Def stat will increase when it's in a pinch.",/itemdex/sprites/apicotberry.png
 aspear_berry,berry,"A Berry to be consumed by Pokémon. If a Pokémon holds one, it can recover from being frozen on its own in battle.",/itemdex/sprites/aspearberry.png

@@ -735,7 +735,7 @@ const getValuesForTable = (
     /*
       MOVE JUNCTION TABLES
     */
-    case 'pmove_has_ptype':
+    case 'pmove_ptype':
       /*
         Need (
           pmove_generation_id,

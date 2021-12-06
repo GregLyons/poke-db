@@ -59,7 +59,7 @@ Gen,Number,Berry Name,Description
 3,58*,lansat_berry,Raises critical hit ratio when HP falls below 25%.
 3,59*,starf_berry,Sharply raises a random stat when HP falls below 25%.
 3,60*,enigma_berry,(placeholder for e-Reader Berries)RS.Restores 25% HP when hit with a super effective moveGen. IV+.
-4,61,micle_berry,Makes next move bypass accuracy checksGen. IV/multiplies its accuracy by ~20% (4915/4096)Gen. V+ when HP falls below 25%.
+4,61,micle_berry,Causes next move to bypass accuracy checksGen. IV/raises accuracy of next move by ~20%Gen. V+ when HP falls below 25%.
 4,62,custap_berry,Causes next move to go first in its priority bracket when HP falls below 25%.
 4,63,jaboca_berry,Damages attacker for 12.5% HP when hit with a physical move.
 4,64,rowap_berry,Damages attacker for 12.5% HP when hit with a special move.

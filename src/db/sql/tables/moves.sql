@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS pmove_has_ptype (
+CREATE TABLE IF NOT EXISTS pmove_ptype (
   pmove_generation_id TINYINT UNSIGNED NOT NULL,
   pmove_id SMALLINT UNSIGNED NOT NULL,
   ptype_generation_id TINYINT UNSIGNED NOT NULL,

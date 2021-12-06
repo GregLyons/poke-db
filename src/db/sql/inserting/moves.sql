@@ -1,4 +1,4 @@
-INSERT INTO pmove_has_ptype (
+INSERT INTO pmove_ptype (
   pmove_generation_id,
   pmove_id,
   ptype_generation_id,

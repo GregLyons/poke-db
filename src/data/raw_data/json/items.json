@@ -1,6 +1,6 @@
 {
   "absorb_bulb": {
-    "item_type": "",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
@@ -18,7 +18,7 @@
     "formatted_name": "Absorb Bulb"
   },
   "adamant_orb": {
-    "item_type": "type_enhancer_specific",
+    "item_class": "enhancer",
     "pokemon_specific": {
       "dialga": [[true, 4]]
     },
@@ -39,7 +39,7 @@
     "formatted_name": "Adamant Orb"
   },
   "air_balloon": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
@@ -57,7 +57,7 @@
     "formatted_name": "Air Balloon"
   },
   "aloraichium_z": {
-    "item_type": "z_crystal_specific",
+    "item_class": "z_crystal",
     "pokemon_specific": {
       "raichu_alola": [[true, 7]]
     },
@@ -75,7 +75,7 @@
     "formatted_name": "Aloraichium Z"
   },
   "amulet_coin": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
@@ -91,7 +91,7 @@
     "formatted_name": "Amulet Coin"
   },
   "assault_vest": {
-    "item_type": "stat_enhancer",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 6,
     "gen2_exclusive": false,
@@ -110,7 +110,7 @@
     "formatted_name": "Assault Vest"
   },
   "berry_sweet": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 8,
     "gen2_exclusive": false,
@@ -126,7 +126,7 @@
     "formatted_name": "Berry Sweet"
   },
   "berserk_gene": {
-    "item_type": "",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": true,
@@ -144,7 +144,7 @@
     "formatted_name": "Berserk Gene"
   },
   "big_root": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -162,7 +162,7 @@
     "formatted_name": "Big Root"
   },
   "binding_band": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
@@ -180,7 +180,7 @@
     "formatted_name": "Binding Band"
   },
   "black_belt": {
-    "item_type": "type_enhancer",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
@@ -198,7 +198,7 @@
     "formatted_name": "Black Belt"
   },
   "black_glasses": {
-    "item_type": "type_enhancer",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
@@ -216,7 +216,7 @@
     "formatted_name": "Black Glasses"
   },
   "black_sludge": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -235,7 +235,7 @@
     "formatted_name": "Black Sludge"
   },
   "blue_orb": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {
       "kyogre": [[true, 6]]
     },
@@ -253,7 +253,7 @@
     "formatted_name": "Blue Orb"
   },
   "blue_scarf": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -269,7 +269,7 @@
     "formatted_name": "Blue Scarf"
   },
   "blunder_policy": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 8,
     "gen2_exclusive": false,
@@ -287,7 +287,7 @@
     "formatted_name": "Blunder Policy"
   },
   "bright_powder": {
-    "item_type": "",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
@@ -306,7 +306,7 @@
     "formatted_name": "Bright Powder"
   },
   "bug_gem": {
-    "item_type": "gem",
+    "item_class": "gem",
     "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
@@ -324,7 +324,7 @@
     "formatted_name": "Bug Gem"
   },
   "bug_memory": {
-    "item_type": "memory",
+    "item_class": "memory",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -343,7 +343,7 @@
     "formatted_name": "Bug Memory"
   },
   "buginium_z": {
-    "item_type": "z_crystal",
+    "item_class": "z_crystal",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -359,7 +359,7 @@
     "formatted_name": "Buginium Z"
   },
   "burn_drive": {
-    "item_type": "drive",
+    "item_class": "drive",
     "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
@@ -377,7 +377,7 @@
     "formatted_name": "Burn Drive"
   },
   "cell_battery": {
-    "item_type": "",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
@@ -395,7 +395,7 @@
     "formatted_name": "Cell Battery"
   },
   "charcoal": {
-    "item_type": "type_enhancer",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
@@ -413,7 +413,7 @@
     "formatted_name": "Charcoal"
   },
   "chill_drive": {
-    "item_type": "drive",
+    "item_class": "drive",
     "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
@@ -431,7 +431,7 @@
     "formatted_name": "Chill Drive"
   },
   "choice_band": {
-    "item_type": "choice",
+    "item_class": "choice",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -450,7 +450,7 @@
     "formatted_name": "Choice Band"
   },
   "choice_scarf": {
-    "item_type": "choice",
+    "item_class": "choice",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -469,7 +469,7 @@
     "formatted_name": "Choice Scarf"
   },
   "choice_specs": {
-    "item_type": "choice",
+    "item_class": "choice",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -488,7 +488,7 @@
     "formatted_name": "Choice Specs"
   },
   "cleanse_tag": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -504,7 +504,7 @@
     "formatted_name": "Cleanse Tag"
   },
   "clover_sweet": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 8,
     "gen2_exclusive": false,
@@ -520,7 +520,7 @@
     "formatted_name": "Clover Sweet"
   },
   "damp_rock": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -538,7 +538,7 @@
     "formatted_name": "Damp Rock"
   },
   "dark_gem": {
-    "item_type": "gem",
+    "item_class": "gem",
     "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
@@ -556,7 +556,7 @@
     "formatted_name": "Dark Gem"
   },
   "dark_memory": {
-    "item_type": "memory",
+    "item_class": "memory",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -575,7 +575,7 @@
     "formatted_name": "Dark Memory"
   },
   "darkinium_z": {
-    "item_type": "z_crystal",
+    "item_class": "z_crystal",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -591,7 +591,7 @@
     "formatted_name": "Darkinium Z"
   },
   "decidium_z": {
-    "item_type": "z_crystal_specific",
+    "item_class": "z_crystal",
     "pokemon_specific": {
       "decidueye": [[true, 7]]
     },
@@ -609,7 +609,7 @@
     "formatted_name": "Decidium Z"
   },
   "deep_sea_scale": {
-    "item_type": "stat_enhancer_specific",
+    "item_class": "enhancer",
     "pokemon_specific": {
       "clamperl": [[true, 3]]
     },
@@ -632,7 +632,7 @@
     "formatted_name": "Deep Sea Scale"
   },
   "deep_sea_tooth": {
-    "item_type": "stat_enhancer_specific",
+    "item_class": "enhancer",
     "pokemon_specific": {
       "clamperl": [[true, 3]]
     },
@@ -655,7 +655,7 @@
     "formatted_name": "Deep Sea Tooth"
   },
   "destiny_knot": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -673,7 +673,7 @@
     "formatted_name": "Destiny Knot"
   },
   "douse_drive": {
-    "item_type": "drive",
+    "item_class": "drive",
     "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
@@ -691,7 +691,7 @@
     "formatted_name": "Douse Drive"
   },
   "draco_plate": {
-    "item_type": "plate",
+    "item_class": "plate",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -712,7 +712,7 @@
     "formatted_name": "Draco Plate"
   },
   "dragon_fang": {
-    "item_type": "type_enhancer",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
@@ -730,7 +730,7 @@
     "formatted_name": "Dragon Fang"
   },
   "dragon_gem": {
-    "item_type": "gem",
+    "item_class": "gem",
     "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
@@ -748,7 +748,7 @@
     "formatted_name": "Dragon Gem"
   },
   "dragon_memory": {
-    "item_type": "memory",
+    "item_class": "memory",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -767,7 +767,7 @@
     "formatted_name": "Dragon Memory"
   },
   "dragonium_z": {
-    "item_type": "z_crystal",
+    "item_class": "z_crystal",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -783,7 +783,7 @@
     "formatted_name": "Dragonium Z"
   },
   "dread_plate": {
-    "item_type": "plate",
+    "item_class": "plate",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -804,7 +804,7 @@
     "formatted_name": "Dread Plate"
   },
   "dubious_disc": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -820,7 +820,7 @@
     "formatted_name": "Dubious Disc"
   },
   "earth_plate": {
-    "item_type": "plate",
+    "item_class": "plate",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -841,7 +841,7 @@
     "formatted_name": "Earth Plate"
   },
   "eevium_z": {
-    "item_type": "z_crystal_specific",
+    "item_class": "z_crystal",
     "pokemon_specific": {
       "eevee": [[true, 7]]
     },
@@ -859,7 +859,7 @@
     "formatted_name": "Eevium Z"
   },
   "eject_button": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
@@ -877,7 +877,7 @@
     "formatted_name": "Eject Button"
   },
   "eject_pack": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 8,
     "gen2_exclusive": false,
@@ -895,7 +895,7 @@
     "formatted_name": "Eject Pack"
   },
   "electirizer": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -911,7 +911,7 @@
     "formatted_name": "Electirizer"
   },
   "electric_gem": {
-    "item_type": "gem",
+    "item_class": "gem",
     "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
@@ -929,7 +929,7 @@
     "formatted_name": "Electric Gem"
   },
   "electric_memory": {
-    "item_type": "memory",
+    "item_class": "memory",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -948,7 +948,7 @@
     "formatted_name": "Electric Memory"
   },
   "electric_seed": {
-    "item_type": "",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -966,7 +966,7 @@
     "formatted_name": "Electric Seed"
   },
   "electrium_z": {
-    "item_type": "z_crystal",
+    "item_class": "z_crystal",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -982,7 +982,7 @@
     "formatted_name": "Electrium Z"
   },
   "everstone": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
@@ -998,7 +998,7 @@
     "formatted_name": "Everstone"
   },
   "eviolite": {
-    "item_type": "stat_enhancer",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
@@ -1019,7 +1019,7 @@
     "formatted_name": "Eviolite"
   },
   "exp_share": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 1,
     "gen2_exclusive": false,
@@ -1035,7 +1035,7 @@
     "formatted_name": "Exp Share"
   },
   "expert_belt": {
-    "item_type": "",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -1053,7 +1053,7 @@
     "formatted_name": "Expert Belt"
   },
   "fairium_z": {
-    "item_type": "z_crystal",
+    "item_class": "z_crystal",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -1069,7 +1069,7 @@
     "formatted_name": "Fairium Z"
   },
   "fairy_gem": {
-    "item_type": "gem",
+    "item_class": "gem",
     "pokemon_specific": {},
     "gen": 6,
     "gen2_exclusive": false,
@@ -1087,7 +1087,7 @@
     "formatted_name": "Fairy Gem"
   },
   "fairy_memory": {
-    "item_type": "memory",
+    "item_class": "memory",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -1106,7 +1106,7 @@
     "formatted_name": "Fairy Memory"
   },
   "fighting_gem": {
-    "item_type": "gem",
+    "item_class": "gem",
     "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
@@ -1124,7 +1124,7 @@
     "formatted_name": "Fighting Gem"
   },
   "fighting_memory": {
-    "item_type": "memory",
+    "item_class": "memory",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -1143,7 +1143,7 @@
     "formatted_name": "Fighting Memory"
   },
   "fightinium_z": {
-    "item_type": "z_crystal",
+    "item_class": "z_crystal",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -1159,7 +1159,7 @@
     "formatted_name": "Fightinium Z"
   },
   "fire_gem": {
-    "item_type": "gem",
+    "item_class": "gem",
     "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
@@ -1177,7 +1177,7 @@
     "formatted_name": "Fire Gem"
   },
   "fire_memory": {
-    "item_type": "memory",
+    "item_class": "memory",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -1196,7 +1196,7 @@
     "formatted_name": "Fire Memory"
   },
   "firium_z": {
-    "item_type": "z_crystal",
+    "item_class": "z_crystal",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -1212,7 +1212,7 @@
     "formatted_name": "Firium Z"
   },
   "fist_plate": {
-    "item_type": "plate",
+    "item_class": "plate",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -1233,7 +1233,7 @@
     "formatted_name": "Fist Plate"
   },
   "flame_orb": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -1251,7 +1251,7 @@
     "formatted_name": "Flame Orb"
   },
   "flame_plate": {
-    "item_type": "plate",
+    "item_class": "plate",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -1272,7 +1272,7 @@
     "formatted_name": "Flame Plate"
   },
   "float_stone": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
@@ -1290,7 +1290,7 @@
     "formatted_name": "Float Stone"
   },
   "flower_sweet": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 8,
     "gen2_exclusive": false,
@@ -1306,7 +1306,7 @@
     "formatted_name": "Flower Sweet"
   },
   "flying_gem": {
-    "item_type": "gem",
+    "item_class": "gem",
     "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
@@ -1324,7 +1324,7 @@
     "formatted_name": "Flying Gem"
   },
   "flying_memory": {
-    "item_type": "memory",
+    "item_class": "memory",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -1343,7 +1343,7 @@
     "formatted_name": "Flying Memory"
   },
   "flyinium_z": {
-    "item_type": "z_crystal",
+    "item_class": "z_crystal",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -1359,7 +1359,7 @@
     "formatted_name": "Flyinium Z"
   },
   "focus_band": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
@@ -1377,7 +1377,7 @@
     "formatted_name": "Focus Band"
   },
   "focus_sash": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -1395,7 +1395,7 @@
     "formatted_name": "Focus Sash"
   },
   "full_incense": {
-    "item_type": "incense",
+    "item_class": "incense",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -1413,7 +1413,7 @@
     "formatted_name": "Full Incense"
   },
   "ghost_gem": {
-    "item_type": "gem",
+    "item_class": "gem",
     "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
@@ -1431,7 +1431,7 @@
     "formatted_name": "Ghost Gem"
   },
   "ghost_memory": {
-    "item_type": "memory",
+    "item_class": "memory",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -1450,7 +1450,7 @@
     "formatted_name": "Ghost Memory"
   },
   "ghostium_z": {
-    "item_type": "z_crystal",
+    "item_class": "z_crystal",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -1466,7 +1466,7 @@
     "formatted_name": "Ghostium Z"
   },
   "grass_gem": {
-    "item_type": "gem",
+    "item_class": "gem",
     "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
@@ -1484,7 +1484,7 @@
     "formatted_name": "Grass Gem"
   },
   "grass_memory": {
-    "item_type": "memory",
+    "item_class": "memory",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -1503,7 +1503,7 @@
     "formatted_name": "Grass Memory"
   },
   "grassium_z": {
-    "item_type": "z_crystal",
+    "item_class": "z_crystal",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -1519,7 +1519,7 @@
     "formatted_name": "Grassium Z"
   },
   "grassy_seed": {
-    "item_type": "",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -1537,7 +1537,7 @@
     "formatted_name": "Grassy Seed"
   },
   "green_scarf": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -1553,7 +1553,7 @@
     "formatted_name": "Green Scarf"
   },
   "grip_claw": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -1571,7 +1571,7 @@
     "formatted_name": "Grip Claw"
   },
   "griseous_orb": {
-    "item_type": "type_enhancer_specific",
+    "item_class": "enhancer",
     "pokemon_specific": {
       "giratina_origin": [[true, 4]]
     },
@@ -1592,7 +1592,7 @@
     "formatted_name": "Griseous Orb"
   },
   "ground_gem": {
-    "item_type": "gem",
+    "item_class": "gem",
     "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
@@ -1610,7 +1610,7 @@
     "formatted_name": "Ground Gem"
   },
   "ground_memory": {
-    "item_type": "memory",
+    "item_class": "memory",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -1629,7 +1629,7 @@
     "formatted_name": "Ground Memory"
   },
   "groundium_z": {
-    "item_type": "z_crystal",
+    "item_class": "z_crystal",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -1645,7 +1645,7 @@
     "formatted_name": "Groundium Z"
   },
   "hard_stone": {
-    "item_type": "type_enhancer",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
@@ -1663,7 +1663,7 @@
     "formatted_name": "Hard Stone"
   },
   "heat_rock": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -1681,7 +1681,7 @@
     "formatted_name": "Heat Rock"
   },
   "heavy_duty_boots": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 8,
     "gen2_exclusive": false,
@@ -1699,7 +1699,7 @@
     "formatted_name": "Heavy Duty Boots"
   },
   "ice_gem": {
-    "item_type": "gem",
+    "item_class": "gem",
     "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
@@ -1717,7 +1717,7 @@
     "formatted_name": "Ice Gem"
   },
   "ice_memory": {
-    "item_type": "memory",
+    "item_class": "memory",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -1736,7 +1736,7 @@
     "formatted_name": "Ice Memory"
   },
   "icicle_plate": {
-    "item_type": "plate",
+    "item_class": "plate",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -1757,7 +1757,7 @@
     "formatted_name": "Icicle Plate"
   },
   "icium_z": {
-    "item_type": "z_crystal",
+    "item_class": "z_crystal",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -1773,7 +1773,7 @@
     "formatted_name": "Icium Z"
   },
   "icy_rock": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -1791,7 +1791,7 @@
     "formatted_name": "Icy Rock"
   },
   "incinium_z": {
-    "item_type": "z_crystal_specific",
+    "item_class": "z_crystal",
     "pokemon_specific": {
       "incineroar": [[true, 7]]
     },
@@ -1809,7 +1809,7 @@
     "formatted_name": "Incinium Z"
   },
   "insect_plate": {
-    "item_type": "plate",
+    "item_class": "plate",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -1830,7 +1830,7 @@
     "formatted_name": "Insect Plate"
   },
   "iron_ball": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -1851,7 +1851,7 @@
     "formatted_name": "Iron Ball"
   },
   "iron_plate": {
-    "item_type": "plate",
+    "item_class": "plate",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -1872,7 +1872,7 @@
     "formatted_name": "Iron Plate"
   },
   "kings_rock": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
@@ -1890,7 +1890,7 @@
     "formatted_name": "King's Rock"
   },
   "kommonium_z": {
-    "item_type": "z_crystal_specific",
+    "item_class": "z_crystal",
     "pokemon_specific": {
       "kommo_o": [[true, 7]]
     },
@@ -1908,7 +1908,7 @@
     "formatted_name": "Kommonium Z"
   },
   "lagging_tail": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -1926,7 +1926,7 @@
     "formatted_name": "Lagging Tail"
   },
   "lax_incense": {
-    "item_type": "incense",
+    "item_class": "incense",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -1946,7 +1946,7 @@
     "formatted_name": "Lax Incense"
   },
   "leek": {
-    "item_type": "stat_enhancer_specific",
+    "item_class": "enhancer",
     "pokemon_specific": {
       "farfetchd": [[true, 2]],
       "farfetchd_galar": [[true, 8]],
@@ -1968,7 +1968,7 @@
     "formatted_name": "Leek"
   },
   "leftovers": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
@@ -1986,7 +1986,7 @@
     "formatted_name": "Leftovers"
   },
   "life_orb": {
-    "item_type": "",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -2004,7 +2004,7 @@
     "formatted_name": "Life Orb"
   },
   "light_ball": {
-    "item_type": "stat_enhancer_specific",
+    "item_class": "enhancer",
     "pokemon_specific": {
       "pikachu": [[true, 2]],
       "pikachu_rock_star": [[true, 6]],
@@ -2040,7 +2040,7 @@
     "formatted_name": "Light Ball"
   },
   "light_clay": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -2058,7 +2058,7 @@
     "formatted_name": "Light Clay"
   },
   "love_sweet": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 8,
     "gen2_exclusive": false,
@@ -2074,7 +2074,7 @@
     "formatted_name": "Love Sweet"
   },
   "luck_incense": {
-    "item_type": "incense",
+    "item_class": "incense",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -2090,7 +2090,7 @@
     "formatted_name": "Luck Incense"
   },
   "lucky_egg": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
@@ -2106,7 +2106,7 @@
     "formatted_name": "Lucky Egg"
   },
   "lucky_punch": {
-    "item_type": "stat_enhancer_specific",
+    "item_class": "enhancer",
     "pokemon_specific": {
       "chansey": [[true, 2]]
     },
@@ -2126,7 +2126,7 @@
     "formatted_name": "Lucky Punch"
   },
   "luminous_moss": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 6,
     "gen2_exclusive": false,
@@ -2144,7 +2144,7 @@
     "formatted_name": "Luminous Moss"
   },
   "lunalium_z": {
-    "item_type": "z_crystal_specific",
+    "item_class": "z_crystal",
     "pokemon_specific": {
       "lunala": [[true, 7]],
       "necrozma_dawn": [[true, 7]]
@@ -2163,7 +2163,7 @@
     "formatted_name": "Lunalium Z"
   },
   "lustrous_orb": {
-    "item_type": "type_enhancer_specific",
+    "item_class": "enhancer",
     "pokemon_specific": {
       "palkia": [[true, 4]]
     },
@@ -2184,7 +2184,7 @@
     "formatted_name": "Lustrous Orb"
   },
   "lycanium_z": {
-    "item_type": "z_crystal_specific",
+    "item_class": "z_crystal",
     "pokemon_specific": {
       "lycanroc_midday": [[true, 7]],
       "lycanroc_dusk": [[true, 7]],
@@ -2204,7 +2204,7 @@
     "formatted_name": "Lycanium Z"
   },
   "macho_brace": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -2223,7 +2223,7 @@
     "formatted_name": "Macho Brace"
   },
   "magmarizer": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -2239,7 +2239,7 @@
     "formatted_name": "Magmarizer"
   },
   "magnet": {
-    "item_type": "type_enhancer",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
@@ -2257,7 +2257,7 @@
     "formatted_name": "Magnet"
   },
   "marshadium_z": {
-    "item_type": "z_crystal_specific",
+    "item_class": "z_crystal",
     "pokemon_specific": {
       "marshadow": [[true, 7]]
     },
@@ -2275,7 +2275,7 @@
     "formatted_name": "Marshadium Z"
   },
   "meadow_plate": {
-    "item_type": "plate",
+    "item_class": "plate",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -2296,7 +2296,7 @@
     "formatted_name": "Meadow Plate"
   },
   "mental_herb": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -2319,7 +2319,7 @@
     "formatted_name": "Mental Herb"
   },
   "metal_coat": {
-    "item_type": "type_enhancer",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
@@ -2337,7 +2337,7 @@
     "formatted_name": "Metal Coat"
   },
   "metal_powder": {
-    "item_type": "stat_enhancer_specific",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
@@ -2360,7 +2360,7 @@
     "formatted_name": "Metal Powder"
   },
   "metronome_item": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -2378,7 +2378,7 @@
     "formatted_name": "Metronome Item"
   },
   "mewnium_z": {
-    "item_type": "z_crystal_specific",
+    "item_class": "z_crystal",
     "pokemon_specific": {
       "mew": [[true, 7]]
     },
@@ -2396,7 +2396,7 @@
     "formatted_name": "Mewnium Z"
   },
   "mimikium_z": {
-    "item_type": "z_crystal_specific",
+    "item_class": "z_crystal",
     "pokemon_specific": {
       "mimikyu": [[true, 7]]
     },
@@ -2414,7 +2414,7 @@
     "formatted_name": "Mimikium Z"
   },
   "mind_plate": {
-    "item_type": "plate",
+    "item_class": "plate",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -2435,7 +2435,7 @@
     "formatted_name": "Mind Plate"
   },
   "miracle_seed": {
-    "item_type": "type_enhancer",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
@@ -2453,7 +2453,7 @@
     "formatted_name": "Miracle Seed"
   },
   "misty_seed": {
-    "item_type": "",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -2471,7 +2471,7 @@
     "formatted_name": "Misty Seed"
   },
   "muscle_band": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -2489,7 +2489,7 @@
     "formatted_name": "Muscle Band"
   },
   "mystic_water": {
-    "item_type": "type_enhancer",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
@@ -2507,7 +2507,7 @@
     "formatted_name": "Mystic Water"
   },
   "never_melt_ice": {
-    "item_type": "type_enhancer",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
@@ -2525,7 +2525,7 @@
     "formatted_name": "Never Melt Ice"
   },
   "normal_gem": {
-    "item_type": "gem",
+    "item_class": "gem",
     "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
@@ -2543,7 +2543,7 @@
     "formatted_name": "Normal Gem"
   },
   "normalium_z": {
-    "item_type": "z_crystal",
+    "item_class": "z_crystal",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -2559,7 +2559,7 @@
     "formatted_name": "Normalium Z"
   },
   "odd_incense": {
-    "item_type": "incense",
+    "item_class": "incense",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -2577,7 +2577,7 @@
     "formatted_name": "Odd Incense"
   },
   "pikanium_z": {
-    "item_type": "z_crystal_specific",
+    "item_class": "z_crystal",
     "pokemon_specific": {
       "pikachu": [[true, 7]]
     },
@@ -2595,7 +2595,7 @@
     "formatted_name": "Pikanium Z"
   },
   "pikashunium_z": {
-    "item_type": "z_crystal_specific",
+    "item_class": "z_crystal",
     "pokemon_specific": {
       "pikachu_original_cap": [[true, 7]],
       "pikachu_kalos_cap": [[true, 7]],
@@ -2620,7 +2620,7 @@
     "formatted_name": "Pikashunium Z"
   },
   "pink_bow": {
-    "item_type": "type_enhancer",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": true,
@@ -2638,7 +2638,7 @@
     "formatted_name": "Pink Bow"
   },
   "pink_scarf": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -2654,7 +2654,7 @@
     "formatted_name": "Pink Scarf"
   },
   "pixie_plate": {
-    "item_type": "plate",
+    "item_class": "plate",
     "pokemon_specific": {},
     "gen": 6,
     "gen2_exclusive": false,
@@ -2675,7 +2675,7 @@
     "formatted_name": "Pixie Plate"
   },
   "poison_barb": {
-    "item_type": "type_enhancer",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
@@ -2693,7 +2693,7 @@
     "formatted_name": "Poison Barb"
   },
   "poison_gem": {
-    "item_type": "gem",
+    "item_class": "gem",
     "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
@@ -2711,7 +2711,7 @@
     "formatted_name": "Poison Gem"
   },
   "poison_memory": {
-    "item_type": "memory",
+    "item_class": "memory",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -2730,7 +2730,7 @@
     "formatted_name": "Poison Memory"
   },
   "poisonium_z": {
-    "item_type": "z_crystal",
+    "item_class": "z_crystal",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -2746,7 +2746,7 @@
     "formatted_name": "Poisonium Z"
   },
   "polkadot_bow": {
-    "item_type": "type_enhancer",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": true,
@@ -2764,7 +2764,7 @@
     "formatted_name": "Polkadot Bow"
   },
   "power_anklet": {
-    "item_type": "power_item",
+    "item_class": "power",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -2783,7 +2783,7 @@
     "formatted_name": "Power Anklet"
   },
   "power_band": {
-    "item_type": "power_item",
+    "item_class": "power",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -2802,7 +2802,7 @@
     "formatted_name": "Power Band"
   },
   "power_belt": {
-    "item_type": "power_item",
+    "item_class": "power",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -2821,7 +2821,7 @@
     "formatted_name": "Power Belt"
   },
   "power_bracer": {
-    "item_type": "power_item",
+    "item_class": "power",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -2840,7 +2840,7 @@
     "formatted_name": "Power Bracer"
   },
   "power_herb": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -2858,7 +2858,7 @@
     "formatted_name": "Power Herb"
   },
   "power_lens": {
-    "item_type": "power_item",
+    "item_class": "power",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -2877,7 +2877,7 @@
     "formatted_name": "Power Lens"
   },
   "power_weight": {
-    "item_type": "power_item",
+    "item_class": "power",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -2896,7 +2896,7 @@
     "formatted_name": "Power Weight"
   },
   "primarium_z": {
-    "item_type": "z_crystal_specific",
+    "item_class": "z_crystal",
     "pokemon_specific": {
       "primarina": [[true, 7]]
     },
@@ -2914,7 +2914,7 @@
     "formatted_name": "Primarium Z"
   },
   "protective_pads": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -2932,7 +2932,7 @@
     "formatted_name": "Protective Pads"
   },
   "protector": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -2948,7 +2948,7 @@
     "formatted_name": "Protector"
   },
   "psychic_gem": {
-    "item_type": "gem",
+    "item_class": "gem",
     "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
@@ -2966,7 +2966,7 @@
     "formatted_name": "Psychic Gem"
   },
   "psychic_memory": {
-    "item_type": "memory",
+    "item_class": "memory",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -2985,7 +2985,7 @@
     "formatted_name": "Psychic Memory"
   },
   "psychic_seed": {
-    "item_type": "",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -3003,7 +3003,7 @@
     "formatted_name": "Psychic Seed"
   },
   "psychium_z": {
-    "item_type": "z_crystal",
+    "item_class": "z_crystal",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -3019,7 +3019,7 @@
     "formatted_name": "Psychium Z"
   },
   "pure_incense": {
-    "item_type": "incense",
+    "item_class": "incense",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -3035,7 +3035,7 @@
     "formatted_name": "Pure Incense"
   },
   "quick_claw": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
@@ -3053,7 +3053,7 @@
     "formatted_name": "Quick Claw"
   },
   "quick_powder": {
-    "item_type": "stat_enhancer_specific",
+    "item_class": "enhancer",
     "pokemon_specific": {
       "ditto": [[true, 4]]
     },
@@ -3074,7 +3074,7 @@
     "formatted_name": "Quick Powder"
   },
   "razor_claw": {
-    "item_type": "",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -3092,7 +3092,7 @@
     "formatted_name": "Razor Claw"
   },
   "razor_fang": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -3110,7 +3110,7 @@
     "formatted_name": "Razor Fang"
   },
   "reaper_cloth": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -3126,7 +3126,7 @@
     "formatted_name": "Reaper Cloth"
   },
   "red_card": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
@@ -3144,7 +3144,7 @@
     "formatted_name": "Red Card"
   },
   "red_orb": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {
       "groudon": [[true, 6]]
     },
@@ -3162,7 +3162,7 @@
     "formatted_name": "Red Orb"
   },
   "red_scarf": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -3178,7 +3178,7 @@
     "formatted_name": "Red Scarf"
   },
   "ribbon_sweet": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 8,
     "gen2_exclusive": false,
@@ -3194,7 +3194,7 @@
     "formatted_name": "Ribbon Sweet"
   },
   "ring_target": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
@@ -3212,7 +3212,7 @@
     "formatted_name": "Ring Target"
   },
   "rock_gem": {
-    "item_type": "gem",
+    "item_class": "gem",
     "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
@@ -3230,7 +3230,7 @@
     "formatted_name": "Rock Gem"
   },
   "rock_incense": {
-    "item_type": "incense",
+    "item_class": "incense",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -3248,7 +3248,7 @@
     "formatted_name": "Rock Incense"
   },
   "rock_memory": {
-    "item_type": "memory",
+    "item_class": "memory",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -3267,7 +3267,7 @@
     "formatted_name": "Rock Memory"
   },
   "rockium_z": {
-    "item_type": "z_crystal",
+    "item_class": "z_crystal",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -3283,7 +3283,7 @@
     "formatted_name": "Rockium Z"
   },
   "rocky_helmet": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
@@ -3301,7 +3301,7 @@
     "formatted_name": "Rocky Helmet"
   },
   "room_service": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 8,
     "gen2_exclusive": false,
@@ -3319,7 +3319,7 @@
     "formatted_name": "Room Service"
   },
   "rose_incense": {
-    "item_type": "incense",
+    "item_class": "incense",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -3337,7 +3337,7 @@
     "formatted_name": "Rose Incense"
   },
   "rusted_shield": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 8,
     "gen2_exclusive": false,
@@ -3355,7 +3355,7 @@
     "formatted_name": "Rusted Shield"
   },
   "rusted_sword": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 8,
     "gen2_exclusive": false,
@@ -3373,7 +3373,7 @@
     "formatted_name": "Rusted Sword"
   },
   "safety_goggles": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 6,
     "gen2_exclusive": false,
@@ -3393,7 +3393,7 @@
     "formatted_name": "Safety Goggles"
   },
   "scope_lens": {
-    "item_type": "",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
@@ -3411,7 +3411,7 @@
     "formatted_name": "Scope Lens"
   },
   "sea_incense": {
-    "item_type": "incense",
+    "item_class": "incense",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -3429,7 +3429,7 @@
     "formatted_name": "Sea Incense"
   },
   "sharp_beak": {
-    "item_type": "type_enhancer",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
@@ -3447,7 +3447,7 @@
     "formatted_name": "Sharp Beak"
   },
   "shed_shell": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -3465,7 +3465,7 @@
     "formatted_name": "Shed Shell"
   },
   "shell_bell": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -3483,7 +3483,7 @@
     "formatted_name": "Shell Bell"
   },
   "shock_drive": {
-    "item_type": "drive",
+    "item_class": "drive",
     "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
@@ -3501,7 +3501,7 @@
     "formatted_name": "Shock Drive"
   },
   "silk_scarf": {
-    "item_type": "type_enhancer",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -3519,7 +3519,7 @@
     "formatted_name": "Silk Scarf"
   },
   "silver_powder": {
-    "item_type": "type_enhancer",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
@@ -3537,7 +3537,7 @@
     "formatted_name": "Silver Powder"
   },
   "sky_plate": {
-    "item_type": "plate",
+    "item_class": "plate",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -3558,7 +3558,7 @@
     "formatted_name": "Sky Plate"
   },
   "smoke_ball": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
@@ -3574,7 +3574,7 @@
     "formatted_name": "Smoke Ball"
   },
   "smooth_rock": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -3592,7 +3592,7 @@
     "formatted_name": "Smooth Rock"
   },
   "snorlium_z": {
-    "item_type": "z_crystal_specific",
+    "item_class": "z_crystal",
     "pokemon_specific": {
       "snorlax": [[true, 7]]
     },
@@ -3610,7 +3610,7 @@
     "formatted_name": "Snorlium Z"
   },
   "snowball": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 6,
     "gen2_exclusive": false,
@@ -3628,7 +3628,7 @@
     "formatted_name": "Snowball"
   },
   "soft_sand": {
-    "item_type": "type_enhancer",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
@@ -3646,7 +3646,7 @@
     "formatted_name": "Soft Sand"
   },
   "solganium_z": {
-    "item_type": "z_crystal_specific",
+    "item_class": "z_crystal",
     "pokemon_specific": {
       "solgaleo": [[true, 7]],
       "necrozma_dusk": [[true, 7]]
@@ -3665,7 +3665,7 @@
     "formatted_name": "Solganium Z"
   },
   "soothe_bell": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
@@ -3681,7 +3681,7 @@
     "formatted_name": "Soothe Bell"
   },
   "soul_dew": {
-    "item_type": "type_enhancer_specific",
+    "item_class": "enhancer",
     "pokemon_specific": {
       "latios": [[true, 3]]
     },
@@ -3709,7 +3709,7 @@
     "formatted_name": "Soul Dew"
   },
   "spell_tag": {
-    "item_type": "type_enhancer",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
@@ -3727,7 +3727,7 @@
     "formatted_name": "Spell Tag"
   },
   "splash_plate": {
-    "item_type": "plate",
+    "item_class": "plate",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -3748,7 +3748,7 @@
     "formatted_name": "Splash Plate"
   },
   "spooky_plate": {
-    "item_type": "plate",
+    "item_class": "plate",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -3769,7 +3769,7 @@
     "formatted_name": "Spooky Plate"
   },
   "star_sweet": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 8,
     "gen2_exclusive": false,
@@ -3785,7 +3785,7 @@
     "formatted_name": "Star Sweet"
   },
   "steel_gem": {
-    "item_type": "gem",
+    "item_class": "gem",
     "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
@@ -3803,7 +3803,7 @@
     "formatted_name": "Steel Gem"
   },
   "steel_memory": {
-    "item_type": "memory",
+    "item_class": "memory",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -3822,7 +3822,7 @@
     "formatted_name": "Steel Memory"
   },
   "steelium_z": {
-    "item_type": "z_crystal",
+    "item_class": "z_crystal",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -3838,7 +3838,7 @@
     "formatted_name": "Steelium Z"
   },
   "sticky_barb": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -3856,7 +3856,7 @@
     "formatted_name": "Sticky Barb"
   },
   "stone_plate": {
-    "item_type": "plate",
+    "item_class": "plate",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -3877,7 +3877,7 @@
     "formatted_name": "Stone Plate"
   },
   "strawberry_sweet": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 8,
     "gen2_exclusive": false,
@@ -3893,7 +3893,7 @@
     "formatted_name": "Strawberry Sweet"
   },
   "tapunium_z": {
-    "item_type": "z_crystal_specific",
+    "item_class": "z_crystal",
     "pokemon_specific": {
       "tapu_koko": [[true, 7]],
       "tapu_lele": [[true, 7]],
@@ -3914,7 +3914,7 @@
     "formatted_name": "Tapunium Z"
   },
   "terrain_extender": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -3932,7 +3932,7 @@
     "formatted_name": "Terrain Extender"
   },
   "thick_club": {
-    "item_type": "stat_enhancer_specific",
+    "item_class": "enhancer",
     "pokemon_specific": {
       "cubone": [[true, 2]],
       "marowak": [[true, 2]],
@@ -3955,7 +3955,7 @@
     "formatted_name": "Thick Club"
   },
   "throat_spray": {
-    "item_type": "",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 8,
     "gen2_exclusive": false,
@@ -3973,7 +3973,7 @@
     "formatted_name": "Throat Spray"
   },
   "toxic_orb": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -3991,7 +3991,7 @@
     "formatted_name": "Toxic Orb"
   },
   "toxic_plate": {
-    "item_type": "plate",
+    "item_class": "plate",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -4012,7 +4012,7 @@
     "formatted_name": "Toxic Plate"
   },
   "twisted_spoon": {
-    "item_type": "type_enhancer",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
@@ -4030,7 +4030,7 @@
     "formatted_name": "Twisted Spoon"
   },
   "ultranecrozium_z": {
-    "item_type": "z_crystal_specific",
+    "item_class": "z_crystal",
     "pokemon_specific": {
       "necrozma_ultra": [[true, 7]]
     },
@@ -4048,7 +4048,7 @@
     "formatted_name": "Ultranecrozium Z"
   },
   "utility_umbrella": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 8,
     "gen2_exclusive": false,
@@ -4067,7 +4067,7 @@
     "formatted_name": "Utility Umbrella"
   },
   "water_gem": {
-    "item_type": "gem",
+    "item_class": "gem",
     "pokemon_specific": {},
     "gen": 5,
     "gen2_exclusive": false,
@@ -4085,7 +4085,7 @@
     "formatted_name": "Water Gem"
   },
   "water_memory": {
-    "item_type": "memory",
+    "item_class": "memory",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -4104,7 +4104,7 @@
     "formatted_name": "Water Memory"
   },
   "waterium_z": {
-    "item_type": "z_crystal",
+    "item_class": "z_crystal",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,
@@ -4120,7 +4120,7 @@
     "formatted_name": "Waterium Z"
   },
   "wave_incense": {
-    "item_type": "incense",
+    "item_class": "incense",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -4138,7 +4138,7 @@
     "formatted_name": "Wave Incense"
   },
   "weakness_policy": {
-    "item_type": "",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 6,
     "gen2_exclusive": false,
@@ -4157,7 +4157,7 @@
     "formatted_name": "Weakness Policy"
   },
   "white_herb": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -4175,7 +4175,7 @@
     "formatted_name": "White Herb"
   },
   "wide_lens": {
-    "item_type": "",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -4193,7 +4193,7 @@
     "formatted_name": "Wide Lens"
   },
   "wise_glasses": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -4211,7 +4211,7 @@
     "formatted_name": "Wise Glasses"
   },
   "yellow_scarf": {
-    "item_type": "",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -4227,7 +4227,7 @@
     "formatted_name": "Yellow Scarf"
   },
   "zap_plate": {
-    "item_type": "plate",
+    "item_class": "plate",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -4248,7 +4248,7 @@
     "formatted_name": "Zap Plate"
   },
   "zoom_lens": {
-    "item_type": "",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -4266,7 +4266,7 @@
     "formatted_name": "Zoom Lens"
   },
   "aguav_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -4285,7 +4285,7 @@
     "formatted_name": "Aguav Berry"
   },
   "apicot_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -4304,7 +4304,7 @@
     "formatted_name": "Apicot Berry"
   },
   "aspear_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -4323,7 +4323,7 @@
     "formatted_name": "Aspear Berry"
   },
   "babiri_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -4342,7 +4342,7 @@
     "formatted_name": "Babiri Berry"
   },
   "belue_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -4359,7 +4359,7 @@
     "formatted_name": "Belue Berry"
   },
   "bluk_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -4376,7 +4376,7 @@
     "formatted_name": "Bluk Berry"
   },
   "charti_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -4395,7 +4395,7 @@
     "formatted_name": "Charti Berry"
   },
   "cheri_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -4414,7 +4414,7 @@
     "formatted_name": "Cheri Berry"
   },
   "chesto_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -4433,7 +4433,7 @@
     "formatted_name": "Chesto Berry"
   },
   "chilan_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -4452,7 +4452,7 @@
     "formatted_name": "Chilan Berry"
   },
   "chople_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -4471,7 +4471,7 @@
     "formatted_name": "Chople Berry"
   },
   "coba_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -4490,7 +4490,7 @@
     "formatted_name": "Coba Berry"
   },
   "colbur_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -4509,7 +4509,7 @@
     "formatted_name": "Colbur Berry"
   },
   "cornn_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -4526,7 +4526,7 @@
     "formatted_name": "Cornn Berry"
   },
   "custap_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -4545,7 +4545,7 @@
     "formatted_name": "Custap Berry"
   },
   "durin_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -4562,7 +4562,7 @@
     "formatted_name": "Durin Berry"
   },
   "enigma_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -4579,7 +4579,7 @@
     "formatted_name": "Enigma Berry"
   },
   "figy_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -4598,7 +4598,7 @@
     "formatted_name": "Figy Berry"
   },
   "ganlon_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -4617,7 +4617,7 @@
     "formatted_name": "Ganlon Berry"
   },
   "grepa_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -4634,7 +4634,7 @@
     "formatted_name": "Grepa Berry"
   },
   "haban_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -4653,7 +4653,7 @@
     "formatted_name": "Haban Berry"
   },
   "hondew_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -4670,7 +4670,7 @@
     "formatted_name": "Hondew Berry"
   },
   "iapapa_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -4689,7 +4689,7 @@
     "formatted_name": "Iapapa Berry"
   },
   "jaboca_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -4706,7 +4706,7 @@
     "formatted_name": "Jaboca Berry"
   },
   "kasib_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -4725,7 +4725,7 @@
     "formatted_name": "Kasib Berry"
   },
   "kebia_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -4744,7 +4744,7 @@
     "formatted_name": "Kebia Berry"
   },
   "kee_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 6,
     "gen2_exclusive": false,
@@ -4763,7 +4763,7 @@
     "formatted_name": "Kee Berry"
   },
   "kelpsy_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -4780,7 +4780,7 @@
     "formatted_name": "Kelpsy Berry"
   },
   "lansat_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -4799,7 +4799,7 @@
     "formatted_name": "Lansat Berry"
   },
   "leppa_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -4816,7 +4816,7 @@
     "formatted_name": "Leppa Berry"
   },
   "liechi_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -4835,7 +4835,7 @@
     "formatted_name": "Liechi Berry"
   },
   "lum_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -4860,7 +4860,7 @@
     "formatted_name": "Lum Berry"
   },
   "mago_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -4879,7 +4879,7 @@
     "formatted_name": "Mago Berry"
   },
   "magost_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -4896,7 +4896,7 @@
     "formatted_name": "Magost Berry"
   },
   "maranga_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 6,
     "gen2_exclusive": false,
@@ -4915,7 +4915,7 @@
     "formatted_name": "Maranga Berry"
   },
   "micle_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -4935,7 +4935,7 @@
     "formatted_name": "Micle Berry"
   },
   "nanab_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -4952,7 +4952,7 @@
     "formatted_name": "Nanab Berry"
   },
   "nomel_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -4969,7 +4969,7 @@
     "formatted_name": "Nomel Berry"
   },
   "occa_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -4988,7 +4988,7 @@
     "formatted_name": "Occa Berry"
   },
   "oran_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -5005,7 +5005,7 @@
     "formatted_name": "Oran Berry"
   },
   "pamtre_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -5022,7 +5022,7 @@
     "formatted_name": "Pamtre Berry"
   },
   "passho_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -5041,7 +5041,7 @@
     "formatted_name": "Passho Berry"
   },
   "payapa_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -5060,7 +5060,7 @@
     "formatted_name": "Payapa Berry"
   },
   "pecha_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -5079,7 +5079,7 @@
     "formatted_name": "Pecha Berry"
   },
   "persim_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -5098,7 +5098,7 @@
     "formatted_name": "Persim Berry"
   },
   "petaya_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -5117,7 +5117,7 @@
     "formatted_name": "Petaya Berry"
   },
   "pinap_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -5134,7 +5134,7 @@
     "formatted_name": "Pinap Berry"
   },
   "pomeg_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -5151,7 +5151,7 @@
     "formatted_name": "Pomeg Berry"
   },
   "qualot_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -5168,7 +5168,7 @@
     "formatted_name": "Qualot Berry"
   },
   "rabuta_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -5185,7 +5185,7 @@
     "formatted_name": "Rabuta Berry"
   },
   "rawst_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -5204,7 +5204,7 @@
     "formatted_name": "Rawst Berry"
   },
   "razz_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -5221,7 +5221,7 @@
     "formatted_name": "Razz Berry"
   },
   "rindo_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -5240,7 +5240,7 @@
     "formatted_name": "Rindo Berry"
   },
   "roseli_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 6,
     "gen2_exclusive": false,
@@ -5259,7 +5259,7 @@
     "formatted_name": "Roseli Berry"
   },
   "rowap_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -5276,7 +5276,7 @@
     "formatted_name": "Rowap Berry"
   },
   "salac_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -5295,7 +5295,7 @@
     "formatted_name": "Salac Berry"
   },
   "shuca_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -5314,7 +5314,7 @@
     "formatted_name": "Shuca Berry"
   },
   "sitrus_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -5331,7 +5331,7 @@
     "formatted_name": "Sitrus Berry"
   },
   "spelon_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -5348,7 +5348,7 @@
     "formatted_name": "Spelon Berry"
   },
   "starf_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -5374,7 +5374,7 @@
     "formatted_name": "Starf Berry"
   },
   "tamato_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -5391,7 +5391,7 @@
     "formatted_name": "Tamato Berry"
   },
   "tanga_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -5410,7 +5410,7 @@
     "formatted_name": "Tanga Berry"
   },
   "wacan_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -5429,7 +5429,7 @@
     "formatted_name": "Wacan Berry"
   },
   "watmel_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -5446,7 +5446,7 @@
     "formatted_name": "Watmel Berry"
   },
   "wepear_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -5463,7 +5463,7 @@
     "formatted_name": "Wepear Berry"
   },
   "wiki_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 3,
     "gen2_exclusive": false,
@@ -5482,7 +5482,7 @@
     "formatted_name": "Wiki Berry"
   },
   "yache_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 4,
     "gen2_exclusive": false,
@@ -5501,7 +5501,7 @@
     "formatted_name": "Yache Berry"
   },
   "berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": true,
@@ -5519,7 +5519,7 @@
     "formatted_name": "Berry"
   },
   "bitter_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": true,
@@ -5537,7 +5537,7 @@
     "formatted_name": "Bitter Berry"
   },
   "burnt_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": true,
@@ -5555,7 +5555,7 @@
     "formatted_name": "Burnt Berry"
   },
   "gold_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": true,
@@ -5573,7 +5573,7 @@
     "formatted_name": "Gold Berry"
   },
   "ice_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": true,
@@ -5591,7 +5591,7 @@
     "formatted_name": "Ice Berry"
   },
   "mint_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": true,
@@ -5609,7 +5609,7 @@
     "formatted_name": "Mint Berry"
   },
   "miracle_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
@@ -5633,7 +5633,7 @@
     "formatted_name": "MiracleBerry"
   },
   "mystery_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": true,
@@ -5651,7 +5651,7 @@
     "formatted_name": "MysteryBerry"
   },
   "prz_cure_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": true,
@@ -5669,7 +5669,7 @@
     "formatted_name": "PRZCureBerry"
   },
   "psn_cure_berry": {
-    "item_type": "berry",
+    "item_class": "berry",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": true,
@@ -5687,9 +5687,7 @@
     "formatted_name": "PSNCureBerry"
   },
   "abomasite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/e/e5/Bag_Abomasite_Sprite.png",
-    "sprite_url": "Mega stone for Abomasnow.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "abomasnow": [[true, 6]]
     },
@@ -5709,9 +5707,7 @@
     "formatted_name": "Abomasite"
   },
   "absolite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/d/d8/Bag_Absolite_Sprite.png",
-    "sprite_url": "Mega stone for Absol.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "absol": [[true, 6]]
     },
@@ -5731,9 +5727,7 @@
     "formatted_name": "Absolite"
   },
   "aerodactylite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/0/02/Bag_Aerodactylite_Sprite.png",
-    "sprite_url": "Mega stone for Aerodactyl.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "aerodactyl": [[true, 6]]
     },
@@ -5753,9 +5747,7 @@
     "formatted_name": "Aerodactylite"
   },
   "aggronite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/c/c1/Bag_Aggronite_Sprite.png",
-    "sprite_url": "Mega stone for Aggron.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "aggron": [[true, 6]]
     },
@@ -5775,9 +5767,7 @@
     "formatted_name": "Aggronite"
   },
   "alakazite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/9/9c/Bag_Alakazite_Sprite.png",
-    "sprite_url": "Mega stone for Alakazam.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "alakazam": [[true, 6]]
     },
@@ -5797,9 +5787,7 @@
     "formatted_name": "Alakazite"
   },
   "altarianite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/2/2d/Bag_Altarianite_Sprite.png",
-    "sprite_url": "Mega stone for Altaria.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "altaria": [[true, 6]]
     },
@@ -5819,9 +5807,7 @@
     "formatted_name": "Altarianite"
   },
   "ampharosite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/2/2c/Bag_Ampharosite_Sprite.png",
-    "sprite_url": "Mega stone for Ampharos.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "ampharos": [[true, 6]]
     },
@@ -5841,9 +5827,7 @@
     "formatted_name": "Ampharosite"
   },
   "audinite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/e/e9/Bag_Audinite_Sprite.png",
-    "sprite_url": "Mega stone for Audino.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "audino": [[true, 6]]
     },
@@ -5863,9 +5847,7 @@
     "formatted_name": "Audinite"
   },
   "banettite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/3/35/Bag_Banettite_Sprite.png",
-    "sprite_url": "Mega stone for Banette.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "banette": [[true, 6]]
     },
@@ -5885,9 +5867,7 @@
     "formatted_name": "Banettite"
   },
   "beedrillite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/1/1c/Bag_Beedrillite_Sprite.png",
-    "sprite_url": "Mega stone for Beedrill.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "beedrill": [[true, 6]]
     },
@@ -5907,9 +5887,7 @@
     "formatted_name": "Beedrillite"
   },
   "blastoisinite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/6/62/Bag_Blastoisinite_Sprite.png",
-    "sprite_url": "Mega stone for Blastoise.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "blastoise": [[true, 6]]
     },
@@ -5929,9 +5907,7 @@
     "formatted_name": "Blastoisinite"
   },
   "blazikenite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/1/14/Bag_Blazikenite_Sprite.png",
-    "sprite_url": "Mega stone for Blaziken.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "blaziken": [[true, 6]]
     },
@@ -5951,9 +5927,7 @@
     "formatted_name": "Blazikenite"
   },
   "cameruptite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/3/3e/Bag_Cameruptite_Sprite.png",
-    "sprite_url": "Mega stone for Camerupt.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "camerupt": [[true, 6]]
     },
@@ -5973,9 +5947,7 @@
     "formatted_name": "Cameruptite"
   },
   "charizardite_x": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/1/1c/Bag_Charizardite_X_Sprite.png",
-    "sprite_url": "Mega stone for Charizard.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "charizard": [[true, 6]]
     },
@@ -5995,9 +5967,7 @@
     "formatted_name": "Charizardite X"
   },
   "charizardite_y": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/c/c8/Bag_Charizardite_Y_Sprite.png",
-    "sprite_url": "Mega stone for Charizard.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "charizard": [[true, 6]]
     },
@@ -6017,9 +5987,7 @@
     "formatted_name": "Charizardite Y"
   },
   "diancite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/a/aa/Bag_Diancite_Sprite.png",
-    "sprite_url": "Mega stone for Diancie.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "diancie": [[true, 6]]
     },
@@ -6039,9 +6007,7 @@
     "formatted_name": "Diancite"
   },
   "galladite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/9/9f/Bag_Galladite_Sprite.png",
-    "sprite_url": "Mega stone for Gallade.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "gallade": [[true, 6]]
     },
@@ -6061,9 +6027,7 @@
     "formatted_name": "Galladite"
   },
   "garchompite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/4/4c/Bag_Garchompite_Sprite.png",
-    "sprite_url": "Mega stone for Garchomp.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "garchomp": [[true, 6]]
     },
@@ -6083,9 +6047,7 @@
     "formatted_name": "Garchompite"
   },
   "gardevoirite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/4/49/Bag_Gardevoirite_Sprite.png",
-    "sprite_url": "Mega stone for Gardevoir.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "gardevoir": [[true, 6]]
     },
@@ -6105,9 +6067,7 @@
     "formatted_name": "Gardevoirite"
   },
   "gengarite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/2/27/Bag_Gengarite_Sprite.png",
-    "sprite_url": "Mega stone for Gengar.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "gengar": [[true, 6]]
     },
@@ -6127,9 +6087,7 @@
     "formatted_name": "Gengarite"
   },
   "glalitite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/8/81/Bag_Glalitite_Sprite.png",
-    "sprite_url": "Mega stone for Glalie.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "glalie": [[true, 6]]
     },
@@ -6149,9 +6107,7 @@
     "formatted_name": "Glalitite"
   },
   "gyaradosite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/9/9f/Bag_Gyaradosite_Sprite.png",
-    "sprite_url": "Mega stone for Gyarados.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "gyarados": [[true, 6]]
     },
@@ -6171,9 +6127,7 @@
     "formatted_name": "Gyaradosite"
   },
   "heracronite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/8/8c/Bag_Heracronite_Sprite.png",
-    "sprite_url": "Mega stone for Heracross.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "heracross": [[true, 6]]
     },
@@ -6193,9 +6147,7 @@
     "formatted_name": "Heracronite"
   },
   "houndoominite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/a/ae/Bag_Houndoominite_Sprite.png",
-    "sprite_url": "Mega stone for Houndoom.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "houndoom": [[true, 6]]
     },
@@ -6215,9 +6167,7 @@
     "formatted_name": "Houndoominite"
   },
   "kangaskhanite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/c/c5/Bag_Kangaskhanite_Sprite.png",
-    "sprite_url": "Mega stone for Kangaskhan.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "kangaskhan": [[true, 6]]
     },
@@ -6237,9 +6187,7 @@
     "formatted_name": "Kangaskhanite"
   },
   "latiasite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/3/39/Bag_Latiasite_Sprite.png",
-    "sprite_url": "Mega stone for Latias.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "latias": [[true, 6]]
     },
@@ -6259,9 +6207,7 @@
     "formatted_name": "Latiasite"
   },
   "latiosite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/6/69/Bag_Latiosite_Sprite.png",
-    "sprite_url": "Mega stone for Latios.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "latios": [[true, 6]]
     },
@@ -6281,9 +6227,7 @@
     "formatted_name": "Latiosite"
   },
   "lopunnite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/4/4d/Bag_Lopunnite_Sprite.png",
-    "sprite_url": "Mega stone for Lopunny.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "lopunny": [[true, 6]]
     },
@@ -6303,9 +6247,7 @@
     "formatted_name": "Lopunnite"
   },
   "lucarionite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/7/76/Bag_Lucarionite_Sprite.png",
-    "sprite_url": "Mega stone for Lucario.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "lucario": [[true, 6]]
     },
@@ -6325,9 +6267,7 @@
     "formatted_name": "Lucarionite"
   },
   "manectite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/9/98/Bag_Manectite_Sprite.png",
-    "sprite_url": "Mega stone for Manectric.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "manectric": [[true, 6]]
     },
@@ -6347,9 +6287,7 @@
     "formatted_name": "Manectite"
   },
   "mawilite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/e/ed/Bag_Mawilite_Sprite.png",
-    "sprite_url": "Mega stone for Mawile.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "mawile": [[true, 6]]
     },
@@ -6369,9 +6307,7 @@
     "formatted_name": "Mawilite"
   },
   "medichamite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/e/ed/Bag_Medichamite_Sprite.png",
-    "sprite_url": "Mega stone for Medicham.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "medicham": [[true, 6]]
     },
@@ -6391,9 +6327,7 @@
     "formatted_name": "Medichamite"
   },
   "metagrossite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/2/2a/Bag_Metagrossite_Sprite.png",
-    "sprite_url": "Mega stone for Metagross.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "metagross": [[true, 6]]
     },
@@ -6413,9 +6347,7 @@
     "formatted_name": "Metagrossite"
   },
   "mewtwonite_x": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/0/0d/Bag_Mewtwonite_X_Sprite.png",
-    "sprite_url": "Mega stone for Mewtwo.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "mewtwo": [[true, 6]]
     },
@@ -6435,9 +6367,7 @@
     "formatted_name": "Mewtwonite X"
   },
   "mewtwonite_y": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/4/4a/Bag_Mewtwonite_Y_Sprite.png",
-    "sprite_url": "Mega stone for Mewtwo.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "mewtwo": [[true, 6]]
     },
@@ -6457,9 +6387,7 @@
     "formatted_name": "Mewtwonite Y"
   },
   "pidgeotite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/8/87/Bag_Pidgeotite_Sprite.png",
-    "sprite_url": "Mega stone for Pidgeot.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "pidgeot": [[true, 6]]
     },
@@ -6479,9 +6407,7 @@
     "formatted_name": "Pidgeotite"
   },
   "pinsirite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/1/15/Bag_Pinsirite_Sprite.png",
-    "sprite_url": "Mega stone for Pinsir.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "pinsir": [[true, 6]]
     },
@@ -6501,9 +6427,7 @@
     "formatted_name": "Pinsirite"
   },
   "sablenite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/2/2f/Bag_Sablenite_Sprite.png",
-    "sprite_url": "Mega stone for Sableye.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "sableye": [[true, 6]]
     },
@@ -6523,9 +6447,7 @@
     "formatted_name": "Sablenite"
   },
   "salamencite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/d/d0/Bag_Salamencite_Sprite.png",
-    "sprite_url": "Mega stone for Salamence.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "salamence": [[true, 6]]
     },
@@ -6545,9 +6467,7 @@
     "formatted_name": "Salamencite"
   },
   "sceptilite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/5/5b/Bag_Sceptilite_Sprite.png",
-    "sprite_url": "Mega stone for Sceptile.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "sceptile": [[true, 6]]
     },
@@ -6567,9 +6487,7 @@
     "formatted_name": "Sceptilite"
   },
   "scizorite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/7/73/Bag_Scizorite_Sprite.png",
-    "sprite_url": "Mega stone for Scizor.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "scizor": [[true, 6]]
     },
@@ -6589,9 +6507,7 @@
     "formatted_name": "Scizorite"
   },
   "sharpedonite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/f/fb/Bag_Sharpedonite_Sprite.png",
-    "sprite_url": "Mega stone for Sharpedo.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "sharpedo": [[true, 6]]
     },
@@ -6611,9 +6527,7 @@
     "formatted_name": "Sharpedonite"
   },
   "slowbronite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/9/9e/Bag_Slowbronite_Sprite.png",
-    "sprite_url": "Mega stone for Slowbro.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "slowbro": [[true, 6]]
     },
@@ -6633,9 +6547,7 @@
     "formatted_name": "Slowbronite"
   },
   "steelixite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/6/6c/Bag_Steelixite_Sprite.png",
-    "sprite_url": "Mega stone for Steelix.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "steelix": [[true, 6]]
     },
@@ -6655,9 +6567,7 @@
     "formatted_name": "Steelixite"
   },
   "swampertite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/f/f3/Bag_Swampertite_Sprite.png",
-    "sprite_url": "Mega stone for Swampert.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "swampert": [[true, 6]]
     },
@@ -6677,9 +6587,7 @@
     "formatted_name": "Swampertite"
   },
   "tyranitarite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/e/e3/Bag_Tyranitarite_Sprite.png",
-    "sprite_url": "Mega stone for Tyranitar.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "tyranitar": [[true, 6]]
     },
@@ -6699,9 +6607,7 @@
     "formatted_name": "Tyranitarite"
   },
   "venusaurite": {
-    "item_type": "mega_stone",
-    "description": "//archives.bulbagarden.net/media/upload/0/0b/Bag_Venusaurite_Sprite.png",
-    "sprite_url": "Mega stone for Venusaur.",
+    "item_class": "mega_stone",
     "pokemon_specific": {
       "venusaur": [[true, 6]]
     },
@@ -6721,7 +6627,7 @@
     "formatted_name": "Venusaurite"
   },
   "berry_juice": {
-    "item_type": "other",
+    "item_class": "other",
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
@@ -6739,7 +6645,7 @@
     "formatted_name": "Berry Juice"
   },
   "adrenaline_orb": {
-    "item_type": "other",
+    "item_class": "enhancer",
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,

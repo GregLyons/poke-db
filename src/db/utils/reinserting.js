@@ -155,7 +155,7 @@ const reinsertItemJunctionData = async(db, tableStatements) => {
 const reinsertMoveJunctionData = async(db, tableStatements) => {
   /*
     [
-      'pmove_has_ptype',
+      'pmove_ptype',
       'pmove_requires_ptype',
       'pmove_requires_pmove',
       'pmove_requires_pokemon',

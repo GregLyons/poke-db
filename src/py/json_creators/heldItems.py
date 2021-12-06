@@ -8,7 +8,6 @@ from utils import getCSVDataPath, statList, parseName, checkConsistency
 
 
 # initial item dictionary with item name, item type, gen introduced, gen 2 exclusivity, and sprite URL
-# TODO: sprites and descriptions for mega stones
 def makeInitialItemDict(fnamePrefix):
   # item data from Serebii; has some items which Bulbapedia doesn't have
   with open(fnamePrefix + 'Serebii.csv', 'r', encoding='utf-8') as serebiiCSV:
@@ -16,13 +15,13 @@ def makeInitialItemDict(fnamePrefix):
 
     itemDict = {}
     for row in reader:
-      itemName, itemType = row["Item Name"], row["Item Type"]
+      itemName = row["Item Name"]
 
-      # the gen 2 berries will be handled in the berry section--the other gen 2 exclusive items have 'gen2_' as a prefix
-      gen2Exclusive = 'gen2_' in row["Item Type"] or itemName == 'berserk_gene'
+      # the gen 2 berries will be handled in the berry section
+      gen2Exclusive = itemName in ['berserk_gene', 'polkadot_bow', 'pink_bow']
 
       itemDict[itemName] = {
-        "item_type": '',
+        "item_class": '',
         # list of Pokemon who can use the item, if restricted
         "pokemon_specific": {},
         "gen": '',
@@ -39,18 +38,18 @@ def makeInitialItemDict(fnamePrefix):
         "stat_modifications": {},
       }
 
-  # item data from Bulbapedia; should have complete list of items now
-  with open(fnamePrefix + '.csv', 'r', encoding='utf-8') as itemTypeCSV:
+  # item classifications from Bulbapedia
+  with open(fnamePrefix + 'Class.csv', 'r', encoding='utf-8') as itemTypeCSV:
     reader = csv.DictReader(itemTypeCSV)
 
     for row in reader:
-      itemName, itemType = row["Item Name"], row["Item Type"]
+      itemName, itemClass, itemGen = row["Item Name"], row["Item Class"], row["Item Gen"]
 
       if itemName not in itemDict:
         itemDict[itemName] = {
-          "item_type": '',
+          "item_class": itemClass,
           "pokemon_specific": {},
-          "gen": '',
+          "gen": int(itemGen),
           "gen2_exclusive": False,
           "knock_off": True,
           "effects": {},
@@ -62,21 +61,35 @@ def makeInitialItemDict(fnamePrefix):
           "resists_usage_method": {},
           "stat_modifications": {},
         }
+      else:
+        itemDict[itemName]["item_class"] = itemClass
 
-      itemDict[itemName]["item_type"] = itemType
+  # Classify other items not already listed on Bulbapedia
+  for itemName in ['absorb_bulb', 'assault_vest', 'berserk_gene', 'bright_powder', 'cell_battery', 'electric_seed', 'expert_belt', 'life_orb', 'weakness_policy', 'wide_lens', 'misty_seed', 'psychic_seed', 'grassy_seed', 'zoom_lens', 'throat_spray', 'razor_claw', 'scope_lens']:
+    itemDict[itemName]["item_class"] = 'enhancer'
+
+  # Classify all remaining items as 'other' 
+  for itemName in itemDict.keys():
+    if len(itemDict[itemName]["item_class"]) == 0:
+      itemDict[itemName]["item_class"] = 'other'
+
+  
 
   # add gen data
-  with open(fnamePrefix.removesuffix('List') + 'Gen.csv', 'r', encoding='utf-8') as genCSV:
+  with open(fnamePrefix + 'Gen.csv', 'r', encoding='utf-8') as genCSV:
     reader = csv.DictReader(genCSV)
     for row in reader:
       itemName, gen = row["Item Name"], int(row["Gen"])
       # list on Bulbapedia includes non-held items, so we must ignore those; this is why we read the Serebii file first
       if itemName in itemDict:
+        if itemDict[itemName]["gen"] and itemDict[itemName]["gen"] != gen:
+          print('Gens of', itemName, 'don\'t match:', itemDict[itemName]["gen"], gen)
+
         itemDict[itemName]["gen"] = int(gen)
 
   # for some reason, Serebii doesn't have berry juice or adrenaline orb, or some gen 2 berries
   itemDict["berry_juice"] = {
-        "item_type": 'other',
+        "item_class": 'other',
         "pokemon_specific": {},
         "gen": 2,
         "gen2_exclusive": False,
@@ -92,7 +105,7 @@ def makeInitialItemDict(fnamePrefix):
       }
   # we handle adrenaline orb stat modifications below
   itemDict["adrenaline_orb"] = {
-        "item_type": 'other',
+        "item_class": 'enhancer',
         "pokemon_specific": {},
         "gen": 7,
         "gen2_exclusive": False,
@@ -106,6 +119,7 @@ def makeInitialItemDict(fnamePrefix):
         "resists_usage_method": {},
         "stat_modifications": {},
       }
+
   for itemName in ['psn_cure_berry', 'prz_cure_berry']:
     itemDict[itemName]["gen"] = 2
 
@@ -222,11 +236,9 @@ def addOtherItemData(fpath, itemDict):
   with open(fpath + 'megaStones.csv', 'r', encoding='utf-8') as megaStoneCSV:
     reader = csv.DictReader(megaStoneCSV)
     for row in reader:
-      itemName, pokemonName, description, spriteURL = row["Item Name"], row["Pokemon Name"], row["Description"], row["Sprite URL"]
+      itemName, pokemonName, = row["Item Name"], row["Pokemon Name"]
       itemDict[itemName] = {
-        "item_type": 'mega_stone',
-        "description": description,
-        "sprite_url": spriteURL,
+        "item_class": 'mega_stone',
         # list of Pokemon who can use the item, if restricted
         "pokemon_specific": {
           pokemonName: [[True, 6]]
@@ -596,9 +608,9 @@ def addOtherItemData(fpath, itemDict):
     handledItems.add(itemName)
 
   # keep track of items to be handled
-  for key in itemDict.keys():
-    if key not in handledItems and itemDict[key]["item_type"] != 'berry':
-      print(key, 'not handled!')
+  for itemName in itemDict.keys():
+    if itemName not in handledItems and itemDict[itemName]["item_class"] != 'berry':
+      print(itemName, 'not handled!')
   return
 
 def addFormattedName(itemDict):

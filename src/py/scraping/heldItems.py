@@ -5,106 +5,106 @@ import re
 # TODO colored orbs for Kyogre and Groudon
 # TODO: Soul Dew, Eviolite, berries which restore HP but may confuse, double stab items (e.g. Adamant Orb), Deep Sea items, Wide Lens, Zoom Lens, Ultranecrozium Z, Pikashunium Z, Luck Incense, Air Balloon
 
-# parse descriptions for the main list to classify item type
-def parseDescription(description):
+# # parse descriptions for the main list to classify item type
+# def parseDescription(description):
 
-  # boost stat sharply--only three such items
-  if 'sharply' in description:
-    return 'boost_stat_two_stages'
+#   # boost stat sharply--only three such items
+#   if 'sharply' in description:
+#     return 'boost_stat'
 
-  # boost stat one stage
-  if re.search(r'boosts (Attack|Defense|Sp. Atk|Sp. Def|Speed)', description):
-    stat = parseName(re.search(r'boosts (Attack|Defense|Sp. Atk|Sp. Def|Speed)', description).group(1))
+#   # boost stat one stage
+#   if re.search(r'boosts (Attack|Defense|Sp. Atk|Sp. Def|Speed)', description):
+#     stat = parseName(re.search(r'boosts (Attack|Defense|Sp. Atk|Sp. Def|Speed)', description).group(1))
 
-    if stat == 'Sp.Atk': 
-      stat = 'special_attack'
-    elif stat == 'Sp. Def':
-      stat = 'special_defense'
+#     # if stat == 'Sp.Atk': 
+#     #   stat = 'special_attack'
+#     # elif stat == 'Sp. Def':
+#     #   stat = 'special_defense'
 
-    return 'boost_stat_' + stat
-  elif re.search(r'aises (Attack|Defense|Sp. Atk|Sp. Def|Speed)', description):
-    stat = parseName(re.search(r'aises (Attack|Defense|Sp. Atk|Sp. Def|Speed)', description).group(1))
+#     return 'boost_stat'
+#   elif re.search(r'aises (Attack|Defense|Sp. Atk|Sp. Def|Speed)', description):
+#     stat = parseName(re.search(r'aises (Attack|Defense|Sp. Atk|Sp. Def|Speed)', description).group(1))
     
-    return 'boost_stat_' + stat
+#     return 'boost_stat'
 
-  # incenses
-  if 'incense' in description:
-    return 'incense'
+#   # incenses
+#   if 'incense' in description:
+#     return 'incense'
 
-  # Z-moves
-  if 'It converts' in description:
-    # Exclusive Z-moves, handle in separate function
-    if 'exclusive ' in description:
-      return 'z_crystal_exclusive'
-    else:
-      type = parseName(re.search(r'upgrade (.*)-type m', description).group(1))
-      return 'z_crystal_' + type
+#   # Z-moves
+#   if 'It converts' in description:
+#     # Exclusive Z-moves, handle in separate function
+#     if 'exclusive ' in description:
+#       return 'z_crystal_specific'
+#     else:
+#       type = parseName(re.search(r'upgrade (.*)-type m', description).group(1))
+#       return 'z_crystal_' + type
     
-  # plates
-  if 'stone tablet' in description:
-    type = parseName(re.search(r'of (.*)-type', description).group(1))
-    return 'plate_' + type
+#   # plates
+#   if 'stone tablet' in description:
+#     type = parseName(re.search(r'of (.*)-type', description).group(1))
+#     return 'plate_' + type
   
-  # drives
-  if 'cassette' in description:
-    type = parseName(re.search(r'so it becomes (.*) type', description).group(1))
-    return 'drive_' + type
+#   # drives
+#   if 'cassette' in description:
+#     type = parseName(re.search(r'so it becomes (.*) type', description).group(1))
+#     return 'drive_' + type
 
-  # gradual healing from Leftovers, Shell Bell, Black Sludge
-  if re.search(r'(gradually|little|slowly)', description):
-    return 'restore_hp'
+#   # gradual healing from Leftovers, Shell Bell, Black Sludge
+#   if re.search(r'(gradually|little|slowly)', description):
+#     return 'restore_hp'
   
-  # extenders
-  if 'extends the duration' in description:
-    return 'extender'
+#   # extenders
+#   if 'extends the duration' in description:
+#     return 'extender'
 
-  # gems
-  if 'A gem' in description:
-    type = parseName(re.search(r'power of an* (.*)-type move', description).group(1))
-    return 'gem_' + type
+#   # gems
+#   if 'A gem' in description:
+#     type = parseName(re.search(r'power of an* (.*)-type move', description).group(1))
+#     return 'gem_' + type
 
-  # power items
-  if 'reduces Speed but allows' in description:
-    return 'power_item'
+#   # power items
+#   if 'reduces Speed but allows' in description:
+#     return 'power_item'
 
-  # toxic and flame orb
-  if 'bizarre orb' in description:
-    return 'status_orb'
+#   # toxic and flame orb
+#   if 'bizarre orb' in description:
+#     return 'status_orb'
 
-  # contest items
-  if 'contest' in description:
-    return 'contest_item'
+#   # contest items
+#   if 'contest' in description:
+#     return 'contest_item'
   
-  # memories
-  if 'memory disc' in description:
-    type = parseName(re.search(r'contains (.*)-type', description).group(1))
-    return 'memory_' + type
+#   # memories
+#   if 'memory disc' in description:
+#     type = parseName(re.search(r'contains (.*)-type', description).group(1))
+#     return 'memory_' + type
 
-  # boost type
-  if re.search(r'of (.*)-type', description) or 'spoon' in description:
-    # some descriptions are tricky to handle with a regex
-    if 'spoon' in description:
-      return 'boost_type_psychic'
-    elif 'glasses' in description:
-      return 'boost_type_dark'
-    elif 'ice that boosts' in description:
-      return 'boost_type_ice'
+#   # boost type
+#   if re.search(r'of (.*)-type', description) or 'spoon' in description:
+#     # some descriptions are tricky to handle with a regex
+#     if 'spoon' in description:
+#       return 'boost_type'
+#     elif 'glasses' in description:
+#       return 'boost_type'
+#     elif 'ice that boosts' in description:
+#       return 'boost_type'
 
-    type = parseName(re.search(r'of (.*)-type m', description).group(1))
+#     type = parseName(re.search(r'of (.*)-type m', description).group(1))
     
-    # a few items boost multiple types; we handle those later
-    if 'and' in type:
-      return 'boost_type_specific'
-    else:
-      return 'boost_type_' + type
+#     # a few items boost multiple types; we handle those later
+#     if 'and' in type:
+#       return 'boost_type_specific'
+#     else:
+#       return 'boost_type'
 
-  return 'other'
+#   return 'other'
 
 # Columns are Item Name, Item Type, Description, Sprite URL
 def mainList(fname):
   with open(fname, 'w', newline='', encoding='utf-8') as mainCSV:
     writer = csv.writer(mainCSV)
-    writer.writerow(['Item Name', 'Item Type', 'Description', 'Sprite URL'])
+    writer.writerow(['Item Name', 'Description', 'Sprite URL'])
 
     bs = openLink('https://www.serebii.net/itemdex/list/holditem.shtml', 0, 10)
     dataRows = bs.find('table', {'class': 'dextable'}).find('tr').find_next_siblings('tr')
@@ -119,17 +119,12 @@ def mainList(fname):
         # append '_item' to metronome to avoid confusion with the move
         itemName = parseName(cells[2].get_text()).replace('metronome', 'metronome_item') 
         description = cells[3].get_text()
-        itemType = parseDescription(description)
       else:
         spriteURL = ''
         itemName = parseName(cells[1].get_text())
         description = cells[2].get_text()
-        if 'Powers up' in description:
-          itemType = 'gen2_boost_type_normal'
-        else:
-          itemType = 'gen2_boost_stat_attack'
 
-      writer.writerow([itemName, itemType, description, spriteURL])
+      writer.writerow([itemName, description, spriteURL])
 
     # add in berries; their effects are handled separately
     bs = openLink('https://www.serebii.net/itemdex/list/berry.shtml', 0, 10)
@@ -189,11 +184,172 @@ def itemGenList(fname):
         elif itemName in ['scope_lens', 'smoke_ball']:
           writer.writerow([itemName, 2])
           continue
-
-
+        # Bulbapedia also lists the Chilan Berry Pokeblock ingredient as a separate item, introduced in Gen 3.
+        elif itemName == 'chilan_berry':
+          writer.writerow([itemName, 4])
+          continue
 
         gen = genSymbolToNumber(cells[2].get_text())
         writer.writerow([itemName, gen])
+
+  return
+
+def itemClassList(fname): 
+  with open(fname, 'w', newline='', encoding='utf-8') as itemClassCSV:
+    writer = csv.writer(itemClassCSV)
+    writer.writerow(['Item Name', 'Item Class', 'Item Gen'])
+
+
+    # Berries
+    # Gen 2 berries
+    bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Berry', 0, 10)
+    dataRows = bs.find(id='Generation_II').find_next('table').find_all('tr')[1:]
+
+    for row in dataRows:
+      cells = row.find_all(['td', 'th'])
+      berryName = parseName(cells[0].get_text())
+
+      writer.writerow([berryName, 'berry', 2])
+
+    # Later berries
+    # Sometimes there's a useless 'table' between the header and the actual table of interest. 
+    dataRows = bs.find(id='Generation_III_onwards').find_next('p').find_next('table').find_all('tr')[1:]
+
+    for row in dataRows:
+      cells = row.find_all(['td', 'th'])
+      berryGen, berryName = genSymbolToNumber(cells[0].get_text().rstrip('\n')), parseName(cells[3].get_text())
+
+      writer.writerow([berryName, 'berry', berryGen])
+    
+
+    # Drives
+    writer.writerow(['shock_drive', 'drive', 5])
+    writer.writerow(['burn_drive', 'drive', 5])
+    writer.writerow(['chill_drive', 'drive', 5])
+    writer.writerow(['douse_drive', 'drive', 5])
+
+
+    # Power items
+    writer.writerow(['power_anklet', 'power', 4])
+    writer.writerow(['power_band', 'power', 4])
+    writer.writerow(['power_belt', 'power', 4])
+    writer.writerow(['power_bracer', 'power', 4])
+    writer.writerow(['power_lens', 'power', 4])
+    writer.writerow(['power_weight', 'power', 4])
+
+
+    # Choice items
+    writer.writerow(['choice_band', 'choice', 3])
+    writer.writerow(['choice_specs', 'choice', 4])
+    writer.writerow(['choice_scarf', 'choice', 4])
+
+
+    # Gems
+    bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Gem', 0, 10)
+    dataRows = bs.find(id='List_of_Gems').find_next('table').find_all('tr')[1:]
+
+    for row in dataRows:
+      cells = row.find_all(['td', 'tr'])
+      itemName, itemGen = parseName(cells[1].get_text()), genSymbolToNumber(cells[2].get_text().rstrip('\n'))
+
+      writer.writerow([itemName, 'gem', itemGen])
+
+    
+    # Incense
+    bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Incense', 0, 10)
+    dataRows = bs.find(id='List_of_incenses').find_next('table').find_all('tr')[1:]
+
+    for row in dataRows:
+      cells = row.find_all(['td', 'tr'])
+      itemName, itemGen = parseName(cells[1].get_text()), genSymbolToNumber(cells[2].get_text().rstrip('\n'))
+
+      writer.writerow([itemName, 'incense', itemGen])
+
+
+    # Mega stones
+    bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Mega_Stone', 0, 10)
+    dataRows = bs.find(id='List_of_Mega_Stones').find_next('table').find_all('tr')[1:]
+
+    for row in dataRows:
+      cells = row.find_all(['td', 'tr'])
+      itemName = parseName(cells[1].get_text())
+
+      writer.writerow([itemName, 'mega_stone', 6])
+
+
+    # Memories
+    bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Memory', 0, 10)
+    dataRows = bs.find(id='List_of_Memories').find_next('table').find_all('tr')[1:]
+
+    for row in dataRows:
+      cells = row.find_all(['td', 'tr'])
+      itemName = parseName(cells[1].get_text())
+
+      writer.writerow([itemName, 'memory', 7])
+
+
+    # Plates
+    bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Plate', 0, 10)
+    dataRows = bs.find(id='List_of_Plates').find_next('table').find_all('tr')[1:]
+
+    for row in dataRows:
+      cells = row.find_all(['td', 'tr'])
+      itemName, itemGen = parseName(cells[1].get_text()), genSymbolToNumber(cells[2].get_text().rstrip('\n'))
+
+      writer.writerow([itemName, 'plate', itemGen])
+
+    
+    # Stat enhancers
+    bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Stat-enhancing_item', 0, 10)
+    dataRows = bs.find(id='List_of_stat-enhancing_items').find_next('table').find_all('tr')[1:-1]
+
+    for row in dataRows:
+      cells = row.find_all(['td', 'tr'])
+      itemName, itemGen = parseName(cells[1].get_text().rstrip('\n*')), genSymbolToNumber(cells[2].get_text().rstrip('\n'))
+
+      writer.writerow([itemName, 'enhancer', itemGen])
+    
+
+    # Type enhancers
+    bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Type-enhancing_item', 0, 10)
+    dataRows = bs.find(id='List_of_type-enhancing_items').find_next('table').find_all('tr')[1:]
+
+    for row in dataRows:
+      cells = row.find_all(['td', 'tr'])
+      itemName, itemGen = parseName(cells[1].get_text().rstrip('\n*')), genSymbolToNumber(cells[2].get_text().rstrip('\n'))
+
+      writer.writerow([itemName, 'enhancer', itemGen])
+    
+    # Pokemon specific
+    dataRows = bs.find(id='Pokémon-specific_type-enhancing_items').find_next('table').find_all('tr')[1:]
+
+    for row in dataRows:
+      cells = row.find_all(['td', 'tr'])
+      itemName, itemGen = parseName(cells[1].get_text().rstrip('\n*')), genSymbolToNumber(cells[2].get_text().rstrip('\n'))
+
+      # Remove extra text after Soul Dew
+      if 'soul_dew' in itemName:
+        itemName = 'soul_dew'
+
+      writer.writerow([itemName, 'enhancer', itemGen])
+
+    # Z-crystals
+    bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Z-Crystal', 0, 10)
+    dataRows = bs.find(id='For_each_type').find_next('table').find_all('tr')[1:]
+
+    for row in dataRows:
+      cells = row.find_all(['td', 'tr'])
+      itemName, itemGen = parseName(cells[1].get_text().rstrip('\n*')), 7
+
+      writer.writerow([itemName, 'z_crystal', itemGen])
+
+    dataRows = bs.find(id='For_specific_Pokémon').find_next('table').find_all('tr')[1:]
+
+    for row in dataRows:
+      cells = row.find_all(['td', 'tr'])
+      itemName, itemGen = parseName(cells[1].get_text().rstrip('\n*')), 7
+
+      writer.writerow([itemName, 'z_crystal', itemGen])
 
   return
 
@@ -666,7 +822,7 @@ def megaStones(fname):
   with open(fname, 'w', newline='', encoding='utf-8') as megaStoneCSV:
     writer = csv.writer(megaStoneCSV)
 
-    writer.writerow(['Item Name', 'Pokemon Name', 'Description', 'Sprite URL'])
+    writer.writerow(['Item Name', 'Pokemon Name', 'Sprite URL', 'Description'])
 
     bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Mega_Stone', 0, 10)
     dataRows = bs.find('span', {'id': 'List_of_Mega_Stones'}).find_next('table').find('tr').find_next_siblings('tr')
@@ -694,8 +850,12 @@ def main():
   mainList(main_fname)
 
   # Serebii doesn't list the Gen that the item was introduced--the only place I could find was Bulbapedia, which lists ALL items, not just held items
-  itemGen_fname = dataPath + 'heldItemGen.csv'
+  itemGen_fname = dataPath + 'heldItemListGen.csv'
   itemGenList(itemGen_fname)
+
+  # Bulbapedia has a list of most of the held items by class. We list these classifications here.
+  itemClass_fname = dataPath + 'heldItemListClass.csv'
+  itemClassList(itemClass_fname)
 
   # berries
   # main list of berries
