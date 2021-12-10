@@ -2,7 +2,7 @@ from ast import parse
 import csv
 import re
 import copy
-from utils import parseName, genSymbolToNumber, getCSVDataPath, genSymbolToNumber, typeList
+from utils import parseName, genSymbolToNumber, getCSVDataPath, genSymbolToNumber, typeList, baseFormSuffices
 
 # make initial Pokemon dict, with dex number, gen, species, and type data
 # the pokemonByType.csv doesn't contain all the Pokemon forms, since some different forms of the same Pokemon can have the same type. We will rectify this in future functions; for example, base stat data will add in the forms of deoxys since those have different base stats
@@ -577,11 +577,37 @@ def checkPokeAPIForms(fname, pokemonDict):
       pokemonDict[pokemonName]["gen"] = formGen
       pokemonDict[pokemonName]["pokeapi"] = [pokeapiName, pokeapiID]
 
+  # # Remove unown and make unown_a the base form.
+  # pokemonDict["unown_a"] = copy.deepcopy(pokemonDict["unown"])
+  # del pokemonDict["unown"]
+
+  # # Remove mothim and make mothim_plant the base form.
+  # pokemonDict["mothim_plant"] = copy.deepcopy(pokemonDict["mothim"])
+  # del pokemonDict["mothim"]
+
+  # # Remove scatterbug/spewpa/vivillon and make scatterbug/spewpa/vivillon_icy_snow the base form.
+  # pokemonDict["scatterbug_icy_snow"] = copy.deepcopy(pokemonDict["scatterbug"])
+  # del pokemonDict["scatterbug"]
+  # pokemonDict["spewpa_icy_snow"] = copy.deepcopy(pokemonDict["spewpa"])
+  # del pokemonDict["spewpa"]
+  # pokemonDict["vivillon_icy_snow"] = copy.deepcopy(pokemonDict["vivillon"])
+  # del pokemonDict["vivillon"]
+
+  # # Remove flabebe/floette/florges and make flabebe/floette/florges-red the base form.
+  # pokemonDict["flabebe_red"] = copy.deepcopy(pokemonDict["flabebe"])
+  # del pokemonDict["flabebe"]
+  # pokemonDict["floette_red"] = copy.deepcopy(pokemonDict["floette"])
+  # del pokemonDict["floette"]
+  # pokemonDict["florges_red"] = copy.deepcopy(pokemonDict["florges"])
+  # del pokemonDict["florges"]
+
   return
 
 # add mega/regional/gmax flags, and restore dex numbers to such forms
 # For mega evolutions, add mega-stone requirements
 def addFormFlags(pokemonDict):
+  # Force unown_a to be 
+
   # Dictionary for keeping track of Megas; will add mega stone requirements at end
   megas = {}
 
@@ -629,13 +655,13 @@ def addFormFlags(pokemonDict):
         # need to handle case-by-case
         else:
           handled = False
-          # By putting 'ice' before 'normal', we ensure that the base forms for Arceus and Silvally are the Normal-type forms (note that they appear twice).
-          for baseFormSuffix in ['ice', 'normal', 'plant', 'aria', 'baile', 'standard', 'origin', 'land', 'incarnate', 'shield', 'average', 'midday', 'solo', 'm', '50', 'overcast', 'west', 'red_striped', 'spring', 'ordinary', 'full_belly', 'amped']:
+          for baseFormSuffix in baseFormSuffices():
             if speciesName + '_' + baseFormSuffix in pokemonDict.keys():
               handled = True
 
               # indicates base form
               if baseFormSuffix in pokemonName:
+
                 isBaseForm = True
                 continue
               
@@ -656,7 +682,6 @@ def addFormFlags(pokemonDict):
           print(pokemonName, 'form data unhandled!')
           
         continue
-    
 
     # baseForm and pokemonName refer to each other through "form_data"
     if not isBaseForm:

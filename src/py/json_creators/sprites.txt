@@ -1,0 +1,136 @@
+sprites
+  versions
+    generation-i
+      red-blue
+        back
+          gray
+        gray
+        transparent
+          back
+      yellow
+        back
+          gbc
+          gray
+        gbc
+        gray
+        transparent
+          back
+
+    generation-ii
+      silver
+        back
+          shiny
+        shiny
+        transparent
+      gold
+        back
+          shiny
+        shiny
+        transparent
+      crystal
+        back
+          shiny
+        shiny
+        transparent
+
+      -gold and silver have different sprites
+      
+    generation-iii
+      emerald
+        shiny
+      firered-leafgreen
+        back
+          shiny
+        shiny
+      ruby-sapphire
+        back
+          shiny
+        shiny
+
+    generation-iv
+      diamond-pearl
+        back
+          female
+          shiny
+            female
+        female
+        shiny
+          female
+      heartgold-soulsilver
+        back
+          female
+          shiny
+            female
+        female
+        shiny
+          female
+      platinum
+        back
+          female
+          shiny
+            female
+        female
+        shiny
+          female
+
+      -arceus unknown
+
+    generation-v
+      black-white
+        back
+          female
+          shiny
+            female
+        female
+        shiny
+          female
+
+    generation-vi
+      omegaruby-alphasapphire
+        female
+        shiny
+          female
+      x-y
+        female
+        shiny
+          female
+
+    generation-vii
+      icons
+        female
+      ultra-sun-ultra-moon
+        female
+        shiny
+          female
+
+      -mega suffix
+      -primal suffix
+      -totems
+      -deoxys has normal
+      -battle bond greninjna AND ash, former seems to just be greninjna
+      -mimikyu busted and disguised
+      -pikachu cosplays, also a pikachu-cosplay
+
+
+    generation-viii
+      icons
+        female
+
+      -gmax suffix
+      -alola suffix
+      -galar suffix
+      -pikachu has cap names
+      -pikachu/eevee-starter -> pikachu/eevee-partner
+      -spinda blank, filled
+      -castform rainy, snowy, sunny
+      -deoxys doesn't have normal
+      -mothim plant
+      -shellos and gastrodon east, west
+      -darmanitan, zen after galar
+      -galarian stunfisk has two hyphens
+      -incarnate and therian
+      -genesect burn, chill, douse, shock, normal
+      -greninja ash
+      -zygarde no percentage signs
+      -komala has form-1
+      -IDs in 10,000 don't seem to have any purpose?
