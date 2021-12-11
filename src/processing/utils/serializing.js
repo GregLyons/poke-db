@@ -73,13 +73,14 @@ const serializeDescriptions = descriptions => {
 };
 
 // Similar to serializeDict, but for simpler objects such as stats, statuses, effects, etc.
-const serializeSimpleDict = simpleDict => {
-  return Object.keys(simpleDict).reduce((acc, curr) => {
+const serializeVersionGroupDict = versionGroupDict => {
+  return Object.keys(versionGroupDict).reduce((acc, curr) => {
     return acc.concat({
-      "name": curr,
-      "formatted_name": simpleDict[curr].formatted_name,
+      "code": curr,
+      "name": versionGroupDict[curr].name,
+      "formatted_name": versionGroupDict[curr].formatted_name,
       // stats and statuses don't have gens assigned to them
-      "introduced": simpleDict[curr].gen ? simpleDict[curr].gen : undefined
+      "introduced": versionGroupDict[curr].gen ? versionGroupDict[curr].gen : undefined
     });
   }, []);
 }
@@ -111,5 +112,5 @@ const serializeSimpleDict = simpleDict => {
 module.exports = {
   serializeDict,
   serializeDescriptions,
-  serializeSimpleDict,
+  serializeVersionGroupDict,
 }

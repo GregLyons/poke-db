@@ -39,6 +39,7 @@ More complicated entities, depending on generation_id (or the generation table t
 
 INSERT INTO version_group (
   version_group_code,
+  version_group_name,
   version_group_formatted_name,
   introduced
 ) VALUES ?;
@@ -110,5 +111,6 @@ INSERT INTO pokemon (
   pokemon_defense,
   pokemon_special_defense,
   pokemon_special_attack,
-  pokemon_speed
+  pokemon_speed,
+  pokemon_is_base_form
 ) VALUES ?;

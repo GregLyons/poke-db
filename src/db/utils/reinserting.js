@@ -231,6 +231,7 @@ const reinsertPokemonJunctionData = async(db, tableStatements) => {
       'pokemon_form',
       'pokemon_ptype',
       'pokemon_ability',
+      'pokemon_requires_item',
     ]
   */
   const pokemonJunctionTableNames = Object.keys(tableStatements.pokemonJunctionTables)
@@ -243,7 +244,7 @@ const reinsertPokemonJunctionData = async(db, tableStatements) => {
       [pokemon_FKM, pType_FKM, ability_FKM]
 
   */ 
-  const foreignKeyTables = ['pokemon', 'ptype', 'ability'];
+  const foreignKeyTables = ['pokemon', 'ptype', 'ability', 'item'];
   const foreignKeyMaps = await getForeignKeyMaps(db, tableStatements, foreignKeyTables);
   
   const pokemonData = require(PROCESSED_DATA_PATH + 'pokemon.json');

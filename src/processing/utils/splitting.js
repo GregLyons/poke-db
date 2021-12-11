@@ -106,7 +106,7 @@ const splitEntity = (entity, initialGen) => {
             //   console.log(`${entity.formatted_name} does not have a patch for ${gen}: ${innerKey}, ${innerValue}.`);
             // }
           }
-          // Special case for move requirements; the reason we have it so nested is that the extendPatch algorithm works; otherwise, we'd need to handle an exception there instead.
+          // Special case for move and Pokemon requirements; the reason we have it so nested is that the extendPatch algorithm works; otherwise, we'd need to handle an exception there instead.
           else if (key == 'requirements') {
             // innerValue is an object whose keys are requirement names (e.g. 'electric', 'fairy', 'orbeetle', 'alcremie'), and whose values are patch lists
             splitObject[gen][key][innerKey] = [];

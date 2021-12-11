@@ -718,39 +718,50 @@ def addFormFlags(pokemonDict):
       }
 
     # Add blue and red orb for Primal Reversion kyogre and groudon
-    pokemonDict[pokemonName]["kyogre_primal"] = {
+    pokemonDict["kyogre_primal"]["requirements"] = {
         "item": { 
           'blue_orb': [[True, 6]]
         }
       }
 
-    pokemonDict[pokemonName]["groudon_primal"] = {
+    pokemonDict["groudon_primal"]["requirements"] = {
         "item": { 
           'red_orb': [[True, 6]]
         }
       }
 
     # Ultra necrozma
-    pokemonDict[pokemonName]["necrozma_ultra"] = {
+    pokemonDict["necrozma_ultra"]["requirements"] = {
         "item": { 
           'ultranecrozium_z': [[True, 7]]
         }
       }
 
     # Zacian
-    pokemonDict[pokemonName]["zacian_crowned"] = {
+    pokemonDict["zacian_crowned"]["requirements"] = {
         "item": { 
           'rusted_sword': [[True, 8]]
         }
       }
 
     # Zamazenta
-    pokemonDict[pokemonName]["zamazenta_crowned"] = {
+    pokemonDict["zamazenta_crowned"]["requirements"] = {
         "item": { 
           'rusted_shield': [[True, 8]]
         }
       }
 
+  # Add 'is_base_form' flags
+  for pokemonName in pokemonDict.keys():
+    # If there is not a base form in the form data, or if the form data is empty, that means that this Pokemon _is_ the base form.
+    pokemonDict[pokemonName]["is_base_form"] = True
+
+    # Look through the form data and see if there is a base form.
+    for formName in pokemonDict[pokemonName]["form_data"].keys():
+      for patch in pokemonDict[pokemonName]["form_data"][formName]:
+        if patch[0] == 'base_form':
+          pokemonDict[pokemonName]["is_base_form"] = False
+    
   return
 
 def addFullName(pokemonDict):

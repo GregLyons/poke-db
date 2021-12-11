@@ -35,6 +35,7 @@ CREATE TABLE IF NOT EXISTS sprite (
 CREATE TABLE IF NOT EXISTS version_group (
   version_group_id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
   version_group_code VARCHAR(5) NOT NULL UNIQUE,
+  version_group_name VARCHAR(45) NOT NULL UNIQUE,
   version_group_formatted_name VARCHAR(45) NOT NULL UNIQUE,
   introduced TINYINT UNSIGNED NOT NULL,
 
@@ -201,6 +202,7 @@ CREATE TABLE IF NOT EXISTS pokemon (
   pokemon_special_defense TINYINT UNSIGNED NOT NULL,
   pokemon_special_attack TINYINT UNSIGNED NOT NULL,
   pokemon_speed TINYINT UNSIGNED NOT NULL,
+  pokemon_is_base_form TINYINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (generation_id, pokemon_id),
   FOREIGN KEY (generation_id) REFERENCES generation(generation_id)

@@ -261,6 +261,43 @@ def checkMoveRequirements(moveDict, typeDict, pokemonDict, itemDict):
 
   return
 
+# check that the move requirements match the relevant dicts
+def checkPokemonRequirements(pokemonDict, itemDict): 
+  print('Checking consistency of Pokemon requirements with pokemonDict, itemDict.')
+  
+  pokemonNames = set()
+  for pokemonName in pokemonDict.keys():
+    pokemonNames.add(pokemonName)
+
+  itemNames = set()
+  for itemName in itemDict.keys():
+    itemNames.add(itemName)
+
+  for pokemonName in pokemonDict.keys():
+    # ignore moves without requirements
+    if 'requirements' not in pokemonDict[pokemonName].keys():
+      continue
+    else:
+      requirements = pokemonDict[pokemonName]["requirements"]
+    
+    for entityClass in pokemonDict[pokemonName]["requirements"]:
+      if entityClass == 'pokemon':
+        entitySet = pokemonNames
+      elif entityClass == 'item':
+        entitySet = itemNames
+      else:
+        continue
+      
+      for entityName in requirements[entityClass].keys():
+        entityName
+        if entityName not in entitySet:
+          print(pokemonName, 'has an inconsistent', entityClass, 'requirement:', entityName)
+
+  print('Finished.')
+  print()
+
+  return
+
 # check that descriptionDict and entityDict have the same entityNames, where entityType is 'ability', 'item', or 'move'
 def checkDescriptionsAgainstEntities(descriptionDict, entityDict, entityType):
   print('Checking consistency of descriptionDict with ' + entityType + ' names...')

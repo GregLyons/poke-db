@@ -146,9 +146,9 @@ descriptionArr = descriptionArr.filter(data => data.description_class != 'move' 
 // Serialize simpler objects.
 const versionGroups = require(RAW_JSON_DATA_PATH + 'versionGroups.json');
 
-const { serializeSimpleDict } = require('./utils/index.js');
+const { serializeVersionGroupDict } = require('./utils/index.js');
 
-const versionGroupArr = serializeSimpleDict(versionGroups);
+const versionGroupArr = serializeVersionGroupDict(versionGroups);
 
 // #endregion
 
@@ -186,12 +186,14 @@ splitMoveArr.map(data => {
   if (['physical', 'special', 'status', 'varies'].indexOf(data.category) < 0) console.log(`${data.name}: ${data.category} is not a valid move category.`);
 
   if (['adjacent_ally', 'adjacent_foe', 'all_adjacent','all_adjacent_foes', 'all', 'all_allies', 'all_foes', 'any', 'any_adjacent', 'user', 'user_and_all_allies', 'user_or_adjacent_ally'].indexOf(data.target) < 0) console.log(`${data.name}: ${data.target} is not a valid move target class.`);
+
+  if (!data.hasOwnProperty('removed_from_swsh')) console.log(`${data.name}: Doesn't have an removed_from_swsh flag.`);
+
+  if (!data.hasOwnProperty('removed_from_bdsp')) console.log(`${data.name}: Doesn't have an removed_from_bdsp flag.`);
 });
 
 console.log('Checking Pokemon...');
 splitPokemonArr.map(data => {
-  if(data.cosmetic) return;
-
   if (!data.name) console.log('Doesn\'t have a name!');
 
   if (isNaN(data.introduced)) console.log(`${data.name}: Debut gen ${data.introduced} is not a number.`);
@@ -199,6 +201,8 @@ splitPokemonArr.map(data => {
   if (isNaN(data.dex_number)) console.log(`${data.name}: Dex number ${data.dexNumber} is not a number.`);
   
   if (!data.species) console.log(`${data.name}: Doesn't have a species name.`);
+
+  if (!data.hasOwnProperty('is_base_form')) console.log(`${data.name}: Doesn't have an is_base_form flag.`);
   
   if (isNaN(data.height)) console.log(`${data.name}: Height ${data.weight} is not a number.`);
 

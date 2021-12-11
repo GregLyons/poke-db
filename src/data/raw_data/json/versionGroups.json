@@ -1,98 +1,122 @@
 {
   "RB": {
     "gen": 1,
+    "name": "red-blue",
     "formatted_name": "Red/Blue"
   },
   "Y": {
     "gen": 1,
+    "name": "yellow",
     "formatted_name": "Yellow"
   },
   "Stad": {
     "gen": 1,
+    "name": "stadium",
     "formatted_name": "Stadium"
   },
   "GS": {
     "gen": 2,
+    "name": "gold-silver",
     "formatted_name": "Gold/Silver"
   },
   "C": {
     "gen": 2,
+    "name": "crystal",
     "formatted_name": "Crystal"
   },
   "Stad2": {
     "gen": 2,
+    "name": "stadium_2",
     "formatted_name": "Stadium 2"
   },
   "RS": {
     "gen": 3,
+    "name": "ruby-sapphire",
     "formatted_name": "Ruby/Sapphire"
   },
   "E": {
     "gen": 3,
+    "name": "emerald",
     "formatted_name": "Emerald"
   },
   "Colo": {
     "gen": 3,
+    "name": "colosseum",
     "formatted_name": "Colosseum"
   },
   "XD": {
     "gen": 3,
+    "name": "xd_gale_of_darkness",
     "formatted_name": "XD: Gale of Darkness"
   },
   "FRLG": {
     "gen": 3,
+    "name": "fire_red-leaf_green",
     "formatted_name": "Fire Red/Leaf Green"
   },
   "DP": {
     "gen": 4,
+    "name": "diamond-pearl",
     "formatted_name": "Diamond/Pearl"
   },
   "Pt": {
     "gen": 4,
+    "name": "platinum",
     "formatted_name": "Platinum"
   },
   "HGSS": {
     "gen": 4,
+    "name": "heart_gold-soul_silver",
     "formatted_name": "Heart Gold/Soul Silver"
   },
   "PBR": {
     "gen": 4,
+    "name": "pokemon_battle_revolution",
     "formatted_name": "Pokemon Battle Revolution"
   },
   "BW": {
     "gen": 5,
+    "name": "black-white",
     "formatted_name": "Black/White"
   },
   "B2W2": {
     "gen": 5,
+    "name": "black_2-white_2",
     "formatted_name": "Black 2/White 2"
   },
   "XY": {
     "gen": 6,
+    "name": "x-y",
     "formatted_name": "X/Y"
   },
   "ORAS": {
     "gen": 6,
+    "name": "omega_ruby-alpha_sapphire",
     "formatted_name": "Omega Ruby/Alpha Sapphire"
   },
   "SM": {
     "gen": 7,
+    "name": "sun-moon",
     "formatted_name": "Sun/Moon"
   },
   "USUM": {
     "gen": 7,
+    "name": "ultra_sun-ultra_moon",
     "formatted_name": "Ultra Sun/Ultra Moon"
   },
   "PE": {
     "gen": 7,
+    "name": "lets_go_pikachu-lets_go_eevee",
     "formatted_name": "Let's Go Pikachu/Let's Go Eeevee"
   },
   "SwSh": {
     "gen": 8,
+    "name": "sword-shield",
     "formatted_name": "Sword/Shield"
   },
   "BDSP": {
     "gen": 8,
+    "name": "brilliant_diamond-shining_pearl",
     "formatted_name": "Brilliant Diamond/Shining Pearl"
   }
 }

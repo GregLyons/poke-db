@@ -116,7 +116,7 @@ const resetEverything = async () => {
 // resetBasicEntityTables(db, tableStatements);
 // resetGenDependentEntityTables(db, tableStatements);
 // resetAbilityJunctionTables(db, tableStatements);
-resetMoveJunctionTables(db, tableStatements);
+// resetMoveJunctionTables(db, tableStatements);
 // resetItemJunctionTables(db, tableStatements);
 // resetPokemonJunctionTables(db, tableStatements);
 // resetTypeJunctionTables(db, tableStatements);

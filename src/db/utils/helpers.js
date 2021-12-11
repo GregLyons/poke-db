@@ -20,6 +20,8 @@ const PROCESSED_DATA_PATH = './../../data/processed_data/';
 // Given a version group code, return the generation of that version group. E.g. 'GS' -> 2, 'BW' -> 5.
 const getGenOfVersionGroup = (versionGroupCode) => {
   switch(versionGroupCode) {
+    case 'RB':
+    case 'Y':
     case 'Stad':
       return 1;
     case 'GS':
@@ -48,6 +50,7 @@ const getGenOfVersionGroup = (versionGroupCode) => {
     case 'PE':
       return 7;
     case 'SwSh':
+    case 'BDSP':
       return 8;
     default:
       throw `Invalid version group code: ${versionGroupCode}.`

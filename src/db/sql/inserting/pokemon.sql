@@ -37,7 +37,7 @@ INSERT INTO pokemon_ability (
   ability_slot
 ) VALUES ?;
 
-INSERT INTO pokemon_requires_itemp (
+INSERT INTO pokemon_requires_item (
   pokemon_generation_id,
   pokemon_id,
   item_generation_id,

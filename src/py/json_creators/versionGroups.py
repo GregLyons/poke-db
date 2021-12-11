@@ -1,38 +1,39 @@
 def makeVersionGroupDict():
   # easier to write it this way first, instead of writing all the keys
   versionGroupProtoDict = {
-    "RB": ["Red/Blue", 1],
-    "Y": ["Yellow", 1],
-    "Stad": ["Stadium", 1],
-    "GS": ["Gold/Silver", 2],
-    "C": ["Crystal", 2],
-    "Stad2": ["Stadium 2", 2],
-    "RS": ["Ruby/Sapphire", 3],
-    "E": ["Emerald", 3],
-    "Colo": ["Colosseum", 3],
-    "XD": ["XD: Gale of Darkness", 3],
-    "FRLG": ["Fire Red/Leaf Green", 3],
-    "DP": ["Diamond/Pearl", 4],
-    "Pt": ["Platinum", 4],
-    "HGSS": ["Heart Gold/Soul Silver", 4],
-    "PBR": ["Pokemon Battle Revolution", 4],
-    "BW": ["Black/White", 5],
-    "B2W2": ["Black 2/White 2", 5],
-    "XY": ["X/Y", 6],
-    "ORAS": ["Omega Ruby/Alpha Sapphire", 6],
-    "SM": ["Sun/Moon", 7],
-    "USUM": ["Ultra Sun/Ultra Moon", 7],
-    "PE": ["Let's Go Pikachu/Let's Go Eeevee", 7],
-    "SwSh": ["Sword/Shield", 8],
-    "BDSP": ["Brilliant Diamond/Shining Pearl", 8]
+    "RB": ["Red/Blue", 'red-blue', 1],
+    "Y": ["Yellow", 'yellow', 1],
+    "Stad": ["Stadium", 'stadium', 1],
+    "GS": ["Gold/Silver", 'gold-silver', 2],
+    "C": ["Crystal", 'crystal', 2],
+    "Stad2": ["Stadium 2", 'stadium_2', 2],
+    "RS": ["Ruby/Sapphire", 'ruby-sapphire', 3],
+    "E": ["Emerald", 'emerald', 3],
+    "Colo": ["Colosseum", 'colosseum', 3],
+    "XD": ["XD: Gale of Darkness", 'xd_gale_of_darkness', 3],
+    "FRLG": ["Fire Red/Leaf Green", 'fire_red-leaf_green', 3],
+    "DP": ["Diamond/Pearl", 'diamond-pearl', 4],
+    "Pt": ["Platinum", 'platinum', 4],
+    "HGSS": ["Heart Gold/Soul Silver", 'heart_gold-soul_silver', 4],
+    "PBR": ["Pokemon Battle Revolution", 'pokemon_battle_revolution', 4],
+    "BW": ["Black/White", 'black-white', 5],
+    "B2W2": ["Black 2/White 2", 'black_2-white_2', 5],
+    "XY": ["X/Y", 'x-y', 6],
+    "ORAS": ["Omega Ruby/Alpha Sapphire", 'omega_ruby-alpha_sapphire', 6],
+    "SM": ["Sun/Moon", 'sun-moon', 7],
+    "USUM": ["Ultra Sun/Ultra Moon", 'ultra_sun-ultra_moon', 7],
+    "PE": ["Let's Go Pikachu/Let's Go Eeevee", 'lets_go_pikachu-lets_go_eevee', 7],
+    "SwSh": ["Sword/Shield", 'sword-shield', 8],
+    "BDSP": ["Brilliant Diamond/Shining Pearl", 'brilliant_diamond-shining_pearl', 8]
   }
 
   versionGroupDict = {}
   for versionGroupCode in versionGroupProtoDict.keys():
-    formattedName, gen = versionGroupProtoDict[versionGroupCode]
+    formattedName, name, gen = versionGroupProtoDict[versionGroupCode]
 
     versionGroupDict[versionGroupCode] = {
       "gen": gen,
+      "name": name,
       "formatted_name": formattedName,
     }
 

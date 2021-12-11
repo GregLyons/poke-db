@@ -46,7 +46,7 @@ const getValuesForTable = (
       if (tableName == 'pokemon_pmove') {
         [pokemon_FKM, move_FKM] = foreignKeyMaps;
       } else {
-        [pokemon_FKM, pType_FKM, ability_FKM] = foreignKeyMaps;
+        [pokemon_FKM, pType_FKM, ability_FKM, item_FKM] = foreignKeyMaps;
       }
       pokemonData = entityData;
       break;
@@ -218,6 +218,7 @@ const getValuesForTable = (
           data.special_defense,
           data.special_attack,
           data.speed,
+          data.is_base_form,
         ]);
       break;
     
@@ -253,7 +254,7 @@ const getValuesForTable = (
           data.contact,
           data.target,
           data.removed_from_swsh,
-          data.removed_from_bdsp
+          data.removed_from_bdsp,
         ]);
       break;
 
@@ -291,7 +292,7 @@ const getValuesForTable = (
           introduced
         )
       */
-      values = require(PROCESSED_DATA_PATH + 'versionGroups.json').map(data => [data.name, data.formatted_name, data.introduced]);
+      values = require(PROCESSED_DATA_PATH + 'versionGroups.json').map(data => [data.code, data.name, data.formatted_name, data.introduced]);
       break;
 
     /*
@@ -1214,14 +1215,12 @@ const getValuesForTable = (
         if (!requirementData || !requirementData["item"]) return acc;
         
         return acc.concat(
-          Object.keys(requirementData["item"]).map(itemName => {
+          requirementData["item"].map(itemName => {
 
             // We always compare entities of the same generation.
             const { item_id: itemID } = item_FKM.get(makeMapKey([gen, itemName]));
 
-            return pokemonData[pokemonName] 
-            ? [gen, pokemonID, gen, itemID]
-            : [];
+            return [gen, pokemonID, gen, itemID];
           })
         )
       }, [])
