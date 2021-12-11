@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS natural_gift (
   item_id SMALLINT UNSIGNED NOT NULL,
   ptype_generation_id TINYINT UNSIGNED NOT NULL,
   ptype_id TINYINT UNSIGNED NOT NULL,
-  item_power TINYINT UNSIGNED NOT NULL,
+  power TINYINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (item_generation_id, item_id, ptype_generation_id, ptype_id),
   FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id)

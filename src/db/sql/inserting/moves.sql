@@ -13,10 +13,10 @@ INSERT INTO pmove_requires_ptype (
 ) VALUES ?;
 
 INSERT INTO pmove_requires_pmove (
-  pmove_generation_id,
-  pmove_id,
-  base_pmove_generation_id,
-  base_pmove_id
+  requiring_pmove_generation_id,
+  requiring_pmove_id,
+  required_pmove_generation_id,
+  required_pmove_id
 ) VALUES ?;
 
 INSERT INTO pmove_requires_pokemon (

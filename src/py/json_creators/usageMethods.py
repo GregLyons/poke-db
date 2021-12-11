@@ -19,7 +19,7 @@ def makeUsageMethodDict():
     # iron fist
     "punch": 4,
     # soundproof
-    "sound": 1,
+    "sound": 3,
   }
 
   usageMethodDict = {}

@@ -31,16 +31,16 @@ CREATE TABLE IF NOT EXISTS pmove_requires_ptype (
 );
 
 CREATE TABLE IF NOT EXISTS pmove_requires_pmove (
-  pmove_generation_id TINYINT UNSIGNED NOT NULL,
-  pmove_id SMALLINT UNSIGNED NOT NULL,
-  base_pmove_generation_id TINYINT UNSIGNED NOT NULL,
-  base_pmove_id SMALLINT UNSIGNED NOT NULL,
+  requiring_pmove_generation_id TINYINT UNSIGNED NOT NULL,
+  requiring_pmove_id SMALLINT UNSIGNED NOT NULL,
+  required_pmove_generation_id TINYINT UNSIGNED NOT NULL,
+  required_pmove_id SMALLINT UNSIGNED NOT NULL,
 
-  PRIMARY KEY (pmove_generation_id, pmove_id, base_pmove_generation_id, base_pmove_id),
-  FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id)
+  PRIMARY KEY (requiring_pmove_generation_id, requiring_pmove_id, required_pmove_generation_id, required_pmove_id),
+  FOREIGN KEY (requiring_pmove_generation_id, requiring_pmove_id) REFERENCES pmove(generation_id, pmove_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-  FOREIGN KEY (base_pmove_generation_id, base_pmove_id) REFERENCES pmove(generation_id, pmove_id)
+  FOREIGN KEY (required_pmove_generation_id, required_pmove_id) REFERENCES pmove(generation_id, pmove_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE
 ); 
