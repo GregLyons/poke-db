@@ -3,7 +3,7 @@ INSERT INTO natural_gift (
   item_id,
   ptype_generation_id,
   ptype_id,
-  item_power
+  power
 ) VALUES ?;
 
 INSERT INTO item_boosts_ptype (

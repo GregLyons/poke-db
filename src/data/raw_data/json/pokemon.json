@@ -85,7 +85,7 @@
       "venusaur_mega": [["mega", 6]],
       "venusaur_gmax": [["gmax", 8]]
     },
-    "form_class": [["base", 6], ["base", 8]],
+    "form_class": [["base", 1]],
     "formatted_name": "Venusaur"
   },
   "charmander": {
@@ -175,7 +175,7 @@
       "charizard_mega_y": [["mega", 6]],
       "charizard_gmax": [["gmax", 8]]
     },
-    "form_class": [["base", 6], ["base", 8]],
+    "form_class": [["base", 1]],
     "formatted_name": "Charizard"
   },
   "squirtle": {
@@ -264,7 +264,7 @@
       "blastoise_mega": [["mega", 6]],
       "blastoise_gmax": [["gmax", 8]]
     },
-    "form_class": [["base", 6], ["base", 8]],
+    "form_class": [["base", 1]],
     "formatted_name": "Blastoise"
   },
   "caterpie": {
@@ -352,7 +352,7 @@
     "form_data": {
       "butterfree_gmax": [["gmax", 8]]
     },
-    "form_class": [["base", 8]],
+    "form_class": [["base", 1]],
     "formatted_name": "Butterfree"
   },
   "weedle": {
@@ -440,7 +440,7 @@
     "form_data": {
       "beedrill_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 1]],
     "formatted_name": "Beedrill"
   },
   "pidgey": {
@@ -528,7 +528,7 @@
     "form_data": {
       "pidgeot_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 1]],
     "formatted_name": "Pidgeot"
   },
   "rattata": {
@@ -558,7 +558,7 @@
     "form_data": {
       "rattata_alola": [["alola", 7]]
     },
-    "form_class": [["base", 7]],
+    "form_class": [["base", 1]],
     "formatted_name": "Rattata"
   },
   "raticate": {
@@ -588,7 +588,7 @@
     "form_data": {
       "raticate_alola": [["alola", 7]]
     },
-    "form_class": [["base", 7]],
+    "form_class": [["base", 1]],
     "formatted_name": "Raticate"
   },
   "spearow": {
@@ -748,7 +748,7 @@
       "pikachu_partner_cap": [["other", 7]],
       "pikachu_cosplay": [["other", 6]]
     },
-    "form_class": [["base", 8], ["base", 7], ["base", "lgpe_only"], ["base", 1], ["base", 6]],
+    "form_class": [["base", 1]],
     "formatted_name": "Pikachu"
   },
   "raichu": {
@@ -778,7 +778,7 @@
     "form_data": {
       "raichu_alola": [["alola", 7]]
     },
-    "form_class": [["base", 7]],
+    "form_class": [["base", 1]],
     "formatted_name": "Raichu"
   },
   "sandshrew": {
@@ -808,7 +808,7 @@
     "form_data": {
       "sandshrew_alola": [["alola", 7]]
     },
-    "form_class": [["base", 7]],
+    "form_class": [["base", 1]],
     "formatted_name": "Sandshrew"
   },
   "sandslash": {
@@ -838,7 +838,7 @@
     "form_data": {
       "sandslash_alola": [["alola", 7]]
     },
-    "form_class": [["base", 7]],
+    "form_class": [["base", 1]],
     "formatted_name": "Sandslash"
   },
   "nidoran_f": {
@@ -1098,7 +1098,7 @@
     "form_data": {
       "vulpix_alola": [["alola", 7]]
     },
-    "form_class": [["base", 7]],
+    "form_class": [["base", 1]],
     "formatted_name": "Vulpix"
   },
   "ninetales": {
@@ -1128,7 +1128,7 @@
     "form_data": {
       "ninetales_alola": [["alola", 7]]
     },
-    "form_class": [["base", 7]],
+    "form_class": [["base", 1]],
     "formatted_name": "Ninetales"
   },
   "jigglypuff": {
@@ -1473,7 +1473,7 @@
     "form_data": {
       "diglett_alola": [["alola", 7]]
     },
-    "form_class": [["base", 7]],
+    "form_class": [["base", 1]],
     "formatted_name": "Diglett"
   },
   "dugtrio": {
@@ -1503,7 +1503,7 @@
     "form_data": {
       "dugtrio_alola": [["alola", 7]]
     },
-    "form_class": [["base", 7]],
+    "form_class": [["base", 1]],
     "formatted_name": "Dugtrio"
   },
   "meowth": {
@@ -1535,7 +1535,7 @@
       "meowth_galar": [["galar", 8]],
       "meowth_gmax": [["gmax", 8]]
     },
-    "form_class": [["base", 7], ["base", 8]],
+    "form_class": [["base", 1]],
     "formatted_name": "Meowth"
   },
   "persian": {
@@ -1565,7 +1565,7 @@
     "form_data": {
       "persian_alola": [["alola", 7]]
     },
-    "form_class": [["base", 7]],
+    "form_class": [["base", 1]],
     "formatted_name": "Persian"
   },
   "psyduck": {
@@ -1908,7 +1908,7 @@
     "form_data": {
       "alakazam_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 1]],
     "formatted_name": "Alakazam"
   },
   "machop": {
@@ -1996,7 +1996,7 @@
     "form_data": {
       "machamp_gmax": [["gmax", 8]]
     },
-    "form_class": [["base", 8]],
+    "form_class": [["base", 1]],
     "formatted_name": "Machamp"
   },
   "bellsprout": {
@@ -2168,7 +2168,7 @@
     "form_data": {
       "geodude_alola": [["alola", 7]]
     },
-    "form_class": [["base", 7]],
+    "form_class": [["base", 1]],
     "formatted_name": "Geodude"
   },
   "graveler": {
@@ -2200,7 +2200,7 @@
     "form_data": {
       "graveler_alola": [["alola", 7]]
     },
-    "form_class": [["base", 7]],
+    "form_class": [["base", 1]],
     "formatted_name": "Graveler"
   },
   "golem": {
@@ -2230,7 +2230,7 @@
     "form_data": {
       "golem_alola": [["alola", 7]]
     },
-    "form_class": [["base", 7]],
+    "form_class": [["base", 1]],
     "formatted_name": "Golem"
   },
   "ponyta": {
@@ -2260,7 +2260,7 @@
     "form_data": {
       "ponyta_galar": [["galar", 8]]
     },
-    "form_class": [["base", 8]],
+    "form_class": [["base", 1]],
     "formatted_name": "Ponyta"
   },
   "rapidash": {
@@ -2290,7 +2290,7 @@
     "form_data": {
       "rapidash_galar": [["galar", 8]]
     },
-    "form_class": [["base", 8]],
+    "form_class": [["base", 1]],
     "formatted_name": "Rapidash"
   },
   "slowpoke": {
@@ -2321,7 +2321,7 @@
     "form_data": {
       "slowpoke_galar": [["galar", 8]]
     },
-    "form_class": [["base", 8]],
+    "form_class": [["base", 1]],
     "formatted_name": "Slowpoke"
   },
   "slowbro": {
@@ -2352,7 +2352,7 @@
       "slowbro_mega": [["mega", 6]],
       "slowbro_galar": [["galar", 8]]
     },
-    "form_class": [["base", 6], ["base", 8]],
+    "form_class": [["base", 1]],
     "formatted_name": "Slowbro"
   },
   "magnemite": {
@@ -2438,7 +2438,7 @@
     "form_data": {
       "farfetchd_galar": [["galar", 8]]
     },
-    "form_class": [["base", 8]],
+    "form_class": [["base", 1]],
     "formatted_name": "Farfetchd"
   },
   "doduo": {
@@ -2580,7 +2580,7 @@
     "form_data": {
       "grimer_alola": [["alola", 7]]
     },
-    "form_class": [["base", 7]],
+    "form_class": [["base", 1]],
     "formatted_name": "Grimer"
   },
   "muk": {
@@ -2610,7 +2610,7 @@
     "form_data": {
       "muk_alola": [["alola", 7]]
     },
-    "form_class": [["base", 7]],
+    "form_class": [["base", 1]],
     "formatted_name": "Muk"
   },
   "shellder": {
@@ -2755,7 +2755,7 @@
       "gengar_mega": [["mega", 6]],
       "gengar_gmax": [["gmax", 8]]
     },
-    "form_class": [["base", 6], ["base", 8]],
+    "form_class": [["base", 1]],
     "formatted_name": "Gengar"
   },
   "onix": {
@@ -2897,7 +2897,7 @@
     "form_data": {
       "kingler_gmax": [["gmax", 8]]
     },
-    "form_class": [["base", 8]],
+    "form_class": [["base", 1]],
     "formatted_name": "Kingler"
   },
   "voltorb": {
@@ -3012,7 +3012,7 @@
     "form_data": {
       "exeggutor_alola": [["alola", 7]]
     },
-    "form_class": [["base", 7]],
+    "form_class": [["base", 1]],
     "formatted_name": "Exeggutor"
   },
   "cubone": {
@@ -3071,7 +3071,7 @@
     "form_data": {
       "marowak_alola": [["alola", 7]]
     },
-    "form_class": [["base", 7]],
+    "form_class": [["base", 1]],
     "formatted_name": "Marowak"
   },
   "hitmonlee": {
@@ -3214,7 +3214,7 @@
     "form_data": {
       "weezing_galar": [["galar", 8]]
     },
-    "form_class": [["base", 8]],
+    "form_class": [["base", 1]],
     "formatted_name": "Weezing"
   },
   "rhyhorn": {
@@ -3358,7 +3358,7 @@
     "form_data": {
       "kangaskhan_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 1]],
     "formatted_name": "Kangaskhan"
   },
   "horsea": {
@@ -3558,7 +3558,7 @@
     "form_data": {
       "mr_mime_galar": [["galar", 8]]
     },
-    "form_class": [["base", 8]],
+    "form_class": [["base", 1]],
     "formatted_name": "Mr. Mime"
   },
   "scyther": {
@@ -3702,7 +3702,7 @@
     "form_data": {
       "pinsir_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 1]],
     "formatted_name": "Pinsir"
   },
   "tauros": {
@@ -3786,7 +3786,7 @@
     "form_data": {
       "gyarados_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 1]],
     "formatted_name": "Gyarados"
   },
   "lapras": {
@@ -3814,7 +3814,7 @@
     "form_data": {
       "lapras_gmax": [["gmax", 8]]
     },
-    "form_class": [["base", 8]],
+    "form_class": [["base", 1]],
     "formatted_name": "Lapras"
   },
   "ditto": {
@@ -3878,7 +3878,7 @@
       "eevee_gmax": [["gmax", 8]],
       "eevee_partner": [["other", "lgpe_only"]]
     },
-    "form_class": [["base", 8], ["base", "lgpe_only"]],
+    "form_class": [["base", 1]],
     "formatted_name": "Eevee"
   },
   "vaporeon": {
@@ -4130,7 +4130,7 @@
     "form_data": {
       "aerodactyl_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 1]],
     "formatted_name": "Aerodactyl"
   },
   "snorlax": {
@@ -4160,7 +4160,7 @@
     "form_data": {
       "snorlax_gmax": [["gmax", 8]]
     },
-    "form_class": [["base", 8]],
+    "form_class": [["base", 1]],
     "formatted_name": "Snorlax"
   },
   "articuno": {
@@ -4188,7 +4188,7 @@
     "form_data": {
       "articuno_galar": [["galar", 8]]
     },
-    "form_class": [["base", 8]],
+    "form_class": [["base", 1]],
     "formatted_name": "Articuno"
   },
   "zapdos": {
@@ -4216,7 +4216,7 @@
     "form_data": {
       "zapdos_galar": [["galar", 8]]
     },
-    "form_class": [["base", 8]],
+    "form_class": [["base", 1]],
     "formatted_name": "Zapdos"
   },
   "moltres": {
@@ -4244,7 +4244,7 @@
     "form_data": {
       "moltres_galar": [["galar", 8]]
     },
-    "form_class": [["base", 8]],
+    "form_class": [["base", 1]],
     "formatted_name": "Moltres"
   },
   "dratini": {
@@ -4359,7 +4359,7 @@
       "mewtwo_mega_x": [["mega", 6]],
       "mewtwo_mega_y": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 1]],
     "formatted_name": "Mewtwo"
   },
   "mew": {
@@ -4981,7 +4981,7 @@
     "form_data": {
       "pichu_spiky_eared": [["other", 4]]
     },
-    "form_class": [["base", 4]],
+    "form_class": [["base", 2]],
     "formatted_name": "Pichu"
   },
   "cleffa": {
@@ -5239,7 +5239,7 @@
     "form_data": {
       "ampharos_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 2]],
     "formatted_name": "Ampharos"
   },
   "bellossom": {
@@ -5749,7 +5749,7 @@
     "form_data": {
       "slowking_galar": [["galar", 8]]
     },
-    "form_class": [["base", 8]],
+    "form_class": [["base", 2]],
     "formatted_name": "Slowking"
   },
   "misdreavus": {
@@ -6024,7 +6024,7 @@
     "form_data": {
       "steelix_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 2]],
     "formatted_name": "Steelix"
   },
   "snubbull": {
@@ -6136,7 +6136,7 @@
     "form_data": {
       "scizor_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 2]],
     "formatted_name": "Scizor"
   },
   "shuckle": {
@@ -6190,7 +6190,7 @@
     "form_data": {
       "heracross_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 2]],
     "formatted_name": "Heracross"
   },
   "sneasel": {
@@ -6416,7 +6416,7 @@
     "form_data": {
       "corsola_galar": [["galar", 8]]
     },
-    "form_class": [["base", 8]],
+    "form_class": [["base", 2]],
     "formatted_name": "Corsola"
   },
   "remoraid": {
@@ -6610,7 +6610,7 @@
     "form_data": {
       "houndoom_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 2]],
     "formatted_name": "Houndoom"
   },
   "kingdra": {
@@ -7138,7 +7138,7 @@
     "form_data": {
       "tyranitar_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 2]],
     "formatted_name": "Tyranitar"
   },
   "lugia": {
@@ -7304,7 +7304,7 @@
     "form_data": {
       "sceptile_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 3]],
     "formatted_name": "Sceptile"
   },
   "torchic": {
@@ -7392,7 +7392,7 @@
     "form_data": {
       "blaziken_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 3]],
     "formatted_name": "Blaziken"
   },
   "mudkip": {
@@ -7480,7 +7480,7 @@
     "form_data": {
       "swampert_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 3]],
     "formatted_name": "Swampert"
   },
   "poochyena": {
@@ -7566,7 +7566,7 @@
     "form_data": {
       "zigzagoon_galar": [["galar", 8]]
     },
-    "form_class": [["base", 8]],
+    "form_class": [["base", 3]],
     "formatted_name": "Zigzagoon"
   },
   "linoone": {
@@ -7596,7 +7596,7 @@
     "form_data": {
       "linoone_galar": [["galar", 8]]
     },
-    "form_class": [["base", 8]],
+    "form_class": [["base", 3]],
     "formatted_name": "Linoone"
   },
   "wurmple": {
@@ -8114,7 +8114,7 @@
     "form_data": {
       "gardevoir_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 3]],
     "formatted_name": "Gardevoir"
   },
   "surskit": {
@@ -8679,7 +8679,7 @@
     "form_data": {
       "sableye_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 3]],
     "formatted_name": "Sableye"
   },
   "mawile": {
@@ -8707,7 +8707,7 @@
     "form_data": {
       "mawile_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 3]],
     "formatted_name": "Mawile"
   },
   "aron": {
@@ -8795,7 +8795,7 @@
     "form_data": {
       "aggron_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 3]],
     "formatted_name": "Aggron"
   },
   "meditite": {
@@ -8853,7 +8853,7 @@
     "form_data": {
       "medicham_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 3]],
     "formatted_name": "Medicham"
   },
   "electrike": {
@@ -8911,7 +8911,7 @@
     "form_data": {
       "manectric_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 3]],
     "formatted_name": "Manectric"
   },
   "plusle": {
@@ -9159,7 +9159,7 @@
     "form_data": {
       "sharpedo_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 3]],
     "formatted_name": "Sharpedo"
   },
   "wailmer": {
@@ -9273,7 +9273,7 @@
     "form_data": {
       "camerupt_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 3]],
     "formatted_name": "Camerupt"
   },
   "torkoal": {
@@ -9581,7 +9581,7 @@
     "form_data": {
       "altaria_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 3]],
     "formatted_name": "Altaria"
   },
   "zangoose": {
@@ -10219,7 +10219,7 @@
     "form_data": {
       "banette_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 3]],
     "formatted_name": "Banette"
   },
   "duskull": {
@@ -10359,7 +10359,7 @@
     "form_data": {
       "absol_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 3]],
     "formatted_name": "Absol"
   },
   "wynaut": {
@@ -10446,7 +10446,7 @@
     "form_data": {
       "glalie_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 3]],
     "formatted_name": "Glalie"
   },
   "spheal": {
@@ -10757,7 +10757,7 @@
     "form_data": {
       "salamence_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 3]],
     "formatted_name": "Salamence"
   },
   "beldum": {
@@ -10845,7 +10845,7 @@
     "form_data": {
       "metagross_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 3]],
     "formatted_name": "Metagross"
   },
   "regirock": {
@@ -10951,7 +10951,7 @@
     "form_data": {
       "latias_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 3]],
     "formatted_name": "Latias"
   },
   "latios": {
@@ -10979,7 +10979,7 @@
     "form_data": {
       "latios_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 3]],
     "formatted_name": "Latios"
   },
   "kyogre": {
@@ -11007,7 +11007,7 @@
     "form_data": {
       "kyogre_primal": [["other", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 3]],
     "formatted_name": "Kyogre"
   },
   "groudon": {
@@ -11035,7 +11035,7 @@
     "form_data": {
       "groudon_primal": [["other", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 3]],
     "formatted_name": "Groudon"
   },
   "rayquaza": {
@@ -11063,7 +11063,7 @@
     "form_data": {
       "rayquaza_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 3]],
     "formatted_name": "Rayquaza"
   },
   "jirachi": {
@@ -12325,7 +12325,7 @@
     "form_data": {
       "lopunny_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 4]],
     "formatted_name": "Lopunny"
   },
   "mismagius": {
@@ -12802,7 +12802,7 @@
     "form_data": {
       "garchomp_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 4]],
     "formatted_name": "Garchomp"
   },
   "munchlax": {
@@ -12888,7 +12888,7 @@
     "form_data": {
       "lucario_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 4]],
     "formatted_name": "Lucario"
   },
   "hippopotas": {
@@ -13224,7 +13224,7 @@
     "form_data": {
       "abomasnow_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 4]],
     "formatted_name": "Abomasnow"
   },
   "weavile": {
@@ -13646,7 +13646,7 @@
     "form_data": {
       "gallade_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 4]],
     "formatted_name": "Gallade"
   },
   "probopass": {
@@ -14482,7 +14482,7 @@
       "arceus_dragon": [["other", 4]],
       "arceus_unknown": [["other", 4]]
     },
-    "form_class": [["base", 4], ["base", 6]],
+    "form_class": [["base", 4]],
     "formatted_name": "Arceus (Normal)"
   },
   "arceus_ground": {
@@ -15780,7 +15780,7 @@
     "form_data": {
       "audino_mega": [["mega", 6]]
     },
-    "form_class": [["base", 6]],
+    "form_class": [["base", 5]],
     "formatted_name": "Audino"
   },
   "timburr": {
@@ -16404,7 +16404,7 @@
     "form_data": {
       "darumaka_galar": [["galar", 8]]
     },
-    "form_class": [["base", 8]],
+    "form_class": [["base", 5]],
     "formatted_name": "Darumaka"
   },
   "maractus": {
@@ -16598,7 +16598,7 @@
     "form_data": {
       "yamask_galar": [["galar", 8]]
     },
-    "form_class": [["base", 8]],
+    "form_class": [["base", 5]],
     "formatted_name": "Yamask"
   },
   "cofagrigus": {
@@ -16796,7 +16796,7 @@
     "form_data": {
       "garbodor_gmax": [["gmax", 8]]
     },
-    "form_class": [["base", 8]],
+    "form_class": [["base", 5]],
     "formatted_name": "Garbodor"
   },
   "zorua": {
@@ -18120,7 +18120,7 @@
     "form_data": {
       "stunfisk_galar": [["galar", 8]]
     },
-    "form_class": [["base", 8]],
+    "form_class": [["base", 5]],
     "formatted_name": "Stunfisk"
   },
   "mienfoo": {
@@ -19152,7 +19152,7 @@
     "form_data": {
       "greninja_ash": [["other", 7]]
     },
-    "form_class": [["base", 7]],
+    "form_class": [["base", 6]],
     "formatted_name": "Greninja"
   },
   "bunnelby": {
@@ -20800,7 +20800,7 @@
       "zygarde_10": [["other", 7]],
       "zygarde_complete": [["other", 7]]
     },
-    "form_class": [["base", 7]],
+    "form_class": [["base", 6]],
     "formatted_name": "Zygarde (50%)"
   },
   "zygarde_10": {
@@ -23959,7 +23959,7 @@
     "form_data": {
       "melmetal_gmax": [["gmax", 8]]
     },
-    "form_class": [["base", 8]],
+    "form_class": [["base", 7]],
     "formatted_name": "Melmetal"
   },
   "grookey": {
@@ -26245,7 +26245,7 @@
       "urshifu": [["base", 8]],
       "urshifu_rapid_strike_gmax": [["gmax", 8]]
     },
-    "form_class": [["other", 8], ["base", 8]],
+    "form_class": [["other", 8]],
     "formatted_name": "Urshifu (Rapid Strike)"
   },
   "zarude": {
@@ -30093,7 +30093,7 @@
       "darmanitan_zen": [["other", 5]],
       "darmanitan_standard_galar": [["galar", 8]]
     },
-    "form_class": [["base", 5], ["base", 8]],
+    "form_class": [["base", 5]],
     "formatted_name": "Darmanitan (Standard)"
   },
   "darmanitan_zen": {
@@ -30122,7 +30122,7 @@
       "darmanitan_standard": [["base", 5]],
       "darmanitan_zen_galar": [["galar", 8]]
     },
-    "form_class": [["other", 5], ["base", 8]],
+    "form_class": [["base", 5]],
     "formatted_name": "Darmanitan (Zen)"
   },
   "darmanitan_standard_galar": {
@@ -31516,7 +31516,7 @@
       "toxtricity_low_key_gmax": [["gmax", 8]],
       "toxtricity_amped": [["base", 8]]
     },
-    "form_class": [["base", 8], ["other", 8]],
+    "form_class": [["other", 8]],
     "formatted_name": "Toxtricity (Low Key)"
   },
   "eiscue_ice": {

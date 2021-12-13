@@ -760,17 +760,30 @@ def addFormFlags(pokemonDict):
     # Assign form classes to each of the alternate forms of pokemonName.
     for formName in pokemonDict[pokemonName]["form_data"].keys():
       for patch in pokemonDict[pokemonName]["form_data"][formName]:
+        # This will add 'base form' patches to base form Pokemon with multiple alternate forms. We remove the duplicates later.
         if patch not in pokemonDict[formName]["form_class"]:
           pokemonDict[formName]["form_class"].append(patch)
   
   # If the Pokemon has no form data (i.e. no other forms), then it is the base form. Do another pass for such Pokemon.
   for pokemonName in pokemonDict.keys():
+    # Add 'base' to Pokemon with no form data.
     if len(pokemonDict[pokemonName]["form_class"]) == 0:
       pokemonGen = pokemonDict[pokemonName]["gen"]
       pokemonDict[pokemonName]["form_class"] = [['base', pokemonGen]]
+    
+    # For base form Pokemon with multiple alternate forms, that Pokemon will have multiple 'base form' patches. Select the one with the lowest gen.
+    elif len([patch[0] for patch in pokemonDict[pokemonName]["form_class"] if patch[0] == 'base']) > 0:
+      pokemonGen = pokemonDict[pokemonName]["gen"]
+      pokemonDict[pokemonName]["form_class"] = [['base', pokemonGen]]
+
     else:
       continue
-    
+  
+  # Exceptions
+  pokemonDict["toxtricity_low_key"]["form_class"] = [['other', 8]]
+
+  pokemonDict["urshifu_rapid_strike"]["form_class"] = [['other', 8]]
+
   return
 
 def addFullName(pokemonDict):

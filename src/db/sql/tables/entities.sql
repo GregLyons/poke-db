@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS item (
   item_name VARCHAR(45) NOT NULL,
   item_formatted_name VARCHAR(45) NOT NULL,
   introduced TINYINT UNSIGNED NOT NULL,
-  item_class ENUM('berry', 'drive', 'power', 'choice', 'gem', 'incense', 'mega_stone', 'memory', 'plate', 'stat_enhancer', 'type_enhancer', 'z_crystal'),
+  item_class ENUM('berry','choice', 'drive', 'gem', 'incense', 'mega_stone', 'memory', 'other', 'plate', 'power', 'stat_enhancer', 'type_enhancer', 'z_crystal'),
 
   PRIMARY KEY (generation_id, item_id),
   FOREIGN KEY (generation_id) REFERENCES generation(generation_id)
@@ -204,7 +204,6 @@ CREATE TABLE IF NOT EXISTS pokemon (
   pokemon_special_defense TINYINT UNSIGNED NOT NULL,
   pokemon_special_attack TINYINT UNSIGNED NOT NULL,
   pokemon_speed TINYINT UNSIGNED NOT NULL,
-  pokemon_is_base_form TINYINT UNSIGNED NOT NULL,
   pokemon_form_class ENUM('gmax', 'mega', 'alola', 'galar', 'hisui', 'other', 'base'),
 
   PRIMARY KEY (generation_id, pokemon_id),

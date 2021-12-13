@@ -140,7 +140,7 @@ const getPokemonLearnsetMaps = (learnsets, pokemon) => {
       // Get baseFormName from form_data
       let baseFormName;
       for (let formKey of Object.keys(pokemon[pokemonName].form_data)) {
-        if (pokemon[pokemonName].form_data[formKey][0][0] === 'base_form') {
+        if (pokemon[pokemonName].form_data[formKey][0][0] === 'base') {
           baseFormName = formKey;
           break;
         }

@@ -93,7 +93,7 @@ def makeInitialItemDict(fnamePrefix):
 
   # for some reason, Serebii doesn't have berry juice or adrenaline orb, or some gen 2 berries
   itemDict["berry_juice"] = {
-        "item_class": ['other', 2],
+        "item_class": [['other', 2]],
         "pokemon_specific": {},
         "gen": 2,
         "gen2_exclusive": False,
@@ -109,7 +109,7 @@ def makeInitialItemDict(fnamePrefix):
       }
   # we handle adrenaline orb stat modifications below
   itemDict["adrenaline_orb"] = {
-        "item_class": ['stat_enhancer', 7],
+        "item_class": [['stat_enhancer', 7]],
         "pokemon_specific": {},
         "gen": 7,
         "gen2_exclusive": False,

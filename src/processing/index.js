@@ -202,7 +202,7 @@ splitPokemonArr.map(data => {
   
   if (!data.species) console.log(`${data.name}: Doesn't have a species name.`);
 
-  if (!data.hasOwnProperty('is_base_form')) console.log(`${data.name}: Doesn't have an is_base_form flag.`);
+  if (!data.form_class) console.log(`${data.name}: Doesn't have a form class.`);
   
   if (isNaN(data.height)) console.log(`${data.name}: Height ${data.weight} is not a number.`);
 

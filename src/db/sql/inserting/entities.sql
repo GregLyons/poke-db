@@ -113,5 +113,5 @@ INSERT INTO pokemon (
   pokemon_special_defense,
   pokemon_special_attack,
   pokemon_speed,
-  pokemon_is_base_form
+  pokemon_form_class
 ) VALUES ?;

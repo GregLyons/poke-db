@@ -6632,9 +6632,7 @@
     "formatted_name": "Venusaurite"
   },
   "berry_juice": {
-    "item_class": [
-      "other", 2
-    ],
+    "item_class": [["other", 2]],
     "pokemon_specific": {},
     "gen": 2,
     "gen2_exclusive": false,
@@ -6652,9 +6650,7 @@
     "formatted_name": "Berry Juice"
   },
   "adrenaline_orb": {
-    "item_class": [
-      "stat_enhancer", 7
-    ],
+    "item_class": [["stat_enhancer", 7]],
     "pokemon_specific": {},
     "gen": 7,
     "gen2_exclusive": false,

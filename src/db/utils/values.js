@@ -199,7 +199,8 @@ const getValuesForTable = (
           pokemon_defense,
           pokemon_special_defense,
           pokemon_special_attack,
-          pokemon_speed
+          pokemon_speed,
+          pokemon_form_class
         )
       */
       values = require(PROCESSED_DATA_PATH + 'pokemon.json')
@@ -220,7 +221,7 @@ const getValuesForTable = (
           data.special_defense,
           data.special_attack,
           data.speed,
-          data.is_base_form,
+          data.form_class
         ]);
       break;
     
