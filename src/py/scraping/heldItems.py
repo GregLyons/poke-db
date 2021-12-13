@@ -307,7 +307,7 @@ def itemClassList(fname):
       cells = row.find_all(['td', 'tr'])
       itemName, itemGen = parseName(cells[1].get_text().rstrip('\n*')), genSymbolToNumber(cells[2].get_text().rstrip('\n'))
 
-      writer.writerow([itemName, 'enhancer', itemGen])
+      writer.writerow([itemName, 'stat_enhancer', itemGen])
     
 
     # Type enhancers
@@ -318,7 +318,7 @@ def itemClassList(fname):
       cells = row.find_all(['td', 'tr'])
       itemName, itemGen = parseName(cells[1].get_text().rstrip('\n*')), genSymbolToNumber(cells[2].get_text().rstrip('\n'))
 
-      writer.writerow([itemName, 'enhancer', itemGen])
+      writer.writerow([itemName, 'type_enhancer', itemGen])
     
     # Pokemon specific
     dataRows = bs.find(id='Pokémon-specific_type-enhancing_items').find_next('table').find_all('tr')[1:]
@@ -331,7 +331,7 @@ def itemClassList(fname):
       if 'soul_dew' in itemName:
         itemName = 'soul_dew'
 
-      writer.writerow([itemName, 'enhancer', itemGen])
+      writer.writerow([itemName, 'type_enhancer', itemGen])
 
     # Z-crystals
     bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Z-Crystal', 0, 10)

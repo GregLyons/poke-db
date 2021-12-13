@@ -687,7 +687,7 @@ def addFormFlags(pokemonDict):
     if not isBaseForm:
       baseFormGen = pokemonDict[baseFormName]["gen"]
       formGen = pokemonDict[pokemonName]["gen"]
-      pokemonDict[pokemonName]["form_data"][baseFormName] = [['base_form', formGen]]
+      pokemonDict[pokemonName]["form_data"][baseFormName] = [['base', formGen]]
       pokemonDict[baseFormName]["form_data"][pokemonName] = [[formType, formGen]]
 
     # add in dex number for pokemonName, which won't have a dex number yet
@@ -751,16 +751,25 @@ def addFormFlags(pokemonDict):
         }
       }
 
-  # Add 'is_base_form' flags
+  # Initialize 'form_class' field
   for pokemonName in pokemonDict.keys():
-    # If there is not a base form in the form data, or if the form data is empty, that means that this Pokemon _is_ the base form.
-    pokemonDict[pokemonName]["is_base_form"] = True
-
-    # Look through the form data and see if there is a base form.
+    pokemonDict[pokemonName]["form_class"] = []
+  
+  # Use form data to assign form classes to Pokemon.
+  for pokemonName in pokemonDict.keys():
+    # Assign form classes to each of the alternate forms of pokemonName.
     for formName in pokemonDict[pokemonName]["form_data"].keys():
       for patch in pokemonDict[pokemonName]["form_data"][formName]:
-        if patch[0] == 'base_form':
-          pokemonDict[pokemonName]["is_base_form"] = False
+        if patch not in pokemonDict[formName]["form_class"]:
+          pokemonDict[formName]["form_class"].append(patch)
+  
+  # If the Pokemon has no form data (i.e. no other forms), then it is the base form. Do another pass for such Pokemon.
+  for pokemonName in pokemonDict.keys():
+    if len(pokemonDict[pokemonName]["form_class"]) == 0:
+      pokemonGen = pokemonDict[pokemonName]["gen"]
+      pokemonDict[pokemonName]["form_class"] = [['base', pokemonGen]]
+    else:
+      continue
     
   return
 

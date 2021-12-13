@@ -21,7 +21,7 @@ def makeInitialItemDict(fnamePrefix):
       gen2Exclusive = itemName in ['berserk_gene', 'polkadot_bow', 'pink_bow']
 
       itemDict[itemName] = {
-        "item_class": '',
+        "item_class": [],
         # list of Pokemon who can use the item, if restricted
         "pokemon_specific": {},
         "gen": '',
@@ -47,7 +47,7 @@ def makeInitialItemDict(fnamePrefix):
 
       if itemName not in itemDict:
         itemDict[itemName] = {
-          "item_class": itemClass,
+          "item_class": [[itemClass, int(itemGen)]],
           "pokemon_specific": {},
           "gen": int(itemGen),
           "gen2_exclusive": False,
@@ -62,18 +62,7 @@ def makeInitialItemDict(fnamePrefix):
           "stat_modifications": {},
         }
       else:
-        itemDict[itemName]["item_class"] = itemClass
-
-  # Classify other items not already listed on Bulbapedia
-  for itemName in ['absorb_bulb', 'assault_vest', 'berserk_gene', 'bright_powder', 'cell_battery', 'electric_seed', 'expert_belt', 'life_orb', 'weakness_policy', 'wide_lens', 'misty_seed', 'psychic_seed', 'grassy_seed', 'zoom_lens', 'throat_spray', 'razor_claw', 'scope_lens']:
-    itemDict[itemName]["item_class"] = 'enhancer'
-
-  # Classify all remaining items as 'other' 
-  for itemName in itemDict.keys():
-    if len(itemDict[itemName]["item_class"]) == 0:
-      itemDict[itemName]["item_class"] = 'other'
-
-  
+        itemDict[itemName]["item_class"].append([itemClass, int(itemGen)])
 
   # add gen data
   with open(fnamePrefix + 'Gen.csv', 'r', encoding='utf-8') as genCSV:
@@ -86,10 +75,25 @@ def makeInitialItemDict(fnamePrefix):
           print('Gens of', itemName, 'don\'t match:', itemDict[itemName]["gen"], gen)
 
         itemDict[itemName]["gen"] = int(gen)
+  
+
+  # Classify other items not already listed on Bulbapedia
+  for itemName in ['absorb_bulb', 'assault_vest', 'berserk_gene', 'bright_powder', 'cell_battery', 'electric_seed', 'expert_belt', 'life_orb', 'weakness_policy', 'wide_lens', 'misty_seed', 'psychic_seed', 'grassy_seed', 'zoom_lens', 'throat_spray', 'razor_claw', 'scope_lens']:
+    itemGen = itemDict[itemName]["gen"]
+    itemDict[itemName]["item_class"] = [['stat_enhancer', itemGen]]
+
+  # Classify all remaining items as 'other' 
+  for itemName in itemDict.keys():
+    if len(itemDict[itemName]["item_class"]) == 0:
+      itemGen = itemDict[itemName]["gen"]
+      itemDict[itemName]["item_class"] = [['other', itemGen]]
+
+  # Exception for soul dew, which changed from stat enhancer to type enhancer in gen 7
+  itemDict["soul_dew"]["item_class"] = [['stat_enhancer', 3], ['type_enhancer', 7]]
 
   # for some reason, Serebii doesn't have berry juice or adrenaline orb, or some gen 2 berries
   itemDict["berry_juice"] = {
-        "item_class": 'other',
+        "item_class": ['other', 2],
         "pokemon_specific": {},
         "gen": 2,
         "gen2_exclusive": False,
@@ -105,7 +109,7 @@ def makeInitialItemDict(fnamePrefix):
       }
   # we handle adrenaline orb stat modifications below
   itemDict["adrenaline_orb"] = {
-        "item_class": 'enhancer',
+        "item_class": ['stat_enhancer', 7],
         "pokemon_specific": {},
         "gen": 7,
         "gen2_exclusive": False,
@@ -314,9 +318,7 @@ def addOtherItemData(fpath, itemDict):
     reader = csv.DictReader(typeEnhancerSpecificCSV)
     for row in reader:
       itemGen, itemName, pokemonName = int(row["Gen"]), row["Item Name"], row["Pokemon Name"]
-      itemDict[itemName]["pokemon_specific"] = {
-        pokemonName: [[True, itemGen]]
-      }
+      itemDict[itemName]["pokemon_specific"][pokemonName] = [[True, itemGen]]
       # soul dew
       if pokemonName in ['latias', 'latios']:
         # boosted stats in gens 3-6
@@ -617,7 +619,7 @@ def addOtherItemData(fpath, itemDict):
 
   # keep track of items to be handled
   for itemName in itemDict.keys():
-    if itemName not in handledItems and itemDict[itemName]["item_class"] != 'berry':
+    if itemName not in handledItems and 'berry' not in itemDict[itemName]["item_class"][0]:
       print(itemName, 'not handled!')
   return
 

@@ -2071,7 +2071,7 @@
       "attack": [["-1", "target", 100.0, 1]]
     },
     "usage_method": {
-      "sound": [[true, 1]]
+      "sound": [[true, 3]]
     },
     "contact": [[false, 1]],
     "priority": [[0, 1]],
@@ -2119,7 +2119,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {
-      "sound": [[true, 1]]
+      "sound": [[true, 3]]
     },
     "contact": [[false, 1]],
     "priority": [[0, 1], [-1, 2], [-6, 3]],
@@ -2166,7 +2166,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {
-      "sound": [[true, 1]]
+      "sound": [[true, 3]]
     },
     "contact": [[false, 1]],
     "priority": [[0, 1]],
@@ -2213,7 +2213,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {
-      "sound": [[true, 1]]
+      "sound": [[true, 3]]
     },
     "contact": [[false, 1]],
     "priority": [[0, 1]],
@@ -4803,7 +4803,7 @@
       "defense": [["-2", "target", 100.0, 1]]
     },
     "usage_method": {
-      "sound": [[true, 1]]
+      "sound": [[true, 3]]
     },
     "contact": [[false, 1]],
     "priority": [[0, 1]],
@@ -8059,7 +8059,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {
-      "sound": [[true, 2]]
+      "sound": [[true, 3]]
     },
     "contact": [[false, 2]],
     "priority": [[0, 2]],
@@ -9085,7 +9085,7 @@
     "resists_status": {},
     "stat_modifications": {},
     "usage_method": {
-      "sound": [[true, 2]]
+      "sound": [[true, 3]]
     },
     "contact": [[false, 2]],
     "priority": [[0, 2]],
@@ -10015,7 +10015,7 @@
     },
     "stat_modifications": {},
     "usage_method": {
-      "sound": [[true, 2]]
+      "sound": [[true, 3]]
     },
     "contact": [[false, 2]],
     "priority": [[0, 2]],

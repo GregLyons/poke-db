@@ -20,17 +20,18 @@ INSERT INTO sprite (
   sprite_path
 ) VALUES ?;
 
-
 INSERT INTO pstatus (
   generation_id,
   pstatus_name,
-  pstatus_formatted_name
+  pstatus_formatted_name,
+  introduced
 ) VALUES ?;
 
 INSERT INTO stat (
   generation_id,
   stat_name,
-  stat_formatted_name
+  stat_formatted_name,
+  introduced
 ) VALUES ?;
 
 /*

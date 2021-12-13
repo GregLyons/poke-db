@@ -122,9 +122,10 @@ const getValuesForTable = (
           generation_id,
           pstatus_name,
           pstatus_formatted_name
+          introduced
         )
       */
-      values = require(PROCESSED_DATA_PATH + 'statuses.json').map(data => [data.gen, data.name, data.formatted_name]);
+      values = require(PROCESSED_DATA_PATH + 'statuses.json').map(data => [data.gen, data.name, data.formatted_name, data.introduced]);
       break;
     
     case 'stat':
@@ -133,9 +134,10 @@ const getValuesForTable = (
           generation_id
           stat_name,
           stat_formatted_name
+          introduced
         )
       */
-      values = require(PROCESSED_DATA_PATH + 'stats.json').map(data => [data.gen, data.name, data.formatted_name]);
+      values = require(PROCESSED_DATA_PATH + 'stats.json').map(data => [data.gen, data.name, data.formatted_name, data.introduced]);
       break;
 
     /*
