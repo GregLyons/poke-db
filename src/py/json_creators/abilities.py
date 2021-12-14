@@ -218,6 +218,140 @@ def addEffectData(fpath, abilityDict):
       abilityDict["moody"]["stat_modifications"][statName].append([['+2', 'user', 0.00, 8]])
   return
 
+def addFieldStateData(abilityDict):
+  for abilityName in abilityDict.keys():
+    abilityDict[abilityName]["creates_field_state"] = {}
+    abilityDict[abilityName]["removes_field_state"] = {}
+    abilityDict[abilityName]["prevents_field_state"] = {}
+    abilityDict[abilityName]["suppresses_field_state"] = {}
+
+  # Cloud Nine and Air Lock
+  #region
+
+  for weatherName in ['harsh_sunlight', 'extremely_harsh_sunlight', 'rain', 'heavy_rain', 'sandstorm', 'hail']:
+    gen = 3
+    if weatherName in ['extremely_harsh_sunlight', 'heavy_rain']:
+      gen = 6
+
+    abilityDict["cloud_nine"]["prevents_field_state"][weatherName] = [[True, gen]]
+    abilityDict["cloud_nine"]["suppresses_field_state"][weatherName] = [[True, gen]]
+    abilityDict["air_lock"]["prevents_field_state"][weatherName] = [[True, gen]]
+    abilityDict["air_lock"]["suppresses_field_state"][weatherName] = [[True, gen]]
+
+  abilityDict["cloud_nine"]["prevents_field_state"]["aurora_veil"] = [[True, 7]]
+  abilityDict["air_lock"]["prevents_field_state"]["aurora_veil"] = [[True, 7]]
+
+  #endregion
+
+  # Infiltrator
+  for fieldStateName in ['mist', 'safeguard', 'reflect', 'light_screen', 'aurora_veil']:
+    gen = 5
+    # TYPO: Bulbapedia says in Gen 6, but aurora veil wasn't introduced until gen 7
+    if fieldStateName == 'aurora_veil':
+      gen = 7
+    abilityDict['infiltrator']["ignores_field_state"] = [[True, gen]]
+
+  # Screen Cleaner
+  for screenName in ['reflect', 'light_screen', 'aurora_veil']:
+    abilityDict["screen_cleaner"]["removes_field_state"][screenName] = [[True, 8]]
+
+  # Terrain and weather creators
+  for [abilityName, fieldStateName] in [
+    # Weathers
+    ['drought', 'harsh_sunlight'],
+    ['desolate_land', 'extremely_harsh_sunlight'],
+    ['drizzle', 'rain'],
+    ['primordial_sea', 'heavy_rain'],
+    ['sand_stream', 'sandstorm'],
+    ['sand_spit', 'sandstorm'],
+    ['snow_warning', 'hail'],
+    ['delta_stream', 'strong_winds'],
+    # Terrains
+    ['electric_surge', 'electric_terrain'],
+    ['grassy_surge', 'grassy_terrain'],
+    ['misty_surge', 'misty_terrain'],
+    ['psychic_surge', 'psychic_terrain']
+  ]:
+    abilityGen = abilityDict[abilityName]["gen"]
+
+    # Creation
+    if abilityGen < 6:
+      # Weathers created by abilities lasted until replaced prior to Gen 6
+      abilityDict[abilityName]["creates_field_state"][fieldStateName] = [[True, 0, abilityGen], [True, 5, abilityGen]]
+    else:
+      # Terrains from abilities last 5 turns
+      if abilityName not in ['primordial_sea', 'desolate_land', 'delta_stream']:
+        abilityDict[abilityName]["creates_field_state"][fieldStateName] = [[True, 5, abilityGen]]
+      # Strong weathers last as long as user is out
+      else:
+        abilityDict[abilityName]["creates_field_state"][fieldStateName] = [[True, 0, abilityGen]]
+
+  #endregion
+
+        
+  # Terrain and weather removers
+  #region
+
+  terrains = ['electric_terrain', 'grassy_terrain', 'misty_terrain', 'psychic_terrain']
+  weathers = ['clear_skies', 'fog', 'harsh_sunlight', 'rain', 'sandstorm', 'hail']
+  strongWeathers = ['extremely_harsh_sunlight', 'heavy_rain', 'strong_winds']
+
+  for abilityName in abilityDict.keys():
+    creatorDict = abilityDict[abilityName]["creates_field_state"]
+    abilityGen = abilityDict[abilityName]["gen"]
+
+    # Terrains overwrite each other
+    for terrainName in terrains:
+      if terrainName in creatorDict.keys():
+        terrainGen = 6
+
+        for otherTerrainName in [t for t in terrains if t != terrainName]:
+          otherTerrainGen = 6
+
+          abilityDict[abilityName]["removes_field_state"][otherTerrainName] = [[True, max(abilityGen, terrainGen, otherTerrainGen)]]
+    
+    # Weathers overwrite each other
+    for weatherName in weathers:
+      if weatherName in creatorDict.keys():
+        weatherGen = 2
+        if weatherName == 'hail':
+          weatherGen = 3
+        if weatherName == 'fog':
+          weatherGen = 4
+        
+        for otherWeatherName in [w for w in weathers if w != weatherName]:
+          otherWeatherGen = 2
+          if otherWeatherName == 'hail':
+            otherWeatherGen = 3
+          if otherWeatherName == 'fog':
+            otherWeatherGen = 4
+          
+          abilityDict[abilityName]["removes_field_state"][otherWeatherName] = [[True, max(abilityGen, weatherGen, otherWeatherGen)]]
+
+    # Strong weathers overwrite each other, as well as weaker weathers
+    for strongWeatherName in strongWeathers:
+      if strongWeatherName in creatorDict.keys():
+        strongWeatherGen = 6
+
+        for otherStrongWeatherName in [sw for sw in strongWeathers if sw != strongWeatherName]:
+          otherStrongWeatherGen = 6
+
+          abilityDict[abilityName]["removes_field_state"][otherStrongWeatherName] = [[True, max(abilityGen, strongWeatherGen, otherStrongWeatherGen)]]
+
+        # Strong weathers remove weaker weathers
+        for otherWeatherName in [w for w in weathers if w != weatherName]:
+          otherWeatherGen = 2
+          if otherWeatherName == 'hail':
+            otherWeatherGen = 3
+          if otherWeatherName == 'fog':
+            otherWeatherGen = 4
+          
+          abilityDict[abilityName]["removes_field_state"][otherWeatherName] = [[True, max(abilityGen, strongWeatherGen, otherWeatherGen)]]
+
+  #endregion
+
+  return
+
 def addFormattedName(abilityDict):
   for abilityName in abilityDict.keys():
     abilityDict[abilityName]['formatted_name'] = getFormattedName(abilityName)
@@ -255,6 +389,8 @@ def main():
   addEffectData(dataPath, abilityDict)
 
   addFormattedName(abilityDict)
+
+  addFieldStateData(abilityDict)
 
   return abilityDict
 

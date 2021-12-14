@@ -639,6 +639,49 @@ def getFormattedName(itemName):
   else:
     return ' '.join(itemName.split('_')).title()
 
+def addFieldStateData(itemDict):
+  for itemName in itemDict.keys():
+    itemDict[itemName]["extends_field_state"] = {}
+  
+  # Extenders
+  for [itemName, fieldStatesAndGens] in [
+    # Screens
+    ['light_clay', [
+        ['reflect', 1], ['light_screen', 1], ['aurora_veil', 7]
+      ]
+    ],
+    # Harsh sunlight
+    ['heat_rock', [
+        ['harsh_sunlight', 2]
+      ]
+    ],
+    # Rain
+    ['damp_rock', [
+        ['rain', 2]
+      ]
+    ],
+    # Sandstorm
+    ['smooth_rock', [
+        ['sandstorm', 2]
+      ]
+    ],
+    # Hail
+    ['icy_rock', [
+        ['hail', 3]
+      ]
+    ],
+    # Terrains
+    ['terrain_extender', [
+        ['electric_terrain', 6], ['grassy_terrain', 6], ['misty_terrain', 6], ['psychic_terrain', 6]
+      ]
+    ],
+  ]:
+    itemGen = itemDict[itemName]["gen"]
+    for [fieldStateName, fieldStateGen] in fieldStatesAndGens:
+      itemDict[itemName]["extends_field_state"][fieldStateName] = [[True, 8, max(itemGen, fieldStateGen)]]
+
+  return
+
 def main():
   # dictionaries containing effect names/gens and status names/gens
   global effectDict
@@ -660,6 +703,8 @@ def main():
   addOtherItemData(dataPath, itemDict)
 
   addFormattedName(itemDict)
+
+  addFieldStateData(itemDict)
 
   return itemDict
 

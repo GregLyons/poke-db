@@ -23,9 +23,9 @@ def makeFieldStateDict():
     # entry hazards
     ['stealth_rock', 4, 'entry_hazard', 12.5],
     ['spikes', 2, 'entry_hazard', 12.5],
-    ['sticky_web', 6, 'entry_hazard'],
+    ['sticky_web', 6, 'entry_hazard', 0],
     ['toxic_spikes', 4, 'entry_hazard', 12.5],
-    ['sharp_steel', 8, 'entry_hazard'],
+    ['sharp_steel', 8, 'entry_hazard', 12.5],
     # weather
     ['clear_skies', 1, 'weather', 0],
     ['harsh_sunlight', 2, 'weather', 0],
@@ -224,6 +224,105 @@ def addTypeData(fieldStateDict):
 
   return
 
+def addAbilityData(fieldStateDict):
+  for fieldStateName in fieldStateDict.keys():
+    fieldStateDict[fieldStateName]["activates_ability"] = {}
+
+  for [fieldStateName, abilitiesAndGens] in [
+    # Harsh sunlight
+    ['harsh_sunlight', [
+        ['forecast', 3], ['dry_skin', 4], ['chlorophyll', 3], ['flower_gift', 4], ['leaf_guard', 4], ['solar_power', 4], ['harvest', 5]
+      ]
+    ],
+    # Extremely harsh sunlight
+    ['extremely_harsh_sunlight', [
+        ['forecast', 3], ['dry_skin', 4], ['chlorophyll', 3], ['flower_gift', 4], ['leaf_guard', 4], ['solar_power', 4], ['harvest', 5]
+      ]
+    ],
+    # Rain
+    ['rain', [
+        ['forecast', 3], ['dry_skin', 4], ['hydration', 4], ['rain_dish', 3], ['swift_swim', 3]
+      ]
+    ],
+    # Heavy rain
+    ['heavy_rain', [
+        ['forecast', 3], ['dry_skin', 4], ['hydration', 4], ['rain_dish', 3], ['swift_swim', 3]
+      ]
+    ],
+    # Sand
+    ['sandstorm', [
+        ['forecast', 3], ['sand_veil', 3], ['sand_rush', 5], ['sand_force', 5]
+      ]
+    ],
+    # Hail
+    ['hail', [
+        ['ice_body', 4], ['snow_cloak', 4], ['slush_rush', 7], ['ice_face', 8]
+      ]
+    ],
+    # Electric terrain
+    ['electric_terrain', [
+        ['surge_surfer', 7], ['mimicry', 8]
+      ]
+    ],
+    # Grassy terrain
+    ['grassy_terrain', [
+        ['grass_pelt', 6], ['mimicry', 8]
+      ]
+    ],
+    # Misty terrain
+    ['misty_terrain', [
+        ['mimicry', 8]
+      ]
+    ],
+    # Psychic terrain
+    ['psychic_terrain', [
+        ['mimicry', 8]
+      ]
+    ],
+  ]:
+    fieldStateGen = fieldStateDict[fieldStateName]["gen"]
+    for [abilityName, abilityGen] in abilitiesAndGens:
+      fieldStateDict[fieldStateName]["activates_ability"][abilityName] = [[True, max(abilityGen, fieldStateGen)]]
+
+  return
+
+def addItemData(fieldStateDict):
+  for fieldStateName in fieldStateDict.keys():
+    fieldStateDict[fieldStateName]["activates_item"] = {}
+
+  for [fieldStateName, itemsAndGens] in [
+    # Electric terrain
+    ['electric_terrain', [
+        ['electric_seed', 7]
+      ]
+    ],
+    # Grassy terrain
+    ['grassy_terrain', [
+        ['grassy_seed', 7]
+      ]
+    ],
+    # Misty terrain
+    ['misty_terrain', [
+        ['misty_seed', 7]
+      ]
+    ],
+    # Psychic terrain
+    ['psychic_terrain', [
+        ['psychic_seed', 7]
+      ]
+    ],
+    # Trick room
+    ['trick_room', [
+        ['room_service', 8]
+      ]
+    ],
+  ]:
+    fieldStateGen = fieldStateDict[fieldStateName]["gen"]
+    for [itemName, itemGen] in itemsAndGens:
+      fieldStateDict[fieldStateName]["activates_item"][itemName] = [[True, max(itemGen, fieldStateGen)]]
+
+  return
+
 def main():
   fieldStateDict = makeFieldStateDict()
 
@@ -236,6 +335,10 @@ def main():
   addStatusData(fieldStateDict)
 
   addTypeData(fieldStateDict)
+
+  addAbilityData(fieldStateDict)
+
+  addItemData(fieldStateDict)
 
   return fieldStateDict
 
