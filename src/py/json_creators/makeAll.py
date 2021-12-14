@@ -4,6 +4,7 @@ import abilities
 import descriptions
 import effects
 import elementalTypes as types
+import fieldStates
 import heldItems
 import moves
 import pokemon
@@ -80,6 +81,19 @@ def checkTypes(typeDict):
     ]:
       if inconsistency:
         print(f'Inconsistency found for {typeName}: {inconsistency}')
+
+    for fieldState in typeDict[typeName]["resists_field_state"]:
+      if fieldState not in fieldStateList():
+        print('Inconsistent field state name', typeName, fieldState)
+
+    for fieldState in typeDict[typeName]["ignores_field_state"]:
+      if fieldState not in fieldStateList():
+        print('Inconsistent field state name', typeName, fieldState)
+
+    for fieldState in typeDict[typeName]["removes_field_state"]:
+      if fieldState not in fieldStateList():
+        print('Inconsistent field state name', typeName, fieldState)
+
   print('Finished.')
   print()
 
@@ -151,6 +165,10 @@ def checkAbilities(abilityDict):
         print('Inconsistent field state name', abilityName, fieldState)
 
     for fieldState in abilityDict[abilityName]["prevents_field_state"]:
+      if fieldState not in fieldStateList():
+        print('Inconsistent field state name', abilityName, fieldState)
+
+    for fieldState in abilityDict[abilityName]["ignores_field_state"]:
       if fieldState not in fieldStateList():
         print('Inconsistent field state name', abilityName, fieldState)
 
@@ -390,6 +408,8 @@ def main():
   # no need to check description dict against the reference dicts
   descriptionDict = descriptions.main()
 
+  fieldStateDict = fieldStates.main()
+
   # same but for itemDict
   itemDict = heldItems.main()
   checkItems(itemDict)
@@ -426,6 +446,7 @@ def main():
   # now that all the dicts have been checked for consistency, write each of them to a .json file
   dicts_fnames = [
     [effectDict, 'effects.json'],
+    [fieldStateDict, 'fieldStates.json'],
     [statusDict, 'statuses.json'],
     [usageMethodDict, 'usageMethods.json'],
     [typeDict, 'elementalTypes.json'],

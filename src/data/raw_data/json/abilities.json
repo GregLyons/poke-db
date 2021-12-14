@@ -15,7 +15,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "aerilate": {
     "gen": 6,
@@ -34,7 +35,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "aftermath": {
     "gen": 4,
@@ -52,7 +54,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "air_lock": {
     "gen": 3,
@@ -85,7 +88,8 @@
       "heavy_rain": [[true, 6]],
       "sandstorm": [[true, 3]],
       "hail": [[true, 3]]
-    }
+    },
+    "ignores_field_state": {}
   },
   "analytic": {
     "gen": 5,
@@ -103,7 +107,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "anger_point": {
     "gen": 4,
@@ -121,7 +126,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "anticipation": {
     "gen": 4,
@@ -137,7 +143,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "arena_trap": {
     "gen": 3,
@@ -155,7 +162,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "aroma_veil": {
     "gen": 6,
@@ -176,7 +184,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "aura_break": {
     "gen": 6,
@@ -192,7 +201,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "bad_dreams": {
     "gen": 4,
@@ -208,7 +218,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "ball_fetch": {
     "gen": 8,
@@ -224,7 +235,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "battery": {
     "gen": 7,
@@ -245,7 +257,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "battle_armor": {
     "gen": 3,
@@ -263,7 +276,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "battle_bond": {
     "gen": 7,
@@ -281,7 +295,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "beast_boost": {
     "gen": 7,
@@ -303,7 +318,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "berserk": {
     "gen": 7,
@@ -321,7 +337,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "big_pecks": {
     "gen": 5,
@@ -337,7 +354,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "blaze": {
     "gen": 3,
@@ -355,7 +373,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "bulletproof": {
     "gen": 6,
@@ -373,7 +392,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "cheek_pouch": {
     "gen": 6,
@@ -392,7 +412,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "chilling_neigh": {
     "gen": 8,
@@ -408,7 +429,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "chlorophyll": {
     "gen": 3,
@@ -427,7 +449,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "clear_body": {
     "gen": 3,
@@ -445,7 +468,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "cloud_nine": {
     "gen": 3,
@@ -478,7 +502,8 @@
       "heavy_rain": [[true, 6]],
       "sandstorm": [[true, 3]],
       "hail": [[true, 3]]
-    }
+    },
+    "ignores_field_state": {}
   },
   "color_change": {
     "gen": 3,
@@ -496,7 +521,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "comatose": {
     "gen": 7,
@@ -519,7 +545,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "competitive": {
     "gen": 6,
@@ -537,7 +564,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "compound_eyes": {
     "gen": 3,
@@ -558,7 +586,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "contrary": {
     "gen": 5,
@@ -574,7 +603,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "corrosion": {
     "gen": 7,
@@ -590,7 +620,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "cotton_down": {
     "gen": 8,
@@ -608,7 +639,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "curious_medicine": {
     "gen": 8,
@@ -626,7 +658,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "cursed_body": {
     "gen": 5,
@@ -642,7 +675,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "cute_charm": {
     "gen": 3,
@@ -662,7 +696,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "damp": {
     "gen": 3,
@@ -678,7 +713,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "dancer": {
     "gen": 7,
@@ -694,7 +730,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "dark_aura": {
     "gen": 6,
@@ -712,7 +749,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "dauntless_shield": {
     "gen": 8,
@@ -730,7 +768,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "dazzling": {
     "gen": 7,
@@ -748,7 +787,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "defeatist": {
     "gen": 5,
@@ -769,7 +809,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "defiant": {
     "gen": 5,
@@ -787,7 +828,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "delta_stream": {
     "gen": 6,
@@ -815,7 +857,8 @@
       "sandstorm": [[true, 6]]
     },
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "desolate_land": {
     "gen": 6,
@@ -843,7 +886,8 @@
       "sandstorm": [[true, 6]]
     },
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "disguise": {
     "gen": 7,
@@ -862,7 +906,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "download": {
     "gen": 4,
@@ -881,7 +926,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "dragons_maw": {
     "gen": 8,
@@ -899,7 +945,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "drizzle": {
     "gen": 3,
@@ -925,7 +972,8 @@
       "hail": [[true, 3]]
     },
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "drought": {
     "gen": 3,
@@ -951,7 +999,8 @@
       "hail": [[true, 3]]
     },
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "dry_skin": {
     "gen": 4,
@@ -973,7 +1022,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "early_bird": {
     "gen": 3,
@@ -991,7 +1041,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "effect_spore": {
     "gen": 3,
@@ -1013,7 +1064,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "electric_surge": {
     "gen": 7,
@@ -1037,7 +1089,8 @@
       "psychic_terrain": [[true, 7]]
     },
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "emergency_exit": {
     "gen": 7,
@@ -1055,7 +1108,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "fairy_aura": {
     "gen": 6,
@@ -1073,7 +1127,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "filter": {
     "gen": 4,
@@ -1091,7 +1146,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "flame_body": {
     "gen": 3,
@@ -1111,7 +1167,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "flare_boost": {
     "gen": 5,
@@ -1132,7 +1189,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "flash_fire": {
     "gen": 3,
@@ -1152,7 +1210,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "flower_gift": {
     "gen": 4,
@@ -1173,7 +1232,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "flower_veil": {
     "gen": 6,
@@ -1196,7 +1256,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "fluffy": {
     "gen": 7,
@@ -1214,7 +1275,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "forecast": {
     "gen": 3,
@@ -1232,7 +1294,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "forewarn": {
     "gen": 4,
@@ -1248,7 +1311,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "friend_guard": {
     "gen": 5,
@@ -1264,7 +1328,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "frisk": {
     "gen": 4,
@@ -1282,7 +1347,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "full_metal_body": {
     "gen": 7,
@@ -1300,7 +1366,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "fur_coat": {
     "gen": 6,
@@ -1319,7 +1386,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "gale_wings": {
     "gen": 6,
@@ -1337,7 +1405,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "galvanize": {
     "gen": 7,
@@ -1356,7 +1425,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "gluttony": {
     "gen": 4,
@@ -1374,7 +1444,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "gooey": {
     "gen": 6,
@@ -1394,7 +1465,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "gorilla_tactics": {
     "gen": 8,
@@ -1413,7 +1485,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "grass_pelt": {
     "gen": 6,
@@ -1432,7 +1505,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "grassy_surge": {
     "gen": 7,
@@ -1456,7 +1530,8 @@
       "psychic_terrain": [[true, 7]]
     },
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "grim_neigh": {
     "gen": 8,
@@ -1472,7 +1547,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "gulp_missile": {
     "gen": 8,
@@ -1488,7 +1564,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "guts": {
     "gen": 3,
@@ -1507,7 +1584,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "harvest": {
     "gen": 5,
@@ -1525,7 +1603,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "healer": {
     "gen": 5,
@@ -1541,7 +1620,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "heatproof": {
     "gen": 4,
@@ -1559,7 +1639,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "heavy_metal": {
     "gen": 5,
@@ -1577,7 +1658,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "honey_gather": {
     "gen": 4,
@@ -1593,7 +1675,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "huge_power": {
     "gen": 3,
@@ -1612,7 +1695,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "hunger_switch": {
     "gen": 8,
@@ -1630,7 +1714,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "hustle": {
     "gen": 3,
@@ -1651,7 +1736,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "hydration": {
     "gen": 4,
@@ -1674,7 +1760,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "hyper_cutter": {
     "gen": 3,
@@ -1690,7 +1777,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "ice_body": {
     "gen": 4,
@@ -1708,7 +1796,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "ice_face": {
     "gen": 8,
@@ -1726,7 +1815,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "ice_scales": {
     "gen": 8,
@@ -1745,7 +1835,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "illuminate": {
     "gen": 3,
@@ -1761,7 +1852,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "illusion": {
     "gen": 5,
@@ -1777,7 +1869,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "immunity": {
     "gen": 3,
@@ -1796,7 +1889,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "imposter": {
     "gen": 5,
@@ -1814,7 +1908,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "infiltrator": {
     "gen": 5,
@@ -1831,7 +1926,13 @@
     "removes_field_state": {},
     "prevents_field_state": {},
     "suppresses_field_state": {},
-    "ignores_field_state": [[true, 7]]
+    "ignores_field_state": {
+      "mist": [[true, 5]],
+      "safeguard": [[true, 5]],
+      "reflect": [[true, 5]],
+      "light_screen": [[true, 5]],
+      "aurora_veil": [[true, 7]]
+    }
   },
   "innards_out": {
     "gen": 7,
@@ -1847,7 +1948,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "inner_focus": {
     "gen": 3,
@@ -1865,7 +1967,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "insomnia": {
     "gen": 3,
@@ -1883,7 +1986,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "intimidate": {
     "gen": 3,
@@ -1901,7 +2005,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "intrepid_sword": {
     "gen": 8,
@@ -1919,7 +2024,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "iron_barbs": {
     "gen": 5,
@@ -1937,7 +2043,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "iron_fist": {
     "gen": 4,
@@ -1955,7 +2062,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "justified": {
     "gen": 5,
@@ -1973,7 +2081,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "keen_eye": {
     "gen": 3,
@@ -1989,7 +2098,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "klutz": {
     "gen": 4,
@@ -2007,7 +2117,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "leaf_guard": {
     "gen": 4,
@@ -2023,7 +2134,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "levitate": {
     "gen": 3,
@@ -2041,7 +2153,16 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {
+      "spikes": [[true, 3]],
+      "toxic_spikes": [[true, 4]],
+      "sticky_web": [[true, 6]],
+      "electric_terrain": [[true, 6]],
+      "grassy_terrain": [[true, 6]],
+      "misty_terrain": [[true, 6]],
+      "psychic_terrain": [[true, 6]]
+    }
   },
   "libero": {
     "gen": 8,
@@ -2059,7 +2180,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "light_metal": {
     "gen": 5,
@@ -2077,7 +2199,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "lightning_rod": {
     "gen": 3,
@@ -2098,7 +2221,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "limber": {
     "gen": 3,
@@ -2116,7 +2240,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "liquid_ooze": {
     "gen": 3,
@@ -2132,7 +2257,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "liquid_voice": {
     "gen": 7,
@@ -2150,7 +2276,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "long_reach": {
     "gen": 7,
@@ -2168,7 +2295,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "magic_bounce": {
     "gen": 5,
@@ -2184,7 +2312,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "magic_guard": {
     "gen": 4,
@@ -2200,7 +2329,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "magician": {
     "gen": 6,
@@ -2218,7 +2348,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "magma_armor": {
     "gen": 3,
@@ -2236,7 +2367,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "magnet_pull": {
     "gen": 3,
@@ -2254,7 +2386,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "marvel_scale": {
     "gen": 3,
@@ -2273,7 +2406,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "mega_launcher": {
     "gen": 6,
@@ -2291,7 +2425,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "merciless": {
     "gen": 7,
@@ -2307,7 +2442,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "mimicry": {
     "gen": 8,
@@ -2325,7 +2461,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "minus": {
     "gen": 3,
@@ -2344,7 +2481,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "mirror_armor": {
     "gen": 8,
@@ -2360,7 +2498,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "misty_surge": {
     "gen": 7,
@@ -2384,7 +2523,8 @@
       "psychic_terrain": [[true, 7]]
     },
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "mold_breaker": {
     "gen": 4,
@@ -2402,7 +2542,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "moody": {
     "gen": 5,
@@ -2447,7 +2588,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "motor_drive": {
     "gen": 4,
@@ -2467,7 +2609,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "moxie": {
     "gen": 5,
@@ -2485,7 +2628,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "multiscale": {
     "gen": 5,
@@ -2503,7 +2647,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "multitype": {
     "gen": 4,
@@ -2522,7 +2667,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "mummy": {
     "gen": 5,
@@ -2540,7 +2686,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "natural_cure": {
     "gen": 3,
@@ -2563,7 +2710,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "neuroforce": {
     "gen": 7,
@@ -2581,7 +2729,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "neutralizing_gas": {
     "gen": 8,
@@ -2599,7 +2748,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "no_guard": {
     "gen": 4,
@@ -2617,7 +2767,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "normalize": {
     "gen": 4,
@@ -2636,7 +2787,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "oblivious": {
     "gen": 3,
@@ -2655,7 +2807,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "overcoat": {
     "gen": 5,
@@ -2671,7 +2824,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "overgrow": {
     "gen": 3,
@@ -2689,7 +2843,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "own_tempo": {
     "gen": 3,
@@ -2707,7 +2862,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "parental_bond": {
     "gen": 6,
@@ -2723,7 +2879,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "pastel_veil": {
     "gen": 8,
@@ -2742,7 +2899,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "perish_body": {
     "gen": 8,
@@ -2762,7 +2920,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "pickpocket": {
     "gen": 5,
@@ -2781,7 +2940,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "pickup": {
     "gen": 3,
@@ -2799,7 +2959,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "pixilate": {
     "gen": 6,
@@ -2818,7 +2979,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "plus": {
     "gen": 3,
@@ -2837,7 +2999,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "poison_heal": {
     "gen": 4,
@@ -2857,7 +3020,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "poison_point": {
     "gen": 3,
@@ -2877,7 +3041,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "poison_touch": {
     "gen": 5,
@@ -2895,7 +3060,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "power_construct": {
     "gen": 7,
@@ -2913,7 +3079,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "power_of_alchemy": {
     "gen": 7,
@@ -2929,7 +3096,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "power_spot": {
     "gen": 8,
@@ -2945,7 +3113,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "prankster": {
     "gen": 5,
@@ -2963,7 +3132,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "pressure": {
     "gen": 3,
@@ -2979,7 +3149,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "primordial_sea": {
     "gen": 6,
@@ -3007,7 +3178,8 @@
       "sandstorm": [[true, 6]]
     },
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "prism_armor": {
     "gen": 7,
@@ -3025,7 +3197,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "propeller_tail": {
     "gen": 8,
@@ -3041,7 +3214,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "protean": {
     "gen": 6,
@@ -3059,7 +3233,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "psychic_surge": {
     "gen": 7,
@@ -3083,7 +3258,8 @@
       "misty_terrain": [[true, 7]]
     },
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "punk_rock": {
     "gen": 8,
@@ -3101,7 +3277,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "pure_power": {
     "gen": 3,
@@ -3120,7 +3297,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "queenly_majesty": {
     "gen": 7,
@@ -3138,7 +3316,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "quick_draw": {
     "gen": 8,
@@ -3156,7 +3335,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "quick_feet": {
     "gen": 4,
@@ -3175,7 +3355,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "rain_dish": {
     "gen": 3,
@@ -3193,7 +3374,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "rattled": {
     "gen": 5,
@@ -3211,7 +3393,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "receiver": {
     "gen": 7,
@@ -3229,7 +3412,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "reckless": {
     "gen": 4,
@@ -3247,7 +3431,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "refrigerate": {
     "gen": 6,
@@ -3266,7 +3451,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "regenerator": {
     "gen": 5,
@@ -3284,7 +3470,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "ripen": {
     "gen": 8,
@@ -3302,7 +3489,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "rivalry": {
     "gen": 4,
@@ -3318,7 +3506,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "rks_system": {
     "gen": 7,
@@ -3337,7 +3526,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "rock_head": {
     "gen": 3,
@@ -3353,7 +3543,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "rough_skin": {
     "gen": 3,
@@ -3371,7 +3562,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "run_away": {
     "gen": 3,
@@ -3387,7 +3579,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "sand_force": {
     "gen": 5,
@@ -3403,7 +3596,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "sand_rush": {
     "gen": 5,
@@ -3422,7 +3616,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "sand_spit": {
     "gen": 8,
@@ -3448,7 +3643,8 @@
       "hail": [[true, 8]]
     },
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "sand_stream": {
     "gen": 3,
@@ -3474,7 +3670,8 @@
       "hail": [[true, 3]]
     },
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "sand_veil": {
     "gen": 3,
@@ -3493,7 +3690,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "sap_sipper": {
     "gen": 5,
@@ -3513,7 +3711,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "schooling": {
     "gen": 7,
@@ -3531,7 +3730,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "scrappy": {
     "gen": 4,
@@ -3549,7 +3749,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "screen_cleaner": {
     "gen": 8,
@@ -3569,7 +3770,8 @@
       "aurora_veil": [[true, 8]]
     },
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "serene_grace": {
     "gen": 3,
@@ -3585,7 +3787,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "shadow_shield": {
     "gen": 7,
@@ -3603,7 +3806,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "shadow_tag": {
     "gen": 3,
@@ -3623,7 +3827,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "shed_skin": {
     "gen": 3,
@@ -3646,7 +3851,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "sheer_force": {
     "gen": 5,
@@ -3664,7 +3870,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "shell_armor": {
     "gen": 3,
@@ -3682,7 +3889,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "shield_dust": {
     "gen": 3,
@@ -3698,7 +3906,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "shields_down": {
     "gen": 7,
@@ -3716,7 +3925,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "simple": {
     "gen": 4,
@@ -3732,7 +3942,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "skill_link": {
     "gen": 4,
@@ -3748,7 +3959,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "slow_start": {
     "gen": 4,
@@ -3769,7 +3981,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "slush_rush": {
     "gen": 7,
@@ -3788,7 +4001,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "sniper": {
     "gen": 4,
@@ -3804,7 +4018,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "snow_cloak": {
     "gen": 4,
@@ -3823,7 +4038,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "snow_warning": {
     "gen": 4,
@@ -3849,7 +4065,8 @@
       "sandstorm": [[true, 4]]
     },
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "solar_power": {
     "gen": 4,
@@ -3870,7 +4087,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "solid_rock": {
     "gen": 4,
@@ -3888,7 +4106,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "soul_heart": {
     "gen": 7,
@@ -3906,7 +4125,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "soundproof": {
     "gen": 3,
@@ -3924,7 +4144,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "speed_boost": {
     "gen": 3,
@@ -3942,7 +4163,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "stakeout": {
     "gen": 7,
@@ -3958,7 +4180,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "stall": {
     "gen": 4,
@@ -3976,7 +4199,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "stalwart": {
     "gen": 8,
@@ -3992,7 +4216,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "stamina": {
     "gen": 7,
@@ -4010,7 +4235,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "stance_change": {
     "gen": 6,
@@ -4028,7 +4254,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "static": {
     "gen": 3,
@@ -4048,7 +4275,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "steadfast": {
     "gen": 4,
@@ -4066,7 +4294,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "steam_engine": {
     "gen": 8,
@@ -4084,7 +4313,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "steelworker": {
     "gen": 7,
@@ -4102,7 +4332,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "steely_spirit": {
     "gen": 8,
@@ -4120,7 +4351,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "stench": {
     "gen": 3,
@@ -4138,7 +4370,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "sticky_hold": {
     "gen": 3,
@@ -4156,7 +4389,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "storm_drain": {
     "gen": 4,
@@ -4177,7 +4411,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "strong_jaw": {
     "gen": 6,
@@ -4195,7 +4430,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "sturdy": {
     "gen": 3,
@@ -4213,7 +4449,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "suction_cups": {
     "gen": 3,
@@ -4229,7 +4466,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "super_luck": {
     "gen": 4,
@@ -4245,7 +4483,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "surge_surfer": {
     "gen": 7,
@@ -4264,7 +4503,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "swarm": {
     "gen": 3,
@@ -4282,7 +4522,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "sweet_veil": {
     "gen": 6,
@@ -4305,7 +4546,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "swift_swim": {
     "gen": 3,
@@ -4324,7 +4566,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "symbiosis": {
     "gen": 6,
@@ -4342,7 +4585,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "synchronize": {
     "gen": 3,
@@ -4363,7 +4607,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "tangled_feet": {
     "gen": 4,
@@ -4382,7 +4627,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "tangling_hair": {
     "gen": 7,
@@ -4402,7 +4648,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "technician": {
     "gen": 4,
@@ -4420,7 +4667,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "telepathy": {
     "gen": 5,
@@ -4436,7 +4684,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "teravolt": {
     "gen": 5,
@@ -4454,7 +4703,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "thick_fat": {
     "gen": 3,
@@ -4473,7 +4723,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "tinted_lens": {
     "gen": 4,
@@ -4491,7 +4742,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "torrent": {
     "gen": 3,
@@ -4509,7 +4761,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "tough_claws": {
     "gen": 6,
@@ -4527,7 +4780,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "toxic_boost": {
     "gen": 5,
@@ -4543,7 +4797,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "trace": {
     "gen": 3,
@@ -4559,7 +4814,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "transistor": {
     "gen": 8,
@@ -4577,7 +4833,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "triage": {
     "gen": 7,
@@ -4595,7 +4852,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "truant": {
     "gen": 3,
@@ -4613,7 +4871,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "turboblaze": {
     "gen": 5,
@@ -4631,7 +4890,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "unaware": {
     "gen": 4,
@@ -4647,7 +4907,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "unburden": {
     "gen": 4,
@@ -4668,7 +4929,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "unnerve": {
     "gen": 5,
@@ -4686,7 +4948,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "unseen_fist": {
     "gen": 8,
@@ -4704,7 +4967,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "victory_star": {
     "gen": 5,
@@ -4723,7 +4987,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "vital_spirit": {
     "gen": 3,
@@ -4741,7 +5006,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "volt_absorb": {
     "gen": 3,
@@ -4761,7 +5027,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "wandering_spirit": {
     "gen": 8,
@@ -4779,7 +5046,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "water_absorb": {
     "gen": 3,
@@ -4799,7 +5067,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "water_bubble": {
     "gen": 7,
@@ -4817,7 +5086,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "water_compaction": {
     "gen": 7,
@@ -4835,7 +5105,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "water_veil": {
     "gen": 3,
@@ -4853,7 +5124,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "weak_armor": {
     "gen": 5,
@@ -4871,7 +5143,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "white_smoke": {
     "gen": 3,
@@ -4889,7 +5162,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "wimp_out": {
     "gen": 7,
@@ -4907,7 +5181,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "wonder_guard": {
     "gen": 3,
@@ -4925,7 +5200,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "wonder_skin": {
     "gen": 5,
@@ -4941,7 +5217,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "zen_mode": {
     "gen": 5,
@@ -4959,7 +5236,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "as_one_glastrier": {
     "gen": 8,
@@ -4977,7 +5255,8 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   },
   "as_one_spectrier": {
     "gen": 8,
@@ -4995,6 +5274,7 @@
     "creates_field_state": {},
     "removes_field_state": {},
     "prevents_field_state": {},
-    "suppresses_field_state": {}
+    "suppresses_field_state": {},
+    "ignores_field_state": {}
   }
 }

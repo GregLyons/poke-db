@@ -1,0 +1,880 @@
+{
+  "mist": {
+    "gen": 1,
+    "formatted_name": "Mist",
+    "field_state_class": "other",
+    "damage_percent_over_time": 0,
+    "max_layers": 1,
+    "only_grounded": false,
+    "stat_modifications": {},
+    "target": [["all_allies", 1]],
+    "effects": {
+      "prevents_stat_drop": [[true, 1]]
+    },
+    "causes_status": {},
+    "prevents_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "activates_ability": {},
+    "activates_item": {},
+    "enhances_move": {},
+    "hinders_move": {}
+  },
+  "safeguard": {
+    "gen": 1,
+    "formatted_name": "Safeguard",
+    "field_state_class": "other",
+    "damage_percent_over_time": 0,
+    "max_layers": 1,
+    "only_grounded": false,
+    "stat_modifications": {},
+    "target": [["all_allies", 1]],
+    "effects": {},
+    "causes_status": {},
+    "prevents_status": {
+      "burn": [[true, 2]],
+      "freeze": [[true, 2]],
+      "paralysis": [[true, 2]],
+      "poison": [[true, 2]],
+      "bad_poison": [[true, 2]],
+      "sleep": [[true, 2]],
+      "confusion": [[true, 2]],
+      "drowsy": [[true, 3]]
+    },
+    "boosts_type": {},
+    "resists_type": {},
+    "activates_ability": {},
+    "activates_item": {},
+    "enhances_move": {},
+    "hinders_move": {}
+  },
+  "tailwind": {
+    "gen": 4,
+    "formatted_name": "Tailwind",
+    "field_state_class": "other",
+    "damage_percent_over_time": 0,
+    "max_layers": 1,
+    "only_grounded": false,
+    "stat_modifications": {
+      "speed": [[2.0,
+          "all_allies", 100.0, 4]]
+    },
+    "target": [["all_allies", 4]],
+    "effects": {},
+    "causes_status": {},
+    "prevents_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "activates_ability": {},
+    "activates_item": {},
+    "enhances_move": {},
+    "hinders_move": {}
+  },
+  "vine_lash": {
+    "gen": 8,
+    "formatted_name": "Vine lash",
+    "field_state_class": "other",
+    "damage_percent_over_time": 16.67,
+    "max_layers": 1,
+    "only_grounded": false,
+    "stat_modifications": {},
+    "target": [["all_foes", 8]],
+    "effects": {},
+    "causes_status": {},
+    "prevents_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "activates_ability": {},
+    "activates_item": {},
+    "enhances_move": {},
+    "hinders_move": {}
+  },
+  "wildfire": {
+    "gen": 8,
+    "formatted_name": "Wildfire",
+    "field_state_class": "other",
+    "damage_percent_over_time": 16.67,
+    "max_layers": 1,
+    "only_grounded": false,
+    "stat_modifications": {},
+    "target": [["all_foes", 8]],
+    "effects": {},
+    "causes_status": {},
+    "prevents_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "activates_ability": {},
+    "activates_item": {},
+    "enhances_move": {},
+    "hinders_move": {}
+  },
+  "cannonade": {
+    "gen": 8,
+    "formatted_name": "Cannonade",
+    "field_state_class": "other",
+    "damage_percent_over_time": 16.67,
+    "max_layers": 1,
+    "only_grounded": false,
+    "stat_modifications": {},
+    "target": [["all_foes", 8]],
+    "effects": {},
+    "causes_status": {},
+    "prevents_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "activates_ability": {},
+    "activates_item": {},
+    "enhances_move": {},
+    "hinders_move": {}
+  },
+  "volcalith": {
+    "gen": 8,
+    "formatted_name": "Volcalith",
+    "field_state_class": "other",
+    "damage_percent_over_time": 16.67,
+    "max_layers": 1,
+    "only_grounded": false,
+    "stat_modifications": {},
+    "target": [["all_foes", 8]],
+    "effects": {},
+    "causes_status": {},
+    "prevents_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "activates_ability": {},
+    "activates_item": {},
+    "enhances_move": {},
+    "hinders_move": {}
+  },
+  "reflect": {
+    "gen": 1,
+    "formatted_name": "Reflect",
+    "field_state_class": "screen",
+    "damage_percent_over_time": 0,
+    "max_layers": 1,
+    "only_grounded": false,
+    "stat_modifications": {
+      "defense": [[2.0,
+          "all_allies", 100.0, 1], [1.0,
+          "all_allies", 100.0, 3]]
+    },
+    "target": [["all_allies", 1]],
+    "effects": {},
+    "causes_status": {},
+    "prevents_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "activates_ability": {},
+    "activates_item": {},
+    "enhances_move": {},
+    "hinders_move": {}
+  },
+  "light_screen": {
+    "gen": 1,
+    "formatted_name": "Light screen",
+    "field_state_class": "screen",
+    "damage_percent_over_time": 0,
+    "max_layers": 1,
+    "only_grounded": false,
+    "stat_modifications": {
+      "special_defense": [[2.0,
+          "all_allies", 100.0, 1], [1.0,
+          "all_allies", 100.0, 3]]
+    },
+    "target": [["all_allies", 1]],
+    "effects": {},
+    "causes_status": {},
+    "prevents_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "activates_ability": {},
+    "activates_item": {},
+    "enhances_move": {},
+    "hinders_move": {}
+  },
+  "aurora_veil": {
+    "gen": 7,
+    "formatted_name": "Aurora veil",
+    "field_state_class": "screen",
+    "damage_percent_over_time": 0,
+    "max_layers": 1,
+    "only_grounded": false,
+    "stat_modifications": {},
+    "target": [["all_allies", 7]],
+    "effects": {},
+    "causes_status": {},
+    "prevents_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "activates_ability": {},
+    "activates_item": {},
+    "enhances_move": {},
+    "hinders_move": {}
+  },
+  "rainbow": {
+    "gen": 5,
+    "formatted_name": "Rainbow",
+    "field_state_class": "pledge",
+    "damage_percent_over_time": 0,
+    "max_layers": 1,
+    "only_grounded": false,
+    "stat_modifications": {
+      "secondary_effect_chance": [[2.0,
+          "all_allies", 100.0, 5]]
+    },
+    "target": [["all_allies", 5]],
+    "effects": {},
+    "causes_status": {},
+    "prevents_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "activates_ability": {},
+    "activates_item": {},
+    "enhances_move": {},
+    "hinders_move": {}
+  },
+  "sea_of_fire": {
+    "gen": 5,
+    "formatted_name": "Sea of fire",
+    "field_state_class": "pledge",
+    "damage_percent_over_time": 12.5,
+    "max_layers": 1,
+    "only_grounded": false,
+    "stat_modifications": {},
+    "target": [["all_foes", 5]],
+    "effects": {},
+    "causes_status": {},
+    "prevents_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "activates_ability": {},
+    "activates_item": {},
+    "enhances_move": {},
+    "hinders_move": {}
+  },
+  "swamp": {
+    "gen": 5,
+    "formatted_name": "Swamp",
+    "field_state_class": "pledge",
+    "damage_percent_over_time": 0,
+    "max_layers": 1,
+    "only_grounded": false,
+    "stat_modifications": {
+      "speed": [[2.0,
+          "all_foes", 100.0, 5]]
+    },
+    "target": [["all_foes", 5]],
+    "effects": {},
+    "causes_status": {},
+    "prevents_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "activates_ability": {},
+    "activates_item": {},
+    "enhances_move": {},
+    "hinders_move": {}
+  },
+  "stealth_rock": {
+    "gen": 4,
+    "formatted_name": "Stealth rock",
+    "field_state_class": "entry_hazard",
+    "damage_percent_over_time": 12.5,
+    "max_layers": 1,
+    "only_grounded": false,
+    "stat_modifications": {},
+    "target": [["all_foes", 4]],
+    "effects": {},
+    "causes_status": {},
+    "prevents_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "activates_ability": {},
+    "activates_item": {},
+    "enhances_move": {},
+    "hinders_move": {}
+  },
+  "spikes": {
+    "gen": 2,
+    "formatted_name": "Spikes",
+    "field_state_class": "entry_hazard",
+    "damage_percent_over_time": 12.5,
+    "max_layers": 3,
+    "only_grounded": true,
+    "stat_modifications": {},
+    "target": [["all_foes", 2]],
+    "effects": {},
+    "causes_status": {},
+    "prevents_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "activates_ability": {},
+    "activates_item": {},
+    "enhances_move": {},
+    "hinders_move": {}
+  },
+  "sticky_web": {
+    "gen": 6,
+    "formatted_name": "Sticky web",
+    "field_state_class": "entry_hazard",
+    "damage_percent_over_time": 0,
+    "max_layers": 1,
+    "only_grounded": true,
+    "stat_modifications": {
+      "speed": [["-1", "all_foes", 100.0, 6]]
+    },
+    "target": [["all_foes", 6]],
+    "effects": {},
+    "causes_status": {},
+    "prevents_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "activates_ability": {},
+    "activates_item": {},
+    "enhances_move": {},
+    "hinders_move": {}
+  },
+  "toxic_spikes": {
+    "gen": 4,
+    "formatted_name": "Toxic spikes",
+    "field_state_class": "entry_hazard",
+    "damage_percent_over_time": 12.5,
+    "max_layers": 2,
+    "only_grounded": true,
+    "stat_modifications": {},
+    "target": [["all_foes", 4]],
+    "effects": {},
+    "causes_status": {
+      "poison": [[100.0, 4]],
+      "bad_poison": [[100.0, 4]]
+    },
+    "prevents_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "activates_ability": {},
+    "activates_item": {},
+    "enhances_move": {},
+    "hinders_move": {}
+  },
+  "sharp_steel": {
+    "gen": 8,
+    "formatted_name": "Sharp steel",
+    "field_state_class": "entry_hazard",
+    "damage_percent_over_time": 12.5,
+    "max_layers": 1,
+    "only_grounded": false,
+    "stat_modifications": {},
+    "target": [["all_foes", 8]],
+    "effects": {},
+    "causes_status": {},
+    "prevents_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "activates_ability": {},
+    "activates_item": {},
+    "enhances_move": {},
+    "hinders_move": {}
+  },
+  "clear_skies": {
+    "gen": 1,
+    "formatted_name": "Clear skies",
+    "field_state_class": "weather",
+    "damage_percent_over_time": 0,
+    "max_layers": 1,
+    "only_grounded": false,
+    "stat_modifications": {},
+    "target": [["all", 1]],
+    "effects": {},
+    "causes_status": {},
+    "prevents_status": {},
+    "weather_ball": [["normal", 1]],
+    "boosts_type": {},
+    "resists_type": {},
+    "activates_ability": {},
+    "activates_item": {},
+    "enhances_move": {},
+    "hinders_move": {}
+  },
+  "harsh_sunlight": {
+    "gen": 2,
+    "formatted_name": "Harsh sunlight",
+    "field_state_class": "weather",
+    "damage_percent_over_time": 0,
+    "max_layers": 1,
+    "only_grounded": false,
+    "stat_modifications": {},
+    "target": [["all", 2]],
+    "effects": {},
+    "causes_status": {},
+    "prevents_status": {
+      "freeze": [[true, 2]]
+    },
+    "weather_ball": [["fire", 2]],
+    "boosts_type": {
+      "fire": [[1.5, 2]]
+    },
+    "resists_type": {
+      "water": [[0.5, 2]]
+    },
+    "activates_ability": {
+      "forecast": [[true, 3]],
+      "dry_skin": [[true, 4]],
+      "chlorophyll": [[true, 3]],
+      "flower_gift": [[true, 4]],
+      "leaf_guard": [[true, 4]],
+      "solar_power": [[true, 4]],
+      "harvest": [[true, 5]]
+    },
+    "activates_item": {},
+    "enhances_move": {
+      "solar_beam": [[true, 2]],
+      "solar_blade": [[true, 7]],
+      "growth": [[true, 5]],
+      "moonlight": [[true, 2]],
+      "synthesis": [[true, 2]],
+      "morning_sun": [[true, 2]],
+      "weather_ball": [[true, 3]]
+    },
+    "hinders_move": {
+      "thunder": [[true, 2]],
+      "hurricane": [[true, 5]]
+    }
+  },
+  "extremely_harsh_sunlight": {
+    "gen": 6,
+    "formatted_name": "Extremely harsh sunlight",
+    "field_state_class": "weather",
+    "damage_percent_over_time": 0,
+    "max_layers": 1,
+    "only_grounded": false,
+    "stat_modifications": {},
+    "target": [["all", 6]],
+    "effects": {},
+    "causes_status": {},
+    "prevents_status": {
+      "freeze": [[true, 6]]
+    },
+    "weather_ball": [["fire", 6]],
+    "boosts_type": {
+      "fire": [[1.5, 6]]
+    },
+    "resists_type": {
+      "water": [[0.0, 6]]
+    },
+    "activates_ability": {
+      "forecast": [[true, 6]],
+      "dry_skin": [[true, 6]],
+      "chlorophyll": [[true, 6]],
+      "flower_gift": [[true, 6]],
+      "leaf_guard": [[true, 6]],
+      "solar_power": [[true, 6]],
+      "harvest": [[true, 6]]
+    },
+    "activates_item": {},
+    "enhances_move": {
+      "solar_beam": [[true, 6]],
+      "solar_blade": [[true, 7]],
+      "growth": [[true, 6]],
+      "moonlight": [[true, 6]],
+      "synthesis": [[true, 6]],
+      "morning_sun": [[true, 6]],
+      "weather_ball": [[true, 6]]
+    },
+    "hinders_move": {
+      "thunder": [[true, 6]],
+      "hurricane": [[true, 6]]
+    }
+  },
+  "rain": {
+    "gen": 2,
+    "formatted_name": "Rain",
+    "field_state_class": "weather",
+    "damage_percent_over_time": 0,
+    "max_layers": 1,
+    "only_grounded": false,
+    "stat_modifications": {},
+    "target": [["all", 2]],
+    "effects": {},
+    "causes_status": {},
+    "prevents_status": {},
+    "weather_ball": [["water", 2]],
+    "boosts_type": {
+      "water": [[1.5, 2]]
+    },
+    "resists_type": {
+      "fire": [[0.5, 2]]
+    },
+    "activates_ability": {
+      "forecast": [[true, 3]],
+      "dry_skin": [[true, 4]],
+      "hydration": [[true, 4]],
+      "rain_dish": [[true, 3]],
+      "swift_swim": [[true, 3]]
+    },
+    "activates_item": {},
+    "enhances_move": {
+      "thunder": [[true, 2]],
+      "hurricane": [[true, 5]],
+      "weather_ball": [[true, 3]]
+    },
+    "hinders_move": {
+      "solar_beam": [[true, 3]],
+      "solar_blade": [[true, 7]],
+      "moonlight": [[true, 2]],
+      "synthesis": [[true, 2]],
+      "morning_sun": [[true, 2]]
+    }
+  },
+  "heavy_rain": {
+    "gen": 6,
+    "formatted_name": "Heavy rain",
+    "field_state_class": "weather",
+    "damage_percent_over_time": 0,
+    "max_layers": 1,
+    "only_grounded": false,
+    "stat_modifications": {},
+    "target": [["all", 6]],
+    "effects": {},
+    "causes_status": {},
+    "prevents_status": {},
+    "weather_ball": [["water", 6]],
+    "boosts_type": {
+      "water": [[1.5, 6]]
+    },
+    "resists_type": {
+      "fire": [[0.0, 6]]
+    },
+    "activates_ability": {
+      "forecast": [[true, 6]],
+      "dry_skin": [[true, 6]],
+      "hydration": [[true, 6]],
+      "rain_dish": [[true, 6]],
+      "swift_swim": [[true, 6]]
+    },
+    "activates_item": {},
+    "enhances_move": {
+      "thunder": [[true, 6]],
+      "hurricane": [[true, 6]],
+      "weather_ball": [[true, 6]]
+    },
+    "hinders_move": {
+      "solar_beam": [[true, 6]],
+      "solar_blade": [[true, 7]],
+      "moonlight": [[true, 6]],
+      "synthesis": [[true, 6]],
+      "morning_sun": [[true, 6]]
+    }
+  },
+  "sandstorm": {
+    "gen": 2,
+    "formatted_name": "Sandstorm",
+    "field_state_class": "weather",
+    "damage_percent_over_time": 6.25,
+    "max_layers": 1,
+    "only_grounded": false,
+    "stat_modifications": {
+      "special_defense": [[1.5,
+          "all_allies", 100.0, 4]]
+    },
+    "target": [["all", 2]],
+    "effects": {},
+    "causes_status": {},
+    "prevents_status": {},
+    "weather_ball": [["rock", 2]],
+    "boosts_type": {},
+    "resists_type": {},
+    "activates_ability": {
+      "forecast": [[true, 3]],
+      "sand_veil": [[true, 3]],
+      "sand_rush": [[true, 5]],
+      "sand_force": [[true, 5]]
+    },
+    "activates_item": {},
+    "enhances_move": {
+      "shore_up": [[true, 7]],
+      "weather_ball": [[true, 3]]
+    },
+    "hinders_move": {
+      "solar_beam": [[true, 3]],
+      "solar_blade": [[true, 7]],
+      "shore_up": [[true, 7]]
+    }
+  },
+  "hail": {
+    "gen": 3,
+    "formatted_name": "Hail",
+    "field_state_class": "weather",
+    "damage_percent_over_time": 6.25,
+    "max_layers": 1,
+    "only_grounded": false,
+    "stat_modifications": {},
+    "target": [["all", 3]],
+    "effects": {},
+    "causes_status": {},
+    "prevents_status": {},
+    "weather_ball": [["ice", 3]],
+    "boosts_type": {},
+    "resists_type": {},
+    "activates_ability": {
+      "ice_body": [[true, 4]],
+      "snow_cloak": [[true, 4]],
+      "slush_rush": [[true, 7]],
+      "ice_face": [[true, 8]]
+    },
+    "activates_item": {},
+    "enhances_move": {
+      "blizzard": [[true, 4]],
+      "weather_ball": [[true, 3]]
+    },
+    "hinders_move": {
+      "moonlight": [[true, 3]],
+      "synthesis": [[true, 3]],
+      "morning_sun": [[true, 3]]
+    }
+  },
+  "fog": {
+    "gen": 4,
+    "formatted_name": "Fog",
+    "field_state_class": "weather",
+    "damage_percent_over_time": 0,
+    "max_layers": 1,
+    "only_grounded": false,
+    "stat_modifications": {
+      "accuracy": [[0.6,
+          "all", 100.0, 4]]
+    },
+    "target": [["all", 4]],
+    "effects": {},
+    "causes_status": {},
+    "prevents_status": {},
+    "weather_ball": [["normal", 4]],
+    "boosts_type": {},
+    "resists_type": {},
+    "activates_ability": {},
+    "activates_item": {},
+    "enhances_move": {},
+    "hinders_move": {
+      "solar_beam": [[true, 4]],
+      "moonlight": [[true, 4]],
+      "synthesis": [[true, 4]],
+      "morning_sun": [[true, 4]]
+    }
+  },
+  "strong_winds": {
+    "gen": 6,
+    "formatted_name": "Strong winds",
+    "field_state_class": "weather",
+    "damage_percent_over_time": 0,
+    "max_layers": 1,
+    "only_grounded": false,
+    "stat_modifications": {},
+    "target": [["all", 6]],
+    "effects": {},
+    "causes_status": {},
+    "prevents_status": {},
+    "weather_ball": [["normal", 6]],
+    "boosts_type": {},
+    "resists_type": {},
+    "activates_ability": {},
+    "activates_item": {},
+    "enhances_move": {},
+    "hinders_move": {}
+  },
+  "electric_terrain": {
+    "gen": 6,
+    "formatted_name": "Electric terrain",
+    "field_state_class": "terrain",
+    "damage_percent_over_time": 0,
+    "max_layers": 1,
+    "only_grounded": true,
+    "stat_modifications": {},
+    "target": [["all", 6]],
+    "effects": {},
+    "causes_status": {},
+    "prevents_status": {
+      "sleep": [[true, 6]],
+      "drowsy": [[true, 6]]
+    },
+    "boosts_type": {
+      "electric": [[1.5, 6], [1.3, 8]]
+    },
+    "resists_type": {},
+    "activates_ability": {
+      "surge_surfer": [[true, 7]],
+      "mimicry": [[true, 8]]
+    },
+    "activates_item": {
+      "electric_seed": [[true, 7]]
+    },
+    "enhances_move": {
+      "rising_voltage": [[true, 8]],
+      "terrain_pulse": [[true, 8]]
+    },
+    "hinders_move": {}
+  },
+  "grassy_terrain": {
+    "gen": 6,
+    "formatted_name": "Grassy terrain",
+    "field_state_class": "terrain",
+    "damage_percent_over_time": 0,
+    "max_layers": 1,
+    "only_grounded": true,
+    "stat_modifications": {},
+    "target": [["all", 6]],
+    "effects": {
+      "restores_hp": [[true, 6]]
+    },
+    "causes_status": {},
+    "prevents_status": {},
+    "boosts_type": {
+      "grass": [[1.5, 6], [1.3, 8]]
+    },
+    "resists_type": {},
+    "activates_ability": {
+      "grass_pelt": [[true, 6]],
+      "mimicry": [[true, 8]]
+    },
+    "activates_item": {
+      "grassy_seed": [[true, 7]]
+    },
+    "enhances_move": {
+      "terrain_pulse": [[true, 8]],
+      "grassy_glide": [[true, 8]],
+      "floral_healing": [[true, 7]]
+    },
+    "hinders_move": {
+      "bulldoze": [[true, 6]],
+      "earthquake": [[true, 6]],
+      "magnitude": [[true, 6]]
+    }
+  },
+  "misty_terrain": {
+    "gen": 6,
+    "formatted_name": "Misty terrain",
+    "field_state_class": "terrain",
+    "damage_percent_over_time": 0,
+    "max_layers": 1,
+    "only_grounded": true,
+    "stat_modifications": {},
+    "target": [["all", 6]],
+    "effects": {},
+    "causes_status": {},
+    "prevents_status": {
+      "burn": [[true, 6]],
+      "freeze": [[true, 6]],
+      "paralysis": [[true, 6]],
+      "poison": [[true, 6]],
+      "bad_poison": [[true, 6]],
+      "sleep": [[true, 6]],
+      "confusion": [[true, 6]],
+      "drowsy": [[true, 6]]
+    },
+    "boosts_type": {},
+    "resists_type": {
+      "dragon": [[0.5, 6]]
+    },
+    "activates_ability": {
+      "mimicry": [[true, 8]]
+    },
+    "activates_item": {
+      "misty_seed": [[true, 7]]
+    },
+    "enhances_move": {
+      "misty_explosion": [[true, 8]],
+      "terrain_pulse": [[true, 8]]
+    },
+    "hinders_move": {}
+  },
+  "psychic_terrain": {
+    "gen": 6,
+    "formatted_name": "Psychic terrain",
+    "field_state_class": "terrain",
+    "damage_percent_over_time": 0,
+    "max_layers": 1,
+    "only_grounded": true,
+    "stat_modifications": {},
+    "target": [["all", 6]],
+    "effects": {
+      "protects_against_priority": [[true, 6]]
+    },
+    "causes_status": {},
+    "prevents_status": {},
+    "boosts_type": {
+      "psychic": [[1.5, 6], [1.3, 8]]
+    },
+    "resists_type": {},
+    "activates_ability": {
+      "mimicry": [[true, 8]]
+    },
+    "activates_item": {
+      "psychic_seed": [[true, 7]]
+    },
+    "enhances_move": {
+      "expanding_force": [[true, 8]],
+      "terrain_pulse": [[true, 8]]
+    },
+    "hinders_move": {}
+  },
+  "trick_room": {
+    "gen": 4,
+    "formatted_name": "Trick room",
+    "field_state_class": "room",
+    "damage_percent_over_time": 0,
+    "max_layers": 1,
+    "only_grounded": false,
+    "stat_modifications": {},
+    "target": [["all", 4]],
+    "effects": {
+      "other_move_order_change": [[true, 4]]
+    },
+    "causes_status": {},
+    "prevents_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "activates_ability": {},
+    "activates_item": {
+      "room_service": [[true, 8]]
+    },
+    "enhances_move": {},
+    "hinders_move": {}
+  },
+  "magic_room": {
+    "gen": 8,
+    "formatted_name": "Magic room",
+    "field_state_class": "room",
+    "damage_percent_over_time": 0,
+    "max_layers": 1,
+    "only_grounded": false,
+    "stat_modifications": {},
+    "target": [["all", 8]],
+    "effects": {
+      "manipulates_item": [[true, 8]]
+    },
+    "causes_status": {},
+    "prevents_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "activates_ability": {},
+    "activates_item": {},
+    "enhances_move": {},
+    "hinders_move": {}
+  },
+  "wonder_room": {
+    "gen": 8,
+    "formatted_name": "Wonder room",
+    "field_state_class": "room",
+    "damage_percent_over_time": 0,
+    "max_layers": 1,
+    "only_grounded": false,
+    "stat_modifications": {},
+    "target": [["all", 8]],
+    "effects": {},
+    "causes_status": {},
+    "prevents_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "activates_ability": {},
+    "activates_item": {},
+    "enhances_move": {},
+    "hinders_move": {}
+  }
+}

@@ -150,6 +150,9 @@ def addEffectData(fieldStateDict):
   fieldStateDict["magic_room"]["effects"]["manipulates_item"] = [[True, 8]]
   fieldStateDict["trick_room"]["effects"]["other_move_order_change"] = [[True, 4]]
 
+  # Delta Stream
+  fieldStateDict["delta_stream"]["effects"]["other_move_resistance"] = [[True, 6]]
+  
   return
 
 def addStatusData(fieldStateDict):

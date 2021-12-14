@@ -41,7 +41,13 @@
       "dark": [[1.0, 2]],
       "fairy": [[1.0, 6]]
     },
-    "formatted_name": "Normal"
+    "formatted_name": "Normal",
+    "resists_field_state": {
+      "stealth_rock": [[1.0, 4]],
+      "sharp_steel": [[1.0, 8]]
+    },
+    "removes_field_state": {},
+    "ignores_field_state": {}
   },
   "fighting": {
     "gen": 1,
@@ -85,7 +91,13 @@
       "dark": [[0.5, 2]],
       "fairy": [[2.0, 6]]
     },
-    "formatted_name": "Fighting"
+    "formatted_name": "Fighting",
+    "resists_field_state": {
+      "stealth_rock": [[0.5, 4]],
+      "sharp_steel": [[1.0, 8]]
+    },
+    "removes_field_state": {},
+    "ignores_field_state": {}
   },
   "flying": {
     "gen": 1,
@@ -129,7 +141,21 @@
       "dark": [[1.0, 2]],
       "fairy": [[1.0, 6]]
     },
-    "formatted_name": "Flying"
+    "formatted_name": "Flying",
+    "resists_field_state": {
+      "spikes": [[0.0, 2]],
+      "stealth_rock": [[2.0, 4]],
+      "sharp_steel": [[1.0, 8]]
+    },
+    "removes_field_state": {},
+    "ignores_field_state": {
+      "toxic_spikes": [[true, 4]],
+      "sticky_web": [[true, 6]],
+      "electric_terrain": [[0.0, 6]],
+      "grassy_terrain": [[0.0, 6]],
+      "misty_terrain": [[0.0, 6]],
+      "psychic_terrain": [[0.0, 6]]
+    }
   },
   "poison": {
     "gen": 1,
@@ -173,7 +199,15 @@
       "dark": [[1.0, 2]],
       "fairy": [[0.5, 6]]
     },
-    "formatted_name": "Poison"
+    "formatted_name": "Poison",
+    "resists_field_state": {
+      "stealth_rock": [[1.0, 4]],
+      "sharp_steel": [[1.0, 8]]
+    },
+    "removes_field_state": {
+      "toxic_spikes": [[true, 4]]
+    },
+    "ignores_field_state": {}
   },
   "ground": {
     "gen": 1,
@@ -217,7 +251,14 @@
       "dark": [[1.0, 2]],
       "fairy": [[1.0, 6]]
     },
-    "formatted_name": "Ground"
+    "formatted_name": "Ground",
+    "resists_field_state": {
+      "sandstorm": [[0.0, 2]],
+      "stealth_rock": [[0.5, 4]],
+      "sharp_steel": [[1.0, 8]]
+    },
+    "removes_field_state": {},
+    "ignores_field_state": {}
   },
   "rock": {
     "gen": 1,
@@ -261,7 +302,15 @@
       "dark": [[1.0, 2]],
       "fairy": [[1.0, 6]]
     },
-    "formatted_name": "Rock"
+    "formatted_name": "Rock",
+    "resists_field_state": {
+      "volcalith": [[true, 8]],
+      "sandstorm": [[0.0, 2]],
+      "stealth_rock": [[1.0, 4]],
+      "sharp_steel": [[2.0, 8]]
+    },
+    "removes_field_state": {},
+    "ignores_field_state": {}
   },
   "bug": {
     "gen": 1,
@@ -305,7 +354,13 @@
       "dark": [[1.0, 2]],
       "fairy": [[1.0, 6]]
     },
-    "formatted_name": "Bug"
+    "formatted_name": "Bug",
+    "resists_field_state": {
+      "stealth_rock": [[2.0, 4]],
+      "sharp_steel": [[1.0, 8]]
+    },
+    "removes_field_state": {},
+    "ignores_field_state": {}
   },
   "ghost": {
     "gen": 1,
@@ -349,7 +404,13 @@
       "dark": [[2.0, 2]],
       "fairy": [[1.0, 6]]
     },
-    "formatted_name": "Ghost"
+    "formatted_name": "Ghost",
+    "resists_field_state": {
+      "stealth_rock": [[1.0, 4]],
+      "sharp_steel": [[1.0, 8]]
+    },
+    "removes_field_state": {},
+    "ignores_field_state": {}
   },
   "fire": {
     "gen": 1,
@@ -393,7 +454,15 @@
       "dark": [[1.0, 2]],
       "fairy": [[0.5, 6]]
     },
-    "formatted_name": "Fire"
+    "formatted_name": "Fire",
+    "resists_field_state": {
+      "wildfire": [[true, 8]],
+      "sea_of_fire": [[true, 5]],
+      "stealth_rock": [[2.0, 4]],
+      "sharp_steel": [[0.5, 8]]
+    },
+    "removes_field_state": {},
+    "ignores_field_state": {}
   },
   "water": {
     "gen": 1,
@@ -437,7 +506,14 @@
       "dark": [[1.0, 2]],
       "fairy": [[1.0, 6]]
     },
-    "formatted_name": "Water"
+    "formatted_name": "Water",
+    "resists_field_state": {
+      "cannonade": [[true, 8]],
+      "stealth_rock": [[1.0, 4]],
+      "sharp_steel": [[0.5, 8]]
+    },
+    "removes_field_state": {},
+    "ignores_field_state": {}
   },
   "grass": {
     "gen": 1,
@@ -481,7 +557,14 @@
       "dark": [[1.0, 2]],
       "fairy": [[1.0, 6]]
     },
-    "formatted_name": "Grass"
+    "formatted_name": "Grass",
+    "resists_field_state": {
+      "vine_lash": [[true, 8]],
+      "stealth_rock": [[1.0, 4]],
+      "sharp_steel": [[1.0, 8]]
+    },
+    "removes_field_state": {},
+    "ignores_field_state": {}
   },
   "electric": {
     "gen": 1,
@@ -525,7 +608,13 @@
       "dark": [[1.0, 2]],
       "fairy": [[1.0, 6]]
     },
-    "formatted_name": "Electric"
+    "formatted_name": "Electric",
+    "resists_field_state": {
+      "stealth_rock": [[1.0, 4]],
+      "sharp_steel": [[0.5, 8]]
+    },
+    "removes_field_state": {},
+    "ignores_field_state": {}
   },
   "psychic": {
     "gen": 1,
@@ -569,7 +658,13 @@
       "dark": [[2.0, 2]],
       "fairy": [[1.0, 6]]
     },
-    "formatted_name": "Psychic"
+    "formatted_name": "Psychic",
+    "resists_field_state": {
+      "stealth_rock": [[1.0, 4]],
+      "sharp_steel": [[1.0, 8]]
+    },
+    "removes_field_state": {},
+    "ignores_field_state": {}
   },
   "ice": {
     "gen": 1,
@@ -613,7 +708,14 @@
       "dark": [[1.0, 2]],
       "fairy": [[1.0, 6]]
     },
-    "formatted_name": "Ice"
+    "formatted_name": "Ice",
+    "resists_field_state": {
+      "hail": [[0.0, 3]],
+      "stealth_rock": [[2.0, 4]],
+      "sharp_steel": [[2.0, 8]]
+    },
+    "removes_field_state": {},
+    "ignores_field_state": {}
   },
   "dragon": {
     "gen": 1,
@@ -657,7 +759,13 @@
       "dark": [[1.0, 2]],
       "fairy": [[2.0, 6]]
     },
-    "formatted_name": "Dragon"
+    "formatted_name": "Dragon",
+    "resists_field_state": {
+      "stealth_rock": [[1.0, 4]],
+      "sharp_steel": [[1.0, 8]]
+    },
+    "removes_field_state": {},
+    "ignores_field_state": {}
   },
   "steel": {
     "gen": 2,
@@ -701,7 +809,14 @@
       "dark": [[0.5, 2], [1.0, 6]],
       "fairy": [[0.5, 6]]
     },
-    "formatted_name": "Steel"
+    "formatted_name": "Steel",
+    "resists_field_state": {
+      "sandstorm": [[0.0, 2]],
+      "stealth_rock": [[0.5, 4]],
+      "sharp_steel": [[0.5, 8]]
+    },
+    "removes_field_state": {},
+    "ignores_field_state": {}
   },
   "dark": {
     "gen": 2,
@@ -745,7 +860,13 @@
       "dark": [[0.5, 2]],
       "fairy": [[2.0, 6]]
     },
-    "formatted_name": "Dark"
+    "formatted_name": "Dark",
+    "resists_field_state": {
+      "stealth_rock": [[1.0, 4]],
+      "sharp_steel": [[1.0, 8]]
+    },
+    "removes_field_state": {},
+    "ignores_field_state": {}
   },
   "fairy": {
     "gen": 6,
@@ -789,6 +910,12 @@
       "dark": [[0.5, 6]],
       "fairy": [[1.0, 6]]
     },
-    "formatted_name": "Fairy"
+    "formatted_name": "Fairy",
+    "resists_field_state": {
+      "stealth_rock": [[1.0, 6]],
+      "sharp_steel": [[2.0, 8]]
+    },
+    "removes_field_state": {},
+    "ignores_field_state": {}
   }
 }

@@ -224,6 +224,7 @@ def addFieldStateData(abilityDict):
     abilityDict[abilityName]["removes_field_state"] = {}
     abilityDict[abilityName]["prevents_field_state"] = {}
     abilityDict[abilityName]["suppresses_field_state"] = {}
+    abilityDict[abilityName]["ignores_field_state"] = {}
 
   # Cloud Nine and Air Lock
   #region
@@ -243,13 +244,16 @@ def addFieldStateData(abilityDict):
 
   #endregion
 
+  # Levitate
+  for [fieldStateName, fieldStateGen] in [['spikes', 2], ['toxic_spikes', 4], ['sticky_web', 6], ['electric_terrain', 6], ['grassy_terrain', 6], ['misty_terrain', 6], ['psychic_terrain', 6], ]:
+    abilityGen = 3
+    abilityDict['levitate']["ignores_field_state"][fieldStateName] = [[True, max(abilityGen, fieldStateGen)]]
+
   # Infiltrator
-  for fieldStateName in ['mist', 'safeguard', 'reflect', 'light_screen', 'aurora_veil']:
-    gen = 5
-    # TYPO: Bulbapedia says in Gen 6, but aurora veil wasn't introduced until gen 7
-    if fieldStateName == 'aurora_veil':
-      gen = 7
-    abilityDict['infiltrator']["ignores_field_state"] = [[True, gen]]
+  # TYPO: Bulbapedia says in Gen 6, but aurora veil wasn't introduced until gen 7
+  for [fieldStateName, fieldStateGen] in [['mist', 1], ['safeguard', 2], ['reflect', 1], ['light_screen', 1], ['aurora_veil', 7]]:
+    abilityGen = 5
+    abilityDict["infiltrator"]["ignores_field_state"][fieldStateName] = [[True, max(abilityGen, fieldStateGen)]]
 
   # Screen Cleaner
   for screenName in ['reflect', 'light_screen', 'aurora_veil']:
@@ -424,6 +428,10 @@ if __name__ == '__main__':
       if fieldState not in fieldStateList():
         print('Inconsistent field state name', abilityName, fieldState)
     
+    for fieldState in abilityDict[abilityName]["suppresses_field_state"]:
+      if fieldState not in fieldStateList():
+        print('Inconsistent field state name', abilityName, fieldState)
+        
     for fieldState in abilityDict[abilityName]["ignores_field_state"]:
       if fieldState not in fieldStateList():
         print('Inconsistent field state name', abilityName, fieldState)

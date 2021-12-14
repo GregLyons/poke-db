@@ -1,5 +1,5 @@
 import csv
-from utils import getCSVDataPath, checkConsistency
+from utils import getCSVDataPath, checkConsistency, fieldStateList
 
 def makeTypeDict(fnamePrefix):
   typeDict = {}
@@ -58,12 +58,75 @@ def addFormattedName(typeDict):
 
   return
 
+def addFieldStateData(typeDict):
+  for typeName in typeDict:
+    typeDict[typeName]["resists_field_state"] = {}
+    typeDict[typeName]["removes_field_state"] = {}
+    typeDict[typeName]["ignores_field_state"] = {}
+
+  # G-Max 
+  typeDict["grass"]["resists_field_state"]["vine_lash"] = [[True, 8]]
+  typeDict["fire"]["resists_field_state"]["wildfire"] = [[True, 8]]
+  typeDict["water"]["resists_field_state"]["cannonade"] = [[True, 8]]
+  typeDict["rock"]["resists_field_state"]["volcalith"] = [[True, 8]]
+
+  # Pledges
+  typeDict["fire"]["resists_field_state"]["sea_of_fire"] = [[True, 5]]
+
+  # Weather
+  typeDict["rock"]["resists_field_state"]["sandstorm"] = [[0.0, 2]]
+  typeDict["ground"]["resists_field_state"]["sandstorm"] = [[0.0, 2]]
+  typeDict["steel"]["resists_field_state"]["sandstorm"] = [[0.0, 2]]
+
+  typeDict["ice"]["resists_field_state"]["hail"] = [[0.0, 3]]
+
+  # Hazards
+  #region
+
+  typeDict["flying"]["resists_field_state"]["spikes"] = [[0.0, 2]]
+  typeDict["flying"]["ignores_field_state"]["toxic_spikes"] = [[True, 4]]
+  typeDict["flying"]["ignores_field_state"]["sticky_web"] = [[True, 6]]
+
+  typeDict["poison"]["removes_field_state"]["toxic_spikes"] = [[True, 4]]
+
+  # Hazards whose damage depends on type-matchup
+  for [typeName, fieldStateAndGen] in [
+    ['rock', [
+        ['stealth_rock', 4]
+      ]
+    ],
+    ['steel', [
+        ['sharp_steel', 8]
+      ]
+    ]
+  ]: 
+    for [fieldStateName, fieldStateGen] in fieldStateAndGen:
+      for attackingTypeName in typeDict[typeName]["damage_to"].keys():
+        typeDict[attackingTypeName]["resists_field_state"][fieldStateName] = []
+
+        for patch in typeDict[typeName]["damage_to"][attackingTypeName]:
+          [multiplier, patchGen] = patch
+
+          typeDict[attackingTypeName]["resists_field_state"][fieldStateName].append([multiplier, max(patchGen, fieldStateGen)])
+
+  #endregion
+
+  # Terrains
+  typeDict["flying"]["ignores_field_state"]["electric_terrain"] = [[0.0, 6]]
+  typeDict["flying"]["ignores_field_state"]["grassy_terrain"] = [[0.0, 6]]
+  typeDict["flying"]["ignores_field_state"]["misty_terrain"] = [[0.0, 6]]
+  typeDict["flying"]["ignores_field_state"]["psychic_terrain"] = [[0.0, 6]]
+
+  return
+
 def main():
   dataPath = getCSVDataPath() + 'types\\'
   fnamePrefix = dataPath + 'typeMatchupsGen'
   typeDict = makeTypeDict(fnamePrefix)
 
   addFormattedName(typeDict)
+
+  addFieldStateData(typeDict)
 
   return typeDict
 
@@ -74,9 +137,21 @@ if __name__ == '__main__':
   print('Checking for inconsistencies...')
   for typeName in typeDict.keys():
     for inconsistency in [
-      checkConsistency(typeDict[typeName]["damage_to"], 'type', typeDict, 0.0, True),
-      checkConsistency(typeDict[typeName]["damage_from"], 'type', typeDict, 0.0, True),
+      checkConsistency(typeDict[typeName]["damage_to"], 'type', typeDict, 0.0),
+      checkConsistency(typeDict[typeName]["damage_from"], 'type', typeDict, 0.0),
     ]:
       if inconsistency:
         print(f'Inconsistency found for {typeName}: {inconsistency}')
+    
+    for fieldState in typeDict[typeName]["resists_field_state"]:
+      if fieldState not in fieldStateList():
+        print('Inconsistent field state name', typeName, fieldState)
+
+    for fieldState in typeDict[typeName]["ignores_field_state"]:
+      if fieldState not in fieldStateList():
+        print('Inconsistent field state name', typeName, fieldState)
+
+    for fieldState in typeDict[typeName]["removes_field_state"]:
+      if fieldState not in fieldStateList():
+        print('Inconsistent field state name', typeName, fieldState)
   print('Finished.')
