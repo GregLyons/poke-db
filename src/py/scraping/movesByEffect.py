@@ -18,12 +18,6 @@ def makeEffectCSV(label, url, writer):
       continue
 
     effect = parseName(label)
-    # terrain creators and removers are grouped together under one label each
-    if effect == 'changes_terrain':
-      if moveName in ['splintered_stormshards', 'defog', 'g_max_wind_rage', 'steel_roller', ]:
-        effect = 'removes_terrain'
-      else:
-        effect = 'creates_terrain'
 
 
     writer.writerow([effect, parseName(move)])
@@ -77,10 +71,6 @@ def main():
     'https://bulbapedia.bulbagarden.net/wiki/Category:Consecutively_executed_moves'],
     ['counterattack',
     'https://bulbapedia.bulbagarden.net/wiki/Category:Counterattacks'],
-    ['creates-hazard',
-    'https://bulbapedia.bulbagarden.net/wiki/Category:Entry_hazard-creating_moves'],
-    ['removes-hazard',
-    'https://bulbapedia.bulbagarden.net/wiki/Category:Entry_hazard-removing_moves'],
     ['changes-form',
     'https://bulbapedia.bulbagarden.net/wiki/Category:Form-changing_moves'],
     ['drains',
@@ -125,8 +115,6 @@ def main():
     'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_cause_the_user_to_faint'],
     ['changes-pokemon-type',
     'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_change_a_Pok%C3%A9mon\'s_type'],
-    ['changes-terrain',
-    'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_change_terrain'],
     ['type-varies',
     'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_change_type'],
     ['costsHP',
@@ -169,12 +157,6 @@ def main():
     'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_with_no_effect'],
     ['multi-hit',
     'https://bulbapedia.bulbagarden.net/wiki/Category:Multi-strike_moves'],
-    ['creates-screen',
-    'https://bulbapedia.bulbagarden.net/wiki/Category:Screen-creating_moves'],
-    ['removes-screen',
-    'https://bulbapedia.bulbagarden.net/wiki/Category:Screen-removing_moves'],
-    ['creates-weather',
-    'https://bulbapedia.bulbagarden.net/wiki/Category:Weather-changing_moves'],
     ['special-type-effectiveness',
     'https://bulbapedia.bulbagarden.net/wiki/Category:Moves_that_have_special_type_effectiveness_properties'],
     ['changes_move_type',

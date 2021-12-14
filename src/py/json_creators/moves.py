@@ -449,10 +449,6 @@ def addEffectToMoveDict(fname, moveDict):
 
   # haze
   moveDict["haze"]["effects"]["resets_stats"] = [[True, 1]]
-  moveDict["haze"]["effects"]["removes_screen"] = [[True, 1], [False, 2]]
-
-  # defog
-  moveDict["defog"]["effects"]["removes_terrain"] = [[True, 8]]
 
   return
 

@@ -512,9 +512,7 @@ def addOtherItemData(fpath, itemDict):
     ['affects_weight', ['float_stone']],
     ['moves_last_in_priority', ['lagging_tail', 'full_incense']],
     ['moves_first_in_priority', ['quick_claw', 'custap_berry']],
-    ['ignores_hazards', ['heavy_duty_boots']],
     ['ignores_contact', ['protective_pads']],
-    ['ignores_weather', ['utility_umbrella', 'safety_goggles']],
     ['changes_form', ['rusted_sword', 'rusted_shield']],
     ['resets_stats', ['white_herb']]
   ]:
@@ -619,6 +617,10 @@ def addOtherItemData(fpath, itemDict):
 
   # keep track of items to be handled
   for itemName in itemDict.keys():
+    # Heavy duty boots is handled in addFieldStateData
+    if itemName == 'heavy_duty_boots':
+      continue
+
     if itemName not in handledItems and 'berry' not in itemDict[itemName]["item_class"][0]:
       print(itemName, 'not handled!')
   return
@@ -692,6 +694,10 @@ def addFieldStateData(itemDict):
   itemDict["heavy_duty_boots"]["ignores_field_state"]["toxic_spikes"] = [[True, 8]]
   itemDict["heavy_duty_boots"]["ignores_field_state"]["sticky_web"] = [[True, 8]]
   itemDict["heavy_duty_boots"]["ignores_field_state"]["sharp_steel"] = [[True, 8]]
+
+  # Utility umbrella
+  itemDict["utility_umbrella"]["ignores_field_state"]["rain"] = [[True, 8]]
+  itemDict["utility_umbrella"]["ignores_field_state"]["harsh_sunlight"] = [[True, 8]]
 
 
   return

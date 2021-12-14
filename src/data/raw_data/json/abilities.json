@@ -59,9 +59,7 @@
   },
   "air_lock": {
     "gen": 3,
-    "effects": {
-      "ignores_weather": [[true, 3]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},
@@ -473,9 +471,7 @@
   },
   "cloud_nine": {
     "gen": 3,
-    "effects": {
-      "ignores_weather": [[true, 3]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},
@@ -833,9 +829,7 @@
   },
   "delta_stream": {
     "gen": 6,
-    "effects": {
-      "creates_weather": [[true, 6]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},
@@ -862,9 +856,7 @@
   },
   "desolate_land": {
     "gen": 6,
-    "effects": {
-      "creates_weather": [[true, 6]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},
@@ -950,9 +942,7 @@
   },
   "drizzle": {
     "gen": 3,
-    "effects": {
-      "creates_weather": [[true, 3]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},
@@ -977,9 +967,7 @@
   },
   "drought": {
     "gen": 3,
-    "effects": {
-      "creates_weather": [[true, 3]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},
@@ -1069,9 +1057,7 @@
   },
   "electric_surge": {
     "gen": 7,
-    "effects": {
-      "creates_terrain": [[true, 7]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},
@@ -1510,9 +1496,7 @@
   },
   "grassy_surge": {
     "gen": 7,
-    "effects": {
-      "creates_terrain": [[true, 7]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},
@@ -2503,9 +2487,7 @@
   },
   "misty_surge": {
     "gen": 7,
-    "effects": {
-      "creates_terrain": [[true, 7]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},
@@ -3154,9 +3136,7 @@
   },
   "primordial_sea": {
     "gen": 6,
-    "effects": {
-      "creates_weather": [[true, 6]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},
@@ -3238,9 +3218,7 @@
   },
   "psychic_surge": {
     "gen": 7,
-    "effects": {
-      "creates_terrain": [[true, 7]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},
@@ -3621,9 +3599,7 @@
   },
   "sand_spit": {
     "gen": 8,
-    "effects": {
-      "creates_weather": [[true, 8]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},
@@ -3648,9 +3624,7 @@
   },
   "sand_stream": {
     "gen": 3,
-    "effects": {
-      "creates_weather": [[true, 3]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},
@@ -4043,9 +4017,7 @@
   },
   "snow_warning": {
     "gen": 4,
-    "effects": {
-      "creates_weather": [[true, 4]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},

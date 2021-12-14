@@ -1,32 +1,4 @@
 {
-  "creates_hazard": {
-    "gen": 2,
-    "formatted_name": "Creates hazard"
-  },
-  "removes_hazard": {
-    "gen": 2,
-    "formatted_name": "Removes hazard"
-  },
-  "creates_terrain": {
-    "gen": 6,
-    "formatted_name": "Creates terrain"
-  },
-  "removes_terrain": {
-    "gen": 7,
-    "formatted_name": "Removes terrain"
-  },
-  "creates_screen": {
-    "gen": 1,
-    "formatted_name": "Creates screen"
-  },
-  "removes_screen": {
-    "gen": 1,
-    "formatted_name": "Removes screen"
-  },
-  "creates_weather": {
-    "gen": 2,
-    "formatted_name": "Creates weather"
-  },
   "high_crit_chance": {
     "gen": 1,
     "formatted_name": "High crit chance"
@@ -207,17 +179,9 @@
     "gen": 2,
     "formatted_name": "Moves first in priority"
   },
-  "ignores_hazards": {
-    "gen": 8,
-    "formatted_name": "Ignores hazards"
-  },
   "ignores_contact": {
     "gen": 7,
     "formatted_name": "Ignores contact"
-  },
-  "ignores_weather": {
-    "gen": 3,
-    "formatted_name": "Ignores weather"
   },
   "anti_mini": {
     "gen": 2,

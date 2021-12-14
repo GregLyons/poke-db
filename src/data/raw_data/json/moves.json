@@ -5705,9 +5705,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "creates_screen": [[true, 1]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {},
@@ -5757,8 +5755,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "resets_stats": [[true, 1]],
-      "removes_screen": [[true, 1], [false, 2]]
+      "resets_stats": [[true, 1]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -5809,9 +5806,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "creates_screen": [[true, 1]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {},
@@ -9666,9 +9661,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "creates_hazard": [[true, 2]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {},
@@ -9679,10 +9672,10 @@
     "lgpe_exclusive_values": {},
     "move_interactions": {
       "magic_coat": [[false, 2], [false, 3], [false, 4], [true, 5], [true, 6], [true, 7], [true, 8]],
-      "protect": [[false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
-      "baneful_bunker": [[false, 7], [false, 8]],
-      "spiky_shield": [[false, 6], [false, 7], [false, 8]],
-      "detect": [[false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
+      "protect": [[true, 2], [true, 3], [true, 4], [true, 5], [true, 6], [true, 7], [true, 8]],
+      "baneful_bunker": [[true, 7], [true, 8]],
+      "spiky_shield": [[true, 6], [true, 7], [true, 8]],
+      "detect": [[true, 2], [true, 3], [true, 4], [true, 5], [true, 6], [true, 7], [true, 8]],
       "obstruct": [[false, 8]],
       "kings_shield": [[false, 6], [false, 7], [false, 8]],
       "mat_block": [[false, 6], [false, 7], [false, 8]],
@@ -10171,9 +10164,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "creates_weather": [[true, 2]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {},
@@ -11588,9 +11579,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "removes_hazard": [[true, 2]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {
       "leech_seed": [[true, 2]]
@@ -12156,9 +12145,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "creates_weather": [[true, 2]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {},
@@ -12212,9 +12199,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "creates_weather": [[true, 2]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {},
@@ -13095,9 +13080,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "creates_weather": [[true, 3]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {},
@@ -14192,9 +14175,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "removes_screen": [[true, 3]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {},
@@ -19807,9 +19788,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "creates_hazard": [[true, 4]]
-    },
+    "effects": {},
     "causes_status": {
       "poison": [[100.0, 4]],
       "bad_poison": [[100.0, 4]]
@@ -19823,10 +19802,10 @@
     "lgpe_exclusive_values": {},
     "move_interactions": {
       "magic_coat": [[false, 4], [true, 5], [true, 6], [true, 7], [true, 8]],
-      "protect": [[false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
-      "baneful_bunker": [[false, 7], [false, 8]],
-      "spiky_shield": [[false, 6], [false, 7], [false, 8]],
-      "detect": [[false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
+      "protect": [[true, 4], [true, 5], [true, 6], [true, 7], [true, 8]],
+      "baneful_bunker": [[true, 7], [true, 8]],
+      "spiky_shield": [[true, 6], [true, 7], [true, 8]],
+      "detect": [[true, 4], [true, 5], [true, 6], [true, 7], [true, 8]],
       "obstruct": [[false, 8]],
       "kings_shield": [[false, 6], [false, 7], [false, 8]],
       "mat_block": [[false, 6], [false, 7], [false, 8]],
@@ -21955,11 +21934,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "removes_hazard": [[true, 4]],
-      "cannot_miss": [[true, 4]],
-      "removes_terrain": [[true, 8]],
-      "removes_screen": [[true, 4]],
-      "creates_weather": [[true, 4]]
+      "cannot_miss": [[true, 4]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -22693,9 +22668,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "creates_hazard": [[true, 4]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {},
@@ -22706,10 +22679,10 @@
     "lgpe_exclusive_values": {},
     "move_interactions": {
       "magic_coat": [[false, 4], [true, 5], [true, 6], [true, 7], [true, 8]],
-      "protect": [[false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
-      "baneful_bunker": [[false, 7], [false, 8]],
-      "spiky_shield": [[false, 6], [false, 7], [false, 8]],
-      "detect": [[false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
+      "protect": [[true, 4], [true, 5], [true, 6], [true, 7], [true, 8]],
+      "baneful_bunker": [[true, 7], [true, 8]],
+      "spiky_shield": [[true, 6], [true, 7], [true, 8]],
+      "detect": [[true, 4], [true, 5], [true, 6], [true, 7], [true, 8]],
       "obstruct": [[false, 8]],
       "kings_shield": [[false, 6], [false, 7], [false, 8]],
       "mat_block": [[false, 6], [false, 7], [false, 8]],
@@ -28718,9 +28691,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "creates_hazard": [[true, 6]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
@@ -28733,10 +28704,10 @@
     "lgpe_exclusive_values": {},
     "move_interactions": {
       "magic_coat": [[true, 6], [true, 7], [true, 8]],
-      "protect": [[false, 6], [false, 7], [false, 8]],
-      "baneful_bunker": [[false, 7], [false, 8]],
-      "spiky_shield": [[false, 6], [false, 7], [false, 8]],
-      "detect": [[false, 6], [false, 7], [false, 8]],
+      "protect": [[true, 6], [true, 7], [true, 8]],
+      "baneful_bunker": [[true, 7], [true, 8]],
+      "spiky_shield": [[true, 6], [true, 7], [true, 8]],
+      "detect": [[true, 6], [true, 7], [true, 8]],
       "obstruct": [[false, 8]],
       "kings_shield": [[false, 6], [false, 7], [false, 8]],
       "mat_block": [[false, 6], [false, 7], [false, 8]],
@@ -29542,7 +29513,6 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "creates_terrain": [[true, 6]],
       "restores_hp": [[true, 6]]
     },
     "causes_status": {},
@@ -29596,9 +29566,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "creates_terrain": [[true, 6]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {},
@@ -30760,9 +30728,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "creates_terrain": [[true, 6]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {},
@@ -33734,9 +33700,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "creates_terrain": [[true, 7]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {},
@@ -34549,9 +34513,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "creates_screen": [[true, 7]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {},
@@ -35092,8 +35054,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "bypasses_protect": [[true, 7]],
-      "creates_terrain": [[true, 7]]
+      "bypasses_protect": [[true, 7]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -35257,9 +35218,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "removes_screen": [[true, 7]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {},
@@ -36392,8 +36351,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "bypasses_protect": [[true, 7]],
-      "removes_terrain": [[true, 7]]
+      "bypasses_protect": [[true, 7]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -36912,8 +36870,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "cannot_miss": [[true, 7]],
-      "creates_screen": [[true, 7]]
+      "cannot_miss": [[true, 7]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -36969,8 +36926,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "cannot_miss": [[true, 7]],
-      "creates_screen": [[true, 7]]
+      "cannot_miss": [[true, 7]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -38011,8 +37967,7 @@
     "effects": {
       "bypasses_protect": [[true, 8]],
       "cannot_miss": [[true, 8]],
-      "variable_power": [[true, 8]],
-      "creates_weather": [[true, 8]]
+      "variable_power": [[true, 8]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -38132,7 +38087,6 @@
     "effects": {
       "bypasses_protect": [[true, 8]],
       "cannot_miss": [[true, 8]],
-      "creates_terrain": [[true, 8]],
       "variable_power": [[true, 8]]
     },
     "causes_status": {},
@@ -38365,8 +38319,7 @@
     "effects": {
       "bypasses_protect": [[true, 8]],
       "cannot_miss": [[true, 8]],
-      "variable_power": [[true, 8]],
-      "creates_weather": [[true, 8]]
+      "variable_power": [[true, 8]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -38486,8 +38439,7 @@
     "effects": {
       "bypasses_protect": [[true, 8]],
       "cannot_miss": [[true, 8]],
-      "variable_power": [[true, 8]],
-      "creates_weather": [[true, 8]]
+      "variable_power": [[true, 8]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -38607,7 +38559,6 @@
     "effects": {
       "bypasses_protect": [[true, 8]],
       "cannot_miss": [[true, 8]],
-      "creates_terrain": [[true, 8]],
       "variable_power": [[true, 8]]
     },
     "causes_status": {},
@@ -38726,7 +38677,6 @@
     "effects": {
       "bypasses_protect": [[true, 8]],
       "cannot_miss": [[true, 8]],
-      "creates_terrain": [[true, 8]],
       "variable_power": [[true, 8]]
     },
     "causes_status": {},
@@ -38788,8 +38738,7 @@
     "effects": {
       "bypasses_protect": [[true, 8]],
       "cannot_miss": [[true, 8]],
-      "variable_power": [[true, 8]],
-      "creates_weather": [[true, 8]]
+      "variable_power": [[true, 8]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -38966,7 +38915,6 @@
     "effects": {
       "bypasses_protect": [[true, 8]],
       "cannot_miss": [[true, 8]],
-      "creates_terrain": [[true, 8]],
       "variable_power": [[true, 8]]
     },
     "causes_status": {},
@@ -40261,9 +40209,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "removes_terrain": [[true, 8]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {},
@@ -42089,8 +42035,7 @@
     "effects": {
       "bypasses_protect": [[true, 8]],
       "cannot_miss": [[true, 8]],
-      "variable_power": [[true, 8]],
-      "creates_screen": [[true, 8]]
+      "variable_power": [[true, 8]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -42327,7 +42272,6 @@
     "max_move": false,
     "g_max_move": true,
     "effects": {
-      "creates_hazard": [[true, 8]],
       "bypasses_protect": [[true, 8]],
       "cannot_miss": [[true, 8]],
       "variable_power": [[true, 8]]
@@ -42349,10 +42293,10 @@
       }
     },
     "move_interactions": {
-      "protect": [[false, 8]],
-      "baneful_bunker": [[false, 8]],
-      "spiky_shield": [[false, 8]],
-      "detect": [[false, 8]],
+      "protect": [[true, 8]],
+      "baneful_bunker": [[true, 8]],
+      "spiky_shield": [[true, 8]],
+      "detect": [[true, 8]],
       "obstruct": [[true, 8]],
       "kings_shield": [[true, 8]],
       "mat_block": [[true, 8]],
@@ -42388,12 +42332,9 @@
     "max_move": false,
     "g_max_move": true,
     "effects": {
-      "removes_hazard": [[true, 8]],
       "bypasses_protect": [[true, 8]],
       "cannot_miss": [[true, 8]],
-      "removes_terrain": [[true, 8]],
-      "variable_power": [[true, 8]],
-      "removes_screen": [[true, 8]]
+      "variable_power": [[true, 8]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -43059,7 +43000,6 @@
     "max_move": false,
     "g_max_move": true,
     "effects": {
-      "creates_hazard": [[true, 8]],
       "bypasses_protect": [[true, 8]],
       "cannot_miss": [[true, 8]],
       "variable_power": [[true, 8]]
@@ -43081,10 +43021,10 @@
       }
     },
     "move_interactions": {
-      "protect": [[false, 8]],
-      "baneful_bunker": [[false, 8]],
-      "spiky_shield": [[false, 8]],
-      "detect": [[false, 8]],
+      "protect": [[true, 8]],
+      "baneful_bunker": [[true, 8]],
+      "spiky_shield": [[true, 8]],
+      "detect": [[true, 8]],
       "obstruct": [[true, 8]],
       "kings_shield": [[true, 8]],
       "mat_block": [[true, 8]],
@@ -45683,9 +45623,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "creates_screen": [[true, 7]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
@@ -45798,9 +45736,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "creates_screen": [[true, 7]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
@@ -47607,9 +47543,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "creates_hazard": [[true, 7]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
@@ -47629,10 +47563,10 @@
       }
     },
     "move_interactions": {
-      "protect": [[false, 7], [false, 8]],
-      "baneful_bunker": [[false, 7], [false, 8]],
-      "spiky_shield": [[false, 7], [false, 8]],
-      "detect": [[false, 7], [false, 8]],
+      "protect": [[true, 7], [true, 8]],
+      "baneful_bunker": [[true, 7], [true, 8]],
+      "spiky_shield": [[true, 7], [true, 8]],
+      "detect": [[true, 7], [true, 8]],
       "obstruct": [[false, 8]],
       "kings_shield": [[false, 7], [false, 8]],
       "mat_block": [[false, 7], [false, 8]],
@@ -47958,9 +47892,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "creates_weather": [[true, 7]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
@@ -48940,9 +48872,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "creates_weather": [[true, 7]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
@@ -48998,9 +48928,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "creates_weather": [[true, 7]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
@@ -49228,9 +49156,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "creates_weather": [[true, 7]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
@@ -52706,9 +52632,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "creates_hazard": [[true, 7]]
-    },
+    "effects": {},
     "causes_status": {
       "poison": [[100.0, 7]],
       "bad_poison": [[100.0, 7]]
@@ -52731,10 +52655,10 @@
       }
     },
     "move_interactions": {
-      "protect": [[false, 7], [false, 8]],
-      "baneful_bunker": [[false, 7], [false, 8]],
-      "spiky_shield": [[false, 7], [false, 8]],
-      "detect": [[false, 7], [false, 8]],
+      "protect": [[true, 7], [true, 8]],
+      "baneful_bunker": [[true, 7], [true, 8]],
+      "spiky_shield": [[true, 7], [true, 8]],
+      "detect": [[true, 7], [true, 8]],
       "obstruct": [[false, 8]],
       "kings_shield": [[false, 7], [false, 8]],
       "mat_block": [[false, 7], [false, 8]],
@@ -53114,11 +53038,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "removes_hazard": [[true, 7]],
-      "cannot_miss": [[true, 7]],
-      "removes_terrain": [[true, 7]],
-      "removes_screen": [[true, 7]],
-      "creates_weather": [[true, 7]]
+      "cannot_miss": [[true, 7]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -53286,9 +53206,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "creates_hazard": [[true, 7]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
@@ -53308,10 +53226,10 @@
       }
     },
     "move_interactions": {
-      "protect": [[false, 7], [false, 8]],
-      "baneful_bunker": [[false, 7], [false, 8]],
-      "spiky_shield": [[false, 7], [false, 8]],
-      "detect": [[false, 7], [false, 8]],
+      "protect": [[true, 7], [true, 8]],
+      "baneful_bunker": [[true, 7], [true, 8]],
+      "spiky_shield": [[true, 7], [true, 8]],
+      "detect": [[true, 7], [true, 8]],
       "obstruct": [[false, 8]],
       "kings_shield": [[false, 7], [false, 8]],
       "mat_block": [[false, 7], [false, 8]],
@@ -55156,9 +55074,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "creates_hazard": [[true, 7]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
@@ -55178,10 +55094,10 @@
       }
     },
     "move_interactions": {
-      "protect": [[false, 7], [false, 8]],
-      "baneful_bunker": [[false, 7], [false, 8]],
-      "spiky_shield": [[false, 7], [false, 8]],
-      "detect": [[false, 7], [false, 8]],
+      "protect": [[true, 7], [true, 8]],
+      "baneful_bunker": [[true, 7], [true, 8]],
+      "spiky_shield": [[true, 7], [true, 8]],
+      "detect": [[true, 7], [true, 8]],
       "obstruct": [[false, 8]],
       "kings_shield": [[false, 7], [false, 8]],
       "mat_block": [[false, 7], [false, 8]],
@@ -55695,7 +55611,6 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "creates_terrain": [[true, 7]],
       "restores_hp": [[true, 7]]
     },
     "causes_status": {},
@@ -55753,9 +55668,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "creates_terrain": [[true, 7]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
@@ -56574,9 +56487,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "creates_terrain": [[true, 7]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
@@ -57271,9 +57182,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "creates_terrain": [[true, 7]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
@@ -57507,9 +57416,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "creates_screen": [[true, 7]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {

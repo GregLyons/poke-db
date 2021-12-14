@@ -2,20 +2,6 @@ from utils import effectList
 
 def makeEffectDict():
   effectsAndGens = {
-    # spikes
-    "creates_hazard": 2,
-    # rapid spin
-    "removes_hazard": 2,
-    # grassy terrain
-    "creates_terrain": 6,
-    # splintered stormshards
-    "removes_terrain": 7,
-    # reflect
-    "creates_screen": 1,
-    # haze removes screens in Gen 1
-    "removes_screen": 1,
-    # rain dance
-    "creates_weather": 2,
     # karate chop
     "high_crit_chance": 1,
     # flail
@@ -106,12 +92,8 @@ def makeEffectDict():
     "moves_last_in_priority": 4,
     # quick claw
     "moves_first_in_priority": 2,
-    # heavy duty boots
-    "ignores_hazards": 8,
     # long reach
     "ignores_contact": 7,
-    # air lock
-    "ignores_weather": 3,
     # stomp started dealing double damage to minimized targets in gen 2
     "anti_mini": 2,
     # haze

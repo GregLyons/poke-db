@@ -668,7 +668,9 @@
     "only_grounded": false,
     "stat_modifications": {},
     "target": [["all", 6]],
-    "effects": {},
+    "effects": {
+      "other_move_resistance": [[true, 6]]
+    },
     "causes_status": {},
     "prevents_status": {},
     "weather_ball": [["normal", 6]],

@@ -1969,9 +1969,7 @@
     "gen": 8,
     "gen2_exclusive": false,
     "knock_off": true,
-    "effects": {
-      "ignores_hazards": [[true, 8]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},
@@ -3950,9 +3948,7 @@
     "gen": 6,
     "gen2_exclusive": false,
     "knock_off": true,
-    "effects": {
-      "ignores_weather": [[true, 6]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},
@@ -4745,8 +4741,7 @@
     "gen2_exclusive": false,
     "knock_off": true,
     "effects": {
-      "suppresses_ability": [[true, 8]],
-      "ignores_weather": [[true, 8]]
+      "suppresses_ability": [[true, 8]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -4758,7 +4753,10 @@
     "formatted_name": "Utility Umbrella",
     "extends_field_state": {},
     "resists_field_state": {},
-    "ignores_field_state": {}
+    "ignores_field_state": {
+      "rain": [[true, 8]],
+      "harsh_sunlight": [[true, 8]]
+    }
   },
   "water_gem": {
     "item_class": [["gem", 5]],

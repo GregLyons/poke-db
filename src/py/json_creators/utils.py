@@ -78,11 +78,6 @@ def statList():
 # various effects that don't qualify as statuses
 def effectList():
   effects = [
-    # hazards, screens, terrains, weathers
-    'creates_hazard', 'removes_hazard', 'ignores_hazards',
-    'creates_terrain', 'removes_terrain', 
-    'creates_screen', 'removes_screen', 
-    'creates_weather', 'ignores_weather', 
     # crit
     'high_crit_chance', 'always_crits', 'cannot_crit', 'prevents_crit',
     # protect
