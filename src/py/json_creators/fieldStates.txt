@@ -1,0 +1,353 @@
+Miscellaneous
+  Instances
+    Mist
+      In Gen 1, prevents stat decrease, does not remove stat changes
+      Gen 2, prevents stat decrease
+
+    Safeguard
+      Prevents status 
+
+      Infiltrator ignores
+
+    Tailwind
+      Doubles speed
+
+    Vine Lash
+      4 turns, damage at end of each turn to non-Grass type for 1/6 max HP
+
+    Wildfire
+      4 turns, damage at end of each turn to non-Fire type for 1/6 max HP
+
+    Cannonade
+      4 turns, damage at end of each turn to non-Water type for 1/6 max HP
+
+    Volcalith
+      4 turns, damage at end of each turn to non-Rock type for 1/6 max HP
+
+  Removal
+    In Gen 1, Haze removes Mist
+    Defog removes safeguard and mist
+
+Screens 
+  Instances
+    Reflect
+      Doubles defense (gen 1, 2), halves damage from physical moves (gen 3 onward)
+      Haze removes in gen 1 only
+
+      Baddy Bad
+
+    Light Screen
+      Doubles special defense (gen 1, 2), halves damage from special moves (gen 3 onward)
+      Haze removes in gen 1 only
+
+      Glitzy Glow
+
+    Aurora Veil
+      Halves damage from physical and special moves
+      Reduces only by third for allies
+
+      Cloud Nine and Air Lock cause to fail
+
+  Light clay extends 
+
+  Removal
+    Brick Break
+    Defog
+    Psychic Fangs
+    
+    Screen Cleaner
+
+  Infiltrator ignores
+
+Pledges
+  Instances
+    Rainbow
+      Fire and Water
+      Doubles probability of secondary effects
+
+    Sea of Fire
+      Fire and Grass
+      Damages all non-Fire for 1/8 max hp
+
+    Swamp 
+      Water and Grass
+      Quarters speed
+    
+Entry Hazard
+  Instances
+    Stealth Rock
+      Damage proportional to max hp, based on rock-type
+      One layer
+
+    Spikes 
+      Grounded Pokemon take damage proportional to max hp
+      Three layers
+
+    Sticky Web
+      Grounded Pokemon have speed lowered by one stage
+      One layer
+
+    Toxic Spikes
+      Poisons grounded Pokemon, one layer
+      Badly poisons grounded Pokemon, two layers
+
+    G-Max Steelsurge
+      Damage proportional to max hp, based on steel-type
+
+Weather
+  Instances
+    Clear skies
+      Defog
+
+      Weather Ball type: Normal
+
+    Harsh sunlight
+      Sunny Day
+      Drought
+
+      Forecast
+      Dry Skin
+      Chlorophyll
+      Flower Gift
+      Leaf Guard
+      Solar Power
+      Harvest
+
+      Heat Rock
+
+      Weather Ball type: Fire
+
+      Fire x1.5
+      Water x0.5
+
+      Solar Beam, Solar Blade instant
+      Growth double effectiveness
+      Moonlight, Synthesis, Morning Sun 2/3 max hp
+      Lower accuracy of thunder and hurricane
+
+      Prevents freeze
+
+    Extremely harsh sunlight
+      Desolate Land
+
+      Same as harsh sunlight
+
+      Weather Ball type: Fire
+
+      Damaging water-type moves fail
+
+      Sunny Day, Rain Dance, Sandstorm, Hail fail
+
+      Drought, Drizzle, Sand Stream, Snow Warning fail
+
+    Rain
+      Rain Dance
+      Drizzle
+
+      Forecast
+      Dry Skin
+      Hydration
+      Rain Dish
+      Swift Swim
+
+      Damp Rock
+
+      Weather Ball type: Water
+
+      Water x1.5
+      Fire x0.5
+
+      Thunder, Hurricane bypass accuracy check
+      Halves Solar Beam, Solar Blade
+      Moonlight, Synthesis, Morning Sun 1/4 max hp
+
+    Heavy Rain
+      Primordial Sea
+
+      Same as rain
+
+      Weather Ball type: Water
+
+      Damaging fire-type moves fail
+
+      Sunny Day, Rain Dance, Sandstorm, Hail fail
+
+      Drought, Drizzle, Sand Stream, Snow Warning fail
+
+    Sandstorm
+      Sandstorm
+      Sand Stream
+      Sand Spit
+
+      Smooth Rock
+
+      Sand Veil
+      Sand Rush
+      Sand Force
+
+      Weather Ball type: Rock
+
+      Resisted by: Rock, Ground, Steel
+
+      1/16 max hp damage each turn
+
+      Halves Solar Beam, Solar Blade
+      Shore Up recovers 2/3 max hp
+      Moonlight, Synthesis, Morning Sun 1/4 max hp
+
+
+      Gen 4 on, raises spdef of all rock-types by 1.5
+
+    Hail  
+      Hail
+      Snow Warning
+
+      Icy Rock
+
+      Forecast
+      Icy Body
+      Snow Cloak
+      Slush Rush
+      Ice Face
+
+      Weather Ball type: Ice
+
+      Resisted by: Ice
+
+      1/16 max hp damage each turn
+
+      Blizzard bypass accuracy check
+      Halves Solar Beam, Solar Blade
+      Moonlight, Synthesis, Morning Sun 1/4 max hp
+      Enables Aurora Veil
+
+    Fog
+      Weather Ball type: Normal
+
+      Accuracy modified by 3/5
+      Solar Beam halved
+      Moonlight, Synthesis, Morning Sun 1/4 max hp
+
+      Removed by Defog
+
+    Strong winds
+      Delta Stream
+
+      Weather Ball type: Normal
+
+      Moves that are super effective against pure flying-type only normally effective
+      Prevents sunny day, rain dance, sandstorm, hail
+      prevents drought, drizel, sand stream, snow warning
+      moonlight, morning sun, synthesis 1/2 max hp
+
+  Suspends weather
+    Air Lock
+    Cloud Nine
+
+  Safety Goggles prevents damage from hail, sandstorm
+
+Terrain
+  Instances
+    Electric
+      Electric Terrain
+      Max Lightning
+      Electric Surge
+
+      Increase electric by 1.5 (6, 7)/1.3 (8)
+      No sleep or yawn
+      Rising voltage, 2x power
+
+      NP: Thunderbolt
+      SP: Paralysis
+      Camoflauge: Electric
+
+      Surge Surfer
+
+      Seed
+
+    Grassy
+      Grassy Terrain
+      Max Overgrowth
+      Grassy Surge
+
+      Increase grass by 1.5 (6, 7)/1.3 (8)
+      Halve bulldoze, earthquake, magnitude
+      1/16 hp restore
+      Floral Healing, 2/3 heal
+      Grassy Glide, +priority
+
+      NP: Energy Ball
+      SP: Sleep
+      Camoflauge: Grass
+
+      Grassy Pelt
+
+      Seed
+
+    Misty
+      Misty Terrain
+      Max Starfall
+      Misty Surge
+
+      Increase fairy by 1.5 (6, 7)/1.3 (8)
+      Halve dragon type
+      No status or confusion (7+)
+
+      Misty Explosion, 1.5x power
+      NP: Moonblast
+      SP: -1 special attack
+      Camoflauge: Fairy
+
+      Seed
+
+    Psychic
+      Psychic Terrain
+      Genesis Supernova
+      Max Mindstorm
+      Psychic Surge
+
+      Increase psychic by 1.5 (6, 7)/1.3 (8)
+      No increased priority
+      Expanding Force, increase power and all enemies
+
+      NP: Psychic
+      SP: -1 speed
+      Camoflauge: psychic
+
+      Seed
+
+  Moves
+    Terrain pulse, 2x power on any terrain
+
+  Abilities
+    Mimicry
+
+  Items
+    Terrain Extender
+
+  Removal
+    Defog, Gen 8
+    G-Max Wind Rage
+    Splintered Stormshards
+    Steel Roller
+
+Room
+  Instances
+    Trick Room
+      Lower speed stat goes first
+      Brackets maintained
+      Removes itself
+
+      Activates Room Service
+
+    Magic Room
+      Suppresses item effects
+      Removes itself
+      Does not prevent mega evolution, primal reversion, ultra burst (necrozma), or z-crystal
+
+    Wonder Room
+      Swaps Defense and Special Defense
+      Affects Beast Boost
+      Removes itself
+
+  Items 

@@ -71,23 +71,9 @@ def getVersionGroupsInGen(gen):
 # stats which can be modified during battle
 def statList():
   stats = [
-    'attack', 'defense', 'special_attack', 'special_defense', 'speed', 'accuracy', 'evasion', 'critical_hit_ratio'
+    'attack', 'defense', 'special_attack', 'special_defense', 'speed', 'accuracy', 'evasion', 'critical_hit_ratio', 'secondary_effect_chance'
   ]
   return stats
-
-# list of weather effects
-def weatherList():
-  weathers = [
-    'rain', 'hail', 'sandstorm', 'harsh_sunlight', 'extremely_harsh_sunlight', 'heavy_rain', 'strong_winds'
-  ]
-  return weathers
-
-# list of terrain effects
-def terrainList():
-  terrains = [
-    'electric', 'grassy', 'misty', 'psychic', 
-  ]
-  return terrains
 
 # various effects that don't qualify as statuses
 def effectList():
@@ -148,6 +134,19 @@ def usageMethodList():
     'pulse', 'ball', 'bite', 'dance', 'explosive', 'powder', 'punch', 'sound',
   ]
   return usageMethods
+
+# 
+def fieldStateList():
+  fieldStates = [
+    'mist', 'safeguard', 'tailwind', 'vine_lash', 'wildfire', 'cannonade', 'volcalith',
+    'reflect', 'light_screen', 'aurora_veil',
+    'rainbow', 'sea_of_fire', 'swamp',
+    'stealth_rock', 'spikes', 'sticky_web', 'toxic_spikes', 'sharp_steel',
+    'clear_skies', 'harsh_sunlight', 'extremely_harsh_sunlight', 'rain', 'heavy_rain', 'sandstorm', 'hail', 'fog', 'strong_winds',
+    'electric_terrain', 'grassy_terrain', 'misty_terrain', 'psychic_terrain',
+    'trick_room', 'magic_room', 'wonder_room'
+  ]
+  return fieldStates
 
 # elemental types
 def typeList():

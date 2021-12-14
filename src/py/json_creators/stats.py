@@ -9,6 +9,9 @@ def makeStatDict():
       "formatted_name": formattedEffectName
     }
 
+  # Serene grace 
+  statDict["secondary_effect_chance"]["gen"] = 3
+
   # make sure all stats are accounted for
   for stat in statList():
     if stat not in statDict:

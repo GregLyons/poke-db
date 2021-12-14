@@ -1230,6 +1230,11 @@ def getFormattedName(moveName):
 
   return ' '.join(moveName.split('_')).title().replace('\'S', '\'s')
 
+def addFieldStateDate(moveDict):
+
+  
+  return
+
 def main():
   # dictionaries containing effect names/gens and status names/gens
   global effectDict
@@ -1284,6 +1289,8 @@ def main():
   addInteractionData(interaction_fname, kings_rock_fname, moveDict)
 
   addFormattedNames(moveDict)
+
+  addFieldStateDate(moveDict)
 
   return moveDict
 

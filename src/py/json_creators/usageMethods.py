@@ -23,11 +23,11 @@ def makeUsageMethodDict():
   }
 
   usageMethodDict = {}
-  for statusName in usageMethodsAndGens.keys():
-    formattedEffectName = getFormattedName(statusName)
-    usageMethodDict[statusName] = {
-      "gen": usageMethodsAndGens[statusName],
-      "formatted_name": formattedEffectName
+  for usageMethodName in usageMethodsAndGens.keys():
+    formattedUsageMethodName = getFormattedName(usageMethodName)
+    usageMethodDict[usageMethodName] = {
+      "gen": usageMethodsAndGens[usageMethodName],
+      "formatted_name": formattedUsageMethodName
     }
 
   # make sure all usage methodsare accounted for
