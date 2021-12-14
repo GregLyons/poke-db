@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS pokemon_ptype (
   pokemon_generation_id TINYINT UNSIGNED NOT NULL,
   pokemon_id SMALLINT UNSIGNED NOT NULL,
   ptype_generation_id TINYINT UNSIGNED NOT NULL,
-  ptype_id TINYINT UNSIGNED NOT NULL,
+  ptype_id SMALLINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (pokemon_generation_id, pokemon_id, ptype_generation_id, ptype_id),
   FOREIGN KEY (pokemon_generation_id, pokemon_id) REFERENCES pokemon(generation_id, pokemon_id)

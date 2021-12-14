@@ -51,7 +51,7 @@ const splitEntity = (entity, initialGen) => {
           } 
           // for some attributes, e.g. power, we need to have only one value per gen, so this catches that 
           // for other attributes, e.g. 'evolves_to' for eevee, which evolves to multiple Pokemon in Gen 1, we can have multiple values per gen. Also true for move requirements.
-          else if (patch.slice(-1)[0] == gen && key != 'evolves_to' && key != 'evolves_from' && key != 'requirements') {
+          else if (patch.slice(-1)[0] == gen && !['evolves_to', 'evolves_from', 'requirements', 'creates_field_state'].includes(key)) {
             throw `${entity.formatted_name} has duplicate gen in ${key}, ${value}.`;
           }
         }
@@ -97,7 +97,7 @@ const splitEntity = (entity, initialGen) => {
                 }
               } 
               // Move requirements can have multiple Pokemon.
-              else if (patch.slice(-1)[0] == gen && key != 'requirements') {
+              else if (patch.slice(-1)[0] == gen && !['evolves_to', 'evolves_from', 'requirements', 'creates_field_state'].includes(key)) {
                 throw `${entity.formatted_name} has duplicate gen in ${key}, ${innerValue}.`;
               }
             }

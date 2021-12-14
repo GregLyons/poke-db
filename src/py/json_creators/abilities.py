@@ -5,8 +5,6 @@ import usageMethods
 import elementalTypes as types
 from utils import getCSVDataPath, genSymbolToNumber, effectList, statusList, fieldStateList, usageMethodList, statList, typeList, checkConsistency
 
-# TODO gooey, etc. stat modifications
-
 # initialize abilityDict with name, description, and gen; key is Ability ID
 def makeInitialAbilityDict(fname):
   with open(fname, 'r', encoding='utf-8') as abilityListCSV:
@@ -289,8 +287,6 @@ def addFieldStateData(abilityDict):
       # Strong weathers last as long as user is out
       else:
         abilityDict[abilityName]["creates_field_state"][fieldStateName] = [[True, 0, abilityGen]]
-
-  #endregion
 
         
   # Terrain and weather removers

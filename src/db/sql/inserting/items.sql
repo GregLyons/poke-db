@@ -76,3 +76,25 @@ INSERT INTO item_requires_pokemon (
   pokemon_generation_id,
   pokemon_id
 ) VALUES ?;
+
+INSERT INTO item_ignores_field_state (
+  item_generation_id,
+  item_id,
+  field_state_generation_id,
+  field_state_id
+) VALUES ?;
+
+INSERT INTO item_resists_field_state (
+  item_generation_id,
+  item_id,
+  field_state_generation_id,
+  field_state_id,
+  multiplier
+) VALUES ?;
+
+INSERT INTO item_extends_field_state (
+  item_generation_id,
+  item_id,
+  field_state_generation_id,
+  field_state_id
+) VALUES ?;

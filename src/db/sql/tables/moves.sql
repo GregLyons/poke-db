@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS pmove_ptype (
   pmove_generation_id TINYINT UNSIGNED NOT NULL,
   pmove_id SMALLINT UNSIGNED NOT NULL,
   ptype_generation_id TINYINT UNSIGNED NOT NULL,
-  ptype_id TINYINT UNSIGNED NOT NULL,
+  ptype_id SMALLINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (pmove_generation_id, pmove_id, ptype_generation_id, ptype_id),
   FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id)
@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS pmove_requires_ptype (
   pmove_generation_id TINYINT UNSIGNED NOT NULL,
   pmove_id SMALLINT UNSIGNED NOT NULL,
   ptype_generation_id TINYINT UNSIGNED NOT NULL,
-  ptype_id TINYINT UNSIGNED NOT NULL,
+  ptype_id SMALLINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (pmove_generation_id, pmove_id, ptype_generation_id, ptype_id),
   FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id)
@@ -27,7 +27,8 @@ CREATE TABLE IF NOT EXISTS pmove_requires_ptype (
     ON UPDATE CASCADE,
   FOREIGN KEY (ptype_generation_id, ptype_id) REFERENCES ptype(generation_id, ptype_id)
     ON DELETE CASCADE
-    ON UPDATE CASCADE
+    ON UPDATE CASCADE,
+  INDEX opposite_pmove_requires_ptype (ptype_generation_id, ptype_id, pmove_generation_id, pmove_id)
 );
 
 CREATE TABLE IF NOT EXISTS pmove_requires_pmove (
@@ -42,7 +43,8 @@ CREATE TABLE IF NOT EXISTS pmove_requires_pmove (
     ON UPDATE CASCADE,
   FOREIGN KEY (required_pmove_generation_id, required_pmove_id) REFERENCES pmove(generation_id, pmove_id)
     ON DELETE CASCADE
-    ON UPDATE CASCADE
+    ON UPDATE CASCADE,
+  INDEX opposite_pmove_requires_pmove (required_pmove_generation_id, required_pmove_id, requiring_pmove_generation_id, requiring_pmove_id)
 ); 
 
 CREATE TABLE IF NOT EXISTS pmove_modifies_stat (
@@ -63,7 +65,7 @@ CREATE TABLE IF NOT EXISTS pmove_modifies_stat (
     ON DELETE CASCADE
     ON UPDATE CASCADE,
 
-  INDEX opposite_pmove_stat (stat_id, pmove_generation_id, pmove_id)
+  INDEX opposite_pmove_stat (stat_generation_id, stat_id, pmove_generation_id, pmove_id)
 );
 
 CREATE TABLE IF NOT EXISTS pmove_effect (
@@ -80,7 +82,7 @@ CREATE TABLE IF NOT EXISTS pmove_effect (
     ON DELETE CASCADE
     ON UPDATE CASCADE,
 
-  INDEX opposite_pmove_effect (effect_id, pmove_generation_id, pmove_id)
+  INDEX opposite_pmove_effect (effect_generation_id, effect_id, pmove_generation_id, pmove_id)
 );
 
 CREATE TABLE IF NOT EXISTS pmove_causes_pstatus (
@@ -98,7 +100,7 @@ CREATE TABLE IF NOT EXISTS pmove_causes_pstatus (
     ON DELETE CASCADE
     ON UPDATE CASCADE,
 
-  INDEX opposite_pmove_causes_pstatus (pstatus_id, pmove_generation_id, pmove_id)
+  INDEX opposite_pmove_causes_pstatus (pstatus_generation_id, pstatus_id, pmove_generation_id, pmove_id)
 );
 
 CREATE TABLE IF NOT EXISTS pmove_resists_pstatus (
@@ -115,7 +117,7 @@ CREATE TABLE IF NOT EXISTS pmove_resists_pstatus (
     ON DELETE CASCADE
     ON UPDATE CASCADE,
 
-  INDEX opposite_pmove_resists_pstatus (pstatus_id, pmove_generation_id, pmove_id)
+  INDEX opposite_pmove_resists_pstatus (pstatus_generation_id, pstatus_id, pmove_generation_id, pmove_id)
 );
 
 CREATE TABLE IF NOT EXISTS pmove_requires_pokemon (
@@ -167,5 +169,73 @@ CREATE TABLE IF NOT EXISTS pmove_usage_method (
     ON DELETE CASCADE
     ON UPDATE CASCADE,
 
-  INDEX opposite_pmove_usage_method (usage_method_id, pmove_generation_id, pmove_id)
+  INDEX opposite_pmove_usage_method (usage_method_generation_id, usage_method_id, pmove_generation_id, pmove_id)
+);
+
+CREATE TABLE IF NOT EXISTS pmove_creates_field_state (
+  pmove_generation_id TINYINT UNSIGNED NOT NULL,
+  pmove_id SMALLINT UNSIGNED NOT NULL,
+  field_state_generation_id TINYINT UNSIGNED NOT NULL,
+  field_state_id TINYINT UNSIGNED NOT NULL,
+
+  PRIMARY KEY (pmove_generation_id, pmove_id, field_state_generation_id, field_state_id),
+  FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  FOREIGN KEY (field_state_generation_id, field_state_id) REFERENCES field_state(generation_id, field_state_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX opposite_pmove_creates_field_state (field_state_generation_id, field_state_id, pmove_generation_id, pmove_id)
+);
+
+CREATE TABLE IF NOT EXISTS pmove_removes_field_state (
+  pmove_generation_id TINYINT UNSIGNED NOT NULL,
+  pmove_id SMALLINT UNSIGNED NOT NULL,
+  field_state_generation_id TINYINT UNSIGNED NOT NULL,
+  field_state_id TINYINT UNSIGNED NOT NULL,
+
+  PRIMARY KEY (pmove_generation_id, pmove_id, field_state_generation_id, field_state_id),
+  FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  FOREIGN KEY (field_state_generation_id, field_state_id) REFERENCES field_state(generation_id, field_state_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX opposite_pmove_removes_field_state (field_state_generation_id, field_state_id, pmove_generation_id, pmove_id)
+);
+
+CREATE TABLE IF NOT EXISTS pmove_prevents_field_state (
+  pmove_generation_id TINYINT UNSIGNED NOT NULL,
+  pmove_id SMALLINT UNSIGNED NOT NULL,
+  field_state_generation_id TINYINT UNSIGNED NOT NULL,
+  field_state_id TINYINT UNSIGNED NOT NULL,
+
+  PRIMARY KEY (pmove_generation_id, pmove_id, field_state_generation_id, field_state_id),
+  FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  FOREIGN KEY (field_state_generation_id, field_state_id) REFERENCES field_state(generation_id, field_state_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX opposite_pmove_prevents_field_state (field_state_generation_id, field_state_id, pmove_generation_id, pmove_id)
+);
+
+CREATE TABLE IF NOT EXISTS pmove_suppresses_field_state (
+  pmove_generation_id TINYINT UNSIGNED NOT NULL,
+  pmove_id SMALLINT UNSIGNED NOT NULL,
+  field_state_generation_id TINYINT UNSIGNED NOT NULL,
+  field_state_id TINYINT UNSIGNED NOT NULL,
+
+  PRIMARY KEY (pmove_generation_id, pmove_id, field_state_generation_id, field_state_id),
+  FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  FOREIGN KEY (field_state_generation_id, field_state_id) REFERENCES field_state(generation_id, field_state_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX opposite_pmove_suppresses_field_state (field_state_generation_id, field_state_id, pmove_generation_id, pmove_id)
 );

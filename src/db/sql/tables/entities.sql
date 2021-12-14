@@ -101,6 +101,24 @@ CREATE TABLE IF NOT EXISTS effect (
   INDEX (effect_id)
 );
 
+CREATE TABLE IF NOT EXISTS field_state (
+  generation_id TINYINT UNSIGNED NOT NULL,
+  field_state_id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  field_state_name VARCHAR(45) NOT NULL,
+  field_state_formatted_name VARCHAR(45) NOT NULL,
+  introduced TINYINT UNSIGNED NOT NULL,
+  field_state_damage_percent DECIMAL(5, 2),
+  field_state_max_layers TINYINT UNSIGNED NOT NULL,
+  field_stateonly_grounded TINYINT UNSIGNED NOT NULL,
+  field_state_class ENUM('entry_hazard', 'other', 'pledge', 'room', 'screen', 'terrain', 'weather'),
+
+  PRIMARY KEY (generation_id, field_state_id),
+  FOREIGN KEY (introduced) REFERENCES generation(generation_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  INDEX (field_state_id)
+);
+
 CREATE TABLE IF NOT EXISTS usage_method (
   generation_id TINYINT UNSIGNED NOT NULL,
   usage_method_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -128,7 +146,7 @@ CREATE TABLE IF NOT EXISTS pstatus (
 
 CREATE TABLE IF NOT EXISTS ptype (
   generation_id TINYINT UNSIGNED NOT NULL,
-  ptype_id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  ptype_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
   ptype_name VARCHAR(45) NOT NULL,
   ptype_formatted_name VARCHAR(45) NOT NULL,
   introduced TINYINT UNSIGNED NOT NULL,

@@ -72,3 +72,32 @@ INSERT INTO pmove_resists_pstatus (
   pstatus_generation_id,
   pstatus_id
 ) VALUES ?;
+
+INSERT INTO pmove_creates_field_state (
+  pmove_generation_id,
+  pmove_id,
+  field_state_generation_id,
+  field_state_id
+) VALUES ?;
+
+INSERT INTO pmove_removes_field_state (
+  pmove_generation_id,
+  pmove_id,
+  field_state_generation_id,
+  field_state_id,
+  multiplier
+) VALUES ?;
+
+INSERT INTO pmove_prevents_field_state (
+  pmove_generation_id,
+  pmove_id,
+  field_state_generation_id,
+  field_state_id
+) VALUES ?;
+
+INSERT INTO pmove_suppresses_field_state (
+  pmove_generation_id,
+  pmove_id,
+  field_state_generation_id,
+  field_state_id
+) VALUES ?;

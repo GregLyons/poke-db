@@ -20,6 +20,7 @@ const TABLE_PATH = './src/db/sql/tables/';
 const FILENAMES_AND_KEYS = [
   ['entities.sql', 'entityTables'],
   ['abilities.sql', 'abilityJunctionTables'],
+  ['fieldStates.sql', 'fieldStateJunctionTables'],
   ['pTypes.sql', 'typeJunctionTables'],
   ['items.sql', 'itemJunctionTables'],
   ['moves.sql', 'moveJunctionTables'],

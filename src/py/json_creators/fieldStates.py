@@ -60,7 +60,7 @@ def makeFieldStateDict():
       "gen": fieldStateGen,
       "formatted_name": formattedFieldStateName,
       "field_state_class": fieldStateClass,
-      "damage_percent_over_time": fieldStateDamage,
+      "damage_percent": [[fieldStateDamage, fieldStateGen]],
       "max_layers": layerCount,
       "only_grounded": onlyGrounded
     }

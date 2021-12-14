@@ -42,6 +42,7 @@ const pokemon = require(RAW_JSON_DATA_PATH + 'pokemon.json');
 
 
 const effects = require(RAW_JSON_DATA_PATH + 'effects.json');
+const fieldStates = require(RAW_JSON_DATA_PATH + 'fieldStates.json');
 const usageMethods = require(RAW_JSON_DATA_PATH + 'usageMethods.json');
 const stats= require(RAW_JSON_DATA_PATH + 'stats.json');
 const statuses = require(RAW_JSON_DATA_PATH + 'statuses.json');
@@ -61,6 +62,7 @@ const pTypeArr = serializeDict(pTypes);
 
 
 const effectArr = serializeDict(effects);
+const fieldStateArr = serializeDict(fieldStates);
 const statArr = serializeDict(stats);
 const statusArr = serializeDict(statuses);
 const usageMethodArr = serializeDict(usageMethods);
@@ -103,6 +105,7 @@ const splitPTypeArr = splitArr(pTypeArr);
 
 
 const splitEffectArr = splitArr(effectArr);
+const splitFieldStateArr = splitArr(fieldStateArr);
 const splitStatArr = splitArr(statArr);
 const splitStatusArr = splitArr(statusArr);
 const splitUsageMethodArr = splitArr(usageMethodArr);
@@ -248,6 +251,7 @@ const FILENAMES_AND_ARRAYS = [
   ['pTypes.json', splitPTypeArr],
   ['descriptions.json', descriptionArr],
   ['effects.json', splitEffectArr],
+  ['fieldStates.json', splitFieldStateArr],
   ['stats.json', splitStatArr],
   ['statuses.json', splitStatusArr],
   ['usageMethods.json', splitUsageMethodArr],
