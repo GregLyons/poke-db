@@ -3,7 +3,7 @@ import effects
 import statuses
 import usageMethods
 import elementalTypes as types
-from utils import getCSVDataPath, genSymbolToNumber, effectList, statusList, usageMethodList, statList, typeList, checkConsistency
+from utils import getCSVDataPath, genSymbolToNumber, effectList, statusList, fieldStateList, usageMethodList, statList, typeList, checkConsistency
 
 # TODO gooey, etc. stat modifications
 
@@ -415,4 +415,17 @@ if __name__ == '__main__':
     for stat in abilityDict[abilityName]["stat_modifications"]:
       if stat not in statList():
         print('Inconsistent stat name', abilityName, stat)
+        
+    for fieldState in abilityDict[abilityName]["extends_field_state"]:
+      if fieldState not in fieldStateList():
+        print('Inconsistent field state name', abilityName, fieldState)
+
+    for fieldState in abilityDict[abilityName]["resists_field_state"]:
+      if fieldState not in fieldStateList():
+        print('Inconsistent field state name', abilityName, fieldState)
+    
+    for fieldState in abilityDict[abilityName]["ignores_field_state"]:
+      if fieldState not in fieldStateList():
+        print('Inconsistent field state name', abilityName, fieldState)
+
   print('Finished.')

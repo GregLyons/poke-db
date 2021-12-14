@@ -30,5 +30,9 @@
   "critical_hit_ratio": {
     "gen": 1,
     "formatted_name": "Critical-hit ratio"
+  },
+  "secondary_effect_chance": {
+    "gen": 3,
+    "formatted_name": "Secondary effect chance"
   }
 }

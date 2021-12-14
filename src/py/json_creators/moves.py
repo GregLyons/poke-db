@@ -4,7 +4,7 @@ import effects
 import usageMethods
 import statuses
 from functools import cmp_to_key
-from utils import getCSVDataPath, genSymbolToNumber, statList, numberOfGens, checkConsistency
+from utils import getCSVDataPath, genSymbolToNumber, statList, fieldStateList, numberOfGens, checkConsistency
 
 
 # Create move .json file with the following data:
@@ -522,7 +522,9 @@ def addStatusToMoveDict(fname, moveDict):
     ['bad_poison', ['refresh', 'heal_bell', 'aromatherapy', 'jungle_healing', 'g_max_sweetness', 'psycho_shift']],
     ['paralysis', ['refresh', 'heal_bell', 'aromatherapy', 'jungle_healing', 'g_max_sweetness', 'psycho_shift']],
     ['freeze', ['heal_bell', 'aromatherapy', 'jungle_healing', 'g_max_sweetness', 'psycho_shift']],
-    ['sleep', ['heal_bell', 'aromatherapy', 'jungle_healing', 'g_max_sweetness', 'psycho_shift']]
+    ['sleep', ['heal_bell', 'aromatherapy', 'jungle_healing', 'g_max_sweetness', 'psycho_shift']],
+    ['leech_seed', ['rapid_spin']],
+    ['bound', ['leech_seed']],
   ]:
     status, moves = exception
     statusGen = statusDict[status]["gen"]
@@ -1231,8 +1233,211 @@ def getFormattedName(moveName):
   return ' '.join(moveName.split('_')).title().replace('\'S', '\'s')
 
 def addFieldStateDate(moveDict):
+  for moveName in moveDict.keys():
+    moveDict[moveName]["creates_field_state"] = {}
+    moveDict[moveName]["removes_field_state"] = {}
+    moveDict[moveName]["prevents_field_state"] = {}
+    moveDict[moveName]["suppresses_field_state"] = {}
 
-  
+  # Terrain and weather creators
+  #region
+
+  for [moveName, fieldStateName] in [
+    # Weathers
+    ['defog', 'clear_skies'],
+    ['sunny_day', 'harsh_sunlight'],
+    ['max_flare', 'harsh_sunlight'],
+    ['rain_dance', 'rain'],
+    ['max_geyser', 'harsh_sunlight'],
+    ['sandstorm', 'sandstorm'],
+    ['max_rockfall', 'harsh_sunlight'],
+    ['hail', 'sandstorm'],
+    ['max_hailstorm', 'harsh_sunlight'],
+    # Terrains
+    ['electric_terrain', 'electric_terrain'],
+    ['max_lightning', 'electric_terrain'],
+    ['grassy_terrain', 'grassy_terrain'],
+    ['max_overgrowth', 'grassy_terrain'],
+    ['misty_terrain', 'misty_terrain'],
+    ['max_starfall', 'misty_terrain'],
+    ['psychic_terrain', 'psychic_terrain'],
+    ['genesis_supernova', 'psychic_terrain'],
+    ['max_mindstorm', 'psychic_terrain'],
+  ]:
+    moveGen = moveDict[moveName]["gen"]
+
+    # Creation
+    if moveGen < 6:
+      # Weathers created by abilities lasted until replaced prior to Gen 6
+      moveDict[moveName]["creates_field_state"][fieldStateName] = [[True, 0, moveGen], [True, 5, moveGen]]
+    else:
+      # Terrains from abilities last 5 turns
+      if moveName not in ['primordial_sea', 'desolate_land', 'delta_stream']:
+        moveDict[moveName]["creates_field_state"][fieldStateName] = [[True, 5, moveGen]]
+      # Strong weathers last as long as user is out
+      else:
+        moveDict[moveName]["creates_field_state"][fieldStateName] = [[True, 0, moveGen]]
+
+  #endregion
+        
+  # Terrain and weather removers
+  #region
+
+  terrains = ['electric_terrain', 'grassy_terrain', 'misty_terrain', 'psychic_terrain']
+  weathers = ['clear_skies', 'fog', 'harsh_sunlight', 'rain', 'sandstorm', 'hail']
+
+  # Overwriting existing terrain/weather with new terrain/weather
+  for moveName in moveDict.keys():
+    creatorDict = moveDict[moveName]["creates_field_state"]
+    moveGen = moveDict[moveName]["gen"]
+
+    # Terrains overwrite each other
+    for terrainName in terrains:
+      if terrainName in creatorDict.keys():
+        terrainGen = 6
+
+        for otherTerrainName in [t for t in terrains if t != terrainName]:
+          otherTerrainGen = 6
+
+          moveDict[moveName]["removes_field_state"][otherTerrainName] = [[True, max(moveGen, terrainGen, otherTerrainGen)]]
+    
+    # Weathers overwrite each other
+    for weatherName in weathers:
+      if weatherName in creatorDict.keys():
+        weatherGen = 2
+        if weatherName == 'hail':
+          weatherGen = 3
+        if weatherName == 'fog':
+          weatherGen = 4
+        
+        for otherWeatherName in [w for w in weathers if w != weatherName]:
+          otherWeatherGen = 2
+          if otherWeatherName == 'hail':
+            otherWeatherGen = 3
+          if otherWeatherName == 'fog':
+            otherWeatherGen = 4
+          
+          moveDict[moveName]["removes_field_state"][otherWeatherName] = [[True, max(moveGen, weatherGen, otherWeatherGen)]]
+
+  # Removing terrain
+  for terrainName in terrains:
+    terrainGen = 6
+
+    for moveName in ['defog', 'g_max_wind_rage', 'splintered_stormshards', 'steel_roller']:
+      moveGen = moveDict[moveName]["gen"]
+      
+      # For exceptions
+      otherGen = 0
+      if moveName == 'defog':
+        otherGen = 8
+
+      moveDict[moveName]["removes_field_state"][terrainName] = [[True, max(terrainGen, moveGen, otherGen)]]
+
+  #endregion
+
+  # Other creators
+  #region
+
+  # Entry hazards
+  moveDict["spikes"]["creates_field_state"]["spikes"] = [[True, 0, 2]]
+  moveDict["toxic_spikes"]["creates_field_state"]["toxic_spikes"] = [[True, 0, 4]]
+  moveDict["stealth_rock"]["creates_field_state"]["stealth_rock"] = [[True, 0, 4]]
+  moveDict["sticky_web"]["creates_field_state"]["sticky_web"] = [[True, 0, 6]]
+
+  # Screen
+  moveDict["reflect"]["creates_field_state"]["reflect"] = [[True, 5, 1]]
+  moveDict["baddy_bad"]["creates_field_state"]["reflect"] = [[True, 5, 7]]
+
+  moveDict["light_screen"]["creates_field_state"]["light_screen"] = [[True, 5, 1]]
+  moveDict["glitzy_glow"]["creates_field_state"]["light_screen"] = [[True, 5, 7]]
+
+  moveDict["aurora_veil"]["creates_field_state"]["aurora_veil"] = [[True, 5, 7]]
+
+  # G-max moves
+  moveDict["g_max_vine_lash"]["creates_field_state"]["vine_lash"] = [[True, 4, 8]]
+  moveDict["g_max_wildfire"]["creates_field_state"]["wildfire"] = [[True, 4, 8]]
+  moveDict["g_max_cannonade"]["creates_field_state"]["cannonade"] = [[True, 4, 8]]
+  moveDict["g_max_volcalith"]["creates_field_state"]["volcalith"] = [[True, 4, 8]]
+  moveDict["g_max_resonance"]["creates_field_state"]["aurora_veil"] = [[True, 5, 8]]
+  moveDict["g_max_stonesurge"]["creates_field_state"]["stealth_rock"] = [[True, 0, 8]]
+  moveDict["g_max_steelsurge"]["creates_field_state"]["sharp_steel"] = [[True, 0, 8]]
+
+  # Pledges
+  moveDict["fire_pledge"]["creates_field_state"]["rainbow"] = [[True, 4, 5]]
+  moveDict["fire_pledge"]["creates_field_state"]["sea_of_fire"] = [[True, 4, 5]]
+
+  moveDict["water_pledge"]["creates_field_state"]["rainbow"] = [[True, 4, 5]]
+  moveDict["water_pledge"]["creates_field_state"]["swamp"] = [[True, 4, 5]]
+
+  moveDict["grass_pledge"]["creates_field_state"]["sea_of_fire"] = [[True, 4, 5]]
+  moveDict["grass_pledge"]["creates_field_state"]["swamp"] = [[True, 4, 5]]
+
+  # Rooms
+  moveDict["trick_room"]["creates_field_state"]["trick_room"] = [[True, 5, 4]]
+  moveDict["magic_room"]["creates_field_state"]["magic_room"] = [[True, 5, 8]]
+  moveDict["wonder_room"]["creates_field_state"]["wonder_room"] = [[True, 5, 8]]
+
+  # Other
+  moveDict["mist"]["creates_field_state"]["mist"] = [[True, 0, 1], [True, 5, 3]]
+  moveDict["safeguard"]["creates_field_state"]["safeguard"] = [[True, 5, 2]]
+  moveDict["tailwind"]["creates_field_state"]["tailwind"] = [[True, 3, 4], [True, 4, 5]]
+
+  #endregion
+
+  # Other removers
+  #region
+
+  # Defog
+  moveDict["defog"]["removes_field_state"]["fog"] = [[True, 4]]
+  moveDict["defog"]["removes_field_state"]["light_screen"] = [[True, 4]]
+  moveDict["defog"]["removes_field_state"]["reflect"] = [[True, 4]]
+  moveDict["defog"]["removes_field_state"]["aurora_veil"] = [[True, 7]]
+  moveDict["defog"]["removes_field_state"]["safeguard"] = [[True, 4]]
+  moveDict["defog"]["removes_field_state"]["mist"] = [[True, 4]]
+  moveDict["defog"]["removes_field_state"]["spikes"] = [[True, 4]]
+  moveDict["defog"]["removes_field_state"]["toxic_spikes"] = [[True, 4]]
+  moveDict["defog"]["removes_field_state"]["stealth_rock"] = [[True, 4]]
+  moveDict["defog"]["removes_field_state"]["sticky_web"] = [[True, 6]]
+  moveDict["defog"]["removes_field_state"]["sharp_steel"] = [[True, 8]]
+
+  # G-Max Wind rage
+  moveDict["defog"]["removes_field_state"]["light_screen"] = [[True, 8]]
+  moveDict["defog"]["removes_field_state"]["reflect"] = [[True, 8]]
+  moveDict["defog"]["removes_field_state"]["aurora_veil"] = [[True, 8]]
+  moveDict["defog"]["removes_field_state"]["spikes"] = [[True, 8]]
+  moveDict["defog"]["removes_field_state"]["toxic_spikes"] = [[True, 8]]
+  moveDict["defog"]["removes_field_state"]["stealth_rock"] = [[True, 8]]
+  moveDict["defog"]["removes_field_state"]["sticky_web"] = [[True, 8]]
+  moveDict["defog"]["removes_field_state"]["sharp_steel"] = [[True, 8]]
+
+  # Rapid spin
+  moveDict["rapid_spin"]["removes_field_state"]["spikes"] = [[True, 2]]
+  moveDict["rapid_spin"]["removes_field_state"]["toxic_spikes"] = [[True, 4]]
+  moveDict["rapid_spin"]["removes_field_state"]["stealth_rock"] = [[True, 4]]
+  moveDict["rapid_spin"]["removes_field_state"]["sticky_web"] = [[True, 6]]
+  moveDict["rapid_spin"]["removes_field_state"]["sharp_steel"] = [[True, 8]]
+
+  # Haze removes effects in Gen 1 only
+  moveDict["haze"]["removes_field_state"]["mist"] = [[True, 1], [False, 2]]
+  moveDict["haze"]["removes_field_state"]["reflect"] = [[True, 1], [False, 2]]
+  moveDict["haze"]["removes_field_state"]["light_screen"] = [[True, 1], [False, 2]]
+
+  # Screens
+  moveDict["brick_break"]["removes_field_state"]["light_screen"] = [[True, 4]]
+  moveDict["brick_break"]["removes_field_state"]["reflect"] = [[True, 4]]
+  moveDict["brick_break"]["removes_field_state"]["aurora_veil"] = [[True, 7]]
+
+  moveDict["psychic_fangs"]["removes_field_state"]["light_screen"] = [[True, 4]]
+  moveDict["psychic_fangs"]["removes_field_state"]["reflect"] = [[True, 4]]
+  moveDict["psychic_fangs"]["removes_field_state"]["aurora_veil"] = [[True, 7]]
+
+  # Rooms
+  moveDict["trick_room"]["removes_field_state"]["trick_room"] = [[True, 5, 4]]
+  moveDict["magic_room"]["removes_field_state"]["magic_room"] = [[True, 5, 8]]
+  moveDict["wonder_room"]["removes_field_state"]["wonder_room"] = [[True, 5, 8]]
+
+  #endregion
+
   return
 
 def main():
@@ -1312,4 +1517,13 @@ if __name__ == '__main__':
     for stat in moveDict[moveName]["stat_modifications"]:
       if stat not in statList():
         print('Inconsistent stat name', moveName, stat)
+
+    for fieldState in moveDict[moveName]["creates_field_state"]:
+      if fieldState not in fieldStateList():
+        print('Inconsistent field state name', moveName, fieldState)
+
+    for fieldState in moveDict[moveName]["removes_field_state"]:
+      if fieldState not in fieldStateList():
+        print('Inconsistent field state name', moveName, fieldState)
+        
   print('Finished.')

@@ -15,7 +15,10 @@
     "stat_modifications": {
       "special_attack": [["+1", "user", 5]]
     },
-    "formatted_name": "Absorb Bulb"
+    "formatted_name": "Absorb Bulb",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "adamant_orb": {
     "item_class": [["type_enhancer", 4]],
@@ -36,7 +39,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Adamant Orb"
+    "formatted_name": "Adamant Orb",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "air_balloon": {
     "item_class": [["other", 5]],
@@ -54,7 +60,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Air Balloon"
+    "formatted_name": "Air Balloon",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "aloraichium_z": {
     "item_class": [["z_crystal", 7]],
@@ -72,7 +81,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Aloraichium Z"
+    "formatted_name": "Aloraichium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "amulet_coin": {
     "item_class": [["other", 2]],
@@ -88,7 +100,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Amulet Coin"
+    "formatted_name": "Amulet Coin",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "assault_vest": {
     "item_class": [["stat_enhancer", 6]],
@@ -107,7 +122,10 @@
       "special_defense": [[1.5,
           "user", 6]]
     },
-    "formatted_name": "Assault Vest"
+    "formatted_name": "Assault Vest",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "berry_sweet": {
     "item_class": [["other", 8]],
@@ -123,7 +141,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Berry Sweet"
+    "formatted_name": "Berry Sweet",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "berserk_gene": {
     "item_class": [["stat_enhancer", 2]],
@@ -141,7 +162,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Berserk Gene"
+    "formatted_name": "Berserk Gene",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "big_root": {
     "item_class": [["other", 4]],
@@ -159,7 +183,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Big Root"
+    "formatted_name": "Big Root",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "binding_band": {
     "item_class": [["other", 5]],
@@ -177,7 +204,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Binding Band"
+    "formatted_name": "Binding Band",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "black_belt": {
     "item_class": [["type_enhancer", 2]],
@@ -195,7 +225,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Black Belt"
+    "formatted_name": "Black Belt",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "black_glasses": {
     "item_class": [["type_enhancer", 2]],
@@ -213,7 +246,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Black Glasses"
+    "formatted_name": "Black Glasses",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "black_sludge": {
     "item_class": [["other", 4]],
@@ -232,7 +268,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Black Sludge"
+    "formatted_name": "Black Sludge",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "blue_orb": {
     "item_class": [["other", 3]],
@@ -250,7 +289,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Blue Orb"
+    "formatted_name": "Blue Orb",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "blue_scarf": {
     "item_class": [["other", 3]],
@@ -266,7 +308,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Blue Scarf"
+    "formatted_name": "Blue Scarf",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "blunder_policy": {
     "item_class": [["other", 8]],
@@ -284,7 +329,10 @@
     "stat_modifications": {
       "speed": [["+2", "user", 8]]
     },
-    "formatted_name": "Blunder Policy"
+    "formatted_name": "Blunder Policy",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "bright_powder": {
     "item_class": [["stat_enhancer", 2]],
@@ -303,7 +351,10 @@
     "evasion": [[1.08,
         "user", 2], [1.11,
         "user", 3]],
-    "formatted_name": "Bright Powder"
+    "formatted_name": "Bright Powder",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "bug_gem": {
     "item_class": [["gem", 5]],
@@ -321,7 +372,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Bug Gem"
+    "formatted_name": "Bug Gem",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "bug_memory": {
     "item_class": [["memory", 7]],
@@ -340,7 +394,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Bug Memory"
+    "formatted_name": "Bug Memory",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "buginium_z": {
     "item_class": [["z_crystal", 7]],
@@ -356,7 +413,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Buginium Z"
+    "formatted_name": "Buginium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "burn_drive": {
     "item_class": [["drive", 5]],
@@ -374,7 +434,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Burn Drive"
+    "formatted_name": "Burn Drive",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "cell_battery": {
     "item_class": [["stat_enhancer", 5]],
@@ -392,7 +455,10 @@
     "stat_modifications": {
       "attack": [["+1", "user", 5]]
     },
-    "formatted_name": "Cell Battery"
+    "formatted_name": "Cell Battery",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "charcoal": {
     "item_class": [["type_enhancer", 2]],
@@ -410,7 +476,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Charcoal"
+    "formatted_name": "Charcoal",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "chill_drive": {
     "item_class": [["drive", 5]],
@@ -428,7 +497,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Chill Drive"
+    "formatted_name": "Chill Drive",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "choice_band": {
     "item_class": [["choice", 3]],
@@ -447,7 +519,10 @@
       "attack": [[1.5,
           "user", 3]]
     },
-    "formatted_name": "Choice Band"
+    "formatted_name": "Choice Band",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "choice_scarf": {
     "item_class": [["choice", 4]],
@@ -466,7 +541,10 @@
       "speed": [[1.5,
           "user", 4]]
     },
-    "formatted_name": "Choice Scarf"
+    "formatted_name": "Choice Scarf",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "choice_specs": {
     "item_class": [["choice", 4]],
@@ -485,7 +563,10 @@
       "special_attack": [[1.5,
           "user", 4]]
     },
-    "formatted_name": "Choice Specs"
+    "formatted_name": "Choice Specs",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "cleanse_tag": {
     "item_class": [["other", 3]],
@@ -501,7 +582,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Cleanse Tag"
+    "formatted_name": "Cleanse Tag",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "clover_sweet": {
     "item_class": [["other", 8]],
@@ -517,7 +601,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Clover Sweet"
+    "formatted_name": "Clover Sweet",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "damp_rock": {
     "item_class": [["other", 4]],
@@ -535,7 +622,12 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Damp Rock"
+    "formatted_name": "Damp Rock",
+    "extends_field_state": {
+      "rain": [[true, 8, 4]]
+    },
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "dark_gem": {
     "item_class": [["gem", 5]],
@@ -553,7 +645,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Dark Gem"
+    "formatted_name": "Dark Gem",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "dark_memory": {
     "item_class": [["memory", 7]],
@@ -572,7 +667,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Dark Memory"
+    "formatted_name": "Dark Memory",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "darkinium_z": {
     "item_class": [["z_crystal", 7]],
@@ -588,7 +686,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Darkinium Z"
+    "formatted_name": "Darkinium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "decidium_z": {
     "item_class": [["z_crystal", 7]],
@@ -606,7 +707,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Decidium Z"
+    "formatted_name": "Decidium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "deep_sea_scale": {
     "item_class": [["stat_enhancer", 3]],
@@ -629,7 +733,10 @@
       "special_defense": [[2.0,
           "user", 3]]
     },
-    "formatted_name": "Deep Sea Scale"
+    "formatted_name": "Deep Sea Scale",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "deep_sea_tooth": {
     "item_class": [["stat_enhancer", 3]],
@@ -652,7 +759,10 @@
       "special_attack": [[2.0,
           "user", 3]]
     },
-    "formatted_name": "Deep Sea Tooth"
+    "formatted_name": "Deep Sea Tooth",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "destiny_knot": {
     "item_class": [["other", 4]],
@@ -670,7 +780,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Destiny Knot"
+    "formatted_name": "Destiny Knot",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "douse_drive": {
     "item_class": [["drive", 5]],
@@ -688,7 +801,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Douse Drive"
+    "formatted_name": "Douse Drive",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "draco_plate": {
     "item_class": [["plate", 4]],
@@ -709,7 +825,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Draco Plate"
+    "formatted_name": "Draco Plate",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "dragon_fang": {
     "item_class": [["type_enhancer", 2]],
@@ -727,7 +846,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Dragon Fang"
+    "formatted_name": "Dragon Fang",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "dragon_gem": {
     "item_class": [["gem", 5]],
@@ -745,7 +867,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Dragon Gem"
+    "formatted_name": "Dragon Gem",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "dragon_memory": {
     "item_class": [["memory", 7]],
@@ -764,7 +889,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Dragon Memory"
+    "formatted_name": "Dragon Memory",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "dragonium_z": {
     "item_class": [["z_crystal", 7]],
@@ -780,7 +908,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Dragonium Z"
+    "formatted_name": "Dragonium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "dread_plate": {
     "item_class": [["plate", 4]],
@@ -801,7 +932,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Dread Plate"
+    "formatted_name": "Dread Plate",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "dubious_disc": {
     "item_class": [["other", 4]],
@@ -817,7 +951,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Dubious Disc"
+    "formatted_name": "Dubious Disc",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "earth_plate": {
     "item_class": [["plate", 4]],
@@ -838,7 +975,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Earth Plate"
+    "formatted_name": "Earth Plate",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "eevium_z": {
     "item_class": [["z_crystal", 7]],
@@ -856,7 +996,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Eevium Z"
+    "formatted_name": "Eevium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "eject_button": {
     "item_class": [["other", 5]],
@@ -874,7 +1017,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Eject Button"
+    "formatted_name": "Eject Button",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "eject_pack": {
     "item_class": [["other", 8]],
@@ -892,7 +1038,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Eject Pack"
+    "formatted_name": "Eject Pack",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "electirizer": {
     "item_class": [["other", 4]],
@@ -908,7 +1057,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Electirizer"
+    "formatted_name": "Electirizer",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "electric_gem": {
     "item_class": [["gem", 5]],
@@ -926,7 +1078,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Electric Gem"
+    "formatted_name": "Electric Gem",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "electric_memory": {
     "item_class": [["memory", 7]],
@@ -945,7 +1100,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Electric Memory"
+    "formatted_name": "Electric Memory",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "electric_seed": {
     "item_class": [["stat_enhancer", 7]],
@@ -963,7 +1121,10 @@
     "stat_modifications": {
       "defense": [["+1", "user", 7]]
     },
-    "formatted_name": "Electric Seed"
+    "formatted_name": "Electric Seed",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "electrium_z": {
     "item_class": [["z_crystal", 7]],
@@ -979,7 +1140,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Electrium Z"
+    "formatted_name": "Electrium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "everstone": {
     "item_class": [["other", 2]],
@@ -995,7 +1159,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Everstone"
+    "formatted_name": "Everstone",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "eviolite": {
     "item_class": [["stat_enhancer", 5]],
@@ -1016,7 +1183,10 @@
       "special_attack": [[1.5,
           "user", 5]]
     },
-    "formatted_name": "Eviolite"
+    "formatted_name": "Eviolite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "exp_share": {
     "item_class": [["other", 1]],
@@ -1032,7 +1202,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Exp Share"
+    "formatted_name": "Exp Share",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "expert_belt": {
     "item_class": [["stat_enhancer", 4]],
@@ -1050,7 +1223,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Expert Belt"
+    "formatted_name": "Expert Belt",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "fairium_z": {
     "item_class": [["z_crystal", 7]],
@@ -1066,7 +1242,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Fairium Z"
+    "formatted_name": "Fairium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "fairy_gem": {
     "item_class": [["gem", 6]],
@@ -1084,7 +1263,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Fairy Gem"
+    "formatted_name": "Fairy Gem",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "fairy_memory": {
     "item_class": [["memory", 7]],
@@ -1103,7 +1285,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Fairy Memory"
+    "formatted_name": "Fairy Memory",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "fighting_gem": {
     "item_class": [["gem", 5]],
@@ -1121,7 +1306,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Fighting Gem"
+    "formatted_name": "Fighting Gem",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "fighting_memory": {
     "item_class": [["memory", 7]],
@@ -1140,7 +1328,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Fighting Memory"
+    "formatted_name": "Fighting Memory",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "fightinium_z": {
     "item_class": [["z_crystal", 7]],
@@ -1156,7 +1347,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Fightinium Z"
+    "formatted_name": "Fightinium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "fire_gem": {
     "item_class": [["gem", 5]],
@@ -1174,7 +1368,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Fire Gem"
+    "formatted_name": "Fire Gem",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "fire_memory": {
     "item_class": [["memory", 7]],
@@ -1193,7 +1390,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Fire Memory"
+    "formatted_name": "Fire Memory",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "firium_z": {
     "item_class": [["z_crystal", 7]],
@@ -1209,7 +1409,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Firium Z"
+    "formatted_name": "Firium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "fist_plate": {
     "item_class": [["plate", 4]],
@@ -1230,7 +1433,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Fist Plate"
+    "formatted_name": "Fist Plate",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "flame_orb": {
     "item_class": [["other", 4]],
@@ -1248,7 +1454,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Flame Orb"
+    "formatted_name": "Flame Orb",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "flame_plate": {
     "item_class": [["plate", 4]],
@@ -1269,7 +1478,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Flame Plate"
+    "formatted_name": "Flame Plate",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "float_stone": {
     "item_class": [["other", 5]],
@@ -1287,7 +1499,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Float Stone"
+    "formatted_name": "Float Stone",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "flower_sweet": {
     "item_class": [["other", 8]],
@@ -1303,7 +1518,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Flower Sweet"
+    "formatted_name": "Flower Sweet",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "flying_gem": {
     "item_class": [["gem", 5]],
@@ -1321,7 +1539,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Flying Gem"
+    "formatted_name": "Flying Gem",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "flying_memory": {
     "item_class": [["memory", 7]],
@@ -1340,7 +1561,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Flying Memory"
+    "formatted_name": "Flying Memory",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "flyinium_z": {
     "item_class": [["z_crystal", 7]],
@@ -1356,7 +1580,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Flyinium Z"
+    "formatted_name": "Flyinium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "focus_band": {
     "item_class": [["other", 2]],
@@ -1374,7 +1601,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Focus Band"
+    "formatted_name": "Focus Band",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "focus_sash": {
     "item_class": [["other", 4]],
@@ -1392,7 +1622,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Focus Sash"
+    "formatted_name": "Focus Sash",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "full_incense": {
     "item_class": [["incense", 4]],
@@ -1410,7 +1643,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Full Incense"
+    "formatted_name": "Full Incense",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "ghost_gem": {
     "item_class": [["gem", 5]],
@@ -1428,7 +1664,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Ghost Gem"
+    "formatted_name": "Ghost Gem",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "ghost_memory": {
     "item_class": [["memory", 7]],
@@ -1447,7 +1686,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Ghost Memory"
+    "formatted_name": "Ghost Memory",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "ghostium_z": {
     "item_class": [["z_crystal", 7]],
@@ -1463,7 +1705,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Ghostium Z"
+    "formatted_name": "Ghostium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "grass_gem": {
     "item_class": [["gem", 5]],
@@ -1481,7 +1726,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Grass Gem"
+    "formatted_name": "Grass Gem",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "grass_memory": {
     "item_class": [["memory", 7]],
@@ -1500,7 +1748,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Grass Memory"
+    "formatted_name": "Grass Memory",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "grassium_z": {
     "item_class": [["z_crystal", 7]],
@@ -1516,7 +1767,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Grassium Z"
+    "formatted_name": "Grassium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "grassy_seed": {
     "item_class": [["stat_enhancer", 7]],
@@ -1534,7 +1788,10 @@
     "stat_modifications": {
       "defense": [["+1", "user", 7]]
     },
-    "formatted_name": "Grassy Seed"
+    "formatted_name": "Grassy Seed",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "green_scarf": {
     "item_class": [["other", 3]],
@@ -1550,7 +1807,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Green Scarf"
+    "formatted_name": "Green Scarf",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "grip_claw": {
     "item_class": [["other", 4]],
@@ -1568,7 +1828,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Grip Claw"
+    "formatted_name": "Grip Claw",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "griseous_orb": {
     "item_class": [["type_enhancer", 4]],
@@ -1589,7 +1852,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Griseous Orb"
+    "formatted_name": "Griseous Orb",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "ground_gem": {
     "item_class": [["gem", 5]],
@@ -1607,7 +1873,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Ground Gem"
+    "formatted_name": "Ground Gem",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "ground_memory": {
     "item_class": [["memory", 7]],
@@ -1626,7 +1895,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Ground Memory"
+    "formatted_name": "Ground Memory",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "groundium_z": {
     "item_class": [["z_crystal", 7]],
@@ -1642,7 +1914,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Groundium Z"
+    "formatted_name": "Groundium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "hard_stone": {
     "item_class": [["type_enhancer", 2]],
@@ -1660,7 +1935,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Hard Stone"
+    "formatted_name": "Hard Stone",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "heat_rock": {
     "item_class": [["other", 4]],
@@ -1678,7 +1956,12 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Heat Rock"
+    "formatted_name": "Heat Rock",
+    "extends_field_state": {
+      "harsh_sunlight": [[true, 8, 4]]
+    },
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "heavy_duty_boots": {
     "item_class": [["other", 8]],
@@ -1696,7 +1979,16 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Heavy Duty Boots"
+    "formatted_name": "Heavy Duty Boots",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {
+      "stealth_rock": [[true, 8]],
+      "spikes": [[true, 8]],
+      "toxic_spikes": [[true, 8]],
+      "sticky_web": [[true, 8]],
+      "sharp_steel": [[true, 8]]
+    }
   },
   "ice_gem": {
     "item_class": [["gem", 5]],
@@ -1714,7 +2006,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Ice Gem"
+    "formatted_name": "Ice Gem",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "ice_memory": {
     "item_class": [["memory", 7]],
@@ -1733,7 +2028,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Ice Memory"
+    "formatted_name": "Ice Memory",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "icicle_plate": {
     "item_class": [["plate", 4]],
@@ -1754,7 +2052,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Icicle Plate"
+    "formatted_name": "Icicle Plate",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "icium_z": {
     "item_class": [["z_crystal", 7]],
@@ -1770,7 +2071,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Icium Z"
+    "formatted_name": "Icium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "icy_rock": {
     "item_class": [["other", 4]],
@@ -1788,7 +2092,12 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Icy Rock"
+    "formatted_name": "Icy Rock",
+    "extends_field_state": {
+      "hail": [[true, 8, 4]]
+    },
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "incinium_z": {
     "item_class": [["z_crystal", 7]],
@@ -1806,7 +2115,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Incinium Z"
+    "formatted_name": "Incinium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "insect_plate": {
     "item_class": [["plate", 4]],
@@ -1827,7 +2139,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Insect Plate"
+    "formatted_name": "Insect Plate",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "iron_ball": {
     "item_class": [["other", 4]],
@@ -1848,7 +2163,10 @@
       "speed": [[0.5,
           "user", 4]]
     },
-    "formatted_name": "Iron Ball"
+    "formatted_name": "Iron Ball",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "iron_plate": {
     "item_class": [["plate", 4]],
@@ -1869,7 +2187,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Iron Plate"
+    "formatted_name": "Iron Plate",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "kings_rock": {
     "item_class": [["other", 2]],
@@ -1887,7 +2208,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "King's Rock"
+    "formatted_name": "King's Rock",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "kommonium_z": {
     "item_class": [["z_crystal", 7]],
@@ -1905,7 +2229,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Kommonium Z"
+    "formatted_name": "Kommonium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "lagging_tail": {
     "item_class": [["other", 4]],
@@ -1923,7 +2250,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Lagging Tail"
+    "formatted_name": "Lagging Tail",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "lax_incense": {
     "item_class": [["incense", 3]],
@@ -1943,7 +2273,10 @@
           "user", 3], [1.11,
           "user", 4]]
     },
-    "formatted_name": "Lax Incense"
+    "formatted_name": "Lax Incense",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "leek": {
     "item_class": [["stat_enhancer", 2]],
@@ -1965,7 +2298,10 @@
     "stat_modifications": {
       "critical_hit_ratio": [["+2", "user", 2]]
     },
-    "formatted_name": "Leek"
+    "formatted_name": "Leek",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "leftovers": {
     "item_class": [["other", 2]],
@@ -1983,7 +2319,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Leftovers"
+    "formatted_name": "Leftovers",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "life_orb": {
     "item_class": [["stat_enhancer", 4]],
@@ -2001,7 +2340,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Life Orb"
+    "formatted_name": "Life Orb",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "light_ball": {
     "item_class": [["stat_enhancer", 2]],
@@ -2037,7 +2379,10 @@
       "special_attack": [[2.0,
           "user", 2]]
     },
-    "formatted_name": "Light Ball"
+    "formatted_name": "Light Ball",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "light_clay": {
     "item_class": [["other", 4]],
@@ -2055,7 +2400,14 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Light Clay"
+    "formatted_name": "Light Clay",
+    "extends_field_state": {
+      "reflect": [[true, 8, 4]],
+      "light_screen": [[true, 8, 4]],
+      "aurora_veil": [[true, 8, 7]]
+    },
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "love_sweet": {
     "item_class": [["other", 8]],
@@ -2071,7 +2423,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Love Sweet"
+    "formatted_name": "Love Sweet",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "luck_incense": {
     "item_class": [["incense", 4]],
@@ -2087,7 +2442,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Luck Incense"
+    "formatted_name": "Luck Incense",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "lucky_egg": {
     "item_class": [["other", 2]],
@@ -2103,7 +2461,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Lucky Egg"
+    "formatted_name": "Lucky Egg",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "lucky_punch": {
     "item_class": [["stat_enhancer", 2]],
@@ -2123,7 +2484,10 @@
     "stat_modifications": {
       "critical_hit_ratio": [["+2", "user", 2]]
     },
-    "formatted_name": "Lucky Punch"
+    "formatted_name": "Lucky Punch",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "luminous_moss": {
     "item_class": [["other", 6]],
@@ -2141,7 +2505,10 @@
     "stat_modifications": {
       "special_defense": [["+1", "user", 6]]
     },
-    "formatted_name": "Luminous Moss"
+    "formatted_name": "Luminous Moss",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "lunalium_z": {
     "item_class": [["z_crystal", 7]],
@@ -2160,7 +2527,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Lunalium Z"
+    "formatted_name": "Lunalium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "lustrous_orb": {
     "item_class": [["type_enhancer", 4]],
@@ -2181,7 +2551,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Lustrous Orb"
+    "formatted_name": "Lustrous Orb",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "lycanium_z": {
     "item_class": [["z_crystal", 7]],
@@ -2201,7 +2574,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Lycanium Z"
+    "formatted_name": "Lycanium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "macho_brace": {
     "item_class": [["other", 3]],
@@ -2220,7 +2596,10 @@
       "speed": [[0.5,
           "user", 3]]
     },
-    "formatted_name": "Macho Brace"
+    "formatted_name": "Macho Brace",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "magmarizer": {
     "item_class": [["other", 4]],
@@ -2236,7 +2615,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Magmarizer"
+    "formatted_name": "Magmarizer",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "magnet": {
     "item_class": [["type_enhancer", 2]],
@@ -2254,7 +2636,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Magnet"
+    "formatted_name": "Magnet",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "marshadium_z": {
     "item_class": [["z_crystal", 7]],
@@ -2272,7 +2657,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Marshadium Z"
+    "formatted_name": "Marshadium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "meadow_plate": {
     "item_class": [["plate", 4]],
@@ -2293,7 +2681,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Meadow Plate"
+    "formatted_name": "Meadow Plate",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "mental_herb": {
     "item_class": [["other", 3]],
@@ -2316,7 +2707,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Mental Herb"
+    "formatted_name": "Mental Herb",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "metal_coat": {
     "item_class": [["type_enhancer", 2]],
@@ -2334,7 +2728,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Metal Coat"
+    "formatted_name": "Metal Coat",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "metal_powder": {
     "item_class": [["stat_enhancer", 2]],
@@ -2357,7 +2754,10 @@
           "user", 2], [1.0,
           "user", 3]]
     },
-    "formatted_name": "Metal Powder"
+    "formatted_name": "Metal Powder",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "metronome_item": {
     "item_class": [["other", 4]],
@@ -2375,7 +2775,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Metronome Item"
+    "formatted_name": "Metronome Item",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "mewnium_z": {
     "item_class": [["z_crystal", 7]],
@@ -2393,7 +2796,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Mewnium Z"
+    "formatted_name": "Mewnium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "mimikium_z": {
     "item_class": [["z_crystal", 7]],
@@ -2411,7 +2817,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Mimikium Z"
+    "formatted_name": "Mimikium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "mind_plate": {
     "item_class": [["plate", 4]],
@@ -2432,7 +2841,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Mind Plate"
+    "formatted_name": "Mind Plate",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "miracle_seed": {
     "item_class": [["type_enhancer", 2]],
@@ -2450,7 +2862,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Miracle Seed"
+    "formatted_name": "Miracle Seed",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "misty_seed": {
     "item_class": [["stat_enhancer", 7]],
@@ -2468,7 +2883,10 @@
     "stat_modifications": {
       "special_defense": [["+1", "user", 7]]
     },
-    "formatted_name": "Misty Seed"
+    "formatted_name": "Misty Seed",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "muscle_band": {
     "item_class": [["other", 4]],
@@ -2486,7 +2904,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Muscle Band"
+    "formatted_name": "Muscle Band",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "mystic_water": {
     "item_class": [["type_enhancer", 2]],
@@ -2504,7 +2925,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Mystic Water"
+    "formatted_name": "Mystic Water",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "never_melt_ice": {
     "item_class": [["type_enhancer", 2]],
@@ -2522,7 +2946,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Never Melt Ice"
+    "formatted_name": "Never Melt Ice",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "normal_gem": {
     "item_class": [["gem", 5]],
@@ -2540,7 +2967,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Normal Gem"
+    "formatted_name": "Normal Gem",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "normalium_z": {
     "item_class": [["z_crystal", 7]],
@@ -2556,7 +2986,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Normalium Z"
+    "formatted_name": "Normalium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "odd_incense": {
     "item_class": [["incense", 4]],
@@ -2574,7 +3007,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Odd Incense"
+    "formatted_name": "Odd Incense",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "pikanium_z": {
     "item_class": [["z_crystal", 7]],
@@ -2592,7 +3028,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Pikanium Z"
+    "formatted_name": "Pikanium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "pikashunium_z": {
     "item_class": [["z_crystal", 7]],
@@ -2617,7 +3056,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Pikashunium Z"
+    "formatted_name": "Pikashunium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "pink_bow": {
     "item_class": [["type_enhancer", 2]],
@@ -2635,7 +3077,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Pink Bow"
+    "formatted_name": "Pink Bow",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "pink_scarf": {
     "item_class": [["other", 3]],
@@ -2651,7 +3096,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Pink Scarf"
+    "formatted_name": "Pink Scarf",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "pixie_plate": {
     "item_class": [["plate", 6]],
@@ -2672,7 +3120,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Pixie Plate"
+    "formatted_name": "Pixie Plate",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "poison_barb": {
     "item_class": [["type_enhancer", 2]],
@@ -2690,7 +3141,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Poison Barb"
+    "formatted_name": "Poison Barb",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "poison_gem": {
     "item_class": [["gem", 5]],
@@ -2708,7 +3162,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Poison Gem"
+    "formatted_name": "Poison Gem",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "poison_memory": {
     "item_class": [["memory", 7]],
@@ -2727,7 +3184,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Poison Memory"
+    "formatted_name": "Poison Memory",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "poisonium_z": {
     "item_class": [["z_crystal", 7]],
@@ -2743,7 +3203,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Poisonium Z"
+    "formatted_name": "Poisonium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "polkadot_bow": {
     "item_class": [["type_enhancer", 2]],
@@ -2761,7 +3224,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Polkadot Bow"
+    "formatted_name": "Polkadot Bow",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "power_anklet": {
     "item_class": [["power", 4]],
@@ -2780,7 +3246,10 @@
       "speed": [[0.5,
           "user", 4]]
     },
-    "formatted_name": "Power Anklet"
+    "formatted_name": "Power Anklet",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "power_band": {
     "item_class": [["power", 4]],
@@ -2799,7 +3268,10 @@
       "speed": [[0.5,
           "user", 4]]
     },
-    "formatted_name": "Power Band"
+    "formatted_name": "Power Band",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "power_belt": {
     "item_class": [["power", 4]],
@@ -2818,7 +3290,10 @@
       "speed": [[0.5,
           "user", 4]]
     },
-    "formatted_name": "Power Belt"
+    "formatted_name": "Power Belt",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "power_bracer": {
     "item_class": [["power", 4]],
@@ -2837,7 +3312,10 @@
       "speed": [[0.5,
           "user", 4]]
     },
-    "formatted_name": "Power Bracer"
+    "formatted_name": "Power Bracer",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "power_herb": {
     "item_class": [["other", 4]],
@@ -2855,7 +3333,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Power Herb"
+    "formatted_name": "Power Herb",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "power_lens": {
     "item_class": [["power", 4]],
@@ -2874,7 +3355,10 @@
       "speed": [[0.5,
           "user", 4]]
     },
-    "formatted_name": "Power Lens"
+    "formatted_name": "Power Lens",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "power_weight": {
     "item_class": [["power", 4]],
@@ -2893,7 +3377,10 @@
       "speed": [[0.5,
           "user", 4]]
     },
-    "formatted_name": "Power Weight"
+    "formatted_name": "Power Weight",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "primarium_z": {
     "item_class": [["z_crystal", 7]],
@@ -2911,7 +3398,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Primarium Z"
+    "formatted_name": "Primarium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "protective_pads": {
     "item_class": [["other", 7]],
@@ -2929,7 +3419,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Protective Pads"
+    "formatted_name": "Protective Pads",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "protector": {
     "item_class": [["other", 4]],
@@ -2945,7 +3438,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Protector"
+    "formatted_name": "Protector",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "psychic_gem": {
     "item_class": [["gem", 5]],
@@ -2963,7 +3459,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Psychic Gem"
+    "formatted_name": "Psychic Gem",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "psychic_memory": {
     "item_class": [["memory", 7]],
@@ -2982,7 +3481,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Psychic Memory"
+    "formatted_name": "Psychic Memory",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "psychic_seed": {
     "item_class": [["stat_enhancer", 7]],
@@ -3000,7 +3502,10 @@
     "stat_modifications": {
       "special_defense": [["+1", "user", 7]]
     },
-    "formatted_name": "Psychic Seed"
+    "formatted_name": "Psychic Seed",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "psychium_z": {
     "item_class": [["z_crystal", 7]],
@@ -3016,7 +3521,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Psychium Z"
+    "formatted_name": "Psychium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "pure_incense": {
     "item_class": [["incense", 4]],
@@ -3032,7 +3540,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Pure Incense"
+    "formatted_name": "Pure Incense",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "quick_claw": {
     "item_class": [["other", 2]],
@@ -3050,7 +3561,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Quick Claw"
+    "formatted_name": "Quick Claw",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "quick_powder": {
     "item_class": [["stat_enhancer", 4]],
@@ -3071,7 +3585,10 @@
       "speed": [[2.0,
           "user", 4]]
     },
-    "formatted_name": "Quick Powder"
+    "formatted_name": "Quick Powder",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "razor_claw": {
     "item_class": [["stat_enhancer", 4]],
@@ -3089,7 +3606,10 @@
     "stat_modifications": {
       "critical_hit_ratio": [["+1", "user", 4]]
     },
-    "formatted_name": "Razor Claw"
+    "formatted_name": "Razor Claw",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "razor_fang": {
     "item_class": [["other", 4]],
@@ -3107,7 +3627,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Razor Fang"
+    "formatted_name": "Razor Fang",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "reaper_cloth": {
     "item_class": [["other", 4]],
@@ -3123,7 +3646,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Reaper Cloth"
+    "formatted_name": "Reaper Cloth",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "red_card": {
     "item_class": [["other", 5]],
@@ -3141,7 +3667,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Red Card"
+    "formatted_name": "Red Card",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "red_orb": {
     "item_class": [["other", 3]],
@@ -3159,7 +3688,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Red Orb"
+    "formatted_name": "Red Orb",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "red_scarf": {
     "item_class": [["other", 3]],
@@ -3175,7 +3707,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Red Scarf"
+    "formatted_name": "Red Scarf",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "ribbon_sweet": {
     "item_class": [["other", 8]],
@@ -3191,7 +3726,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Ribbon Sweet"
+    "formatted_name": "Ribbon Sweet",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "ring_target": {
     "item_class": [["other", 5]],
@@ -3209,7 +3747,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Ring Target"
+    "formatted_name": "Ring Target",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "rock_gem": {
     "item_class": [["gem", 5]],
@@ -3227,7 +3768,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Rock Gem"
+    "formatted_name": "Rock Gem",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "rock_incense": {
     "item_class": [["incense", 4]],
@@ -3245,7 +3789,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Rock Incense"
+    "formatted_name": "Rock Incense",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "rock_memory": {
     "item_class": [["memory", 7]],
@@ -3264,7 +3811,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Rock Memory"
+    "formatted_name": "Rock Memory",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "rockium_z": {
     "item_class": [["z_crystal", 7]],
@@ -3280,7 +3830,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Rockium Z"
+    "formatted_name": "Rockium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "rocky_helmet": {
     "item_class": [["other", 5]],
@@ -3298,7 +3851,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Rocky Helmet"
+    "formatted_name": "Rocky Helmet",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "room_service": {
     "item_class": [["other", 8]],
@@ -3316,7 +3872,10 @@
     "stat_modifications": {
       "speed": [["-1", "user", 8]]
     },
-    "formatted_name": "Room Service"
+    "formatted_name": "Room Service",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "rose_incense": {
     "item_class": [["incense", 4]],
@@ -3334,7 +3893,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Rose Incense"
+    "formatted_name": "Rose Incense",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "rusted_shield": {
     "item_class": [["other", 8]],
@@ -3354,7 +3916,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Rusted Shield"
+    "formatted_name": "Rusted Shield",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "rusted_sword": {
     "item_class": [["other", 8]],
@@ -3374,7 +3939,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Rusted Sword"
+    "formatted_name": "Rusted Sword",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "safety_goggles": {
     "item_class": [["other", 6]],
@@ -3394,7 +3962,13 @@
       "powder": [[0.0, 6]]
     },
     "stat_modifications": {},
-    "formatted_name": "Safety Goggles"
+    "formatted_name": "Safety Goggles",
+    "extends_field_state": {},
+    "resists_field_state": {
+      "hail": [[0.0, 6]],
+      "sandstorm": [[0.0, 6]]
+    },
+    "ignores_field_state": {}
   },
   "scope_lens": {
     "item_class": [["stat_enhancer", 2]],
@@ -3412,7 +3986,10 @@
     "stat_modifications": {
       "critical_hit_ratio": [["+1", "user", 2]]
     },
-    "formatted_name": "Scope Lens"
+    "formatted_name": "Scope Lens",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "sea_incense": {
     "item_class": [["incense", 3]],
@@ -3430,7 +4007,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Sea Incense"
+    "formatted_name": "Sea Incense",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "sharp_beak": {
     "item_class": [["type_enhancer", 2]],
@@ -3448,7 +4028,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Sharp Beak"
+    "formatted_name": "Sharp Beak",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "shed_shell": {
     "item_class": [["other", 4]],
@@ -3466,7 +4049,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Shed Shell"
+    "formatted_name": "Shed Shell",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "shell_bell": {
     "item_class": [["other", 3]],
@@ -3484,7 +4070,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Shell Bell"
+    "formatted_name": "Shell Bell",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "shock_drive": {
     "item_class": [["drive", 5]],
@@ -3502,7 +4091,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Shock Drive"
+    "formatted_name": "Shock Drive",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "silk_scarf": {
     "item_class": [["type_enhancer", 3]],
@@ -3520,7 +4112,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Silk Scarf"
+    "formatted_name": "Silk Scarf",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "silver_powder": {
     "item_class": [["type_enhancer", 2]],
@@ -3538,7 +4133,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Silver Powder"
+    "formatted_name": "Silver Powder",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "sky_plate": {
     "item_class": [["plate", 4]],
@@ -3559,7 +4157,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Sky Plate"
+    "formatted_name": "Sky Plate",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "smoke_ball": {
     "item_class": [["other", 2]],
@@ -3575,7 +4176,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Smoke Ball"
+    "formatted_name": "Smoke Ball",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "smooth_rock": {
     "item_class": [["other", 4]],
@@ -3593,7 +4197,12 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Smooth Rock"
+    "formatted_name": "Smooth Rock",
+    "extends_field_state": {
+      "sandstorm": [[true, 8, 4]]
+    },
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "snorlium_z": {
     "item_class": [["z_crystal", 7]],
@@ -3611,7 +4220,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Snorlium Z"
+    "formatted_name": "Snorlium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "snowball": {
     "item_class": [["other", 6]],
@@ -3629,7 +4241,10 @@
     "stat_modifications": {
       "attack": [["+1", "user", 6]]
     },
-    "formatted_name": "Snowball"
+    "formatted_name": "Snowball",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "soft_sand": {
     "item_class": [["type_enhancer", 2]],
@@ -3647,7 +4262,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Soft Sand"
+    "formatted_name": "Soft Sand",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "solganium_z": {
     "item_class": [["z_crystal", 7]],
@@ -3666,7 +4284,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Solganium Z"
+    "formatted_name": "Solganium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "soothe_bell": {
     "item_class": [["other", 2]],
@@ -3682,7 +4303,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Soothe Bell"
+    "formatted_name": "Soothe Bell",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "soul_dew": {
     "item_class": [["stat_enhancer", 3], ["type_enhancer", 7]],
@@ -3711,7 +4335,10 @@
           "user", 3], [1,
           "user", 7]]
     },
-    "formatted_name": "Soul Dew"
+    "formatted_name": "Soul Dew",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "spell_tag": {
     "item_class": [["type_enhancer", 2]],
@@ -3729,7 +4356,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Spell Tag"
+    "formatted_name": "Spell Tag",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "splash_plate": {
     "item_class": [["plate", 4]],
@@ -3750,7 +4380,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Splash Plate"
+    "formatted_name": "Splash Plate",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "spooky_plate": {
     "item_class": [["plate", 4]],
@@ -3771,7 +4404,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Spooky Plate"
+    "formatted_name": "Spooky Plate",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "star_sweet": {
     "item_class": [["other", 8]],
@@ -3787,7 +4423,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Star Sweet"
+    "formatted_name": "Star Sweet",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "steel_gem": {
     "item_class": [["gem", 5]],
@@ -3805,7 +4444,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Steel Gem"
+    "formatted_name": "Steel Gem",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "steel_memory": {
     "item_class": [["memory", 7]],
@@ -3824,7 +4466,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Steel Memory"
+    "formatted_name": "Steel Memory",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "steelium_z": {
     "item_class": [["z_crystal", 7]],
@@ -3840,7 +4485,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Steelium Z"
+    "formatted_name": "Steelium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "sticky_barb": {
     "item_class": [["other", 4]],
@@ -3858,7 +4506,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Sticky Barb"
+    "formatted_name": "Sticky Barb",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "stone_plate": {
     "item_class": [["plate", 4]],
@@ -3879,7 +4530,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Stone Plate"
+    "formatted_name": "Stone Plate",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "strawberry_sweet": {
     "item_class": [["other", 8]],
@@ -3895,7 +4549,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Strawberry Sweet"
+    "formatted_name": "Strawberry Sweet",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "tapunium_z": {
     "item_class": [["z_crystal", 7]],
@@ -3916,7 +4573,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Tapunium Z"
+    "formatted_name": "Tapunium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "terrain_extender": {
     "item_class": [["other", 7]],
@@ -3934,7 +4594,15 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Terrain Extender"
+    "formatted_name": "Terrain Extender",
+    "extends_field_state": {
+      "electric_terrain": [[true, 8, 7]],
+      "grassy_terrain": [[true, 8, 7]],
+      "misty_terrain": [[true, 8, 7]],
+      "psychic_terrain": [[true, 8, 7]]
+    },
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "thick_club": {
     "item_class": [["stat_enhancer", 2]],
@@ -3957,7 +4625,10 @@
       "attack": [[2.0,
           "user", 2]]
     },
-    "formatted_name": "Thick Club"
+    "formatted_name": "Thick Club",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "throat_spray": {
     "item_class": [["stat_enhancer", 8]],
@@ -3975,7 +4646,10 @@
     "stat_modifications": {
       "special_attack": [["+1", "user", 8]]
     },
-    "formatted_name": "Throat Spray"
+    "formatted_name": "Throat Spray",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "toxic_orb": {
     "item_class": [["other", 4]],
@@ -3993,7 +4667,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Toxic Orb"
+    "formatted_name": "Toxic Orb",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "toxic_plate": {
     "item_class": [["plate", 4]],
@@ -4014,7 +4691,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Toxic Plate"
+    "formatted_name": "Toxic Plate",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "twisted_spoon": {
     "item_class": [["type_enhancer", 2]],
@@ -4032,7 +4712,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Twisted Spoon"
+    "formatted_name": "Twisted Spoon",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "ultranecrozium_z": {
     "item_class": [["z_crystal", 7]],
@@ -4050,7 +4733,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Ultranecrozium Z"
+    "formatted_name": "Ultranecrozium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "utility_umbrella": {
     "item_class": [["other", 8]],
@@ -4069,7 +4755,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Utility Umbrella"
+    "formatted_name": "Utility Umbrella",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "water_gem": {
     "item_class": [["gem", 5]],
@@ -4087,7 +4776,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Water Gem"
+    "formatted_name": "Water Gem",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "water_memory": {
     "item_class": [["memory", 7]],
@@ -4106,7 +4798,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Water Memory"
+    "formatted_name": "Water Memory",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "waterium_z": {
     "item_class": [["z_crystal", 7]],
@@ -4122,7 +4817,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Waterium Z"
+    "formatted_name": "Waterium Z",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "wave_incense": {
     "item_class": [["incense", 4]],
@@ -4140,7 +4838,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Wave Incense"
+    "formatted_name": "Wave Incense",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "weakness_policy": {
     "item_class": [["stat_enhancer", 6]],
@@ -4159,7 +4860,10 @@
       "attack": [["+2", "user", 6]],
       "special_attack": [["+2", "user", 6]]
     },
-    "formatted_name": "Weakness Policy"
+    "formatted_name": "Weakness Policy",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "white_herb": {
     "item_class": [["other", 3]],
@@ -4177,7 +4881,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "White Herb"
+    "formatted_name": "White Herb",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "wide_lens": {
     "item_class": [["stat_enhancer", 4]],
@@ -4195,7 +4902,10 @@
     "stat_modifications": {},
     "accuracy": [[1.1,
         "user", 4]],
-    "formatted_name": "Wide Lens"
+    "formatted_name": "Wide Lens",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "wise_glasses": {
     "item_class": [["other", 4]],
@@ -4213,7 +4923,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Wise Glasses"
+    "formatted_name": "Wise Glasses",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "yellow_scarf": {
     "item_class": [["other", 3]],
@@ -4229,7 +4942,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Yellow Scarf"
+    "formatted_name": "Yellow Scarf",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "zap_plate": {
     "item_class": [["plate", 4]],
@@ -4250,7 +4966,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Zap Plate"
+    "formatted_name": "Zap Plate",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "zoom_lens": {
     "item_class": [["stat_enhancer", 4]],
@@ -4268,7 +4987,10 @@
     "stat_modifications": {},
     "accuracy": [[1.2,
         "user", 4]],
-    "formatted_name": "Zoom Lens"
+    "formatted_name": "Zoom Lens",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "aguav_berry": {
     "item_class": [["berry", 3]],
@@ -4287,7 +5009,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["dragon", 60, 3], ["dragon", 80, 6]],
-    "formatted_name": "Aguav Berry"
+    "formatted_name": "Aguav Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "apicot_berry": {
     "item_class": [["berry", 3]],
@@ -4306,7 +5031,10 @@
       "special_defense": [["+1", "user", 3]]
     },
     "natural_gift": [["ground", 80, 3], ["ground", 100, 6]],
-    "formatted_name": "Apicot Berry"
+    "formatted_name": "Apicot Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "aspear_berry": {
     "item_class": [["berry", 3]],
@@ -4325,7 +5053,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["ice", 60, 3], ["ice", 80, 6]],
-    "formatted_name": "Aspear Berry"
+    "formatted_name": "Aspear Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "babiri_berry": {
     "item_class": [["berry", 4]],
@@ -4344,7 +5075,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["steel", 60, 4], ["steel", 80, 6]],
-    "formatted_name": "Babiri Berry"
+    "formatted_name": "Babiri Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "belue_berry": {
     "item_class": [["berry", 3]],
@@ -4361,7 +5095,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["electric", 80, 3], ["electric", 100, 6]],
-    "formatted_name": "Belue Berry"
+    "formatted_name": "Belue Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "bluk_berry": {
     "item_class": [["berry", 3]],
@@ -4378,7 +5115,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["fire", 70, 3], ["fire", 90, 6]],
-    "formatted_name": "Bluk Berry"
+    "formatted_name": "Bluk Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "charti_berry": {
     "item_class": [["berry", 4]],
@@ -4397,7 +5137,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["rock", 60, 4], ["rock", 80, 6]],
-    "formatted_name": "Charti Berry"
+    "formatted_name": "Charti Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "cheri_berry": {
     "item_class": [["berry", 3]],
@@ -4416,7 +5159,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["fire", 60, 3], ["fire", 80, 6]],
-    "formatted_name": "Cheri Berry"
+    "formatted_name": "Cheri Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "chesto_berry": {
     "item_class": [["berry", 3]],
@@ -4435,7 +5181,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["water", 60, 3], ["water", 80, 6]],
-    "formatted_name": "Chesto Berry"
+    "formatted_name": "Chesto Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "chilan_berry": {
     "item_class": [["berry", 4]],
@@ -4454,7 +5203,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["normal", 60, 4], ["normal", 80, 6]],
-    "formatted_name": "Chilan Berry"
+    "formatted_name": "Chilan Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "chople_berry": {
     "item_class": [["berry", 4]],
@@ -4473,7 +5225,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["fighting", 60, 4], ["fighting", 80, 6]],
-    "formatted_name": "Chople Berry"
+    "formatted_name": "Chople Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "coba_berry": {
     "item_class": [["berry", 4]],
@@ -4492,7 +5247,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["flying", 60, 4], ["flying", 80, 6]],
-    "formatted_name": "Coba Berry"
+    "formatted_name": "Coba Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "colbur_berry": {
     "item_class": [["berry", 4]],
@@ -4511,7 +5269,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["dark", 60, 4], ["dark", 80, 6]],
-    "formatted_name": "Colbur Berry"
+    "formatted_name": "Colbur Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "cornn_berry": {
     "item_class": [["berry", 3]],
@@ -4528,7 +5289,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["bug", 70, 3], ["bug", 90, 6]],
-    "formatted_name": "Cornn Berry"
+    "formatted_name": "Cornn Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "custap_berry": {
     "item_class": [["berry", 4]],
@@ -4547,7 +5311,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["ghost", 80, 4], ["ghost", 100, 6]],
-    "formatted_name": "Custap Berry"
+    "formatted_name": "Custap Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "durin_berry": {
     "item_class": [["berry", 3]],
@@ -4564,7 +5331,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["water", 80, 3], ["water", 100, 6]],
-    "formatted_name": "Durin Berry"
+    "formatted_name": "Durin Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "enigma_berry": {
     "item_class": [["berry", 3]],
@@ -4581,7 +5351,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["bug", 80, 3], ["bug", 100, 6]],
-    "formatted_name": "Enigma Berry"
+    "formatted_name": "Enigma Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "figy_berry": {
     "item_class": [["berry", 3]],
@@ -4600,7 +5373,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["bug", 60, 3], ["bug", 80, 6]],
-    "formatted_name": "Figy Berry"
+    "formatted_name": "Figy Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "ganlon_berry": {
     "item_class": [["berry", 3]],
@@ -4619,7 +5395,10 @@
       "defense": [["+1", "user", 3]]
     },
     "natural_gift": [["ice", 80, 3], ["ice", 100, 6]],
-    "formatted_name": "Ganlon Berry"
+    "formatted_name": "Ganlon Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "grepa_berry": {
     "item_class": [["berry", 3]],
@@ -4636,7 +5415,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["flying", 70, 3], ["flying", 90, 6]],
-    "formatted_name": "Grepa Berry"
+    "formatted_name": "Grepa Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "haban_berry": {
     "item_class": [["berry", 4]],
@@ -4655,7 +5437,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["dragon", 60, 4], ["dragon", 80, 6]],
-    "formatted_name": "Haban Berry"
+    "formatted_name": "Haban Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "hondew_berry": {
     "item_class": [["berry", 3]],
@@ -4672,7 +5457,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["ground", 70, 3], ["ground", 90, 6]],
-    "formatted_name": "Hondew Berry"
+    "formatted_name": "Hondew Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "iapapa_berry": {
     "item_class": [["berry", 3]],
@@ -4691,7 +5479,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["dark", 60, 3], ["dark", 80, 6]],
-    "formatted_name": "Iapapa Berry"
+    "formatted_name": "Iapapa Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "jaboca_berry": {
     "item_class": [["berry", 4]],
@@ -4708,7 +5499,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["dragon", 80, 4], ["dragon", 100, 6]],
-    "formatted_name": "Jaboca Berry"
+    "formatted_name": "Jaboca Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "kasib_berry": {
     "item_class": [["berry", 4]],
@@ -4727,7 +5521,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["ghost", 60, 4], ["ghost", 80, 6]],
-    "formatted_name": "Kasib Berry"
+    "formatted_name": "Kasib Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "kebia_berry": {
     "item_class": [["berry", 4]],
@@ -4746,7 +5543,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["poison", 60, 4], ["poison", 80, 6]],
-    "formatted_name": "Kebia Berry"
+    "formatted_name": "Kebia Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "kee_berry": {
     "item_class": [["berry", 6]],
@@ -4765,7 +5565,10 @@
       "defense": [["+1", "user", 6]]
     },
     "natural_gift": [["fairy", 100, 6]],
-    "formatted_name": "Kee Berry"
+    "formatted_name": "Kee Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "kelpsy_berry": {
     "item_class": [["berry", 3]],
@@ -4782,7 +5585,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["fighting", 70, 3], ["fighting", 90, 6]],
-    "formatted_name": "Kelpsy Berry"
+    "formatted_name": "Kelpsy Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "lansat_berry": {
     "item_class": [["berry", 3]],
@@ -4801,7 +5607,10 @@
       "critical_hit_ratio": [["+1", "user", 3]]
     },
     "natural_gift": [["flying", 80, 3], ["flying", 100, 6]],
-    "formatted_name": "Lansat Berry"
+    "formatted_name": "Lansat Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "leppa_berry": {
     "item_class": [["berry", 3]],
@@ -4818,7 +5627,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["fighting", 60, 3], ["fighting", 80, 6]],
-    "formatted_name": "Leppa Berry"
+    "formatted_name": "Leppa Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "liechi_berry": {
     "item_class": [["berry", 3]],
@@ -4837,7 +5649,10 @@
       "attack": [["+1", "user", 3]]
     },
     "natural_gift": [["grass", 80, 3], ["grass", 100, 6]],
-    "formatted_name": "Liechi Berry"
+    "formatted_name": "Liechi Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "lum_berry": {
     "item_class": [["berry", 3]],
@@ -4862,7 +5677,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["flying", 60, 3], ["flying", 80, 6]],
-    "formatted_name": "Lum Berry"
+    "formatted_name": "Lum Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "mago_berry": {
     "item_class": [["berry", 3]],
@@ -4881,7 +5699,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["ghost", 60, 3], ["ghost", 80, 6]],
-    "formatted_name": "Mago Berry"
+    "formatted_name": "Mago Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "magost_berry": {
     "item_class": [["berry", 3]],
@@ -4898,7 +5719,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["rock", 70, 3], ["rock", 90, 6]],
-    "formatted_name": "Magost Berry"
+    "formatted_name": "Magost Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "maranga_berry": {
     "item_class": [["berry", 6]],
@@ -4917,7 +5741,10 @@
       "special_defense": [["+1", "user", 6]]
     },
     "natural_gift": [["dark", 100, 6]],
-    "formatted_name": "Maranga Berry"
+    "formatted_name": "Maranga Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "micle_berry": {
     "item_class": [["berry", 4]],
@@ -4937,7 +5764,10 @@
           "user", 5]]
     },
     "natural_gift": [["rock", 80, 4], ["rock", 100, 6]],
-    "formatted_name": "Micle Berry"
+    "formatted_name": "Micle Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "nanab_berry": {
     "item_class": [["berry", 3]],
@@ -4954,7 +5784,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["water", 70, 3], ["water", 90, 6]],
-    "formatted_name": "Nanab Berry"
+    "formatted_name": "Nanab Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "nomel_berry": {
     "item_class": [["berry", 3]],
@@ -4971,7 +5804,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["dragon", 70, 3], ["dragon", 90, 6]],
-    "formatted_name": "Nomel Berry"
+    "formatted_name": "Nomel Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "occa_berry": {
     "item_class": [["berry", 4]],
@@ -4990,7 +5826,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["fire", 60, 4], ["fire", 80, 6]],
-    "formatted_name": "Occa Berry"
+    "formatted_name": "Occa Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "oran_berry": {
     "item_class": [["berry", 3]],
@@ -5007,7 +5846,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["poison", 60, 3], ["poison", 80, 6]],
-    "formatted_name": "Oran Berry"
+    "formatted_name": "Oran Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "pamtre_berry": {
     "item_class": [["berry", 3]],
@@ -5024,7 +5866,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["steel", 70, 3], ["steel", 90, 6]],
-    "formatted_name": "Pamtre Berry"
+    "formatted_name": "Pamtre Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "passho_berry": {
     "item_class": [["berry", 4]],
@@ -5043,7 +5888,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["water", 60, 4], ["water", 80, 6]],
-    "formatted_name": "Passho Berry"
+    "formatted_name": "Passho Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "payapa_berry": {
     "item_class": [["berry", 4]],
@@ -5062,7 +5910,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["psychic", 60, 4], ["psychic", 80, 6]],
-    "formatted_name": "Payapa Berry"
+    "formatted_name": "Payapa Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "pecha_berry": {
     "item_class": [["berry", 3]],
@@ -5081,7 +5932,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["electric", 60, 3], ["electric", 80, 6]],
-    "formatted_name": "Pecha Berry"
+    "formatted_name": "Pecha Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "persim_berry": {
     "item_class": [["berry", 3]],
@@ -5100,7 +5954,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["ground", 60, 3], ["ground", 80, 6]],
-    "formatted_name": "Persim Berry"
+    "formatted_name": "Persim Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "petaya_berry": {
     "item_class": [["berry", 3]],
@@ -5119,7 +5976,10 @@
       "special_attack": [["+1", "user", 3]]
     },
     "natural_gift": [["poison", 80, 3], ["poison", 100, 6]],
-    "formatted_name": "Petaya Berry"
+    "formatted_name": "Petaya Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "pinap_berry": {
     "item_class": [["berry", 3]],
@@ -5136,7 +5996,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["grass", 70, 3], ["grass", 90, 6]],
-    "formatted_name": "Pinap Berry"
+    "formatted_name": "Pinap Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "pomeg_berry": {
     "item_class": [["berry", 3]],
@@ -5153,7 +6016,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["ice", 70, 3], ["ice", 90, 6]],
-    "formatted_name": "Pomeg Berry"
+    "formatted_name": "Pomeg Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "qualot_berry": {
     "item_class": [["berry", 3]],
@@ -5170,7 +6036,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["poison", 70, 3], ["poison", 90, 6]],
-    "formatted_name": "Qualot Berry"
+    "formatted_name": "Qualot Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "rabuta_berry": {
     "item_class": [["berry", 3]],
@@ -5187,7 +6056,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["ghost", 70, 3], ["ghost", 90, 6]],
-    "formatted_name": "Rabuta Berry"
+    "formatted_name": "Rabuta Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "rawst_berry": {
     "item_class": [["berry", 3]],
@@ -5206,7 +6078,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["grass", 60, 3], ["grass", 80, 6]],
-    "formatted_name": "Rawst Berry"
+    "formatted_name": "Rawst Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "razz_berry": {
     "item_class": [["berry", 3]],
@@ -5223,7 +6098,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["steel", 60, 3], ["steel", 80, 6]],
-    "formatted_name": "Razz Berry"
+    "formatted_name": "Razz Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "rindo_berry": {
     "item_class": [["berry", 4]],
@@ -5242,7 +6120,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["grass", 60, 4], ["grass", 80, 6]],
-    "formatted_name": "Rindo Berry"
+    "formatted_name": "Rindo Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "roseli_berry": {
     "item_class": [["berry", 6]],
@@ -5261,7 +6142,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["fairy", 80, 6]],
-    "formatted_name": "Roseli Berry"
+    "formatted_name": "Roseli Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "rowap_berry": {
     "item_class": [["berry", 4]],
@@ -5278,7 +6162,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["dark", 80, 4], ["dark", 100, 6]],
-    "formatted_name": "Rowap Berry"
+    "formatted_name": "Rowap Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "salac_berry": {
     "item_class": [["berry", 3]],
@@ -5297,7 +6184,10 @@
       "speed": [["+1", "user", 3]]
     },
     "natural_gift": [["fighting", 80, 3], ["fighting", 100, 6]],
-    "formatted_name": "Salac Berry"
+    "formatted_name": "Salac Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "shuca_berry": {
     "item_class": [["berry", 4]],
@@ -5316,7 +6206,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["ground", 60, 4], ["ground", 80, 6]],
-    "formatted_name": "Shuca Berry"
+    "formatted_name": "Shuca Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "sitrus_berry": {
     "item_class": [["berry", 3]],
@@ -5333,7 +6226,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["psychic", 60, 3], ["psychic", 80, 6]],
-    "formatted_name": "Sitrus Berry"
+    "formatted_name": "Sitrus Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "spelon_berry": {
     "item_class": [["berry", 3]],
@@ -5350,7 +6246,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["dark", 70, 3], ["dark", 90, 6]],
-    "formatted_name": "Spelon Berry"
+    "formatted_name": "Spelon Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "starf_berry": {
     "item_class": [["berry", 3]],
@@ -5373,10 +6272,14 @@
       "speed": [["+2", "user", 3]],
       "accuracy": [["+2", "user", 3]],
       "evasion": [["+2", "user", 3]],
-      "critical_hit_ratio": [["+2", "user", 3]]
+      "critical_hit_ratio": [["+2", "user", 3]],
+      "secondary_effect_chance": [["+2", "user", 3]]
     },
     "natural_gift": [["psychic", 80, 3], ["psychic", 100, 6]],
-    "formatted_name": "Starf Berry"
+    "formatted_name": "Starf Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "tamato_berry": {
     "item_class": [["berry", 3]],
@@ -5393,7 +6296,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["psychic", 70, 3], ["psychic", 90, 6]],
-    "formatted_name": "Tamato Berry"
+    "formatted_name": "Tamato Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "tanga_berry": {
     "item_class": [["berry", 4]],
@@ -5412,7 +6318,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["bug", 60, 4], ["bug", 80, 6]],
-    "formatted_name": "Tanga Berry"
+    "formatted_name": "Tanga Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "wacan_berry": {
     "item_class": [["berry", 4]],
@@ -5431,7 +6340,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["electric", 60, 4], ["electric", 80, 6]],
-    "formatted_name": "Wacan Berry"
+    "formatted_name": "Wacan Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "watmel_berry": {
     "item_class": [["berry", 3]],
@@ -5448,7 +6360,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["fire", 80, 3], ["fire", 100, 6]],
-    "formatted_name": "Watmel Berry"
+    "formatted_name": "Watmel Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "wepear_berry": {
     "item_class": [["berry", 3]],
@@ -5465,7 +6380,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["electric", 70, 3], ["electric", 90, 6]],
-    "formatted_name": "Wepear Berry"
+    "formatted_name": "Wepear Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "wiki_berry": {
     "item_class": [["berry", 3]],
@@ -5484,7 +6402,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["rock", 60, 3], ["rock", 80, 6]],
-    "formatted_name": "Wiki Berry"
+    "formatted_name": "Wiki Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "yache_berry": {
     "item_class": [["berry", 4]],
@@ -5503,7 +6424,10 @@
     "resists_usage_method": {},
     "stat_modifications": {},
     "natural_gift": [["ice", 60, 4], ["ice", 80, 6]],
-    "formatted_name": "Yache Berry"
+    "formatted_name": "Yache Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "berry": {
     "item_class": [["berry", 2]],
@@ -5521,7 +6445,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Berry"
+    "formatted_name": "Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "bitter_berry": {
     "item_class": [["berry", 2]],
@@ -5539,7 +6466,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Bitter Berry"
+    "formatted_name": "Bitter Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "burnt_berry": {
     "item_class": [["berry", 2]],
@@ -5557,7 +6487,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Burnt Berry"
+    "formatted_name": "Burnt Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "gold_berry": {
     "item_class": [["berry", 2]],
@@ -5575,7 +6508,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Gold Berry"
+    "formatted_name": "Gold Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "ice_berry": {
     "item_class": [["berry", 2]],
@@ -5593,7 +6529,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Ice Berry"
+    "formatted_name": "Ice Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "mint_berry": {
     "item_class": [["berry", 2]],
@@ -5611,7 +6550,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Mint Berry"
+    "formatted_name": "Mint Berry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "miracle_berry": {
     "item_class": [["berry", 2]],
@@ -5635,7 +6577,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "MiracleBerry"
+    "formatted_name": "MiracleBerry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "mystery_berry": {
     "item_class": [["berry", 2]],
@@ -5653,7 +6598,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "MysteryBerry"
+    "formatted_name": "MysteryBerry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "prz_cure_berry": {
     "item_class": [["berry", 2]],
@@ -5671,7 +6619,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "PRZCureBerry"
+    "formatted_name": "PRZCureBerry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "psn_cure_berry": {
     "item_class": [["berry", 2]],
@@ -5689,7 +6640,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "PSNCureBerry"
+    "formatted_name": "PSNCureBerry",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "abomasite": {
     "item_class": "mega_stone",
@@ -5709,7 +6663,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Abomasite"
+    "formatted_name": "Abomasite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "absolite": {
     "item_class": "mega_stone",
@@ -5729,7 +6686,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Absolite"
+    "formatted_name": "Absolite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "aerodactylite": {
     "item_class": "mega_stone",
@@ -5749,7 +6709,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Aerodactylite"
+    "formatted_name": "Aerodactylite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "aggronite": {
     "item_class": "mega_stone",
@@ -5769,7 +6732,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Aggronite"
+    "formatted_name": "Aggronite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "alakazite": {
     "item_class": "mega_stone",
@@ -5789,7 +6755,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Alakazite"
+    "formatted_name": "Alakazite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "altarianite": {
     "item_class": "mega_stone",
@@ -5809,7 +6778,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Altarianite"
+    "formatted_name": "Altarianite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "ampharosite": {
     "item_class": "mega_stone",
@@ -5829,7 +6801,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Ampharosite"
+    "formatted_name": "Ampharosite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "audinite": {
     "item_class": "mega_stone",
@@ -5849,7 +6824,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Audinite"
+    "formatted_name": "Audinite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "banettite": {
     "item_class": "mega_stone",
@@ -5869,7 +6847,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Banettite"
+    "formatted_name": "Banettite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "beedrillite": {
     "item_class": "mega_stone",
@@ -5889,7 +6870,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Beedrillite"
+    "formatted_name": "Beedrillite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "blastoisinite": {
     "item_class": "mega_stone",
@@ -5909,7 +6893,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Blastoisinite"
+    "formatted_name": "Blastoisinite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "blazikenite": {
     "item_class": "mega_stone",
@@ -5929,7 +6916,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Blazikenite"
+    "formatted_name": "Blazikenite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "cameruptite": {
     "item_class": "mega_stone",
@@ -5949,7 +6939,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Cameruptite"
+    "formatted_name": "Cameruptite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "charizardite_x": {
     "item_class": "mega_stone",
@@ -5969,7 +6962,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Charizardite X"
+    "formatted_name": "Charizardite X",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "charizardite_y": {
     "item_class": "mega_stone",
@@ -5989,7 +6985,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Charizardite Y"
+    "formatted_name": "Charizardite Y",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "diancite": {
     "item_class": "mega_stone",
@@ -6009,7 +7008,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Diancite"
+    "formatted_name": "Diancite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "galladite": {
     "item_class": "mega_stone",
@@ -6029,7 +7031,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Galladite"
+    "formatted_name": "Galladite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "garchompite": {
     "item_class": "mega_stone",
@@ -6049,7 +7054,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Garchompite"
+    "formatted_name": "Garchompite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "gardevoirite": {
     "item_class": "mega_stone",
@@ -6069,7 +7077,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Gardevoirite"
+    "formatted_name": "Gardevoirite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "gengarite": {
     "item_class": "mega_stone",
@@ -6089,7 +7100,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Gengarite"
+    "formatted_name": "Gengarite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "glalitite": {
     "item_class": "mega_stone",
@@ -6109,7 +7123,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Glalitite"
+    "formatted_name": "Glalitite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "gyaradosite": {
     "item_class": "mega_stone",
@@ -6129,7 +7146,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Gyaradosite"
+    "formatted_name": "Gyaradosite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "heracronite": {
     "item_class": "mega_stone",
@@ -6149,7 +7169,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Heracronite"
+    "formatted_name": "Heracronite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "houndoominite": {
     "item_class": "mega_stone",
@@ -6169,7 +7192,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Houndoominite"
+    "formatted_name": "Houndoominite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "kangaskhanite": {
     "item_class": "mega_stone",
@@ -6189,7 +7215,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Kangaskhanite"
+    "formatted_name": "Kangaskhanite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "latiasite": {
     "item_class": "mega_stone",
@@ -6209,7 +7238,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Latiasite"
+    "formatted_name": "Latiasite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "latiosite": {
     "item_class": "mega_stone",
@@ -6229,7 +7261,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Latiosite"
+    "formatted_name": "Latiosite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "lopunnite": {
     "item_class": "mega_stone",
@@ -6249,7 +7284,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Lopunnite"
+    "formatted_name": "Lopunnite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "lucarionite": {
     "item_class": "mega_stone",
@@ -6269,7 +7307,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Lucarionite"
+    "formatted_name": "Lucarionite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "manectite": {
     "item_class": "mega_stone",
@@ -6289,7 +7330,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Manectite"
+    "formatted_name": "Manectite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "mawilite": {
     "item_class": "mega_stone",
@@ -6309,7 +7353,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Mawilite"
+    "formatted_name": "Mawilite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "medichamite": {
     "item_class": "mega_stone",
@@ -6329,7 +7376,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Medichamite"
+    "formatted_name": "Medichamite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "metagrossite": {
     "item_class": "mega_stone",
@@ -6349,7 +7399,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Metagrossite"
+    "formatted_name": "Metagrossite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "mewtwonite_x": {
     "item_class": "mega_stone",
@@ -6369,7 +7422,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Mewtwonite X"
+    "formatted_name": "Mewtwonite X",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "mewtwonite_y": {
     "item_class": "mega_stone",
@@ -6389,7 +7445,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Mewtwonite Y"
+    "formatted_name": "Mewtwonite Y",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "pidgeotite": {
     "item_class": "mega_stone",
@@ -6409,7 +7468,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Pidgeotite"
+    "formatted_name": "Pidgeotite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "pinsirite": {
     "item_class": "mega_stone",
@@ -6429,7 +7491,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Pinsirite"
+    "formatted_name": "Pinsirite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "sablenite": {
     "item_class": "mega_stone",
@@ -6449,7 +7514,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Sablenite"
+    "formatted_name": "Sablenite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "salamencite": {
     "item_class": "mega_stone",
@@ -6469,7 +7537,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Salamencite"
+    "formatted_name": "Salamencite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "sceptilite": {
     "item_class": "mega_stone",
@@ -6489,7 +7560,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Sceptilite"
+    "formatted_name": "Sceptilite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "scizorite": {
     "item_class": "mega_stone",
@@ -6509,7 +7583,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Scizorite"
+    "formatted_name": "Scizorite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "sharpedonite": {
     "item_class": "mega_stone",
@@ -6529,7 +7606,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Sharpedonite"
+    "formatted_name": "Sharpedonite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "slowbronite": {
     "item_class": "mega_stone",
@@ -6549,7 +7629,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Slowbronite"
+    "formatted_name": "Slowbronite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "steelixite": {
     "item_class": "mega_stone",
@@ -6569,7 +7652,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Steelixite"
+    "formatted_name": "Steelixite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "swampertite": {
     "item_class": "mega_stone",
@@ -6589,7 +7675,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Swampertite"
+    "formatted_name": "Swampertite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "tyranitarite": {
     "item_class": "mega_stone",
@@ -6609,7 +7698,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Tyranitarite"
+    "formatted_name": "Tyranitarite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "venusaurite": {
     "item_class": "mega_stone",
@@ -6629,7 +7721,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Venusaurite"
+    "formatted_name": "Venusaurite",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "berry_juice": {
     "item_class": [["other", 2]],
@@ -6647,7 +7742,10 @@
     "boosts_type": {},
     "resists_type": {},
     "stat_modifications": {},
-    "formatted_name": "Berry Juice"
+    "formatted_name": "Berry Juice",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   },
   "adrenaline_orb": {
     "item_class": [["stat_enhancer", 7]],
@@ -6665,6 +7763,9 @@
     "stat_modifications": {
       "speed": [["+1", "user", 7]]
     },
-    "formatted_name": "Adrenaline Orb"
+    "formatted_name": "Adrenaline Orb",
+    "extends_field_state": {},
+    "resists_field_state": {},
+    "ignores_field_state": {}
   }
 }

@@ -4,7 +4,7 @@ import effects
 import statuses
 import usageMethods
 import elementalTypes as types
-from utils import getCSVDataPath, statList, parseName, checkConsistency
+from utils import getCSVDataPath, statList, parseName, fieldStateList, checkConsistency
 
 
 # initial item dictionary with item name, item type, gen introduced, gen 2 exclusivity, and sprite URL
@@ -642,6 +642,8 @@ def getFormattedName(itemName):
 def addFieldStateData(itemDict):
   for itemName in itemDict.keys():
     itemDict[itemName]["extends_field_state"] = {}
+    itemDict[itemName]["resists_field_state"] = {}
+    itemDict[itemName]["ignores_field_state"] = {}
   
   # Extenders
   for [itemName, fieldStatesAndGens] in [
@@ -679,6 +681,18 @@ def addFieldStateData(itemDict):
     itemGen = itemDict[itemName]["gen"]
     for [fieldStateName, fieldStateGen] in fieldStatesAndGens:
       itemDict[itemName]["extends_field_state"][fieldStateName] = [[True, 8, max(itemGen, fieldStateGen)]]
+
+  # Safety goggles
+  itemDict["safety_goggles"]["resists_field_state"]["hail"] = [[0.0, 6]]
+  itemDict["safety_goggles"]["resists_field_state"]["sandstorm"] = [[0.0, 6]]
+
+  # Heavy duty boots
+  itemDict["heavy_duty_boots"]["ignores_field_state"]["stealth_rock"] = [[True, 8]]
+  itemDict["heavy_duty_boots"]["ignores_field_state"]["spikes"] = [[True, 8]]
+  itemDict["heavy_duty_boots"]["ignores_field_state"]["toxic_spikes"] = [[True, 8]]
+  itemDict["heavy_duty_boots"]["ignores_field_state"]["sticky_web"] = [[True, 8]]
+  itemDict["heavy_duty_boots"]["ignores_field_state"]["sharp_steel"] = [[True, 8]]
+
 
   return
 
@@ -728,4 +742,17 @@ if __name__ == '__main__':
     for stat in itemDict[itemName]["stat_modifications"]:
       if stat not in statList():
         print('Inconsistent stat name', itemName, stat)
+
+    for fieldState in itemDict[itemName]["extends_field_state"]:
+      if fieldState not in fieldStateList():
+        print('Inconsistent field state name', itemName, fieldState)
+
+    for fieldState in itemDict[itemName]["resists_field_state"]:
+      if fieldState not in fieldStateList():
+        print('Inconsistent field state name', itemName, fieldState)
+    
+    for fieldState in itemDict[itemName]["ignores_field_state"]:
+      if fieldState not in fieldStateList():
+        print('Inconsistent field state name', itemName, fieldState)
+
   print('Finished.')

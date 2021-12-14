@@ -11,7 +11,7 @@ import stats
 import statuses
 import usageMethods
 import versionGroups
-from utils import statusList, typeList, effectList, usageMethodList, statList, checkConsistency, getJSONDataPath
+from utils import statusList, typeList, effectList, usageMethodList, statList, fieldStateList, checkConsistency, getJSONDataPath
 
 # check that statusDict matches statusList
 def checkStatuses(statusDict):
@@ -89,19 +89,28 @@ def checkTypes(typeDict):
 def checkMoves(moveDict):
   # check name consistency in moveDict
   print('Checking for inconsistencies in moveDict...')
-  for abilityName in moveDict.keys():
+  for moveName in moveDict.keys():
     for inconsistency in [
-      checkConsistency(moveDict[abilityName]["effects"], 'effect', effectDict, False),
-      checkConsistency(moveDict[abilityName]["causes_status"], 'status', statusDict, 0.0),
-      checkConsistency(moveDict[abilityName]["resists_status"], 'status', statusDict, False),
-      checkConsistency(moveDict[abilityName]["usage_method"], 'usage_method', usageMethodDict, False),
+      checkConsistency(moveDict[moveName]["effects"], 'effect', effectDict, False),
+      checkConsistency(moveDict[moveName]["causes_status"], 'status', statusDict, 0.0),
+      checkConsistency(moveDict[moveName]["resists_status"], 'status', statusDict, False),
+      checkConsistency(moveDict[moveName]["usage_method"], 'usage_method', usageMethodDict, False),
     ]:
       if inconsistency:
-        print(f'Inconsistency found for {abilityName}: {inconsistency}')
+        print(f'Inconsistency found for {moveName}: {inconsistency}')
 
-    for stat in moveDict[abilityName]["stat_modifications"]:
+    for stat in moveDict[moveName]["stat_modifications"]:
       if stat not in statList():
-        print('Inconsistent stat name', abilityName, stat)
+        print('Inconsistent stat name', moveName, stat)
+
+    for fieldState in moveDict[moveName]["creates_field_state"]:
+      if fieldState not in fieldStateList():
+        print('Inconsistent field state name', moveName, fieldState)
+
+    for fieldState in moveDict[moveName]["removes_field_state"]:
+      if fieldState not in fieldStateList():
+        print('Inconsistent field state name', moveName, fieldState)
+
   print('Finished.')
   print()
 
@@ -128,6 +137,23 @@ def checkAbilities(abilityDict):
     for stat in abilityDict[abilityName]["stat_modifications"]:
       if stat not in statList():
         print('Inconsistent stat name', abilityName, stat)
+
+    for fieldState in abilityDict[abilityName]["creates_field_state"]:
+      if fieldState not in fieldStateList():
+        print('Inconsistent field state name', abilityName, fieldState)
+
+    for fieldState in abilityDict[abilityName]["removes_field_state"]:
+      if fieldState not in fieldStateList():
+        print('Inconsistent field state name', abilityName, fieldState)
+    
+    for fieldState in abilityDict[abilityName]["suppresses_field_state"]:
+      if fieldState not in fieldStateList():
+        print('Inconsistent field state name', abilityName, fieldState)
+
+    for fieldState in abilityDict[abilityName]["prevents_field_state"]:
+      if fieldState not in fieldStateList():
+        print('Inconsistent field state name', abilityName, fieldState)
+
   print('Finished.')
   print()
 
@@ -151,6 +177,19 @@ def checkItems(itemDict):
     for stat in itemDict[itemName]["stat_modifications"]:
       if stat not in statList():
         print('Inconsistent stat name', itemName, stat)
+
+    for fieldState in itemDict[itemName]["extends_field_state"]:
+      if fieldState not in fieldStateList():
+        print('Inconsistent field state name', itemName, fieldState)
+
+    for fieldState in itemDict[itemName]["resists_field_state"]:
+      if fieldState not in fieldStateList():
+        print('Inconsistent field state name', itemName, fieldState)
+    
+    for fieldState in itemDict[itemName]["ignores_field_state"]:
+      if fieldState not in fieldStateList():
+        print('Inconsistent field state name', itemName, fieldState)
+      
   print('Finished.')
   print()
 

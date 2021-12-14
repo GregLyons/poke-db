@@ -11,7 +11,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Adaptability"
+    "formatted_name": "Adaptability",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "aerilate": {
     "gen": 6,
@@ -26,7 +30,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Aerilate"
+    "formatted_name": "Aerilate",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "aftermath": {
     "gen": 4,
@@ -40,7 +48,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Aftermath"
+    "formatted_name": "Aftermath",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "air_lock": {
     "gen": 3,
@@ -54,7 +66,26 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Air Lock"
+    "formatted_name": "Air Lock",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {
+      "harsh_sunlight": [[true, 3]],
+      "extremely_harsh_sunlight": [[true, 6]],
+      "rain": [[true, 3]],
+      "heavy_rain": [[true, 6]],
+      "sandstorm": [[true, 3]],
+      "hail": [[true, 3]],
+      "aurora_veil": [[true, 7]]
+    },
+    "suppresses_field_state": {
+      "harsh_sunlight": [[true, 3]],
+      "extremely_harsh_sunlight": [[true, 6]],
+      "rain": [[true, 3]],
+      "heavy_rain": [[true, 6]],
+      "sandstorm": [[true, 3]],
+      "hail": [[true, 3]]
+    }
   },
   "analytic": {
     "gen": 5,
@@ -68,7 +99,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Analytic"
+    "formatted_name": "Analytic",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "anger_point": {
     "gen": 4,
@@ -82,7 +117,11 @@
     "stat_modifications": {
       "attack": [["+12", "user", 100.0, 4]]
     },
-    "formatted_name": "Anger Point"
+    "formatted_name": "Anger Point",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "anticipation": {
     "gen": 4,
@@ -94,7 +133,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Anticipation"
+    "formatted_name": "Anticipation",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "arena_trap": {
     "gen": 3,
@@ -108,7 +151,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Arena Trap"
+    "formatted_name": "Arena Trap",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "aroma_veil": {
     "gen": 6,
@@ -125,7 +172,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Aroma Veil"
+    "formatted_name": "Aroma Veil",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "aura_break": {
     "gen": 6,
@@ -137,7 +188,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Aura Break"
+    "formatted_name": "Aura Break",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "bad_dreams": {
     "gen": 4,
@@ -149,7 +204,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Bad Dreams"
+    "formatted_name": "Bad Dreams",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "ball_fetch": {
     "gen": 8,
@@ -161,7 +220,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Ball Fetch"
+    "formatted_name": "Ball Fetch",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "battery": {
     "gen": 7,
@@ -178,7 +241,11 @@
       "special_attack": [[1.3,
           "user", 100.0, 7]]
     },
-    "formatted_name": "Battery"
+    "formatted_name": "Battery",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "battle_armor": {
     "gen": 3,
@@ -192,7 +259,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Battle Armor"
+    "formatted_name": "Battle Armor",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "battle_bond": {
     "gen": 7,
@@ -206,7 +277,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Battle Bond"
+    "formatted_name": "Battle Bond",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "beast_boost": {
     "gen": 7,
@@ -224,7 +299,11 @@
       "special_defense": [["+1", "user", 100.0, 7]],
       "speed": [["+1", "user", 100.0, 7]]
     },
-    "formatted_name": "Beast Boost"
+    "formatted_name": "Beast Boost",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "berserk": {
     "gen": 7,
@@ -238,7 +317,11 @@
     "stat_modifications": {
       "special_attack": [["+1", "user", 100.0, 7]]
     },
-    "formatted_name": "Berserk"
+    "formatted_name": "Berserk",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "big_pecks": {
     "gen": 5,
@@ -250,7 +333,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Big Pecks"
+    "formatted_name": "Big Pecks",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "blaze": {
     "gen": 3,
@@ -264,7 +351,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Blaze"
+    "formatted_name": "Blaze",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "bulletproof": {
     "gen": 6,
@@ -278,7 +369,11 @@
       "ball": [[0.0, 6]]
     },
     "stat_modifications": {},
-    "formatted_name": "Bulletproof"
+    "formatted_name": "Bulletproof",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "cheek_pouch": {
     "gen": 6,
@@ -293,7 +388,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Cheek Pouch"
+    "formatted_name": "Cheek Pouch",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "chilling_neigh": {
     "gen": 8,
@@ -305,7 +404,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Chilling Neigh"
+    "formatted_name": "Chilling Neigh",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "chlorophyll": {
     "gen": 3,
@@ -320,7 +423,11 @@
       "speed": [[2.0,
           "user", 100.0, 3]]
     },
-    "formatted_name": "Chlorophyll"
+    "formatted_name": "Chlorophyll",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "clear_body": {
     "gen": 3,
@@ -334,7 +441,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Clear Body"
+    "formatted_name": "Clear Body",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "cloud_nine": {
     "gen": 3,
@@ -348,7 +459,26 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Cloud Nine"
+    "formatted_name": "Cloud Nine",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {
+      "harsh_sunlight": [[true, 3]],
+      "extremely_harsh_sunlight": [[true, 6]],
+      "rain": [[true, 3]],
+      "heavy_rain": [[true, 6]],
+      "sandstorm": [[true, 3]],
+      "hail": [[true, 3]],
+      "aurora_veil": [[true, 7]]
+    },
+    "suppresses_field_state": {
+      "harsh_sunlight": [[true, 3]],
+      "extremely_harsh_sunlight": [[true, 6]],
+      "rain": [[true, 3]],
+      "heavy_rain": [[true, 6]],
+      "sandstorm": [[true, 3]],
+      "hail": [[true, 3]]
+    }
   },
   "color_change": {
     "gen": 3,
@@ -362,7 +492,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Color Change"
+    "formatted_name": "Color Change",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "comatose": {
     "gen": 7,
@@ -381,7 +515,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Comatose"
+    "formatted_name": "Comatose",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "competitive": {
     "gen": 6,
@@ -395,7 +533,11 @@
     "stat_modifications": {
       "special_attack": [["+2", "user", 100.0, 6]]
     },
-    "formatted_name": "Competitive"
+    "formatted_name": "Competitive",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "compound_eyes": {
     "gen": 3,
@@ -412,7 +554,11 @@
       "accuracy": [[1.3,
           "user", 100.0, 3]]
     },
-    "formatted_name": "Compound Eyes"
+    "formatted_name": "Compound Eyes",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "contrary": {
     "gen": 5,
@@ -424,7 +570,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Contrary"
+    "formatted_name": "Contrary",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "corrosion": {
     "gen": 7,
@@ -436,7 +586,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Corrosion"
+    "formatted_name": "Corrosion",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "cotton_down": {
     "gen": 8,
@@ -450,7 +604,11 @@
     "stat_modifications": {
       "speed": [["-1", "user", 100.0, 8]]
     },
-    "formatted_name": "Cotton Down"
+    "formatted_name": "Cotton Down",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "curious_medicine": {
     "gen": 8,
@@ -464,7 +622,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Curious Medicine"
+    "formatted_name": "Curious Medicine",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "cursed_body": {
     "gen": 5,
@@ -476,7 +638,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Cursed Body"
+    "formatted_name": "Cursed Body",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "cute_charm": {
     "gen": 3,
@@ -492,7 +658,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Cute Charm"
+    "formatted_name": "Cute Charm",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "damp": {
     "gen": 3,
@@ -504,7 +674,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Damp"
+    "formatted_name": "Damp",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "dancer": {
     "gen": 7,
@@ -516,7 +690,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Dancer"
+    "formatted_name": "Dancer",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "dark_aura": {
     "gen": 6,
@@ -530,7 +708,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Dark Aura"
+    "formatted_name": "Dark Aura",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "dauntless_shield": {
     "gen": 8,
@@ -544,7 +726,11 @@
     "stat_modifications": {
       "defense": [["+1", "user", 100.0, 8]]
     },
-    "formatted_name": "Dauntless Shield"
+    "formatted_name": "Dauntless Shield",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "dazzling": {
     "gen": 7,
@@ -558,7 +744,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Dazzling"
+    "formatted_name": "Dazzling",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "defeatist": {
     "gen": 5,
@@ -575,7 +765,11 @@
       "special_attack": [[0.5,
           "user", 100.0, 5]]
     },
-    "formatted_name": "Defeatist"
+    "formatted_name": "Defeatist",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "defiant": {
     "gen": 5,
@@ -589,7 +783,11 @@
     "stat_modifications": {
       "attack": [["+2", "user", 100.0, 5]]
     },
-    "formatted_name": "Defiant"
+    "formatted_name": "Defiant",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "delta_stream": {
     "gen": 6,
@@ -603,7 +801,21 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Delta Stream"
+    "formatted_name": "Delta Stream",
+    "creates_field_state": {
+      "strong_winds": [[true, 0, 6]]
+    },
+    "removes_field_state": {
+      "extremely_harsh_sunlight": [[true, 6]],
+      "heavy_rain": [[true, 6]],
+      "clear_skies": [[true, 6]],
+      "fog": [[true, 6]],
+      "harsh_sunlight": [[true, 6]],
+      "rain": [[true, 6]],
+      "sandstorm": [[true, 6]]
+    },
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "desolate_land": {
     "gen": 6,
@@ -617,7 +829,21 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Desolate Land"
+    "formatted_name": "Desolate Land",
+    "creates_field_state": {
+      "extremely_harsh_sunlight": [[true, 0, 6]]
+    },
+    "removes_field_state": {
+      "heavy_rain": [[true, 6]],
+      "strong_winds": [[true, 6]],
+      "clear_skies": [[true, 6]],
+      "fog": [[true, 6]],
+      "harsh_sunlight": [[true, 6]],
+      "rain": [[true, 6]],
+      "sandstorm": [[true, 6]]
+    },
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "disguise": {
     "gen": 7,
@@ -632,7 +858,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Disguise"
+    "formatted_name": "Disguise",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "download": {
     "gen": 4,
@@ -647,7 +877,11 @@
       "attack": [["+1", "user", 100.0, 4]],
       "special_attack": [["+1", "user", 100.0, 4]]
     },
-    "formatted_name": "Download"
+    "formatted_name": "Download",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "dragons_maw": {
     "gen": 8,
@@ -661,7 +895,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Dragons Maw"
+    "formatted_name": "Dragons Maw",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "drizzle": {
     "gen": 3,
@@ -675,7 +913,19 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Drizzle"
+    "formatted_name": "Drizzle",
+    "creates_field_state": {
+      "rain": [[true, 0, 3], [true, 5, 3]]
+    },
+    "removes_field_state": {
+      "clear_skies": [[true, 3]],
+      "fog": [[true, 4]],
+      "harsh_sunlight": [[true, 3]],
+      "sandstorm": [[true, 3]],
+      "hail": [[true, 3]]
+    },
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "drought": {
     "gen": 3,
@@ -689,7 +939,19 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Drought"
+    "formatted_name": "Drought",
+    "creates_field_state": {
+      "harsh_sunlight": [[true, 0, 3], [true, 5, 3]]
+    },
+    "removes_field_state": {
+      "clear_skies": [[true, 3]],
+      "fog": [[true, 4]],
+      "rain": [[true, 3]],
+      "sandstorm": [[true, 3]],
+      "hail": [[true, 3]]
+    },
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "dry_skin": {
     "gen": 4,
@@ -707,7 +969,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Dry Skin"
+    "formatted_name": "Dry Skin",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "early_bird": {
     "gen": 3,
@@ -721,7 +987,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Early Bird"
+    "formatted_name": "Early Bird",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "effect_spore": {
     "gen": 3,
@@ -739,7 +1009,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Effect Spore"
+    "formatted_name": "Effect Spore",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "electric_surge": {
     "gen": 7,
@@ -753,7 +1027,17 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Electric Surge"
+    "formatted_name": "Electric Surge",
+    "creates_field_state": {
+      "electric_terrain": [[true, 5, 7]]
+    },
+    "removes_field_state": {
+      "grassy_terrain": [[true, 7]],
+      "misty_terrain": [[true, 7]],
+      "psychic_terrain": [[true, 7]]
+    },
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "emergency_exit": {
     "gen": 7,
@@ -767,7 +1051,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Emergency Exit"
+    "formatted_name": "Emergency Exit",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "fairy_aura": {
     "gen": 6,
@@ -781,7 +1069,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Fairy Aura"
+    "formatted_name": "Fairy Aura",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "filter": {
     "gen": 4,
@@ -795,7 +1087,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Filter"
+    "formatted_name": "Filter",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "flame_body": {
     "gen": 3,
@@ -811,7 +1107,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Flame Body"
+    "formatted_name": "Flame Body",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "flare_boost": {
     "gen": 5,
@@ -828,7 +1128,11 @@
       "special_attack": [[1.5,
           "user", 100.0, 5]]
     },
-    "formatted_name": "Flare Boost"
+    "formatted_name": "Flare Boost",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "flash_fire": {
     "gen": 3,
@@ -844,7 +1148,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Flash Fire"
+    "formatted_name": "Flash Fire",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "flower_gift": {
     "gen": 4,
@@ -861,7 +1169,11 @@
       "special_defense": [[1.5,
           "user", 100.0, 4]]
     },
-    "formatted_name": "Flower Gift"
+    "formatted_name": "Flower Gift",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "flower_veil": {
     "gen": 6,
@@ -880,7 +1192,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Flower Veil"
+    "formatted_name": "Flower Veil",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "fluffy": {
     "gen": 7,
@@ -894,7 +1210,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Fluffy"
+    "formatted_name": "Fluffy",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "forecast": {
     "gen": 3,
@@ -908,7 +1228,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Forecast"
+    "formatted_name": "Forecast",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "forewarn": {
     "gen": 4,
@@ -920,7 +1244,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Forewarn"
+    "formatted_name": "Forewarn",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "friend_guard": {
     "gen": 5,
@@ -932,7 +1260,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Friend Guard"
+    "formatted_name": "Friend Guard",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "frisk": {
     "gen": 4,
@@ -946,7 +1278,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Frisk"
+    "formatted_name": "Frisk",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "full_metal_body": {
     "gen": 7,
@@ -960,7 +1296,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Full Metal Body"
+    "formatted_name": "Full Metal Body",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "fur_coat": {
     "gen": 6,
@@ -975,7 +1315,11 @@
       "defense": [[2.0,
           "user", 100.0, 6]]
     },
-    "formatted_name": "Fur Coat"
+    "formatted_name": "Fur Coat",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "gale_wings": {
     "gen": 6,
@@ -989,7 +1333,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Gale Wings"
+    "formatted_name": "Gale Wings",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "galvanize": {
     "gen": 7,
@@ -1004,7 +1352,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Galvanize"
+    "formatted_name": "Galvanize",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "gluttony": {
     "gen": 4,
@@ -1018,7 +1370,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Gluttony"
+    "formatted_name": "Gluttony",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "gooey": {
     "gen": 6,
@@ -1034,7 +1390,11 @@
     "stat_modifications": {
       "speed": [["-1", "user", 100.0, 6]]
     },
-    "formatted_name": "Gooey"
+    "formatted_name": "Gooey",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "gorilla_tactics": {
     "gen": 8,
@@ -1049,7 +1409,11 @@
       "attack": [[1.5,
           "user", 100.0, 8]]
     },
-    "formatted_name": "Gorilla Tactics"
+    "formatted_name": "Gorilla Tactics",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "grass_pelt": {
     "gen": 6,
@@ -1064,7 +1428,11 @@
       "defense": [[1.5,
           "user", 100.0, 6]]
     },
-    "formatted_name": "Grass Pelt"
+    "formatted_name": "Grass Pelt",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "grassy_surge": {
     "gen": 7,
@@ -1078,7 +1446,17 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Grassy Surge"
+    "formatted_name": "Grassy Surge",
+    "creates_field_state": {
+      "grassy_terrain": [[true, 5, 7]]
+    },
+    "removes_field_state": {
+      "electric_terrain": [[true, 7]],
+      "misty_terrain": [[true, 7]],
+      "psychic_terrain": [[true, 7]]
+    },
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "grim_neigh": {
     "gen": 8,
@@ -1090,7 +1468,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Grim Neigh"
+    "formatted_name": "Grim Neigh",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "gulp_missile": {
     "gen": 8,
@@ -1102,7 +1484,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Gulp Missile"
+    "formatted_name": "Gulp Missile",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "guts": {
     "gen": 3,
@@ -1117,7 +1503,11 @@
       "attack": [[1.5,
           "user", 100.0, 3]]
     },
-    "formatted_name": "Guts"
+    "formatted_name": "Guts",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "harvest": {
     "gen": 5,
@@ -1131,7 +1521,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Harvest"
+    "formatted_name": "Harvest",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "healer": {
     "gen": 5,
@@ -1143,7 +1537,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Healer"
+    "formatted_name": "Healer",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "heatproof": {
     "gen": 4,
@@ -1157,7 +1555,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Heatproof"
+    "formatted_name": "Heatproof",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "heavy_metal": {
     "gen": 5,
@@ -1171,7 +1573,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Heavy Metal"
+    "formatted_name": "Heavy Metal",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "honey_gather": {
     "gen": 4,
@@ -1183,7 +1589,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Honey Gather"
+    "formatted_name": "Honey Gather",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "huge_power": {
     "gen": 3,
@@ -1198,7 +1608,11 @@
       "attack": [[2.0,
           "user", 100.0, 3]]
     },
-    "formatted_name": "Huge Power"
+    "formatted_name": "Huge Power",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "hunger_switch": {
     "gen": 8,
@@ -1212,7 +1626,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Hunger Switch"
+    "formatted_name": "Hunger Switch",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "hustle": {
     "gen": 3,
@@ -1229,7 +1647,11 @@
       "accuracy": [[0.8,
           "user", 100.0, 3]]
     },
-    "formatted_name": "Hustle"
+    "formatted_name": "Hustle",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "hydration": {
     "gen": 4,
@@ -1248,7 +1670,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Hydration"
+    "formatted_name": "Hydration",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "hyper_cutter": {
     "gen": 3,
@@ -1260,7 +1686,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Hyper Cutter"
+    "formatted_name": "Hyper Cutter",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "ice_body": {
     "gen": 4,
@@ -1274,7 +1704,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Ice Body"
+    "formatted_name": "Ice Body",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "ice_face": {
     "gen": 8,
@@ -1288,7 +1722,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Ice Face"
+    "formatted_name": "Ice Face",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "ice_scales": {
     "gen": 8,
@@ -1303,7 +1741,11 @@
       "special_defense": [[0.5,
           "user", 100.0, 8]]
     },
-    "formatted_name": "Ice Scales"
+    "formatted_name": "Ice Scales",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "illuminate": {
     "gen": 3,
@@ -1315,7 +1757,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Illuminate"
+    "formatted_name": "Illuminate",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "illusion": {
     "gen": 5,
@@ -1327,7 +1773,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Illusion"
+    "formatted_name": "Illusion",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "immunity": {
     "gen": 3,
@@ -1342,7 +1792,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Immunity"
+    "formatted_name": "Immunity",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "imposter": {
     "gen": 5,
@@ -1356,7 +1810,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Imposter"
+    "formatted_name": "Imposter",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "infiltrator": {
     "gen": 5,
@@ -1368,7 +1826,12 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Infiltrator"
+    "formatted_name": "Infiltrator",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {},
+    "ignores_field_state": [[true, 7]]
   },
   "innards_out": {
     "gen": 7,
@@ -1380,7 +1843,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Innards Out"
+    "formatted_name": "Innards Out",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "inner_focus": {
     "gen": 3,
@@ -1394,7 +1861,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Inner Focus"
+    "formatted_name": "Inner Focus",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "insomnia": {
     "gen": 3,
@@ -1408,7 +1879,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Insomnia"
+    "formatted_name": "Insomnia",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "intimidate": {
     "gen": 3,
@@ -1422,7 +1897,11 @@
     "stat_modifications": {
       "attack": [["-1", "all_foes", 100.0, 3]]
     },
-    "formatted_name": "Intimidate"
+    "formatted_name": "Intimidate",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "intrepid_sword": {
     "gen": 8,
@@ -1436,7 +1915,11 @@
     "stat_modifications": {
       "attack": [["+1", "user", 100.0, 8]]
     },
-    "formatted_name": "Intrepid Sword"
+    "formatted_name": "Intrepid Sword",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "iron_barbs": {
     "gen": 5,
@@ -1450,7 +1933,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Iron Barbs"
+    "formatted_name": "Iron Barbs",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "iron_fist": {
     "gen": 4,
@@ -1464,7 +1951,11 @@
     },
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Iron Fist"
+    "formatted_name": "Iron Fist",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "justified": {
     "gen": 5,
@@ -1478,7 +1969,11 @@
     "stat_modifications": {
       "attack": [["+1", "user", 100.0, 5]]
     },
-    "formatted_name": "Justified"
+    "formatted_name": "Justified",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "keen_eye": {
     "gen": 3,
@@ -1490,7 +1985,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Keen Eye"
+    "formatted_name": "Keen Eye",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "klutz": {
     "gen": 4,
@@ -1504,7 +2003,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Klutz"
+    "formatted_name": "Klutz",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "leaf_guard": {
     "gen": 4,
@@ -1516,7 +2019,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Leaf Guard"
+    "formatted_name": "Leaf Guard",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "levitate": {
     "gen": 3,
@@ -1530,7 +2037,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Levitate"
+    "formatted_name": "Levitate",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "libero": {
     "gen": 8,
@@ -1544,7 +2055,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Libero"
+    "formatted_name": "Libero",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "light_metal": {
     "gen": 5,
@@ -1558,7 +2073,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Light Metal"
+    "formatted_name": "Light Metal",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "lightning_rod": {
     "gen": 3,
@@ -1575,7 +2094,11 @@
       "special_attack": [["+0", "user", 100.0, 3], ["+1",
           "user", 100.0, 5]]
     },
-    "formatted_name": "Lightning Rod"
+    "formatted_name": "Lightning Rod",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "limber": {
     "gen": 3,
@@ -1589,7 +2112,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Limber"
+    "formatted_name": "Limber",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "liquid_ooze": {
     "gen": 3,
@@ -1601,7 +2128,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Liquid Ooze"
+    "formatted_name": "Liquid Ooze",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "liquid_voice": {
     "gen": 7,
@@ -1615,7 +2146,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Liquid Voice"
+    "formatted_name": "Liquid Voice",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "long_reach": {
     "gen": 7,
@@ -1629,7 +2164,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Long Reach"
+    "formatted_name": "Long Reach",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "magic_bounce": {
     "gen": 5,
@@ -1641,7 +2180,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Magic Bounce"
+    "formatted_name": "Magic Bounce",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "magic_guard": {
     "gen": 4,
@@ -1653,7 +2196,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Magic Guard"
+    "formatted_name": "Magic Guard",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "magician": {
     "gen": 6,
@@ -1667,7 +2214,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Magician"
+    "formatted_name": "Magician",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "magma_armor": {
     "gen": 3,
@@ -1681,7 +2232,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Magma Armor"
+    "formatted_name": "Magma Armor",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "magnet_pull": {
     "gen": 3,
@@ -1695,7 +2250,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Magnet Pull"
+    "formatted_name": "Magnet Pull",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "marvel_scale": {
     "gen": 3,
@@ -1710,7 +2269,11 @@
       "defense": [[1.5,
           "user", 100.0, 3]]
     },
-    "formatted_name": "Marvel Scale"
+    "formatted_name": "Marvel Scale",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "mega_launcher": {
     "gen": 6,
@@ -1724,7 +2287,11 @@
     },
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Mega Launcher"
+    "formatted_name": "Mega Launcher",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "merciless": {
     "gen": 7,
@@ -1736,7 +2303,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Merciless"
+    "formatted_name": "Merciless",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "mimicry": {
     "gen": 8,
@@ -1750,7 +2321,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Mimicry"
+    "formatted_name": "Mimicry",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "minus": {
     "gen": 3,
@@ -1765,7 +2340,11 @@
       "special_attack": [[1.5,
           "user", 100.0, 3]]
     },
-    "formatted_name": "Minus"
+    "formatted_name": "Minus",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "mirror_armor": {
     "gen": 8,
@@ -1777,7 +2356,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Mirror Armor"
+    "formatted_name": "Mirror Armor",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "misty_surge": {
     "gen": 7,
@@ -1791,7 +2374,17 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Misty Surge"
+    "formatted_name": "Misty Surge",
+    "creates_field_state": {
+      "misty_terrain": [[true, 5, 7]]
+    },
+    "removes_field_state": {
+      "electric_terrain": [[true, 7]],
+      "grassy_terrain": [[true, 7]],
+      "psychic_terrain": [[true, 7]]
+    },
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "mold_breaker": {
     "gen": 4,
@@ -1805,7 +2398,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Mold Breaker"
+    "formatted_name": "Mold Breaker",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "moody": {
     "gen": 5,
@@ -1846,7 +2443,11 @@
             "user", 0.0, 8]]
       ]
     },
-    "formatted_name": "Moody"
+    "formatted_name": "Moody",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "motor_drive": {
     "gen": 4,
@@ -1862,7 +2463,11 @@
     "stat_modifications": {
       "speed": [["+1", "user", 100.0, 4]]
     },
-    "formatted_name": "Motor Drive"
+    "formatted_name": "Motor Drive",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "moxie": {
     "gen": 5,
@@ -1876,7 +2481,11 @@
     "stat_modifications": {
       "attack": [["+1", "user", 100.0, 5]]
     },
-    "formatted_name": "Moxie"
+    "formatted_name": "Moxie",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "multiscale": {
     "gen": 5,
@@ -1890,7 +2499,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Multiscale"
+    "formatted_name": "Multiscale",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "multitype": {
     "gen": 4,
@@ -1905,7 +2518,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Multitype"
+    "formatted_name": "Multitype",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "mummy": {
     "gen": 5,
@@ -1919,7 +2536,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Mummy"
+    "formatted_name": "Mummy",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "natural_cure": {
     "gen": 3,
@@ -1938,7 +2559,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Natural Cure"
+    "formatted_name": "Natural Cure",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "neuroforce": {
     "gen": 7,
@@ -1952,7 +2577,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Neuroforce"
+    "formatted_name": "Neuroforce",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "neutralizing_gas": {
     "gen": 8,
@@ -1966,7 +2595,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Neutralizing Gas"
+    "formatted_name": "Neutralizing Gas",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "no_guard": {
     "gen": 4,
@@ -1980,7 +2613,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "No Guard"
+    "formatted_name": "No Guard",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "normalize": {
     "gen": 4,
@@ -1995,7 +2632,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Normalize"
+    "formatted_name": "Normalize",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "oblivious": {
     "gen": 3,
@@ -2010,7 +2651,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Oblivious"
+    "formatted_name": "Oblivious",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "overcoat": {
     "gen": 5,
@@ -2022,7 +2667,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Overcoat"
+    "formatted_name": "Overcoat",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "overgrow": {
     "gen": 3,
@@ -2036,7 +2685,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Overgrow"
+    "formatted_name": "Overgrow",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "own_tempo": {
     "gen": 3,
@@ -2050,7 +2703,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Own Tempo"
+    "formatted_name": "Own Tempo",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "parental_bond": {
     "gen": 6,
@@ -2062,7 +2719,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Parental Bond"
+    "formatted_name": "Parental Bond",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "pastel_veil": {
     "gen": 8,
@@ -2077,7 +2738,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Pastel Veil"
+    "formatted_name": "Pastel Veil",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "perish_body": {
     "gen": 8,
@@ -2093,7 +2758,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Perish Body"
+    "formatted_name": "Perish Body",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "pickpocket": {
     "gen": 5,
@@ -2108,7 +2777,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Pickpocket"
+    "formatted_name": "Pickpocket",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "pickup": {
     "gen": 3,
@@ -2122,7 +2795,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Pickup"
+    "formatted_name": "Pickup",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "pixilate": {
     "gen": 6,
@@ -2137,7 +2814,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Pixilate"
+    "formatted_name": "Pixilate",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "plus": {
     "gen": 3,
@@ -2152,7 +2833,11 @@
       "special_attack": [[1.5,
           "user", 100.0, 3]]
     },
-    "formatted_name": "Plus"
+    "formatted_name": "Plus",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "poison_heal": {
     "gen": 4,
@@ -2168,7 +2853,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Poison Heal"
+    "formatted_name": "Poison Heal",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "poison_point": {
     "gen": 3,
@@ -2184,7 +2873,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Poison Point"
+    "formatted_name": "Poison Point",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "poison_touch": {
     "gen": 5,
@@ -2198,7 +2891,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Poison Touch"
+    "formatted_name": "Poison Touch",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "power_construct": {
     "gen": 7,
@@ -2212,7 +2909,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Power Construct"
+    "formatted_name": "Power Construct",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "power_of_alchemy": {
     "gen": 7,
@@ -2224,7 +2925,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Power Of Alchemy"
+    "formatted_name": "Power Of Alchemy",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "power_spot": {
     "gen": 8,
@@ -2236,7 +2941,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Power Spot"
+    "formatted_name": "Power Spot",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "prankster": {
     "gen": 5,
@@ -2250,7 +2959,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Prankster"
+    "formatted_name": "Prankster",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "pressure": {
     "gen": 3,
@@ -2262,7 +2975,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Pressure"
+    "formatted_name": "Pressure",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "primordial_sea": {
     "gen": 6,
@@ -2276,7 +2993,21 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Primordial Sea"
+    "formatted_name": "Primordial Sea",
+    "creates_field_state": {
+      "heavy_rain": [[true, 0, 6]]
+    },
+    "removes_field_state": {
+      "extremely_harsh_sunlight": [[true, 6]],
+      "strong_winds": [[true, 6]],
+      "clear_skies": [[true, 6]],
+      "fog": [[true, 6]],
+      "harsh_sunlight": [[true, 6]],
+      "rain": [[true, 6]],
+      "sandstorm": [[true, 6]]
+    },
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "prism_armor": {
     "gen": 7,
@@ -2290,7 +3021,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Prism Armor"
+    "formatted_name": "Prism Armor",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "propeller_tail": {
     "gen": 8,
@@ -2302,7 +3037,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Propeller Tail"
+    "formatted_name": "Propeller Tail",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "protean": {
     "gen": 6,
@@ -2316,7 +3055,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Protean"
+    "formatted_name": "Protean",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "psychic_surge": {
     "gen": 7,
@@ -2330,7 +3073,17 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Psychic Surge"
+    "formatted_name": "Psychic Surge",
+    "creates_field_state": {
+      "psychic_terrain": [[true, 5, 7]]
+    },
+    "removes_field_state": {
+      "electric_terrain": [[true, 7]],
+      "grassy_terrain": [[true, 7]],
+      "misty_terrain": [[true, 7]]
+    },
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "punk_rock": {
     "gen": 8,
@@ -2344,7 +3097,11 @@
     },
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Punk Rock"
+    "formatted_name": "Punk Rock",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "pure_power": {
     "gen": 3,
@@ -2359,7 +3116,11 @@
       "attack": [[2.0,
           "user", 100.0, 3]]
     },
-    "formatted_name": "Pure Power"
+    "formatted_name": "Pure Power",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "queenly_majesty": {
     "gen": 7,
@@ -2373,7 +3134,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Queenly Majesty"
+    "formatted_name": "Queenly Majesty",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "quick_draw": {
     "gen": 8,
@@ -2387,7 +3152,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Quick Draw"
+    "formatted_name": "Quick Draw",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "quick_feet": {
     "gen": 4,
@@ -2402,7 +3171,11 @@
       "speed": [[1.5,
           "user", 100.0, 4]]
     },
-    "formatted_name": "Quick Feet"
+    "formatted_name": "Quick Feet",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "rain_dish": {
     "gen": 3,
@@ -2416,7 +3189,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Rain Dish"
+    "formatted_name": "Rain Dish",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "rattled": {
     "gen": 5,
@@ -2430,7 +3207,11 @@
     "stat_modifications": {
       "speed": [["+1", "user", 100.0, 5]]
     },
-    "formatted_name": "Rattled"
+    "formatted_name": "Rattled",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "receiver": {
     "gen": 7,
@@ -2444,7 +3225,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Receiver"
+    "formatted_name": "Receiver",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "reckless": {
     "gen": 4,
@@ -2458,7 +3243,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Reckless"
+    "formatted_name": "Reckless",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "refrigerate": {
     "gen": 6,
@@ -2473,7 +3262,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Refrigerate"
+    "formatted_name": "Refrigerate",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "regenerator": {
     "gen": 5,
@@ -2487,7 +3280,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Regenerator"
+    "formatted_name": "Regenerator",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "ripen": {
     "gen": 8,
@@ -2501,7 +3298,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Ripen"
+    "formatted_name": "Ripen",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "rivalry": {
     "gen": 4,
@@ -2513,7 +3314,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Rivalry"
+    "formatted_name": "Rivalry",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "rks_system": {
     "gen": 7,
@@ -2528,7 +3333,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "RKS System"
+    "formatted_name": "RKS System",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "rock_head": {
     "gen": 3,
@@ -2540,7 +3349,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Rock Head"
+    "formatted_name": "Rock Head",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "rough_skin": {
     "gen": 3,
@@ -2554,7 +3367,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Rough Skin"
+    "formatted_name": "Rough Skin",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "run_away": {
     "gen": 3,
@@ -2566,7 +3383,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Run Away"
+    "formatted_name": "Run Away",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "sand_force": {
     "gen": 5,
@@ -2578,7 +3399,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Sand Force"
+    "formatted_name": "Sand Force",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "sand_rush": {
     "gen": 5,
@@ -2593,7 +3418,11 @@
       "speed": [[2.0,
           "user", 100.0, 5]]
     },
-    "formatted_name": "Sand Rush"
+    "formatted_name": "Sand Rush",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "sand_spit": {
     "gen": 8,
@@ -2607,7 +3436,19 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Sand Spit"
+    "formatted_name": "Sand Spit",
+    "creates_field_state": {
+      "sandstorm": [[true, 5, 8]]
+    },
+    "removes_field_state": {
+      "clear_skies": [[true, 8]],
+      "fog": [[true, 8]],
+      "harsh_sunlight": [[true, 8]],
+      "rain": [[true, 8]],
+      "hail": [[true, 8]]
+    },
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "sand_stream": {
     "gen": 3,
@@ -2621,7 +3462,19 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Sand Stream"
+    "formatted_name": "Sand Stream",
+    "creates_field_state": {
+      "sandstorm": [[true, 0, 3], [true, 5, 3]]
+    },
+    "removes_field_state": {
+      "clear_skies": [[true, 3]],
+      "fog": [[true, 4]],
+      "harsh_sunlight": [[true, 3]],
+      "rain": [[true, 3]],
+      "hail": [[true, 3]]
+    },
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "sand_veil": {
     "gen": 3,
@@ -2636,7 +3489,11 @@
       "evasion": [[1.25,
           "user", 100.0, 3]]
     },
-    "formatted_name": "Sand Veil"
+    "formatted_name": "Sand Veil",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "sap_sipper": {
     "gen": 5,
@@ -2652,7 +3509,11 @@
     "stat_modifications": {
       "attack": [["+1", "user", 100.0, 5]]
     },
-    "formatted_name": "Sap Sipper"
+    "formatted_name": "Sap Sipper",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "schooling": {
     "gen": 7,
@@ -2666,7 +3527,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Schooling"
+    "formatted_name": "Schooling",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "scrappy": {
     "gen": 4,
@@ -2680,7 +3545,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Scrappy"
+    "formatted_name": "Scrappy",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "screen_cleaner": {
     "gen": 8,
@@ -2692,7 +3561,15 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Screen Cleaner"
+    "formatted_name": "Screen Cleaner",
+    "creates_field_state": {},
+    "removes_field_state": {
+      "reflect": [[true, 8]],
+      "light_screen": [[true, 8]],
+      "aurora_veil": [[true, 8]]
+    },
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "serene_grace": {
     "gen": 3,
@@ -2704,7 +3581,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Serene Grace"
+    "formatted_name": "Serene Grace",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "shadow_shield": {
     "gen": 7,
@@ -2718,7 +3599,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Shadow Shield"
+    "formatted_name": "Shadow Shield",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "shadow_tag": {
     "gen": 3,
@@ -2734,7 +3619,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Shadow Tag"
+    "formatted_name": "Shadow Tag",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "shed_skin": {
     "gen": 3,
@@ -2753,7 +3642,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Shed Skin"
+    "formatted_name": "Shed Skin",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "sheer_force": {
     "gen": 5,
@@ -2767,7 +3660,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Sheer Force"
+    "formatted_name": "Sheer Force",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "shell_armor": {
     "gen": 3,
@@ -2781,7 +3678,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Shell Armor"
+    "formatted_name": "Shell Armor",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "shield_dust": {
     "gen": 3,
@@ -2793,7 +3694,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Shield Dust"
+    "formatted_name": "Shield Dust",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "shields_down": {
     "gen": 7,
@@ -2807,7 +3712,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Shields Down"
+    "formatted_name": "Shields Down",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "simple": {
     "gen": 4,
@@ -2819,7 +3728,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Simple"
+    "formatted_name": "Simple",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "skill_link": {
     "gen": 4,
@@ -2831,7 +3744,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Skill Link"
+    "formatted_name": "Skill Link",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "slow_start": {
     "gen": 4,
@@ -2848,7 +3765,11 @@
       "speed": [[0.5,
           "user", 100.0, 4]]
     },
-    "formatted_name": "Slow Start"
+    "formatted_name": "Slow Start",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "slush_rush": {
     "gen": 7,
@@ -2863,7 +3784,11 @@
       "speed": [[2.0,
           "user", 100.0, 7]]
     },
-    "formatted_name": "Slush Rush"
+    "formatted_name": "Slush Rush",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "sniper": {
     "gen": 4,
@@ -2875,7 +3800,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Sniper"
+    "formatted_name": "Sniper",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "snow_cloak": {
     "gen": 4,
@@ -2890,7 +3819,11 @@
       "evasion": [[1.25,
           "user", 100.0, 4]]
     },
-    "formatted_name": "Snow Cloak"
+    "formatted_name": "Snow Cloak",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "snow_warning": {
     "gen": 4,
@@ -2904,7 +3837,19 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Snow Warning"
+    "formatted_name": "Snow Warning",
+    "creates_field_state": {
+      "hail": [[true, 0, 4], [true, 5, 4]]
+    },
+    "removes_field_state": {
+      "clear_skies": [[true, 4]],
+      "fog": [[true, 4]],
+      "harsh_sunlight": [[true, 4]],
+      "rain": [[true, 4]],
+      "sandstorm": [[true, 4]]
+    },
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "solar_power": {
     "gen": 4,
@@ -2921,7 +3866,11 @@
       "special_attack": [[1.5,
           "user", 100.0, 4]]
     },
-    "formatted_name": "Solar Power"
+    "formatted_name": "Solar Power",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "solid_rock": {
     "gen": 4,
@@ -2935,7 +3884,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Solid Rock"
+    "formatted_name": "Solid Rock",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "soul_heart": {
     "gen": 7,
@@ -2949,7 +3902,11 @@
     "stat_modifications": {
       "special_attack": [["+1", "user", 100.0, 7]]
     },
-    "formatted_name": "Soul-Heart"
+    "formatted_name": "Soul-Heart",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "soundproof": {
     "gen": 3,
@@ -2963,7 +3920,11 @@
       "sound": [[0.0, 3]]
     },
     "stat_modifications": {},
-    "formatted_name": "Soundproof"
+    "formatted_name": "Soundproof",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "speed_boost": {
     "gen": 3,
@@ -2977,7 +3938,11 @@
     "stat_modifications": {
       "speed": [["+1", "user", 100.0, 3]]
     },
-    "formatted_name": "Speed Boost"
+    "formatted_name": "Speed Boost",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "stakeout": {
     "gen": 7,
@@ -2989,7 +3954,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Stakeout"
+    "formatted_name": "Stakeout",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "stall": {
     "gen": 4,
@@ -3003,7 +3972,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Stall"
+    "formatted_name": "Stall",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "stalwart": {
     "gen": 8,
@@ -3015,7 +3988,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Stalwart"
+    "formatted_name": "Stalwart",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "stamina": {
     "gen": 7,
@@ -3029,7 +4006,11 @@
     "stat_modifications": {
       "defense": [["+1", "user", 100.0, 7]]
     },
-    "formatted_name": "Stamina"
+    "formatted_name": "Stamina",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "stance_change": {
     "gen": 6,
@@ -3043,7 +4024,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Stance Change"
+    "formatted_name": "Stance Change",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "static": {
     "gen": 3,
@@ -3059,7 +4044,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Static"
+    "formatted_name": "Static",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "steadfast": {
     "gen": 4,
@@ -3073,7 +4062,11 @@
     "stat_modifications": {
       "speed": [["+1", "user", 100.0, 4]]
     },
-    "formatted_name": "Steadfast"
+    "formatted_name": "Steadfast",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "steam_engine": {
     "gen": 8,
@@ -3087,7 +4080,11 @@
     "stat_modifications": {
       "speed": [["+6", "user", 100.0, 8]]
     },
-    "formatted_name": "Steam Engine"
+    "formatted_name": "Steam Engine",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "steelworker": {
     "gen": 7,
@@ -3101,7 +4098,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Steelworker"
+    "formatted_name": "Steelworker",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "steely_spirit": {
     "gen": 8,
@@ -3115,7 +4116,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Steely Spirit"
+    "formatted_name": "Steely Spirit",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "stench": {
     "gen": 3,
@@ -3129,7 +4134,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Stench"
+    "formatted_name": "Stench",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "sticky_hold": {
     "gen": 3,
@@ -3143,7 +4152,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Sticky Hold"
+    "formatted_name": "Sticky Hold",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "storm_drain": {
     "gen": 4,
@@ -3160,7 +4173,11 @@
       "special_attack": [["+0", "user", 100.0, 4], ["+1",
           "user", 100.0, 5]]
     },
-    "formatted_name": "Storm Drain"
+    "formatted_name": "Storm Drain",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "strong_jaw": {
     "gen": 6,
@@ -3174,7 +4191,11 @@
     },
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Strong Jaw"
+    "formatted_name": "Strong Jaw",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "sturdy": {
     "gen": 3,
@@ -3188,7 +4209,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Sturdy"
+    "formatted_name": "Sturdy",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "suction_cups": {
     "gen": 3,
@@ -3200,7 +4225,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Suction Cups"
+    "formatted_name": "Suction Cups",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "super_luck": {
     "gen": 4,
@@ -3212,7 +4241,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Super Luck"
+    "formatted_name": "Super Luck",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "surge_surfer": {
     "gen": 7,
@@ -3227,7 +4260,11 @@
       "speed": [[2.0,
           "user", 100.0, 7]]
     },
-    "formatted_name": "Surge Surfer"
+    "formatted_name": "Surge Surfer",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "swarm": {
     "gen": 3,
@@ -3241,7 +4278,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Swarm"
+    "formatted_name": "Swarm",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "sweet_veil": {
     "gen": 6,
@@ -3260,7 +4301,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Sweet Veil"
+    "formatted_name": "Sweet Veil",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "swift_swim": {
     "gen": 3,
@@ -3275,7 +4320,11 @@
       "speed": [[2.0,
           "user", 100.0, 3]]
     },
-    "formatted_name": "Swift Swim"
+    "formatted_name": "Swift Swim",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "symbiosis": {
     "gen": 6,
@@ -3289,7 +4338,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Symbiosis"
+    "formatted_name": "Symbiosis",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "synchronize": {
     "gen": 3,
@@ -3306,7 +4359,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Synchronize"
+    "formatted_name": "Synchronize",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "tangled_feet": {
     "gen": 4,
@@ -3321,7 +4378,11 @@
       "evasion": [[2.0,
           "user", 100.0, 4]]
     },
-    "formatted_name": "Tangled Feet"
+    "formatted_name": "Tangled Feet",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "tangling_hair": {
     "gen": 7,
@@ -3337,7 +4398,11 @@
     "stat_modifications": {
       "speed": [["-1", "user", 100.0, 7]]
     },
-    "formatted_name": "Tangling Hair"
+    "formatted_name": "Tangling Hair",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "technician": {
     "gen": 4,
@@ -3351,7 +4416,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Technician"
+    "formatted_name": "Technician",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "telepathy": {
     "gen": 5,
@@ -3363,7 +4432,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Telepathy"
+    "formatted_name": "Telepathy",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "teravolt": {
     "gen": 5,
@@ -3377,7 +4450,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Teravolt"
+    "formatted_name": "Teravolt",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "thick_fat": {
     "gen": 3,
@@ -3392,7 +4469,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Thick Fat"
+    "formatted_name": "Thick Fat",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "tinted_lens": {
     "gen": 4,
@@ -3406,7 +4487,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Tinted Lens"
+    "formatted_name": "Tinted Lens",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "torrent": {
     "gen": 3,
@@ -3420,7 +4505,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Torrent"
+    "formatted_name": "Torrent",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "tough_claws": {
     "gen": 6,
@@ -3434,7 +4523,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Tough Claws"
+    "formatted_name": "Tough Claws",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "toxic_boost": {
     "gen": 5,
@@ -3446,7 +4539,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Toxic Boost"
+    "formatted_name": "Toxic Boost",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "trace": {
     "gen": 3,
@@ -3458,7 +4555,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Trace"
+    "formatted_name": "Trace",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "transistor": {
     "gen": 8,
@@ -3472,7 +4573,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Transistor"
+    "formatted_name": "Transistor",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "triage": {
     "gen": 7,
@@ -3486,7 +4591,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Triage"
+    "formatted_name": "Triage",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "truant": {
     "gen": 3,
@@ -3500,7 +4609,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Truant"
+    "formatted_name": "Truant",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "turboblaze": {
     "gen": 5,
@@ -3514,7 +4627,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Turboblaze"
+    "formatted_name": "Turboblaze",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "unaware": {
     "gen": 4,
@@ -3526,7 +4643,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Unaware"
+    "formatted_name": "Unaware",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "unburden": {
     "gen": 4,
@@ -3543,7 +4664,11 @@
       "speed": [[2.0,
           "user", 100.0, 4]]
     },
-    "formatted_name": "Unburden"
+    "formatted_name": "Unburden",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "unnerve": {
     "gen": 5,
@@ -3557,7 +4682,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Unnerve"
+    "formatted_name": "Unnerve",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "unseen_fist": {
     "gen": 8,
@@ -3571,7 +4700,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Unseen Fist"
+    "formatted_name": "Unseen Fist",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "victory_star": {
     "gen": 5,
@@ -3586,7 +4719,11 @@
       "accuracy": [[1.1,
           "user", 100.0, 5]]
     },
-    "formatted_name": "Victory Star"
+    "formatted_name": "Victory Star",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "vital_spirit": {
     "gen": 3,
@@ -3600,7 +4737,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Vital Spirit"
+    "formatted_name": "Vital Spirit",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "volt_absorb": {
     "gen": 3,
@@ -3616,7 +4757,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Volt Absorb"
+    "formatted_name": "Volt Absorb",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "wandering_spirit": {
     "gen": 8,
@@ -3630,7 +4775,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Wandering Spirit"
+    "formatted_name": "Wandering Spirit",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "water_absorb": {
     "gen": 3,
@@ -3646,7 +4795,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Water Absorb"
+    "formatted_name": "Water Absorb",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "water_bubble": {
     "gen": 7,
@@ -3660,7 +4813,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Water Bubble"
+    "formatted_name": "Water Bubble",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "water_compaction": {
     "gen": 7,
@@ -3674,7 +4831,11 @@
     "stat_modifications": {
       "defense": [["+2", "user", 100.0, 7]]
     },
-    "formatted_name": "Water Compaction"
+    "formatted_name": "Water Compaction",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "water_veil": {
     "gen": 3,
@@ -3688,7 +4849,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Water Veil"
+    "formatted_name": "Water Veil",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "weak_armor": {
     "gen": 5,
@@ -3702,7 +4867,11 @@
     "stat_modifications": {
       "speed": [["+1", "user", 100.0, 5]]
     },
-    "formatted_name": "Weak Armor"
+    "formatted_name": "Weak Armor",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "white_smoke": {
     "gen": 3,
@@ -3716,7 +4885,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "White Smoke"
+    "formatted_name": "White Smoke",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "wimp_out": {
     "gen": 7,
@@ -3730,7 +4903,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Wimp Out"
+    "formatted_name": "Wimp Out",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "wonder_guard": {
     "gen": 3,
@@ -3744,7 +4921,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Wonder Guard"
+    "formatted_name": "Wonder Guard",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "wonder_skin": {
     "gen": 5,
@@ -3756,7 +4937,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Wonder Skin"
+    "formatted_name": "Wonder Skin",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "zen_mode": {
     "gen": 5,
@@ -3770,7 +4955,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "Zen Mode"
+    "formatted_name": "Zen Mode",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "as_one_glastrier": {
     "gen": 8,
@@ -3784,7 +4973,11 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "As One (Glastrier)"
+    "formatted_name": "As One (Glastrier)",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   },
   "as_one_spectrier": {
     "gen": 8,
@@ -3798,6 +4991,10 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {},
-    "formatted_name": "As One (Spectrier)"
+    "formatted_name": "As One (Spectrier)",
+    "creates_field_state": {},
+    "removes_field_state": {},
+    "prevents_field_state": {},
+    "suppresses_field_state": {}
   }
 }

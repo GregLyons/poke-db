@@ -5,50 +5,50 @@ from utils import fieldStateList
 def makeFieldStateDict():
   fieldStates = [
     # other
-    ['mist', 1, 'other', 0],
-    ['safeguard', 1, 'other', 0],
-    ['tailwind', 4, 'other', 0],
-    ['vine_lash', 8, 'other', 16.67],
-    ['wildfire', 8, 'other', 16.67],
-    ['cannonade', 8, 'other', 16.67],
-    ['volcalith', 8, 'other', 16.67],
+    ['mist', 1, 'other', 0, False],
+    ['safeguard', 1, 'other', 0, False],
+    ['tailwind', 4, 'other', 0, False],
+    ['vine_lash', 8, 'other', 16.67, False],
+    ['wildfire', 8, 'other', 16.67, False],
+    ['cannonade', 8, 'other', 16.67, False],
+    ['volcalith', 8, 'other', 16.67, False],
     # screens
-    ['reflect', 1, 'screen', 0],
-    ['light_screen', 1, 'screen', 0],
-    ['aurora_veil', 7, 'screen', 0],
+    ['reflect', 1, 'screen', 0, False],
+    ['light_screen', 1, 'screen', 0, False],
+    ['aurora_veil', 7, 'screen', 0, False],
     # pledges
-    ['rainbow', 5, 'pledge', 0],
-    ['sea_of_fire', 5, 'pledge', 12.5],
-    ['swamp', 5, 'pledge', 0],
+    ['rainbow', 5, 'pledge', 0, False],
+    ['sea_of_fire', 5, 'pledge', 12.5, False],
+    ['swamp', 5, 'pledge', 0, False],
     # entry hazards
-    ['stealth_rock', 4, 'entry_hazard', 12.5],
-    ['spikes', 2, 'entry_hazard', 12.5],
-    ['sticky_web', 6, 'entry_hazard', 0],
-    ['toxic_spikes', 4, 'entry_hazard', 12.5],
-    ['sharp_steel', 8, 'entry_hazard', 12.5],
+    ['stealth_rock', 4, 'entry_hazard', 12.5, False],
+    ['spikes', 2, 'entry_hazard', 12.5, True],
+    ['sticky_web', 6, 'entry_hazard', 0, True],
+    ['toxic_spikes', 4, 'entry_hazard', 12.5, True],
+    ['sharp_steel', 8, 'entry_hazard', 12.5, False],
     # weather
-    ['clear_skies', 1, 'weather', 0],
-    ['harsh_sunlight', 2, 'weather', 0],
-    ['extremely_harsh_sunlight', 6, 'weather', 0],
-    ['rain', 2, 'weather', 0],
-    ['heavy_rain', 6, 'weather', 0],
-    ['sandstorm', 2, 'weather', 6.25],
-    ['hail', 3, 'weather', 6.25],
-    ['fog', 4, 'weather', 0],
-    ['strong_winds', 6, 'weather', 0],
+    ['clear_skies', 1, 'weather', 0, False],
+    ['harsh_sunlight', 2, 'weather', 0, False],
+    ['extremely_harsh_sunlight', 6, 'weather', 0, False],
+    ['rain', 2, 'weather', 0, False],
+    ['heavy_rain', 6, 'weather', 0, False],
+    ['sandstorm', 2, 'weather', 6.25, False],
+    ['hail', 3, 'weather', 6.25, False],
+    ['fog', 4, 'weather', 0, False],
+    ['strong_winds', 6, 'weather', 0, False],
     # terrain
-    ['electric_terrain', 6, 'terrain', 0],
-    ['grassy_terrain', 6, 'terrain', 0],
-    ['misty_terrain', 6, 'terrain', 0],
-    ['psychic_terrain', 6, 'terrain', 0],
+    ['electric_terrain', 6, 'terrain', 0, True],
+    ['grassy_terrain', 6, 'terrain', 0, True],
+    ['misty_terrain', 6, 'terrain', 0, True],
+    ['psychic_terrain', 6, 'terrain', 0, True],
     # rooms
-    ['trick_room', 4, 'room', 0],
-    ['magic_room', 8, 'room', 0],
-    ['wonder_room', 8, 'room', 0],
+    ['trick_room', 4, 'room', 0, False],
+    ['magic_room', 8, 'room', 0, False],
+    ['wonder_room', 8, 'room', 0, False],
   ]
 
   fieldStateDict = {}
-  for [fieldStateName, fieldStateGen, fieldStateClass, fieldStateDamage] in fieldStates:
+  for [fieldStateName, fieldStateGen, fieldStateClass, fieldStateDamage, onlyGrounded] in fieldStates:
     layerCount = 1
     if fieldStateName in ['spikes']:
       layerCount = 3
@@ -61,7 +61,8 @@ def makeFieldStateDict():
       "formatted_name": formattedFieldStateName,
       "field_state_class": fieldStateClass,
       "damage_percent_over_time": fieldStateDamage,
-      "max_layers": layerCount
+      "max_layers": layerCount,
+      "only_grounded": onlyGrounded
     }
 
   # make sure all usage methodsare accounted for
@@ -142,6 +143,7 @@ def addEffectData(fieldStateDict):
   fieldStateDict["mist"]["effects"]["prevents_stat_drop"] = [[True, 1]]
 
   # Terrains
+  fieldStateDict["grassy_terrain"]["effects"]["restores_hp"] = [[True, 6]]
   fieldStateDict["psychic_terrain"]["effects"]["protects_against_priority"] = [[True, 6]]
 
   # Rooms
@@ -153,7 +155,7 @@ def addEffectData(fieldStateDict):
 def addStatusData(fieldStateDict):
   for fieldStateName in fieldStateDict.keys():
     fieldStateDict[fieldStateName]["causes_status"] = {}
-    fieldStateDict[fieldStateName]["resists_status"] = {}
+    fieldStateDict[fieldStateName]["prevents_status"] = {}
 
   # Safeguard and Misty Terrain
   for statusName in ['burn', 'freeze', 'paralysis', 'poison', 'bad_poison', 'sleep', 'confusion', 'drowsy']:
@@ -162,16 +164,20 @@ def addStatusData(fieldStateDict):
     if statusName == 'drowsy':
       gen = 3
 
-    fieldStateDict["safeguard"]["resists_status"][statusName] = [[True, gen]]
-    fieldStateDict["misty_terrain"]["resists_status"][statusName] = [[True, 6]]
+    fieldStateDict["safeguard"]["prevents_status"][statusName] = [[True, gen]]
+    fieldStateDict["misty_terrain"]["prevents_status"][statusName] = [[True, 6]]
+
+  # Sunlight
+  fieldStateDict["harsh_sunlight"]["prevents_status"]["freeze"] = [[True, 2]]
+  fieldStateDict["extremely_harsh_sunlight"]["prevents_status"]["freeze"] = [[True, 6]]
 
   # Entry hazards
   fieldStateDict["toxic_spikes"]["causes_status"]["poison"] = [[100.0, 4]]
   fieldStateDict["toxic_spikes"]["causes_status"]["bad_poison"] = [[100.0, 4]]
 
   # Electric Terrain
-  fieldStateDict["electric_terrain"]["resists_status"]["sleep"] = [[True, 6]]
-  fieldStateDict["electric_terrain"]["resists_status"]["drowsy"] = [[True, 6]]
+  fieldStateDict["electric_terrain"]["prevents_status"]["sleep"] = [[True, 6]]
+  fieldStateDict["electric_terrain"]["prevents_status"]["drowsy"] = [[True, 6]]
 
   return
 
@@ -323,6 +329,129 @@ def addItemData(fieldStateDict):
 
   return
 
+def addMoveData(fieldStateDict):
+  for fieldStateName in fieldStateDict.keys():
+    fieldStateDict[fieldStateName]["enhances_move"] = {}
+    fieldStateDict[fieldStateName]["hinders_move"] = {}
+
+  # Move enhancers
+  for [fieldStateName, movesAndGens] in [
+    # Harsh sunlight
+    ['harsh_sunlight', [
+        ['solar_beam', 1], ['solar_blade', 7], ['growth', 1], ['moonlight', 2], ['synthesis', 2], ['morning_sun', 2], ['weather_ball', 3]
+      ]
+    ],
+    # Extremely harsh sunlight
+    ['extremely_harsh_sunlight', [
+        ['solar_beam', 1], ['solar_blade', 7], ['growth', 1], ['moonlight', 2], ['synthesis', 2], ['morning_sun', 2], ['weather_ball', 3]
+      ]
+    ],
+    # Rain
+    ['rain', [
+        ['thunder', 1], ['hurricane', 5], ['weather_ball', 3]
+      ]
+    ],
+    # Heavy rain
+    ['heavy_rain', [
+        ['thunder', 1], ['hurricane', 5], ['weather_ball', 3]
+      ]
+    ],
+    # Sand
+    ['sandstorm', [
+        ['shore_up', 7], ['weather_ball', 3]
+      ]
+    ],
+    # Hail
+    ['hail', [
+        ['blizzard', 1], ['weather_ball', 3]
+      ]
+    ],
+    # Electric terrain
+    ['electric_terrain', [
+        ['rising_voltage', 8], ['terrain_pulse', 8]
+      ]
+    ],
+    # Grassy terrain
+    ['grassy_terrain', [
+        ['terrain_pulse', 8], ['grassy_glide', 8], ['floral_healing', 7]
+      ]
+    ],
+    # Misty terrain
+    ['misty_terrain', [
+        ['misty_explosion', 8], ['terrain_pulse', 8]
+      ]
+    ],
+    # Psychic terrain
+    ['psychic_terrain', [
+        ['expanding_force', 8], ['terrain_pulse', 8]
+      ]
+    ],
+  ]:
+    fieldStateGen = fieldStateDict[fieldStateName]["gen"]
+    for [moveName, moveGen] in movesAndGens:
+      # For exceptions
+      otherGen = 0
+      if moveName == 'growth' and fieldStateName in ['harsh_sunlight', 'extremely_harsh_sunlight']:
+        otherGen = 5
+      if moveName == 'blizzard' and fieldStateName in ['hail']:
+        otherGen = 4
+
+      fieldStateDict[fieldStateName]["enhances_move"][moveName] = [[True, max(moveGen, fieldStateGen, otherGen)]]
+
+  # Move hindrances
+  for [fieldStateName, movesAndGens] in [
+    # Harsh sunlight
+    ['harsh_sunlight', [
+        ['thunder', 1], ['hurricane', 5]
+      ]
+    ],
+    # Extremely harsh sunlight
+    ['extremely_harsh_sunlight', [
+        ['thunder', 1], ['hurricane', 5]
+      ]
+    ],
+    # Rain
+    ['rain', [
+        ['solar_beam', 1], ['solar_blade', 7], ['moonlight', 2], ['synthesis', 2], ['morning_sun', 2]
+      ]
+    ],
+    # Heavy rain
+    ['heavy_rain', [
+        ['solar_beam', 1], ['solar_blade', 7], ['moonlight', 2], ['synthesis', 2], ['morning_sun', 2]
+      ]
+    ],
+    # Sand
+    ['sandstorm', [
+        ['solar_beam', 1], ['solar_blade', 7], ['shore_up', 7]
+      ]
+    ],
+    # Fog
+    ['fog', [
+        ['solar_beam', 1], ['moonlight', 2], ['synthesis', 2], ['morning_sun', 2]
+      ]
+    ],
+    # Hail
+    ['hail', [
+        ['moonlight', 2], ['synthesis', 2], ['morning_sun', 2]
+      ]
+    ],
+    # Grassy terrain
+    ['grassy_terrain', [
+        ['bulldoze', 5], ['earthquake', 1], ['magnitude', 1]
+      ]
+    ],
+  ]:
+    fieldStateGen = fieldStateDict[fieldStateName]["gen"]
+    for [moveName, moveGen] in movesAndGens:
+      # For exceptions
+      otherGen = 0
+      if moveName == 'solar_beam' and fieldStateName in ['rain', 'sandstorm']:
+        otherGen = 3
+
+      fieldStateDict[fieldStateName]["hinders_move"][moveName] = [[True, max(moveGen, fieldStateGen, otherGen)]]
+
+  return
+
 def main():
   fieldStateDict = makeFieldStateDict()
 
@@ -339,6 +468,8 @@ def main():
   addAbilityData(fieldStateDict)
 
   addItemData(fieldStateDict)
+
+  addMoveData(fieldStateDict)
 
   return fieldStateDict
 
