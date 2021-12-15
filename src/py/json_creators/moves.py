@@ -1310,6 +1310,9 @@ def addFieldStateDate(moveDict):
             otherWeatherGen = 3
           if otherWeatherName == 'fog':
             otherWeatherGen = 4
+
+          if moveName == 'defog' and otherWeatherName != 'fog':
+            continue
           
           moveDict[moveName]["removes_field_state"][otherWeatherName] = [[True, max(moveGen, weatherGen, otherWeatherGen)]]
 

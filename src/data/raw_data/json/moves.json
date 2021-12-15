@@ -21107,10 +21107,6 @@
     },
     "removes_field_state": {
       "fog": [[true, 4]],
-      "harsh_sunlight": [[true, 4]],
-      "rain": [[true, 4]],
-      "sandstorm": [[true, 4]],
-      "hail": [[true, 4]],
       "electric_terrain": [[true, 8]],
       "grassy_terrain": [[true, 8]],
       "misty_terrain": [[true, 8]],

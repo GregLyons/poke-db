@@ -685,7 +685,7 @@ def addFieldStateData(itemDict):
       itemDict[itemName]["extends_field_state"][fieldStateName] = [[True, 8, max(itemGen, fieldStateGen)]]
 
   # Air balloon
-  itemDict["air_balloon"]["ignores_field_state"]["spikes"] = [[True, 5]]
+  itemDict["air_balloon"]["resists_field_state"]["spikes"] = [[0.0, 5]]
   itemDict["air_balloon"]["ignores_field_state"]["toxic_spikes"] = [[True, 5]]
   itemDict["air_balloon"]["ignores_field_state"]["sticky_web"] = [[True, 6]]
   itemDict["air_balloon"]["ignores_field_state"]["electric_terrain"] = [[True, 6]]

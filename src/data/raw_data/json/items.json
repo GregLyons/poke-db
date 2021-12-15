@@ -62,9 +62,10 @@
     "stat_modifications": {},
     "formatted_name": "Air Balloon",
     "extends_field_state": {},
-    "resists_field_state": {},
+    "resists_field_state": {
+      "spikes": [[0.0, 5]]
+    },
     "ignores_field_state": {
-      "spikes": [[true, 5]],
       "toxic_spikes": [[true, 5]],
       "sticky_web": [[true, 6]],
       "electric_terrain": [[true, 6]],
