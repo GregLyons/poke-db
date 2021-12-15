@@ -106,7 +106,7 @@ def makeEffectDict():
     "adds_priority": 5,
     # after you; e.g. causes target to always use their move next, regardless of priority
     # contrast with instruct or dancer, which causes target to use a previously used move; the target still executes their own turn at the usual time
-    "other_move_order_change": 5,
+    "other_move_order_change": 4,
     # quick guard
     "protects_against_priority": 5,
     # wonder guard; refers to abilities which resist moves beyond their move type or class, e.g. wonder guard resists all non-super effective moves

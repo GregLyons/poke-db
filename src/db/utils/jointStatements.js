@@ -100,7 +100,29 @@ const resetAbilityJunctionTables = async (db, tableStatements) => {
 
 // #endregion
 
-/* 5. Re-insert data for item junction tables. */
+/* 5. Re-insert data for field state junction tables. */
+// #region
+const { reinsertFieldStateJunctionData } = require('./reinserting.js');
+
+const resetFieldStateJunctionTables = async (db, tableStatements) => {
+  console.log('Re-inserting data for field state junction tables...\n');
+  let timer = new Date().getTime();
+
+  return reinsertFieldStateJunctionData(db, tableStatements)
+    .then( () => {
+      timer = timeElapsed(timer);
+    })
+    .then ( () => {
+      console.log('\nFinished inserting data for field state junction tables!\n');
+    })
+    .catch(console.log);
+}
+
+// resetFieldStateJunctionTables();
+
+// #endregion
+
+/* 6. Re-insert data for item junction tables. */
 // #region
 const { reinsertItemJunctionData } = require('./reinserting.js');
 
@@ -122,7 +144,7 @@ const resetItemJunctionTables = async (db, tableStatements) => {
 
 // #endregion
 
-/* 6. Re-insert data for move junction tables. */
+/* 7. Re-insert data for move junction tables. */
 // #region
 const { reinsertMoveJunctionData } = require('./reinserting.js');
 
@@ -144,7 +166,7 @@ const resetMoveJunctionTables = async (db, tableStatements) => {
 
 // #endregion
 
-/* 7. Re-insert data for type junction tables. */
+/* 8. Re-insert data for type junction tables. */
 // #region
 const { reinsertTypeJunctionData } = require('./reinserting.js');
 
@@ -166,7 +188,7 @@ const resetTypeJunctionTables = async (db, tableStatements) => {
 
 // #endregion
 
-/* 8. Re-insert data for Pokemon junction tables. Doesn't include learnset data. */
+/* 9. Re-insert data for Pokemon junction tables. Doesn't include learnset data. */
 // #region
 const { reinsertPokemonJunctionData } = require('./reinserting.js');
 
@@ -188,7 +210,7 @@ const resetPokemonJunctionTables = async (db, tableStatements) => {
 
 // #endregion
 
-/* 9. Re-insert data for version group junction tables. */
+/* 10. Re-insert data for version group junction tables. */
 // #region
 const { reinsertVersionGroupJunctionData } = require('./reinserting.js');
 
@@ -210,8 +232,7 @@ const resetVersionGroupJunctionTables = async (db, tableStatements) => {
 
 // #endregion
 
-
-/* 10. Re-insert data for Pokemon learnset table. */
+/* 11. Re-insert data for Pokemon learnset table. */
 // #region
 const { reinsertLearnsetData} = require('./reinserting.js');
 
@@ -235,13 +256,18 @@ const resetLearnsetTable = async (db, tableStatements) => {
 
 module.exports = {
   recreateAllTables,
+
   resetBasicEntityTables,
+
   resetGenDependentEntityTables,
+
   resetAbilityJunctionTables,
-  resetMoveJunctionTables,
+  resetFieldStateJunctionTables,
   resetItemJunctionTables,
+  resetMoveJunctionTables,
   resetPokemonJunctionTables,
   resetTypeJunctionTables,
   resetVersionGroupJunctionTables,
-  resetLearnsetTable
+  
+  resetLearnsetTable,
 }

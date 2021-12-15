@@ -6,9 +6,9 @@ CREATE TABLE IF NOT EXISTS field_state_modifies_stat (
   stage TINYINT NOT NULL, /* 0 for field_states which modify stat but not the stage */
   multiplier DECIMAL(3,2) UNSIGNED NOT NULL, /* 0.0 for field_states which modify stat but not via a multiplier */
   chance DECIMAL(5,2) UNSIGNED NOT NULL,
-  recipient ENUM('target', 'user'),
+  recipient ENUM('target', 'user', 'all_allies', 'all_foes', 'all'),
 
-  PRIMARY KEY (field_state_generation_id, field_state_id, stat_id),
+  PRIMARY KEY (field_state_generation_id, field_state_id, stat_generation_id, stat_id),
   FOREIGN KEY (field_state_generation_id, field_state_id) REFERENCES field_state(generation_id, field_state_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS weather_ball (
   ptype_generation_id TINYINT UNSIGNED NOT NULL,
   ptype_id SMALLINT UNSIGNED NOT NULL,
 
-  PRIMARY KEY (field_state_generation_id, field_state_id, ptype_id),
+  PRIMARY KEY (field_state_generation_id, field_state_id, ptype_generation_id, ptype_id),
   FOREIGN KEY (field_state_generation_id, field_state_id) REFERENCES field_state(generation_id, field_state_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS field_state_effect (
   effect_generation_id TINYINT UNSIGNED NOT NULL,
   effect_id SMALLINT UNSIGNED NOT NULL,
 
-  PRIMARY KEY (field_state_generation_id, field_state_id, effect_id),
+  PRIMARY KEY (field_state_generation_id, field_state_id, effect_generation_id, effect_id),
   FOREIGN KEY (field_state_generation_id, field_state_id) REFERENCES field_state(generation_id, field_state_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS field_state_causes_pstatus (
   pstatus_id SMALLINT UNSIGNED NOT NULL,
   chance DECIMAL(5,2) UNSIGNED NOT NULL,
 
-  PRIMARY KEY (field_state_generation_id, field_state_id, pstatus_id),
+  PRIMARY KEY (field_state_generation_id, field_state_id, pstatus_generation_id, pstatus_id),
   FOREIGN KEY (field_state_generation_id, field_state_id) REFERENCES field_state(generation_id, field_state_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
@@ -71,13 +71,13 @@ CREATE TABLE IF NOT EXISTS field_state_causes_pstatus (
   INDEX opposite_field_state_causes_pstatus (pstatus_generation_id, pstatus_id, field_state_generation_id, field_state_id)
 );
 
-CREATE TABLE IF NOT EXISTS field_state_resists_pstatus (
+CREATE TABLE IF NOT EXISTS field_state_prevents_pstatus (
   field_state_generation_id TINYINT UNSIGNED NOT NULL,
   field_state_id TINYINT UNSIGNED NOT NULL,
   pstatus_generation_id TINYINT UNSIGNED NOT NULL,
   pstatus_id SMALLINT UNSIGNED NOT NULL,
 
-  PRIMARY KEY (field_state_generation_id, field_state_id, pstatus_id),
+  PRIMARY KEY (field_state_generation_id, field_state_id, pstatus_generation_id, pstatus_id),
   FOREIGN KEY (field_state_generation_id, field_state_id) REFERENCES field_state(generation_id, field_state_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS field_state_resists_pstatus (
     ON DELETE CASCADE
     ON UPDATE CASCADE,
 
-  INDEX opposite_field_state_resists_pstatus (pstatus_generation_id, pstatus_id, field_state_generation_id, field_state_id)
+  INDEX opposite_field_state_prevents_pstatus (pstatus_generation_id, pstatus_id, field_state_generation_id, field_state_id)
 );
 
 CREATE TABLE IF NOT EXISTS field_state_boosts_ptype (

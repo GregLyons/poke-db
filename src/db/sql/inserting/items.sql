@@ -96,5 +96,6 @@ INSERT INTO item_extends_field_state (
   item_generation_id,
   item_id,
   field_state_generation_id,
-  field_state_id
+  field_state_id,
+  turns
 ) VALUES ?;

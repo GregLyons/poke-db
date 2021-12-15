@@ -17,9 +17,29 @@ const getValuesForTable = (
   // #region
 
   // Declarations for foreign key maps.
-  let ability_FKM, fieldState_FKM, item_FKM, move_FKM, pokemon_FKM, pType_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM, description_FKM, sprite_FKM, versionGroup_FKM;
+  let ability_FKM,
+      description_FKM,
+      effect_FKM,
+      fieldState_FKM,
+      item_FKM,
+      move_FKM,
+      pokemon_FKM,
+      pstatus_FKM,
+      pType_FKM,
+      sprite_FKM,
+      stat_FKM,
+      usageMethod_FKM,
+      versionGroup_FKM;
+
   // Declarations for entity data.
-  let abilityData, fieldStateData, metaEntityData, itemData, moveData, pokemonData, pTypeData;
+  let abilityData,
+      fieldStateData,
+      itemData,
+      metaEntityData,
+      moveData,
+      pokemonData,
+      pTypeData;
+
   switch(tableGroup) {
     case 'abilityJunctionTables':
       [
@@ -38,12 +58,13 @@ const getValuesForTable = (
       [
         ability_FKM,
         effect_FKM,
+        fieldState_FKM,
         item_FKM,
         move_FKM,
         pstatus_FKM,
         pType_FKM,
         stat_FKM,
-      ]
+      ] = foreignKeyMaps;
       fieldStateData = entityData;
       break;
 
@@ -128,7 +149,13 @@ const getValuesForTable = (
   // #region
 
   // Calculating values is very similar for, e.g. '<entity class>_boosts_ptype' and '<entity_class>_resists_ptype'. We declare these variables for use in multiple places in the following switch-statement.
-  let boostOrResist, boostOrResistKey, causeOrResist, causeOrResistKey;
+  let boostOrResist, boostOrResistKey, 
+      causeOrResist, causeOrResistKey, 
+      // Field states
+      causeOrPrevent, causeOrPreventKey, 
+      enhanceOrHinder, enhanceOrHinderKey,
+      // E.g. ability_creates_field_state, item_extends_field_state, ptype_suppresses_field_state, select 'creates', 'extends', 'suppresses', respectively.
+      fieldStateAction, fieldStateActionKey;
 
   // Assign values based on tableName
   switch(tableName) {
@@ -234,14 +261,22 @@ const getValuesForTable = (
           field_state_name,
           field_state_formatted_name,
           introduced,
-          field_state_damage_percent
-          field_state_max_layers
-          field_state_only_grounded
+          field_state_damage_percent,
+          field_state_max_layers,
+          field_state_only_grounded,
           field_state_class
         )
       */
-      values = require(PROCESSED_DATA_PATH + 'effects.json')
-        .map(data => [data.gen, data.name, data.formatted_name, data.introduced, data.damage_percent, data.max_layers, data.only_grounded, data.field_state_class]);
+      values = require(PROCESSED_DATA_PATH + 'fieldStates.json')
+        .map(data => [
+          data.gen,
+          data.name,
+          data.formatted_name,
+          data.introduced,
+          data.damage_percent,
+          data.max_layers,
+          data.only_grounded,
+          data.field_state_class]);
       break;
     
     case 'item':
@@ -392,7 +427,7 @@ const getValuesForTable = (
       values = abilityData.reduce((acc, curr) => {
         // Get ability data from curr.
         const { gen: gen, name: abilityName, [boostOrResistKey]: typeData } = curr;
-        const { ability_id: abilityID } = ability_FKM.get(makeMapKey([abilityName, gen]));
+        const { ability_id: abilityID } = ability_FKM.get(makeMapKey([abilityName, gen,]));
         
         return acc.concat(
           Object.keys(typeData).map(pTypeName => {
@@ -426,7 +461,7 @@ const getValuesForTable = (
       values = abilityData.reduce((acc, curr) => {
         // Get ability data from curr.
         const { gen: gen, name: abilityName, [boostOrResistKey]: usageMethodData } = curr;
-        const { ability_id: abilityID } = ability_FKM.get(makeMapKey([abilityName, gen]));
+        const { ability_id: abilityID } = ability_FKM.get(makeMapKey([abilityName, gen,]));
         
         return acc.concat(
           Object.keys(usageMethodData).map(usageMethodName => {
@@ -459,7 +494,7 @@ const getValuesForTable = (
       values = abilityData.reduce((acc, curr) => {
         // Get ability data from curr.
         const { gen: gen, name: abilityName, stat_modifications: statModData } = curr;
-        const { ability_id: abilityID } = ability_FKM.get(makeMapKey([abilityName, gen]));
+        const { ability_id: abilityID } = ability_FKM.get(makeMapKey([abilityName, gen,]));
 
         return acc.concat(
           Object.keys(statModData).map(statName => {
@@ -502,11 +537,11 @@ const getValuesForTable = (
       values = abilityData.reduce((acc, curr) => {
         // Get ability data from curr.
         const { gen: gen, name: abilityName, effects: effectData } = curr;
-        const { ability_id: abilityID } = ability_FKM.get(makeMapKey([abilityName, gen]));
+        const { ability_id: abilityID } = ability_FKM.get(makeMapKey([abilityName, gen,]));
         return acc.concat(
           Object.keys(effectData).map(effectName => {
             // We always compare entities of the same generation.
-            const { effect_id: effectID } = effect_FKM.get(makeMapKey([effectName, gen]));
+            const { effect_id: effectID } = effect_FKM.get(makeMapKey([effectName, gen,]));
 
             // True if effect is present, False otherwise.
             return effectData[effectName]
@@ -539,7 +574,7 @@ const getValuesForTable = (
       values = abilityData.reduce((acc, curr) => {
         // Get ability data from curr.
         const { gen: gen, name: abilityName, [causeOrResistKey]: statusData } = curr;
-        const { ability_id: abilityID } = ability_FKM.get(makeMapKey([abilityName, gen]));
+        const { ability_id: abilityID } = ability_FKM.get(makeMapKey([abilityName, gen,]));
         
         return acc.concat(
           Object.keys(statusData).map(statusName => {
@@ -560,6 +595,347 @@ const getValuesForTable = (
             }
           })
         )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+    
+    case 'ability_creates_field_state':
+    case 'ability_removes_field_state':
+    case 'ability_prevents_field_state':
+    case 'ability_suppresses_field_state':
+    case 'ability_ignores_field_state':
+      /*
+        Need (
+          ability_generation_id,
+          ability_id,    
+          field_state_generation_id,
+          field_state_id
+        ) or (
+          ability_generation_id,
+          ability_id,    
+          field_state_generation_id,
+          field_state_id,
+          turns
+        )
+      */
+      fieldStateAction = tableName.split('_')[1];
+      fieldStateActionKey = fieldStateAction + '_field_state';
+
+      values = abilityData.reduce((acc, curr) => {
+        // Get ability data from curr.
+        const { gen: gen, name: abilityName, [fieldStateActionKey]: fieldStateData } = curr;
+        const { ability_id: abilityID } = ability_FKM.get(makeMapKey([abilityName, gen,]));
+
+        return acc.concat(
+          Object.keys(fieldStateData).map(fieldStateName => {
+            // We always compare entities of the same generation.
+            const { field_state_id: fieldStateID } = fieldState_FKM.get(makeMapKey([fieldStateName, gen,]));
+
+            // If action is 'creates', then fieldStateData[fieldStateName] [boolean, turnCount]
+            if (fieldStateAction === 'creates') {
+              const [present, turnCount] = fieldStateData[fieldStateName];
+
+              return present && turnCount >= 0 
+                ? [gen, abilityID, gen, fieldStateID, turnCount]
+                : [];
+            }
+            // Otherwise, fieldStateData[fieldStateName] is boolean.
+            else {
+              // 
+              return fieldStateData[fieldStateName]
+                ? [gen, abilityID, gen, fieldStateID]
+                : [];
+            }
+
+          })
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+
+    /*
+      FIELD STATE JUNCTION TABLES
+    */
+    case 'field_state_modifies_stat':
+      /* 
+        Need (
+          field_state_generation_id,
+          field_state_id,
+          stat_generation_id,
+          stat_id,
+          stage,
+          multiplier,
+          chance,
+          recipient
+        )
+      */
+      values = fieldStateData.reduce((acc, curr) => {
+        // Get field state data from curr.
+        const { gen: gen, name: fieldStateName, stat_modifications: statModData } = curr;
+        const { field_state_id: fieldStateID } = fieldState_FKM.get(makeMapKey([fieldStateName, gen,]));
+
+        return acc.concat(
+          Object.keys(statModData).map(statName => {
+            // We always compare entities of the same generation.
+            const { stat_id: statID } = stat_FKM.get(makeMapKey([gen, statName]));
+            let [modifier, recipient] = statModData[statName]
+
+            // True if stage modification, False if multiplier.
+            const stageOrMultiplier = typeof modifier == 'string';
+
+            // stage
+            if (stageOrMultiplier) {
+              modifier = parseInt(modifier.slice(1), 0);
+              return modifier != 0 
+              ? [gen, fieldStateID, gen, statID, modifier, 1.0, 100.00, recipient]
+              : [];
+            }
+            // multiplier
+            else {
+              return modifier != 1.0
+              ? [gen, fieldStateID, gen, statID, 0, modifier, 100.00, recipient]
+              : [];
+            }
+          })
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+
+    case 'field_state_effect':
+      /*
+        Need (
+          field_state_generation_id,
+          field_state_id,    
+          effect_generation_id,
+          effect_id
+        )
+      */
+      values = fieldStateData.reduce((acc, curr) => {
+        // Get ability data from curr.
+        const { gen: gen, name: fieldStateName, effects: effectData } = curr;
+        const { field_state_id: fieldStateID } = fieldState_FKM.get(makeMapKey([fieldStateName, gen,]));
+        return acc.concat(
+          Object.keys(effectData).map(effectName => {
+            // We always compare entities of the same generation.
+            const { effect_id: effectID } = effect_FKM.get(makeMapKey([effectName, gen,]));
+
+            // True if effect is present, False otherwise.
+            return effectData[effectName]
+            ? [gen, fieldStateID, gen, effectID]
+            : [];
+          })
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+
+    case 'field_state_causes_pstatus':
+    case 'field_state_prevents_pstatus':
+      /*
+        Need (
+          field_state_generation_id,
+          field_state_id,
+          pstatus_generation_id,
+          pstatus_id,
+          chance
+        ) or (
+          field_state_generation_id,
+          field_state_id,
+          pstatus_generation_id,
+          pstatus_id
+        )
+      */
+      causeOrPrevent = tableName.split('_')[2];
+      causeOrPreventKey = causeOrPrevent + '_status';
+
+      values = fieldStateData.reduce((acc, curr) => {
+        // Get field state data from curr.
+        const { gen: gen, name: fieldStateName, [causeOrPreventKey]: statusData } = curr;
+        const { field_state_id: fieldStateID } = fieldState_FKM.get(makeMapKey([fieldStateName, gen,]));
+        
+        return acc.concat(
+          Object.keys(statusData).map(statusName => {
+            // We always compare entities of the same generation.
+            const { pstatus_id: statusID } = pstatus_FKM.get(makeMapKey([gen, statusName]));
+
+            // statusData[statusName] is a number
+            if (causeOrPrevent === 'causes') {
+              const chance = statusData[statusName];
+
+              return chance > 0
+                ? [gen, fieldStateID, gen, statusID, chance]
+                : [];
+            }
+            // statusData[statusName] is a boolean.
+            else {
+              return statusData[statusName] 
+                ? [gen, fieldStateID, gen, statusID]
+                : [];
+            }
+          })
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+
+    case 'field_state_boosts_ptype':
+    case 'field_state_resists_ptype':
+      /*
+        Need (
+          field_state_generation_id,
+          field_state_id,
+          ptype_generation_id,
+          ptype_id,
+          multiplier
+        )
+      */
+      boostOrResist = tableName.split('_')[2];
+      boostOrResistKey = boostOrResist + '_type';
+
+      values = fieldStateData.reduce((acc, curr) => {
+        // Get field state data from curr.
+        const { gen: gen, name: fieldStateName, [boostOrResistKey]: typeData } = curr;
+        const { field_state_id: fieldStateID } = fieldState_FKM.get(makeMapKey([fieldStateName, gen,]));
+        
+        return acc.concat(
+          Object.keys(typeData).map(pTypeName => {
+            // We always compare entities of the same generation.
+            const { ptype_id: pTypeID } = pType_FKM.get(makeMapKey([gen, pTypeName]));
+            const multiplier = typeData[pTypeName];
+
+            return multiplier != 1 
+              ? [gen, fieldStateID, gen, pTypeID, multiplier]
+              : [];
+          })
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+
+    case 'field_state_activates_ability':
+      /*
+        Need (
+          field_state_generation_id,
+          field_state_id,    
+          ability_generation_id
+          ability_id
+        )
+      */
+      values = fieldStateData.reduce((acc, curr) => {
+        // Get ability data from curr.
+        const { gen: gen, name: fieldStateName, activates_ability: abilityData } = curr;
+        const { field_state_id: fieldStateID } = fieldState_FKM.get(makeMapKey([fieldStateName, gen,]));
+        return acc.concat(
+          Object.keys(abilityData).map(abilityName => {
+            // We always compare entities of the same generation.
+            const { ability_id: abilityID } = ability_FKM.get(makeMapKey([abilityName, gen,]));
+
+            // True if effect is present, False otherwise.
+            return abilityData[abilityName]
+            ? [gen, fieldStateID, gen, abilityID]
+            : [];
+          })
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+
+    case 'field_state_activates_item':
+      /*
+        Need (
+          field_state_generation_id,
+          field_state_id,    
+          item_generation_id
+          item_id
+        )
+      */
+      values = fieldStateData.reduce((acc, curr) => {
+        // Get ability data from curr.
+        const { gen: gen, name: fieldStateName, activates_item: itemData } = curr;
+        const { field_state_id: fieldStateID } = fieldState_FKM.get(makeMapKey([fieldStateName, gen,]));
+        return acc.concat(
+          Object.keys(itemData).map(itemName => {
+            // We always compare entities of the same generation.
+            const { item_id: itemID } = item_FKM.get(makeMapKey([gen, itemName, ]));
+
+            // True if effect is present, False otherwise.
+            return itemData[itemName]
+            ? [gen, fieldStateID, gen, itemID]
+            : [];
+          })
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+
+    case 'field_state_enhances_pmove':
+    case 'field_state_hinders_pmove':
+      /*
+        Need (
+          field_state_generation_id,
+          field_state_id,    
+          pmove_generation_id
+          pmove_id
+        )
+      */
+      enhanceOrHinder = tableName.split('_')[2];
+      enhanceOrHinderKey = enhanceOrHinder + '_move';
+
+      values = fieldStateData.reduce((acc, curr) => {
+        // Get ability data from curr.
+        const { gen: gen, name: fieldStateName, [enhanceOrHinderKey]: moveData } = curr;
+        const { field_state_id: fieldStateID } = fieldState_FKM.get(makeMapKey([fieldStateName, gen,]));
+
+        return acc.concat(
+          Object.keys(moveData).map(moveName => {
+            // We always compare entities of the same generation.
+            const { pmove_id: moveID } = move_FKM.get(makeMapKey([gen, moveName,]));
+
+            // True if move is present, False otherwise.
+            return moveData[moveName]
+            ? [gen, fieldStateID, gen, moveID]
+            : [];
+          })
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+      
+    case 'weather_ball':
+      /*
+        Need (
+          field_state_generation_id,
+          field_state_id
+          ptype_generation_id,
+          ptype_id
+        )
+      */
+     
+      values = fieldStateData.reduce((acc, curr) => {
+        // Get item data from curr.
+        const { gen: gen, name: field_state_name, weather_ball: weatherBallData } = curr;
+
+        if (!weatherBallData) return acc;
+
+        const { field_state_id: fieldStateID } = fieldState_FKM.get(makeMapKey([field_state_name, gen,]));
+        
+        // Only berries have data for Natural Gift.
+        const pTypeName = weatherBallData;
+        const { ptype_id: pTypeID } = pType_FKM.get(makeMapKey([gen, pTypeName]));
+
+        return acc.concat([
+          [gen, fieldStateID, gen, pTypeID]
+        ]);
       }, [])
       // Filter out empty entries
       .filter(data => data.length > 0);
@@ -634,7 +1010,6 @@ const getValuesForTable = (
       .filter(data => data.length > 0);
       break;
 
-      
     // No items boost usage methods yet, but the code is there. Uncomment if any items are introduced which boost usage methods.
     // case 'item_boosts_usage_method':
     case 'item_resists_usage_method':
@@ -732,7 +1107,7 @@ const getValuesForTable = (
         return acc.concat(
           Object.keys(effectData).map(effectName => {
             // We always compare entities of the same generation.
-            const { effect_id: effectID } = effect_FKM.get(makeMapKey([effectName, gen]));
+            const { effect_id: effectID } = effect_FKM.get(makeMapKey([effectName, gen,]));
 
             // True if effect is present, False otherwise.
             return effectData[effectName]
@@ -815,6 +1190,72 @@ const getValuesForTable = (
       .filter(data => data.length > 0);
       break;
     
+    case 'item_extends_field_state':
+    case 'item_resists_field_state':
+    case 'item_ignores_field_state':
+      /*
+        Need (
+          item_generation_id,
+          item_id,    
+          field_state_generation_id,
+          field_state_id
+        ) or (
+          item_generation_id,
+          item_id,    
+          field_state_generation_id,
+          field_state_id,
+          turns
+        ) or (
+          item_generation_id,
+          item_id,    
+          field_state_generation_id,
+          field_state_id,
+          multiplier
+        )
+      */
+
+      fieldStateAction = tableName.split('_')[1];
+      fieldStateActionKey = fieldStateAction + '_field_state';
+
+      values = itemData.reduce((acc, curr) => {
+        // Get ability data from curr.
+        const { gen: gen, name: itemName, [fieldStateActionKey]: fieldStateData } = curr;
+        const { item_id: itemID } = item_FKM.get(makeMapKey([gen, itemName,]));
+
+        return acc.concat(
+          Object.keys(fieldStateData).map(fieldStateName => {
+            // We always compare entities of the same generation.
+            const { field_state_id: fieldStateID } = fieldState_FKM.get(makeMapKey([fieldStateName, gen,]));
+
+            // If action is 'resists', then fieldStateData[fieldStateName] is a multiplier.
+            if (fieldStateAction === 'resists') {
+              const multiplier = fieldStateData[fieldStateName];
+              return multiplier != 1 
+                ? [gen, itemID, gen, fieldStateID, multiplier]
+                : [];
+            }
+            // If action is 'extends', then fieldStateData[fieldStateName] is a turn count.
+            else if (fieldStateAction === 'extends') {
+              const [present, turnCount] = fieldStateData[fieldStateName];
+              return present && turnCount >= 0
+                ? [gen, itemID, gen, fieldStateID, turnCount]
+                : [];
+            }
+            // Otherwise, fieldStateData[fieldStateName] is boolean.
+            else {
+              // 
+              return fieldStateData[fieldStateName]
+                ? [gen, itemID, gen, fieldStateID]
+                : [];
+            }
+
+          })
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+
     /*
       MOVE JUNCTION TABLES
     */
@@ -1005,7 +1446,7 @@ const getValuesForTable = (
         return acc.concat(
           Object.keys(effectData).map(effectName => {
             // We always compare entities of the same generation.
-            const { effect_id: effectID } = effect_FKM.get(makeMapKey([effectName, gen]));
+            const { effect_id: effectID } = effect_FKM.get(makeMapKey([effectName, gen,]));
 
             // True if effect is present, False otherwise.
             return effectData[effectName]
@@ -1064,6 +1505,59 @@ const getValuesForTable = (
       .filter(data => data.length > 0);
       break;
     
+    case 'pmove_creates_field_state':
+    case 'pmove_removes_field_state':
+      /*
+        Need (
+          pmove_generation_id,
+          pmove_id,    
+          field_state_generation_id,
+          field_state_id
+        ) or (
+          pmove_generation_id,
+          pmove_id,    
+          field_state_generation_id,
+          field_state_id
+          turns
+        )
+      */
+      fieldStateAction = tableName.split('_')[1];
+      fieldStateActionKey = fieldStateAction + '_field_state';
+
+      values = moveData.reduce((acc, curr) => {
+        // Get ability data from curr.
+        const { gen: gen, name: moveName, [fieldStateActionKey]: fieldStateData } = curr;
+        const { pmove_id: moveID } = move_FKM.get(makeMapKey([gen, moveName,]));
+
+        return acc.concat(
+          Object.keys(fieldStateData).map(fieldStateName => {
+            // We always compare entities of the same generation.
+            const { field_state_id: fieldStateID } = fieldState_FKM.get(makeMapKey([fieldStateName, gen,]));
+
+            // If action is 'creates', then fieldStateData[fieldStateName] is the number of turns.
+            // If action is 'creates', then fieldStateData[fieldStateName] [boolean, turnCount]
+            if (fieldStateAction === 'creates') {
+              const [present, turnCount] = fieldStateData[fieldStateName];
+
+              return present && turnCount >= 0 
+                ? [gen, moveID, gen, fieldStateID, turnCount]
+                : [];
+            }
+            // Otherwise, fieldStateData[fieldStateName] is boolean.
+            else {
+              // 
+              return fieldStateData[fieldStateName]
+                ? [gen, moveID, gen, fieldStateID]
+                : [];
+            }
+
+          })
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+
     /*
       TYPE JUNCTION TABLES
     */
@@ -1091,9 +1585,60 @@ const getValuesForTable = (
 
             const multiplier = curr.damage_to[pTypeName_def];
 
-            return multiplier != 1
-              ? [gen, pTypeID_att, gen, pTypeID_def, multiplier]
-              : [];
+            return [gen, pTypeID_att, gen, pTypeID_def, multiplier];
+          })
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+
+    case 'ptype_resists_field_state':
+    case 'ptype_removes_field_state':
+    case 'ptype_ignores_field_state':
+      /*
+        Need (
+          ptype_generation_id,
+          ptype_id,    
+          field_state_generation_id,
+          field_state_id,
+          multiplier
+        ) or (
+          ptype_generation_id,
+          ptype_id,    
+          field_state_generation_id,
+          field_state_id
+        )
+      */
+
+      fieldStateAction = tableName.split('_')[1];
+      fieldStateActionKey = fieldStateAction + '_field_state';
+
+      values = pTypeData.reduce((acc, curr) => {
+        // Get ability data from curr.
+        const { gen: gen, name: pTypeName, [fieldStateActionKey]: fieldStateData } = curr;
+        const { ptype_id: pTypeID } = pType_FKM.get(makeMapKey([gen, pTypeName,]));
+
+        return acc.concat(
+          Object.keys(fieldStateData).map(fieldStateName => {
+            // We always compare entities of the same generation.
+            const { field_state_id: fieldStateID } = fieldState_FKM.get(makeMapKey([fieldStateName, gen,]));
+
+            // If action is 'resists', then fieldStateData[fieldStateName] is a multiplier.
+            if (fieldStateAction === 'resists') {
+              const multiplier = fieldStateData[fieldStateName];
+              return multiplier != 1 
+                ? [gen, pTypeID, gen, fieldStateID, multiplier]
+                : [];
+            }
+            // Otherwise, fieldStateData[fieldStateName] is boolean.
+            else {
+              // 
+              return fieldStateData[fieldStateName]
+                ? [gen, pTypeID, gen, fieldStateID]
+                : [];
+            }
+
           })
         )
       }, [])
@@ -1251,7 +1796,7 @@ const getValuesForTable = (
           [ability1Name, ability2Name, abilityHiddenName]
           .filter(abilityName => abilityName && abilityName.length > 0)
           .map(abilityName => {
-            const { ability_id: abilityID } = ability_FKM.get(makeMapKey([abilityName, gen]));
+            const { ability_id: abilityID } = ability_FKM.get(makeMapKey([abilityName, gen,]));
 
             let abilitySlot;
             switch (abilityName) {
@@ -1323,7 +1868,7 @@ const getValuesForTable = (
         ), where <entity> is an ability, item, pmove, or pokemon, and <meta entity> is a pdescription or sprite.
       */
       
-      // 
+      // Parse table name.
       // #region
 
       const metaEntityClass = tableName.split('_')[0];
@@ -1369,8 +1914,11 @@ const getValuesForTable = (
         default:
           throw 'Invalid meta entity class, ' + metaEntityClass;
       }
-
+      
       // #endregion
+      
+      // Assign values
+      // #region
 
       values = metaEntityData.filter(data => data[metaEntityKey] == baseEntityDataClass).reduce((acc, curr) => {
         // Get item data from curr.
@@ -1412,6 +1960,8 @@ const getValuesForTable = (
       // Filter out empty entries
       .filter(data => data.length > 0);
       break;
+
+      // #endregion
 
     default:
       console.log(`${tableName} unhandled.`);

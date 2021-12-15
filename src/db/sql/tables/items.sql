@@ -132,7 +132,7 @@ CREATE TABLE IF NOT EXISTS item_causes_pstatus (
   pstatus_generation_id TINYINT UNSIGNED NOT NULL,
   pstatus_id SMALLINT UNSIGNED NOT NULL,
 
-  PRIMARY KEY (item_generation_id, item_id, stat_generation_id, stat_id),
+  PRIMARY KEY (item_generation_id, item_id, pstatus_generation_id, pstatus_id),
   FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
@@ -149,7 +149,7 @@ CREATE TABLE IF NOT EXISTS item_resists_pstatus (
   pstatus_generation_id TINYINT UNSIGNED NOT NULL,
   pstatus_id SMALLINT UNSIGNED NOT NULL,
 
-  PRIMARY KEY (item_generation_id, item_id, stat_generation_id, stat_id),
+  PRIMARY KEY (item_generation_id, item_id, pstatus_generation_id, pstatus_id),
   FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
@@ -174,7 +174,7 @@ CREATE TABLE IF NOT EXISTS item_requires_pokemon (
     ON DELETE CASCADE
     ON UPDATE CASCADE,
 
-  INDEX opposite_item_requires_pokemon (pokemon_generation_id, pokemon_id, item_generation_id, pitem_id)
+  INDEX opposite_item_requires_pokemon (pokemon_generation_id, pokemon_id, item_generation_id, item_id)
 );
 
 CREATE TABLE IF NOT EXISTS item_extends_field_state (
@@ -182,6 +182,7 @@ CREATE TABLE IF NOT EXISTS item_extends_field_state (
   item_id SMALLINT UNSIGNED NOT NULL,
   field_state_generation_id TINYINT UNSIGNED NOT NULL,
   field_state_id TINYINT UNSIGNED NOT NULL,
+  turns TINYINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (item_generation_id, item_id, field_state_generation_id, field_state_id),
   FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id)

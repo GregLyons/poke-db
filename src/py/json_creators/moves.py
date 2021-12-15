@@ -1232,8 +1232,6 @@ def addFieldStateDate(moveDict):
   for moveName in moveDict.keys():
     moveDict[moveName]["creates_field_state"] = {}
     moveDict[moveName]["removes_field_state"] = {}
-    moveDict[moveName]["prevents_field_state"] = {}
-    moveDict[moveName]["suppresses_field_state"] = {}
 
   # Terrain and weather creators
   #region

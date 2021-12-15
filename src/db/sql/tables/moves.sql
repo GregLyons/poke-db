@@ -177,6 +177,7 @@ CREATE TABLE IF NOT EXISTS pmove_creates_field_state (
   pmove_id SMALLINT UNSIGNED NOT NULL,
   field_state_generation_id TINYINT UNSIGNED NOT NULL,
   field_state_id TINYINT UNSIGNED NOT NULL,
+  turns TINYINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (pmove_generation_id, pmove_id, field_state_generation_id, field_state_id),
   FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id)
@@ -204,38 +205,4 @@ CREATE TABLE IF NOT EXISTS pmove_removes_field_state (
     ON UPDATE CASCADE,
 
   INDEX opposite_pmove_removes_field_state (field_state_generation_id, field_state_id, pmove_generation_id, pmove_id)
-);
-
-CREATE TABLE IF NOT EXISTS pmove_prevents_field_state (
-  pmove_generation_id TINYINT UNSIGNED NOT NULL,
-  pmove_id SMALLINT UNSIGNED NOT NULL,
-  field_state_generation_id TINYINT UNSIGNED NOT NULL,
-  field_state_id TINYINT UNSIGNED NOT NULL,
-
-  PRIMARY KEY (pmove_generation_id, pmove_id, field_state_generation_id, field_state_id),
-  FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
-  FOREIGN KEY (field_state_generation_id, field_state_id) REFERENCES field_state(generation_id, field_state_id)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
-
-  INDEX opposite_pmove_prevents_field_state (field_state_generation_id, field_state_id, pmove_generation_id, pmove_id)
-);
-
-CREATE TABLE IF NOT EXISTS pmove_suppresses_field_state (
-  pmove_generation_id TINYINT UNSIGNED NOT NULL,
-  pmove_id SMALLINT UNSIGNED NOT NULL,
-  field_state_generation_id TINYINT UNSIGNED NOT NULL,
-  field_state_id TINYINT UNSIGNED NOT NULL,
-
-  PRIMARY KEY (pmove_generation_id, pmove_id, field_state_generation_id, field_state_id),
-  FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
-  FOREIGN KEY (field_state_generation_id, field_state_id) REFERENCES field_state(generation_id, field_state_id)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
-
-  INDEX opposite_pmove_suppresses_field_state (field_state_generation_id, field_state_id, pmove_generation_id, pmove_id)
 );

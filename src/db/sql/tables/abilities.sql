@@ -148,6 +148,7 @@ CREATE TABLE IF NOT EXISTS ability_creates_field_state (
   ability_id SMALLINT UNSIGNED NOT NULL,
   field_state_generation_id TINYINT UNSIGNED NOT NULL,
   field_state_id TINYINT UNSIGNED NOT NULL,
+  turns TINYINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (ability_generation_id, ability_id, field_state_generation_id, field_state_id),
   FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id)

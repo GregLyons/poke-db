@@ -13,15 +13,21 @@ const dropAllTables = async (db, tableStatements) => {
   console.log('\nDropping all tables...\n')
 
   // Drop junction tables.
-  await dropAllJunctionTables(db, tableStatements);
+  return dropAllJunctionTables(db, tableStatements)
+    .then( () => {
 
-  // Drop entity tables except for generation.
-  await dropTablesInGroup(db, tableStatements, 'entityTables', ['generation']);
+      // Drop entity tables except for generation
+      return dropTablesInGroup(db, tableStatements, 'entityTables', ['generation']);
 
-  // Finally, drop generation table.
-  return dropSingleTableInGroup(db, tableStatements, 'entityTables', 'generation')
-  .then( () => console.log('\nDropped all tables.\n'))
-  .catch(console.log);
+    })
+    .then( () => {
+
+      // Finally, drop generation table.
+      return dropSingleTableInGroup(db, tableStatements, 'entityTables', 'generation')
+
+    })
+    .then( () => console.log('\nDropped all tables.\n'))
+    .catch(console.log);
 }
 
 // Drops junction tables and entity tables that aren't relevant to 'pokemon_pmove', which is where learnset data is stored. 

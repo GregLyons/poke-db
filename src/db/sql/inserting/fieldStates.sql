@@ -24,7 +24,7 @@ INSERT INTO field_state_causes_pstatus (
   chance
 ) VALUES ?;
 
-INSERT INTO field_state_resists_pstatus (
+INSERT INTO field_state_prevents_pstatus (
   field_state_generation_id,
   field_state_id,
   pstatus_generation_id,

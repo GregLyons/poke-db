@@ -204,7 +204,7 @@
     "formatted_name": "Adds priority"
   },
   "other_move_order_change": {
-    "gen": 5,
+    "gen": 4,
     "formatted_name": "Other move order change"
   },
   "protects_against_priority": {

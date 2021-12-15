@@ -115,7 +115,6 @@ const reinsertAbilityJunctionData = async(db, tableStatements) => {
   );
 }
 
-
 /*
   DELETE FROM field state junction tables, then INSERT INTO those tables.
 */
@@ -141,6 +140,7 @@ const reinsertFieldStateJunctionData = async(db, tableStatements) => {
   const foreignKeyTables = [
     'ability',
     'effect',
+    'field_state',
     'item',
     'pmove',
     'pstatus',
@@ -501,6 +501,7 @@ module.exports = {
 
   // Junction tables
   reinsertAbilityJunctionData,
+  reinsertFieldStateJunctionData,
   reinsertItemJunctionData,
   reinsertMoveJunctionData,
   reinsertTypeJunctionData,

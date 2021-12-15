@@ -16,14 +16,19 @@ const db = mysql.createPool({
 
 const {
   recreateAllTables,
+
   resetBasicEntityTables,
+
   resetGenDependentEntityTables,
+
   resetAbilityJunctionTables,
-  resetMoveJunctionTables,
+  resetFieldStateJunctionTables,
   resetItemJunctionTables,
+  resetMoveJunctionTables,
   resetPokemonJunctionTables,
   resetTypeJunctionTables,
   resetVersionGroupJunctionTables,
+
   resetLearnsetTable,
 } = require('./utils/jointStatements.js');
 
@@ -63,6 +68,7 @@ const resetJunctionTables = async (ignoreLearnsetTable = true) => {
   
   let resetFunctions = [
     resetAbilityJunctionTables,
+    resetFieldStateJunctionTables,
     resetMoveJunctionTables,
     resetItemJunctionTables,
     resetPokemonJunctionTables,
@@ -106,19 +112,46 @@ const resetEverything = async () => {
     .catch();
 }
 
-// resetEverything();
+/*
+  RESET ENTIRE DATABASE
+*/
+
+resetEverything();
+
+
+/*
+  RESET ALL JUNCTION TABLES
+*/
 
 // resetJunctionTables()
 // resetLearnsetTable(db, tableStatements);
 
+
+/*
+  RECREATE ALL TABLES
+*/
+
 // recreateAllTables(db, tableStatements);
+
+
+/*
+  RESET ENTITY TABLES
+*/
 
 // resetBasicEntityTables(db, tableStatements);
 // resetGenDependentEntityTables(db, tableStatements);
+
+
+/*
+  RESET SPECIFIC CLASSES OF JUNCTION TABLES
+*/
+
 // resetAbilityJunctionTables(db, tableStatements);
+// resetFieldStateJunctionTables(db, tableStatements);
 // resetMoveJunctionTables(db, tableStatements);
 // resetItemJunctionTables(db, tableStatements);
 // resetPokemonJunctionTables(db, tableStatements);
 // resetTypeJunctionTables(db, tableStatements);
 // resetVersionGroupJunctionTables(db, tableStatements);
+
 // resetLearnsetTable(db, tableStatements);

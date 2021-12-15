@@ -67,7 +67,8 @@ INSERT INTO ability_creates_field_state (
   ability_generation_id,
   ability_id,
   field_state_generation_id,
-  field_state_id
+  field_state_id,
+  turns
 ) VALUES ?;
 
 INSERT INTO ability_removes_field_state (
@@ -84,14 +85,14 @@ INSERT INTO ability_ignores_field_state (
   field_state_id
 ) VALUES ?;
 
-INSERT INTO ability_suppresses_field_state (
+INSERT INTO ability_prevents_field_state (
   ability_generation_id,
   ability_id,
   field_state_generation_id,
   field_state_id
 ) VALUES ?;
 
-INSERT INTO ability_ignores_field_state (
+INSERT INTO ability_suppresses_field_state (
   ability_generation_id,
   ability_id,
   field_state_generation_id,
