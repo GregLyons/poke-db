@@ -109,7 +109,7 @@ CREATE TABLE IF NOT EXISTS field_state (
   introduced TINYINT UNSIGNED NOT NULL,
   field_state_damage_percent DECIMAL(5, 2),
   field_state_max_layers TINYINT UNSIGNED NOT NULL,
-  field_stateonly_grounded TINYINT UNSIGNED NOT NULL,
+  field_state_only_grounded TINYINT UNSIGNED NOT NULL,
   field_state_class ENUM('entry_hazard', 'other', 'pledge', 'room', 'screen', 'terrain', 'weather'),
 
   PRIMARY KEY (generation_id, field_state_id),

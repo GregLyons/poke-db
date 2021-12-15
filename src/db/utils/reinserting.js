@@ -48,6 +48,7 @@ const reinsertGenDependentEntityData = async(db, tableStatements, ignoreTables =
   const entityTableNames = [
     'ability',
     'effect',
+    'field_state',
     'item',
     'pokemon',
     'pmove',
@@ -81,17 +82,25 @@ const reinsertAbilityJunctionData = async(db, tableStatements) => {
       'ability_effect',
       'ability_causes_pstatus',
       'ability_resists_pstatus',
+      'ability_creates_field_state',
+      'ability_removes_field_state',
+      'ability_prevents_field_state',
+      'ability_suppresses_field_state',
+      'ability_ignores_field_state',
     ]
   */
   const abilityJunctionTableNames = Object.keys(tableStatements.abilityJunctionTables);
 
-  /* 
-    Since Promise.all() preserves order, foreignKeyMaps unpacks as:
-
-      [ability_FKM, pType_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM]
-
-  */ 
-  const foreignKeyTables = ['ability', 'ptype', 'usage_method', 'stat', 'pstatus', 'effect'];
+  // Since Promise.all() preserves order, foreignKeyMaps unpacks alphabetically.
+  const foreignKeyTables = [
+    'ability',
+    'effect',
+    'field_state',
+    'pstatus',
+    'ptype',
+    'stat',
+    'usage_method',
+  ];
   const foreignKeyMaps = await getForeignKeyMaps(db, tableStatements, foreignKeyTables);
   
   const abilityData = require(PROCESSED_DATA_PATH + 'abilities.json');
@@ -102,6 +111,52 @@ const reinsertAbilityJunctionData = async(db, tableStatements) => {
     abilityJunctionTableNames,
     'abilityJunctionTables',
     abilityData,
+    foreignKeyMaps
+  );
+}
+
+
+/*
+  DELETE FROM field state junction tables, then INSERT INTO those tables.
+*/
+const reinsertFieldStateJunctionData = async(db, tableStatements) => {
+  /*
+    [
+      'field_state_modifies_stat',
+      'field_state_effect',
+      'field_state_causes_pstatus',
+      'field_state_prevents_pstatus',
+      'weather_ball',
+      'field_state_boosts_ptype',
+      'field_state_resists_ptype',
+      'field_state_activates_ability',
+      'field_state_activates_item',
+      'field_state_enhances_pmove',
+      'field_state_hinders_pmove',
+    ]
+  */
+  const fieldStateJunctionTableNames = Object.keys(tableStatements.fieldStateJunctionTables);
+
+  // Since Promise.all() preserves order, foreignKeyMaps unpacks alphabetically.
+  const foreignKeyTables = [
+    'ability',
+    'effect',
+    'item',
+    'pmove',
+    'pstatus',
+    'ptype',
+    'stat',
+  ];
+  const foreignKeyMaps = await getForeignKeyMaps(db, tableStatements, foreignKeyTables);
+  
+  const fieldStateData = require(PROCESSED_DATA_PATH + 'fieldStates.json');
+
+  return await reinsertDataForTableGroup(
+    db,
+    tableStatements,
+    fieldStateJunctionTableNames,
+    'fieldStateJunctionTables',
+    fieldStateData,
     foreignKeyMaps
   );
 }
@@ -122,19 +177,26 @@ const reinsertItemJunctionData = async(db, tableStatements) => {
       'item_causes_pstatus',
       'item_resists_pstatus',
       'item_requires_pokemon',
+      'item_extends_field_state',
+      'item_resists_field_state',
+      'item_ignores_field_state',
     ]
   */
   const itemJunctionTableNames = Object.keys(tableStatements.itemJunctionTables)
     // Currently no items boost usage methods; remove if a new game adds it.
     .filter(tableName => tableName != 'item_boosts_usage_method');
 
-  /* 
-    Since Promise.all() preserves order, foreignKeyMaps unpacks as:
-
-      [item_FKM, pType_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM, pokemon_FKM]
-
-  */ 
-  const foreignKeyTables = ['item', 'ptype', 'usage_method', 'stat', 'pstatus', 'effect', 'pokemon'];
+  // Since Promise.all() preserves order, foreignKeyMaps unpacks alphabetically.
+  const foreignKeyTables = [
+    'effect',
+    'field_state',
+    'item',
+    'pokemon',
+    'pstatus',
+    'ptype',
+    'stat',
+    'usage_method',
+  ];
   const foreignKeyMaps = await getForeignKeyMaps(db, tableStatements, foreignKeyTables);
   
   const itemData = require(PROCESSED_DATA_PATH + 'items.json');
@@ -165,17 +227,26 @@ const reinsertMoveJunctionData = async(db, tableStatements) => {
       'pmove_effect',
       'pmove_causes_pstatus',
       'pmove_resists_pstatus',
+      'move_creates_field_state',
+      'move_removes_field_state',
+      'move_prevents_field_state',
+      'move_suppresses_field_state',
     ]
   */
   const moveJunctionTableNames = Object.keys(tableStatements.moveJunctionTables);
 
-  /* 
-    Since Promise.all() preserves order, foreignKeyMaps unpacks as:
-
-      [move_FKM, pokemon_FKM, pType_FKM, item_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM]
-
-  */ 
-  const foreignKeyTables = ['pmove', 'pokemon', 'ptype', 'item', 'usage_method', 'stat', 'pstatus', 'effect'];
+  // Since Promise.all() preserves order, foreignKeyMaps unpacks alphabetically.
+  const foreignKeyTables = [
+    'effect',
+    'field_state',
+    'item',
+    'pmove',
+    'pokemon',
+    'pstatus',
+    'ptype',
+    'stat',
+    'usage_method',
+  ];
   const foreignKeyMaps = await getForeignKeyMaps(db, tableStatements, foreignKeyTables);
   
   const itemData = require(PROCESSED_DATA_PATH + 'moves.json');
@@ -197,17 +268,18 @@ const reinsertTypeJunctionData = async(db, tableStatements) => {
   /*
     [
       'ptype_matchup',
+      'ptype_resists_field_state',
+      'ptype_removes_field_state',
+      'ptype_ignores_field_state',
     ]
   */
   const typeJunctionTableNames = Object.keys(tableStatements.typeJunctionTables);
 
-  /* 
-    Since Promise.all() preserves order, foreignKeyMaps unpacks as:
-
-      [pType_FKM]
-
-  */ 
-  const foreignKeyTables = ['ptype'];
+  // Since Promise.all() preserves order, foreignKeyMaps unpacks alphabetically.
+  const foreignKeyTables = [
+    'field_state',
+    'ptype',
+  ];
   const foreignKeyMaps = await getForeignKeyMaps(db, tableStatements, foreignKeyTables);
   
   const pTypeData = require(PROCESSED_DATA_PATH + 'pTypes.json');
@@ -238,13 +310,13 @@ const reinsertPokemonJunctionData = async(db, tableStatements) => {
     // Due to the size of the learnset data, we handle that separately.
     .filter(tableName => tableName != 'pokemon_pmove');
 
-  /* 
-    Since Promise.all() preserves order, foreignKeyMaps unpacks as:
-
-      [pokemon_FKM, pType_FKM, ability_FKM]
-
-  */ 
-  const foreignKeyTables = ['pokemon', 'ptype', 'ability', 'item'];
+  // Since Promise.all() preserves order, foreignKeyMaps unpacks alphabetically.
+  const foreignKeyTables = [
+    'ability',
+    'item',
+    'pokemon',
+    'ptype',
+  ];
   const foreignKeyMaps = await getForeignKeyMaps(db, tableStatements, foreignKeyTables);
   
   const pokemonData = require(PROCESSED_DATA_PATH + 'pokemon.json');
@@ -278,14 +350,14 @@ const reinsertVersionGroupJunctionData = async(db, tableStatements) => {
     // TODO handle sprite tables
     .filter(tableName => tableName.split('_')[0] == 'pdescription');
     
-
-  /* 
-    Since Promise.all() preserves order, foreignKeyMaps unpacks as:
-
-      [description_FKM, ability_FKM, move_FKM, item_FKM, versionGroup_FKM]
-
-  */ 
-  const foreignKeyTables = ['pdescription', 'ability', 'pmove', 'item', 'version_group'];
+  // Since Promise.all() preserves order, foreignKeyMaps unpacks alphabetically.
+  const foreignKeyTables = [
+    'ability',
+    'pdescription',
+    'item',
+    'pmove',
+    'version_group'
+  ];
   const foreignKeyMaps = await getForeignKeyMaps(db, tableStatements, foreignKeyTables);
   
   const descriptionData = require(PROCESSED_DATA_PATH + 'descriptions.json');
@@ -323,7 +395,10 @@ const reinsertLearnsetData = async(db, tableStatements) => {
       [pokemon_FKM, move_FKM]
 
   */ 
-  const foreignKeyTables = ['pokemon', 'pmove'];
+  const foreignKeyTables = [
+    'pokemon',
+    'pmove'
+  ];
   const foreignKeyMaps = await getForeignKeyMaps(db, tableStatements, foreignKeyTables);
   
   const pokemonData = require(PROCESSED_DATA_PATH + 'pokemon.json');

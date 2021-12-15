@@ -17,42 +17,99 @@ const getValuesForTable = (
   // #region
 
   // Declarations for foreign key maps.
-  let ability_FKM, item_FKM, move_FKM, pokemon_FKM, pType_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM, description_FKM, sprite_FKM, versionGroup_FKM;
+  let ability_FKM, fieldState_FKM, item_FKM, move_FKM, pokemon_FKM, pType_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM, description_FKM, sprite_FKM, versionGroup_FKM;
   // Declarations for entity data.
-  let abilityData, metaEntityData, itemData, moveData, pokemonData, pTypeData;
+  let abilityData, fieldStateData, metaEntityData, itemData, moveData, pokemonData, pTypeData;
   switch(tableGroup) {
     case 'abilityJunctionTables':
-      [ability_FKM, pType_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM] = foreignKeyMaps;
+      [
+        ability_FKM,
+        effect_FKM,
+        fieldState_FKM,
+        pstatus_FKM,
+        pType_FKM,
+        stat_FKM,
+        usageMethod_FKM,
+      ] = foreignKeyMaps;
       abilityData = entityData;
       break;
 
+    case 'fieldStateJunctionTables':
+      [
+        ability_FKM,
+        effect_FKM,
+        item_FKM,
+        move_FKM,
+        pstatus_FKM,
+        pType_FKM,
+        stat_FKM,
+      ]
+      fieldStateData = entityData;
+      break;
+
     case 'itemJunctionTables':
-      [item_FKM, pType_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM, pokemon_FKM] = foreignKeyMaps;
+      [
+        effect_FKM,
+        fieldState_FKM,
+        item_FKM,
+        pokemon_FKM,
+        pstatus_FKM,
+        pType_FKM,
+        stat_FKM,
+        usageMethod_FKM,
+      ] = foreignKeyMaps;
       itemData = entityData;
       break;
 
     case 'moveJunctionTables':
-      [move_FKM, pokemon_FKM, pType_FKM, item_FKM, usageMethod_FKM, stat_FKM, pstatus_FKM, effect_FKM] = foreignKeyMaps;
+      [
+        effect_FKM,
+        fieldState_FKM,
+        item_FKM,
+        move_FKM,
+        pokemon_FKM,
+        pstatus_FKM,
+        pType_FKM,
+        stat_FKM,
+        usageMethod_FKM,
+      ] = foreignKeyMaps;
       moveData = entityData;
       break;
     
     case 'typeJunctionTables':
-      [pType_FKM] = foreignKeyMaps;
+      [
+        fieldState_FKM,
+        pType_FKM,
+      ] = foreignKeyMaps;
       pTypeData = entityData;
       break;
 
     case 'pokemonJunctionTables':
       // We handle pokemon_pmove separately since it is so large.
       if (tableName == 'pokemon_pmove') {
-        [pokemon_FKM, move_FKM] = foreignKeyMaps;
+        [
+          pokemon_FKM,
+          move_FKM,
+        ] = foreignKeyMaps;
       } else {
-        [pokemon_FKM, pType_FKM, ability_FKM, item_FKM] = foreignKeyMaps;
+        [
+          ability_FKM,
+          item_FKM,
+          pokemon_FKM,
+          pType_FKM,
+        ] = foreignKeyMaps;
       }
       pokemonData = entityData;
       break;
     case 'versionGroupJunctionTables':
       if (tableName.split('_')[0] == 'pdescription') {
-        [description_FKM, ability_FKM, move_FKM, item_FKM, versionGroup_FKM] = foreignKeyMaps;
+        [
+          ability_FKM,
+          description_FKM,
+          item_FKM,
+          move_FKM,
+          versionGroup_FKM
+        ] = foreignKeyMaps;
         metaEntityData = entityData;
       } else {
         throw `Sprites not handled yet! ${tableName}`;
@@ -113,9 +170,12 @@ const getValuesForTable = (
             
             return [description, descriptionIndex, descriptionClass, entityName];
           }));
-      }, []);
-      break;
-    
+        }, []);
+        break;
+        
+    /*
+      GENERATION-DEPENDENT ENTITIES
+    */
     case 'pstatus':
       /*
         Need (
@@ -140,9 +200,6 @@ const getValuesForTable = (
       values = require(PROCESSED_DATA_PATH + 'stats.json').map(data => [data.gen, data.name, data.formatted_name, data.introduced]);
       break;
 
-    /*
-      GENERATION-DEPENDENT ENTITIES
-    */
     case 'ability':
       /*
         Need (
@@ -169,6 +226,24 @@ const getValuesForTable = (
         .map(data => [data.gen, data.name, data.formatted_name, data.introduced]);
       break;
 
+    case 'field_state':
+      /* 
+        Need (
+          generation_id,
+          field_state_id,
+          field_state_name,
+          field_state_formatted_name,
+          introduced,
+          field_state_damage_percent
+          field_state_max_layers
+          field_state_only_grounded
+          field_state_class
+        )
+      */
+      values = require(PROCESSED_DATA_PATH + 'effects.json')
+        .map(data => [data.gen, data.name, data.formatted_name, data.introduced, data.damage_percent, data.max_layers, data.only_grounded, data.field_state_class]);
+      break;
+    
     case 'item':
       /* 
         Need (

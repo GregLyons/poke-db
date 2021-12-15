@@ -115,3 +115,15 @@ INSERT INTO pokemon (
   pokemon_speed,
   pokemon_form_class
 ) VALUES ?;
+
+INSERT INTO field_state (
+  generation_id,
+  field_state_id,
+  field_state_name,
+  field_state_formatted_name,
+  introduced,
+  field_state_damage_percent
+  field_state_max_layers
+  field_state_only_grounded
+  field_state_class
+) VALUES ?;

@@ -117,6 +117,7 @@ const getIdentifyingColumnNames = (tableName) => {
       break;
     case 'ability': 
     case 'effect':
+    case 'field_state':
     case 'item':
     case 'pmove':
     case 'pokemon':
