@@ -264,7 +264,8 @@ const getValuesForTable = (
           field_state_damage_percent,
           field_state_max_layers,
           field_state_only_grounded,
-          field_state_class
+          field_state_class,
+          field_state_target
         )
       */
       values = require(PROCESSED_DATA_PATH + 'fieldStates.json')
@@ -276,7 +277,9 @@ const getValuesForTable = (
           data.damage_percent,
           data.max_layers,
           data.only_grounded,
-          data.field_state_class]);
+          data.field_state_class,
+          data.target,
+        ]);
       break;
     
     case 'item':
@@ -1236,6 +1239,7 @@ const getValuesForTable = (
             }
             // If action is 'extends', then fieldStateData[fieldStateName] is a turn count.
             else if (fieldStateAction === 'extends') {
+              console.log(itemName, fieldStateName);
               const [present, turnCount] = fieldStateData[fieldStateName];
               return present && turnCount >= 0
                 ? [gen, itemID, gen, fieldStateID, turnCount]

@@ -124,5 +124,6 @@ INSERT INTO field_state (
   field_state_damage_percent,
   field_state_max_layers,
   field_state_only_grounded,
-  field_state_class
+  field_state_class,
+  field_state_target
 ) VALUES ?;

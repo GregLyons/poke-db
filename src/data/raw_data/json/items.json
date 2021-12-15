@@ -63,7 +63,15 @@
     "formatted_name": "Air Balloon",
     "extends_field_state": {},
     "resists_field_state": {},
-    "ignores_field_state": {}
+    "ignores_field_state": {
+      "spikes": [[true, 5]],
+      "toxic_spikes": [[true, 5]],
+      "sticky_web": [[true, 6]],
+      "electric_terrain": [[true, 6]],
+      "grassy_terrain": [[true, 6]],
+      "misty_terrain": [[true, 6]],
+      "psychic_terrain": [[true, 6]]
+    }
   },
   "aloraichium_z": {
     "item_class": [["z_crystal", 7]],

@@ -116,7 +116,7 @@ const resetEverything = async () => {
   RESET ENTIRE DATABASE
 */
 
-resetEverything();
+// resetEverything();
 
 
 /*

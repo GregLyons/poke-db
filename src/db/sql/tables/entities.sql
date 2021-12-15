@@ -111,6 +111,7 @@ CREATE TABLE IF NOT EXISTS field_state (
   field_state_max_layers TINYINT UNSIGNED NOT NULL,
   field_state_only_grounded TINYINT UNSIGNED NOT NULL,
   field_state_class ENUM('entry_hazard', 'other', 'pledge', 'room', 'screen', 'terrain', 'weather'),
+  field_state_target ENUM('all', 'all_allies', 'all_foes'),
 
   PRIMARY KEY (generation_id, field_state_id),
   FOREIGN KEY (introduced) REFERENCES generation(generation_id)
