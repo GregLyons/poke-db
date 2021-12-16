@@ -14381,8 +14381,10 @@
     "pokeapi": [
       "arceus-ice", 10051
     ],
-    "form_data": {},
-    "form_class": [["base", 5]],
+    "form_data": {
+      "arceus_normal": [["base", 5]]
+    },
+    "form_class": [["other", 5]],
     "formatted_name": "Arceus (Ice)"
   },
   "arceus_poison": {
@@ -14470,6 +14472,7 @@
       "arceus_steel": [["other", 5]],
       "arceus_flying": [["other", 5]],
       "arceus_dark": [["other", 5]],
+      "arceus_ice": [["other", 5]],
       "arceus_poison": [["other", 5]],
       "arceus_bug": [["other", 5]],
       "arceus_ground": [["other", 5]],
@@ -22656,8 +22659,10 @@
     "pokeapi": [
       "silvally-ice", 10245
     ],
-    "form_data": {},
-    "form_class": [["base", 7]],
+    "form_data": {
+      "silvally_normal": [["base", 7]]
+    },
+    "form_class": [["other", 7]],
     "formatted_name": "Silvally (Ice)"
   },
   "silvally_poison": {
@@ -22751,6 +22756,7 @@
       "silvally_steel": [["other", 7]],
       "silvally_flying": [["other", 7]],
       "silvally_dark": [["other", 7]],
+      "silvally_ice": [["other", 7]],
       "silvally_poison": [["other", 7]],
       "silvally_bug": [["other", 7]],
       "silvally_ground": [["other", 7]],
@@ -30122,7 +30128,7 @@
       "darmanitan_standard": [["base", 5]],
       "darmanitan_zen_galar": [["galar", 8]]
     },
-    "form_class": [["base", 5]],
+    "form_class": [["other", 5]],
     "formatted_name": "Darmanitan (Zen)"
   },
   "darmanitan_standard_galar": {
@@ -31541,7 +31547,9 @@
     "pokeapi": [
       "eiscue-ice", 875
     ],
-    "form_data": {},
+    "form_data": {
+      "eiscue_noice": [["other", 8]]
+    },
     "form_class": [["base", 8]],
     "formatted_name": "Eiscue (Ice)"
   },
@@ -31567,8 +31575,10 @@
     "pokeapi": [
       "eiscue-noice", 10404
     ],
-    "form_data": {},
-    "form_class": [["base", 8]],
+    "form_data": {
+      "eiscue_ice": [["base", 8]]
+    },
+    "form_class": [["other", 8]],
     "formatted_name": "Eiscue (Noice)"
   },
   "indeedee_m": {
@@ -32447,7 +32457,9 @@
     "pokeapi": [
       "meowstic-male", 678
     ],
-    "form_data": {},
+    "form_data": {
+      "meowstic_f": [["other", 6]]
+    },
     "form_class": [["base", 6]],
     "formatted_name": "Meowstic (Male)"
   },
@@ -32475,8 +32487,10 @@
     "pokeapi": [
       "meowstic-female", 10124
     ],
-    "form_data": {},
-    "form_class": [["base", 6]],
+    "form_data": {
+      "meowstic_m": [["base", 6]]
+    },
+    "form_class": [["other", 6]],
     "formatted_name": "Meowstic (Female)"
   },
   "morpeko_full_belly": {

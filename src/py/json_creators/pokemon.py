@@ -668,16 +668,24 @@ def addFormFlags(pokemonDict):
           else:
             formType = 'other'
 
-        # need to handle case-by-case
+        # otherwise, need to handle case-by-case
         else:
           handled = False
           for baseFormSuffix in baseFormSuffices():
             if speciesName + '_' + baseFormSuffix in pokemonDict.keys():
               handled = True
 
-              # indicates base form
-              if baseFormSuffix in pokemonName:
+              if pokemonName in ['arceus_normal', 'silvally_normal']:
+                isBaseForm = True
+                continue
+              if pokemonName in ['arceus_ice', 'silvally_ice']:
+                isBaseForm = False
+                baseFormName = speciesName + '_' + 'normal'
+                formType = 'other'
+                continue
 
+              # indicates base form
+              if '_' + baseFormSuffix in pokemonName:
                 isBaseForm = True
                 continue
               
@@ -797,8 +805,14 @@ def addFormFlags(pokemonDict):
       continue
   
   # Exceptions
+
+  # darmanitan_zen_galar has base form darmanitan_zen, but darmanitan_zen is itself not a base form (instead, darmanitan_standard)
+  pokemonDict["darmanitan_zen"]["form_class"] = [['other', 5]]
+
+  # toxtricity_low_key_gmax has base form toxtricity_low_key, but toxtricity_low_key is itself not a base form (instead, toxtricity_amped)
   pokemonDict["toxtricity_low_key"]["form_class"] = [['other', 8]]
 
+  # urshifu_rapid_strike_gmax has base form urshifu_rapid_strike, but urshifu_rapid_strike is itself not a base form (instead, urshifu)
   pokemonDict["urshifu_rapid_strike"]["form_class"] = [['other', 8]]
 
   return
