@@ -21111,15 +21111,15 @@
       "grassy_terrain": [[true, 8]],
       "misty_terrain": [[true, 8]],
       "psychic_terrain": [[true, 8]],
-      "light_screen": [[true, 8]],
-      "reflect": [[true, 8]],
-      "aurora_veil": [[true, 8]],
+      "light_screen": [[true, 4]],
+      "reflect": [[true, 4]],
+      "aurora_veil": [[true, 7]],
       "safeguard": [[true, 4]],
       "mist": [[true, 4]],
-      "spikes": [[true, 8]],
-      "toxic_spikes": [[true, 8]],
-      "stealth_rock": [[true, 8]],
-      "sticky_web": [[true, 8]],
+      "spikes": [[true, 4]],
+      "toxic_spikes": [[true, 4]],
+      "stealth_rock": [[true, 4]],
+      "sticky_web": [[true, 6]],
       "sharp_steel": [[true, 8]]
     }
   },
@@ -40732,7 +40732,15 @@
       "electric_terrain": [[true, 8]],
       "grassy_terrain": [[true, 8]],
       "misty_terrain": [[true, 8]],
-      "psychic_terrain": [[true, 8]]
+      "psychic_terrain": [[true, 8]],
+      "light_screen": [[true, 8]],
+      "reflect": [[true, 8]],
+      "aurora_veil": [[true, 8]],
+      "spikes": [[true, 8]],
+      "toxic_spikes": [[true, 8]],
+      "stealth_rock": [[true, 8]],
+      "sticky_web": [[true, 8]],
+      "sharp_steel": [[true, 8]]
     }
   },
   "g_max_stun_shock": {

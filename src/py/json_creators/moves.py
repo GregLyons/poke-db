@@ -1398,14 +1398,14 @@ def addFieldStateDate(moveDict):
   moveDict["defog"]["removes_field_state"]["sharp_steel"] = [[True, 8]]
 
   # G-Max Wind rage
-  moveDict["defog"]["removes_field_state"]["light_screen"] = [[True, 8]]
-  moveDict["defog"]["removes_field_state"]["reflect"] = [[True, 8]]
-  moveDict["defog"]["removes_field_state"]["aurora_veil"] = [[True, 8]]
-  moveDict["defog"]["removes_field_state"]["spikes"] = [[True, 8]]
-  moveDict["defog"]["removes_field_state"]["toxic_spikes"] = [[True, 8]]
-  moveDict["defog"]["removes_field_state"]["stealth_rock"] = [[True, 8]]
-  moveDict["defog"]["removes_field_state"]["sticky_web"] = [[True, 8]]
-  moveDict["defog"]["removes_field_state"]["sharp_steel"] = [[True, 8]]
+  moveDict["g_max_wind_rage"]["removes_field_state"]["light_screen"] = [[True, 8]]
+  moveDict["g_max_wind_rage"]["removes_field_state"]["reflect"] = [[True, 8]]
+  moveDict["g_max_wind_rage"]["removes_field_state"]["aurora_veil"] = [[True, 8]]
+  moveDict["g_max_wind_rage"]["removes_field_state"]["spikes"] = [[True, 8]]
+  moveDict["g_max_wind_rage"]["removes_field_state"]["toxic_spikes"] = [[True, 8]]
+  moveDict["g_max_wind_rage"]["removes_field_state"]["stealth_rock"] = [[True, 8]]
+  moveDict["g_max_wind_rage"]["removes_field_state"]["sticky_web"] = [[True, 8]]
+  moveDict["g_max_wind_rage"]["removes_field_state"]["sharp_steel"] = [[True, 8]]
 
   # Rapid spin
   moveDict["rapid_spin"]["removes_field_state"]["spikes"] = [[True, 2]]

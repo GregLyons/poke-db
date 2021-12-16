@@ -217,7 +217,7 @@ splitPokemonArr.map(data => {
 
   if (isNaN(data.defense)) console.log(`${data.name}: Defense ${data.defense} is not a number.`);
 
-  if (isNaN(data.special_attack)) console.log(`${data.name}: Specialattack ${data.special_attack} is not a number.`);
+  if (isNaN(data.special_attack)) console.log(`${data.name}: Special attack ${data.special_attack} is not a number.`);
 
   if (isNaN(data.special_defense)) console.log(`${data.name}: Special defense ${data.special_defense} is not a number.`);
 

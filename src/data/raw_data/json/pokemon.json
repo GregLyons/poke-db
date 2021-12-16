@@ -83,7 +83,7 @@
     ],
     "form_data": {
       "venusaur_mega": [["mega", 6]],
-      "venusaur_gmax": [["gmax", 8]]
+      "venusaur_gmax": [["gmax", 1]]
     },
     "form_class": [["base", 1]],
     "formatted_name": "Venusaur"
@@ -173,7 +173,7 @@
     "form_data": {
       "charizard_mega_x": [["mega", 6]],
       "charizard_mega_y": [["mega", 6]],
-      "charizard_gmax": [["gmax", 8]]
+      "charizard_gmax": [["gmax", 1]]
     },
     "form_class": [["base", 1]],
     "formatted_name": "Charizard"
@@ -262,7 +262,7 @@
     ],
     "form_data": {
       "blastoise_mega": [["mega", 6]],
-      "blastoise_gmax": [["gmax", 8]]
+      "blastoise_gmax": [["gmax", 1]]
     },
     "form_class": [["base", 1]],
     "formatted_name": "Blastoise"
@@ -350,7 +350,7 @@
       "butterfree", 12
     ],
     "form_data": {
-      "butterfree_gmax": [["gmax", 8]]
+      "butterfree_gmax": [["gmax", 1]]
     },
     "form_class": [["base", 1]],
     "formatted_name": "Butterfree"
@@ -731,7 +731,7 @@
       "pikachu", 25
     ],
     "form_data": {
-      "pikachu_gmax": [["gmax", 8]],
+      "pikachu_gmax": [["gmax", 1]],
       "pikachu_original_cap": [["other", 7]],
       "pikachu_kalos_cap": [["other", 7]],
       "pikachu_alola_cap": [["other", 7]],
@@ -739,12 +739,12 @@
       "pikachu_sinnoh_cap": [["other", 7]],
       "pikachu_unova_cap": [["other", 7]],
       "pikachu_world_cap": [["other", 7]],
-      "pikachu_partner": [["other", "lgpe_only"]],
-      "pikachu_rock_star": [["other", 1]],
-      "pikachu_belle": [["other", 1]],
-      "pikachu_pop_star": [["other", 1]],
-      "pikachu_phd": [["other", 1]],
-      "pikachu_libre": [["other", 1]],
+      "pikachu_partner": [["other", 7]],
+      "pikachu_rock_star": [["other", 6]],
+      "pikachu_belle": [["other", 6]],
+      "pikachu_pop_star": [["other", 6]],
+      "pikachu_phd": [["other", 6]],
+      "pikachu_libre": [["other", 6]],
       "pikachu_partner_cap": [["other", 7]],
       "pikachu_cosplay": [["other", 6]]
     },
@@ -1533,7 +1533,7 @@
     "form_data": {
       "meowth_alola": [["alola", 7]],
       "meowth_galar": [["galar", 8]],
-      "meowth_gmax": [["gmax", 8]]
+      "meowth_gmax": [["gmax", 1]]
     },
     "form_class": [["base", 1]],
     "formatted_name": "Meowth"
@@ -1994,7 +1994,7 @@
       "machamp", 68
     ],
     "form_data": {
-      "machamp_gmax": [["gmax", 8]]
+      "machamp_gmax": [["gmax", 1]]
     },
     "form_class": [["base", 1]],
     "formatted_name": "Machamp"
@@ -2753,7 +2753,7 @@
     ],
     "form_data": {
       "gengar_mega": [["mega", 6]],
-      "gengar_gmax": [["gmax", 8]]
+      "gengar_gmax": [["gmax", 1]]
     },
     "form_class": [["base", 1]],
     "formatted_name": "Gengar"
@@ -2895,7 +2895,7 @@
       "kingler", 99
     ],
     "form_data": {
-      "kingler_gmax": [["gmax", 8]]
+      "kingler_gmax": [["gmax", 1]]
     },
     "form_class": [["base", 1]],
     "formatted_name": "Kingler"
@@ -3812,7 +3812,7 @@
       "lapras", 131
     ],
     "form_data": {
-      "lapras_gmax": [["gmax", 8]]
+      "lapras_gmax": [["gmax", 1]]
     },
     "form_class": [["base", 1]],
     "formatted_name": "Lapras"
@@ -3875,8 +3875,8 @@
       "eevee", 133
     ],
     "form_data": {
-      "eevee_gmax": [["gmax", 8]],
-      "eevee_partner": [["other", "lgpe_only"]]
+      "eevee_gmax": [["gmax", 1]],
+      "eevee_partner": [["other", 7]]
     },
     "form_class": [["base", 1]],
     "formatted_name": "Eevee"
@@ -4158,7 +4158,7 @@
       "snorlax", 143
     ],
     "form_data": {
-      "snorlax_gmax": [["gmax", 8]]
+      "snorlax_gmax": [["gmax", 1]]
     },
     "form_class": [["base", 1]],
     "formatted_name": "Snorlax"
@@ -14194,7 +14194,7 @@
   "arceus_grass": {
     "dex_number": 493,
     "species": "arceus",
-    "gen": 4,
+    "gen": 5,
     "type_1": [["grass", 4]],
     "type_2": [["", 4]],
     "evolves_to": {},
@@ -14214,15 +14214,15 @@
       "arceus-grass", 10049
     ],
     "form_data": {
-      "arceus_normal": [["base", 4]]
+      "arceus_normal": [["base", 5]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["other", 5]],
     "formatted_name": "Arceus (Grass)"
   },
   "arceus_fairy": {
     "dex_number": 493,
     "species": "arceus",
-    "gen": 6,
+    "gen": 5,
     "type_1": [["fairy", 6]],
     "type_2": [["", 6]],
     "evolves_to": {},
@@ -14242,15 +14242,15 @@
       "arceus-fairy", 10085
     ],
     "form_data": {
-      "arceus_normal": [["base", 6]]
+      "arceus_normal": [["base", 5]]
     },
-    "form_class": [["other", 6]],
+    "form_class": [["other", 5]],
     "formatted_name": "Arceus (Fairy)"
   },
   "arceus_electric": {
     "dex_number": 493,
     "species": "arceus",
-    "gen": 4,
+    "gen": 5,
     "type_1": [["electric", 4]],
     "type_2": [["", 4]],
     "evolves_to": {},
@@ -14270,15 +14270,15 @@
       "arceus-electric", 10044
     ],
     "form_data": {
-      "arceus_normal": [["base", 4]]
+      "arceus_normal": [["base", 5]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["other", 5]],
     "formatted_name": "Arceus (Electric)"
   },
   "arceus_steel": {
     "dex_number": 493,
     "species": "arceus",
-    "gen": 4,
+    "gen": 5,
     "type_1": [["steel", 4]],
     "type_2": [["", 4]],
     "evolves_to": {},
@@ -14298,15 +14298,15 @@
       "arceus-steel", 10055
     ],
     "form_data": {
-      "arceus_normal": [["base", 4]]
+      "arceus_normal": [["base", 5]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["other", 5]],
     "formatted_name": "Arceus (Steel)"
   },
   "arceus_flying": {
     "dex_number": 493,
     "species": "arceus",
-    "gen": 4,
+    "gen": 5,
     "type_1": [["flying", 4]],
     "type_2": [["", 4]],
     "evolves_to": {},
@@ -14326,15 +14326,15 @@
       "arceus-flying", 10047
     ],
     "form_data": {
-      "arceus_normal": [["base", 4]]
+      "arceus_normal": [["base", 5]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["other", 5]],
     "formatted_name": "Arceus (Flying)"
   },
   "arceus_dark": {
     "dex_number": 493,
     "species": "arceus",
-    "gen": 4,
+    "gen": 5,
     "type_1": [["dark", 4]],
     "type_2": [["", 4]],
     "evolves_to": {},
@@ -14354,15 +14354,15 @@
       "arceus-dark", 10042
     ],
     "form_data": {
-      "arceus_normal": [["base", 4]]
+      "arceus_normal": [["base", 5]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["other", 5]],
     "formatted_name": "Arceus (Dark)"
   },
   "arceus_ice": {
     "dex_number": 493,
     "species": "arceus",
-    "gen": 4,
+    "gen": 5,
     "type_1": [["ice", 4]],
     "type_2": [["", 4]],
     "evolves_to": {},
@@ -14382,13 +14382,13 @@
       "arceus-ice", 10051
     ],
     "form_data": {},
-    "form_class": [["base", 4]],
+    "form_class": [["base", 5]],
     "formatted_name": "Arceus (Ice)"
   },
   "arceus_poison": {
     "dex_number": 493,
     "species": "arceus",
-    "gen": 4,
+    "gen": 5,
     "type_1": [["poison", 4]],
     "type_2": [["", 4]],
     "evolves_to": {},
@@ -14408,15 +14408,15 @@
       "arceus-poison", 10052
     ],
     "form_data": {
-      "arceus_normal": [["base", 4]]
+      "arceus_normal": [["base", 5]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["other", 5]],
     "formatted_name": "Arceus (Poison)"
   },
   "arceus_bug": {
     "dex_number": 493,
     "species": "arceus",
-    "gen": 4,
+    "gen": 5,
     "type_1": [["bug", 4]],
     "type_2": [["", 4]],
     "evolves_to": {},
@@ -14436,15 +14436,15 @@
       "arceus-bug", 10041
     ],
     "form_data": {
-      "arceus_normal": [["base", 4]]
+      "arceus_normal": [["base", 5]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["other", 5]],
     "formatted_name": "Arceus (Bug)"
   },
   "arceus_normal": {
     "dex_number": 493,
     "species": "arceus",
-    "gen": 4,
+    "gen": 5,
     "type_1": [["normal", 4]],
     "type_2": [["", 4]],
     "evolves_to": {},
@@ -14464,31 +14464,31 @@
       "arceus-normal", 493
     ],
     "form_data": {
-      "arceus_grass": [["other", 4]],
-      "arceus_fairy": [["other", 6]],
-      "arceus_electric": [["other", 4]],
-      "arceus_steel": [["other", 4]],
-      "arceus_flying": [["other", 4]],
-      "arceus_dark": [["other", 4]],
-      "arceus_poison": [["other", 4]],
-      "arceus_bug": [["other", 4]],
-      "arceus_ground": [["other", 4]],
-      "arceus_fighting": [["other", 4]],
-      "arceus_psychic": [["other", 4]],
-      "arceus_ghost": [["other", 4]],
-      "arceus_water": [["other", 4]],
-      "arceus_fire": [["other", 4]],
-      "arceus_rock": [["other", 4]],
-      "arceus_dragon": [["other", 4]],
+      "arceus_grass": [["other", 5]],
+      "arceus_fairy": [["other", 5]],
+      "arceus_electric": [["other", 5]],
+      "arceus_steel": [["other", 5]],
+      "arceus_flying": [["other", 5]],
+      "arceus_dark": [["other", 5]],
+      "arceus_poison": [["other", 5]],
+      "arceus_bug": [["other", 5]],
+      "arceus_ground": [["other", 5]],
+      "arceus_fighting": [["other", 5]],
+      "arceus_psychic": [["other", 5]],
+      "arceus_ghost": [["other", 5]],
+      "arceus_water": [["other", 5]],
+      "arceus_fire": [["other", 5]],
+      "arceus_rock": [["other", 5]],
+      "arceus_dragon": [["other", 5]],
       "arceus_unknown": [["other", 4]]
     },
-    "form_class": [["base", 4]],
+    "form_class": [["base", 5]],
     "formatted_name": "Arceus (Normal)"
   },
   "arceus_ground": {
     "dex_number": 493,
     "species": "arceus",
-    "gen": 4,
+    "gen": 5,
     "type_1": [["ground", 4]],
     "type_2": [["", 4]],
     "evolves_to": {},
@@ -14508,15 +14508,15 @@
       "arceus-ground", 10050
     ],
     "form_data": {
-      "arceus_normal": [["base", 4]]
+      "arceus_normal": [["base", 5]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["other", 5]],
     "formatted_name": "Arceus (Ground)"
   },
   "arceus_fighting": {
     "dex_number": 493,
     "species": "arceus",
-    "gen": 4,
+    "gen": 5,
     "type_1": [["fighting", 4]],
     "type_2": [["", 4]],
     "evolves_to": {},
@@ -14536,15 +14536,15 @@
       "arceus-fighting", 10045
     ],
     "form_data": {
-      "arceus_normal": [["base", 4]]
+      "arceus_normal": [["base", 5]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["other", 5]],
     "formatted_name": "Arceus (Fighting)"
   },
   "arceus_psychic": {
     "dex_number": 493,
     "species": "arceus",
-    "gen": 4,
+    "gen": 5,
     "type_1": [["psychic", 4]],
     "type_2": [["", 4]],
     "evolves_to": {},
@@ -14564,15 +14564,15 @@
       "arceus-psychic", 10053
     ],
     "form_data": {
-      "arceus_normal": [["base", 4]]
+      "arceus_normal": [["base", 5]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["other", 5]],
     "formatted_name": "Arceus (Psychic)"
   },
   "arceus_ghost": {
     "dex_number": 493,
     "species": "arceus",
-    "gen": 4,
+    "gen": 5,
     "type_1": [["ghost", 4]],
     "type_2": [["", 4]],
     "evolves_to": {},
@@ -14592,15 +14592,15 @@
       "arceus-ghost", 10048
     ],
     "form_data": {
-      "arceus_normal": [["base", 4]]
+      "arceus_normal": [["base", 5]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["other", 5]],
     "formatted_name": "Arceus (Ghost)"
   },
   "arceus_water": {
     "dex_number": 493,
     "species": "arceus",
-    "gen": 4,
+    "gen": 5,
     "type_1": [["water", 4]],
     "type_2": [["", 4]],
     "evolves_to": {},
@@ -14620,15 +14620,15 @@
       "arceus-water", 10056
     ],
     "form_data": {
-      "arceus_normal": [["base", 4]]
+      "arceus_normal": [["base", 5]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["other", 5]],
     "formatted_name": "Arceus (Water)"
   },
   "arceus_fire": {
     "dex_number": 493,
     "species": "arceus",
-    "gen": 4,
+    "gen": 5,
     "type_1": [["fire", 4]],
     "type_2": [["", 4]],
     "evolves_to": {},
@@ -14648,15 +14648,15 @@
       "arceus-fire", 10046
     ],
     "form_data": {
-      "arceus_normal": [["base", 4]]
+      "arceus_normal": [["base", 5]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["other", 5]],
     "formatted_name": "Arceus (Fire)"
   },
   "arceus_rock": {
     "dex_number": 493,
     "species": "arceus",
-    "gen": 4,
+    "gen": 5,
     "type_1": [["rock", 4]],
     "type_2": [["", 4]],
     "evolves_to": {},
@@ -14676,15 +14676,15 @@
       "arceus-rock", 10054
     ],
     "form_data": {
-      "arceus_normal": [["base", 4]]
+      "arceus_normal": [["base", 5]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["other", 5]],
     "formatted_name": "Arceus (Rock)"
   },
   "arceus_dragon": {
     "dex_number": 493,
     "species": "arceus",
-    "gen": 4,
+    "gen": 5,
     "type_1": [["dragon", 4]],
     "type_2": [["", 4]],
     "evolves_to": {},
@@ -14704,9 +14704,9 @@
       "arceus-dragon", 10043
     ],
     "form_data": {
-      "arceus_normal": [["base", 4]]
+      "arceus_normal": [["base", 5]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["other", 5]],
     "formatted_name": "Arceus (Dragon)"
   },
   "victini": {
@@ -16794,7 +16794,7 @@
       "garbodor", 569
     ],
     "form_data": {
-      "garbodor_gmax": [["gmax", 8]]
+      "garbodor_gmax": [["gmax", 5]]
     },
     "form_class": [["base", 5]],
     "formatted_name": "Garbodor"
@@ -23957,7 +23957,7 @@
       "melmetal", 809
     ],
     "form_data": {
-      "melmetal_gmax": [["gmax", 8]]
+      "melmetal_gmax": [["gmax", 7]]
     },
     "form_class": [["base", 7]],
     "formatted_name": "Melmetal"
@@ -29116,7 +29116,7 @@
   "charizard_gmax": {
     "dex_number": 6,
     "species": "charizard",
-    "gen": 8,
+    "gen": 1,
     "type_1": [["fire", 8]],
     "type_2": [["flying", 8]],
     "evolves_to": {},
@@ -29134,17 +29134,17 @@
       "charizard-gmax", 10414
     ],
     "form_data": {
-      "charizard": [["base", 8]]
+      "charizard": [["base", 1]]
     },
     "weight": 90.5,
     "height": 0,
-    "form_class": [["gmax", 8]],
+    "form_class": [["gmax", 1]],
     "formatted_name": "Charizard (Gmax)"
   },
   "butterfree_gmax": {
     "dex_number": 12,
     "species": "butterfree",
-    "gen": 8,
+    "gen": 1,
     "type_1": [["bug", 8]],
     "type_2": [["flying", 8]],
     "evolves_to": {},
@@ -29162,17 +29162,17 @@
       "butterfree-gmax", 10416
     ],
     "form_data": {
-      "butterfree": [["base", 8]]
+      "butterfree": [["base", 1]]
     },
     "weight": 32.0,
     "height": 0,
-    "form_class": [["gmax", 8]],
+    "form_class": [["gmax", 1]],
     "formatted_name": "Butterfree (Gmax)"
   },
   "pikachu_gmax": {
     "dex_number": 25,
     "species": "pikachu",
-    "gen": 8,
+    "gen": 1,
     "type_1": [["electric", 8]],
     "type_2": [["", 8]],
     "evolves_to": {},
@@ -29190,17 +29190,17 @@
       "pikachu-gmax", 10417
     ],
     "form_data": {
-      "pikachu": [["base", 8]]
+      "pikachu": [["base", 1]]
     },
     "weight": 6.0,
     "height": 0,
-    "form_class": [["gmax", 8]],
+    "form_class": [["gmax", 1]],
     "formatted_name": "Pikachu (Gmax)"
   },
   "meowth_gmax": {
     "dex_number": 52,
     "species": "meowth",
-    "gen": 8,
+    "gen": 1,
     "type_1": [["normal", 8]],
     "type_2": [["", 8]],
     "evolves_to": {},
@@ -29218,17 +29218,17 @@
       "meowth-gmax", 10418
     ],
     "form_data": {
-      "meowth": [["base", 8]]
+      "meowth": [["base", 1]]
     },
     "weight": 4.2,
     "height": 0,
-    "form_class": [["gmax", 8]],
+    "form_class": [["gmax", 1]],
     "formatted_name": "Meowth (Gmax)"
   },
   "machamp_gmax": {
     "dex_number": 68,
     "species": "machamp",
-    "gen": 8,
+    "gen": 1,
     "type_1": [["fighting", 8]],
     "type_2": [["", 8]],
     "evolves_to": {},
@@ -29246,17 +29246,17 @@
       "machamp-gmax", 10419
     ],
     "form_data": {
-      "machamp": [["base", 8]]
+      "machamp": [["base", 1]]
     },
     "weight": 130.0,
     "height": 0,
-    "form_class": [["gmax", 8]],
+    "form_class": [["gmax", 1]],
     "formatted_name": "Machamp (Gmax)"
   },
   "gengar_gmax": {
     "dex_number": 94,
     "species": "gengar",
-    "gen": 8,
+    "gen": 1,
     "type_1": [["ghost", 8]],
     "type_2": [["poison", 8]],
     "evolves_to": {},
@@ -29274,17 +29274,17 @@
       "gengar-gmax", 10420
     ],
     "form_data": {
-      "gengar": [["base", 8]]
+      "gengar": [["base", 1]]
     },
     "weight": 40.5,
     "height": 0,
-    "form_class": [["gmax", 8]],
+    "form_class": [["gmax", 1]],
     "formatted_name": "Gengar (Gmax)"
   },
   "kingler_gmax": {
     "dex_number": 99,
     "species": "kingler",
-    "gen": 8,
+    "gen": 1,
     "type_1": [["water", 8]],
     "type_2": [["", 8]],
     "evolves_to": {},
@@ -29302,17 +29302,17 @@
       "kingler-gmax", 10421
     ],
     "form_data": {
-      "kingler": [["base", 8]]
+      "kingler": [["base", 1]]
     },
     "weight": 60.0,
     "height": 0,
-    "form_class": [["gmax", 8]],
+    "form_class": [["gmax", 1]],
     "formatted_name": "Kingler (Gmax)"
   },
   "lapras_gmax": {
     "dex_number": 131,
     "species": "lapras",
-    "gen": 8,
+    "gen": 1,
     "type_1": [["water", 8]],
     "type_2": [["ice", 8]],
     "evolves_to": {},
@@ -29330,17 +29330,17 @@
       "lapras-gmax", 10422
     ],
     "form_data": {
-      "lapras": [["base", 8]]
+      "lapras": [["base", 1]]
     },
     "weight": 220.0,
     "height": 0,
-    "form_class": [["gmax", 8]],
+    "form_class": [["gmax", 1]],
     "formatted_name": "Lapras (Gmax)"
   },
   "eevee_gmax": {
     "dex_number": 133,
     "species": "eevee",
-    "gen": 8,
+    "gen": 1,
     "type_1": [["normal", 8]],
     "type_2": [["", 8]],
     "evolves_to": {},
@@ -29358,17 +29358,17 @@
       "eevee-gmax", 10423
     ],
     "form_data": {
-      "eevee": [["base", 8]]
+      "eevee": [["base", 1]]
     },
     "weight": 6.5,
     "height": 0,
-    "form_class": [["gmax", 8]],
+    "form_class": [["gmax", 1]],
     "formatted_name": "Eevee (Gmax)"
   },
   "snorlax_gmax": {
     "dex_number": 143,
     "species": "snorlax",
-    "gen": 8,
+    "gen": 1,
     "type_1": [["normal", 8]],
     "type_2": [["", 8]],
     "evolves_to": {},
@@ -29386,17 +29386,17 @@
       "snorlax-gmax", 10424
     ],
     "form_data": {
-      "snorlax": [["base", 8]]
+      "snorlax": [["base", 1]]
     },
     "weight": 460.0,
     "height": 0,
-    "form_class": [["gmax", 8]],
+    "form_class": [["gmax", 1]],
     "formatted_name": "Snorlax (Gmax)"
   },
   "garbodor_gmax": {
     "dex_number": 569,
     "species": "garbodor",
-    "gen": 8,
+    "gen": 5,
     "type_1": [["poison", 8]],
     "type_2": [["", 8]],
     "evolves_to": {},
@@ -29414,17 +29414,17 @@
       "garbodor-gmax", 10425
     ],
     "form_data": {
-      "garbodor": [["base", 8]]
+      "garbodor": [["base", 5]]
     },
     "weight": 107.3,
     "height": 0,
-    "form_class": [["gmax", 8]],
+    "form_class": [["gmax", 5]],
     "formatted_name": "Garbodor (Gmax)"
   },
   "melmetal_gmax": {
     "dex_number": 809,
     "species": "melmetal",
-    "gen": 8,
+    "gen": 7,
     "type_1": [["steel", 8]],
     "type_2": [["", 8]],
     "evolves_to": {},
@@ -29442,11 +29442,11 @@
       "melmetal-gmax", 10426
     ],
     "form_data": {
-      "melmetal": [["base", 8]]
+      "melmetal": [["base", 7]]
     },
     "weight": 800.0,
     "height": 0,
-    "form_class": [["gmax", 8]],
+    "form_class": [["gmax", 7]],
     "formatted_name": "Melmetal (Gmax)"
   },
   "corviknight_gmax": {
@@ -29872,7 +29872,7 @@
   "venusaur_gmax": {
     "dex_number": 3,
     "species": "venusaur",
-    "gen": 8,
+    "gen": 1,
     "type_1": [["grass", 8]],
     "type_2": [["poison", 8]],
     "evolves_to": {},
@@ -29890,17 +29890,17 @@
       "venusaur-gmax", 10413
     ],
     "form_data": {
-      "venusaur": [["base", 8]]
+      "venusaur": [["base", 1]]
     },
     "weight": 100.0,
     "height": 0,
-    "form_class": [["gmax", 8]],
+    "form_class": [["gmax", 1]],
     "formatted_name": "Venusaur (Gmax)"
   },
   "blastoise_gmax": {
     "dex_number": 9,
     "species": "blastoise",
-    "gen": 8,
+    "gen": 1,
     "type_1": [["water", 8]],
     "type_2": [["", 8]],
     "evolves_to": {},
@@ -29918,11 +29918,11 @@
       "blastoise-gmax", 10415
     ],
     "form_data": {
-      "blastoise": [["base", 8]]
+      "blastoise": [["base", 1]]
     },
     "weight": 85.5,
     "height": 0,
-    "form_class": [["gmax", 8]],
+    "form_class": [["gmax", 1]],
     "formatted_name": "Blastoise (Gmax)"
   },
   "rillaboom_gmax": {
@@ -30497,7 +30497,7 @@
   "pikachu_partner": {
     "dex_number": 25,
     "species": "pikachu",
-    "gen": "lgpe_only",
+    "gen": 7,
     "type_1": [["electric", "lgpe_only"]],
     "type_2": [["", "lgpe_only"]],
     "evolves_to": {},
@@ -30515,15 +30515,15 @@
     "weight": 6.0,
     "pokeapi": [],
     "form_data": {
-      "pikachu": [["base", "lgpe_only"]]
+      "pikachu": [["base", 7]]
     },
-    "form_class": [["other", "lgpe_only"]],
+    "form_class": [["other", 7]],
     "formatted_name": "Pikachu (Partner)"
   },
   "eevee_partner": {
     "dex_number": 133,
     "species": "eevee",
-    "gen": "lgpe_only",
+    "gen": 7,
     "type_1": [["normal", "lgpe_only"]],
     "type_2": [["", "lgpe_only"]],
     "evolves_to": {},
@@ -30541,9 +30541,9 @@
     "weight": 6.5,
     "pokeapi": [],
     "form_data": {
-      "eevee": [["base", "lgpe_only"]]
+      "eevee": [["base", 7]]
     },
-    "form_class": [["other", "lgpe_only"]],
+    "form_class": [["other", 7]],
     "formatted_name": "Eevee (Partner)"
   },
   "kyogre_primal": {
@@ -30560,9 +30560,9 @@
     "special_attack": [[180, 6]],
     "special_defense": [[160, 6]],
     "speed": [[90, 6]],
-    "ability_1": [["primordial_sea", 3]],
-    "ability_2": [["", 3]],
-    "ability_hidden": [["", 5]],
+    "ability_1": [["primordial_sea", 6]],
+    "ability_2": [["", 6]],
+    "ability_hidden": [["", 6]],
     "height": 9.8,
     "weight": 430.0,
     "pokeapi": [
@@ -30593,9 +30593,9 @@
     "special_attack": [[150, 6]],
     "special_defense": [[90, 6]],
     "speed": [[90, 6]],
-    "ability_1": [["desolate_land", 3]],
-    "ability_2": [["", 3]],
-    "ability_hidden": [["", 5]],
+    "ability_1": [["desolate_land", 6]],
+    "ability_2": [["", 6]],
+    "ability_hidden": [["", 6]],
     "height": 5.0,
     "weight": 999.7,
     "pokeapi": [
@@ -32566,7 +32566,7 @@
   "pikachu_rock_star": {
     "dex_number": 25,
     "species": "pikachu",
-    "gen": 1,
+    "gen": 6,
     "type_1": [["electric", 1]],
     "type_2": [["", 1]],
     "evolves_to": {},
@@ -32584,17 +32584,17 @@
       "pikachu-rock-star", 10182
     ],
     "form_data": {
-      "pikachu": [["base", 1]]
+      "pikachu": [["base", 6]]
     },
     "weight": 6.0,
     "height": 0.4,
-    "form_class": [["other", 1]],
+    "form_class": [["other", 6]],
     "formatted_name": "Pikachu (Rock Star)"
   },
   "pikachu_belle": {
     "dex_number": 25,
     "species": "pikachu",
-    "gen": 1,
+    "gen": 6,
     "type_1": [["electric", 1]],
     "type_2": [["", 1]],
     "evolves_to": {},
@@ -32612,17 +32612,17 @@
       "pikachu-belle", 10183
     ],
     "form_data": {
-      "pikachu": [["base", 1]]
+      "pikachu": [["base", 6]]
     },
     "weight": 6.0,
     "height": 0.4,
-    "form_class": [["other", 1]],
+    "form_class": [["other", 6]],
     "formatted_name": "Pikachu (Belle)"
   },
   "pikachu_pop_star": {
     "dex_number": 25,
     "species": "pikachu",
-    "gen": 1,
+    "gen": 6,
     "type_1": [["electric", 1]],
     "type_2": [["", 1]],
     "evolves_to": {},
@@ -32640,17 +32640,17 @@
       "pikachu-pop-star", 10184
     ],
     "form_data": {
-      "pikachu": [["base", 1]]
+      "pikachu": [["base", 6]]
     },
     "weight": 6.0,
     "height": 0.4,
-    "form_class": [["other", 1]],
+    "form_class": [["other", 6]],
     "formatted_name": "Pikachu (Pop Star)"
   },
   "pikachu_phd": {
     "dex_number": 25,
     "species": "pikachu",
-    "gen": 1,
+    "gen": 6,
     "type_1": [["electric", 1]],
     "type_2": [["", 1]],
     "evolves_to": {},
@@ -32668,17 +32668,17 @@
       "pikachu-phd", 10185
     ],
     "form_data": {
-      "pikachu": [["base", 1]]
+      "pikachu": [["base", 6]]
     },
     "weight": 6.0,
     "height": 0.4,
-    "form_class": [["other", 1]],
+    "form_class": [["other", 6]],
     "formatted_name": "Pikachu (Phd)"
   },
   "pikachu_libre": {
     "dex_number": 25,
     "species": "pikachu",
-    "gen": 1,
+    "gen": 6,
     "type_1": [["electric", 1]],
     "type_2": [["", 1]],
     "evolves_to": {},
@@ -32696,11 +32696,11 @@
       "pikachu-libre", 10186
     ],
     "form_data": {
-      "pikachu": [["base", 1]]
+      "pikachu": [["base", 6]]
     },
     "weight": 6.0,
     "height": 0.4,
-    "form_class": [["other", 1]],
+    "form_class": [["other", 6]],
     "formatted_name": "Pikachu (Libre)"
   },
   "floette_eternal": {

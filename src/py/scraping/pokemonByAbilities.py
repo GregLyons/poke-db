@@ -157,6 +157,14 @@ def makeAbilityCSVandExtractNotes(fname):
         if csvRow[2] == 'zygarde_10' or csvRow[2] == 'zygarde_complete':
           csvRow[6] = 7
 
+        # primal groudon and kyogre
+        if csvRow[2] in ['groudon_primal', 'kyogre_primal']:
+          csvRow[6] = 6
+        
+        # pikachu and eevee partner
+        if csvRow[2] in ['eevee_partner', 'pikachu_partner']:
+          csvRow[6] = 7
+
         writer.writerow(csvRow)
 
     # Zygarde gaining Power Construct in Gen 7 is not noted, so we write a note for it.

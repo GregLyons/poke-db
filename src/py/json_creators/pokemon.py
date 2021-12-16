@@ -121,6 +121,7 @@ def addBaseStatData(fnamePrefix, pokemonDict):
             pokemonGen = gen[i]
 
           baseStatDict[pokemonName] = {
+            "gen": gen[i],
             "hp": [[int(row["hp"]), pokemonGen]],
             "attack": [[int(row["attack"]), pokemonGen]],
             "defense": [[int(row["defense"]), pokemonGen]],
@@ -132,7 +133,7 @@ def addBaseStatData(fnamePrefix, pokemonDict):
         else:
           for key, value in baseStatDict[pokemonName].items():
             # If change is found, add that to the patch log
-            if key == "dex_number":
+            if key in ['dex_number', 'gen']:
               continue
             if int(value[-1][0]) != int(row[key]):
               value.append([int(row[key]), gen[i]])
@@ -175,6 +176,9 @@ def addBaseStatData(fnamePrefix, pokemonDict):
     for formName in formNames:
       # we're considering formName because it didn't show up in the pokemonByType.csv file; this means that the current data (e.g. species, gen, typing) of pokemonName doesn't vary between forms, so formName and pokemonName should have the same data
       pokemonDict[formName] = copy.deepcopy(pokemonDict[pokemonName])
+
+      # The form may have been added later, so we actually want the gen in which the form was added, rather than that of the base form.
+      pokemonDict[formName]["gen"] = baseStatDict[formName]["gen"]
 
       # enter base stat data for formName
       for stat in baseStatDict[formName].keys():
@@ -257,10 +261,11 @@ def addAbilityData(fname, pokemonDict):
 
         pokemonAbilityDict[row["Pokemon Name"]] = {
           # dex number will be used to keep track of form differences later
+          "gen": int(row["Gen"]),
           "dex_number": dexNumber,
-          "ability_1": [[row["Ability 1"], max(int(row['Gen']), 3)]],
-          "ability_2": [[row["Ability 2"], max(int(row['Gen']), 3)]],
-          "ability_hidden": [[row["Hidden"], max(int(row['Gen']), 5)]]
+          "ability_1": [[row["Ability 1"], max(int(row["Gen"]), 3)]],
+          "ability_2": [[row["Ability 2"], max(int(row["Gen"]), 3)]],
+          "ability_hidden": [[row["Hidden"], max(int(row["Gen"]), 5)]]
         }
 
     # Go through majority of notes; handle Gengar
@@ -312,12 +317,12 @@ def addAbilityData(fname, pokemonDict):
         else:
           formName, pokemonName = pokemonName, '_'.join(pokemonName.split('_')[:-1])
 
-        for abilitySlot in pokemonAbilityDict[pokemonName].keys():
+        for abilitySlot in [keyName for keyName in pokemonAbilityDict[pokemonName].keys() if keyName not in ['gen', 'dex_number']]:
           pokemonDict[formName][abilitySlot] = pokemonAbilityDict[pokemonName][abilitySlot]
       else:
         formList.append([pokemonName, formNames])
       continue
-  
+
   # add new forms to pokemonDict and remove species
   for forms in formList:
     # forms looks like [pokemonName, [formName1, formName2, ...]]
@@ -327,6 +332,9 @@ def addAbilityData(fname, pokemonDict):
       # we're considering formName because it didn't show up in the pokemonByType.csv file; this means that the current data (e.g. species, gen, typing) of pokemonName doesn't vary between forms, so formName and pokemonName should have the same data
       pokemonDict[formName] = copy.deepcopy(pokemonDict[pokemonName])
 
+      # For new forms, pokemonAbilityDict contains the gen, so we need to overwrite that field in pokemonDict. Otherwise, e.g. pikachu_phd cosplay (gen 6) would have gen 1 instead, since we copied it from Pikachu.
+      pokemonDict[formName]["gen"] = pokemonAbilityDict[formName]["gen"]
+
       # enter base stat data for formName
       for abilitySlot in pokemonAbilityDict[formName].keys():
           pokemonDict[formName][abilitySlot] = pokemonAbilityDict[formName][abilitySlot]
@@ -334,7 +342,9 @@ def addAbilityData(fname, pokemonDict):
     # remove pokemonName from pokemonDict, leaving all the forms we just entered
     del pokemonDict[pokemonName]
 
-  # there remain forms which show up in abilityDict but not in pokemonDict since pokemonName may still have been in abilityDict, so we do one more pass 
+  
+
+  # there remain forms which show up in pokemonAbilityDict but not in pokemonDict since pokemonName may still have been in pokemonAbilityDict, so we do one more pass 
   speciesForms = {}
   for formName in pokemonAbilityDict.keys():
     # check for '_' to verify it really is a form name and not a species name
@@ -350,6 +360,9 @@ def addAbilityData(fname, pokemonDict):
     for formName in speciesForms[speciesName]:
       pokemonName = speciesName + '_' + formName
       pokemonDict[pokemonName] = copy.deepcopy(pokemonDict[speciesName])
+
+      # For new forms, pokemonAbilityDict contains the gen, so we need to overwrite that field in pokemonDict. Otherwise, e.g. pikachu_phd cosplay (gen 6) would have gen 1 instead, since we copied it from Pikachu.
+      pokemonDict[pokemonName]["gen"] = pokemonAbilityDict[speciesName]["gen"]
 
       # enter ability data for formName
       for abilitySlot in pokemonAbilityDict[pokemonName].keys():
@@ -549,7 +562,7 @@ def checkPokeAPIForms(fname, pokemonDict):
           baseFormName = pokemonName.split('_')[0]
 
           if 'arceus' not in pokemonName:
-            formGen = pokemonDict[pokemonName.split('_')[0]]['gen']
+            formGen = int(pokemonDict[pokemonName.split('_')[0]]["gen"])
           # arceus-???, i.e. arceus unknown
           else:
             baseFormName = 'arceus_normal'
@@ -559,7 +572,7 @@ def checkPokeAPIForms(fname, pokemonDict):
           print(pokemonName, pokeapiID, 'PokeAPI name not handled!')
           continue
         
-        formData = [baseFormName, formGen]
+        formData = [baseFormName, int(formGen)]
       else:
         formData = [None, None]
 
@@ -574,7 +587,7 @@ def checkPokeAPIForms(fname, pokemonDict):
       baseFormName, formGen = formData
 
       pokemonDict[pokemonName] = copy.deepcopy(pokemonDict[baseFormName])
-      pokemonDict[pokemonName]["gen"] = formGen
+      pokemonDict[pokemonName]["gen"] = int(formGen)
       pokemonDict[pokemonName]["pokeapi"] = [pokeapiName, pokeapiID]
 
   # # Remove unown and make unown_a the base form.
@@ -600,6 +613,9 @@ def checkPokeAPIForms(fname, pokemonDict):
   # del pokemonDict["floette"]
   # pokemonDict["florges_red"] = copy.deepcopy(pokemonDict["florges"])
   # del pokemonDict["florges"]
+
+  for pokemonName in pokemonDict.keys():
+    pokemonDict[pokemonName]["gen"] = int(pokemonDict[pokemonName]["gen"])
 
   return
 
@@ -763,6 +779,7 @@ def addFormFlags(pokemonDict):
         # This will add 'base form' patches to base form Pokemon with multiple alternate forms. We remove the duplicates later.
         if patch not in pokemonDict[formName]["form_class"]:
           pokemonDict[formName]["form_class"].append(patch)
+          
   
   # If the Pokemon has no form data (i.e. no other forms), then it is the base form. Do another pass for such Pokemon.
   for pokemonName in pokemonDict.keys():
@@ -881,7 +898,6 @@ def main():
 
   baseStat_fnamePrefix = dataPath + 'pokemonByBaseStatsGen'
   addBaseStatData(baseStat_fnamePrefix, pokemonDict)
-
 
   abilities_fname = dataPath + 'pokemonByAbilities.csv'
   addAbilityData(abilities_fname, pokemonDict)
