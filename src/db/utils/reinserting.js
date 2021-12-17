@@ -348,7 +348,7 @@ const reinsertVersionGroupJunctionData = async(db, tableStatements) => {
   */
  const versionGroupJunctionTableNames = Object.keys(tableStatements.versionGroupJunctionTables)
     // TODO handle sprite tables
-    .filter(tableName => tableName.split('_')[0] == 'pdescription');
+    .filter(tableName => tableName.split('_').includes('pdescription'));
     
   // Since Promise.all() preserves order, foreignKeyMaps unpacks alphabetically.
   const foreignKeyTables = [

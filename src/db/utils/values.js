@@ -123,7 +123,7 @@ const getValuesForTable = (
       pokemonData = entityData;
       break;
     case 'versionGroupJunctionTables':
-      if (tableName.split('_')[0] == 'pdescription') {
+      if (tableName.split('_').includes('pdescription')) {
         [
           ability_FKM,
           description_FKM,
@@ -155,7 +155,11 @@ const getValuesForTable = (
       causeOrPrevent, causeOrPreventKey, 
       enhanceOrHinder, enhanceOrHinderKey,
       // E.g. ability_creates_field_state, item_extends_field_state, ptype_suppresses_field_state, select 'creates', 'extends', 'suppresses', respectively.
-      fieldStateAction, fieldStateActionKey;
+      fieldStateAction, fieldStateActionKey,
+      // TODO
+      // Meta-entities
+      metaEntityClass, metaEntity_id,
+      metaEntity_FKM, metaEntityKey;
 
   // Assign values based on tableName
   switch(tableName) {
@@ -178,7 +182,7 @@ const getValuesForTable = (
           pdescription_text,
           pdescription_index,
           pdescription_entity_class,
-          entity_name
+          pdescription_entity_name
         )
       */
      require('./../')
@@ -1863,6 +1867,67 @@ const getValuesForTable = (
     /*
       VERSION GROUP JUNCTION TABLES
     */ 
+    case 'version_group_pdescription':
+      /*
+        Need (
+          version_group_id,
+          pdescription_id
+        )
+      */
+
+      // Parse table name.
+      // #region
+
+      metaEntityClass = tableName.split('_')[2];
+      metaEntity_id = metaEntityClass + '_id';
+
+      metaEntity_FKM;
+      switch (metaEntityClass) {
+        case 'pdescription':
+          metaEntity_FKM = description_FKM;
+          metaEntityKey = 'description_class'
+          break;
+        case 'sprite':
+          metaEntity_FKM = sprite_FKM;
+          metaEntityKey = 'sprite_class';
+          break;
+        default:
+          throw 'Invalid meta entity class, ' + metaEntityClass;
+      }
+      
+      // #endregion
+      
+      values = metaEntityData.reduce((acc, curr) => {
+        // Get item data from curr.
+        const { entity_name: baseEntityName, description_class: baseEntityDataClass } = curr;
+        
+        return acc.concat(
+          Object.keys(curr)
+            .filter(key => !isNaN(key))
+            .reduce((innerAcc, metaEntityIndex) => {
+              const [metaEntityContent, versionGroups] = curr[metaEntityIndex];
+
+              // 'pdescription_index, pdescription_entity_class, pdescription_entity_name' sorted alphabetically is 'pdescription_entity_class, pdescription_entity_name, pdescription_index'
+              const { [metaEntity_id]: metaEntityID } = metaEntity_FKM.get(makeMapKey([baseEntityDataClass, baseEntityName, metaEntityIndex]));
+
+              return innerAcc.concat(
+                versionGroups.map(versionGroupCode => {
+
+                  const { version_group_id: versionGroupID } = versionGroup_FKM.get(versionGroupCode);
+      
+                  // version_group_id
+                  // <meta entity>_id
+                  return [versionGroupID, metaEntityID];
+                })
+              );
+            }, [])
+        );
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+
+
     case 'pdescription_ability':
     case 'pdescription_item':
     case 'pdescription_pmove':
@@ -1880,8 +1945,8 @@ const getValuesForTable = (
       // Parse table name.
       // #region
 
-      const metaEntityClass = tableName.split('_')[0];
-      const metaEntity_id = metaEntityClass + '_id';
+      metaEntityClass = tableName.split('_')[0];
+      metaEntity_id = metaEntityClass + '_id';
       
       // Whether the pdescription/sprite is of an ability, item, pokemon, or pmove. Choose the foreign key map accordingly.
       // baseEntityDataClass refers to how the data is stored in descriptions.json or sprites.json.
@@ -1910,7 +1975,7 @@ const getValuesForTable = (
           throw 'Invalid base entity class, ' + baseEntityClass;
       }
 
-      let metaEntity_FKM, metaEntityKey;
+      metaEntity_FKM, metaEntityKey;
       switch (metaEntityClass) {
         case 'pdescription':
           metaEntity_FKM = description_FKM;
