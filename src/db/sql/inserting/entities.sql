@@ -11,8 +11,8 @@ INSERT INTO generation (
 INSERT INTO pdescription (
   pdescription_text,
   pdescription_index,
-  pdescription_class,
-  entity_name
+  pdescription_entity_class,
+  pdescription_entity_name
 ) VALUES ?;
 
 INSERT INTO sprite (

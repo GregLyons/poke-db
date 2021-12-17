@@ -380,6 +380,9 @@ def addAbilityData(fname, pokemonDict):
   pokemonDict["pikachu_partner_cap"] = copy.deepcopy(pokemonDict["pikachu_with_partner_cap"])
   del pokemonDict["pikachu_with_partner_cap"]
 
+  if pokemonName in ['pikachu_partner', 'eevee_partner']:
+    pokemonDict[pokemonName]["gen"] = 'lgpe_only'
+
   return
 
 # add data about evolution relations between Pokemon to pokemonDict
@@ -621,6 +624,7 @@ def checkPokeAPIForms(fname, pokemonDict):
 
 # add mega/regional/gmax flags, and restore dex numbers to such forms
 # For mega evolutions, add mega-stone requirements
+# Currently skips over pikachu_partner and eevee_partner, as LGPE isn't fully handled. This means that, while they are both in pokemonDict, 'pikachu' and 'eevee', respectively, do not have them in their "form_data". This is so that we can easily filter out these LGPE-exclusive Pokemon in processing/index.js, so that we don't need to worry about LGPE-exclusivity in the processing/database step.
 def addFormFlags(pokemonDict):
   # Force unown_a to be 
 
@@ -632,6 +636,10 @@ def addFormFlags(pokemonDict):
     pokemonDict[pokemonName]["form_data"] = {}
 
   for pokemonName in pokemonDict.keys():
+    # Skip over eevee_partner and pikachu_partner. Remove this block, and everything will work properly, but then need to add LGPE-related logic to the processing/database step.
+    if pokemonName in ['eevee_partner', 'pikachu_partner']:
+      continue
+
     baseFormName = pokemonName
     isBaseForm = False
 
@@ -817,6 +825,63 @@ def addFormFlags(pokemonDict):
 
   return
 
+# Currently, we have e.g. spewpa_icy_snow evolving to vivillon, rather than to vivillon_icy_snow. With this function, we reroute the evolution chains to connect similar forms, e.g. spewpa_icy_snow to vivillon_icy_snow.
+# This is mainly necessary for the forms picked up from PokeAPI; the evolution chains on Bulbapedia already account for some evolutions between separate forms.
+def rerouteEvolutionChains(pokemonDict):
+  for pokemonName in pokemonDict.keys():
+    prevolutionData = pokemonDict[pokemonName]["evolves_from"]
+    evolutionData = pokemonDict[pokemonName]["evolves_to"]
+
+    # If Pokemon has no evolution data, continue to next Pokemon.
+    if evolutionData == {} and prevolutionData == {}:
+      continue
+    
+    # We'll store new evolution data in these dicts.
+    newPrevolutionData = copy.deepcopy(prevolutionData)
+    newEvolutionData = copy.deepcopy(evolutionData)
+
+    # Use species name to compute form suffix. We'll use the form suffix to match forms across different stages of evolution.
+    speciesName = pokemonDict[pokemonName]["species"]
+    formSuffix = pokemonName.replace(speciesName, '').removeprefix('_')
+    
+    # If Pokemon is the base form then no need to reroute its evolution chains.
+    if formSuffix == '':
+      continue
+    
+    # Reroute chain from prevolution to current Pokemon.
+    for prevolutionName in prevolutionData.keys():
+      prevolutionSpeciesName = pokemonDict[prevolutionName]["species"]
+      prevolutionFormData = pokemonDict[prevolutionName]["form_data"]
+      
+      # Search forms of the prevolution for a suffix matching that of the current Pokemon.
+      for prevolutionFormName in prevolutionFormData.keys():
+        prevolutionFormSuffix = prevolutionFormName.replace(prevolutionSpeciesName, '').removeprefix('_')
+
+        # If a match is found, rename the prevolution in newPrevolutionData to the form name of the prevolution, rather than the base form name.
+        if formSuffix == prevolutionFormSuffix:
+          del newPrevolutionData[prevolutionName]
+          newPrevolutionData[prevolutionFormName] = prevolutionData[prevolutionName]
+
+    # Reroute chain from current Pokemon to evolution.
+    for evolutionName in evolutionData.keys():
+      evolutionSpeciesName = pokemonDict[evolutionName]["species"]
+      evolutionFormData = pokemonDict[evolutionName]["form_data"]
+      
+      # Search forms mof the evolution for a suffix matching that of the current Pokemon.
+      for evolutionFormName in evolutionFormData.keys():
+        evolutionFormSuffix = evolutionFormName.replace(evolutionSpeciesName, '').removeprefix('_')
+
+        # If a match is found, rename the evolution in newEvolutionData to the form name of the evolution, rather than the base form name.
+        if formSuffix == evolutionFormSuffix:
+          del newEvolutionData[evolutionName]
+          newEvolutionData[evolutionFormName] = evolutionData[evolutionName]
+
+    # Overwrite evolution data with new evolution data.
+    pokemonDict[pokemonName]["evolves_from"] = newPrevolutionData
+    pokemonDict[pokemonName]["evolves_to"] = newEvolutionData
+        
+  return
+
 def addFullName(pokemonDict):
   for pokemonName in pokemonDict.keys():
     pokemonDict[pokemonName]['formatted_name'] = getFormattedName(pokemonName)
@@ -915,20 +980,25 @@ def main():
 
   abilities_fname = dataPath + 'pokemonByAbilities.csv'
   addAbilityData(abilities_fname, pokemonDict)
-
+  
   evolution_fname = dataPath + 'evolutionChains.csv'
   addEvolutionData(evolution_fname, pokemonDict)
 
   bmi_fname = dataPath + 'pokemonByWeightHeight.csv'
   addHeightWeightData(bmi_fname, pokemonDict)
 
-
   pokeapi_fname = dataPath + 'pokemonFormByID.csv'
   checkPokeAPIForms(pokeapi_fname, pokemonDict)
 
+  # Picked up from PokeAPI-deleting unless it becomes relevant one day.
+  del pokemonDict["arceus_unknown"]
+
   addFormFlags(pokemonDict)
 
+  rerouteEvolutionChains(pokemonDict)
+
   addFullName(pokemonDict)
+
       
   return pokemonDict
 

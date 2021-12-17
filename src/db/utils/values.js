@@ -177,7 +177,7 @@ const getValuesForTable = (
         Need (
           pdescription_text,
           pdescription_index,
-          pdescription_class,
+          pdescription_entity_class,
           entity_name
         )
       */
@@ -1239,7 +1239,6 @@ const getValuesForTable = (
             }
             // If action is 'extends', then fieldStateData[fieldStateName] is a turn count.
             else if (fieldStateAction === 'extends') {
-              console.log(itemName, fieldStateName);
               const [present, turnCount] = fieldStateData[fieldStateName];
               return present && turnCount >= 0
                 ? [gen, itemID, gen, fieldStateID, turnCount]
@@ -1701,6 +1700,9 @@ const getValuesForTable = (
         
         return acc.concat(
           Object.keys(formData).map(formName => {
+            if (!pokemon_FKM.get(makeMapKey([gen, formName]))) {
+              console.log(pokemonName, formName);
+            }
             const { pokemon_id: formID } = pokemon_FKM.get(makeMapKey([gen, formName]));
             
             const formClass = formData[formName];
@@ -1731,7 +1733,7 @@ const getValuesForTable = (
         // Filter out empty type name, e.g. for monotype Pokemon.
         return acc.concat(
           [pType1Name, pType2Name]
-          .filter(pTypeName => pTypeName.length > 0)
+          .filter(pTypeName => pTypeName && pTypeName.length > 0)
           .map(pTypeName => {
             const { ptype_id: pTypeID } = pType_FKM.get(makeMapKey([gen, pTypeName]));
             
@@ -1761,6 +1763,9 @@ const getValuesForTable = (
         
         return acc.concat(
           Object.keys(learnsetData).reduce((innerAcc, moveName)=> {
+            if (!move_FKM.get(makeMapKey([gen, moveName]))) {
+              console.log(pokemonName, moveName);
+            }
             const { pmove_id: moveID } = move_FKM.get(makeMapKey([gen, moveName]));
             
             return innerAcc.concat(
@@ -1934,8 +1939,8 @@ const getValuesForTable = (
             .reduce((innerAcc, metaEntityIndex) => {
               const [metaEntityContent, versionGroups] = curr[metaEntityIndex];
 
-              // 'pdescription_index, pdescription_class, entity_name' sorted alphabetically is 'entity_name, pdescription_index, pdescription_class'
-              const { [metaEntity_id]: metaEntityID } = metaEntity_FKM.get(makeMapKey([baseEntityName, baseEntityDataClass, metaEntityIndex]));
+              // 'pdescription_index, pdescription_entity_class, pdescription_entity_name' sorted alphabetically is 'pdescription_entity_class, pdescription_entity_name, pdescription_index'
+              const { [metaEntity_id]: metaEntityID } = metaEntity_FKM.get(makeMapKey([baseEntityDataClass, baseEntityName, metaEntityIndex]));
 
               return innerAcc.concat(
                 versionGroups.map(versionGroupCode => {

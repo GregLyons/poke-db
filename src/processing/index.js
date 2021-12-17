@@ -85,11 +85,10 @@ const { addLearnsetsToPokemonArr } = require('./utils/index.js');
 addLearnsetsToPokemonArr(learnsets, moves, pokemon, pokemonArr);
 
 // Separate out LGPE only Pokemon
-const lgpeOnlyPokemon = pokemonArr.filter(data => data.gen == 'lgpe_only');
-pokemonArr = pokemonArr.filter(data => data.gen !== 'lgpe_only');
+const lgpeOnlyPokemon = ['pikachu_partner', 'eevee_partner'];
 const lgpeOnlyMoves = moveArr.filter(data => data.gen == 7 && Object.keys(data.lgpe_exclusive_values).length == 5);
 
-
+pokemonArr = pokemonArr.filter(data => !lgpeOnlyPokemon.includes(data.name));
 moveArr = moveArr.filter(data => !(data.gen == 7 && Object.keys(data.lgpe_exclusive_values).length == 5));
 
 // #endregion

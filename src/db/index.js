@@ -3,7 +3,7 @@ const mysql = require('mysql2');
 const tableStatements = require('./sql/index.js');
 
 /*
-  The learnset data may be too large to insert into the database. If an ECONNRESET error comes up on inserting the learnset data, you may need to change the MySQL max_allowable_packet to 16M (or to any number greater than the size of the learnset data). 
+  The learnset data may be too large to insert into the database. If an ECONNRESET error comes up on inserting the learnset data, you may need to change the MySQL max_allowed_packet to 16M (or to any number greater than the size of the learnset data). 
 */
 const db = mysql.createPool({
   host: process.env.DB_HOST,
@@ -154,4 +154,4 @@ const resetEverything = async () => {
 // resetTypeJunctionTables(db, tableStatements);
 // resetVersionGroupJunctionTables(db, tableStatements);
 
-// resetLearnsetTable(db, tableStatements);
+resetLearnsetTable(db, tableStatements);

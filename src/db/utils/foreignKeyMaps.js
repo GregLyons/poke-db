@@ -107,7 +107,7 @@ const getIdentifyingColumnNames = (tableName) => {
   let identifyingColumns;
   switch(tableName) {
     case 'pdescription':
-      identifyingColumns = 'pdescription_index, pdescription_class, entity_name';
+      identifyingColumns = 'pdescription_index, pdescription_entity_class, entity_name';
       break;
     case 'sprite':
       identifyingColumns = 'sprite_path, entity_name';

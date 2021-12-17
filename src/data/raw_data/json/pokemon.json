@@ -739,7 +739,6 @@
       "pikachu_sinnoh_cap": [["other", 7]],
       "pikachu_unova_cap": [["other", 7]],
       "pikachu_world_cap": [["other", 7]],
-      "pikachu_partner": [["other", 7]],
       "pikachu_rock_star": [["other", 6]],
       "pikachu_belle": [["other", 6]],
       "pikachu_pop_star": [["other", 6]],
@@ -3875,8 +3874,7 @@
       "eevee", 133
     ],
     "form_data": {
-      "eevee_gmax": [["gmax", 1]],
-      "eevee_partner": [["other", 7]]
+      "eevee_gmax": [["gmax", 1]]
     },
     "form_class": [["base", 1]],
     "formatted_name": "Eevee"
@@ -11810,7 +11808,7 @@
     "type_2": [["", 4]],
     "evolves_to": {
       "wormadam_plant": [["Level 20 (female, Plant Cloak)", 4]],
-      "mothim": [["Level 20 (male)", 4]]
+      "mothim_plant": [["Level 20 (male)", 4]]
     },
     "evolves_from": {},
     "hp": [[40, 4]],
@@ -11842,7 +11840,7 @@
     "type_2": [["", 4]],
     "evolves_to": {
       "wormadam_sandy": [["Level 20 (female, Sandy Cloak)", 4]],
-      "mothim": [["Level 20 (male)", 4]]
+      "mothim_sandy": [["Level 20 (male)", 4]]
     },
     "evolves_from": {},
     "hp": [[40, 4]],
@@ -11873,7 +11871,7 @@
     "type_2": [["", 4]],
     "evolves_to": {
       "wormadam_trash": [["Level 20 (female, Trash Cloak)", 4]],
-      "mothim": [["Level 20 (male)", 4]]
+      "mothim_trash": [["Level 20 (male)", 4]]
     },
     "evolves_from": {},
     "hp": [[40, 4]],
@@ -14482,8 +14480,7 @@
       "arceus_water": [["other", 5]],
       "arceus_fire": [["other", 5]],
       "arceus_rock": [["other", 5]],
-      "arceus_dragon": [["other", 5]],
-      "arceus_unknown": [["other", 4]]
+      "arceus_dragon": [["other", 5]]
     },
     "form_class": [["base", 5]],
     "formatted_name": "Arceus (Normal)"
@@ -30520,10 +30517,8 @@
     "height": 0.4,
     "weight": 6.0,
     "pokeapi": [],
-    "form_data": {
-      "pikachu": [["base", 7]]
-    },
-    "form_class": [["other", 7]],
+    "form_data": {},
+    "form_class": [["base", 7]],
     "formatted_name": "Pikachu (Partner)"
   },
   "eevee_partner": {
@@ -30546,10 +30541,8 @@
     "height": 0.3,
     "weight": 6.5,
     "pokeapi": [],
-    "form_data": {
-      "eevee": [["base", 7]]
-    },
-    "form_class": [["other", 7]],
+    "form_data": {},
+    "form_class": [["base", 7]],
     "formatted_name": "Eevee (Partner)"
   },
   "kyogre_primal": {
@@ -32921,9 +32914,7 @@
     "type_2": [["flying", 4]],
     "evolves_to": {},
     "evolves_from": {
-      "burmy_plant": [["Level 20 (male)", 4]],
-      "burmy_sandy": [["Level 20 (male)", 4]],
-      "burmy_trash": [["Level 20 (male)", 4]]
+      "burmy_plant": [["Level 20 (male)", 4]]
     },
     "hp": [[70, 4]],
     "attack": [[94, 4]],
@@ -32952,7 +32943,7 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "spewpa": [["Level 9", 6]]
+      "spewpa_icy_snow": [["Level 9", 6]]
     },
     "evolves_from": {},
     "hp": [[38, 6]],
@@ -32982,10 +32973,10 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "vivillon": [["Level 12", 6]]
+      "vivillon_icy_snow": [["Level 12", 6]]
     },
     "evolves_from": {
-      "scatterbug": [["Level 9", 6]]
+      "scatterbug_icy_snow": [["Level 9", 6]]
     },
     "hp": [[45, 6]],
     "attack": [[22, 6]],
@@ -33015,7 +33006,7 @@
     "type_2": [["flying", 6]],
     "evolves_to": {},
     "evolves_from": {
-      "spewpa": [["Level 12", 6]]
+      "spewpa_meadow": [["Level 12", 6]]
     },
     "hp": [[80, 6]],
     "attack": [[52, 6]],
@@ -33044,7 +33035,7 @@
     "type_1": [["fairy", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "floette": [["Level 19", 6]]
+      "floette_red": [["Level 19", 6]]
     },
     "evolves_from": {},
     "hp": [[44, 6]],
@@ -33074,10 +33065,10 @@
     "type_1": [["fairy", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "florges": [["Shiny Stone", 6]]
+      "florges_red": [["Shiny Stone", 6]]
     },
     "evolves_from": {
-      "flabebe": [["Level 19", 6]]
+      "flabebe_red": [["Level 19", 6]]
     },
     "hp": [[54, 6]],
     "attack": [[45, 6]],
@@ -33107,7 +33098,7 @@
     "type_2": [["", 6]],
     "evolves_to": {},
     "evolves_from": {
-      "floette": [["Shiny Stone", 6]]
+      "floette_red": [["Shiny Stone", 6]]
     },
     "hp": [[78, 6]],
     "attack": [[65, 6]],
@@ -33192,7 +33183,7 @@
     "type_1": [["ghost", 8]],
     "type_2": [["", 8]],
     "evolves_to": {
-      "polteageist": [["Chipped Pot or Cracked Pot", 8]]
+      "polteageist_phony": [["Chipped Pot or Cracked Pot", 8]]
     },
     "evolves_from": {},
     "hp": [[40, 8]],
@@ -33223,7 +33214,7 @@
     "type_2": [["", 8]],
     "evolves_to": {},
     "evolves_from": {
-      "sinistea": [["Chipped Pot or Cracked Pot", 8]]
+      "sinistea_phony": [["Chipped Pot or Cracked Pot", 8]]
     },
     "hp": [[60, 8]],
     "attack": [[65, 8]],
@@ -34001,34 +33992,6 @@
     "form_class": [["other", 2]],
     "formatted_name": "Unown (Question)"
   },
-  "arceus_unknown": {
-    "dex_number": 493,
-    "species": "arceus",
-    "gen": 4,
-    "type_1": [["normal", 4]],
-    "type_2": [["", 4]],
-    "evolves_to": {},
-    "evolves_from": {},
-    "hp": [[120, 4]],
-    "attack": [[120, 4]],
-    "defense": [[120, 4]],
-    "special_attack": [[120, 4]],
-    "special_defense": [[120, 4]],
-    "speed": [[120, 4]],
-    "ability_1": [["multitype", 4]],
-    "ability_2": [["", 4]],
-    "ability_hidden": [["", 5]],
-    "height": 3.2,
-    "weight": 320.0,
-    "pokeapi": [
-      "arceus-unknown", 10057
-    ],
-    "form_data": {
-      "arceus_normal": [["base", 4]]
-    },
-    "form_class": [["other", 4]],
-    "formatted_name": "Arceus (Unknown)"
-  },
   "genesect_douse": {
     "dex_number": 649,
     "species": "genesect",
@@ -34149,7 +34112,7 @@
     "type_2": [["flying", 6]],
     "evolves_to": {},
     "evolves_from": {
-      "spewpa": [["Level 12", 6]]
+      "spewpa_icy_snow": [["Level 12", 6]]
     },
     "hp": [[80, 6]],
     "attack": [[52, 6]],
@@ -34179,7 +34142,7 @@
     "type_2": [["flying", 6]],
     "evolves_to": {},
     "evolves_from": {
-      "spewpa": [["Level 12", 6]]
+      "spewpa_polar": [["Level 12", 6]]
     },
     "hp": [[80, 6]],
     "attack": [[52, 6]],
@@ -34209,7 +34172,7 @@
     "type_2": [["flying", 6]],
     "evolves_to": {},
     "evolves_from": {
-      "spewpa": [["Level 12", 6]]
+      "spewpa_tundra": [["Level 12", 6]]
     },
     "hp": [[80, 6]],
     "attack": [[52, 6]],
@@ -34239,7 +34202,7 @@
     "type_2": [["flying", 6]],
     "evolves_to": {},
     "evolves_from": {
-      "spewpa": [["Level 12", 6]]
+      "spewpa_continental": [["Level 12", 6]]
     },
     "hp": [[80, 6]],
     "attack": [[52, 6]],
@@ -34269,7 +34232,7 @@
     "type_2": [["flying", 6]],
     "evolves_to": {},
     "evolves_from": {
-      "spewpa": [["Level 12", 6]]
+      "spewpa_garden": [["Level 12", 6]]
     },
     "hp": [[80, 6]],
     "attack": [[52, 6]],
@@ -34299,7 +34262,7 @@
     "type_2": [["flying", 6]],
     "evolves_to": {},
     "evolves_from": {
-      "spewpa": [["Level 12", 6]]
+      "spewpa_elegant": [["Level 12", 6]]
     },
     "hp": [[80, 6]],
     "attack": [[52, 6]],
@@ -34329,7 +34292,7 @@
     "type_2": [["flying", 6]],
     "evolves_to": {},
     "evolves_from": {
-      "spewpa": [["Level 12", 6]]
+      "spewpa_modern": [["Level 12", 6]]
     },
     "hp": [[80, 6]],
     "attack": [[52, 6]],
@@ -34359,7 +34322,7 @@
     "type_2": [["flying", 6]],
     "evolves_to": {},
     "evolves_from": {
-      "spewpa": [["Level 12", 6]]
+      "spewpa_marine": [["Level 12", 6]]
     },
     "hp": [[80, 6]],
     "attack": [[52, 6]],
@@ -34389,7 +34352,7 @@
     "type_2": [["flying", 6]],
     "evolves_to": {},
     "evolves_from": {
-      "spewpa": [["Level 12", 6]]
+      "spewpa_archipelago": [["Level 12", 6]]
     },
     "hp": [[80, 6]],
     "attack": [[52, 6]],
@@ -34419,7 +34382,7 @@
     "type_2": [["flying", 6]],
     "evolves_to": {},
     "evolves_from": {
-      "spewpa": [["Level 12", 6]]
+      "spewpa_high_plains": [["Level 12", 6]]
     },
     "hp": [[80, 6]],
     "attack": [[52, 6]],
@@ -34449,7 +34412,7 @@
     "type_2": [["flying", 6]],
     "evolves_to": {},
     "evolves_from": {
-      "spewpa": [["Level 12", 6]]
+      "spewpa_sandstorm": [["Level 12", 6]]
     },
     "hp": [[80, 6]],
     "attack": [[52, 6]],
@@ -34479,7 +34442,7 @@
     "type_2": [["flying", 6]],
     "evolves_to": {},
     "evolves_from": {
-      "spewpa": [["Level 12", 6]]
+      "spewpa_river": [["Level 12", 6]]
     },
     "hp": [[80, 6]],
     "attack": [[52, 6]],
@@ -34509,7 +34472,7 @@
     "type_2": [["flying", 6]],
     "evolves_to": {},
     "evolves_from": {
-      "spewpa": [["Level 12", 6]]
+      "spewpa_monsoon": [["Level 12", 6]]
     },
     "hp": [[80, 6]],
     "attack": [[52, 6]],
@@ -34539,7 +34502,7 @@
     "type_2": [["flying", 6]],
     "evolves_to": {},
     "evolves_from": {
-      "spewpa": [["Level 12", 6]]
+      "spewpa_savanna": [["Level 12", 6]]
     },
     "hp": [[80, 6]],
     "attack": [[52, 6]],
@@ -34569,7 +34532,7 @@
     "type_2": [["flying", 6]],
     "evolves_to": {},
     "evolves_from": {
-      "spewpa": [["Level 12", 6]]
+      "spewpa_sun": [["Level 12", 6]]
     },
     "hp": [[80, 6]],
     "attack": [[52, 6]],
@@ -34599,7 +34562,7 @@
     "type_2": [["flying", 6]],
     "evolves_to": {},
     "evolves_from": {
-      "spewpa": [["Level 12", 6]]
+      "spewpa_ocean": [["Level 12", 6]]
     },
     "hp": [[80, 6]],
     "attack": [[52, 6]],
@@ -34629,7 +34592,7 @@
     "type_2": [["flying", 6]],
     "evolves_to": {},
     "evolves_from": {
-      "spewpa": [["Level 12", 6]]
+      "spewpa_jungle": [["Level 12", 6]]
     },
     "hp": [[80, 6]],
     "attack": [[52, 6]],
@@ -34658,7 +34621,7 @@
     "type_1": [["fairy", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "floette": [["Level 19", 6]]
+      "floette_yellow": [["Level 19", 6]]
     },
     "evolves_from": {},
     "hp": [[44, 6]],
@@ -34688,7 +34651,7 @@
     "type_1": [["fairy", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "floette": [["Level 19", 6]]
+      "floette_orange": [["Level 19", 6]]
     },
     "evolves_from": {},
     "hp": [[44, 6]],
@@ -34718,7 +34681,7 @@
     "type_1": [["fairy", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "floette": [["Level 19", 6]]
+      "floette_blue": [["Level 19", 6]]
     },
     "evolves_from": {},
     "hp": [[44, 6]],
@@ -34748,7 +34711,7 @@
     "type_1": [["fairy", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "floette": [["Level 19", 6]]
+      "floette_white": [["Level 19", 6]]
     },
     "evolves_from": {},
     "hp": [[44, 6]],
@@ -34778,10 +34741,10 @@
     "type_1": [["fairy", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "florges": [["Shiny Stone", 6]]
+      "florges_yellow": [["Shiny Stone", 6]]
     },
     "evolves_from": {
-      "flabebe": [["Level 19", 6]]
+      "flabebe_yellow": [["Level 19", 6]]
     },
     "hp": [[54, 6]],
     "attack": [[45, 6]],
@@ -34810,10 +34773,10 @@
     "type_1": [["fairy", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "florges": [["Shiny Stone", 6]]
+      "florges_orange": [["Shiny Stone", 6]]
     },
     "evolves_from": {
-      "flabebe": [["Level 19", 6]]
+      "flabebe_orange": [["Level 19", 6]]
     },
     "hp": [[54, 6]],
     "attack": [[45, 6]],
@@ -34842,10 +34805,10 @@
     "type_1": [["fairy", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "florges": [["Shiny Stone", 6]]
+      "florges_blue": [["Shiny Stone", 6]]
     },
     "evolves_from": {
-      "flabebe": [["Level 19", 6]]
+      "flabebe_blue": [["Level 19", 6]]
     },
     "hp": [[54, 6]],
     "attack": [[45, 6]],
@@ -34874,10 +34837,10 @@
     "type_1": [["fairy", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "florges": [["Shiny Stone", 6]]
+      "florges_white": [["Shiny Stone", 6]]
     },
     "evolves_from": {
-      "flabebe": [["Level 19", 6]]
+      "flabebe_white": [["Level 19", 6]]
     },
     "hp": [[54, 6]],
     "attack": [[45, 6]],
@@ -34907,7 +34870,7 @@
     "type_2": [["", 6]],
     "evolves_to": {},
     "evolves_from": {
-      "floette": [["Shiny Stone", 6]]
+      "floette_yellow": [["Shiny Stone", 6]]
     },
     "hp": [[78, 6]],
     "attack": [[65, 6]],
@@ -34937,7 +34900,7 @@
     "type_2": [["", 6]],
     "evolves_to": {},
     "evolves_from": {
-      "floette": [["Shiny Stone", 6]]
+      "floette_orange": [["Shiny Stone", 6]]
     },
     "hp": [[78, 6]],
     "attack": [[65, 6]],
@@ -34967,7 +34930,7 @@
     "type_2": [["", 6]],
     "evolves_to": {},
     "evolves_from": {
-      "floette": [["Shiny Stone", 6]]
+      "floette_blue": [["Shiny Stone", 6]]
     },
     "hp": [[78, 6]],
     "attack": [[65, 6]],
@@ -34997,7 +34960,7 @@
     "type_2": [["", 6]],
     "evolves_to": {},
     "evolves_from": {
-      "floette": [["Shiny Stone", 6]]
+      "floette_white": [["Shiny Stone", 6]]
     },
     "hp": [[78, 6]],
     "attack": [[65, 6]],
@@ -35307,7 +35270,7 @@
     "type_2": [["flying", 6]],
     "evolves_to": {},
     "evolves_from": {
-      "spewpa": [["Level 12", 6]]
+      "spewpa_fancy": [["Level 12", 6]]
     },
     "hp": [[80, 6]],
     "attack": [[52, 6]],
@@ -35337,7 +35300,7 @@
     "type_2": [["flying", 6]],
     "evolves_to": {},
     "evolves_from": {
-      "spewpa": [["Level 12", 6]]
+      "spewpa_poke_ball": [["Level 12", 6]]
     },
     "hp": [[80, 6]],
     "attack": [[52, 6]],
@@ -35792,7 +35755,6 @@
     "type_2": [["flying", 4]],
     "evolves_to": {},
     "evolves_from": {
-      "burmy_plant": [["Level 20 (male)", 4]],
       "burmy_sandy": [["Level 20 (male)", 4]],
       "burmy_trash": [["Level 20 (male)", 4]]
     },
@@ -35824,7 +35786,6 @@
     "type_2": [["flying", 4]],
     "evolves_to": {},
     "evolves_from": {
-      "burmy_plant": [["Level 20 (male)", 4]],
       "burmy_sandy": [["Level 20 (male)", 4]],
       "burmy_trash": [["Level 20 (male)", 4]]
     },
@@ -35855,7 +35816,7 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "spewpa": [["Level 9", 6]]
+      "spewpa_polar": [["Level 9", 6]]
     },
     "evolves_from": {},
     "hp": [[38, 6]],
@@ -35885,7 +35846,7 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "spewpa": [["Level 9", 6]]
+      "spewpa_tundra": [["Level 9", 6]]
     },
     "evolves_from": {},
     "hp": [[38, 6]],
@@ -35915,7 +35876,7 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "spewpa": [["Level 9", 6]]
+      "spewpa_continental": [["Level 9", 6]]
     },
     "evolves_from": {},
     "hp": [[38, 6]],
@@ -35945,7 +35906,7 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "spewpa": [["Level 9", 6]]
+      "spewpa_garden": [["Level 9", 6]]
     },
     "evolves_from": {},
     "hp": [[38, 6]],
@@ -35975,7 +35936,7 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "spewpa": [["Level 9", 6]]
+      "spewpa_elegant": [["Level 9", 6]]
     },
     "evolves_from": {},
     "hp": [[38, 6]],
@@ -36005,7 +35966,7 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "spewpa": [["Level 9", 6]]
+      "spewpa_meadow": [["Level 9", 6]]
     },
     "evolves_from": {},
     "hp": [[38, 6]],
@@ -36035,7 +35996,7 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "spewpa": [["Level 9", 6]]
+      "spewpa_modern": [["Level 9", 6]]
     },
     "evolves_from": {},
     "hp": [[38, 6]],
@@ -36065,7 +36026,7 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "spewpa": [["Level 9", 6]]
+      "spewpa_marine": [["Level 9", 6]]
     },
     "evolves_from": {},
     "hp": [[38, 6]],
@@ -36095,7 +36056,7 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "spewpa": [["Level 9", 6]]
+      "spewpa_archipelago": [["Level 9", 6]]
     },
     "evolves_from": {},
     "hp": [[38, 6]],
@@ -36125,7 +36086,7 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "spewpa": [["Level 9", 6]]
+      "spewpa_high_plains": [["Level 9", 6]]
     },
     "evolves_from": {},
     "hp": [[38, 6]],
@@ -36155,7 +36116,7 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "spewpa": [["Level 9", 6]]
+      "spewpa_sandstorm": [["Level 9", 6]]
     },
     "evolves_from": {},
     "hp": [[38, 6]],
@@ -36185,7 +36146,7 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "spewpa": [["Level 9", 6]]
+      "spewpa_river": [["Level 9", 6]]
     },
     "evolves_from": {},
     "hp": [[38, 6]],
@@ -36215,7 +36176,7 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "spewpa": [["Level 9", 6]]
+      "spewpa_monsoon": [["Level 9", 6]]
     },
     "evolves_from": {},
     "hp": [[38, 6]],
@@ -36245,7 +36206,7 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "spewpa": [["Level 9", 6]]
+      "spewpa_savanna": [["Level 9", 6]]
     },
     "evolves_from": {},
     "hp": [[38, 6]],
@@ -36275,7 +36236,7 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "spewpa": [["Level 9", 6]]
+      "spewpa_sun": [["Level 9", 6]]
     },
     "evolves_from": {},
     "hp": [[38, 6]],
@@ -36305,7 +36266,7 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "spewpa": [["Level 9", 6]]
+      "spewpa_ocean": [["Level 9", 6]]
     },
     "evolves_from": {},
     "hp": [[38, 6]],
@@ -36335,7 +36296,7 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "spewpa": [["Level 9", 6]]
+      "spewpa_jungle": [["Level 9", 6]]
     },
     "evolves_from": {},
     "hp": [[38, 6]],
@@ -36365,7 +36326,7 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "spewpa": [["Level 9", 6]]
+      "spewpa_fancy": [["Level 9", 6]]
     },
     "evolves_from": {},
     "hp": [[38, 6]],
@@ -36395,7 +36356,7 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "spewpa": [["Level 9", 6]]
+      "spewpa_poke_ball": [["Level 9", 6]]
     },
     "evolves_from": {},
     "hp": [[38, 6]],
@@ -36425,10 +36386,10 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "vivillon": [["Level 12", 6]]
+      "vivillon_polar": [["Level 12", 6]]
     },
     "evolves_from": {
-      "scatterbug": [["Level 9", 6]]
+      "scatterbug_polar": [["Level 9", 6]]
     },
     "hp": [[45, 6]],
     "attack": [[22, 6]],
@@ -36457,10 +36418,10 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "vivillon": [["Level 12", 6]]
+      "vivillon_tundra": [["Level 12", 6]]
     },
     "evolves_from": {
-      "scatterbug": [["Level 9", 6]]
+      "scatterbug_tundra": [["Level 9", 6]]
     },
     "hp": [[45, 6]],
     "attack": [[22, 6]],
@@ -36489,10 +36450,10 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "vivillon": [["Level 12", 6]]
+      "vivillon_continental": [["Level 12", 6]]
     },
     "evolves_from": {
-      "scatterbug": [["Level 9", 6]]
+      "scatterbug_continental": [["Level 9", 6]]
     },
     "hp": [[45, 6]],
     "attack": [[22, 6]],
@@ -36521,10 +36482,10 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "vivillon": [["Level 12", 6]]
+      "vivillon_garden": [["Level 12", 6]]
     },
     "evolves_from": {
-      "scatterbug": [["Level 9", 6]]
+      "scatterbug_garden": [["Level 9", 6]]
     },
     "hp": [[45, 6]],
     "attack": [[22, 6]],
@@ -36553,10 +36514,10 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "vivillon": [["Level 12", 6]]
+      "vivillon_elegant": [["Level 12", 6]]
     },
     "evolves_from": {
-      "scatterbug": [["Level 9", 6]]
+      "scatterbug_elegant": [["Level 9", 6]]
     },
     "hp": [[45, 6]],
     "attack": [[22, 6]],
@@ -36585,10 +36546,10 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "vivillon": [["Level 12", 6]]
+      "vivillon_meadow": [["Level 12", 6]]
     },
     "evolves_from": {
-      "scatterbug": [["Level 9", 6]]
+      "scatterbug_meadow": [["Level 9", 6]]
     },
     "hp": [[45, 6]],
     "attack": [[22, 6]],
@@ -36617,10 +36578,10 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "vivillon": [["Level 12", 6]]
+      "vivillon_modern": [["Level 12", 6]]
     },
     "evolves_from": {
-      "scatterbug": [["Level 9", 6]]
+      "scatterbug_modern": [["Level 9", 6]]
     },
     "hp": [[45, 6]],
     "attack": [[22, 6]],
@@ -36649,10 +36610,10 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "vivillon": [["Level 12", 6]]
+      "vivillon_marine": [["Level 12", 6]]
     },
     "evolves_from": {
-      "scatterbug": [["Level 9", 6]]
+      "scatterbug_marine": [["Level 9", 6]]
     },
     "hp": [[45, 6]],
     "attack": [[22, 6]],
@@ -36681,10 +36642,10 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "vivillon": [["Level 12", 6]]
+      "vivillon_archipelago": [["Level 12", 6]]
     },
     "evolves_from": {
-      "scatterbug": [["Level 9", 6]]
+      "scatterbug_archipelago": [["Level 9", 6]]
     },
     "hp": [[45, 6]],
     "attack": [[22, 6]],
@@ -36713,10 +36674,10 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "vivillon": [["Level 12", 6]]
+      "vivillon_high_plains": [["Level 12", 6]]
     },
     "evolves_from": {
-      "scatterbug": [["Level 9", 6]]
+      "scatterbug_high_plains": [["Level 9", 6]]
     },
     "hp": [[45, 6]],
     "attack": [[22, 6]],
@@ -36745,10 +36706,10 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "vivillon": [["Level 12", 6]]
+      "vivillon_sandstorm": [["Level 12", 6]]
     },
     "evolves_from": {
-      "scatterbug": [["Level 9", 6]]
+      "scatterbug_sandstorm": [["Level 9", 6]]
     },
     "hp": [[45, 6]],
     "attack": [[22, 6]],
@@ -36777,10 +36738,10 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "vivillon": [["Level 12", 6]]
+      "vivillon_river": [["Level 12", 6]]
     },
     "evolves_from": {
-      "scatterbug": [["Level 9", 6]]
+      "scatterbug_river": [["Level 9", 6]]
     },
     "hp": [[45, 6]],
     "attack": [[22, 6]],
@@ -36809,10 +36770,10 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "vivillon": [["Level 12", 6]]
+      "vivillon_monsoon": [["Level 12", 6]]
     },
     "evolves_from": {
-      "scatterbug": [["Level 9", 6]]
+      "scatterbug_monsoon": [["Level 9", 6]]
     },
     "hp": [[45, 6]],
     "attack": [[22, 6]],
@@ -36841,10 +36802,10 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "vivillon": [["Level 12", 6]]
+      "vivillon_savanna": [["Level 12", 6]]
     },
     "evolves_from": {
-      "scatterbug": [["Level 9", 6]]
+      "scatterbug_savanna": [["Level 9", 6]]
     },
     "hp": [[45, 6]],
     "attack": [[22, 6]],
@@ -36873,10 +36834,10 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "vivillon": [["Level 12", 6]]
+      "vivillon_sun": [["Level 12", 6]]
     },
     "evolves_from": {
-      "scatterbug": [["Level 9", 6]]
+      "scatterbug_sun": [["Level 9", 6]]
     },
     "hp": [[45, 6]],
     "attack": [[22, 6]],
@@ -36905,10 +36866,10 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "vivillon": [["Level 12", 6]]
+      "vivillon_ocean": [["Level 12", 6]]
     },
     "evolves_from": {
-      "scatterbug": [["Level 9", 6]]
+      "scatterbug_ocean": [["Level 9", 6]]
     },
     "hp": [[45, 6]],
     "attack": [[22, 6]],
@@ -36937,10 +36898,10 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "vivillon": [["Level 12", 6]]
+      "vivillon_jungle": [["Level 12", 6]]
     },
     "evolves_from": {
-      "scatterbug": [["Level 9", 6]]
+      "scatterbug_jungle": [["Level 9", 6]]
     },
     "hp": [[45, 6]],
     "attack": [[22, 6]],
@@ -36969,10 +36930,10 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "vivillon": [["Level 12", 6]]
+      "vivillon_fancy": [["Level 12", 6]]
     },
     "evolves_from": {
-      "scatterbug": [["Level 9", 6]]
+      "scatterbug_fancy": [["Level 9", 6]]
     },
     "hp": [[45, 6]],
     "attack": [[22, 6]],
@@ -37001,10 +36962,10 @@
     "type_1": [["bug", 6]],
     "type_2": [["", 6]],
     "evolves_to": {
-      "vivillon": [["Level 12", 6]]
+      "vivillon_poke_ball": [["Level 12", 6]]
     },
     "evolves_from": {
-      "scatterbug": [["Level 9", 6]]
+      "scatterbug_poke_ball": [["Level 9", 6]]
     },
     "hp": [[45, 6]],
     "attack": [[22, 6]],
@@ -37033,7 +36994,7 @@
     "type_1": [["ghost", 8]],
     "type_2": [["", 8]],
     "evolves_to": {
-      "polteageist": [["Chipped Pot or Cracked Pot", 8]]
+      "polteageist_antique": [["Chipped Pot or Cracked Pot", 8]]
     },
     "evolves_from": {},
     "hp": [[40, 8]],
@@ -37064,7 +37025,7 @@
     "type_2": [["", 8]],
     "evolves_to": {},
     "evolves_from": {
-      "sinistea": [["Chipped Pot or Cracked Pot", 8]]
+      "sinistea_antique": [["Chipped Pot or Cracked Pot", 8]]
     },
     "hp": [[60, 8]],
     "attack": [[65, 8]],
