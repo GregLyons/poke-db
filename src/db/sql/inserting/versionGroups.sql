@@ -11,34 +11,34 @@ INSERT INTO version_group_sprite (
 INSERT INTO pdescription_ability (
   ability_generation_id,
   ability_id,
-  version_group_id,
-  pdescription_id
+  pdescription_id,
+  version_group_code
 ) VALUES ?;
 
 INSERT INTO pdescription_pmove (
   pmove_generation_id,
   pmove_id,
-  version_group_id,
-  pdescription_id
+  pdescription_id,
+  version_group_code
 ) VALUES ?;
 
 INSERT INTO pdescription_item (
   item_generation_id,
   item_id,
-  version_group_id,
-  pdescription_id
+  pdescription_id,
+  version_group_code
 ) VALUES ?;
 
 INSERT INTO sprite_pokemon (
   pokemon_generation_id,
   pokemon_id,
-  version_group_id,
-  sprite_id
+  sprite_id,
+  version_group_code
 ) VALUES ?;
 
 INSERT INTO sprite_item (
   item_generation_id,
   item_id,
-  version_group_id,
-  sprite_id
+  sprite_id,
+  version_group_code
 ) VALUES ?;

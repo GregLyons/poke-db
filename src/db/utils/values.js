@@ -2010,8 +2010,6 @@ const getValuesForTable = (
               return innerAcc.concat(
                 versionGroups.map(versionGroupCode => {
 
-                  const { version_group_id: versionGroupID } = versionGroup_FKM.get(versionGroupCode);
-
                   const versionGroupGen = getGenOfVersionGroup(versionGroupCode);
 
                   const { [baseEntity_id]: baseEntityID } = 
@@ -2025,7 +2023,7 @@ const getValuesForTable = (
                   // <base entity>_id
                   // version_group_id
                   // <meta entity>_id
-                  return [versionGroupGen, baseEntityID, versionGroupID, metaEntityID];
+                  return [versionGroupGen, baseEntityID, metaEntityID, versionGroupCode];
                 })
               );
             }, [])
