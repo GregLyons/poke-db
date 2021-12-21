@@ -4,6 +4,7 @@ import statuses
 import usageMethods
 import elementalTypes as types
 from utils import getCSVDataPath, genSymbolToNumber, effectList, statusList, fieldStateList, usageMethodList, statList, typeList, checkConsistency
+from tests import checkGenConsistency, abilityTests
 
 # initialize abilityDict with name, description, and gen; key is Ability ID
 def makeInitialAbilityDict(fname):
@@ -99,9 +100,9 @@ def addEffectData(fpath, abilityDict):
     # truant
     abilityDict["truant"]["causes_status"]["recharging"] = [[100.0, 3]]
 
-    # more abilities which punish contact not handled above
-    for abilityName in ['aftermath', 'gooey', 'mummy', 'iron_barbs', 'rough_skin', 'tangling_hair', 'wandering_spirit', 'pickpocket']:
-      abilityDict[abilityName]["effects"]["punishes_contact"] = [[True, abilityGen]]
+  # more abilities which punish contact not handled above
+  for abilityName in ['aftermath', 'gooey', 'mummy', 'iron_barbs', 'rough_skin', 'tangling_hair', 'wandering_spirit', 'pickpocket']:
+    abilityDict[abilityName]["effects"]["punishes_contact"] = [[True, abilityDict[abilityName]["gen"]]]
 
   # abilities which protect against status
   with open(fpath + 'abilitiesProtectAgainstStatus.csv', 'r', encoding='utf-8') as boostMoveClassCSV:
@@ -211,9 +212,9 @@ def addEffectData(fpath, abilityDict):
     abilityDict["moody"]["stat_modifications"][statName] = [['+2', 'user', 14.28, 5]]
 
     if statName not in ['evasion', 'accuracy']:
-      abilityDict["moody"]["stat_modifications"][statName].append([['+2', 'user', 20.00, 8]])
+      abilityDict["moody"]["stat_modifications"][statName].append(['+2', 'user', 20.00, 8])
     else:
-      abilityDict["moody"]["stat_modifications"][statName].append([['+2', 'user', 0.00, 8]])
+      abilityDict["moody"]["stat_modifications"][statName].append(['+2', 'user', 0.00, 8])
   return
 
 def addFieldStateData(abilityDict):
@@ -392,6 +393,10 @@ def main():
 
   addFieldStateData(abilityDict)
 
+  checkGenConsistency(abilityDict)
+
+  abilityTests(abilityDict)
+
   return abilityDict
 
 if __name__ == '__main__':
@@ -415,12 +420,12 @@ if __name__ == '__main__':
     for stat in abilityDict[abilityName]["stat_modifications"]:
       if stat not in statList():
         print('Inconsistent stat name', abilityName, stat)
-        
-    for fieldState in abilityDict[abilityName]["extends_field_state"]:
+
+    for fieldState in abilityDict[abilityName]["creates_field_state"]:
       if fieldState not in fieldStateList():
         print('Inconsistent field state name', abilityName, fieldState)
 
-    for fieldState in abilityDict[abilityName]["resists_field_state"]:
+    for fieldState in abilityDict[abilityName]["prevents_field_state"]:
       if fieldState not in fieldStateList():
         print('Inconsistent field state name', abilityName, fieldState)
     
@@ -429,6 +434,10 @@ if __name__ == '__main__':
         print('Inconsistent field state name', abilityName, fieldState)
         
     for fieldState in abilityDict[abilityName]["ignores_field_state"]:
+      if fieldState not in fieldStateList():
+        print('Inconsistent field state name', abilityName, fieldState)
+
+    for fieldState in abilityDict[abilityName]["removes_field_state"]:
       if fieldState not in fieldStateList():
         print('Inconsistent field state name', abilityName, fieldState)
 

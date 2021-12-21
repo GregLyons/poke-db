@@ -33873,8 +33873,8 @@
     "formatted_name": "Psychic Fangs",
     "creates_field_state": {},
     "removes_field_state": {
-      "light_screen": [[true, 4]],
-      "reflect": [[true, 4]],
+      "light_screen": [[true, 7]],
+      "reflect": [[true, 7]],
       "aurora_veil": [[true, 7]]
     }
   },
@@ -42655,7 +42655,7 @@
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
-      "special_attack": [["+2", "user", 100.0, 1]]
+      "special_attack": [["+2", "user", 100.0, 7]]
     },
     "usage_method": {},
     "contact": [[false, 7]],
@@ -44216,8 +44216,7 @@
     "priority": [[0, 7]],
     "target": [["user", 7]],
     "lgpe_exclusive_values": {},
-    "special_defense": [["+7", "user", 100.0, 1], ["+2",
-        "user", 100.0, 2]],
+    "special_defense": [["+2", "user", 100.0, 7]],
     "requirements": {
       "move": {
         "amnesia": [[true, 7]]

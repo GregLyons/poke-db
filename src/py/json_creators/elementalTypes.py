@@ -1,5 +1,5 @@
 import csv
-from utils import getCSVDataPath, checkConsistency, fieldStateList
+from utils import getCSVDataPath
 
 def makeTypeDict(fnamePrefix):
   typeDict = {}
@@ -132,26 +132,3 @@ def main():
 
 if __name__ == '__main__':
   typeDict = main()
-  
-  # check consistency in itemDict
-  print('Checking for inconsistencies...')
-  for typeName in typeDict.keys():
-    for inconsistency in [
-      checkConsistency(typeDict[typeName]["damage_to"], 'type', typeDict, 0.0),
-      checkConsistency(typeDict[typeName]["damage_from"], 'type', typeDict, 0.0),
-    ]:
-      if inconsistency:
-        print(f'Inconsistency found for {typeName}: {inconsistency}')
-    
-    for fieldState in typeDict[typeName]["resists_field_state"]:
-      if fieldState not in fieldStateList():
-        print('Inconsistent field state name', typeName, fieldState)
-
-    for fieldState in typeDict[typeName]["ignores_field_state"]:
-      if fieldState not in fieldStateList():
-        print('Inconsistent field state name', typeName, fieldState)
-
-    for fieldState in typeDict[typeName]["removes_field_state"]:
-      if fieldState not in fieldStateList():
-        print('Inconsistent field state name', typeName, fieldState)
-  print('Finished.')

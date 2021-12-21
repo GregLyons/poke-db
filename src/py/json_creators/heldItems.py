@@ -5,6 +5,7 @@ import statuses
 import usageMethods
 import elementalTypes as types
 from utils import getCSVDataPath, statList, parseName, fieldStateList, checkConsistency
+from tests import checkGenConsistency, itemTests
 
 
 # initial item dictionary with item name, item type, gen introduced, gen 2 exclusivity, and sprite URL
@@ -305,9 +306,9 @@ def addOtherItemData(fpath, itemDict):
   with open(fpath + 'typeEnhancers.csv', 'r', encoding='utf-8') as typeEnhancerCSV:
     reader = csv.DictReader(typeEnhancerCSV)
     for row in reader:
-      itemName, type = row["Item Name"], row["Type"]
+      itemName, itemGen, type = row["Item Name"], int(row["Gen"]), row["Type"]
       if not itemDict[itemName]["gen2_exclusive"]:
-        itemDict[itemName]["boosts_type"][type] = [[1.1, 2], [1.2, 4]]
+        itemDict[itemName]["boosts_type"][type] = [[1.1, itemGen], [1.2, 4]]
       else:
         itemDict[itemName]["boosts_type"][type] = [[1.1, 2]]
 
@@ -735,39 +736,10 @@ def main():
 
   addFieldStateData(itemDict)
 
+  checkGenConsistency(itemDict)
+  itemTests(itemDict)
+
   return itemDict
 
 if __name__ == '__main__':
   itemDict = main()
-
-  # check consistency in itemDict
-  print('Checking for inconsistencies...')
-  for itemName in itemDict.keys():
-    for inconsistency in [
-      checkConsistency(itemDict[itemName]["effects"], 'effect', effectDict, False),
-      checkConsistency(itemDict[itemName]["causes_status"], 'status', statusDict, 0.0),
-      checkConsistency(itemDict[itemName]["resists_status"], 'status', statusDict, False),
-      checkConsistency(itemDict[itemName]["boosts_type"], 'type', typeDict, 0.0),
-      checkConsistency(itemDict[itemName]["resists_type"], 'type', typeDict, 0.0),
-      checkConsistency(itemDict[itemName]["resists_usage_method"], 'usage_method', usageMethodDict, 0.0),
-    ]:
-      if inconsistency:
-        print(f'Inconsistency found for {itemName}: {inconsistency}')
-
-    for stat in itemDict[itemName]["stat_modifications"]:
-      if stat not in statList():
-        print('Inconsistent stat name', itemName, stat)
-
-    for fieldState in itemDict[itemName]["extends_field_state"]:
-      if fieldState not in fieldStateList():
-        print('Inconsistent field state name', itemName, fieldState)
-
-    for fieldState in itemDict[itemName]["resists_field_state"]:
-      if fieldState not in fieldStateList():
-        print('Inconsistent field state name', itemName, fieldState)
-    
-    for fieldState in itemDict[itemName]["ignores_field_state"]:
-      if fieldState not in fieldStateList():
-        print('Inconsistent field state name', itemName, fieldState)
-
-  print('Finished.')

@@ -41,7 +41,7 @@
   "aftermath": {
     "gen": 4,
     "effects": {
-      "punishes_contact": [[true, 3]]
+      "punishes_contact": [[true, 4]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -1436,7 +1436,7 @@
   "gooey": {
     "gen": 6,
     "effects": {
-      "punishes_contact": [[true, 3]]
+      "punishes_contact": [[true, 6]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -2014,7 +2014,7 @@
   "iron_barbs": {
     "gen": 5,
     "effects": {
-      "punishes_contact": [[true, 3]]
+      "punishes_contact": [[true, 5]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -2537,34 +2537,20 @@
     "boosts_usage_method": {},
     "resists_usage_method": {},
     "stat_modifications": {
-      "attack": [["+2", "user", 14.28, 5], [[
-            "+2",
-            "user", 20.0, 8]]
-      ],
-      "defense": [["+2", "user", 14.28, 5], [[
-            "+2",
-            "user", 20.0, 8]]
-      ],
-      "special_attack": [["+2", "user", 14.28, 5], [[
-            "+2",
-            "user", 20.0, 8]]
-      ],
-      "special_defense": [["+2", "user", 14.28, 5], [[
-            "+2",
-            "user", 20.0, 8]]
-      ],
-      "speed": [["+2", "user", 14.28, 5], [[
-            "+2",
-            "user", 20.0, 8]]
-      ],
-      "evasion": [["+2", "user", 14.28, 5], [[
-            "+2",
-            "user", 0.0, 8]]
-      ],
-      "accuracy": [["+2", "user", 14.28, 5], [[
-            "+2",
-            "user", 0.0, 8]]
-      ]
+      "attack": [["+2", "user", 14.28, 5], ["+2",
+          "user", 20.0, 8]],
+      "defense": [["+2", "user", 14.28, 5], ["+2",
+          "user", 20.0, 8]],
+      "special_attack": [["+2", "user", 14.28, 5], ["+2",
+          "user", 20.0, 8]],
+      "special_defense": [["+2", "user", 14.28, 5], ["+2",
+          "user", 20.0, 8]],
+      "speed": [["+2", "user", 14.28, 5], ["+2",
+          "user", 20.0, 8]],
+      "evasion": [["+2", "user", 14.28, 5], ["+2",
+          "user", 0.0, 8]],
+      "accuracy": [["+2", "user", 14.28, 5], ["+2",
+          "user", 0.0, 8]]
     },
     "formatted_name": "Moody",
     "creates_field_state": {},
@@ -2655,7 +2641,7 @@
   "mummy": {
     "gen": 5,
     "effects": {
-      "punishes_contact": [[true, 3]]
+      "punishes_contact": [[true, 5]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -2909,7 +2895,7 @@
     "gen": 5,
     "effects": {
       "manipulates_item": [[true, 5]],
-      "punishes_contact": [[true, 3]]
+      "punishes_contact": [[true, 5]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -4605,7 +4591,7 @@
   "tangling_hair": {
     "gen": 7,
     "effects": {
-      "punishes_contact": [[true, 3]]
+      "punishes_contact": [[true, 7]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -5005,7 +4991,7 @@
   "wandering_spirit": {
     "gen": 8,
     "effects": {
-      "punishes_contact": [[true, 3]]
+      "punishes_contact": [[true, 8]]
     },
     "causes_status": {},
     "resists_status": {},

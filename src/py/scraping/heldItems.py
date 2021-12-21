@@ -181,7 +181,7 @@ def itemGenList(fname):
           writer.writerow([itemName, 3])
           continue
         # TYPO: bulbapedia says it's gen 3, but should be gen 2
-        elif itemName in ['scope_lens', 'smoke_ball']:
+        elif itemName in ['scope_lens', 'smoke_ball', 'lucky_punch', 'thick_club']:
           writer.writerow([itemName, 2])
           continue
         # Bulbapedia also lists the Chilan Berry Pokeblock ingredient as a separate item, introduced in Gen 3.

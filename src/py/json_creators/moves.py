@@ -4,7 +4,8 @@ import effects
 import usageMethods
 import statuses
 from functools import cmp_to_key
-from utils import getCSVDataPath, genSymbolToNumber, statList, fieldStateList, numberOfGens, checkConsistency
+from utils import getCSVDataPath, genSymbolToNumber, numberOfGens
+from tests import checkGenConsistency, moveTests
 
 
 # Create move .json file with the following data:
@@ -633,7 +634,7 @@ def addStatModToMoveDict(fname, moveDict):
   # amnesia
   moveDict["amnesia"]["special_attack"] = [['+2', 'user', 100.0, 1], ['+0', 'user', 0.0, 2]]
   moveDict["amnesia"]["special_defense"] = [['+2', 'user', 100.0, 1], ['+2', 'user', 100.0, 2]]
-  moveDict["z_amnesia"]["special_defense"] = [['+7', 'user', 100.0, 1], ['+2', 'user', 100.0, 2]]
+  moveDict["z_amnesia"]["special_defense"] = [['+2', 'user', 100.0, 7]]
 
   # crunch
   moveDict["crunch"]["stat_modifications"]["defense"] = [['-1', 'target', 20.0, 2], ['+0', 'target', 0.0, 4]]
@@ -654,7 +655,7 @@ def addStatModToMoveDict(fname, moveDict):
   moveDict["growth"]["stat_modifications"]["special_attack"] = [['+1', 'user', 100.0, 1]]
   moveDict["growth"]["stat_modifications"]["attack"] = [['+2', 'user', 100.0, 1]]
   moveDict["growth"]["stat_modifications"]["special_defense"] = [['+1', 'user', 100.0, 1], ["+0", 'user', 0.0, 2]]
-  moveDict["z_growth"]["stat_modifications"]["special_attack"] = [['+2', 'user', 100.0, 1]]
+  moveDict["z_growth"]["stat_modifications"]["special_attack"] = [['+2', 'user', 100.0, 7]]
   #endregion
 
   return
@@ -1424,8 +1425,8 @@ def addFieldStateDate(moveDict):
   moveDict["brick_break"]["removes_field_state"]["reflect"] = [[True, 4]]
   moveDict["brick_break"]["removes_field_state"]["aurora_veil"] = [[True, 7]]
 
-  moveDict["psychic_fangs"]["removes_field_state"]["light_screen"] = [[True, 4]]
-  moveDict["psychic_fangs"]["removes_field_state"]["reflect"] = [[True, 4]]
+  moveDict["psychic_fangs"]["removes_field_state"]["light_screen"] = [[True, 7]]
+  moveDict["psychic_fangs"]["removes_field_state"]["reflect"] = [[True, 7]]
   moveDict["psychic_fangs"]["removes_field_state"]["aurora_veil"] = [[True, 7]]
 
   # Rooms
@@ -1494,33 +1495,10 @@ def main():
 
   addFieldStateDate(moveDict)
 
+  checkGenConsistency(moveDict)
+  moveTests(moveDict)
+
   return moveDict
 
 if __name__ == '__main__':
   moveDict = main()
-
-  # check name consistency in moveDict
-  print('Checking for inconsistencies...')
-  for moveName in moveDict.keys():
-    for inconsistency in [
-      checkConsistency(moveDict[moveName]["effects"], 'effect', effectDict, False),
-      checkConsistency(moveDict[moveName]["causes_status"], 'status', statusDict, 0.0),
-      checkConsistency(moveDict[moveName]["resists_status"], 'status', statusDict, False),
-      checkConsistency(moveDict[moveName]["usage_method"], 'usage_method', usageMethodDict, False),
-    ]:
-      if inconsistency:
-        print(f'Inconsistency found for {moveName}: {inconsistency}')
-
-    for stat in moveDict[moveName]["stat_modifications"]:
-      if stat not in statList():
-        print('Inconsistent stat name', moveName, stat)
-
-    for fieldState in moveDict[moveName]["creates_field_state"]:
-      if fieldState not in fieldStateList():
-        print('Inconsistent field state name', moveName, fieldState)
-
-    for fieldState in moveDict[moveName]["removes_field_state"]:
-      if fieldState not in fieldStateList():
-        print('Inconsistent field state name', moveName, fieldState)
-        
-  print('Finished.')

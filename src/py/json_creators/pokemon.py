@@ -1,8 +1,8 @@
-from ast import parse
 import csv
 import re
 import copy
 from utils import parseName, genSymbolToNumber, getCSVDataPath, genSymbolToNumber, typeList, baseFormSuffices
+from tests import checkGenConsistency, pokemonTests
 
 # make initial Pokemon dict, with dex number, gen, species, and type data
 # the pokemonByType.csv doesn't contain all the Pokemon forms, since some different forms of the same Pokemon can have the same type. We will rectify this in future functions; for example, base stat data will add in the forms of deoxys since those have different base stats
@@ -113,15 +113,15 @@ def addBaseStatData(fnamePrefix, pokemonDict):
             else:
               if pokemonName == 'castform' or 'deoxys' in pokemonName:
                 pokemonGen = 3
-              elif 'giratina' in pokemonName or 'shaymin' in pokemonName or pokemonName in ['burmy', 'arceus']:
+              elif 'giratina' in pokemonName or 'shaymin' in pokemonName or 'burmy' in pokemonName or 'arceus' in pokemonName:
                 pokemonGen = 4
               else:
                 pokemonGen = 5
           else:
             pokemonGen = gen[i]
-
+          
           baseStatDict[pokemonName] = {
-            "gen": gen[i],
+            "gen": pokemonGen,
             "hp": [[int(row["hp"]), pokemonGen]],
             "attack": [[int(row["attack"]), pokemonGen]],
             "defense": [[int(row["defense"]), pokemonGen]],
@@ -147,12 +147,15 @@ def addBaseStatData(fnamePrefix, pokemonDict):
     # pokemon form is in the list of pokemon by type, so it will show up in both pokemonDict and baseStatDict
     try:
       for stat in baseStatDict[pokemonName].keys():
+        if stat in ['dex_number', 'gen']:
+          continue
         pokemonDict[pokemonName][stat] = baseStatDict[pokemonName][stat]
 
     # KeyErrors will occur because pokemonName is not in baseStatDict
     except KeyError:
       # in case (a), formNames will be empty since baseStatDict has the species name, not the form name; in case (b), it will be the list of formNames, and pokemonName will be the species name
-      formNames = [formName for formName in baseStatDict.keys() if pokemonName in formName]
+      formNames = [formName for formName in baseStatDict.keys() if 
+      pokemonName in formName]
 
       # case (a)
       if len(formNames) == 0:
@@ -163,6 +166,9 @@ def addBaseStatData(fnamePrefix, pokemonDict):
           formName, pokemonName = pokemonName, '_'.join(pokemonName.split('_')[:-1])
       
         for stat in baseStatDict[pokemonName].keys():
+          if stat in ['dex_number', 'gen']:
+            continue
+
           pokemonDict[formName][stat] = baseStatDict[pokemonName][stat]
       else:
         formList.append([pokemonName, formNames])
@@ -175,6 +181,7 @@ def addBaseStatData(fnamePrefix, pokemonDict):
 
     for formName in formNames:
       # we're considering formName because it didn't show up in the pokemonByType.csv file; this means that the current data (e.g. species, gen, typing) of pokemonName doesn't vary between forms, so formName and pokemonName should have the same data
+      
       pokemonDict[formName] = copy.deepcopy(pokemonDict[pokemonName])
 
       # The form may have been added later, so we actually want the gen in which the form was added, rather than that of the base form.
@@ -618,7 +625,8 @@ def checkPokeAPIForms(fname, pokemonDict):
   # del pokemonDict["florges"]
 
   for pokemonName in pokemonDict.keys():
-    pokemonDict[pokemonName]["gen"] = int(pokemonDict[pokemonName]["gen"])
+    if pokemonDict[pokemonName]["gen"] != 'lgpe_only':
+      pokemonDict[pokemonName]["gen"] = int(pokemonDict[pokemonName]["gen"])
 
   return
 
@@ -968,6 +976,35 @@ def getFormattedName(pokemonName):
 
   return f'{speciesName} ({formName})'
 
+def updateGensInPatchList(patchList, pokemonGen):
+  for patch in patchList:
+    if 'lgpe_only' in [patch[-1], pokemonGen]:
+      continue
+
+    patch[-1] = max(patch[-1], pokemonGen)
+
+  return
+
+def updateGens(pokemonDict):
+  for pokemonName in pokemonDict.keys():
+    pokemonEntry = pokemonDict[pokemonName]
+    pokemonGen = pokemonEntry["gen"]
+
+    for key in pokemonEntry: 
+      if key == 'pokeapi': 
+        continue
+
+      if type(pokemonEntry[key]) is list:
+        patchList = pokemonEntry[key]
+        updateGensInPatchList(patchList, pokemonGen)
+
+      elif type(pokemonEntry[key]) is dict:
+        for innerKey in pokemonEntry[key].keys():
+          if type(pokemonEntry[key][innerKey]) is list:
+            patchList = pokemonEntry[key][innerKey]
+            updateGensInPatchList(patchList, pokemonGen)
+  return
+
 def main():
   dataPath = getCSVDataPath() + '\\pokemon\\'
 
@@ -999,20 +1036,12 @@ def main():
 
   addFullName(pokemonDict)
 
+  updateGens(pokemonDict)
+
+  checkGenConsistency(pokemonDict)
+  pokemonTests(pokemonDict)
       
   return pokemonDict
 
 if __name__ == '__main__':
   pokemonDict = main()
-
-  print('Checking pokemonDict...')
-
-  for pokemonName in pokemonDict.keys():
-
-    type1, type2 = pokemonDict[pokemonName]["type_1"][0][0], pokemonDict[pokemonName]["type_2"][0][0] if pokemonDict[pokemonName]["type_2"][0][0] else 'normal'
-    if type1 not in typeList():
-      print('Inconsistent type name', pokemonName, type1)
-    if type2 not in typeList():
-      print('Inconsistent type name', pokemonName, type2)
-
-  print('Finished pokemonDict.')
