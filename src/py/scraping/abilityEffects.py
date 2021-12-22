@@ -412,9 +412,17 @@ def abilityEffects(fnamePrefix):
       
       # exceptions
       currentWriter.writerow(["flare_boost", "special_attack", 1.5, "user"])
-      mainWriter.writerow([abilityName, 'modify_stat'])
+      mainWriter.writerow(['flare_boost', 'modify_stat'])
       currentWriter.writerow(["ice_scales", "special_defense", 0.5, "user"])
-      mainWriter.writerow([abilityName, 'modify_stat'])
+      mainWriter.writerow(['ice_scales', 'modify_stat'])
+
+      # secondary effect chance exceptions
+      mainWriter.writerow(['serene_grace', 'modify_stat'])
+      currentWriter.writerow(["serene_grace", "secondary_effect_chance", 2.0, "user"])
+      mainWriter.writerow(['sheer_force', 'modify_stat'])
+      currentWriter.writerow(["sheer_force", "secondary_effect_chance", 0.0, "user"])
+      mainWriter.writerow(['shield_dust', 'modify_stat'])
+      currentWriter.writerow(["shield_dust", "secondary_effect_chance", 0.0, "target"])
       
       # currentWriter.writerow(['Ability Name', 'Stat', 'Modifier'])
 

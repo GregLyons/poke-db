@@ -263,9 +263,6 @@ def main():
   effectDict = effects.main()
   checkEffects(effectDict)
 
-  global natureDict
-  natureDict = natures.main()
-  
   global statusDict
   statusDict = statuses.main()
   checkStatuses(statusDict)
@@ -282,6 +279,7 @@ def main():
   fieldStateDict = fieldStates.main()
   itemDict = heldItems.main()
   moveDict = moves.main()
+  natureDict = natures.main()
   pokemonDict = pokemon.main()
 
   # no need to check description dict against the reference dicts

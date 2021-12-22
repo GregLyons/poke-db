@@ -13,13 +13,13 @@ def natureList(fname):
     for row in dataRows:
       cells = row.find_all(['th', 'td'])
 
-      name = parseName(cells[1].get_text())
+      natureName = parseName(cells[1].get_text())
       increasedStat = parseName(cells[3].get_text().replace('—', ''))
       decreasedStat = parseName(cells[4].get_text().replace('—', ''))
       favoriteFlavor = parseName(cells[5].get_text().replace('—', ''))
       dislikedFlavor = parseName(cells[6].get_text().replace('—', ''))
 
-      writer.writerow([name, increasedStat, decreasedStat, favoriteFlavor, dislikedFlavor])
+      writer.writerow([natureName, increasedStat, decreasedStat, favoriteFlavor, dislikedFlavor])
 
   return
 

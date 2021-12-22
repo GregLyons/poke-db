@@ -3742,7 +3742,10 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {},
+    "stat_modifications": {
+      "secondary_effect_chance": [[2.0,
+          "user", 100.0, 3]]
+    },
     "formatted_name": "Serene Grace",
     "creates_field_state": {},
     "removes_field_state": {},
@@ -3825,7 +3828,10 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {},
+    "stat_modifications": {
+      "secondary_effect_chance": [[0.0,
+          "user", 100.0, 5]]
+    },
     "formatted_name": "Sheer Force",
     "creates_field_state": {},
     "removes_field_state": {},
@@ -3861,7 +3867,10 @@
     "resists_type": {},
     "boosts_usage_method": {},
     "resists_usage_method": {},
-    "stat_modifications": {},
+    "stat_modifications": {
+      "secondary_effect_chance": [[0.0,
+          "target", 100.0, 3]]
+    },
     "formatted_name": "Shield Dust",
     "creates_field_state": {},
     "removes_field_state": {},
