@@ -147,13 +147,13 @@ const resetEverything = async () => {
   RESET SPECIFIC CLASSES OF JUNCTION TABLES
 */
 
-// resetAbilityJunctionTables(db, tableStatements);
-// resetFieldStateJunctionTables(db, tableStatements);
-// resetMoveJunctionTables(db, tableStatements);
+resetAbilityJunctionTables(db, tableStatements);
+resetFieldStateJunctionTables(db, tableStatements);
+resetMoveJunctionTables(db, tableStatements);
 resetNatureJunctionTables(db, tableStatements);
-// resetItemJunctionTables(db, tableStatements);
-// resetPokemonJunctionTables(db, tableStatements);
-// resetTypeJunctionTables(db, tableStatements);
-// resetVersionGroupJunctionTables(db, tableStatements);
+resetItemJunctionTables(db, tableStatements);
+resetPokemonJunctionTables(db, tableStatements);
+resetTypeJunctionTables(db, tableStatements);
+resetVersionGroupJunctionTables(db, tableStatements);
 
-// resetLearnsetTable(db, tableStatements);
+resetLearnsetTable(db, tableStatements);

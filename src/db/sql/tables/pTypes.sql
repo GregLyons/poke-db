@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS ptype_removes_field_state (
   ptype_generation_id TINYINT UNSIGNED NOT NULL,
   ptype_id SMALLINT UNSIGNED NOT NULL,
   field_state_generation_id TINYINT UNSIGNED NOT NULL,
-  field_state_id TINYINT UNSIGNED NOT NULL,
+  field_state_id SMALLINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (ptype_generation_id, ptype_id, field_state_generation_id, field_state_id),
   FOREIGN KEY (ptype_generation_id, ptype_id) REFERENCES ptype(generation_id, ptype_id)
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS ptype_resists_field_state (
   ptype_generation_id TINYINT UNSIGNED NOT NULL,
   ptype_id SMALLINT UNSIGNED NOT NULL,
   field_state_generation_id TINYINT UNSIGNED NOT NULL,
-  field_state_id TINYINT UNSIGNED NOT NULL,
+  field_state_id SMALLINT UNSIGNED NOT NULL,
   multiplier DECIMAL(4,3) UNSIGNED NOT NULL,
 
   PRIMARY KEY (ptype_generation_id, ptype_id, field_state_generation_id, field_state_id),
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS ptype_ignores_field_state (
   ptype_generation_id TINYINT UNSIGNED NOT NULL,
   ptype_id SMALLINT UNSIGNED NOT NULL,
   field_state_generation_id TINYINT UNSIGNED NOT NULL,
-  field_state_id TINYINT UNSIGNED NOT NULL,
+  field_state_id SMALLINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (ptype_generation_id, ptype_id, field_state_generation_id, field_state_id),
   FOREIGN KEY (ptype_generation_id, ptype_id) REFERENCES ptype(generation_id, ptype_id)

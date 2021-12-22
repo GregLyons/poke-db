@@ -181,7 +181,7 @@ CREATE TABLE IF NOT EXISTS item_extends_field_state (
   item_generation_id TINYINT UNSIGNED NOT NULL,
   item_id SMALLINT UNSIGNED NOT NULL,
   field_state_generation_id TINYINT UNSIGNED NOT NULL,
-  field_state_id TINYINT UNSIGNED NOT NULL,
+  field_state_id SMALLINT UNSIGNED NOT NULL,
   turns TINYINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (item_generation_id, item_id, field_state_generation_id, field_state_id),
@@ -199,7 +199,7 @@ CREATE TABLE IF NOT EXISTS item_resists_field_state (
   item_generation_id TINYINT UNSIGNED NOT NULL,
   item_id SMALLINT UNSIGNED NOT NULL,
   field_state_generation_id TINYINT UNSIGNED NOT NULL,
-  field_state_id TINYINT UNSIGNED NOT NULL,
+  field_state_id SMALLINT UNSIGNED NOT NULL,
   multiplier DECIMAL(4,3) UNSIGNED NOT NULL,
 
   PRIMARY KEY (item_generation_id, item_id, field_state_generation_id, field_state_id),
@@ -217,7 +217,7 @@ CREATE TABLE IF NOT EXISTS item_ignores_field_state (
   item_generation_id TINYINT UNSIGNED NOT NULL,
   item_id SMALLINT UNSIGNED NOT NULL,
   field_state_generation_id TINYINT UNSIGNED NOT NULL,
-  field_state_id TINYINT UNSIGNED NOT NULL,
+  field_state_id SMALLINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (item_generation_id, item_id, field_state_generation_id, field_state_id),
   FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id)
@@ -234,7 +234,7 @@ CREATE TABLE IF NOT EXISTS item_confuses_nature (
   item_generation_id TINYINT UNSIGNED NOT NULL,
   item_id SMALLINT UNSIGNED NOT NULL,
   nature_generation_id TINYINT UNSIGNED NOT NULL,
-  nature_id TINYINT UNSIGNED NOT NULL,
+  nature_id SMALLINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (item_generation_id, item_id, nature_generation_id, nature_id),
   FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id)

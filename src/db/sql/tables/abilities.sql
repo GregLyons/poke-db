@@ -147,7 +147,7 @@ CREATE TABLE IF NOT EXISTS ability_creates_field_state (
   ability_generation_id TINYINT UNSIGNED NOT NULL,
   ability_id SMALLINT UNSIGNED NOT NULL,
   field_state_generation_id TINYINT UNSIGNED NOT NULL,
-  field_state_id TINYINT UNSIGNED NOT NULL,
+  field_state_id SMALLINT UNSIGNED NOT NULL,
   turns TINYINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (ability_generation_id, ability_id, field_state_generation_id, field_state_id),
@@ -165,7 +165,7 @@ CREATE TABLE IF NOT EXISTS ability_removes_field_state (
   ability_generation_id TINYINT UNSIGNED NOT NULL,
   ability_id SMALLINT UNSIGNED NOT NULL,
   field_state_generation_id TINYINT UNSIGNED NOT NULL,
-  field_state_id TINYINT UNSIGNED NOT NULL,
+  field_state_id SMALLINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (ability_generation_id, ability_id, field_state_generation_id, field_state_id),
   FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id)
@@ -182,7 +182,7 @@ CREATE TABLE IF NOT EXISTS ability_prevents_field_state (
   ability_generation_id TINYINT UNSIGNED NOT NULL,
   ability_id SMALLINT UNSIGNED NOT NULL,
   field_state_generation_id TINYINT UNSIGNED NOT NULL,
-  field_state_id TINYINT UNSIGNED NOT NULL,
+  field_state_id SMALLINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (ability_generation_id, ability_id, field_state_generation_id, field_state_id),
   FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id)
@@ -199,7 +199,7 @@ CREATE TABLE IF NOT EXISTS ability_suppresses_field_state (
   ability_generation_id TINYINT UNSIGNED NOT NULL,
   ability_id SMALLINT UNSIGNED NOT NULL,
   field_state_generation_id TINYINT UNSIGNED NOT NULL,
-  field_state_id TINYINT UNSIGNED NOT NULL,
+  field_state_id SMALLINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (ability_generation_id, ability_id, field_state_generation_id, field_state_id),
   FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id)
@@ -216,7 +216,7 @@ CREATE TABLE IF NOT EXISTS ability_ignores_field_state (
   ability_generation_id TINYINT UNSIGNED NOT NULL,
   ability_id SMALLINT UNSIGNED NOT NULL,
   field_state_generation_id TINYINT UNSIGNED NOT NULL,
-  field_state_id TINYINT UNSIGNED NOT NULL,
+  field_state_id SMALLINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (ability_generation_id, ability_id, field_state_generation_id, field_state_id),
   FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id)

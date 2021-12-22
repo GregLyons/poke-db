@@ -75,6 +75,7 @@ const getValuesForTable = (
         effect_FKM,
         fieldState_FKM,
         item_FKM,
+        nature_FKM,
         pokemon_FKM,
         pstatus_FKM,
         pType_FKM,
@@ -104,7 +105,7 @@ const getValuesForTable = (
         nature_FKM,
         stat_FKM,
       ] = foreignKeyMaps;
-      moveData = entityData;
+      natureData = entityData;
       break;
     
     case 'typeJunctionTables':
@@ -1351,9 +1352,9 @@ const getValuesForTable = (
           return acc.concat(
             Object.keys(natureData).map(natureName => {
               // We always compare entities of the same generation.
-              const { effect_id: natureID } = nature_FKM.get(makeMapKey([gen, natureName,]));
+              const { nature_id: natureID } = nature_FKM.get(makeMapKey([gen, natureName,]));
   
-              // True if effect is present, False otherwise.
+              // True if nature is present, False otherwise.
               return natureData[natureName]
               ? [gen, itemID, gen, natureID]
               : [];
@@ -1703,7 +1704,8 @@ const getValuesForTable = (
       // Filter out empty entries
       .filter(data => data.length > 0);
       break;
-    //#endregion
+    
+      //#endregion
 
     /*
       NATURE JUNCTION TABLES
@@ -1722,16 +1724,16 @@ const getValuesForTable = (
           recipient
         )
       */
-      values = moveData.reduce((acc, curr) => {
+      values = natureData.reduce((acc, curr) => {
         // Get move data from curr.
         const { gen: gen, name: natureName, stat_modifications: statModData } = curr;
-        const { nature_id: natureID } = move_FKM.get(makeMapKey([gen, natureName]));
+        const { nature_id: natureID } = nature_FKM.get(makeMapKey([gen, natureName]));
 
         return acc.concat(
           Object.keys(statModData).map(statName => {
             // We always compare entities of the same generation.
             const { stat_id: statID } = stat_FKM.get(makeMapKey([gen, statName]));
-            let [modifier, recipient] = statModData[statName]
+            let modifier = statModData[statName];
 
             // True if stage modification, False if multiplier.
             const stageOrMultiplier = typeof modifier == 'string';
@@ -1740,13 +1742,13 @@ const getValuesForTable = (
             if (stageOrMultiplier) {
               modifier = parseInt(modifier.slice(1), 10);
               return modifier != 0 
-              ? [gen, natureID, gen, statID, modifier, 1.0, 100.0, recipient]
+              ? [gen, natureID, gen, statID, modifier, 1.0, 100.0, 'user']
               : [];
             }
             // multiplier
             else {
               return modifier != 1.0
-              ? [gen, natureID, gen, statID, 0, modifier, 100.0, recipient]
+              ? [gen, natureID, gen, statID, 0, modifier, 100.0, 'user']
               : [];
             }
           })

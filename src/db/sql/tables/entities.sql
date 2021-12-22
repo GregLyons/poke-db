@@ -21,7 +21,6 @@ CREATE TABLE IF NOT EXISTS pdescription (
   PRIMARY KEY (pdescription_id)
 );
 
-
 -- While sprite_path should be unique, combining it with entity_name to get another unique identifier makes for easier selection when inserting data.
 CREATE TABLE IF NOT EXISTS sprite (
   sprite_id MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -103,7 +102,7 @@ CREATE TABLE IF NOT EXISTS effect (
 
 CREATE TABLE IF NOT EXISTS field_state (
   generation_id TINYINT UNSIGNED NOT NULL,
-  field_state_id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  field_state_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
   field_state_name VARCHAR(45) NOT NULL,
   field_state_formatted_name VARCHAR(45) NOT NULL,
   introduced TINYINT UNSIGNED NOT NULL,
@@ -122,7 +121,7 @@ CREATE TABLE IF NOT EXISTS field_state (
 
 CREATE TABLE IF NOT EXISTS nature (
   generation_id TINYINT UNSIGNED NOT NULL,
-  nature_id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  nature_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
   nature_name VARCHAR(45) NOT NULL,
   nature_formatted_name VARCHAR(45) NOT NULL,
   introduced TINYINT UNSIGNED NOT NULL,

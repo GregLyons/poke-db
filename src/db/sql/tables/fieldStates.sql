@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS field_state_modifies_stat (
   field_state_generation_id TINYINT UNSIGNED NOT NULL,
-  field_state_id TINYINT UNSIGNED NOT NULL,
+  field_state_id SMALLINT UNSIGNED NOT NULL,
   stat_generation_id TINYINT UNSIGNED NOT NULL,
   stat_id SMALLINT UNSIGNED NOT NULL,
   stage TINYINT NOT NULL, /* 0 for field_states which modify stat but not the stage */
@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS field_state_modifies_stat (
 
 CREATE TABLE IF NOT EXISTS weather_ball (
   field_state_generation_id TINYINT UNSIGNED NOT NULL,
-  field_state_id TINYINT UNSIGNED NOT NULL,
+  field_state_id SMALLINT UNSIGNED NOT NULL,
   ptype_generation_id TINYINT UNSIGNED NOT NULL,
   ptype_id SMALLINT UNSIGNED NOT NULL,
 
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS weather_ball (
 
 CREATE TABLE IF NOT EXISTS field_state_effect (
   field_state_generation_id TINYINT UNSIGNED NOT NULL,
-  field_state_id TINYINT UNSIGNED NOT NULL,
+  field_state_id SMALLINT UNSIGNED NOT NULL,
   effect_generation_id TINYINT UNSIGNED NOT NULL,
   effect_id SMALLINT UNSIGNED NOT NULL,
 
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS field_state_effect (
 
 CREATE TABLE IF NOT EXISTS field_state_causes_pstatus (
   field_state_generation_id TINYINT UNSIGNED NOT NULL,
-  field_state_id TINYINT UNSIGNED NOT NULL,
+  field_state_id SMALLINT UNSIGNED NOT NULL,
   pstatus_generation_id TINYINT UNSIGNED NOT NULL,
   pstatus_id SMALLINT UNSIGNED NOT NULL,
   chance DECIMAL(5,2) UNSIGNED NOT NULL,
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS field_state_causes_pstatus (
 
 CREATE TABLE IF NOT EXISTS field_state_prevents_pstatus (
   field_state_generation_id TINYINT UNSIGNED NOT NULL,
-  field_state_id TINYINT UNSIGNED NOT NULL,
+  field_state_id SMALLINT UNSIGNED NOT NULL,
   pstatus_generation_id TINYINT UNSIGNED NOT NULL,
   pstatus_id SMALLINT UNSIGNED NOT NULL,
 
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS field_state_prevents_pstatus (
 
 CREATE TABLE IF NOT EXISTS field_state_boosts_ptype (
   field_state_generation_id TINYINT UNSIGNED NOT NULL,
-  field_state_id TINYINT UNSIGNED NOT NULL,
+  field_state_id SMALLINT UNSIGNED NOT NULL,
   ptype_generation_id TINYINT UNSIGNED NOT NULL,
   ptype_id SMALLINT UNSIGNED NOT NULL,
   multiplier DECIMAL(4,3) UNSIGNED NOT NULL,
@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS field_state_boosts_ptype (
 
 CREATE TABLE IF NOT EXISTS field_state_resists_ptype (
   field_state_generation_id TINYINT UNSIGNED NOT NULL,
-  field_state_id TINYINT UNSIGNED NOT NULL,
+  field_state_id SMALLINT UNSIGNED NOT NULL,
   ptype_generation_id TINYINT UNSIGNED NOT NULL,
   ptype_id SMALLINT UNSIGNED NOT NULL,
   multiplier DECIMAL(4,3) UNSIGNED NOT NULL,
@@ -126,7 +126,7 @@ CREATE TABLE IF NOT EXISTS field_state_resists_ptype (
 
 CREATE TABLE IF NOT EXISTS field_state_activates_ability (
   field_state_generation_id TINYINT UNSIGNED NOT NULL,
-  field_state_id TINYINT UNSIGNED NOT NULL,
+  field_state_id SMALLINT UNSIGNED NOT NULL,
   ability_generation_id TINYINT UNSIGNED NOT NULL,
   ability_id SMALLINT UNSIGNED NOT NULL,
 
@@ -143,7 +143,7 @@ CREATE TABLE IF NOT EXISTS field_state_activates_ability (
 
 CREATE TABLE IF NOT EXISTS field_state_activates_item (
   field_state_generation_id TINYINT UNSIGNED NOT NULL,
-  field_state_id TINYINT UNSIGNED NOT NULL,
+  field_state_id SMALLINT UNSIGNED NOT NULL,
   item_generation_id TINYINT UNSIGNED NOT NULL,
   item_id SMALLINT UNSIGNED NOT NULL,
 
@@ -160,7 +160,7 @@ CREATE TABLE IF NOT EXISTS field_state_activates_item (
 
 CREATE TABLE IF NOT EXISTS field_state_enhances_pmove (
   field_state_generation_id TINYINT UNSIGNED NOT NULL,
-  field_state_id TINYINT UNSIGNED NOT NULL,
+  field_state_id SMALLINT UNSIGNED NOT NULL,
   pmove_generation_id TINYINT UNSIGNED NOT NULL,
   pmove_id SMALLINT UNSIGNED NOT NULL,
 
@@ -177,7 +177,7 @@ CREATE TABLE IF NOT EXISTS field_state_enhances_pmove (
 
 CREATE TABLE IF NOT EXISTS field_state_hinders_pmove (
   field_state_generation_id TINYINT UNSIGNED NOT NULL,
-  field_state_id TINYINT UNSIGNED NOT NULL,
+  field_state_id SMALLINT UNSIGNED NOT NULL,
   pmove_generation_id TINYINT UNSIGNED NOT NULL,
   pmove_id SMALLINT UNSIGNED NOT NULL,
 
