@@ -144,7 +144,7 @@ const resetNatureJunctionTables = async (db, tableStatements) => {
 
 // #endregion
 
-/* 6. Re-insert data for item junction tables. */
+/* 7. Re-insert data for item junction tables. */
 // #region
 const { reinsertItemJunctionData } = require('./reinserting.js');
 
@@ -166,7 +166,7 @@ const resetItemJunctionTables = async (db, tableStatements) => {
 
 // #endregion
 
-/* 7. Re-insert data for move junction tables. */
+/* 8. Re-insert data for move junction tables. */
 // #region
 const { reinsertMoveJunctionData } = require('./reinserting.js');
 
@@ -188,7 +188,7 @@ const resetMoveJunctionTables = async (db, tableStatements) => {
 
 // #endregion
 
-/* 8. Re-insert data for type junction tables. */
+/* 9. Re-insert data for type junction tables. */
 // #region
 const { reinsertTypeJunctionData } = require('./reinserting.js');
 
@@ -210,7 +210,7 @@ const resetTypeJunctionTables = async (db, tableStatements) => {
 
 // #endregion
 
-/* 9. Re-insert data for Pokemon junction tables. Doesn't include learnset data. */
+/* 10. Re-insert data for Pokemon junction tables. Doesn't include learnset data. */
 // #region
 const { reinsertPokemonJunctionData } = require('./reinserting.js');
 
@@ -232,7 +232,7 @@ const resetPokemonJunctionTables = async (db, tableStatements) => {
 
 // #endregion
 
-/* 10. Re-insert data for version group junction tables. */
+/* 11. Re-insert data for version group junction tables. */
 // #region
 const { reinsertVersionGroupJunctionData } = require('./reinserting.js');
 
@@ -254,7 +254,7 @@ const resetVersionGroupJunctionTables = async (db, tableStatements) => {
 
 // #endregion
 
-/* 11. Re-insert data for Pokemon learnset table. */
+/* 12. Re-insert data for Pokemon learnset table. */
 // #region
 const { reinsertLearnsetData} = require('./reinserting.js');
 

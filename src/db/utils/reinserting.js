@@ -264,7 +264,6 @@ const reinsertMoveJunctionData = async(db, tableStatements) => {
   );
 }
 
-
 /*
   DELETE FROM nature junction tables, then INSERT INTO those tables.
 */

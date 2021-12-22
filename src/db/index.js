@@ -72,6 +72,7 @@ const resetJunctionTables = async (ignoreLearnsetTable = true) => {
     resetFieldStateJunctionTables,
     resetMoveJunctionTables,
     resetItemJunctionTables,
+    resetNatureJunctionTables,
     resetPokemonJunctionTables,
     resetTypeJunctionTables,
     resetVersionGroupJunctionTables,
@@ -113,47 +114,56 @@ const resetEverything = async () => {
     .catch();
 }
 
+// Joint database statements
 /*
-  RESET ENTIRE DATABASE
-*/
+  Only uncomment functions out in one region at a time. Otherwise, table lock is likely to result. For example, only run functions in the 'RESET SPECIFIC CLASSES OF JUNCTION TABLES' region, or in the 'RESET ENTITY TABLES' region, but not functions from both.
+*/ 
+//#region
+
+// RESET ENTIRE DATABASE
+//#region
 
 // resetEverything();
 
+//#endregion
 
-/*
-  RESET ALL JUNCTION TABLES
-*/
+// RESET ALL JUNCTION TABLES
+//#region
 
 // resetJunctionTables()
 // resetLearnsetTable(db, tableStatements);
 
+//#endregion
 
-/*
-  RECREATE ALL TABLES
-*/
+// RECREATE ALL TABLES
+//#region
 
 // recreateAllTables(db, tableStatements);
 
+//#endregion
 
-/*
-  RESET ENTITY TABLES
-*/
+// RESET ENTITY TABLES
+//#region
 
 // resetBasicEntityTables(db, tableStatements);
 // resetGenDependentEntityTables(db, tableStatements);
 
+//#endregion
 
-/*
-  RESET SPECIFIC CLASSES OF JUNCTION TABLES
-*/
+// RESET SPECIFIC CLASSES OF JUNCTION TABLES
+//#region
 
-resetAbilityJunctionTables(db, tableStatements);
-resetFieldStateJunctionTables(db, tableStatements);
-resetMoveJunctionTables(db, tableStatements);
-resetNatureJunctionTables(db, tableStatements);
-resetItemJunctionTables(db, tableStatements);
-resetPokemonJunctionTables(db, tableStatements);
-resetTypeJunctionTables(db, tableStatements);
-resetVersionGroupJunctionTables(db, tableStatements);
+// resetAbilityJunctionTables(db, tableStatements);
+// resetFieldStateJunctionTables(db, tableStatements);
+// resetMoveJunctionTables(db, tableStatements);
+// resetNatureJunctionTables(db, tableStatements);
+// resetItemJunctionTables(db, tableStatements);
+// resetPokemonJunctionTables(db, tableStatements);
+// resetTypeJunctionTables(db, tableStatements);
+// resetVersionGroupJunctionTables(db, tableStatements);
 
-resetLearnsetTable(db, tableStatements);
+// resetLearnsetTable(db, tableStatements);
+
+//#endregion
+
+//#endregion

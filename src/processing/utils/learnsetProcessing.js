@@ -165,13 +165,13 @@ const getPokemonLearnsetMaps = (learnsets, pokemon) => {
 }
 
 
-// adds Z-moves, max moves, etc. to learnsets and returns updatedLearnsets
 // also returns moveMap and inverseMoveMap for going between moveNames and move names in the learnsets
 const { getZMoves, getStatusZMoves, getMaxMoves, getGMaxMoves } = require('./helpers.js');
 const { serializeDict } = require('./serializing.js');
 
+// adds Z-moves, max moves, etc. to learnsets and returns updatedLearnsets
 const getUpdatedLearnsets = (learnsets, moves, pokemon) => {
-  // learnsets shouldn't have dates, functions, undefined, regexp, or infinity 
+  // learnsets shouldn't have dates, functions, undefined, regexp, or infinity, so this copies the learnsets
   let updatedLearnsets = JSON.parse(JSON.stringify(learnsets));
   
   // moveMap: moveName --> learnsetMoveName

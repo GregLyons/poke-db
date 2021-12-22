@@ -1,8 +1,4 @@
 /*
-  CREATING TABLES
-*/ 
-
-/*
   Throughout, db refers to the MySQL database, and tableStatements refers to the object of MySQL statements created in the ./sql folder. 
   
   tableGroup will refer to keys of this object, and tableName will refer to keys of nested object tableStatements[tableGroup].

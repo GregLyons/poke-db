@@ -167,7 +167,6 @@ const getValuesForTable = (
       enhanceOrHinder, enhanceOrHinderKey,
       // E.g. ability_creates_field_state, item_extends_field_state, ptype_suppresses_field_state, select 'creates', 'extends', 'suppresses', respectively.
       fieldStateAction, fieldStateActionKey,
-      // TODO
       // Meta-entities
       metaEntityClass, metaEntity_id,
       metaEntity_FKM, metaEntityKey;

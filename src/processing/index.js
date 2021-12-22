@@ -33,6 +33,7 @@ Note that, due to the complicated structure of the evolution data, the 'evolves_
 
 /* 1. Extend patch notes and serialize. */
 // #region
+
 const { RAW_JSON_DATA_PATH } = require('./utils/index.js');
 const abilities = require(RAW_JSON_DATA_PATH + 'abilities.json');
 const pTypes = require(RAW_JSON_DATA_PATH + 'elementalTypes.json');
