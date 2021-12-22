@@ -1,4 +1,4 @@
-from utils import checkConsistency, fieldStateList, statList, typeList
+from utils import checkConsistency, numberOfGens, fieldStateList, statList, typeList
 import effects
 import elementalTypes
 import statuses
@@ -13,6 +13,10 @@ class Error(Exception):
   pass
 
 class InconsistentPatchGenError(Error):
+  def __init__(self, message):
+    self.message = message
+
+class InconsistentDataPointError(Error):
   def __init__(self, message):
     self.message = message
 
@@ -164,6 +168,58 @@ def moveTests(moveDict):
   return
 
 def pokemonTests(pokemonDict):
+  # Check that number of base forms in each generation is correct
+  # Also collect other form classes for later analysis
+  megas = {}
+  alolas = {}
+  galars = {}
+  gmaxes = {}
+
+  genCounts = [0] * numberOfGens()
+  for pokemonName in pokemonDict.keys():
+    pokemonGen = pokemonDict[pokemonName]["gen"]
+    if pokemonGen == 'lgpe_only': 
+      continue
+
+    formClass = pokemonDict[pokemonName]["form_class"][0]
+
+    # If Pokemon is not base form, add it to appropriate form Set for later
+    if formClass[0] != 'base':
+      if formClass[0] == 'mega':
+        megas[pokemonName] = pokemonGen
+      if formClass[0] == 'alola':
+        alolas[pokemonName] = pokemonGen
+      if formClass[0] == 'galar':
+        galars[pokemonName] = pokemonGen
+      if formClass[0] == 'gmax':
+        gmaxes[pokemonName] = pokemonGen
+        
+      continue
+
+    genCounts[pokemonGen - 1] += 1
+  
+  correctGenCounts = [151, 100, 135, 107, 156, 72, 88, 89]
+  for i in range(len(correctGenCounts)):
+    if correctGenCounts[i] != genCounts[i]:
+      raise InconsistentDataPointError(f'Number of base forms pokemonDict in generation {i  + 1}, {genCounts[i]}, does not match the number of Pokemon introduced {correctGenCounts[i]}.')
+
+  # Check that all megas are Gen 6 or later
+  for pokemonName in megas.keys():
+    if megas[pokemonName] < 6:
+      raise InconsistentDataPointError(f'Mega form prior to gen 6: {pokemonName}.')
+  # Check that all alolas are Gen 7 or later
+  for pokemonName in alolas.keys():
+    if alolas[pokemonName] < 7:
+      raise InconsistentDataPointError(f'Alola form prior to gen 7: {pokemonName}.')
+  # Check that all galars are Gen 8 or later
+  for pokemonName in galars.keys():
+    if galars[pokemonName] < 8:
+      raise InconsistentDataPointError(f'Galar form prior to gen 8: {pokemonName}.')
+  # Check that all gmaxes are Gen 8 or later
+  for pokemonName in gmaxes.keys():
+    if gmaxes[pokemonName] < 8:
+      raise InconsistentDataPointError(f'Gmax form prior to gen 8: {pokemonName}.')
+
 
   # Check naming consistency
   for pokemonName in pokemonDict.keys():

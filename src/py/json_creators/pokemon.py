@@ -189,7 +189,7 @@ def addBaseStatData(fnamePrefix, pokemonDict):
 
       # enter base stat data for formName
       for stat in baseStatDict[formName].keys():
-          pokemonDict[formName][stat] = baseStatDict[formName][stat]
+        pokemonDict[formName][stat] = baseStatDict[formName][stat]
 
     # remove pokemonName from pokemonDict, leaving all the forms we just entered
     del pokemonDict[pokemonName]
@@ -232,7 +232,7 @@ def addBaseStatData(fnamePrefix, pokemonDict):
   pokemonDict["greninja_ash"]["gen"] = 7
   pokemonDict["greninja_ash"]["type_1"] = [['water', 7]]
   pokemonDict["greninja_ash"]["type_2"] = [['dark', 7]]
-
+  
   return
 
 # the notes are somewhat inconsistent, so there are a few different exceptions to consider
@@ -977,18 +977,24 @@ def getFormattedName(pokemonName):
   return f'{speciesName} ({formName})'
 
 def updateGensInPatchList(patchList, pokemonGen):
+  updatedPatchList = []
   for patch in patchList:
     if 'lgpe_only' in [patch[-1], pokemonGen]:
       continue
 
-    patch[-1] = max(patch[-1], pokemonGen)
+  return updatedPatchList
 
-  return
-
+# When adding base stat and ability data, we may have added in new forms of Pokemon. To do this, we cloned the base form, constructed in the initial step, and then added in the ability/base stat data. We updated the 'gen' field of the new form, but the other patches may not have been updated. 
+# 
+# This function updates those patches so that their generation is no less than the gen of the Pokemon to which they apply. 
 def updateGens(pokemonDict):
+  ok = False
   for pokemonName in pokemonDict.keys():
+
     pokemonEntry = pokemonDict[pokemonName]
     pokemonGen = pokemonEntry["gen"]
+    if pokemonGen == 'lgpe_only':
+      pokemonGen = 7
 
     for key in pokemonEntry: 
       if key == 'pokeapi': 
@@ -996,13 +1002,31 @@ def updateGens(pokemonDict):
 
       if type(pokemonEntry[key]) is list:
         patchList = pokemonEntry[key]
-        updateGensInPatchList(patchList, pokemonGen)
+        
+        # Filter out patches prior to pokemonGen, except the last patch. If all patches took place prior to pokemonGen, then the last patch gives the _current_ value for the new form. 
+        reducedPatchList = [patch for patch in patchList[:-1] if patch[-1] >= pokemonGen]
+        if patchList[-1][-1] == 'lgpe_only':
+          reducedPatchList.append(patchList[-1])
+        else: 
+          reducedPatchList.append(patchList[-1][:-1] + [max(pokemonGen, patchList[-1][-1])])
+
+        pokemonEntry[key] = reducedPatchList
 
       elif type(pokemonEntry[key]) is dict:
         for innerKey in pokemonEntry[key].keys():
           if type(pokemonEntry[key][innerKey]) is list:
             patchList = pokemonEntry[key][innerKey]
-            updateGensInPatchList(patchList, pokemonGen)
+
+            # Filter out patches prior to pokemonGen, except the last patch. If all patches took place prior to pokemonGen, then the last patch gives the _current_ value for the new form. 
+            reducedPatchList = [patch for patch in patchList[:-1] if patch[-1] >= pokemonGen]    
+            if patchList[-1][-1] == 'lgpe_only':
+              reducedPatchList.append(patchList[-1])
+            else: 
+              reducedPatchList.append(patchList[-1][:-1] + [max(pokemonGen, patchList[-1][-1])])
+
+            pokemonEntry[key][innerKey] = reducedPatchList
+  
+  print(pokemonDict["arceus_grass"])
   return
 
 def main():
