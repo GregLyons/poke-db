@@ -988,7 +988,6 @@ def updateGensInPatchList(patchList, pokemonGen):
 # 
 # This function updates those patches so that their generation is no less than the gen of the Pokemon to which they apply. 
 def updateGens(pokemonDict):
-  ok = False
   for pokemonName in pokemonDict.keys():
 
     pokemonEntry = pokemonDict[pokemonName]
@@ -1026,7 +1025,6 @@ def updateGens(pokemonDict):
 
             pokemonEntry[key][innerKey] = reducedPatchList
   
-  print(pokemonDict["arceus_grass"])
   return
 
 def main():

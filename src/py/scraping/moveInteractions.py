@@ -53,6 +53,32 @@ def makeInteractionCSV(fname):
           genInfo.append('F')
 
       writer.writerow(['magic_coat', moveName] + genInfo)
+    
+    # Assist interactions; data is given in terms of moves which aren't callable by assist, i.e. those which DON'T interact with assist.
+    assistTableRows = openLink('https://bulbapedia.bulbagarden.net/wiki/Assist_(move)', 0, 10).find(id='Uncallable_moves').find_next('table', {'class':'roundy'}).find('table').find_all('tr')[2:]
+
+    for row in assistTableRows:
+      cells = row.find_all(['td', 'th'])
+      moveName, genData = parseName(cells[0].get_text()), cells[3:]
+
+      # will store gen info; assist debutted in Gen 2
+      genInfo = ['F', 'F']
+
+      # parse the table
+      for genDatum in genData:
+        # move not callable by assist, so it DOESN'T interact with assist
+        if '✔' in genDatum.get_text():
+          genInfo.append('F')
+        # move called by assist, so it DOES interact with assist
+        elif '{' not in genDatum.get_text():
+          genInfo.append('T')
+
+      # table is missing all the <td>'s in some rows
+      while len(genInfo) < numberOfGens():
+        genInfo.append('F')
+
+      writer.writerow(['assist', moveName] + genInfo)
+
 
     # Protect interactions; data is given in terms of moves which bypass protect, i.e. those which DON'T interact with Protect
     protectTableRows = openLink('https://bulbapedia.bulbagarden.net/wiki/Protect_(move)', 0, 10).find(id='Moves_that_bypass_Protect').find_next('table').find('table').find_all('tr')[2:]

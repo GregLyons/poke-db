@@ -20,11 +20,11 @@ class InconsistentDataPointError(Error):
   def __init__(self, message):
     self.message = message
 
+# Goes through the patches in an entityDict (e.g. abilityDict, moveDict) and ensures that all patch gens are greater than or equal to the generation of their corresponding entity (e.g. if a Pokemon was introduced in gen 5, then all patches have a gen at least 5).
 def checkGenConsistency(entityDict):
   for entityName in entityDict.keys():
     entityEntry = entityDict[entityName]
     
-    # 
     if 'gen' not in entityEntry.keys():
       return
     entityGen = entityEntry["gen"]
@@ -70,6 +70,12 @@ def checkGenConsistency(entityDict):
 
 
   return
+
+# Checks whether actualValue equals expectedValue. If not, raises InconsistentDataPointError.
+def checkDataPoint(actualValue, expectedValue, entityName, key = '', innerKey = ''):
+  if actualValue == expectedValue:
+    return
+  raise InconsistentDataPointError(f'Error when checking {" ".join([key, innerKey])} of {entityName}: {actualValue} should be {expectedValue}')
 
 def abilityTests(abilityDict):
   for abilityName in abilityDict.keys():
@@ -203,6 +209,7 @@ def pokemonTests(pokemonDict):
     if correctGenCounts[i] != genCounts[i]:
       raise InconsistentDataPointError(f'Number of base forms pokemonDict in generation {i  + 1}, {genCounts[i]}, does not match the number of Pokemon introduced {correctGenCounts[i]}.')
 
+  # Check that certain classes of forms belong to the appropriate generations
   # Check that all megas are Gen 6 or later
   for pokemonName in megas.keys():
     if megas[pokemonName] < 6:
@@ -220,7 +227,6 @@ def pokemonTests(pokemonDict):
     if gmaxes[pokemonName] < 8:
       raise InconsistentDataPointError(f'Gmax form prior to gen 8: {pokemonName}.')
 
-
   # Check naming consistency
   for pokemonName in pokemonDict.keys():
     type1, type2 = pokemonDict[pokemonName]["type_1"][0][0], pokemonDict[pokemonName]["type_2"][0][0] if pokemonDict[pokemonName]["type_2"][0][0] else 'normal'
@@ -230,8 +236,136 @@ def pokemonTests(pokemonDict):
     if type2 not in typeList():
       print('Inconsistent type name', pokemonName, type2)
 
-  return
+  # Unit tests
+  #region
+  
+  # Type data checks
 
+  # Type changes handled
+  checkDataPoint(pokemonDict["clefairy"]["type_1"], [["normal", 1], ["fairy", 6]], 'clefairy', 'type_1', '')
+
+
+  # Ability data checks
+
+  # Ability changes handled
+  checkDataPoint(pokemonDict["gengar"]["ability_1"], [["levitate", 3], ["cursed_body", 7]], 'gengar', 'ability_1', '')
+  checkDataPoint(pokemonDict["chandelure"]["ability_hidden"], [["shadow_tag", 5], ["infiltrator", 6]], 'chandelure', 'ability_hidden', '')
+
+
+  # Base stat checks
+
+  # Stat changes handled
+  checkDataPoint(pokemonDict["charmander"]["special_attack"], [[50, 1], [60, 5]], 'charmander', 'special_attack', '')
+
+  checkDataPoint(pokemonDict["butterfree"]["special_attack"], [[80, 1], [90, 6]], 'butterfree', 'special_attack', '')
+  
+
+  # Form data checks
+
+  # Megas and g-max handled
+  charizardFormData = {
+    "charizard_mega_x": [["mega", 6]],
+    "charizard_mega_y": [["mega", 6]],
+    "charizard_gmax": [["gmax", 8]]
+  }
+  checkDataPoint(pokemonDict["charizard"]["form_data"], charizardFormData, 'charizard', 'form_data', '')
+
+  # All Pikachu forms handled
+  pikachuFormData = {
+    "pikachu_gmax": [["gmax", 8]],
+    "pikachu_original_cap": [["other", 7]],
+    "pikachu_kalos_cap": [["other", 7]],
+    "pikachu_alola_cap": [["other", 7]],
+    "pikachu_hoenn_cap": [["other", 7]],
+    "pikachu_sinnoh_cap": [["other", 7]],
+    "pikachu_unova_cap": [["other", 7]],
+    "pikachu_world_cap": [["other", 7]],
+    "pikachu_rock_star": [["other", 6]],
+    "pikachu_belle": [["other", 6]],
+    "pikachu_pop_star": [["other", 6]],
+    "pikachu_phd": [["other", 6]],
+    "pikachu_libre": [["other", 6]],
+    "pikachu_partner_cap": [["other", 7]],
+    "pikachu_cosplay": [["other", 6]]
+  }
+  checkDataPoint(pokemonDict["pikachu"]["form_data"], pikachuFormData, 'pikachu', 'form_data', '')
+
+  # Arceus forms handled
+  arceusFormData = {
+    "arceus_grass": [["other", 4]],
+    "arceus_fairy": [["other", 6]],
+    "arceus_electric": [["other", 4]],
+    "arceus_steel": [["other", 4]],
+    "arceus_flying": [["other", 4]],
+    "arceus_dark": [["other", 4]],
+    "arceus_ice": [["other", 4]],
+    "arceus_poison": [["other", 4]],
+    "arceus_bug": [["other", 4]],
+    "arceus_ground": [["other", 4]],
+    "arceus_fighting": [["other", 4]],
+    "arceus_psychic": [["other", 4]],
+    "arceus_ghost": [["other", 4]],
+    "arceus_water": [["other", 4]],
+    "arceus_fire": [["other", 4]],
+    "arceus_rock": [["other", 4]],
+    "arceus_dragon": [["other", 4]]
+  }
+  checkDataPoint(pokemonDict["arceus_normal"]["form_data"], arceusFormData, 'arceus', 'form_data', '')
+
+  # Arceus Ice not classified as base form (even though '_ice' and '_normal' are both suffices for base forms).
+  checkDataPoint(pokemonDict["arceus_ice"]["form_class"], [["other", 4]], 'arceus', 'form_class', '')
+
+
+  # Evolution data checks
+  pikachuEvolutionData = {
+    "raichu": [["Thunder Stone", 1]],
+    "raichu_alola": [["Thunder Stone (Alola)", 7]]
+  }
+  checkDataPoint(pokemonDict["pikachu"]["evolves_to"], pikachuEvolutionData, 'pikachu', 'evolves_to', '')
+
+  eeveeEvolutionData = {
+    "vaporeon": [["Water Stone", 1]],
+    "jolteon": [["Thunder Stone", 1]],
+    "flareon": [["Fire Stone", 1]],
+    "espeon": [["Friendship (day) Level up with Sun Shard (XD)", 2]],
+    "umbreon": [["Friendship (night) Level up with Moon Shard (XD)", 2]],
+    "leafeon": [["Level up near Moss Rock Leaf Stone (Sw/Sh)", 4]],
+    "glaceon": [["Level up near Ice Rock Ice Stone (Sw/Sh)", 4]],
+    "sylveon": [["Level up with a Fairy-type move and either two hearts of Affection or high friendship (Sw/Sh)", 6]]
+  }
+  checkDataPoint(pokemonDict["eevee"]["evolves_to"], eeveeEvolutionData, 'eevee', 'evolves_to', '')
+
+  # Evolution data for slowpoke is a bit complicated
+  slowpokeEvolutionData = {
+    "slowbro": [["Level 37", 1]],
+    "slowking": [["Trade holding King's Rock", 2]]
+  }
+  checkDataPoint(pokemonDict["slowpoke"]["evolves_to"], slowpokeEvolutionData, 'slowpoke', 'evolves_to', '')
+
+  slowbroPrevolutionData = {
+    "slowpoke": [["Level 37", 1]]
+  }
+  checkDataPoint(pokemonDict["slowbro"]["evolves_from"], slowbroPrevolutionData, 'slowbro', 'evolves_from', '')
+
+  slowpokeGalarEvolutionData = {
+    "slowbro_galar": [["Galarica Cuff", 8]],
+    "slowking_galar": [["Galarica Wreath", 8]]
+  }
+  checkDataPoint(pokemonDict["slowpoke_galar"]["evolves_to"], slowpokeGalarEvolutionData, 'slowpoke_galar', 'evolves_to', '')
+  
+  # Evolution chains rerouted
+  spewpaIcySnowEvolutionData = {
+    "vivillon_icy_snow": [["Level 12", 6]]
+  }
+  checkDataPoint(pokemonDict["spewpa_icy_snow"]["evolves_to"], spewpaIcySnowEvolutionData, 'spewpa_icy_snow', 'evolves_to', '')
+  spewpaIcySnowPrevolutionData = {
+    "scatterbug_icy_snow": [["Level 9", 6]]
+  }
+  checkDataPoint(pokemonDict["spewpa_icy_snow"]["evolves_from"], spewpaIcySnowPrevolutionData, 'spewpa_icy_snow', 'evolves_from', '')
+
+  #endregion
+
+  return
 
 def typeTests(typeDict):
   for typeName in typeDict.keys():
