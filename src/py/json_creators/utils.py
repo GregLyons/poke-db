@@ -123,6 +123,13 @@ def statusList():
   ]
   return statuses
 
+# natures
+def natureList():
+  natures = [
+    'hardy', 'lonely', 'brave', 'adamant', 'naughty', 'bold', 'docile', 'relaxed', 'impish', 'lax', 'timid', 'hasty', 'serious', 'jolly', 'naive', 'modest', 'mild', 'quiet', 'bashful', 'rash', 'calm', 'gentle', 'sassy', 'careful', 'quirky'
+  ]
+  return natures
+
 # usage methods which interact with abilities, e.g. sound, bite
 def usageMethodList():
   usageMethods = [

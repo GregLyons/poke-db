@@ -709,6 +709,21 @@ def addFieldStateData(itemDict):
   itemDict["utility_umbrella"]["ignores_field_state"]["rain"] = [[True, 8]]
   itemDict["utility_umbrella"]["ignores_field_state"]["harsh_sunlight"] = [[True, 8]]
 
+  return
+
+def addNatureData(itemDict):
+  for itemName in itemDict.keys():
+    itemDict[itemName]["confuses_nature"] = {}
+  
+  for [berryName, natureNames] in [
+    ['aguav_berry', ['naughty', 'rash', 'naive', 'lax']],
+    ['figy_berry', ['modest', 'timid', 'calm', 'bold']],
+    ['iapapa_berry', ['lonely', 'mild', 'gentle', 'hasty']],
+    ['mago_berry', ['brave', 'quiet', 'sassy', 'relaxed']],
+    ['wiki_berry', ['adamant', 'jolly', 'careful', 'impish']],
+  ]: 
+    for natureName in natureNames:
+      itemDict[berryName]["confuses_nature"][natureName] = [[True, 3]]
 
   return
 
@@ -735,6 +750,8 @@ def main():
   addFormattedName(itemDict)
 
   addFieldStateData(itemDict)
+
+  addNatureData(itemDict)
 
   checkGenConsistency(itemDict)
   itemTests(itemDict)

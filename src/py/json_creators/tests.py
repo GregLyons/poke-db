@@ -1,4 +1,4 @@
-from utils import checkConsistency, numberOfGens, fieldStateList, statList, typeList
+from utils import checkConsistency, numberOfGens, fieldStateList, natureList, statList, typeList
 import effects
 import elementalTypes
 import statuses
@@ -19,6 +19,14 @@ class InconsistentPatchGenError(Error):
 class InconsistentDataPointError(Error):
   def __init__(self, message):
     self.message = message
+
+def checkOtherEntityNames(entityDict, otherEntityList, otherEntityKey):
+  for entityName in entityDict.keys():
+    for statName in entityDict[entityName][otherEntityKey]:
+      if statName not in otherEntityList:
+        raise InconsistentDataPointError(f'Inconsistent stat name: {entityName}, {statName}')
+
+  return
 
 # Goes through the patches in an entityDict (e.g. abilityDict, moveDict) and ensures that all patch gens are greater than or equal to the generation of their corresponding entity (e.g. if a Pokemon was introduced in gen 5, then all patches have a gen at least 5).
 def checkGenConsistency(entityDict):
@@ -78,6 +86,14 @@ def checkDataPoint(actualValue, expectedValue, entityName, key = '', innerKey = 
   raise InconsistentDataPointError(f'Error when checking {" ".join([key, innerKey])} of {entityName}: {actualValue} should be {expectedValue}')
 
 def abilityTests(abilityDict):
+  checkOtherEntityNames(abilityDict, statList(), 'stat_modifications')
+
+  checkOtherEntityNames(abilityDict, fieldStateList(), 'creates_field_state')
+  checkOtherEntityNames(abilityDict, fieldStateList(), 'prevents_field_state')
+  checkOtherEntityNames(abilityDict, fieldStateList(), 'suppresses_field_state')
+  checkOtherEntityNames(abilityDict, fieldStateList(), 'ignores_field_state')
+  checkOtherEntityNames(abilityDict, fieldStateList(), 'removes_field_state')
+
   for abilityName in abilityDict.keys():
     for inconsistency in [
       checkConsistency(abilityDict[abilityName]["effects"], 'effect', effectDict, False),
@@ -91,33 +107,17 @@ def abilityTests(abilityDict):
       if inconsistency:
         print(f'Inconsistency found for {abilityName}: {inconsistency}')
 
-    for stat in abilityDict[abilityName]["stat_modifications"]:
-      if stat not in statList():
-        print('Inconsistent stat name', abilityName, stat)
-
-    for fieldState in abilityDict[abilityName]["creates_field_state"]:
-      if fieldState not in fieldStateList():
-        print('Inconsistent field state name', abilityName, fieldState)
-
-    for fieldState in abilityDict[abilityName]["prevents_field_state"]:
-      if fieldState not in fieldStateList():
-        print('Inconsistent field state name', abilityName, fieldState)
-    
-    for fieldState in abilityDict[abilityName]["suppresses_field_state"]:
-      if fieldState not in fieldStateList():
-        print('Inconsistent field state name', abilityName, fieldState)
-        
-    for fieldState in abilityDict[abilityName]["ignores_field_state"]:
-      if fieldState not in fieldStateList():
-        print('Inconsistent field state name', abilityName, fieldState)
-
-    for fieldState in abilityDict[abilityName]["removes_field_state"]:
-      if fieldState not in fieldStateList():
-        print('Inconsistent field state name', abilityName, fieldState)
-
   return
 
 def itemTests(itemDict):
+  checkOtherEntityNames(itemDict, statList(), 'stat_modifications')
+
+  checkOtherEntityNames(itemDict, fieldStateList(), 'extends_field_state')
+  checkOtherEntityNames(itemDict, fieldStateList(), 'resists_field_state')
+  checkOtherEntityNames(itemDict, fieldStateList(), 'ignores_field_state')
+
+  checkOtherEntityNames(itemDict, natureList(), 'confuses_nature')
+
   for itemName in itemDict.keys():
     for inconsistency in [
       checkConsistency(itemDict[itemName]["effects"], 'effect', effectDict, False),
@@ -130,9 +130,9 @@ def itemTests(itemDict):
       if inconsistency:
         print(f'Inconsistency found for {itemName}: {inconsistency}')
 
-    for stat in itemDict[itemName]["stat_modifications"]:
-      if stat not in statList():
-        print('Inconsistent stat name', itemName, stat)
+    for natureName in itemDict[itemName]["confuses_nature"]:
+      if natureName not in natureList():
+        raise InconsistentDataPointError(f'Inconsistent nature name: {itemName}, {natureName}')
 
     for fieldState in itemDict[itemName]["extends_field_state"]:
       if fieldState not in fieldStateList():
@@ -149,6 +149,11 @@ def itemTests(itemDict):
   return
 
 def moveTests(moveDict):
+  checkOtherEntityNames(moveDict, statList(), 'stat_modifications')
+
+  checkOtherEntityNames(moveDict, fieldStateList(), 'creates_field_state')
+  checkOtherEntityNames(moveDict, fieldStateList(), 'removes_field_state')
+  
   for moveName in moveDict.keys():
     for inconsistency in [
       checkConsistency(moveDict[moveName]["effects"], 'effect', effectDict, False),
@@ -159,10 +164,6 @@ def moveTests(moveDict):
       if inconsistency:
         print(f'Inconsistency found for {moveName}: {inconsistency}')
 
-    for stat in moveDict[moveName]["stat_modifications"]:
-      if stat not in statList():
-        print('Inconsistent stat name', moveName, stat)
-
     for fieldState in moveDict[moveName]["creates_field_state"]:
       if fieldState not in fieldStateList():
         print('Inconsistent field state name', moveName, fieldState)
@@ -171,6 +172,15 @@ def moveTests(moveDict):
       if fieldState not in fieldStateList():
         print('Inconsistent field state name', moveName, fieldState)
         
+  return
+
+def natureTests(natureDict):
+  for natureName in natureDict.keys():
+    if natureName not in natureList():
+      raise InconsistentDataPointError(f'{natureName} not in natureList.')
+    
+  checkOtherEntityNames(natureDict, statList(), 'stat_modifications')
+
   return
 
 def pokemonTests(pokemonDict):

@@ -1,0 +1,237 @@
+{
+  "hardy": {
+    "gen": 3,
+    "stat_modifications": {},
+    "formatted_name": "Hardy",
+    "favorite_flavors": [[false, 3]],
+    "disliked_flavors": [[false, 3]]
+  },
+  "lonely": {
+    "gen": 3,
+    "stat_modifications": {
+      "attack": [[1.1, 3]],
+      "defense": [[0.9, 3]]
+    },
+    "formatted_name": "Lonely",
+    "favorite_flavors": [["spicy", 3]],
+    "disliked_flavors": [["sour", 3]]
+  },
+  "brave": {
+    "gen": 3,
+    "stat_modifications": {
+      "attack": [[1.1, 3]],
+      "speed": [[0.9, 3]]
+    },
+    "formatted_name": "Brave",
+    "favorite_flavors": [["spicy", 3]],
+    "disliked_flavors": [["sweet", 3]]
+  },
+  "adamant": {
+    "gen": 3,
+    "stat_modifications": {
+      "attack": [[1.1, 3]],
+      "special_attack": [[0.9, 3]]
+    },
+    "formatted_name": "Adamant",
+    "favorite_flavors": [["spicy", 3]],
+    "disliked_flavors": [["dry", 3]]
+  },
+  "naughty": {
+    "gen": 3,
+    "stat_modifications": {
+      "attack": [[1.1, 3]],
+      "special_defense": [[0.9, 3]]
+    },
+    "formatted_name": "Naughty",
+    "favorite_flavors": [["spicy", 3]],
+    "disliked_flavors": [["bitter", 3]]
+  },
+  "bold": {
+    "gen": 3,
+    "stat_modifications": {
+      "defense": [[1.1, 3]],
+      "attack": [[0.9, 3]]
+    },
+    "formatted_name": "Bold",
+    "favorite_flavors": [["sour", 3]],
+    "disliked_flavors": [["spicy", 3]]
+  },
+  "docile": {
+    "gen": 3,
+    "stat_modifications": {},
+    "formatted_name": "Docile",
+    "favorite_flavors": [[false, 3]],
+    "disliked_flavors": [[false, 3]]
+  },
+  "relaxed": {
+    "gen": 3,
+    "stat_modifications": {
+      "defense": [[1.1, 3]],
+      "speed": [[0.9, 3]]
+    },
+    "formatted_name": "Relaxed",
+    "favorite_flavors": [["sour", 3]],
+    "disliked_flavors": [["sweet", 3]]
+  },
+  "impish": {
+    "gen": 3,
+    "stat_modifications": {
+      "defense": [[1.1, 3]],
+      "special_attack": [[0.9, 3]]
+    },
+    "formatted_name": "Impish",
+    "favorite_flavors": [["sour", 3]],
+    "disliked_flavors": [["dry", 3]]
+  },
+  "lax": {
+    "gen": 3,
+    "stat_modifications": {
+      "defense": [[1.1, 3]],
+      "special_defense": [[0.9, 3]]
+    },
+    "formatted_name": "Lax",
+    "favorite_flavors": [["sour", 3]],
+    "disliked_flavors": [["bitter", 3]]
+  },
+  "timid": {
+    "gen": 3,
+    "stat_modifications": {
+      "speed": [[1.1, 3]],
+      "attack": [[0.9, 3]]
+    },
+    "formatted_name": "Timid",
+    "favorite_flavors": [["sweet", 3]],
+    "disliked_flavors": [["spicy", 3]]
+  },
+  "hasty": {
+    "gen": 3,
+    "stat_modifications": {
+      "speed": [[1.1, 3]],
+      "defense": [[0.9, 3]]
+    },
+    "formatted_name": "Hasty",
+    "favorite_flavors": [["sweet", 3]],
+    "disliked_flavors": [["sour", 3]]
+  },
+  "serious": {
+    "gen": 3,
+    "stat_modifications": {},
+    "formatted_name": "Serious",
+    "favorite_flavors": [[false, 3]],
+    "disliked_flavors": [[false, 3]]
+  },
+  "jolly": {
+    "gen": 3,
+    "stat_modifications": {
+      "speed": [[1.1, 3]],
+      "special_attack": [[0.9, 3]]
+    },
+    "formatted_name": "Jolly",
+    "favorite_flavors": [["sweet", 3]],
+    "disliked_flavors": [["dry", 3]]
+  },
+  "naive": {
+    "gen": 3,
+    "stat_modifications": {
+      "speed": [[1.1, 3]],
+      "special_defense": [[0.9, 3]]
+    },
+    "formatted_name": "Naive",
+    "favorite_flavors": [["sweet", 3]],
+    "disliked_flavors": [["bitter", 3]]
+  },
+  "modest": {
+    "gen": 3,
+    "stat_modifications": {
+      "special_attack": [[1.1, 3]],
+      "attack": [[0.9, 3]]
+    },
+    "formatted_name": "Modest",
+    "favorite_flavors": [["dry", 3]],
+    "disliked_flavors": [["spicy", 3]]
+  },
+  "mild": {
+    "gen": 3,
+    "stat_modifications": {
+      "special_attack": [[1.1, 3]],
+      "defense": [[0.9, 3]]
+    },
+    "formatted_name": "Mild",
+    "favorite_flavors": [["dry", 3]],
+    "disliked_flavors": [["sour", 3]]
+  },
+  "quiet": {
+    "gen": 3,
+    "stat_modifications": {
+      "special_attack": [[1.1, 3]],
+      "speed": [[0.9, 3]]
+    },
+    "formatted_name": "Quiet",
+    "favorite_flavors": [["dry", 3]],
+    "disliked_flavors": [["sweet", 3]]
+  },
+  "bashful": {
+    "gen": 3,
+    "stat_modifications": {},
+    "formatted_name": "Bashful",
+    "favorite_flavors": [[false, 3]],
+    "disliked_flavors": [[false, 3]]
+  },
+  "rash": {
+    "gen": 3,
+    "stat_modifications": {
+      "special_attack": [[1.1, 3]],
+      "special_defense": [[0.9, 3]]
+    },
+    "formatted_name": "Rash",
+    "favorite_flavors": [["dry", 3]],
+    "disliked_flavors": [["bitter", 3]]
+  },
+  "calm": {
+    "gen": 3,
+    "stat_modifications": {
+      "special_defense": [[1.1, 3]],
+      "attack": [[0.9, 3]]
+    },
+    "formatted_name": "Calm",
+    "favorite_flavors": [["bitter", 3]],
+    "disliked_flavors": [["spicy", 3]]
+  },
+  "gentle": {
+    "gen": 3,
+    "stat_modifications": {
+      "special_defense": [[1.1, 3]],
+      "defense": [[0.9, 3]]
+    },
+    "formatted_name": "Gentle",
+    "favorite_flavors": [["bitter", 3]],
+    "disliked_flavors": [["sour", 3]]
+  },
+  "sassy": {
+    "gen": 3,
+    "stat_modifications": {
+      "special_defense": [[1.1, 3]],
+      "speed": [[0.9, 3]]
+    },
+    "formatted_name": "Sassy",
+    "favorite_flavors": [["bitter", 3]],
+    "disliked_flavors": [["sweet", 3]]
+  },
+  "careful": {
+    "gen": 3,
+    "stat_modifications": {
+      "special_defense": [[1.1, 3]],
+      "special_attack": [[0.9, 3]]
+    },
+    "formatted_name": "Careful",
+    "favorite_flavors": [["bitter", 3]],
+    "disliked_flavors": [["dry", 3]]
+  },
+  "quirky": {
+    "gen": 3,
+    "stat_modifications": {},
+    "formatted_name": "Quirky",
+    "favorite_flavors": [[false, 3]],
+    "disliked_flavors": [[false, 3]]
+  }
+}
