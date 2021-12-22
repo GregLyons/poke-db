@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS pdescription_ability (
   ability_id SMALLINT UNSIGNED NOT NULL,
   version_group_code VARCHAR(45) NOT NULL,
 
-  PRIMARY KEY (ability_generation_id, ability_id, pdescription_id),
+  PRIMARY KEY (ability_generation_id, ability_id, pdescription_id, version_group_code),
   FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS pdescription_pmove (
   pdescription_id MEDIUMINT UNSIGNED NOT NULL,
   version_group_code VARCHAR(45) NOT NULL,
 
-  PRIMARY KEY (pmove_generation_id, pmove_id, pdescription_id),
+  PRIMARY KEY (pmove_generation_id, pmove_id, pdescription_id, version_group_code),
   FOREIGN KEY (pmove_generation_id, pmove_id) REFERENCES pmove(generation_id, pmove_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS pdescription_item (
   pdescription_id MEDIUMINT UNSIGNED NOT NULL,
   version_group_code VARCHAR(45) NOT NULL,
 
-  PRIMARY KEY (item_generation_id, item_id, pdescription_id),
+  PRIMARY KEY (item_generation_id, item_id, pdescription_id, version_group_code),
   FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,

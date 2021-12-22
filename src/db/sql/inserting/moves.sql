@@ -19,6 +19,13 @@ INSERT INTO pmove_requires_pmove (
   required_pmove_id
 ) VALUES ?;
 
+INSERT INTO pmove_interacts_pmove (
+  interacting_pmove_generation_id,
+  interacting_pmove_id,
+  recipient_pmove_generation_id,
+  recipient_pmove_id
+) VALUES ?;
+
 INSERT INTO pmove_requires_pokemon (
   pmove_generation_id,
   pmove_id,

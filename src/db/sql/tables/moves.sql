@@ -45,6 +45,23 @@ CREATE TABLE IF NOT EXISTS pmove_requires_pmove (
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   INDEX opposite_pmove_requires_pmove (required_pmove_generation_id, required_pmove_id, requiring_pmove_generation_id, requiring_pmove_id)
+);
+
+-- 'assist' can call 'surf', so 'surf' is the interacting move, and 'assist' is the recipient move (the move being interacted with)
+CREATE TABLE IF NOT EXISTS pmove_interacts_pmove (
+  interacting_pmove_generation_id TINYINT UNSIGNED NOT NULL,
+  interacting_pmove_id SMALLINT UNSIGNED NOT NULL,
+  recipient_pmove_generation_id TINYINT UNSIGNED NOT NULL,
+  recipient_pmove_id SMALLINT UNSIGNED NOT NULL,
+
+  PRIMARY KEY (interacting_pmove_generation_id, interacting_pmove_id, recipient_pmove_generation_id, recipient_pmove_id),
+  FOREIGN KEY (interacting_pmove_generation_id, interacting_pmove_id) REFERENCES pmove(generation_id, pmove_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  FOREIGN KEY (recipient_pmove_generation_id, recipient_pmove_id) REFERENCES pmove(generation_id, pmove_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  INDEX opposite_pmove_interacts_pmove (recipient_pmove_generation_id, recipient_pmove_id, interacting_pmove_generation_id, interacting_pmove_id)
 ); 
 
 CREATE TABLE IF NOT EXISTS pmove_modifies_stat (

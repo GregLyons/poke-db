@@ -853,6 +853,7 @@
     "lgpe_exclusive_values": {},
     "move_interactions": {
       "magic_coat": [[false, 1], [false, 2], [false, 3], [false, 4], [true, 5], [true, 6], [true, 7], [true, 8]],
+      "assist": [[false, 1], [false, 2], [true, 3], [true, 4], [true, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[false, 1], [true, 2], [true, 3], [true, 4], [true, 5], [false, 6], [false, 7], [false, 8]],
       "detect": [[false, 1], [true, 2], [true, 3], [true, 4], [true, 5], [false, 6], [false, 7], [false, 8]],
       "spiky_shield": [[false, 1], [false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
@@ -903,6 +904,7 @@
     "g_max_power": 130,
     "z_power": 175,
     "move_interactions": {
+      "assist": [[false, 1], [false, 2], [true, 3], [true, 4], [true, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[true, 2], [true, 3], [true, 4], [true, 5], [true, 6], [true, 7], [true, 8]],
       "baneful_bunker": [[true, 7], [true, 8]],
       "spiky_shield": [[true, 6], [true, 7], [true, 8]],
@@ -2217,6 +2219,7 @@
     "lgpe_exclusive_values": {},
     "move_interactions": {
       "magic_coat": [[false, 1], [false, 2], [false, 3], [false, 4], [true, 5], [true, 6], [true, 7], [true, 8]],
+      "assist": [[false, 1], [false, 2], [true, 3], [true, 4], [true, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[false, 1], [true, 2], [true, 3], [true, 4], [true, 5], [false, 6], [false, 7], [false, 8]],
       "detect": [[false, 1], [true, 2], [true, 3], [true, 4], [true, 5], [false, 6], [false, 7], [false, 8]],
       "spiky_shield": [[false, 1], [false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
@@ -3297,6 +3300,7 @@
     "g_max_power": 75,
     "z_power": 100,
     "move_interactions": {
+      "assist": [[false, 1], [false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "baneful_bunker": [[false, 7], [false, 8]],
       "spiky_shield": [[false, 6], [false, 7], [false, 8]],
@@ -4438,6 +4442,7 @@
     "g_max_power": 130,
     "z_power": 160,
     "move_interactions": {
+      "assist": [[false, 1], [false, 2], [true, 3], [true, 4], [true, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[true, 2], [true, 3], [true, 4], [true, 5], [true, 6], [true, 7], [true, 8]],
       "baneful_bunker": [[true, 7], [true, 8]],
       "spiky_shield": [[true, 6], [true, 7], [true, 8]],
@@ -4970,6 +4975,7 @@
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {},
     "move_interactions": {
+      "assist": [[false, 1], [false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[true, 2], [true, 3], [true, 4], [true, 5], [true, 6], [true, 7], [true, 8]],
       "baneful_bunker": [[true, 7], [true, 8]],
       "spiky_shield": [[true, 6], [true, 7], [true, 8]],
@@ -5735,6 +5741,7 @@
     "target": [["user", 1]],
     "lgpe_exclusive_values": {},
     "move_interactions": {
+      "assist": [[false, 1], [false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "baneful_bunker": [[false, 7], [false, 8]],
       "spiky_shield": [[false, 6], [false, 7], [false, 8]],
@@ -5781,6 +5788,7 @@
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {},
     "move_interactions": {
+      "assist": [[false, 1], [false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[true, 2], [true, 3], [true, 4], [true, 5], [true, 6], [true, 7], [true, 8]],
       "baneful_bunker": [[true, 7], [true, 8]],
       "spiky_shield": [[true, 6], [true, 7], [true, 8]],
@@ -7002,6 +7010,7 @@
     "target": [["any_adjacent", 1]],
     "lgpe_exclusive_values": {},
     "move_interactions": {
+      "assist": [[false, 1], [false, 2], [true, 3], [true, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[false, 1], [false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "detect": [[false, 1], [false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "spiky_shield": [[false, 1], [false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
@@ -8027,6 +8036,7 @@
     "g_max_power": 1,
     "z_power": 1,
     "move_interactions": {
+      "assist": [[false, 1], [false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "baneful_bunker": [[false, 7], [false, 8]],
       "spiky_shield": [[false, 6], [false, 7], [false, 8]],
@@ -8073,6 +8083,7 @@
     "target": [["any_adjacent", 2]],
     "lgpe_exclusive_values": {},
     "move_interactions": {
+      "assist": [[false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "detect": [[false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "spiky_shield": [[false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
@@ -8172,6 +8183,7 @@
     "g_max_power": 110,
     "z_power": 120,
     "move_interactions": {
+      "assist": [[false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[true, 2], [true, 3], [true, 4], [true, 5], [true, 6], [true, 7], [true, 8]],
       "baneful_bunker": [[true, 7], [true, 8]],
       "spiky_shield": [[true, 6], [true, 7], [true, 8]],
@@ -8857,6 +8869,7 @@
     "target": [["user", 2]],
     "lgpe_exclusive_values": {},
     "move_interactions": {
+      "assist": [[false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "baneful_bunker": [[false, 7], [false, 8]],
       "spiky_shield": [[false, 6], [false, 7], [false, 8]],
@@ -9439,6 +9452,7 @@
     "target": [["user", 2]],
     "lgpe_exclusive_values": {},
     "move_interactions": {
+      "assist": [[false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "baneful_bunker": [[false, 7], [false, 8]],
       "spiky_shield": [[false, 6], [false, 7], [false, 8]],
@@ -9582,6 +9596,7 @@
     "target": [["user", 2]],
     "lgpe_exclusive_values": {},
     "move_interactions": {
+      "assist": [[false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "baneful_bunker": [[false, 7], [false, 8]],
       "spiky_shield": [[false, 6], [false, 7], [false, 8]],
@@ -9878,6 +9893,7 @@
     "target": [["user", 2]],
     "lgpe_exclusive_values": {},
     "move_interactions": {
+      "assist": [[false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "baneful_bunker": [[false, 7], [false, 8]],
       "spiky_shield": [[false, 6], [false, 7], [false, 8]],
@@ -10408,6 +10424,7 @@
     "target": [["user", 2]],
     "lgpe_exclusive_values": {},
     "move_interactions": {
+      "assist": [[false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "baneful_bunker": [[false, 7], [false, 8]],
       "spiky_shield": [[false, 6], [false, 7], [false, 8]],
@@ -11841,6 +11858,7 @@
     "g_max_power": 100,
     "z_power": 100,
     "move_interactions": {
+      "assist": [[false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[false, 2], [false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "baneful_bunker": [[false, 7], [false, 8]],
       "spiky_shield": [[false, 6], [false, 7], [false, 8]],
@@ -12875,6 +12893,7 @@
     "g_max_power": 100,
     "z_power": 200,
     "move_interactions": {
+      "assist": [[false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[true, 3], [true, 4], [true, 5], [true, 6], [true, 7], [true, 8]],
       "baneful_bunker": [[true, 7], [true, 8]],
       "spiky_shield": [[true, 6], [true, 7], [true, 8]],
@@ -12969,6 +12988,7 @@
     "target": [["user", 3]],
     "lgpe_exclusive_values": {},
     "move_interactions": {
+      "assist": [[false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "baneful_bunker": [[false, 7], [false, 8]],
       "spiky_shield": [[false, 6], [false, 7], [false, 8]],
@@ -13016,6 +13036,7 @@
     "target": [["user", 3], ["any_adjacent", 6]],
     "lgpe_exclusive_values": {},
     "move_interactions": {
+      "assist": [[true, 3], [true, 4], [true, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[false, 3], [false, 4], [false, 5], [true, 6], [true, 7], [true, 8]],
       "baneful_bunker": [[true, 7], [true, 8]],
       "spiky_shield": [[true, 6], [true, 7], [true, 8]],
@@ -13156,6 +13177,7 @@
     "target": [["user", 3], ["adjacent_ally", 4]],
     "lgpe_exclusive_values": {},
     "move_interactions": {
+      "assist": [[false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "baneful_bunker": [[false, 7], [false, 8]],
       "spiky_shield": [[false, 6], [false, 7], [false, 8]],
@@ -13202,6 +13224,7 @@
     "target": [["any_adjacent", 3]],
     "lgpe_exclusive_values": {},
     "move_interactions": {
+      "assist": [[false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[true, 3], [true, 4], [true, 5], [true, 6], [true, 7], [true, 8]],
       "baneful_bunker": [[true, 7], [true, 8]],
       "spiky_shield": [[true, 6], [true, 7], [true, 8]],
@@ -14066,6 +14089,7 @@
     "target": [["user", 3]],
     "lgpe_exclusive_values": {},
     "move_interactions": {
+      "assist": [[false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "baneful_bunker": [[false, 7], [false, 8]],
       "spiky_shield": [[false, 6], [false, 7], [false, 8]],
@@ -14173,6 +14197,7 @@
     "g_max_power": 130,
     "z_power": 160,
     "move_interactions": {
+      "assist": [[true, 3], [true, 4], [true, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[true, 3], [true, 4], [true, 5], [true, 6], [true, 7], [true, 8]],
       "baneful_bunker": [[true, 7], [true, 8]],
       "spiky_shield": [[true, 6], [true, 7], [true, 8]],
@@ -16583,6 +16608,7 @@
     "g_max_power": 130,
     "z_power": 160,
     "move_interactions": {
+      "assist": [[true, 3], [true, 4], [true, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[true, 3], [true, 4], [true, 5], [true, 6], [true, 7], [true, 8]],
       "baneful_bunker": [[true, 7], [true, 8]],
       "spiky_shield": [[true, 6], [true, 7], [true, 8]],
@@ -16732,6 +16758,7 @@
     "g_max_power": 110,
     "z_power": 120,
     "move_interactions": {
+      "assist": [[false, 3], [false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[true, 3], [true, 4], [true, 5], [true, 6], [true, 7], [true, 8]],
       "baneful_bunker": [[true, 7], [true, 8]],
       "spiky_shield": [[true, 6], [true, 7], [true, 8]],
@@ -17762,6 +17789,7 @@
     "g_max_power": 90,
     "z_power": 100,
     "move_interactions": {
+      "assist": [[false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "detect": [[false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "spiky_shield": [[false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
@@ -18650,6 +18678,7 @@
     "target": [["adjacent_foe", 4]],
     "lgpe_exclusive_values": {},
     "move_interactions": {
+      "assist": [[false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[true, 4], [true, 5], [true, 6], [true, 7], [true, 8]],
       "baneful_bunker": [[true, 7], [true, 8]],
       "spiky_shield": [[true, 6], [true, 7], [true, 8]],
@@ -18696,6 +18725,7 @@
     "target": [["user", 4]],
     "lgpe_exclusive_values": {},
     "move_interactions": {
+      "assist": [[false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "baneful_bunker": [[false, 7], [false, 8]],
       "spiky_shield": [[false, 6], [false, 7], [false, 8]],
@@ -20254,6 +20284,7 @@
     "target": [["any_adjacent", 4]],
     "lgpe_exclusive_values": {},
     "move_interactions": {
+      "assist": [[false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[true, 4], [true, 5], [true, 6], [true, 7], [true, 8]],
       "baneful_bunker": [[true, 7], [true, 8]],
       "spiky_shield": [[true, 6], [true, 7], [true, 8]],
@@ -21888,6 +21919,7 @@
     "g_max_power": 120,
     "z_power": 120,
     "move_interactions": {
+      "assist": [[false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[true, 4], [true, 5], [true, 6], [true, 7], [true, 8]],
       "baneful_bunker": [[true, 7], [true, 8]],
       "spiky_shield": [[true, 6], [true, 7], [true, 8]],
@@ -22822,6 +22854,7 @@
     "g_max_power": 140,
     "z_power": 190,
     "move_interactions": {
+      "assist": [[true, 4], [true, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "detect": [[false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
       "spiky_shield": [[false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
@@ -23252,6 +23285,7 @@
     "target": [["user", 5]],
     "lgpe_exclusive_values": {},
     "move_interactions": {
+      "assist": [[false, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[false, 5], [false, 6], [false, 7], [false, 8]],
       "baneful_bunker": [[false, 7], [false, 8]],
       "spiky_shield": [[false, 6], [false, 7], [false, 8]],
@@ -24768,6 +24802,7 @@
     "lgpe_exclusive_values": {},
     "z_power": 120,
     "move_interactions": {
+      "assist": [[true, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[true, 5], [true, 6], [true, 7], [true, 8]],
       "baneful_bunker": [[true, 7], [true, 8]],
       "spiky_shield": [[true, 6], [true, 7], [true, 8]],
@@ -24865,6 +24900,7 @@
     "g_max_power": 80,
     "z_power": 120,
     "move_interactions": {
+      "assist": [[false, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[true, 5], [true, 6], [true, 7], [true, 8]],
       "baneful_bunker": [[true, 7], [true, 8]],
       "spiky_shield": [[true, 6], [true, 7], [true, 8]],
@@ -25202,6 +25238,7 @@
     "target": [["any_adjacent", 5]],
     "lgpe_exclusive_values": {},
     "move_interactions": {
+      "assist": [[false, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[true, 5], [false, 6], [false, 7], [true, 8]],
       "detect": [[true, 5], [false, 6], [false, 7], [true, 8]],
       "spiky_shield": [[false, 5], [false, 6], [false, 7], [false, 8]],
@@ -25652,6 +25689,7 @@
     "g_max_power": 110,
     "z_power": 120,
     "move_interactions": {
+      "assist": [[false, 5], [false, 6], [false, 7], [false, 8]],
       "protect": [[true, 5], [true, 6], [true, 7], [true, 8]],
       "baneful_bunker": [[true, 7], [true, 8]],
       "spiky_shield": [[true, 6], [true, 7], [true, 8]],
@@ -27433,6 +27471,7 @@
     "lgpe_exclusive_values": {},
     "move_interactions": {
       "snatch": [[true, 6], [true, 7], [false, 8]],
+      "assist": [[false, 6], [false, 7], [false, 8]],
       "protect": [[false, 6], [false, 7], [false, 8]],
       "baneful_bunker": [[false, 7], [false, 8]],
       "spiky_shield": [[false, 6], [false, 7], [false, 8]],
@@ -27480,6 +27519,7 @@
     "g_max_power": 95,
     "z_power": 190,
     "move_interactions": {
+      "assist": [[false, 6], [false, 7], [false, 8]],
       "protect": [[true, 6], [true, 7], [true, 8]],
       "baneful_bunker": [[true, 7], [true, 8]],
       "spiky_shield": [[true, 6], [true, 7], [true, 8]],
@@ -27680,6 +27720,7 @@
     "g_max_power": 130,
     "z_power": 175,
     "move_interactions": {
+      "assist": [[false, 6], [false, 7], [false, 8]],
       "protect": [[false, 6], [false, 7], [false, 8]],
       "detect": [[false, 6], [false, 7], [false, 8]],
       "spiky_shield": [[false, 6], [false, 7], [false, 8]],
@@ -28756,6 +28797,7 @@
     "lgpe_exclusive_values": {},
     "punishes_contact": [[true, 6]],
     "move_interactions": {
+      "assist": [[false, 6], [false, 7], [false, 8]],
       "protect": [[false, 6], [false, 7], [false, 8]],
       "baneful_bunker": [[false, 7], [false, 8]],
       "spiky_shield": [[false, 6], [false, 7], [false, 8]],
@@ -29153,6 +29195,7 @@
     "lgpe_exclusive_values": {},
     "punishes_contact": [[true, 6]],
     "move_interactions": {
+      "assist": [[false, 6], [false, 7], [false, 8]],
       "protect": [[false, 6], [false, 7], [false, 8]],
       "baneful_bunker": [[false, 7], [false, 8]],
       "spiky_shield": [[false, 6], [false, 7], [false, 8]],
@@ -29627,6 +29670,7 @@
     "target": [["user", 6]],
     "lgpe_exclusive_values": {},
     "move_interactions": {
+      "assist": [[false, 6], [false, 7], [false, 8]],
       "protect": [[false, 6], [false, 7], [false, 8]],
       "baneful_bunker": [[false, 7], [false, 8]],
       "spiky_shield": [[false, 6], [false, 7], [false, 8]],
@@ -29673,6 +29717,7 @@
     "target": [["adjacent_ally", 6]],
     "lgpe_exclusive_values": {},
     "move_interactions": {
+      "assist": [[false, 6], [false, 7], [false, 8]],
       "protect": [[false, 6], [false, 7], [false, 8]],
       "detect": [[false, 6], [false, 7], [false, 8]],
       "spiky_shield": [[false, 6], [false, 7], [false, 8]],
@@ -31569,6 +31614,7 @@
     "lgpe_exclusive_values": {},
     "punishes_contact": [[true, 7]],
     "move_interactions": {
+      "assist": [[false, 7], [false, 8]],
       "protect": [[false, 7], [false, 8]],
       "baneful_bunker": [[false, 7], [false, 8]],
       "spiky_shield": [[false, 7], [false, 8]],
@@ -32055,6 +32101,7 @@
     "lgpe_exclusive_values": {},
     "move_interactions": {
       "magic_coat": [[true, 7], [false, 8]],
+      "assist": [[false, 7], [false, 8]],
       "protect": [[true, 7], [true, 8]],
       "baneful_bunker": [[true, 7], [true, 8]],
       "spiky_shield": [[true, 7], [true, 8]],
@@ -32980,6 +33027,7 @@
     "g_max_power": 130,
     "z_power": 180,
     "move_interactions": {
+      "assist": [[false, 7], [false, 8]],
       "protect": [[true, 7], [true, 8]],
       "baneful_bunker": [[true, 7], [true, 8]],
       "spiky_shield": [[true, 7], [true, 8]],
@@ -33757,6 +33805,7 @@
     "g_max_power": 150,
     "z_power": 200,
     "move_interactions": {
+      "assist": [[false, 7], [false, 8]],
       "protect": [[true, 7], [true, 8]],
       "baneful_bunker": [[true, 7], [true, 8]],
       "spiky_shield": [[true, 7], [true, 8]],

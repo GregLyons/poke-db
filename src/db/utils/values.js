@@ -1356,6 +1356,40 @@ const getValuesForTable = (
       // Filter out empty entries
       .filter(data => data.length > 0);
       break;
+    
+    case 'pmove_interacts_pmove':
+      /* 
+        Need (
+          interacting_pmove_generation_id,
+          interacting_pmove_id,
+          recipient_pmove_generation_id,
+          recipient_pmove_id,
+        ) 
+      */
+      values = moveData.reduce((acc, curr) => {
+        // Get entity data from curr.
+        const { gen: gen, name: interactingMoveName, move_interactions: interactionData } = curr;
+        const { pmove_id: interactingMoveID } = move_FKM.get(makeMapKey([gen, interactingMoveName]));
+
+        // Move has no interaction data.
+        if (!interactionData) { return acc; }
+        
+        return acc.concat(
+          Object.keys(interactionData).map(recipientMoveName => {
+            
+            const interactionPresent = interactionData[recipientMoveName];
+            if (interactionPresent) {
+              const { pmove_id: recipientMoveID } = move_FKM.get(makeMapKey([gen, recipientMoveName]));
+
+              return [gen, interactingMoveID, gen, recipientMoveID];
+            }
+            return [];
+          })
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
 
     case 'pmove_usage_method':
       /* 
