@@ -1,5 +1,12 @@
 # General structure
 
+For this code to work, you'll need your own MySQL database instance. Put a `.env` file in the root folder (where `package.json` is) with the following (be sure to add this to your `.gitignore`!):
+
+    DB_HOST=<your MySQL server name>
+    DB_USERNAME=<your MySQL username>
+    DB_PASSWORD=<your MySQL password>
+    DB_NAME=<your desired database name>
+
 The `sql` folder contains all the necessary MySQL statements for creating and inserting into the tables of the database. `sql/index.js` exports the `tableStatements` object, which contains these statements. This gives a pseudo-ORM. 
 
 The `utils` folder consists of functions which compose the various SQL statements into scripts. These functions are combined further in `index.js` into functions which can be run for various database operations. These functions are at the bottom of `index.js`, commented out. The user can uncomment the desired function to run it. Perhaps a CLI interface would be less crude, but I have found these statements quite helpful for automating the various database tasks.

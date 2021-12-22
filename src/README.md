@@ -49,7 +49,7 @@ This code is designed to facilitate the addition of new data. Here are three dif
 3. Adding new (i.e. not already coded) relationships between existing entity classes
 4. Adding new entity classes
 
-Throughout this documentation, we will show a complete example of case 4.
+Throughout this documentation, we will show a complete example of case 4. Cases 1 and 2 do not require adding any new code to `processing` or `db` (simply run the `index.js` file in each of those directories once you have an empty MySQL database to store the data in), though Case 3 may entail adding new junction tables. The hope is that, if you fully understand the example for Case 4, you can apply the appropriate steps from that Case to the other, less complicated Cases.
 
 ## Adding/modifying single datapoints
 
