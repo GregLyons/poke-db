@@ -853,7 +853,13 @@ def addInteractionData(interaction_fname, kings_rock_fname, moveDict):
         if gen < moveDict[targetMoveName]["gen"]:
           continue
         moveDict[targetMoveName]["move_interactions"][activeMoveName].append([genInfo[gen - 1] == 'T', gen])
-    
+  
+  # Add assist data to other moves
+  for moveName in moveDict:
+    if 'assist' not in moveDict[moveName]["move_interactions"].keys():
+      moveGen = moveDict[moveName]["gen"]
+      moveDict[moveName]["move_interactions"]["assist"] = [[True, max(moveGen, 3)]]
+
   # add protect data to other moves, since the Bulbapedia data is given in terms of moves which DON'T interact with Protect in one or more generations (which we have accounted for in the .csv; 'T' still indicates the move interacts with Protect), there are additional moves which DO interact with Protect
   # We also add data for moves whose protection effects are virtually identical to Protect (i.e. block both damaging AND status moves), up to potentially some differences in moves which bypass it (which are handled in the moveInteractions.csv)
   for protectLikeMoveName in ['protect', 'baneful_bunker', 'spiky_shield', 'detect']:
@@ -1148,9 +1154,6 @@ def addInteractionData(interaction_fname, kings_rock_fname, moveDict):
           moveDict[moveName]["item_interactions"]["kings_rock"].append([True, gen])
         else:
           moveDict[moveName]["item_interactions"]["kings_rock"].append([False, gen])
-      
-
-      
 
   return
 
