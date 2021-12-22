@@ -93,8 +93,8 @@ CREATE TABLE IF NOT EXISTS item_modifies_stat (
   item_id SMALLINT UNSIGNED NOT NULL,
   stat_generation_id TINYINT UNSIGNED NOT NULL,
   stat_id SMALLINT UNSIGNED NOT NULL,
-  stage TINYINT NOT NULL, /* 0 for abilities which modify stat but not the stage */
-  multiplier DECIMAL(3,2) UNSIGNED NOT NULL, /* 0.0 for abilities which modify stat but not via a multiplier */
+  stage TINYINT NOT NULL, /* 0 for items which modify stat but not the stage */
+  multiplier DECIMAL(3,2) UNSIGNED NOT NULL, /* 0.0 for items which modify stat but not via a multiplier */
   chance DECIMAL(5,2) UNSIGNED NOT NULL,
   recipient ENUM('target', 'user'),
 
@@ -228,4 +228,21 @@ CREATE TABLE IF NOT EXISTS item_ignores_field_state (
     ON UPDATE CASCADE,
 
   INDEX opposite_item_ignores_field_state (field_state_generation_id, field_state_id, item_generation_id, item_id)
+);
+
+CREATE TABLE IF NOT EXISTS item_confuses_nature (
+  item_generation_id TINYINT UNSIGNED NOT NULL,
+  item_id SMALLINT UNSIGNED NOT NULL,
+  nature_generation_id TINYINT UNSIGNED NOT NULL,
+  nature_id TINYINT UNSIGNED NOT NULL,
+
+  PRIMARY KEY (item_generation_id, item_id, nature_generation_id, nature_id),
+  FOREIGN KEY (item_generation_id, item_id) REFERENCES item(generation_id, item_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  FOREIGN KEY (nature_generation_id, nature_id) REFERENCES nature(generation_id, nature_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX opposite_item_confuses_nature (nature_generation_id, nature_id, item_generation_id, item_id)
 );

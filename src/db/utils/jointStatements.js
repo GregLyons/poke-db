@@ -122,6 +122,28 @@ const resetFieldStateJunctionTables = async (db, tableStatements) => {
 
 // #endregion
 
+/* 6. Re-insert data for nature junction tables. */
+// #region
+const { reinsertNatureJunctionData } = require('./reinserting.js');
+
+const resetNatureJunctionTables = async (db, tableStatements) => {
+  console.log('Re-inserting data for nature junction tables...\n');
+  let timer = new Date().getTime();
+
+  return reinsertNatureJunctionData(db, tableStatements)
+    .then( () => {
+      timer = timeElapsed(timer);
+    })
+    .then ( () => {
+      console.log('\nFinished inserting data for nature junction tables!\n');
+    })
+    .catch(console.log);
+}
+
+// resetNatureJunctionTables();
+
+// #endregion
+
 /* 6. Re-insert data for item junction tables. */
 // #region
 const { reinsertItemJunctionData } = require('./reinserting.js');
@@ -265,6 +287,7 @@ module.exports = {
   resetFieldStateJunctionTables,
   resetItemJunctionTables,
   resetMoveJunctionTables,
+  resetNatureJunctionTables,
   resetPokemonJunctionTables,
   resetTypeJunctionTables,
   resetVersionGroupJunctionTables,

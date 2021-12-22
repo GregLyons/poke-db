@@ -127,3 +127,12 @@ INSERT INTO field_state (
   field_state_class,
   field_state_target
 ) VALUES ?;
+
+INSERT INTO nature (
+  generation_id,
+  nature_name,
+  nature_formatted_name,
+  introduced,
+  nature_favorite_flavor,
+  nature_disliked_flavor
+) VALUES ?;

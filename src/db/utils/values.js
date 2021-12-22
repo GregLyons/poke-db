@@ -23,6 +23,7 @@ const getValuesForTable = (
       fieldState_FKM,
       item_FKM,
       move_FKM,
+      nature_FKM,
       pokemon_FKM,
       pstatus_FKM,
       pType_FKM,
@@ -37,6 +38,7 @@ const getValuesForTable = (
       itemData,
       metaEntityData,
       moveData,
+      natureData,
       pokemonData,
       pTypeData;
 
@@ -93,6 +95,14 @@ const getValuesForTable = (
         pType_FKM,
         stat_FKM,
         usageMethod_FKM,
+      ] = foreignKeyMaps;
+      moveData = entityData;
+      break;
+
+    case 'natureJunctionTables':
+      [
+        nature_FKM,
+        stat_FKM,
       ] = foreignKeyMaps;
       moveData = entityData;
       break;
@@ -166,6 +176,8 @@ const getValuesForTable = (
     /*
       BASIC ENTITIES
     */
+    //#region
+
     case 'generation':
       /*
         Need (
@@ -203,10 +215,14 @@ const getValuesForTable = (
           }));
         }, []);
         break;
-        
+  
+    //#endregion
+          
     /*
       GENERATION-DEPENDENT ENTITIES
     */
+    //#region
+
     case 'pstatus':
       /*
         Need (
@@ -285,7 +301,7 @@ const getValuesForTable = (
           data.target,
         ]);
       break;
-    
+
     case 'item':
       /* 
         Need (
@@ -297,7 +313,51 @@ const getValuesForTable = (
         ) 
       */
       values = require(PROCESSED_DATA_PATH + 'items.json')
-        .map(data => [data.gen, data.name, data.formatted_name, data.introduced, data.item_class]);
+        .map(data => [
+          data.gen,
+          data.name,
+          data.formatted_name,
+          data.introduced,
+          data.item_class
+        ]);
+      break;
+
+    case 'nature':
+      /*
+        Need (
+          generation_id,
+          nature_name,
+          nature_formatted_name,
+          introduced,
+          nature_favorite_flavor,
+          nature_disliked_flavor
+        )
+      */ 
+      values = require(PROCESSED_DATA_PATH + 'natures.json')
+        .map(data => {
+          let favoriteFlavor, dislikedFlavor;
+          if (data.favorite_flavors) {
+            favoriteFlavor = 'none'
+          } 
+          else {
+            favoriteFlavor = data.favorite_flavors;
+          }
+          if (data.disliked_flavors) {
+            dislikedFlavor = 'none'
+          }
+          else {
+            dislikedFlavor = data.disliked_flavors;
+          }
+
+          return [
+            data.gen,
+            data.name,
+            data.formatted_name,
+            data.introduced,
+            favoriteFlavor,
+            dislikedFlavor,
+          ];
+        });
       break;
 
     case 'pokemon':
@@ -415,9 +475,13 @@ const getValuesForTable = (
       values = require(PROCESSED_DATA_PATH + 'versionGroups.json').map(data => [data.code, data.name, data.formatted_name, data.introduced]);
       break;
 
+    //#endregion
+    
     /*
       ABILITY JUNCTION TABLES
     */
+    //#region
+
     case 'ability_boosts_ptype':
     case 'ability_resists_ptype':
       /*
@@ -662,9 +726,13 @@ const getValuesForTable = (
       .filter(data => data.length > 0);
       break;
 
+    //#endregion
+    
     /*
       FIELD STATE JUNCTION TABLES
     */
+    //#region
+
     case 'field_state_modifies_stat':
       /* 
         Need (
@@ -948,9 +1016,13 @@ const getValuesForTable = (
       .filter(data => data.length > 0);
       break;
 
+    //#endregion
+    
     /*
       ITEM JUNCTION TABLES
     */
+    //#region
+
     case 'natural_gift':
       /*
         Need (
@@ -1262,10 +1334,43 @@ const getValuesForTable = (
       // Filter out empty entries
       .filter(data => data.length > 0);
       break;
+    
+    case 'item_confuses_nature':
+      /*
+        Need (
+          item_generation_id,
+          item_id,
+          nature_generation_id,
+          nature_id
+        )
+      */
+        values = itemData.reduce((acc, curr) => {
+          // Get item data from curr.
+          const { gen: gen, name: itemName, confuses_nature: natureData } = curr;
+          const { item_id: itemID } = item_FKM.get(makeMapKey([gen, itemName]));
+          return acc.concat(
+            Object.keys(natureData).map(natureName => {
+              // We always compare entities of the same generation.
+              const { effect_id: natureID } = nature_FKM.get(makeMapKey([gen, natureName,]));
+  
+              // True if effect is present, False otherwise.
+              return natureData[natureName]
+              ? [gen, itemID, gen, natureID]
+              : [];
+            })
+          )
+        }, [])
+        // Filter out empty entries
+        .filter(data => data.length > 0);
+        break;
 
+    //#endregion
+        
     /*
       MOVE JUNCTION TABLES
     */
+    //#region
+
     case 'pmove_ptype':
       /*
         Need (
@@ -1598,10 +1703,67 @@ const getValuesForTable = (
       // Filter out empty entries
       .filter(data => data.length > 0);
       break;
+    //#endregion
 
+    /*
+      NATURE JUNCTION TABLES
+    */
+    //#region
+    
+    case 'nature_modifies_stat':
+      /* 
+        Need (
+          nature_generation_id,
+          nature_id,
+          state_id,
+          stage,
+          multiplier,
+          chance,
+          recipient
+        )
+      */
+      values = moveData.reduce((acc, curr) => {
+        // Get move data from curr.
+        const { gen: gen, name: natureName, stat_modifications: statModData } = curr;
+        const { nature_id: natureID } = move_FKM.get(makeMapKey([gen, natureName]));
+
+        return acc.concat(
+          Object.keys(statModData).map(statName => {
+            // We always compare entities of the same generation.
+            const { stat_id: statID } = stat_FKM.get(makeMapKey([gen, statName]));
+            let [modifier, recipient] = statModData[statName]
+
+            // True if stage modification, False if multiplier.
+            const stageOrMultiplier = typeof modifier == 'string';
+            
+            // stage
+            if (stageOrMultiplier) {
+              modifier = parseInt(modifier.slice(1), 10);
+              return modifier != 0 
+              ? [gen, natureID, gen, statID, modifier, 1.0, 100.0, recipient]
+              : [];
+            }
+            // multiplier
+            else {
+              return modifier != 1.0
+              ? [gen, natureID, gen, statID, 0, modifier, 100.0, recipient]
+              : [];
+            }
+          })
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+    
+
+    //#endregion
+    
     /*
       TYPE JUNCTION TABLES
     */
+    //#region
+
     case 'ptype_matchup':
       /*
         Need (
@@ -1687,9 +1849,13 @@ const getValuesForTable = (
       .filter(data => data.length > 0);
       break;
 
+    //#endregion
+    
     /*
       POKEMON JUNCTION TABLES
     */
+    //#region
+
     case 'pokemon_evolution':
       /*
         Need (
@@ -1898,9 +2064,13 @@ const getValuesForTable = (
       .filter(data => data.length > 0);
       break;
 
+    //#endregion
+    
     /*
       VERSION GROUP JUNCTION TABLES
     */ 
+    //#region
+
     case 'version_group_pdescription':
       /*
         Need (
@@ -2068,6 +2238,8 @@ const getValuesForTable = (
       break;
 
       // #endregion
+
+    //#endregion
 
     default:
       console.log(`${tableName} unhandled.`);

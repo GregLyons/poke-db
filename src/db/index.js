@@ -25,6 +25,7 @@ const {
   resetFieldStateJunctionTables,
   resetItemJunctionTables,
   resetMoveJunctionTables,
+  resetNatureJunctionTables,
   resetPokemonJunctionTables,
   resetTypeJunctionTables,
   resetVersionGroupJunctionTables,
@@ -148,7 +149,8 @@ const resetEverything = async () => {
 
 // resetAbilityJunctionTables(db, tableStatements);
 // resetFieldStateJunctionTables(db, tableStatements);
-resetMoveJunctionTables(db, tableStatements);
+// resetMoveJunctionTables(db, tableStatements);
+resetNatureJunctionTables(db, tableStatements);
 // resetItemJunctionTables(db, tableStatements);
 // resetPokemonJunctionTables(db, tableStatements);
 // resetTypeJunctionTables(db, tableStatements);

@@ -162,6 +162,36 @@ const reinsertFieldStateJunctionData = async(db, tableStatements) => {
 }
 
 /*
+  DELETE FROM nature junction tables, then INSERT INTO those tables.
+*/
+const reinsertNatureJunctionData = async(db, tableStatements) => {
+  /*
+    [
+      'nature_modifies_stat'
+    ]
+  */
+  const natureJunctionTableNames = Object.keys(tableStatements.itemJunctionTables)
+
+  // Since Promise.all() preserves order, foreignKeyMaps unpacks alphabetically.
+  const foreignKeyTables = [
+    'nature',
+    'stat'
+  ];
+  const foreignKeyMaps = await getForeignKeyMaps(db, tableStatements, foreignKeyTables);
+  
+  const natureData = require(PROCESSED_DATA_PATH + 'natures.json');
+
+  return await reinsertDataForTableGroup(
+    db,
+    tableStatements,
+    natureJunctionTableNames,
+    'natureJunctionTables',
+    natureData,
+    foreignKeyMaps
+  );
+}
+
+/*
   DELETE FROM item junction tables, then INSERT INTO those tables.
 */
 const reinsertItemJunctionData = async(db, tableStatements) => {
@@ -504,6 +534,7 @@ module.exports = {
   reinsertFieldStateJunctionData,
   reinsertItemJunctionData,
   reinsertMoveJunctionData,
+  reinsertNatureJunctionData,
   reinsertTypeJunctionData,
   reinsertPokemonJunctionData,
   reinsertVersionGroupJunctionData,

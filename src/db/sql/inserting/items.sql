@@ -99,3 +99,10 @@ INSERT INTO item_extends_field_state (
   field_state_id,
   turns
 ) VALUES ?;
+
+INSERT INTO item_confuses_nature (
+  item_generation_id,
+  item_id,
+  nature_generation_id,
+  nature_id
+) VALUES ?;

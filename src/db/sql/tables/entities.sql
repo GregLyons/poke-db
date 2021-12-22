@@ -120,6 +120,22 @@ CREATE TABLE IF NOT EXISTS field_state (
   INDEX (field_state_id)
 );
 
+CREATE TABLE IF NOT EXISTS nature (
+  generation_id TINYINT UNSIGNED NOT NULL,
+  nature_id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  nature_name VARCHAR(45) NOT NULL,
+  nature_formatted_name VARCHAR(45) NOT NULL,
+  introduced TINYINT UNSIGNED NOT NULL,
+  nature_favorite_flavor VARCHAR(45) NOT NULL,
+  nature_disliked_flavor VARCHAR(45) NOT NULL,
+
+  PRIMARY KEY (generation_id, nature_id),
+  FOREIGN KEY (introduced) REFERENCES generation(generation_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  INDEX (nature_id)
+);
+
 CREATE TABLE IF NOT EXISTS usage_method (
   generation_id TINYINT UNSIGNED NOT NULL,
   usage_method_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
