@@ -114,7 +114,7 @@ const resetEverything = async () => {
     .catch();
 }
 
-// Joint database statements
+// JOINT DATABASE STATEMENTS
 /*
   Only uncomment functions out in one region at a time. Otherwise, table lock is likely to result. For example, only run functions in the 'RESET SPECIFIC CLASSES OF JUNCTION TABLES' region, or in the 'RESET ENTITY TABLES' region, but not functions from both.
 */ 
