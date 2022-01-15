@@ -536,7 +536,6 @@ def addOtherItemData(fpath, itemDict):
     ['bracing', ['focus_band', 'focus_sash']],
     ['infatuation', ['destiny_knot']],
     ['flinch', ['kings_rock', 'razor_fang']],
-    ['charging_turn', ['power_herb']],
     ['trapped', ['shed_shell']],
   ]:
     status, items = status_item
@@ -561,6 +560,9 @@ def addOtherItemData(fpath, itemDict):
     ['torment', ['mental_herb']],
     ['heal_block', ['mental_herb']],
     ['disable', ['mental_herb']],
+    ['telekinesis', ['iron_ball']],
+    ['charging_turn', ['power_herb']],
+    ['magnetic_levitation', ['power_herb']],
   ]:
     status, items = status_item
     for itemName in items:

@@ -522,6 +522,8 @@ def addStatusToMoveDict(fname, moveDict):
     ['sleep', ['heal_bell', 'aromatherapy', 'jungle_healing', 'g_max_sweetness', 'psycho_shift']],
     ['leech_seed', ['rapid_spin']],
     ['bound', ['leech_seed']],
+    ['telekinesis', ['ingrain', 'gravity']],
+    ['magnetic_levitation', ['ingrain', 'gravity']],
   ]:
     status, moves = exception
     statusGen = statusDict[status]["gen"]
