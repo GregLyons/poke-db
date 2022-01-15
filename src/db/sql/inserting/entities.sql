@@ -115,7 +115,8 @@ INSERT INTO pokemon (
   pokemon_special_defense,
   pokemon_special_attack,
   pokemon_speed,
-  pokemon_form_class
+  pokemon_form_class,
+  pokemon_ps_id
 ) VALUES ?;
 
 INSERT INTO field_state (

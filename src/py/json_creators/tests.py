@@ -283,20 +283,20 @@ def pokemonTests(pokemonDict):
   # All Pikachu forms handled
   pikachuFormData = {
     "pikachu_gmax": [["gmax", 8]],
-    "pikachu_original_cap": [["other", 7]],
-    "pikachu_kalos_cap": [["other", 7]],
-    "pikachu_alola_cap": [["other", 7]],
-    "pikachu_hoenn_cap": [["other", 7]],
-    "pikachu_sinnoh_cap": [["other", 7]],
-    "pikachu_unova_cap": [["other", 7]],
-    "pikachu_world_cap": [["other", 7]],
-    "pikachu_rock_star": [["other", 6]],
-    "pikachu_belle": [["other", 6]],
-    "pikachu_pop_star": [["other", 6]],
-    "pikachu_phd": [["other", 6]],
-    "pikachu_libre": [["other", 6]],
-    "pikachu_partner_cap": [["other", 7]],
-    "pikachu_cosplay": [["other", 6]]
+    "pikachu_original_cap": [["cosmetic", 7]],
+    "pikachu_kalos_cap": [["cosmetic", 7]],
+    "pikachu_alola_cap": [["cosmetic", 7]],
+    "pikachu_hoenn_cap": [["cosmetic", 7]],
+    "pikachu_sinnoh_cap": [["cosmetic", 7]],
+    "pikachu_unova_cap": [["cosmetic", 7]],
+    "pikachu_world_cap": [["cosmetic", 7]],
+    "pikachu_rock_star": [["cosmetic", 6]],
+    "pikachu_belle": [["cosmetic", 6]],
+    "pikachu_pop_star": [["cosmetic", 6]],
+    "pikachu_phd": [["cosmetic", 6]],
+    "pikachu_libre": [["cosmetic", 6]],
+    "pikachu_partner_cap": [["cosmetic", 7]],
+    "pikachu_cosplay": [["cosmetic", 6]]
   }
   checkDataPoint(pokemonDict["pikachu"]["form_data"], pikachuFormData, 'pikachu', 'form_data', '')
 

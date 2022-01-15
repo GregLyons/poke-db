@@ -361,6 +361,7 @@ const getUpdatedLearnsets = (learnsets, moves, pokemon) => {
 }
 
 // adds learnset data to pokemonArr
+// also adds ps_id's to pokemonArr
 const addLearnsetsToPokemonArr = (learnsets, moves, pokemon, pokemonArr) => {
   // pokemonMap: pokemonName --> learnsetPokemonName
   // inversePokemonName: learnsetPokemonName --> pokemonName[]
@@ -372,6 +373,8 @@ const addLearnsetsToPokemonArr = (learnsets, moves, pokemon, pokemonArr) => {
   for (let pokemonEntry of pokemonArr) {
 
     const pokemonName = pokemonEntry.name;
+
+    pokemonEntry['ps_id'] = pokemonMap.get(pokemonName);
     
     pokemonEntry['learnset'] = {};
 
@@ -396,6 +399,7 @@ const addLearnsetsToPokemonArr = (learnsets, moves, pokemon, pokemonArr) => {
     pokemonEntry['event_data'] = pokemonEventData;
   }
 }
+
 // #endregion
 
 module.exports = {

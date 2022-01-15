@@ -22,6 +22,8 @@ Note that, due to the complicated structure of the evolution data, the 'evolves_
 
 3. Add learnset and event data from Pokemon Showdown's learnsets.js to pokemonArr. Thus, pokemonArr[0], corresponding to "bulbasaur", will have added fields "learnset" and "event_data" with the relevant information. This is done via addLearnsetsToPokemonArr.
 
+In this step, we also add the names used in the learnset as 'ps_id', since they are used throughout Pokemon Showdown's code/packages.
+
 4. For each entry in an entity array, split the entry into multiple copies according to generation. For example, "bulbasaur" in pokemonArr will be split into 8 entries, one for each gen, with the data appropriate to that gen.
 
 5. Import descriptions.json, effects.json, stats.json, statuses.json, usageMethods.json, and versionGroups.json, and serialize them. Aside from descriptions.json, these objects are much simpler in that they don't change across games (at least, the data--name and debut gen--we're tracking for them doesn't change), so we use a simplified version of serializeDict.
@@ -82,7 +84,7 @@ const learnsets = mergeLearnsets(gen2Learnsets, laterLearnsets);
 
 // #endregion
 
-/* 3. Add merged learnset data. */
+/* 3. Add merged learnset data. Also adds Pokemon Showdown IDs, 'ps_id'. */
 // #region
 const { addLearnsetsToPokemonArr } = require('./utils/index.js');
 addLearnsetsToPokemonArr(learnsets, moves, pokemon, pokemonArr);
@@ -209,6 +211,8 @@ splitPokemonArr.map(data => {
   if (!data.species) console.log(`${data.name}: Doesn't have a species name.`);
 
   if (!data.form_class) console.log(`${data.name}: Doesn't have a form class.`);
+
+  if (!data.ps_id) console.log(`${data.name}: Doesn't have a Pokemon Showdown ID.`)
   
   if (isNaN(data.height)) console.log(`${data.name}: Height ${data.weight} is not a number.`);
 

@@ -123,7 +123,7 @@ const resetEverything = async () => {
 // RESET ENTIRE DATABASE
 //#region
 
-// resetEverything();
+resetEverything();
 
 //#endregion
 

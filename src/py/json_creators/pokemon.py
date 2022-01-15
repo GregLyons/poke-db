@@ -1027,6 +1027,28 @@ def updateGens(pokemonDict):
   
   return
 
+def hasCoesmetic(baseFormName):
+  return 'pikachu' in baseFormName or 'pichu' in baseFormName or 'unown' in baseFormName or 'shellos' in baseFormName or 'gastrodon' in baseFormName or 'deerling' in baseFormName  or 'sawsbuck' in baseFormName or 'minior' in baseFormName or 'scatterbug' in baseFormName or 'spewpa' in baseFormName or 'vivillon' in baseFormName or 'flabebe' in baseFormName or 'floette' in baseFormName or 'florges' in baseFormName or 'furfrou' in baseFormName or 'minior' in baseFormName or 'sinistea' in baseFormName or 'polteageist' in baseFormName or 'alcremie' in baseFormName
+
+def assertCosmeticForms(pokemonDict):
+  # deerling/sawsbuck
+  for baseFormName in [pokemonName for pokemonName in pokemonDict.keys() if pokemonDict[pokemonName]["form_class"][0][0] == 'base']:
+    if hasCoesmetic(baseFormName):
+      for cosmeticFormName in pokemonDict[baseFormName]["form_data"].keys():
+        # exceptions
+        if cosmeticFormName == 'pikachu_gmax': 
+          continue
+
+        # end exceptions
+
+        pokemonDict[baseFormName]["form_data"][cosmeticFormName][0][0] = 'cosmetic'
+        pokemonDict[cosmeticFormName]["form_class"][0][0] = 'cosmetic'
+      
+    
+  return
+
+  
+
 def main():
   dataPath = getCSVDataPath() + '\\pokemon\\'
 
@@ -1059,6 +1081,8 @@ def main():
   addFullName(pokemonDict)
 
   updateGens(pokemonDict)
+
+  assertCosmeticForms(pokemonDict)
 
   checkGenConsistency(pokemonDict)
   pokemonTests(pokemonDict)
