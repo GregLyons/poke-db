@@ -92,6 +92,7 @@ CREATE TABLE IF NOT EXISTS effect (
   effect_name VARCHAR(45) NOT NULL,
   effect_formatted_name VARCHAR(45) NOT NULL,
   introduced TINYINT UNSIGNED NOT NULL,
+  effect_description VARCHAR(400) NOT NULL,
 
   PRIMARY KEY (generation_id, effect_id),
   FOREIGN KEY (introduced) REFERENCES generation(generation_id)
@@ -155,6 +156,7 @@ CREATE TABLE IF NOT EXISTS pstatus (
   pstatus_name VARCHAR(45) NOT NULL,
   pstatus_formatted_name VARCHAR(45) NOT NULL,
   introduced TINYINT UNSIGNED NOT NULL,
+  pstatus_description VARCHAR(400) NOT NULL,
 
   PRIMARY KEY (generation_id, pstatus_id),
   INDEX (pstatus_id)

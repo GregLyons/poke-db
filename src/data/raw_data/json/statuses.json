@@ -1,170 +1,254 @@
 {
   "burn": {
     "gen": 1,
-    "formatted_name": "Burn"
+    "formatted_name": "Burn",
+    "volatile": [[false, 1]],
+    "description": [["Inflicts a fraction of the Pokemon's max HP every turn and halves the Pokemon's attack stat. Fire-type Pokemon cannot be burned by Fire-type moves. The damage is skipped if the opponent faints during that turn.", 1], ["Inflicts a fraction of the Pokemon's max HP every turn and halves damage dealt by the Pokemon's physical moves. Fire-type Pokemon cannot normally be burned.", 3]]
   },
   "freeze": {
     "gen": 1,
-    "formatted_name": "Freeze"
+    "formatted_name": "Freeze",
+    "volatile": [[false, 1]],
+    "description": [["The Pokemon is unable to use moves. They cannot be thawed out unless hit by a Fire-type move that can inflict burn, or if the opponent uses haze.", 1], ["The Pokemon is unable to use moves and has a chance to thaw out each turn. It cannot attack on the turn that it thaws. Being hit by most Fire-types move, or using certain moves can thaw frozen Pokemon.", 2], ["The Pokemon is unable to use moves and has a chance to thaw out each turn. Being hit by a damaging Fire-types move (except Hidden Power), or using certain moves can thaw frozen Pokemon.", 3], ["The Pokemon is unable to use moves and has a chance to thaw out each turn. Being hit by a damaging Fire-types move, or using certain moves can thaw frozen Pokemon.", 4]]
   },
   "paralysis": {
     "gen": 1,
-    "formatted_name": "Paralysis"
+    "formatted_name": "Paralysis",
+    "volatile": [[false, 1]],
+    "description": [["The Pokemon may be unable to use moves. Their speed is also reduced by 3/4.", 1], ["The Pokemon may be unable to use moves. Their speed is also reduced by 3/4. Electric-type Pokemon are immune.", 6], ["The Pokemon may be unable to use moves. Their speed is also reduced by 1/2. Electric-type Pokemon are immune.", 7]]
   },
   "poison": {
     "gen": 1,
-    "formatted_name": "Poison"
+    "formatted_name": "Poison",
+    "volatile": [[false, 1]],
+    "description": [["Inflicts a fraction of the Pokemon's max HP every turn. The damage is skipped if the opponent faints during that turn.", 1], ["Inflicts a fraction of the Pokemon's max HP every turn. The damage is skipped if the opponent faints during that turn. Steel-type Pokemon cannot be poisoned except by Twineedle.", 2], ["Inflicts a fraction of the Pokemon's max HP every turn. Steel-type Pokemon cannot be poisoned.", 3], ["Inflicts a fraction of the Pokemon's max HP every turn. Steel-type and Poison-type Pokemon cannot be poisoned except by a Pokemon with the ability Corrosion.", 5]]
   },
   "bad_poison": {
     "gen": 1,
-    "formatted_name": "Bad poison"
+    "formatted_name": "Bad poison",
+    "volatile": [[false, 1]],
+    "description": [["Inflicts a fraction of the Pokemon's max HP each turn, with the damage increasing each turn. The damage is skipped if the opponent faints during that turn. If the opponent switches out while badly poisoned, they become merely poisoned.", 1], ["Inflicts a fraction of the Pokemon's max HP every turn, with the damage increasing each turn. The damage is skipped if the opponent faints during that turn. Steel-type Pokemon cannot be badly poisoned except by Twineedle. If the opponent switches out while badly poisoned, they become merely poisoned.", 2], ["Inflicts a fraction of the Pokemon's max HP every turn, with the damage increasing each turn. Steel-type Pokemon cannot be badly poisoned.", 3], ["Inflicts a fraction of the Pokemon's max HP every turn, with the damage increasing each turn. Steel-type and Poison-type Pokemon cannot be badly poisoned except by a Pokemon with the ability Corrosion.", 5]]
   },
   "sleep": {
     "gen": 1,
-    "formatted_name": "Sleep"
+    "formatted_name": "Sleep",
+    "volatile": [[false, 1]],
+    "description": [["Prevents the Pokemon from making a move for a random number of turns. The Pokemon cannot move on the turn it wakes up. If the Pokemon is put to sleep by Rest, the sleep lasts two turns.", 1], ["Prevents the Pokemon from making a move for a random number of turns.If the Pokemon is put to sleep by Rest, the sleep lasts two turns.", 2], ["Prevents the Pokemon from making a move for a random number of turns.If the Pokemon is put to sleep by Rest, the sleep lasts two turns.", 3], ["Prevents the Pokemon from making a move for a random number of turns.If the Pokemon is put to sleep by Rest, the sleep lasts two turns. Switching out a sleeping Pokemon resets the turn counter.", 5]]
   },
   "confusion": {
     "gen": 1,
-    "formatted_name": "Confusion"
+    "formatted_name": "Confusion",
+    "volatile": [[true, 1]],
+    "description": [["The Pokemon has a chance to hurt itself instead of executing a selected move. Multi-turn attacks require confusion to be checked on each turn.", 1]]
   },
   "curse": {
     "gen": 2,
-    "formatted_name": "Curse"
+    "formatted_name": "Curse",
+    "volatile": [[true, 2]],
+    "description": [["The Pokemon takes a fraction of its maximum HP each turn. If the cursed Pokemon knocks out its opponent, it will not take damage from the curse that turn.", 2], ["The Pokemon takes a fraction of its maximum HP each turn. If the cursed Pokemon knocks out its opponent, it will not take damage from the curse that turn.", 3]]
   },
   "bound": {
     "gen": 1,
-    "formatted_name": "Bound"
+    "formatted_name": "Bound",
+    "volatile": [[true, 1]],
+    "description": [["The Pokemon takes damage at the end of each turn and cannot switch out. The victim cannot attack.", 1], ["The Pokemon takes damage at the end of each turn and cannot switch out.", 2], ["The Pokemon takes damage at the end of each turn and cannot switch out. Ghost-type Pokemon can still switch out.", 6]]
   },
   "embargo": {
     "gen": 4,
-    "formatted_name": "Embargo"
+    "formatted_name": "Embargo",
+    "volatile": [[true, 4]],
+    "description": [["The Pokemon is unable to use held items.", 4]]
   },
   "encore": {
     "gen": 2,
-    "formatted_name": "Encore"
+    "formatted_name": "Encore",
+    "volatile": [[true, 2]],
+    "description": [["The Pokemon is forced to repeat its last attack for 2-5 turns.", 2], ["The Pokemon is forced to repeat its last attack for 4-8 turns.", 3], ["The Pokemon is forced to repeat its last attack for 3 turns.", 5]]
   },
   "heal_block": {
     "gen": 4,
-    "formatted_name": "Heal block"
+    "formatted_name": "Heal block",
+    "volatile": [[true, 4]],
+    "description": [["The Pokemon is prevented from healing. It cannot use healing moves, and it is unaffected by most healing effects. The Pokemon can still use HP-draining moves, but they will not be healed.", 4], ["The Pokemon is prevented from healing. It cannot use healing or HP-draining moves, and it is unaffected by most healing effects.", 6]]
   },
   "nightmare": {
     "gen": 2,
-    "formatted_name": "Nightmare"
+    "formatted_name": "Nightmare",
+    "volatile": [[true, 2]],
+    "description": [["The Pokemon loses a fraction of its max HP each turn; only affects sleeping Pokemon.", 2]]
   },
   "perish_song": {
     "gen": 2,
-    "formatted_name": "Perish song"
+    "formatted_name": "Perish song",
+    "volatile": [[true, 2]],
+    "description": [["After three turns, all Pokemon who heard the Perish Song will faint unless they are switched out before the counter reaches zero.", 2]]
   },
   "taunt": {
     "gen": 3,
-    "formatted_name": "Taunt"
+    "formatted_name": "Taunt",
+    "volatile": [[true, 3]],
+    "description": [["The Pokemon cannot use any status moves for 2-4 turns.", 3], ["The Pokemon cannot use any status moves for 3 turns.", 5], ["The Pokemon cannot use any status moves, except status Z-Moves, for 3 turns.", 7], ["The Pokemon cannot use any status moves for 3 turns.", 8]]
   },
   "telekinesis": {
     "gen": 5,
-    "formatted_name": "Telekinesis"
+    "formatted_name": "Telekinesis",
+    "volatile": [[true, 5]],
+    "description": [["The Pokemon is immune to Ground-type moves, Spikes, Toxic Spikes, and Arena Trap. All other moves, except OHKO moves, hit the target regardless of accuracy and evasion.", 5]]
   },
   "flinch": {
     "gen": 2,
-    "formatted_name": "Flinch"
+    "formatted_name": "Flinch",
+    "volatile": [[true, 2]],
+    "description": [["Prevents the Pokemon from attacking. Sleeping Pokemon cannot flinch in most cases.", 2], ["Prevents the Pokemon from attacking.", 3]]
   },
   "semi_invulnerable_turn": {
     "gen": 1,
-    "formatted_name": "Semi-invulnerable turn"
+    "formatted_name": "Semi-invulnerable turn",
+    "volatile": [[true, 1]],
+    "description": [["In most cases, moves will miss this Pokemon regardless of accuracy.", 1]]
   },
   "trapped": {
     "gen": 2,
-    "formatted_name": "Trapped"
+    "formatted_name": "Trapped",
+    "volatile": [[true, 2]],
+    "description": [["The victim cannot switch out or flee as long as the trapper is on the field.", 2], ["The victim cannot switch out or flee as long as the trapper is on the field. Ghost-type Pokemon are immune.", 6]]
   },
   "drowsy": {
     "gen": 3,
-    "formatted_name": "Drowsy"
+    "formatted_name": "Drowsy",
+    "volatile": [[true, 3]],
+    "description": [["At the end of the next turn, the drowsy Pokemon will fall asleep unless it is already afflicted by a non-volatile status.", 3]]
   },
   "identified": {
     "gen": 2,
-    "formatted_name": "Identified"
+    "formatted_name": "Identified",
+    "volatile": [[true, 2]],
+    "description": [["The Pokemon's evasion modification will not affect the accuracy of moves used against it. Removes certain type-immunities depending on the source.", 2]]
   },
   "infatuation": {
     "gen": 2,
-    "formatted_name": "Infatuation"
+    "formatted_name": "Infatuation",
+    "volatile": [[true, 2]],
+    "description": [["The Pokemon has a 1/2 chance to be unable to use moves, even against Pokemon other than the one the victim is infatuated with", 2]]
   },
   "leech_seed": {
     "gen": 1,
-    "formatted_name": "Leech seed"
+    "formatted_name": "Leech seed",
+    "volatile": [[true, 1]],
+    "description": [["The Pokemon loses a fraction of its max HP each turn, and the opponent gains the same fraction of their own max HP. Grass-type Pokemon are immune (except when transferred by Baton Pass).", 1], ["The Pokemon loses a fraction of its max HP each turn, and the opponent in the same position as the original user (e.g. if the replacement Pokemon if the user switches out in a team battle) gains the same fraction of their own max HP. Grass-type Pokemon are immune (except when transferred by Baton Pass).", 3]]
   },
   "torment": {
     "gen": 3,
-    "formatted_name": "Torment"
+    "formatted_name": "Torment",
+    "volatile": [[true, 3]],
+    "description": [["The Pokemon cannot use the same move twice in a row.", 3]]
   },
   "type_change": {
     "gen": 5,
-    "formatted_name": "Type change"
+    "formatted_name": "Type change",
+    "volatile": [[true, 5]],
+    "description": [["The Pokemon's type has been changed by another Pokemon.", 5]]
   },
   "disable": {
     "gen": 1,
-    "formatted_name": "Disable"
+    "formatted_name": "Disable",
+    "volatile": [[true, 1]],
+    "description": [["A certain move of the Pokemon is disabled.", 1]]
   },
   "charging_turn": {
     "gen": 1,
-    "formatted_name": "Charging turn"
+    "formatted_name": "Charging turn",
+    "volatile": [[true, 1]],
+    "description": [["The Pokemon is in the first turn of a two-turn move and cannot attack.", 1]]
   },
   "protection": {
     "gen": 2,
-    "formatted_name": "Protection"
+    "formatted_name": "Protection",
+    "volatile": [[true, 2]],
+    "description": [["The Pokemon will be unaffected by most damaging moves and status moves.", 2]]
   },
   "recharging": {
     "gen": 1,
-    "formatted_name": "Recharging"
+    "formatted_name": "Recharging",
+    "volatile": [[true, 1]],
+    "description": [["The Pokemon is in the second turn of a two-turn move and cannot perform an action.", 1]]
   },
   "taking_aim": {
     "gen": 2,
-    "formatted_name": "Taking aim"
+    "formatted_name": "Taking aim",
+    "volatile": [[true, 2]],
+    "description": [["The Pokemon's next damage-dealing move will hit the target without fail.", 2]]
   },
   "thrashing": {
     "gen": 1,
-    "formatted_name": "Thrashing"
+    "formatted_name": "Thrashing",
+    "volatile": [[true, 1]],
+    "description": [["The Pokemon is forced to use the same move for 3-4 turns and will get confused at the end.", 1], ["The Pokemon is forced to use the same move for 2-3 turns and will get confused at the end.", 2]]
   },
   "aqua_ring": {
     "gen": 4,
-    "formatted_name": "Aqua ring"
+    "formatted_name": "Aqua ring",
+    "volatile": [[true, 4]],
+    "description": [["The Pokemon restores a fraction of its max HP each turn.", 4]]
   },
   "bracing": {
     "gen": 2,
-    "formatted_name": "Bracing"
+    "formatted_name": "Bracing",
+    "volatile": [[true, 2]],
+    "description": [["Whatever damage the Pokemon takes that turn from moves, it will always survive with at least 1 HP.", 2]]
   },
   "defense_curl": {
     "gen": 2,
-    "formatted_name": "Defense curl"
+    "formatted_name": "Defense curl",
+    "volatile": [[true, 2]],
+    "description": [["The power of certain moves (e.g. Rollout) is doubled.", 2]]
   },
   "magic_coat": {
     "gen": 3,
-    "formatted_name": "Magic coat"
+    "formatted_name": "Magic coat",
+    "volatile": [[true, 3]],
+    "description": [["Most status moves used against this Pokemon or its side of the field will be reflected back at the user.", 3]]
   },
   "mimic": {
     "gen": 1,
-    "formatted_name": "Mimic"
+    "formatted_name": "Mimic",
+    "volatile": [[true, 1]],
+    "description": [["Temporarily replaces the move Mimic with a move from the opposing Pokemon's moves.", 1], ["Temporarily replaces the move Mimic with the last move used by the target.", 2]]
   },
   "minimize": {
     "gen": 2,
-    "formatted_name": "Minimize"
+    "formatted_name": "Minimize",
+    "volatile": [[true, 2]],
+    "description": [["The Pokemon will be affected more harmfully by certain moves, e.g. Stomp.", 2]]
   },
   "substitute": {
     "gen": 1,
-    "formatted_name": "Substitute"
+    "formatted_name": "Substitute",
+    "volatile": [[true, 1]],
+    "description": [["The Pokemon is protected by a Subsitute, which has 1/4 of the Pokemon's max HP, and which will absorb hits and block certain status conditions until it breaks.", 1], ["The Pokemon is protected by a Subsitute, which has 1/4 of the Pokemon's max HP, and which will absorb hits and block status conditions until it breaks.", 2]]
   },
   "center_of_attention": {
     "gen": 3,
-    "formatted_name": "Center of attention"
+    "formatted_name": "Center of attention",
+    "volatile": [[true, 3]],
+    "description": [["Opponents are forced to target this Pokemon regardless of their intended target, unless the move is one with a charging turn.", 3]]
   },
   "rooted": {
     "gen": 3,
-    "formatted_name": "Rooted"
+    "formatted_name": "Rooted",
+    "volatile": [[true, 3]],
+    "description": [["Restores a fraction of the Pokemon's max HP each turn, but prevents it from switching out or being switched out. Makes the Pokemon susceptible to Ground-type moves and certain grounded field states.", 3]]
   },
   "magnetic_levitation": {
     "gen": 4,
-    "formatted_name": "Magnetic levitation"
+    "formatted_name": "Magnetic levitation",
+    "volatile": [[true, 4]],
+    "description": [["The Pokemon is immune to Ground-type attacks and certain grounded field states.", 4]]
   },
   "transformed": {
     "gen": 1,
-    "formatted_name": "Transformed"
+    "formatted_name": "Transformed",
+    "volatile": [[true, 1]],
+    "description": [["The Pokemon is transformed into another Pokemon.", 1]]
   }
 }

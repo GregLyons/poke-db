@@ -228,11 +228,12 @@ const getValuesForTable = (
         Need (
           generation_id,
           pstatus_name,
-          pstatus_formatted_name
-          introduced
+          pstatus_formatted_name,
+          introduced,
+          pstatus_description,
         )
       */
-      values = require(PROCESSED_DATA_PATH + 'statuses.json').map(data => [data.gen, data.name, data.formatted_name, data.introduced]);
+      values = require(PROCESSED_DATA_PATH + 'statuses.json').map(data => [data.gen, data.name, data.formatted_name, data.introduced, data.description]);
       break;
     
     case 'stat':
@@ -266,11 +267,12 @@ const getValuesForTable = (
           generation_id
           effect_name,
           effect_formatted_name,
-          introduced
+          introduced,
+          description
         )
       */
       values = require(PROCESSED_DATA_PATH + 'effects.json')
-        .map(data => [data.gen, data.name, data.formatted_name, data.introduced]);
+        .map(data => [data.gen, data.name, data.formatted_name, data.introduced, data.description]);
       break;
 
     case 'field_state':

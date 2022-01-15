@@ -2262,7 +2262,9 @@
       "removes_type_immunity": [[true, 4]]
     },
     "causes_status": {},
-    "resists_status": {},
+    "resists_status": {
+      "telekinesis": [[true, 5]]
+    },
     "boosts_type": {},
     "resists_type": {},
     "boosts_usage_method": {},
@@ -3485,10 +3487,11 @@
     "gen2_exclusive": false,
     "knock_off": true,
     "effects": {},
-    "causes_status": {
-      "charging_turn": [[100.0, 4]]
+    "causes_status": {},
+    "resists_status": {
+      "charging_turn": [[true, 4]],
+      "magnetic_levitation": [[true, 4]]
     },
-    "resists_status": {},
     "boosts_type": {},
     "resists_type": {},
     "boosts_usage_method": {},

@@ -150,278 +150,278 @@ def getFormattedName(effectName):
 def addDescriptions(effectDict):
   # high crit chance
   effectDict["high_crit_chance"]["description"] = [
-    [1, 'Has an increased chance to crit.'],
+    ['Has an increased chance to crit.', 1],
   ]
 
   # cannot crit
   effectDict["cannot_crit"]["description"] = [
-    [2, 'Cannot score a crit.'],
+    ['Cannot score a crit.', 2],
   ]
 
   # always crits
   effectDict["always_crits"]["description"] = [
-    [3, 'When successful, always a crit.'],
+    ['When successful, always a crit.', 3],
   ]
 
   # bypasses protect
   effectDict["bypasses_protect"]["description"] = [
-    [4, 'Ignores or mitigates the effectiveness of Protect and other protection moves.'],
+    ['Ignores or mitigates the effectiveness of Protect and other protection moves.', 4],
   ]
 
   # heals nonvolatile
   effectDict["heals_nonvolatile"]["description"] = [
-    [1, 'Heals all nonvolatile status conditions.'],
+    ['Heals all nonvolatile status conditions.', 1],
   ]
 
   # restores hp
   effectDict["restores_hp"]["description"] = [
-    [1, 'Restores HP to the target.'],
+    ['Restores HP to the target.', 1],
   ]
 
   # restores pp
   effectDict["restores_pp"]["description"] = [
-    [2, 'Restores PP of one or more of the target\'s moves.'],
+    ['Restores PP of one or more of the target\'s moves.', 2],
   ]
 
   # recoil
   effectDict["recoil"]["description"] = [
-    [1, 'Damages the user in proportion to the damage caused to the target.'],
+    ['Damages the user in proportion to the damage caused to the target.', 1],
   ]
 
   # costs hp
   effectDict["costs_hp"]["description"] = [
-    [1, 'Costs some of the user\'s HP.'],
+    ['Costs some of the user\'s HP.', 1],
   ]
 
   # can crash
   effectDict["can_crash"]["description"] = [
-    [1, 'Has a chance to crash, causing the user to lose a fraction of their HP.'],
+    ['Has a chance to crash, causing the user to lose a fraction of their HP.', 1],
   ]
 
   # changes ability
   effectDict["changes_ability"]["description"] = [
-    [3, 'Changes the ability of either the user or the target.'],
+    ['Changes the ability of either the user or the target.', 3],
   ]
 
   # ignores ability
   effectDict["ignores_ability"]["description"] = [
-    [3, 'Ignores the ability of the target if that ability would affect the interaction (e.g. Earthquake versus Levitate, but not Earthquake versus Rain Dish).'],
+    ['Ignores the ability of the target if that ability would affect the interaction (e.g. Earthquake versus Levitate, but not Earthquake versus Rain Dish).', 3],
   ]
 
   # suppresses ability
   effectDict["suppresses_ability"]["description"] = [
-    [4, 'Nullifies the effects of the target\'s ability.']
+    ['Nullifies the effects of the target\'s ability.', 4]
   ]
 
   # changes pokemon type
   effectDict["changes_pokemon_type"]["description"] = [
-    [1, 'Changes the type of the user or target.'],
+    ['Changes the type of the user or target.', 1],
   ]
 
   # changes move type
   effectDict["changes_move_type"]["description"] = [
-    [4, 'Changes the element type of a move from its usual type.'],
+    ['Changes the element type of a move from its usual type.', 4],
   ]
 
   # changes damage category
   effectDict["changes_damage_category"]["description"] = [
-    [7, 'Causes the damage category of a move to change depending on certain conditions.'],
+    ['Causes the damage category of a move to change depending on certain conditions.', 7],
   ]
 
   # removes type immunity
   effectDict["removes_type_immunity"]["description"] = [
-    [2, 'Removes type immunities from the target (e.g. Psychic-type can now affect Dark-type).'],
+    ['Removes type immunities from the target (e.g. Psychic-type can now affect Dark-type).', 2],
   ]
 
   # special type effectiveness
   effectDict["special_type_effectiveness"]["description"] = [
-    [6, 'Has unique type-effectiveness properties beyond the type of the move (e.g. Freeze Dry against Ice-type).'],
+    ['Has unique type-effectiveness properties beyond the type of the move (e.g. Freeze Dry against Ice-type).', 6],
   ]
 
   # switches out target
   effectDict["switches_out_target"]["description"] = [
-    [2, 'Forces the target to switch out.'],
+    ['Forces the target to switch out.', 2],
   ]
 
   # switches out user
   effectDict["switches_out_user"]["description"] = [
-    [2, 'Forces the user to switch out.'],
+    ['Forces the user to switch out.', 2],
   ]
 
   # hits semi invulnerable
   effectDict["hits_semi_invulnerable"]["description"] = [
-    [1, 'Can affect Pokemon in the semi-invulnerable turn of one or more moves.'],
+    ['Can affect Pokemon in the semi-invulnerable turn of one or more moves.', 1],
   ]
 
   # cannot miss
   effectDict["cannot_miss"]["description"] = [
-    [1, 'Will bypass accuracy checks to hit the target.'],
+    ['Will bypass accuracy checks to hit the target.', 1],
   ]
 
   # faints user
   effectDict["faints_user"]["description"] = [
-    [1, 'Causes the user to faint.'],
+    ['Causes the user to faint.', 1],
   ]
 
   # variable power
   effectDict["variable_power"]["description"] = [
-    [2, 'Moves whose power always varies.'],
+    ['Moves whose power always varies.', 2],
   ]
 
   # deals direct damage
   effectDict["deals_direct_damage"]["description"] = [
-    [1, 'Damage dealt is unaffected by the damage formula, or the attacker\'s or defender\'s stats.'],
+    ['Damage dealt is unaffected by the damage formula, or the attacker\'s or defender\'s stats.', 1],
   ]
 
   # power up
   effectDict["powers_up"]["description"] = [
-    [2, 'Moves that can have their base power increased under certain conditions.'],
-    [5, 'Moves that can have their base power increased under certain conditions. Also includes, for example, Earthquake (against Dig), even though in that case the damage is technically doubled rather than the base power.'],
+    ['Moves that can have their base power increased under certain conditions.', 2],
+    ['Moves that can have their base power increased under certain conditions. Also includes, for example, Earthquake (against Dig), even though in that case the damage is technically doubled rather than the base power.', 5],
   ]
 
   # consecutive
   effectDict["consecutive"]["description"] = [
-    [1, 'Moves which are used automatically for one or more turns after being selected.'],
+    ['Moves which are used automatically for one or more turns after being selected.', 1],
   ]
 
   # counterattack
   effectDict["counterattack"]["description"] = [
-    [1, 'Triggers in response to receiving damage from an opponent, dealing damage in response.'],
+    ['Triggers in response to receiving damage from an opponent, dealing damage in response.', 1],
   ]
 
   # depends on weight
   effectDict["depends_on_weight"]["description"] = [
-    [3, 'Effectiveness depends on the weight of the target.'],
+    ['Effectiveness depends on the weight of the target.', 3],
   ]
 
   # affects weight
   effectDict["affects_weight"]["description"] = [
-    [5, 'Affects the weight of the target.'],
+    ['Affects the weight of the target.', 5],
   ]
 
   # calls other move
   effectDict["calls_other_move"]["description"] = [
-    [1, 'Calls another move in addition to the move with this effect.'],
+    ['Calls another move in addition to the move with this effect.', 1],
   ]
 
   # depends on environment
   effectDict["depends_on_environment"]["description"] = [
-    [3, 'Effects depend on the environment in which the move is used.'],
+    ['Effects depend on the environment in which the move is used.', 3],
   ]
 
   # mult hit
   effectDict["multi_hit"]["description"] = [
-    [1, 'Strikes multiple times in a single turn.'],
+    ['Strikes multiple times in a single turn.', 1],
   ]
 
   # ohko
   effectDict["ohko"]["description"] = [
-    [1, 'Instantly knocks out the opposing Pokemon if successful.'],
+    ['Instantly knocks out the opposing Pokemon if successful.', 1],
   ]
 
   # changes form
   effectDict["changes_form"]["description"] = [
-    [3, 'Changes the user to another one of its forms.'],
+    ['Changes the user to another one of its forms.', 3],
   ]
 
   # drains
   effectDict["drains"]["description"] = [
-    [1, 'Heals the user proportional to damage dealt to the target.'],
+    ['Heals the user proportional to damage dealt to the target.', 1],
   ]
 
   # manipulates item
   effectDict["manipulates_item"]["description"] = [
-    [2, 'Gives items to or removes items from the user or the target, or negates the effects of items.'],
+    ['Gives items to or removes items from the user or the target, or negates the effects of items.', 2],
   ]
 
   # activates gulp missile
   effectDict["activates_gulp_missile"]["description"] = [
-    [8, 'Allows the Pokemon to use Gulp Missile on the next turn.'],
+    ['Allows the Pokemon to use Gulp Missile on the next turn.', 8],
   ]
 
   # punishes contact
   effectDict["punishes_contact"]["description"] = [
-    [3, 'Punishes moves which make contact with the user.'],
+    ['Punishes moves which make contact with the user.', 3],
   ]
 
   # extends duration
   effectDict["extends_duration"]["description"] = [
-    [4, 'Extends the duration of other effects.'],
+    ['Extends the duration of other effects.', 4],
   ]
 
   # other move enhancement
   effectDict["other_move_enhancement"]["description"] = [
-    [1, 'Powers up moves via a mechanic other than type or usage method.'],
+    ['Powers up moves via a mechanic other than type or usage method.', 1],
   ]
 
   # moves last in priority
   effectDict["moves_last_in_priority"]["description"] = [
-    [4, 'Causes the user to move last in the given priority bracket.'],
+    ['Causes the user to move last in the given priority bracket.', 4],
   ]
 
   # moves first in priority
   effectDict["moves_first_in_priority"]["description"] = [
-    [2, 'Causes the user to move first in the given priority bracket.'],
+    ['Causes the user to move first in the given priority bracket.', 2],
   ]
 
   # ignores contact
   effectDict["ignores_contact"]["description"] = [
-    [7, 'Contact-based moves lose their contact property.'],
+    ['Contact-based moves lose their contact property.', 7],
   ]
 
   # anti mini
   effectDict["anti_mini"]["description"] = [
-    [2, 'Deals increased damage to targets that have used Minimize.'],
+    ['Deals increased damage to targets that have used Minimize.', 2],
   ]
 
   # haze
   effectDict["resets_stats"]["description"] = [
-    [1, 'Removes the target\'s stat modifications.'],
+    ['Removes the target\'s stat modifications.', 1],
   ]
 
   # prevents crit
   effectDict["prevents_crit"]["description"] = [
-    [3, 'Protects the user from critical hits.'],
+    ['Protects the user from critical hits.', 3],
   ]
 
   # prevents stat drop
   effectDict["prevents_stat_drop"]["description"] = [
-    [1, 'Protects the user from stat drops.'],
+    ['Protects the user from stat drops.', 1],
   ]
 
   # adds priority
   effectDict["adds_priority"]["description"] = [
-    [5, 'Causes moves of the user to be in a higher priority bracket.'],
+    ['Causes moves of the user to be in a higher priority bracket.', 5],
   ]
 
   # other move order change
   effectDict["other_move_order_change"]["description"] = [
-    [4, 'Changes the order in which Pokemon execute moves independently of priority bracket.'],
+    ['Changes the order in which Pokemon execute moves independently of priority bracket.', 4],
   ]
 
   # other move resistance
   effectDict["other_move_resistance"]["description"] = [
-    [3, 'Resists moves in a manner different from their type or usage method.'],
+    ['Resists moves in a manner different from their type or usage method.', 3],
   ]
 
   # type varies
   effectDict["type_varies"]["description"] = [
-    [2, 'The type of the move is not fixed.'],
+    ['The type of the move is not fixed.', 2],
   ]
 
   # no effect
   effectDict["no_effect"]["description"] = [
-    [1, 'Has no effect in battle.'],
+    ['Has no effect in battle.', 1],
   ]
 
   # uses different stat
   effectDict["uses_different_stat"]["description"] = [
-    [5, 'The stat used to calculate the move\'s damage differs from the damage category of the move.'],
+    ['The stat used to calculate the move\'s damage differs from the damage category of the move.', 5],
   ]
 
   # protects aganst priority
   effectDict["protects_against_priority"]["description"] = [
-    [5, 'Protects against priority moves.'],
+    ['Protects against priority moves.', 5],
   ]
 
   return effectDict

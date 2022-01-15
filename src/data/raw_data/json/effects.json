@@ -1,230 +1,277 @@
 {
   "high_crit_chance": {
     "gen": 1,
-    "formatted_name": "High crit chance"
+    "formatted_name": "High crit chance",
+    "description": [["Has an increased chance to crit.", 1]]
   },
   "cannot_crit": {
     "gen": 2,
-    "formatted_name": "Cannot crit"
+    "formatted_name": "Cannot crit",
+    "description": [["Cannot score a crit.", 2]]
   },
   "always_crits": {
     "gen": 5,
-    "formatted_name": "Always crits"
+    "formatted_name": "Always crits",
+    "description": [["When successful, always a crit.", 3]]
   },
   "bypasses_protect": {
     "gen": 4,
-    "formatted_name": "Bypasses protect"
-  },
-  "thaws_user": {
-    "gen": 2,
-    "formatted_name": "Thaws user"
+    "formatted_name": "Bypasses protect",
+    "description": [["Ignores or mitigates the effectiveness of Protect and other protection moves.", 4]]
   },
   "heals_nonvolatile": {
     "gen": 1,
-    "formatted_name": "Heals nonvolatile"
+    "formatted_name": "Heals nonvolatile",
+    "description": [["Heals all nonvolatile status conditions.", 1]]
   },
   "restores_hp": {
     "gen": 1,
-    "formatted_name": "Restores hp"
-  },
-  "heals_user_immediately": {
-    "gen": 1,
-    "formatted_name": "Heals user immediately"
+    "formatted_name": "Restores hp",
+    "description": [["Restores HP to the target.", 1]]
   },
   "restores_pp": {
     "gen": 2,
-    "formatted_name": "Restores pp"
+    "formatted_name": "Restores pp",
+    "description": [["Restores PP of one or more of the target's moves.", 2]]
   },
   "recoil": {
     "gen": 1,
-    "formatted_name": "Recoil"
+    "formatted_name": "Recoil",
+    "description": [["Damages the user in proportion to the damage caused to the target.", 1]]
   },
   "costs_hp": {
     "gen": 1,
-    "formatted_name": "Costs hp"
+    "formatted_name": "Costs hp",
+    "description": [["Costs some of the user's HP.", 1]]
   },
   "can_crash": {
     "gen": 1,
-    "formatted_name": "Can crash"
+    "formatted_name": "Can crash",
+    "description": [["Has a chance to crash, causing the user to lose a fraction of their HP.", 1]]
   },
   "changes_ability": {
     "gen": 3,
-    "formatted_name": "Changes ability"
+    "formatted_name": "Changes ability",
+    "description": [["Changes the ability of either the user or the target.", 3]]
   },
   "ignores_ability": {
     "gen": 4,
-    "formatted_name": "Ignores ability"
+    "formatted_name": "Ignores ability",
+    "description": [["Ignores the ability of the target if that ability would affect the interaction (e.g. Earthquake versus Levitate, but not Earthquake versus Rain Dish).", 3]]
   },
   "suppresses_ability": {
     "gen": 4,
-    "formatted_name": "Suppresses ability"
+    "formatted_name": "Suppresses ability",
+    "description": [["Nullifies the effects of the target's ability.", 4]]
   },
   "changes_pokemon_type": {
     "gen": 1,
-    "formatted_name": "Changes pokemon type"
+    "formatted_name": "Changes pokemon type",
+    "description": [["Changes the type of the user or target.", 1]]
   },
   "changes_move_type": {
     "gen": 4,
-    "formatted_name": "Changes move type"
+    "formatted_name": "Changes move type",
+    "description": [["Changes the element type of a move from its usual type.", 4]]
   },
   "changes_damage_category": {
     "gen": 7,
-    "formatted_name": "Changes damage category"
+    "formatted_name": "Changes damage category",
+    "description": [["Causes the damage category of a move to change depending on certain conditions.", 7]]
   },
   "removes_type_immunity": {
     "gen": 2,
-    "formatted_name": "Removes type immunity"
+    "formatted_name": "Removes type immunity",
+    "description": [["Removes type immunities from the target (e.g. Psychic-type can now affect Dark-type).", 2]]
   },
   "special_type_effectiveness": {
     "gen": 6,
-    "formatted_name": "Special type effectiveness"
+    "formatted_name": "Special type effectiveness",
+    "description": [["Has unique type-effectiveness properties beyond the type of the move (e.g. Freeze Dry against Ice-type).", 6]]
   },
   "switches_out_target": {
     "gen": 2,
-    "formatted_name": "Switches out target"
+    "formatted_name": "Switches out target",
+    "description": [["Forces the target to switch out.", 2]]
   },
   "switches_out_user": {
     "gen": 2,
-    "formatted_name": "Switches out user"
+    "formatted_name": "Switches out user",
+    "description": [["Forces the user to switch out.", 2]]
   },
   "hits_semi_invulnerable": {
     "gen": 1,
-    "formatted_name": "Hits semi-invulnerable"
+    "formatted_name": "Hits semi-invulnerable",
+    "description": [["Can affect Pokemon in the semi-invulnerable turn of one or more moves.", 1]]
   },
   "cannot_miss": {
     "gen": 1,
-    "formatted_name": "Cannot miss"
+    "formatted_name": "Cannot miss",
+    "description": [["Will bypass accuracy checks to hit the target.", 1]]
   },
   "faints_user": {
     "gen": 1,
-    "formatted_name": "Faints user"
+    "formatted_name": "Faints user",
+    "description": [["Causes the user to faint.", 1]]
   },
   "variable_power": {
     "gen": 2,
-    "formatted_name": "Variable power"
+    "formatted_name": "Variable power",
+    "description": [["Moves whose power always varies.", 2]]
   },
   "deals_direct_damage": {
     "gen": 1,
-    "formatted_name": "Deals direct damage"
+    "formatted_name": "Deals direct damage",
+    "description": [["Damage dealt is unaffected by the damage formula, or the attacker's or defender's stats.", 1]]
   },
   "powers_up": {
     "gen": 2,
-    "formatted_name": "Powers up"
+    "formatted_name": "Powers up",
+    "description": [["Moves that can have their base power increased under certain conditions.", 2], ["Moves that can have their base power increased under certain conditions. Also includes, for example, Earthquake (against Dig), even though in that case the damage is technically doubled rather than the base power.", 5]]
   },
   "consecutive": {
     "gen": 1,
-    "formatted_name": "Consecutive"
+    "formatted_name": "Consecutive",
+    "description": [["Moves which are used automatically for one or more turns after being selected.", 1]]
   },
   "counterattack": {
     "gen": 1,
-    "formatted_name": "Counterattack"
+    "formatted_name": "Counterattack",
+    "description": [["Triggers in response to receiving damage from an opponent, dealing damage in response.", 1]]
   },
   "depends_on_weight": {
     "gen": 3,
-    "formatted_name": "Depends on weight"
+    "formatted_name": "Depends on weight",
+    "description": [["Effectiveness depends on the weight of the target.", 3]]
   },
   "affects_weight": {
     "gen": 5,
-    "formatted_name": "Affects weight"
+    "formatted_name": "Affects weight",
+    "description": [["Affects the weight of the target.", 5]]
   },
   "calls_other_move": {
     "gen": 1,
-    "formatted_name": "Calls other move"
+    "formatted_name": "Calls other move",
+    "description": [["Calls another move in addition to the move with this effect.", 1]]
   },
   "depends_on_environment": {
     "gen": 3,
-    "formatted_name": "Depends on environment"
+    "formatted_name": "Depends on environment",
+    "description": [["Effects depend on the environment in which the move is used.", 3]]
   },
   "multi_hit": {
     "gen": 1,
-    "formatted_name": "Multi hit"
+    "formatted_name": "Multi hit",
+    "description": [["Strikes multiple times in a single turn.", 1]]
   },
   "ohko": {
     "gen": 1,
-    "formatted_name": "OHKO"
+    "formatted_name": "OHKO",
+    "description": [["Instantly knocks out the opposing Pokemon if successful.", 1]]
   },
   "changes_form": {
     "gen": 3,
-    "formatted_name": "Changes form"
+    "formatted_name": "Changes form",
+    "description": [["Changes the user to another one of its forms.", 3]]
   },
   "drains": {
     "gen": 1,
-    "formatted_name": "Drains"
+    "formatted_name": "Drains",
+    "description": [["Heals the user proportional to damage dealt to the target.", 1]]
   },
   "manipulates_item": {
     "gen": 2,
-    "formatted_name": "Manipulates item"
+    "formatted_name": "Manipulates item",
+    "description": [["Gives items to or removes items from the user or the target, or negates the effects of items.", 2]]
   },
   "activates_gulp_missile": {
     "gen": 8,
-    "formatted_name": "Activates gulp missile"
+    "formatted_name": "Activates gulp missile",
+    "description": [["Allows the Pokemon to use Gulp Missile on the next turn.", 8]]
   },
   "punishes_contact": {
     "gen": 3,
-    "formatted_name": "Punishes contact"
+    "formatted_name": "Punishes contact",
+    "description": [["Punishes moves which make contact with the user.", 3]]
   },
   "extends_duration": {
     "gen": 4,
-    "formatted_name": "Extends duration"
+    "formatted_name": "Extends duration",
+    "description": [["Extends the duration of other effects.", 4]]
   },
   "other_move_enhancement": {
     "gen": 1,
-    "formatted_name": "Other move enhancement"
+    "formatted_name": "Other move enhancement",
+    "description": [["Powers up moves via a mechanic other than type or usage method.", 1]]
   },
   "moves_last_in_priority": {
     "gen": 4,
-    "formatted_name": "Moves last in priority"
+    "formatted_name": "Moves last in priority",
+    "description": [["Causes the user to move last in the given priority bracket.", 4]]
   },
   "moves_first_in_priority": {
     "gen": 2,
-    "formatted_name": "Moves first in priority"
+    "formatted_name": "Moves first in priority",
+    "description": [["Causes the user to move first in the given priority bracket.", 2]]
   },
   "ignores_contact": {
     "gen": 7,
-    "formatted_name": "Ignores contact"
+    "formatted_name": "Ignores contact",
+    "description": [["Contact-based moves lose their contact property.", 7]]
   },
   "anti_mini": {
     "gen": 2,
-    "formatted_name": "Anti mini"
+    "formatted_name": "Anti mini",
+    "description": [["Deals increased damage to targets that have used Minimize.", 2]]
   },
   "resets_stats": {
     "gen": 1,
-    "formatted_name": "Resets stats"
+    "formatted_name": "Resets stats",
+    "description": [["Removes the target's stat modifications.", 1]]
   },
   "prevents_crit": {
     "gen": 3,
-    "formatted_name": "Prevents crit"
+    "formatted_name": "Prevents crit",
+    "description": [["Protects the user from critical hits.", 3]]
   },
   "prevents_stat_drop": {
     "gen": 1,
-    "formatted_name": "Prevents stat drop"
+    "formatted_name": "Prevents stat drop",
+    "description": [["Protects the user from stat drops.", 1]]
   },
   "adds_priority": {
     "gen": 5,
-    "formatted_name": "Adds priority"
+    "formatted_name": "Adds priority",
+    "description": [["Causes moves of the user to be in a higher priority bracket.", 5]]
   },
   "other_move_order_change": {
     "gen": 4,
-    "formatted_name": "Other move order change"
+    "formatted_name": "Other move order change",
+    "description": [["Changes the order in which Pokemon execute moves independently of priority bracket.", 4]]
   },
   "protects_against_priority": {
     "gen": 5,
-    "formatted_name": "Protects against priority"
+    "formatted_name": "Protects against priority",
+    "description": [["Protects against priority moves.", 5]]
   },
   "other_move_resistance": {
     "gen": 3,
-    "formatted_name": "Other move resistance"
+    "formatted_name": "Other move resistance",
+    "description": [["Resists moves in a manner different from their type or usage method.", 3]]
   },
   "type_varies": {
     "gen": 2,
-    "formatted_name": "Type varies"
+    "formatted_name": "Type varies",
+    "description": [["The type of the move is not fixed.", 2]]
   },
   "no_effect": {
     "gen": 1,
-    "formatted_name": "No effect"
+    "formatted_name": "No effect",
+    "description": [["Has no effect in battle.", 1]]
   },
   "uses_different_stat": {
     "gen": 5,
-    "formatted_name": "Uses different stat"
+    "formatted_name": "Uses different stat",
+    "description": [["The stat used to calculate the move's damage differs from the damage category of the move.", 5]]
   }
 }

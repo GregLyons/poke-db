@@ -24,7 +24,8 @@ INSERT INTO pstatus (
   generation_id,
   pstatus_name,
   pstatus_formatted_name,
-  introduced
+  introduced,
+  pstatus_description
 ) VALUES ?;
 
 INSERT INTO stat (
@@ -49,7 +50,8 @@ INSERT INTO effect (
   generation_id,
   effect_name,
   effect_formatted_name,
-  introduced
+  introduced,
+  effect_description
 ) VALUES ?;
 
 INSERT INTO usage_method (

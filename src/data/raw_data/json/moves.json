@@ -5205,8 +5205,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "restores_hp": [[true, 1]],
-      "heals_user_immediately": [[true, 1]]
+      "restores_hp": [[true, 1]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -6680,8 +6679,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "restores_hp": [[true, 1]],
-      "heals_user_immediately": [[true, 1]]
+      "restores_hp": [[true, 1]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -7725,8 +7723,7 @@
     "g_max_move": false,
     "effects": {
       "heals_nonvolatile": [[true, 1]],
-      "restores_hp": [[true, 1]],
-      "heals_user_immediately": [[true, 1]]
+      "restores_hp": [[true, 1]]
     },
     "causes_status": {
       "sleep": [[100.0, 1]]
@@ -8523,13 +8520,14 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "thaws_user": [[true, 2]],
       "heals_nonvolatile": [[true, 2]]
     },
     "causes_status": {
       "burn": [[10.0, 2]]
     },
-    "resists_status": {},
+    "resists_status": {
+      "freeze": [[true, 2]]
+    },
     "stat_modifications": {},
     "usage_method": {},
     "contact": [[false, 2], [true, 3]],
@@ -10313,8 +10311,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "restores_hp": [[true, 2]],
-      "heals_user_immediately": [[true, 2]]
+      "restores_hp": [[true, 2]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -10957,13 +10954,14 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "thaws_user": [[true, 2]],
       "heals_nonvolatile": [[true, 2]]
     },
     "causes_status": {
       "burn": [[50.0, 2]]
     },
-    "resists_status": {},
+    "resists_status": {
+      "freeze": [[true, 2]]
+    },
     "stat_modifications": {},
     "usage_method": {},
     "contact": [[false, 2]],
@@ -11608,8 +11606,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "restores_hp": [[true, 2]],
-      "heals_user_immediately": [[true, 2]]
+      "restores_hp": [[true, 2]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -11657,8 +11654,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "restores_hp": [[true, 2]],
-      "heals_user_immediately": [[true, 2]]
+      "restores_hp": [[true, 2]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -11706,8 +11702,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "restores_hp": [[true, 2]],
-      "heals_user_immediately": [[true, 2]]
+      "restores_hp": [[true, 2]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -13656,7 +13651,10 @@
     "causes_status": {
       "rooted": [[100.0, 3]]
     },
-    "resists_status": {},
+    "resists_status": {
+      "telekinesis": [[true, 5]],
+      "magnetic_levitation": [[true, 4]]
+    },
     "stat_modifications": {},
     "usage_method": {},
     "contact": [[false, 3]],
@@ -15045,8 +15043,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "restores_hp": [[true, 3]],
-      "heals_user_immediately": [[true, 3]]
+      "restores_hp": [[true, 3]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -17662,8 +17659,7 @@
     "g_max_move": false,
     "effects": {
       "changes_pokemon_type": [[true, 4]],
-      "restores_hp": [[true, 4]],
-      "heals_user_immediately": [[true, 4]]
+      "restores_hp": [[true, 4]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -17714,7 +17710,10 @@
       "removes_type_immunity": [[true, 4]]
     },
     "causes_status": {},
-    "resists_status": {},
+    "resists_status": {
+      "telekinesis": [[true, 5]],
+      "magnetic_levitation": [[true, 4]]
+    },
     "stat_modifications": {},
     "usage_method": {},
     "contact": [[false, 4]],
@@ -19597,13 +19596,14 @@
     "g_max_move": false,
     "effects": {
       "recoil": [[true, 4]],
-      "thaws_user": [[true, 4]],
       "heals_nonvolatile": [[true, 4]]
     },
     "causes_status": {
       "burn": [[10.0, 4]]
     },
-    "resists_status": {},
+    "resists_status": {
+      "freeze": [[true, 4]]
+    },
     "stat_modifications": {},
     "usage_method": {},
     "contact": [[true, 4]],
@@ -22718,8 +22718,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "restores_hp": [[true, 4]],
-      "heals_user_immediately": [[true, 4]]
+      "restores_hp": [[true, 4]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -25053,13 +25052,14 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "thaws_user": [[true, 5]],
       "heals_nonvolatile": [[true, 5]]
     },
     "causes_status": {
       "burn": [[30.0, 5]]
     },
-    "resists_status": {},
+    "resists_status": {
+      "freeze": [[true, 5]]
+    },
     "stat_modifications": {},
     "usage_method": {},
     "contact": [[false, 5]],
@@ -27828,11 +27828,12 @@
     "g_max_move": false,
     "effects": {
       "powers_up": [[true, 5]],
-      "thaws_user": [[true, 5]],
       "heals_nonvolatile": [[true, 5]]
     },
     "causes_status": {},
-    "resists_status": {},
+    "resists_status": {
+      "freeze": [[true, 5]]
+    },
     "stat_modifications": {},
     "usage_method": {},
     "contact": [[false, 5]],
@@ -29532,13 +29533,14 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "heals_nonvolatile": [[true, 6]],
-      "thaws_user": [[true, 6]]
+      "heals_nonvolatile": [[true, 6]]
     },
     "causes_status": {
       "burn": [[30.0, 6]]
     },
-    "resists_status": {},
+    "resists_status": {
+      "freeze": [[true, 6]]
+    },
     "stat_modifications": {},
     "usage_method": {},
     "contact": [[false, 6]],
@@ -32101,8 +32103,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "restores_hp": [[true, 7]],
-      "heals_user_immediately": [[true, 7]]
+      "restores_hp": [[true, 7]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -32546,8 +32547,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "restores_hp": [[true, 7]],
-      "heals_user_immediately": [[true, 7]]
+      "restores_hp": [[true, 7]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -33240,11 +33240,12 @@
     "g_max_move": false,
     "effects": {
       "changes_pokemon_type": [[true, 7]],
-      "thaws_user": [[true, 7]],
       "heals_nonvolatile": [[true, 7]]
     },
     "causes_status": {},
-    "resists_status": {},
+    "resists_status": {
+      "freeze": [[true, 7]]
+    },
     "stat_modifications": {},
     "usage_method": {},
     "contact": [[false, 7]],
@@ -33389,8 +33390,7 @@
     "g_max_move": false,
     "effects": {
       "heals_nonvolatile": [[true, 7]],
-      "restores_hp": [[true, 7]],
-      "heals_user_immediately": [[true, 7]]
+      "restores_hp": [[true, 7]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -38520,13 +38520,14 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "thaws_user": [[true, 8]],
       "heals_nonvolatile": [[true, 8]]
     },
     "causes_status": {
       "burn": [[10.0, 8]]
     },
-    "resists_status": {},
+    "resists_status": {
+      "freeze": [[true, 8]]
+    },
     "stat_modifications": {},
     "usage_method": {
       "ball": [[true, 8]]
@@ -40267,13 +40268,14 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "thaws_user": [[true, 8]],
       "heals_nonvolatile": [[true, 8]]
     },
     "causes_status": {
       "burn": [[30.0, 8]]
     },
-    "resists_status": {},
+    "resists_status": {
+      "freeze": [[true, 8]]
+    },
     "stat_modifications": {},
     "usage_method": {},
     "contact": [[false, 8]],
@@ -44305,8 +44307,7 @@
     "g_max_move": false,
     "effects": {
       "resets_stats": [[true, 7]],
-      "restores_hp": [[true, 7]],
-      "heals_user_immediately": [[true, 7]]
+      "restores_hp": [[true, 7]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -45200,8 +45201,7 @@
     "g_max_move": false,
     "effects": {
       "resets_stats": [[true, 7]],
-      "restores_hp": [[true, 7]],
-      "heals_user_immediately": [[true, 7]]
+      "restores_hp": [[true, 7]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -45715,8 +45715,7 @@
     "effects": {
       "resets_stats": [[true, 7]],
       "heals_nonvolatile": [[true, 7]],
-      "restores_hp": [[true, 7]],
-      "heals_user_immediately": [[true, 7]]
+      "restores_hp": [[true, 7]]
     },
     "causes_status": {
       "sleep": [[100.0, 7]]
@@ -47208,8 +47207,7 @@
     "g_max_move": false,
     "effects": {
       "resets_stats": [[true, 7]],
-      "restores_hp": [[true, 7]],
-      "heals_user_immediately": [[true, 7]]
+      "restores_hp": [[true, 7]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -47775,8 +47773,7 @@
     "g_max_move": false,
     "effects": {
       "resets_stats": [[true, 7]],
-      "restores_hp": [[true, 7]],
-      "heals_user_immediately": [[true, 7]]
+      "restores_hp": [[true, 7]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -47832,8 +47829,7 @@
     "g_max_move": false,
     "effects": {
       "resets_stats": [[true, 7]],
-      "restores_hp": [[true, 7]],
-      "heals_user_immediately": [[true, 7]]
+      "restores_hp": [[true, 7]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -47889,8 +47885,7 @@
     "g_max_move": false,
     "effects": {
       "resets_stats": [[true, 7]],
-      "restores_hp": [[true, 7]],
-      "heals_user_immediately": [[true, 7]]
+      "restores_hp": [[true, 7]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -49812,8 +49807,7 @@
     "g_max_move": false,
     "effects": {
       "resets_stats": [[true, 7]],
-      "restores_hp": [[true, 7]],
-      "heals_user_immediately": [[true, 7]]
+      "restores_hp": [[true, 7]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -50673,8 +50667,7 @@
     "effects": {
       "resets_stats": [[true, 7]],
       "changes_pokemon_type": [[true, 7]],
-      "restores_hp": [[true, 7]],
-      "heals_user_immediately": [[true, 7]]
+      "restores_hp": [[true, 7]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -52316,8 +52309,7 @@
     "g_max_move": false,
     "effects": {
       "resets_stats": [[true, 7]],
-      "restores_hp": [[true, 7]],
-      "heals_user_immediately": [[true, 7]]
+      "restores_hp": [[true, 7]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -55659,8 +55651,7 @@
     "g_max_move": false,
     "effects": {
       "resets_stats": [[true, 7]],
-      "restores_hp": [[true, 7]],
-      "heals_user_immediately": [[true, 7]]
+      "restores_hp": [[true, 7]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -55830,8 +55821,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "restores_hp": [[true, 7]],
-      "heals_user_immediately": [[true, 7]]
+      "restores_hp": [[true, 7]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -56225,8 +56215,7 @@
     "g_max_move": false,
     "effects": {
       "heals_nonvolatile": [[true, 7]],
-      "restores_hp": [[true, 7]],
-      "heals_user_immediately": [[true, 7]]
+      "restores_hp": [[true, 7]]
     },
     "causes_status": {},
     "resists_status": {},

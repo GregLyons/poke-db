@@ -13,6 +13,12 @@ The `utils` folder consists of functions which compose the various SQL statement
 
 For example, running `node src/db/index.js` with `resetEverything()` un-commented will delete all the data from the database and drop all the tables, then create all the tables and re-insert the data again. On the other hand, the `reset ... JunctionTables` functions allow re-inserting data for specific classes of junction tables. The user can comment and uncomment the appropriate functions for desired database operations. For example, if they're debugging data in an ability junction table, they can comment out all the functions by `resetAbilityJunctionTables` at the bottom and run that.
 
+## Note: Possible error inserting learnset data
+
+The learnset data may be too large to insert in a single command on your MySQL settings. An 'ECONNRESET' will come up if this is the case (the call stack will probably include 'reinsertLearnsetData'). In this case, you can use `SET GLOBAL max_allowed_packet = 1024 * 1024 * 16;` (16 MB), which will allow you to perform a single insert of size up to 16 MB. This will suffice for the learnset data.
+
+If you used `resetEverything()`, but the learnset data wasn't inserted due to this error, you don't need to run it again. You can instead run `resetLearnsetTable(db, tableStatements)` at the bottom, which will attempt to insert only the learnset data.
+
 # Extended example: Adding Natures
 
 A few lines of code need to be written in several spots in both the `sql` folders and `utils` folders, so refer to the `README.md` files in those folders. 
