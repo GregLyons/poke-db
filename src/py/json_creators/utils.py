@@ -83,9 +83,9 @@ def effectList():
     # protect
     'bypasses_protect',
     # heal status
-    'thaws_user', 'heals_nonvolatile', 
+    'heals_nonvolatile', 
     # restore hp or pp
-    'restores_hp', 'heals_user_immediately', 'restores_pp', 'drains', 
+    'restores_hp', 'restores_pp', 'drains', 
     # cost hp
     'recoil', 'costs_hp', 'can_crash',
     # ability-related

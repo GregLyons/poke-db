@@ -333,7 +333,6 @@ def addDescriptions(statusDict):
 
   return statusDict
 
-
 def main():
   statusDict = makeStatusDict()
 
