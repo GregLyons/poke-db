@@ -373,8 +373,6 @@ const addLearnsetsToPokemonArr = (learnsets, moves, pokemon, pokemonArr) => {
   for (let pokemonEntry of pokemonArr) {
 
     const pokemonName = pokemonEntry.name;
-
-    pokemonEntry['ps_id'] = pokemonMap.get(pokemonName);
     
     pokemonEntry['learnset'] = {};
 
@@ -400,9 +398,127 @@ const addLearnsetsToPokemonArr = (learnsets, moves, pokemon, pokemonArr) => {
   }
 }
 
+const addPokemonShowdownIDToPokemonArr = (psIDs, pokemonArr) => {
+  for (let pokemonEntry of pokemonArr) {
+    const pokemonName = pokemonEntry.name;
+
+    if (!psIDs[replaceAll(pokemonName, '_', '')]) {
+      // Usual case where base form in PS doesn't have suffix
+      if ([
+        'castform_normal',
+        'burmy_plant',
+        'wormadam_plant',
+        'arceus_normal',
+        'meloetta_aria',
+        'oricorio_baile',
+        'silvally_normal',
+        'darmanitan_standard',
+        'deoxys_normal',
+        'giratina_altered',
+        'shaymin_land',
+        'tornadus_incarnate',
+        'thundurus_incarnate',
+        'landorus_incarnate',
+        'aegislash_shield',
+        'pumpkaboo_average',
+        'gourgeist_average',
+        'lycanroc_midday',
+        'wishiwashi_solo',
+        'toxtricity_amped',
+        'eiscue_ice',
+        'indeedee_m',
+        'keldeo_ordinary',
+        'shellos_west',
+        'gastrodon_west',
+        'deerling_spring',
+        'sawsbuck_spring',
+        'meowstic_m',
+        'unown_a',
+        'mothim_plant',
+        'flabebe_red',
+        'floette_red',
+        'florges_red',
+        'minior_red',
+        'zygarde_50',
+        'minior_meteor_red',
+        'minior_meteor_orange',
+        'minior_meteor_yellow',
+        'minior_meteor_green',
+        'minior_meteor_blue',
+        'minior_meteor_indigo',
+        'minior_meteor_violet',
+        'mothim_sandy',
+        'mothim_trash',
+        'sinistea_phony',
+        'polteageist_phony',
+        'xerneaus_active',
+        'rockruff_own_tempo',
+        'pikachu_partner_cap',
+        'cherrim_overcast',
+        'basculin_red_striped',
+      ].includes(pokemonName)) {
+        pokemonEntry['ps_id'] = pokemonName.split('_')[0];
+      }
+      else if ([
+        'spewpa_icy_snow',
+        'scatterbug_icy_snow',
+        'pikachu_original_cap',
+        'pikachu_kalos_cap',
+        'pikachu_alola_cap',
+        'pikachu_hoenn_cap',
+        'pikachu_sinnoh_cap',
+        'pikachu_unova_cap',
+        'pikachu_world_cap',
+      ].includes(pokemonName)) {
+        pokemonEntry['ps_id'] = pokemonName.split('_').slice(0, -1).join('');
+      }
+      else if (pokemonName.includes('spewpa') || pokemonName.includes('scatterbug')) {
+          pokemonEntry['ps_id'] = pokemonName.split('_')[0];
+      }
+      else {
+        switch(pokemonName) {
+          case 'toxtricity_amped_gmax':
+            pokemonEntry['ps_id'] = 'toxtricitygmax';
+            break;
+          case 'darmanitan_standard_galar':
+            pokemonEntry['ps_id'] = 'darmanitangalar';
+            break;
+          case 'darmanitan_zen_galar':
+            pokemonEntry['ps_id'] = 'darmanitangalarzen';
+            break;
+          case 'eevee_partner':
+            pokemonEntry['ps_id'] = 'eeveestarter';
+            break;
+          case 'necrozma_dusk':
+            pokemonEntry['ps_id'] = 'necrozmaduskmane';
+            break;
+          case 'necrozma_dawn':
+            pokemonEntry['ps_id'] = 'necrozmadawnwings';
+            break;
+          case 'morpeko_full_belly':
+            pokemonEntry['ps_id'] = 'morpeko';
+            break;
+          case 'vivillon_meadow':
+            pokemonEntry['ps_id'] = 'vivillon';
+            break;
+          case 'xerneas_active':
+            pokemonEntry['ps_id'] = 'xerneas';
+            break;
+          default:
+            console.log(`${pokemonName} does not have a psID.`);
+        }
+      }
+    }
+    else {
+      pokemonEntry['ps_id'] = replaceAll(pokemonName, '_', '');
+    }
+  }
+}
+
 // #endregion
 
 module.exports = {
   mergeLearnsets,
   addLearnsetsToPokemonArr,
+  addPokemonShowdownIDToPokemonArr,
 }

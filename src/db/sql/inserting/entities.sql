@@ -25,7 +25,8 @@ INSERT INTO pstatus (
   pstatus_name,
   pstatus_formatted_name,
   introduced,
-  pstatus_description
+  pstatus_description,
+  pstatus_volatile
 ) VALUES ?;
 
 INSERT INTO stat (

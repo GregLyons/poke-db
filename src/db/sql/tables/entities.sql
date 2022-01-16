@@ -157,6 +157,7 @@ CREATE TABLE IF NOT EXISTS pstatus (
   pstatus_formatted_name VARCHAR(45) NOT NULL,
   introduced TINYINT UNSIGNED NOT NULL,
   pstatus_description VARCHAR(400) NOT NULL,
+  pstatus_volatile TINYINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (generation_id, pstatus_id),
   INDEX (pstatus_id)

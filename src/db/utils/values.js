@@ -231,9 +231,17 @@ const getValuesForTable = (
           pstatus_formatted_name,
           introduced,
           pstatus_description,
+          pstatus_volatile
         )
       */
-      values = require(PROCESSED_DATA_PATH + 'statuses.json').map(data => [data.gen, data.name, data.formatted_name, data.introduced, data.description]);
+      values = require(PROCESSED_DATA_PATH + 'statuses.json').map(data => [
+        data.gen,
+        data.name,
+        data.formatted_name,
+        data.introduced,
+        data.description,
+        data.volatile,
+      ]);
       break;
     
     case 'stat':

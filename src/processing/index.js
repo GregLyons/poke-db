@@ -84,10 +84,14 @@ const learnsets = mergeLearnsets(gen2Learnsets, laterLearnsets);
 
 // #endregion
 
-/* 3. Add merged learnset data. Also adds Pokemon Showdown IDs, 'ps_id'. */
+/* 3. Add merged learnset data. Separate out LGPE-only Pokemon. Also adds Pokemon Showdown IDs, 'ps_id'. */
 // #region
-const { addLearnsetsToPokemonArr } = require('./utils/index.js');
+
+const { pokemon: psIDs, } = require(RAW_DATA_PATH + 'ps-img.json');
+const { addLearnsetsToPokemonArr, addPokemonShowdownIDToPokemonArr, } = require('./utils/index.js');
 addLearnsetsToPokemonArr(learnsets, moves, pokemon, pokemonArr);
+addPokemonShowdownIDToPokemonArr(psIDs, pokemonArr)
+
 
 // Separate out LGPE only Pokemon
 const lgpeOnlyPokemon = ['pikachu_partner', 'eevee_partner'];
