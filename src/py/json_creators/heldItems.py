@@ -515,7 +515,9 @@ def addOtherItemData(fpath, itemDict):
     ['moves_first_in_priority', ['quick_claw', 'custap_berry']],
     ['ignores_contact', ['protective_pads']],
     ['changes_form', ['rusted_sword', 'rusted_shield']],
-    ['resets_stats', ['white_herb']]
+    ['resets_stats', ['white_herb']],
+    ['grounds', ['iron_ball']],
+    ['ungrounds', ['air_balloon']],
   ]:
     effect, items = effect_item
     for itemName in items:

@@ -9478,6 +9478,7 @@
     "priority": [[0, 2]],
     "target": [["all_foes", 2]],
     "lgpe_exclusive_values": {},
+    "only_affects_grounded": [[true, 3]],
     "move_interactions": {
       "magic_coat": [[false, 2], [false, 3], [false, 4], [true, 5], [true, 6], [true, 7], [true, 8]],
       "assist": [[true, 3]],
@@ -13661,6 +13662,7 @@
     "priority": [[0, 3]],
     "target": [["user", 3]],
     "lgpe_exclusive_values": {},
+    "grounds": [[true, 4]],
     "move_interactions": {
       "snatch": [[true, 3], [true, 4], [true, 5], [true, 6], [true, 7], [false, 8]],
       "assist": [[true, 3]],
@@ -17669,6 +17671,7 @@
     "priority": [[0, 4]],
     "target": [["user", 4]],
     "lgpe_exclusive_values": {},
+    "grounds": [[true, 4]],
     "move_interactions": {
       "snatch": [[true, 4], [true, 5], [true, 6], [true, 7], [false, 8]],
       "assist": [[true, 4]],
@@ -17720,6 +17723,7 @@
     "priority": [[0, 4]],
     "target": [["all", 4]],
     "lgpe_exclusive_values": {},
+    "grounds": [[true, 4]],
     "move_interactions": {
       "assist": [[true, 4]],
       "protect": [[false, 4], [false, 5], [false, 6], [false, 7], [false, 8]],
@@ -17738,7 +17742,9 @@
       "kings_rock": [[false, 4], [false, 5], [false, 6], [false, 7], [false, 8]]
     },
     "formatted_name": "Gravity",
-    "creates_field_state": {},
+    "creates_field_state": {
+      "gravity": [[true, 5, 4]]
+    },
     "removes_field_state": {}
   },
   "miracle_eye": {
@@ -19410,6 +19416,7 @@
     "priority": [[0, 4]],
     "target": [["all_foes", 4]],
     "lgpe_exclusive_values": {},
+    "only_affects_grounded": [[true, 4]],
     "move_interactions": {
       "magic_coat": [[false, 4], [true, 5], [true, 6], [true, 7], [true, 8]],
       "assist": [[true, 4]],
@@ -19557,6 +19564,7 @@
     "priority": [[0, 4]],
     "target": [["user", 4]],
     "lgpe_exclusive_values": {},
+    "ungrounds": [[true, 4]],
     "move_interactions": {
       "snatch": [[false, 4], [true, 5], [true, 6], [true, 7], [false, 8]],
       "assist": [[true, 4]],
@@ -23541,10 +23549,10 @@
     },
     "formatted_name": "Wonder Room",
     "creates_field_state": {
-      "wonder_room": [[true, 5, 8]]
+      "wonder_room": [[true, 5, 5]]
     },
     "removes_field_state": {
-      "wonder_room": [[true, 5, 8]]
+      "wonder_room": [[true, 5, 5]]
     }
   },
   "psyshock": {
@@ -23774,6 +23782,7 @@
     "priority": [[0, 5]],
     "target": [["any_adjacent", 5]],
     "lgpe_exclusive_values": {},
+    "ungrounds": [[true, 5]],
     "move_interactions": {
       "magic_coat": [[true, 5], [true, 6], [true, 7], [false, 8]],
       "assist": [[true, 5]],
@@ -23841,10 +23850,10 @@
     },
     "formatted_name": "Magic Room",
     "creates_field_state": {
-      "magic_room": [[true, 5, 8]]
+      "magic_room": [[true, 5, 5]]
     },
     "removes_field_state": {
-      "magic_room": [[true, 5, 8]]
+      "magic_room": [[true, 5, 5]]
     }
   },
   "smack_down": {
@@ -23874,6 +23883,7 @@
     "priority": [[0, 5]],
     "target": [["any_adjacent", 5]],
     "lgpe_exclusive_values": {},
+    "grounds": [[true, 5]],
     "max_power": 100,
     "g_max_power": 100,
     "z_power": 100,
@@ -28089,6 +28099,7 @@
     "priority": [[0, 6]],
     "target": [["all", 6]],
     "lgpe_exclusive_values": {},
+    "only_affects_grounded": [[true, 6]],
     "move_interactions": {
       "protect": [[false, 6], [false, 7], [true, 8]],
       "detect": [[false, 6], [false, 7], [true, 8]],
@@ -28136,6 +28147,7 @@
     "priority": [[0, 6]],
     "target": [["all_foes", 6]],
     "lgpe_exclusive_values": {},
+    "only_affects_grounded": [[true, 6]],
     "move_interactions": {
       "magic_coat": [[true, 6], [true, 7], [true, 8]],
       "assist": [[true, 6]],
@@ -28941,6 +28953,7 @@
     "priority": [[0, 6]],
     "target": [["all", 6]],
     "lgpe_exclusive_values": {},
+    "only_affects_grounded": [[true, 6]],
     "move_interactions": {
       "assist": [[true, 6]],
       "protect": [[false, 6], [false, 7], [false, 8]],
@@ -28992,6 +29005,7 @@
     "priority": [[0, 6]],
     "target": [["all", 6]],
     "lgpe_exclusive_values": {},
+    "only_affects_grounded": [[true, 6]],
     "move_interactions": {
       "assist": [[true, 6]],
       "protect": [[false, 6], [false, 7], [false, 8]],
@@ -30132,6 +30146,7 @@
     "priority": [[0, 6]],
     "target": [["all", 6]],
     "lgpe_exclusive_values": {},
+    "only_affects_grounded": [[true, 6]],
     "move_interactions": {
       "assist": [[true, 6]],
       "protect": [[false, 6], [false, 7], [false, 8]],
@@ -30628,6 +30643,7 @@
     "priority": [[0, 6]],
     "target": [["all_adjacent_foes", 6]],
     "lgpe_exclusive_values": {},
+    "grounds": [[true, 6]],
     "max_power": 130,
     "g_max_power": 130,
     "z_power": 180,
@@ -33046,6 +33062,7 @@
     "priority": [[0, 7]],
     "target": [["all", 7]],
     "lgpe_exclusive_values": {},
+    "only_affects_grounded": [[true, 7]],
     "move_interactions": {
       "assist": [[true, 7]],
       "protect": [[false, 7], [false, 8]],
@@ -41796,7 +41813,9 @@
       "kings_rock": [[true, 8]]
     },
     "formatted_name": "G-Max Gravitas",
-    "creates_field_state": {},
+    "creates_field_state": {
+      "gravity": [[true, 5, 8]]
+    },
     "removes_field_state": {}
   },
   "g_max_volcalith": {
@@ -50760,7 +50779,9 @@
       "kings_rock": [[false, 7], [false, 8]]
     },
     "formatted_name": "Z-Gravity",
-    "creates_field_state": {},
+    "creates_field_state": {
+      "gravity": [[true, 5, 7]]
+    },
     "removes_field_state": {}
   },
   "z_miracle_eye": {

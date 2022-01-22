@@ -273,5 +273,20 @@
     "gen": 5,
     "formatted_name": "Uses different stat",
     "description": [["The stat used to calculate the move's damage differs from the damage category of the move.", 5]]
+  },
+  "grounds": {
+    "gen": 4,
+    "formatted_name": "Grounds",
+    "description": [["Makes the opponent vulnerable to Ground type-moves, as well as other grounded abilities, moves, and field states.", 4]]
+  },
+  "ungrounds": {
+    "gen": 3,
+    "formatted_name": "Ungrounds",
+    "description": [["Makes the opponent invulnerable to Ground-type moves, as well as to other grounded abilities, moves, and field states.", 3]]
+  },
+  "only_affects_grounded": {
+    "gen": 3,
+    "formatted_name": "Only affects grounded",
+    "description": [["Fails against Flying-type Pokemon, as well as ungrounded Pokemon (e.g. Pokemon with Levitate).", 3]]
   }
 }

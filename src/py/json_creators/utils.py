@@ -106,6 +106,8 @@ def effectList():
     'moves_last_in_priority', 'moves_first_in_priority', 'adds_priority', 'protects_against_priority',
     # contact-related
     'ignores_contact', 'punishes_contact',
+    # ground-related
+    'grounds', 'ungrounds', 'only_affects_grounded',
     # miscellaneous
     'calls_other_move', 'depends_on_environment', 'multi_hit', 'ohko','changes_form', 'manipulates_item', 'activates_gulp_missile',  'extends_duration', 'other_move_enhancement', 'other_move_resistance',  'anti_mini', 'type_varies', 'other_move_order_change', 'no_effect',
   ]
@@ -141,6 +143,7 @@ def usageMethodList():
 def fieldStateList():
   fieldStates = [
     'mist', 'safeguard', 'tailwind', 'vine_lash', 'wildfire', 'cannonade', 'volcalith',
+    'gravity',
     'reflect', 'light_screen', 'aurora_veil',
     'rainbow', 'sea_of_fire', 'swamp',
     'stealth_rock', 'spikes', 'sticky_web', 'toxic_spikes', 'sharp_steel',

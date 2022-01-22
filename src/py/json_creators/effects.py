@@ -113,6 +113,12 @@ def makeEffectDict():
     "no_effect": 1,
     # psyshock (target's defense rather than special defense); body press (user's defense rather than attack)
     "uses_different_stat": 5,
+    # iron ball; 
+    "grounds": 4,
+    # levitate; flying type does not count
+    "ungrounds": 3,
+    # arena trap
+    "only_affects_grounded": 3,
   }
 
   effectDict = {}
@@ -424,6 +430,21 @@ def addDescriptions(effectDict):
     ['Protects against priority moves.', 5],
   ]
 
+  # grounds
+  effectDict["grounds"]["description"] = [
+    ['Makes the opponent vulnerable to Ground type-moves, as well as other grounded abilities, moves, and field states.', 4]
+  ]
+
+  # ungrounds
+  effectDict["ungrounds"]["description"] = [
+    ['Makes the opponent invulnerable to Ground-type moves, as well as to other grounded abilities, moves, and field states.', 3]
+  ]
+
+  # only_affects_grounded
+  effectDict["only_affects_grounded"]["description"] = [
+    ['Fails against Flying-type Pokemon, as well as ungrounded Pokemon (e.g. Pokemon with Levitate).', 3]
+  ]
+
   return effectDict
 
 def main():
@@ -434,7 +455,6 @@ def main():
   for effectName in effectDict.keys():
     if 'description' not in effectDict[effectName].keys():
       print(effectName, 'is missing a description.')
-
 
   return effectDict
 

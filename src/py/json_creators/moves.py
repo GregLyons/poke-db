@@ -15,7 +15,7 @@ from tests import checkGenConsistency, moveTests
 # also include any effects the move has
 # also include any usage methods the move has
 
-# get value(s) and generation(s) from description
+# get value(s) and generation(s) from description 
 def parseMoveListNote(note):
   moveID = int(note[0])
   header = note[1]
@@ -423,7 +423,10 @@ def addEffectToMoveDict(fname, moveDict):
     ['can_crash', ['high_jump_kick', 'jump_kick']],
     ['changes_damage_category', ['light_that_burns_the_sky', 'photon_geyser', 'shell_side_arm']],
     ['punishes_contact', ['baneful_bunker', 'beak_blast', 'kings_shield', 'obstruct', 'spiky_shield']],
-    ['affects_weight', ['autotomize']]
+    ['affects_weight', ['autotomize']],
+    ['grounds', ['smack_down', 'thousand_arrows', 'gravity', 'ingrain', 'roost']],
+    ['ungrounds', ['magnet_rise', 'telekinesis']],
+    ['only_affects_grounded', ['rototiller', 'spikes', 'toxic_spikes', 'sticky_web', 'electric_terrain', 'grassy_terrain', 'misty_terrain', 'psychic_terrain']],
   ]
   for exception in effect_moves:
     effect, moveNames = exception
@@ -1342,6 +1345,11 @@ def addFieldStateDate(moveDict):
   # Other creators
   #region
 
+  # gravity
+  moveDict["gravity"]["creates_field_state"]["gravity"] = [[True, 5, 4]]
+  moveDict["z_gravity"]["creates_field_state"]["gravity"] = [[True, 5, 7]]
+  moveDict["g_max_gravitas"]["creates_field_state"]["gravity"] = [[True, 5, 8]]
+
   # Entry hazards
   moveDict["spikes"]["creates_field_state"]["spikes"] = [[True, 0, 2]]
   moveDict["toxic_spikes"]["creates_field_state"]["toxic_spikes"] = [[True, 0, 4]]
@@ -1378,8 +1386,8 @@ def addFieldStateDate(moveDict):
 
   # Rooms
   moveDict["trick_room"]["creates_field_state"]["trick_room"] = [[True, 5, 4]]
-  moveDict["magic_room"]["creates_field_state"]["magic_room"] = [[True, 5, 8]]
-  moveDict["wonder_room"]["creates_field_state"]["wonder_room"] = [[True, 5, 8]]
+  moveDict["magic_room"]["creates_field_state"]["magic_room"] = [[True, 5, 5]]
+  moveDict["wonder_room"]["creates_field_state"]["wonder_room"] = [[True, 5, 5]]
 
   # Other
   moveDict["mist"]["creates_field_state"]["mist"] = [[True, 0, 1], [True, 5, 3]]
@@ -1437,8 +1445,8 @@ def addFieldStateDate(moveDict):
 
   # Rooms
   moveDict["trick_room"]["removes_field_state"]["trick_room"] = [[True, 5, 4]]
-  moveDict["magic_room"]["removes_field_state"]["magic_room"] = [[True, 5, 8]]
-  moveDict["wonder_room"]["removes_field_state"]["wonder_room"] = [[True, 5, 8]]
+  moveDict["magic_room"]["removes_field_state"]["magic_room"] = [[True, 5, 5]]
+  moveDict["wonder_room"]["removes_field_state"]["wonder_room"] = [[True, 5, 5]]
 
   #endregion
 

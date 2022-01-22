@@ -6,12 +6,13 @@ def makeFieldStateDict():
   fieldStates = [
     # other
     ['mist', 1, 'other', 0, False],
-    ['safeguard', 1, 'other', 0, False],
+    ['safeguard', 2, 'other', 0, False],
     ['tailwind', 4, 'other', 0, False],
     ['vine_lash', 8, 'other', 16.67, False],
     ['wildfire', 8, 'other', 16.67, False],
     ['cannonade', 8, 'other', 16.67, False],
     ['volcalith', 8, 'other', 16.67, False],
+    ['gravity', 4, 'other', 0, False],
     # screens
     ['reflect', 1, 'screen', 0, False],
     ['light_screen', 1, 'screen', 0, False],
@@ -43,8 +44,8 @@ def makeFieldStateDict():
     ['psychic_terrain', 6, 'terrain', 0, True],
     # rooms
     ['trick_room', 4, 'room', 0, False],
-    ['magic_room', 8, 'room', 0, False],
-    ['wonder_room', 8, 'room', 0, False],
+    ['magic_room', 5, 'room', 0, False],
+    ['wonder_room', 5, 'room', 0, False],
   ]
 
   fieldStateDict = {}
@@ -62,10 +63,10 @@ def makeFieldStateDict():
       "field_state_class": fieldStateClass,
       "damage_percent": [[fieldStateDamage, fieldStateGen]],
       "max_layers": layerCount,
-      "only_grounded": onlyGrounded
+      "only_grounded": onlyGrounded,
     }
 
-  # make sure all usage methodsare accounted for
+  # make sure all usage methods are accounted for
   for fieldStateName in fieldStateList():
     if fieldStateName not in fieldStateDict:
       print(fieldStateName, 'not in fieldStateDict')
@@ -98,6 +99,8 @@ def addStatModificationData(fieldStateDict):
 
   # Other
   fieldStateDict["tailwind"]["stat_modifications"]["speed"] = [[2.0, "all_allies", 100.0, 4]]
+
+  fieldStateDict["gravity"]["stat_modifications"]["accuracy"] = [[1.67, "all", 100.0, 4]]
 
   # Pledges
   fieldStateDict["rainbow"]["stat_modifications"]["secondary_effect_chance"] = [[2.0, "all_allies", 100.0, 5]]
@@ -137,17 +140,21 @@ def addTargetData(fieldStateDict):
 
 def addEffectData(fieldStateDict):
   for fieldStateName in fieldStateDict.keys():
+    fieldStateGen = fieldStateDict[fieldStateName]["gen"]
     fieldStateDict[fieldStateName]["effects"] = {}
+    if fieldStateDict[fieldStateName]["only_grounded"]:
+      fieldStateDict[fieldStateName]["effects"]["only_affects_grounded"] = [[True, max(fieldStateGen, 3)]]
 
   # Other
   fieldStateDict["mist"]["effects"]["prevents_stat_drop"] = [[True, 1]]
+  fieldStateDict["gravity"]["effects"]["grounds"] = [[True, 4]]
 
   # Terrains
   fieldStateDict["grassy_terrain"]["effects"]["restores_hp"] = [[True, 6]]
   fieldStateDict["psychic_terrain"]["effects"]["protects_against_priority"] = [[True, 6]]
 
   # Rooms
-  fieldStateDict["magic_room"]["effects"]["manipulates_item"] = [[True, 8]]
+  fieldStateDict["magic_room"]["effects"]["manipulates_item"] = [[True, 5]]
   fieldStateDict["trick_room"]["effects"]["other_move_order_change"] = [[True, 4]]
 
   # Strong winds
@@ -389,6 +396,11 @@ def addMoveData(fieldStateDict):
         ['expanding_force', 8], ['terrain_pulse', 8]
       ]
     ],
+    # Gravity
+    ['gravity', [
+        ['grav_apple', 8],
+      ]
+    ]
   ]:
     fieldStateGen = fieldStateDict[fieldStateName]["gen"]
     for [moveName, moveGen] in movesAndGens:
@@ -443,6 +455,11 @@ def addMoveData(fieldStateDict):
         ['bulldoze', 5], ['earthquake', 1], ['magnitude', 1]
       ]
     ],
+    # Gravity
+    ['gravity', [
+        ['bounce', 3], ['fly', 1], ['flying_press', 6], ['high_jump_kick', 1], ['jump_kick', 1], ['magnet_rise', 4], ['sky_drop', 5], ['splash', 1], ['telekinesis', 5]
+      ]
+    ]
   ]:
     fieldStateGen = fieldStateDict[fieldStateName]["gen"]
     for [moveName, moveGen] in movesAndGens:
@@ -454,6 +471,190 @@ def addMoveData(fieldStateDict):
       fieldStateDict[fieldStateName]["hinders_move"][moveName] = [[True, max(moveGen, fieldStateGen, otherGen)]]
 
   return
+
+def addDescriptions(fieldStateDict):
+  # mist
+  fieldStateDict["mist"]["description"] = [
+    ['Protects the user from having its stats decreased by the opponent\'s status moves.', 1],
+    ['Protects the user from having its stats decreased by the opponent.', 2],
+    ['Protects the user and its allies from having its stats decreased by the opponent.', 3],
+  ]
+
+  # safeguard
+  fieldStateDict["safeguard"]["description"] = [
+    ['Protects against non-volatile status conditions and confusion in most cases.', 2],
+  ]
+
+  # tailwind
+  fieldStateDict["tailwind"]["description"] = [
+    ['Doubles the speed stat of the user and its allies.', 4],
+  ]
+
+  # vine_lash
+  fieldStateDict["vine_lash"]["description"] = [
+    ['Inflicts Grass-type damage equal to 1/6 of the opponents max HP each turn.', 8],
+  ]
+
+  # wildfire
+  fieldStateDict["wildfire"]["description"] = [
+    ['Inflicts Fire-type damage equal to 1/6 of the opponents max HP each turn.', 8],
+  ]
+
+  # cannonade
+  fieldStateDict["cannonade"]["description"] = [
+    ['Inflicts Water-type damage equal to 1/6 of the opponents max HP each turn.', 8],
+  ]
+
+  # volcalith
+  fieldStateDict["volcalith"]["description"] = [
+    ['Inflicts Rock-type damage equal to 1/6 of the opponents max HP each turn.', 8],
+  ]
+
+  # gravity
+  fieldStateDict["gravity"]["description"] = [
+    ['Grounds all Pokemon on the field and causes moves to have increased accuracy.', 4],
+  ]
+
+  # reflect
+  fieldStateDict["reflect"]["description"] = [
+    ['Doubles defense.', 1],
+    ['Cuts the physical damage received in half (but does not increase defense).', 3],
+  ]
+
+  # light screen
+  fieldStateDict["light_screen"]["description"] = [
+    ['Doubles special defense, and doubles the Pokemon\'s special attack while taking damage.', 1],
+    ['Doubles special defense.', 2],
+    ['Cuts the special damage received in half (but does not increase special defense).', 3],
+  ]
+
+  # aurora veil
+  fieldStateDict["aurora_veil"]["description"] = [
+    ['Cuts the physical and special damage received in half (but does not increase defense/special defense).', 7],
+  ]
+
+  # rainbow
+  fieldStateDict["rainbow"]["description"] = [
+    ['Doubles the chance of secondary effects occuring.', 5],
+  ]
+
+  # sea of fire
+  fieldStateDict["sea_of_fire"]["description"] = [
+    ['Damages non-Fire-type Pokemon for 1/8 max HP each turn.', 5],
+  ]
+
+  # swamp
+  fieldStateDict["swamp"]["description"] = [
+    ['Quarters the speed of all affected Pokemon.', 5],
+  ]
+
+  # stealth rock
+  fieldStateDict["stealth_rock"]["description"] = [
+    ['Deals Rock-type damage for 1/8 of the Pokemon\'s max HP on entry.', 4],
+  ]
+
+  # sharp steel
+  fieldStateDict["sharp_steel"]["description"] = [
+    ['Deals Steel-type damage for 1/8 of the Pokemon\'s max HP on entry.', 4],
+  ]
+
+  # spikes
+  fieldStateDict["spikes"]["description"] = [
+    ['Deals damage to grounded Pokemon on entry, dependent on their max HP and number of layers present.', 2],
+  ]
+
+  # toxic spikes
+  fieldStateDict["toxic_spikes"]["description"] = [
+    ['Poisons grounded Pokemon on entry.', 4],
+  ]
+
+  # sticky web
+  fieldStateDict["sticky_web"]["description"] = [
+    ['Slows grounded Pokemon on entry.', 6],
+  ]
+
+  # clear skies
+  fieldStateDict["clear_skies"]["description"] = [
+    ['Denotes the absence of other weather effects.', 1],
+  ]
+
+  # harsh sunlight
+  fieldStateDict["harsh_sunlight"]["description"] = [
+    ['Harsh sunlight covers the field, weakening Water-type attacks and strengthing Fire-type attacks.', 2],
+  ]
+
+  # extremely harsh sunlight
+  fieldStateDict["extremely_harsh_sunlight"]["description"] = [
+    ['Extremely harsh sunlight covers the field, nullifying Water-type attacks and strengthing Fire-type attacks.', 6],
+  ]
+
+  # rain
+  fieldStateDict["rain"]["description"] = [
+    ['Rain covers the field, weakening Fire-type attacks and strengthening Water-type attacks.', 2],
+  ]
+
+  # heavy rain
+  fieldStateDict["heavy_rain"]["description"] = [
+    ['A torrent of rain drenches the field, nullifying Fire-type attacks and strengthening Water-type attacks.', 6],
+  ]
+
+  # sandstorm
+  fieldStateDict["sandstorm"]["description"] = [
+    ['A tempest of sand batters the field, causing damage over time.', 2],
+  ]
+
+  # hail
+  fieldStateDict["hail"]["description"] = [
+    ['A tempest of ice batters the field, causing damage over time.', 3],
+  ]
+
+  # fog
+  fieldStateDict["fog"]["description"] = [
+    ['A dense layer of fog blankets the field, reducing accuracy.', 4],
+  ]
+
+  # strong winds
+  fieldStateDict["strong_winds"]["description"] = [
+    ['Strong winds blow on the field, preventing most other weather effects, and making moves that would be super effective against pure Flying-type Pokemon to be only normally effective against those Pokemon.', 6],
+  ]
+
+  # electric_terrain
+  fieldStateDict["electric_terrain"]["description"] = [
+    ['Electricity covers the field, boosting the power of Electric-type moves.', 6]
+  ]
+
+  # grassy_terrain
+  fieldStateDict["grassy_terrain"]["description"] = [
+    ['Grass covers the field, boosting the power of Grass-type moves.', 6]
+  ]
+
+  # psychic_terrain
+  fieldStateDict["psychic_terrain"]["description"] = [
+    ['Psychic energies cover the field, boosting the power of Psychic-type moves.', 6]
+  ]
+
+  # misty_terrain
+  fieldStateDict["misty_terrain"]["description"] = [
+    ['Mist covers the field, weakening the power of Dragon-type moves.', 6]
+  ]
+
+  # trick room
+  fieldStateDict["trick_room"]["description"] = [
+    ['A tricky room which reverses the move order within each priority bracket.', 4]
+  ]
+
+  # magic room
+  fieldStateDict["magic_room"]["description"] = [
+    ['A magical room in which Pokemon cannot use their held items.', 5]
+  ]
+
+  # wonder room
+  fieldStateDict["wonder_room"]["description"] = [
+    ['A wondrous room which swaps the Defense and Special Defense of all Pokemon.', 5]
+  ]
+
+  return fieldStateDict
+
 
 def main():
   fieldStateDict = makeFieldStateDict()
@@ -473,6 +674,12 @@ def main():
   addItemData(fieldStateDict)
 
   addMoveData(fieldStateDict)
+
+  addDescriptions(fieldStateDict)
+
+  for fieldStateName in fieldStateDict.keys():
+    if 'description' not in fieldStateDict[fieldStateName].keys():
+      print(fieldStateName, 'is missing a description.')
 
   return fieldStateDict
 

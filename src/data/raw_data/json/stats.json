@@ -1,11 +1,13 @@
 {
   "attack": {
     "gen": 1,
-    "formatted_name": "Attack"
+    "formatted_name": "Attack",
+    "description": [["Determines the damage done by physical moves used by the Pokemon.", 1]]
   },
   "defense": {
     "gen": 1,
-    "formatted_name": "Defense"
+    "formatted_name": "Defense",
+    "description": [["Determines the damage inflicted by physical moves used against this Pokemon.", 1]]
   },
   "special_attack": {
     "gen": 1,
@@ -13,26 +15,32 @@
   },
   "special_defense": {
     "gen": 1,
-    "formatted_name": "Special defense"
+    "formatted_name": "Special defense",
+    "description": [["Determines the damage inflicted by special moves used against this Pokemon. In Generation 1, Special Attack and Special Defense are combined into a single stat, 'Special'.", 1], ["Determines the damage inflicted by special moves used against this Pokemon.", 2]]
   },
   "speed": {
     "gen": 1,
-    "formatted_name": "Speed"
+    "formatted_name": "Speed",
+    "description": [["Determines the order in which Pokemon act in battle. For Pokemon moving in the same priority bracket, the Pokemon with the higher Speed goes first, with ties broken randomly.", 1]]
   },
   "accuracy": {
     "gen": 1,
-    "formatted_name": "Accuracy"
+    "formatted_name": "Accuracy",
+    "description": [["The rate at which the Pokemon lands its moves.", 1]]
   },
   "evasion": {
     "gen": 1,
-    "formatted_name": "Evasion"
+    "formatted_name": "Evasion",
+    "description": [["The rate at which the Pokemon avoids attacks.", 1]]
   },
   "critical_hit_ratio": {
     "gen": 1,
-    "formatted_name": "Critical-hit ratio"
+    "formatted_name": "Critical-hit ratio",
+    "description": [["The rate at which the Pokemon scores critical hits.", 1]]
   },
   "secondary_effect_chance": {
     "gen": 3,
-    "formatted_name": "Secondary effect chance"
+    "formatted_name": "Secondary effect chance",
+    "description": [["The rate at which the secondary effects of the Pokemon's moves occur.", 3]]
   }
 }

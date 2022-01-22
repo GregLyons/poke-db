@@ -51,8 +51,58 @@ def getFormattedName(usageMethodName):
 
   return formattedName
 
+def addDescriptions(usageMethodDict):
+  # pulse
+  usageMethodDict["pulse"]["description"] = [
+    ['Moves based on aura and pulses.', 6]
+  ]
+
+  # ball
+  usageMethodDict["ball"]["description"] = [
+    ['Moves based on balls and bombs.', 6]
+  ]
+
+  # bite
+  usageMethodDict["bite"]["description"] = [
+    ['Moves based on biting.', 6]
+  ]
+
+  # dance
+  usageMethodDict["dance"]["description"] = [
+    ['Moves based on dancing.', 7]
+  ]
+
+  # explosive
+  usageMethodDict["explosive"]["description"] = [
+    ['Moves based on explosions.', 3]
+  ]
+
+  # powder
+  usageMethodDict["powder"]["description"] = [
+    ['Moves based on powders and spores.', 6]
+  ]
+
+  # punch
+  usageMethodDict["punch"]["description"] = [
+    ['Moves based on punching.', 4]
+  ]
+
+  # sound
+  usageMethodDict["sound"]["description"] = [
+    ['Moves based on sound.', 3]
+  ]
+
+
+  return usageMethodDict
+
 def main():
   usageMethodDict = makeUsageMethodDict()
+
+  addDescriptions(usageMethodDict)
+
+  for usageMethodName in usageMethodDict.keys():
+    if 'description' not in usageMethodDict[usageMethodName].keys():
+      print(usageMethodName, 'is missing a description.')
 
   return usageMethodDict
 

@@ -146,7 +146,9 @@
   },
   "arena_trap": {
     "gen": 3,
-    "effects": {},
+    "effects": {
+      "only_affects_grounded": [[true, 3]]
+    },
     "causes_status": {
       "trapped": [[100.0, 3]]
     },
@@ -2123,7 +2125,9 @@
   },
   "levitate": {
     "gen": 3,
-    "effects": {},
+    "effects": {
+      "ungrounds": [[true, 3]]
+    },
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},

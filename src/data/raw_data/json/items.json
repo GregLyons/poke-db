@@ -52,7 +52,9 @@
     "gen": 5,
     "gen2_exclusive": false,
     "knock_off": true,
-    "effects": {},
+    "effects": {
+      "ungrounds": [[true, 5]]
+    },
     "causes_status": {},
     "resists_status": {},
     "boosts_type": {},
@@ -2259,7 +2261,8 @@
     "gen2_exclusive": false,
     "knock_off": true,
     "effects": {
-      "removes_type_immunity": [[true, 4]]
+      "removes_type_immunity": [[true, 4]],
+      "grounds": [[true, 4]]
     },
     "causes_status": {},
     "resists_status": {

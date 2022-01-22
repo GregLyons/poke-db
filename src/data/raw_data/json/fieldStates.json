@@ -18,17 +18,18 @@
     "activates_ability": {},
     "activates_item": {},
     "enhances_move": {},
-    "hinders_move": {}
+    "hinders_move": {},
+    "description": [["Protects the user from having its stats decreased by the opponent's status moves.", 1], ["Protects the user from having its stats decreased by the opponent.", 2], ["Protects the user and its allies from having its stats decreased by the opponent.", 3]]
   },
   "safeguard": {
-    "gen": 1,
+    "gen": 2,
     "formatted_name": "Safeguard",
     "field_state_class": "other",
-    "damage_percent": [[0, 1]],
+    "damage_percent": [[0, 2]],
     "max_layers": 1,
     "only_grounded": false,
     "stat_modifications": {},
-    "target": [["all_allies", 1]],
+    "target": [["all_allies", 2]],
     "effects": {},
     "causes_status": {},
     "prevents_status": {
@@ -46,7 +47,8 @@
     "activates_ability": {},
     "activates_item": {},
     "enhances_move": {},
-    "hinders_move": {}
+    "hinders_move": {},
+    "description": [["Protects against non-volatile status conditions and confusion in most cases.", 2]]
   },
   "tailwind": {
     "gen": 4,
@@ -68,7 +70,8 @@
     "activates_ability": {},
     "activates_item": {},
     "enhances_move": {},
-    "hinders_move": {}
+    "hinders_move": {},
+    "description": [["Doubles the speed stat of the user and its allies.", 4]]
   },
   "vine_lash": {
     "gen": 8,
@@ -87,7 +90,8 @@
     "activates_ability": {},
     "activates_item": {},
     "enhances_move": {},
-    "hinders_move": {}
+    "hinders_move": {},
+    "description": [["Inflicts Grass-type damage equal to 1/6 of the opponents max HP each turn.", 8]]
   },
   "wildfire": {
     "gen": 8,
@@ -106,7 +110,8 @@
     "activates_ability": {},
     "activates_item": {},
     "enhances_move": {},
-    "hinders_move": {}
+    "hinders_move": {},
+    "description": [["Inflicts Fire-type damage equal to 1/6 of the opponents max HP each turn.", 8]]
   },
   "cannonade": {
     "gen": 8,
@@ -125,7 +130,8 @@
     "activates_ability": {},
     "activates_item": {},
     "enhances_move": {},
-    "hinders_move": {}
+    "hinders_move": {},
+    "description": [["Inflicts Water-type damage equal to 1/6 of the opponents max HP each turn.", 8]]
   },
   "volcalith": {
     "gen": 8,
@@ -144,7 +150,45 @@
     "activates_ability": {},
     "activates_item": {},
     "enhances_move": {},
-    "hinders_move": {}
+    "hinders_move": {},
+    "description": [["Inflicts Rock-type damage equal to 1/6 of the opponents max HP each turn.", 8]]
+  },
+  "gravity": {
+    "gen": 4,
+    "formatted_name": "Gravity",
+    "field_state_class": "other",
+    "damage_percent": [[0, 4]],
+    "max_layers": 1,
+    "only_grounded": false,
+    "stat_modifications": {
+      "accuracy": [[1.67,
+          "all", 100.0, 4]]
+    },
+    "target": [["all_foes", 8]],
+    "effects": {
+      "grounds": [[true, 4]]
+    },
+    "causes_status": {},
+    "prevents_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "activates_ability": {},
+    "activates_item": {},
+    "enhances_move": {
+      "grav_apple": [[true, 8]]
+    },
+    "hinders_move": {
+      "bounce": [[true, 4]],
+      "fly": [[true, 4]],
+      "flying_press": [[true, 6]],
+      "high_jump_kick": [[true, 4]],
+      "jump_kick": [[true, 4]],
+      "magnet_rise": [[true, 4]],
+      "sky_drop": [[true, 5]],
+      "splash": [[true, 4]],
+      "telekinesis": [[true, 5]]
+    },
+    "description": [["Grounds all Pokemon on the field and causes moves to have increased accuracy.", 4]]
   },
   "reflect": {
     "gen": 1,
@@ -167,7 +211,8 @@
     "activates_ability": {},
     "activates_item": {},
     "enhances_move": {},
-    "hinders_move": {}
+    "hinders_move": {},
+    "description": [["Doubles defense.", 1], ["Cuts the physical damage received in half (but does not increase defense).", 3]]
   },
   "light_screen": {
     "gen": 1,
@@ -190,7 +235,8 @@
     "activates_ability": {},
     "activates_item": {},
     "enhances_move": {},
-    "hinders_move": {}
+    "hinders_move": {},
+    "description": [["Doubles special defense, and doubles the Pokemon's special attack while taking damage.", 1], ["Doubles special defense.", 2], ["Cuts the special damage received in half (but does not increase special defense).", 3]]
   },
   "aurora_veil": {
     "gen": 7,
@@ -209,7 +255,8 @@
     "activates_ability": {},
     "activates_item": {},
     "enhances_move": {},
-    "hinders_move": {}
+    "hinders_move": {},
+    "description": [["Cuts the physical and special damage received in half (but does not increase defense/special defense).", 7]]
   },
   "rainbow": {
     "gen": 5,
@@ -231,7 +278,8 @@
     "activates_ability": {},
     "activates_item": {},
     "enhances_move": {},
-    "hinders_move": {}
+    "hinders_move": {},
+    "description": [["Doubles the chance of secondary effects occuring.", 5]]
   },
   "sea_of_fire": {
     "gen": 5,
@@ -250,7 +298,8 @@
     "activates_ability": {},
     "activates_item": {},
     "enhances_move": {},
-    "hinders_move": {}
+    "hinders_move": {},
+    "description": [["Damages non-Fire-type Pokemon for 1/8 max HP each turn.", 5]]
   },
   "swamp": {
     "gen": 5,
@@ -272,7 +321,8 @@
     "activates_ability": {},
     "activates_item": {},
     "enhances_move": {},
-    "hinders_move": {}
+    "hinders_move": {},
+    "description": [["Quarters the speed of all affected Pokemon.", 5]]
   },
   "stealth_rock": {
     "gen": 4,
@@ -291,7 +341,8 @@
     "activates_ability": {},
     "activates_item": {},
     "enhances_move": {},
-    "hinders_move": {}
+    "hinders_move": {},
+    "description": [["Deals Rock-type damage for 1/8 of the Pokemon's max HP on entry.", 4]]
   },
   "spikes": {
     "gen": 2,
@@ -302,7 +353,9 @@
     "only_grounded": true,
     "stat_modifications": {},
     "target": [["all_foes", 2]],
-    "effects": {},
+    "effects": {
+      "only_affects_grounded": [[true, 3]]
+    },
     "causes_status": {},
     "prevents_status": {},
     "boosts_type": {},
@@ -310,7 +363,8 @@
     "activates_ability": {},
     "activates_item": {},
     "enhances_move": {},
-    "hinders_move": {}
+    "hinders_move": {},
+    "description": [["Deals damage to grounded Pokemon on entry, dependent on their max HP and number of layers present.", 2]]
   },
   "sticky_web": {
     "gen": 6,
@@ -323,7 +377,9 @@
       "speed": [["-1", "all_foes", 100.0, 6]]
     },
     "target": [["all_foes", 6]],
-    "effects": {},
+    "effects": {
+      "only_affects_grounded": [[true, 6]]
+    },
     "causes_status": {},
     "prevents_status": {},
     "boosts_type": {},
@@ -331,7 +387,8 @@
     "activates_ability": {},
     "activates_item": {},
     "enhances_move": {},
-    "hinders_move": {}
+    "hinders_move": {},
+    "description": [["Slows grounded Pokemon on entry.", 6]]
   },
   "toxic_spikes": {
     "gen": 4,
@@ -342,7 +399,9 @@
     "only_grounded": true,
     "stat_modifications": {},
     "target": [["all_foes", 4]],
-    "effects": {},
+    "effects": {
+      "only_affects_grounded": [[true, 4]]
+    },
     "causes_status": {
       "poison": [[100.0, 4]],
       "bad_poison": [[100.0, 4]]
@@ -353,7 +412,8 @@
     "activates_ability": {},
     "activates_item": {},
     "enhances_move": {},
-    "hinders_move": {}
+    "hinders_move": {},
+    "description": [["Poisons grounded Pokemon on entry.", 4]]
   },
   "sharp_steel": {
     "gen": 8,
@@ -372,7 +432,8 @@
     "activates_ability": {},
     "activates_item": {},
     "enhances_move": {},
-    "hinders_move": {}
+    "hinders_move": {},
+    "description": [["Deals Steel-type damage for 1/8 of the Pokemon's max HP on entry.", 4]]
   },
   "clear_skies": {
     "gen": 1,
@@ -392,7 +453,8 @@
     "activates_ability": {},
     "activates_item": {},
     "enhances_move": {},
-    "hinders_move": {}
+    "hinders_move": {},
+    "description": [["Denotes the absence of other weather effects.", 1]]
   },
   "harsh_sunlight": {
     "gen": 2,
@@ -437,7 +499,8 @@
     "hinders_move": {
       "thunder": [[true, 2]],
       "hurricane": [[true, 5]]
-    }
+    },
+    "description": [["Harsh sunlight covers the field, weakening Water-type attacks and strengthing Fire-type attacks.", 2]]
   },
   "extremely_harsh_sunlight": {
     "gen": 6,
@@ -482,7 +545,8 @@
     "hinders_move": {
       "thunder": [[true, 6]],
       "hurricane": [[true, 6]]
-    }
+    },
+    "description": [["Extremely harsh sunlight covers the field, nullifying Water-type attacks and strengthing Fire-type attacks.", 6]]
   },
   "rain": {
     "gen": 2,
@@ -522,7 +586,8 @@
       "moonlight": [[true, 2]],
       "synthesis": [[true, 2]],
       "morning_sun": [[true, 2]]
-    }
+    },
+    "description": [["Rain covers the field, weakening Fire-type attacks and strengthening Water-type attacks.", 2]]
   },
   "heavy_rain": {
     "gen": 6,
@@ -562,7 +627,8 @@
       "moonlight": [[true, 6]],
       "synthesis": [[true, 6]],
       "morning_sun": [[true, 6]]
-    }
+    },
+    "description": [["A torrent of rain drenches the field, nullifying Fire-type attacks and strengthening Water-type attacks.", 6]]
   },
   "sandstorm": {
     "gen": 2,
@@ -597,7 +663,8 @@
       "solar_beam": [[true, 3]],
       "solar_blade": [[true, 7]],
       "shore_up": [[true, 7]]
-    }
+    },
+    "description": [["A tempest of sand batters the field, causing damage over time.", 2]]
   },
   "hail": {
     "gen": 3,
@@ -629,7 +696,8 @@
       "moonlight": [[true, 3]],
       "synthesis": [[true, 3]],
       "morning_sun": [[true, 3]]
-    }
+    },
+    "description": [["A tempest of ice batters the field, causing damage over time.", 3]]
   },
   "fog": {
     "gen": 4,
@@ -657,7 +725,8 @@
       "moonlight": [[true, 4]],
       "synthesis": [[true, 4]],
       "morning_sun": [[true, 4]]
-    }
+    },
+    "description": [["A dense layer of fog blankets the field, reducing accuracy.", 4]]
   },
   "strong_winds": {
     "gen": 6,
@@ -679,7 +748,8 @@
     "activates_ability": {},
     "activates_item": {},
     "enhances_move": {},
-    "hinders_move": {}
+    "hinders_move": {},
+    "description": [["Strong winds blow on the field, preventing most other weather effects, and making moves that would be super effective against pure Flying-type Pokemon to be only normally effective against those Pokemon.", 6]]
   },
   "electric_terrain": {
     "gen": 6,
@@ -690,7 +760,9 @@
     "only_grounded": true,
     "stat_modifications": {},
     "target": [["all", 6]],
-    "effects": {},
+    "effects": {
+      "only_affects_grounded": [[true, 6]]
+    },
     "causes_status": {},
     "prevents_status": {
       "sleep": [[true, 6]],
@@ -711,7 +783,8 @@
       "rising_voltage": [[true, 8]],
       "terrain_pulse": [[true, 8]]
     },
-    "hinders_move": {}
+    "hinders_move": {},
+    "description": [["Electricity covers the field, boosting the power of Electric-type moves.", 6]]
   },
   "grassy_terrain": {
     "gen": 6,
@@ -723,6 +796,7 @@
     "stat_modifications": {},
     "target": [["all", 6]],
     "effects": {
+      "only_affects_grounded": [[true, 6]],
       "restores_hp": [[true, 6]]
     },
     "causes_status": {},
@@ -747,7 +821,8 @@
       "bulldoze": [[true, 6]],
       "earthquake": [[true, 6]],
       "magnitude": [[true, 6]]
-    }
+    },
+    "description": [["Grass covers the field, boosting the power of Grass-type moves.", 6]]
   },
   "misty_terrain": {
     "gen": 6,
@@ -758,7 +833,9 @@
     "only_grounded": true,
     "stat_modifications": {},
     "target": [["all", 6]],
-    "effects": {},
+    "effects": {
+      "only_affects_grounded": [[true, 6]]
+    },
     "causes_status": {},
     "prevents_status": {
       "burn": [[true, 6]],
@@ -784,7 +861,8 @@
       "misty_explosion": [[true, 8]],
       "terrain_pulse": [[true, 8]]
     },
-    "hinders_move": {}
+    "hinders_move": {},
+    "description": [["Mist covers the field, weakening the power of Dragon-type moves.", 6]]
   },
   "psychic_terrain": {
     "gen": 6,
@@ -796,6 +874,7 @@
     "stat_modifications": {},
     "target": [["all", 6]],
     "effects": {
+      "only_affects_grounded": [[true, 6]],
       "protects_against_priority": [[true, 6]]
     },
     "causes_status": {},
@@ -814,7 +893,8 @@
       "expanding_force": [[true, 8]],
       "terrain_pulse": [[true, 8]]
     },
-    "hinders_move": {}
+    "hinders_move": {},
+    "description": [["Psychic energies cover the field, boosting the power of Psychic-type moves.", 6]]
   },
   "trick_room": {
     "gen": 4,
@@ -837,19 +917,20 @@
       "room_service": [[true, 8]]
     },
     "enhances_move": {},
-    "hinders_move": {}
+    "hinders_move": {},
+    "description": [["A tricky room which reverses the move order within each priority bracket.", 4]]
   },
   "magic_room": {
-    "gen": 8,
+    "gen": 5,
     "formatted_name": "Magic room",
     "field_state_class": "room",
-    "damage_percent": [[0, 8]],
+    "damage_percent": [[0, 5]],
     "max_layers": 1,
     "only_grounded": false,
     "stat_modifications": {},
-    "target": [["all", 8]],
+    "target": [["all", 5]],
     "effects": {
-      "manipulates_item": [[true, 8]]
+      "manipulates_item": [[true, 5]]
     },
     "causes_status": {},
     "prevents_status": {},
@@ -858,17 +939,18 @@
     "activates_ability": {},
     "activates_item": {},
     "enhances_move": {},
-    "hinders_move": {}
+    "hinders_move": {},
+    "description": [["A magical room in which Pokemon cannot use their held items.", 5]]
   },
   "wonder_room": {
-    "gen": 8,
+    "gen": 5,
     "formatted_name": "Wonder room",
     "field_state_class": "room",
-    "damage_percent": [[0, 8]],
+    "damage_percent": [[0, 5]],
     "max_layers": 1,
     "only_grounded": false,
     "stat_modifications": {},
-    "target": [["all", 8]],
+    "target": [["all", 5]],
     "effects": {},
     "causes_status": {},
     "prevents_status": {},
@@ -877,6 +959,7 @@
     "activates_ability": {},
     "activates_item": {},
     "enhances_move": {},
-    "hinders_move": {}
+    "hinders_move": {},
+    "description": [["A wondrous room which swaps the Defense and Special Defense of all Pokemon.", 5]]
   }
 }

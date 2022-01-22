@@ -86,8 +86,15 @@ def addEffectData(fpath, abilityDict):
     abilityDict["synchronize"]["causes_status"]["bad_poison"] = [[0.0, 3], [100.0, 5]]
     abilityDict["synchronize"]["causes_status"]["paralysis"] = [[100.0, 3]]
 
+    # perish_body
     abilityDict["perish_body"]["causes_status"]["perish_song"] = [[100.0, 8]]
     abilityDict["perish_body"]["effects"]["punishes_contact"] = [[True, 8]]
+
+    # arena_trap
+    abilityDict["arena_trap"]["effects"]["only_affects_grounded"] = [[True, 3]]
+
+    # levitate
+    abilityDict["levitate"]["effects"]["ungrounds"] = [[True, 3]]
 
     abilityDict["scrappy"]["causes_status"]["identified"] = [[100.0, 4]]
 
