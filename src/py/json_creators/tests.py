@@ -302,28 +302,28 @@ def pokemonTests(pokemonDict):
 
   # Arceus forms handled
   arceusFormData = {
-    "arceus_grass": [["other", 4]],
-    "arceus_fairy": [["other", 6]],
-    "arceus_electric": [["other", 4]],
-    "arceus_steel": [["other", 4]],
-    "arceus_flying": [["other", 4]],
-    "arceus_dark": [["other", 4]],
-    "arceus_ice": [["other", 4]],
-    "arceus_poison": [["other", 4]],
-    "arceus_bug": [["other", 4]],
-    "arceus_ground": [["other", 4]],
-    "arceus_fighting": [["other", 4]],
-    "arceus_psychic": [["other", 4]],
-    "arceus_ghost": [["other", 4]],
-    "arceus_water": [["other", 4]],
-    "arceus_fire": [["other", 4]],
-    "arceus_rock": [["other", 4]],
-    "arceus_dragon": [["other", 4]]
+    "arceus_grass": [["type", 4]],
+    "arceus_fairy": [["type", 6]],
+    "arceus_electric": [["type", 4]],
+    "arceus_steel": [["type", 4]],
+    "arceus_flying": [["type", 4]],
+    "arceus_dark": [["type", 4]],
+    "arceus_ice": [["type", 4]],
+    "arceus_poison": [["type", 4]],
+    "arceus_bug": [["type", 4]],
+    "arceus_ground": [["type", 4]],
+    "arceus_fighting": [["type", 4]],
+    "arceus_psychic": [["type", 4]],
+    "arceus_ghost": [["type", 4]],
+    "arceus_water": [["type", 4]],
+    "arceus_fire": [["type", 4]],
+    "arceus_rock": [["type", 4]],
+    "arceus_dragon": [["type", 4]]
   }
   checkDataPoint(pokemonDict["arceus_normal"]["form_data"], arceusFormData, 'arceus', 'form_data', '')
 
   # Arceus Ice not classified as base form (even though '_ice' and '_normal' are both suffices for base forms).
-  checkDataPoint(pokemonDict["arceus_ice"]["form_class"], [["other", 4]], 'arceus', 'form_class', '')
+  checkDataPoint(pokemonDict["arceus_ice"]["form_class"], [["type", 4]], 'arceus', 'form_class', '')
 
 
   # Evolution data checks

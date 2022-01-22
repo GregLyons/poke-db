@@ -369,10 +369,19 @@ const addLearnsetsToPokemonArr = (learnsets, moves, pokemon, pokemonArr) => {
   const {pokemonMap, inversePokemonMap} = getPokemonLearnsetMaps(learnsets, pokemon);
   
   const {updatedLearnsets, moveMap, inverseMoveMap} = getUpdatedLearnsets(learnsets, moves, pokemon);
+
+  // Keys will be names of evolutions (e.g. 'wartortle', 'blastoise', but not 'squirtle'); values will be objects. The keys of these objects will be move names, and the values will be arrays of gens, e.g. { 'absorb': [5, 6, 7, 8] } on 'ivysaur' would signify that 'bulbasaur' learns 'absorb' in gens 5-8, so 'ivysaur' will certainly have access to 'absorb' in gens 5-8
+  const evolutionLearnsetMap = new Map();
   
   for (let pokemonEntry of pokemonArr) {
 
     const pokemonName = pokemonEntry.name;
+    const evolutionData = pokemonEntry.evolves_to;
+    const evolutionNames = Object.keys(evolutionData);
+
+    for (let evolutionName of evolutionNames) {
+      if (!evolutionLearnsetMap.has(evolutionName)) evolutionLearnsetMap.set(evolutionName, {});
+    }
     
     pokemonEntry['learnset'] = {};
 
@@ -380,6 +389,19 @@ const addLearnsetsToPokemonArr = (learnsets, moves, pokemon, pokemonArr) => {
     for (let learnsetMoveName of Object.keys(updatedLearnsets[pokemonMap.get(pokemonName)].learnset)) {
       const moveName = inverseMoveMap.get(learnsetMoveName);
       pokemonEntry.learnset[moveName] = updatedLearnsets[pokemonMap.get(pokemonName)].learnset[learnsetMoveName];
+
+      // Extract gens and remove duplicates, e.g. ['6E', '7E', '7M', '8E', '8M'] => [6, 7, 8].
+      const movePresenceInGenArr = [...new Set(updatedLearnsets[pokemonMap.get(pokemonName)].learnset[learnsetMoveName].map(learnDatum => learnDatum[0]))];
+
+      // For each evolution, 
+      for (let evolutionName of evolutionNames) {
+        evolutionLearnsetMap.set(evolutionName,
+          {
+            ...evolutionLearnsetMap.get(evolutionName),
+            [learnsetMoveName]: movePresenceInGenArr,
+          }
+        );
+      }
     }
 
     // add event data
@@ -395,6 +417,28 @@ const addLearnsetsToPokemonArr = (learnsets, moves, pokemon, pokemonArr) => {
       }
     }
     pokemonEntry['event_data'] = pokemonEventData;
+  }
+
+  return evolutionLearnsetMap;
+}
+
+
+const addLearnDataToEvolutions = (evolutionLearnsetMap, pokemonArr) => {
+  for (let pokemonEntry of pokemonArr) {
+    const pokemonName = pokemonEntry.name;
+    const evolutionLearnsetData = evolutionLearnsetMap.get(pokemonName);
+
+    if (evolutionLearnsetData) {
+      const pokemonLearnset = pokemonEntry.learnset;
+      for (let moveName of Object.keys(evolutionLearnsetData)) {
+        if (pokemonLearnset[moveName]) {
+          pokemonLearnset[moveName] = pokemonLearnset[moveName].concat(evolutionLearnsetData[moveName].map(gen => gen + 'EV'));
+        }
+        else {
+          pokemonLearnset[moveName] = evolutionLearnsetData[moveName].map(gen => gen + 'EV');
+        }
+      }
+    }
   }
 }
 
@@ -520,5 +564,6 @@ const addPokemonShowdownIDToPokemonArr = (psIDs, pokemonArr) => {
 module.exports = {
   mergeLearnsets,
   addLearnsetsToPokemonArr,
+  addLearnDataToEvolutions,
   addPokemonShowdownIDToPokemonArr,
 }

@@ -112,6 +112,7 @@ CREATE TABLE IF NOT EXISTS field_state (
   field_state_only_grounded TINYINT UNSIGNED NOT NULL,
   field_state_class ENUM('entry_hazard', 'other', 'pledge', 'room', 'screen', 'terrain', 'weather'),
   field_state_target ENUM('all', 'all_allies', 'all_foes'),
+  field_state_description VARCHAR(255) NOT NULL,
 
   PRIMARY KEY (generation_id, field_state_id),
   FOREIGN KEY (introduced) REFERENCES generation(generation_id)
@@ -142,6 +143,7 @@ CREATE TABLE IF NOT EXISTS usage_method (
   usage_method_name VARCHAR(45) NOT NULL,
   usage_method_formatted_name VARCHAR(45) NOT NULL,
   introduced TINYINT UNSIGNED NOT NULL,
+  usage_method_description VARCHAR(255) NOT NULL,
 
   PRIMARY KEY (generation_id, usage_method_id),
   FOREIGN KEY (introduced) REFERENCES generation(generation_id)
@@ -219,6 +221,7 @@ CREATE TABLE IF NOT EXISTS stat (
   stat_name VARCHAR(45) NOT NULL,
   stat_formatted_name VARCHAR(45) NOT NULL,
   introduced TINYINT UNSIGNED NOT NULL,
+  stat_description VARCHAR(255) NOT NULL,
 
   PRIMARY KEY (generation_id, stat_id),
   INDEX (stat_id)

@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS pokemon_form (
   base_form_id SMALLINT UNSIGNED NOT NULL,
   form_generation_id TINYINT UNSIGNED NOT NULL,
   form_id SMALLINT UNSIGNED NOT NULL,
-  form_class ENUM('mega', 'alola', 'galar', 'gmax', 'other', 'base', 'cosmetic'),
+  form_class ENUM('mega', 'alola', 'galar', 'gmax', 'other', 'base', 'cosmetic', 'type'),
 
   PRIMARY KEY (base_form_generation_id, base_form_id, form_generation_id, form_id),
   FOREIGN KEY (base_form_generation_id, base_form_id) REFERENCES pokemon(generation_id, pokemon_id)

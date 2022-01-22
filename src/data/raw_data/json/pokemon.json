@@ -10045,9 +10045,9 @@
       "castform", 351
     ],
     "form_data": {
-      "castform_sunny": [["other", 3]],
-      "castform_rainy": [["other", 3]],
-      "castform_snowy": [["other", 3]]
+      "castform_sunny": [["type", 3]],
+      "castform_rainy": [["type", 3]],
+      "castform_snowy": [["type", 3]]
     },
     "form_class": [["base", 3]],
     "formatted_name": "Castform (Normal)"
@@ -10077,7 +10077,7 @@
     "form_data": {
       "castform_normal": [["base", 3]]
     },
-    "form_class": [["other", 3]],
+    "form_class": [["type", 3]],
     "formatted_name": "Castform (Sunny)"
   },
   "castform_rainy": {
@@ -10105,7 +10105,7 @@
     "form_data": {
       "castform_normal": [["base", 3]]
     },
-    "form_class": [["other", 3]],
+    "form_class": [["type", 3]],
     "formatted_name": "Castform (Rainy)"
   },
   "castform_snowy": {
@@ -10133,7 +10133,7 @@
     "form_data": {
       "castform_normal": [["base", 3]]
     },
-    "form_class": [["other", 3]],
+    "form_class": [["type", 3]],
     "formatted_name": "Castform (Snowy)"
   },
   "kecleon": {
@@ -14214,7 +14214,7 @@
     "form_data": {
       "arceus_normal": [["base", 4]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["type", 4]],
     "formatted_name": "Arceus (Grass)"
   },
   "arceus_fairy": {
@@ -14242,7 +14242,7 @@
     "form_data": {
       "arceus_normal": [["base", 6]]
     },
-    "form_class": [["other", 6]],
+    "form_class": [["type", 6]],
     "formatted_name": "Arceus (Fairy)"
   },
   "arceus_electric": {
@@ -14270,7 +14270,7 @@
     "form_data": {
       "arceus_normal": [["base", 4]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["type", 4]],
     "formatted_name": "Arceus (Electric)"
   },
   "arceus_steel": {
@@ -14298,7 +14298,7 @@
     "form_data": {
       "arceus_normal": [["base", 4]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["type", 4]],
     "formatted_name": "Arceus (Steel)"
   },
   "arceus_flying": {
@@ -14326,7 +14326,7 @@
     "form_data": {
       "arceus_normal": [["base", 4]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["type", 4]],
     "formatted_name": "Arceus (Flying)"
   },
   "arceus_dark": {
@@ -14354,7 +14354,7 @@
     "form_data": {
       "arceus_normal": [["base", 4]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["type", 4]],
     "formatted_name": "Arceus (Dark)"
   },
   "arceus_ice": {
@@ -14382,7 +14382,7 @@
     "form_data": {
       "arceus_normal": [["base", 4]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["type", 4]],
     "formatted_name": "Arceus (Ice)"
   },
   "arceus_poison": {
@@ -14410,7 +14410,7 @@
     "form_data": {
       "arceus_normal": [["base", 4]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["type", 4]],
     "formatted_name": "Arceus (Poison)"
   },
   "arceus_bug": {
@@ -14438,7 +14438,7 @@
     "form_data": {
       "arceus_normal": [["base", 4]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["type", 4]],
     "formatted_name": "Arceus (Bug)"
   },
   "arceus_normal": {
@@ -14464,23 +14464,23 @@
       "arceus-normal", 493
     ],
     "form_data": {
-      "arceus_grass": [["other", 4]],
-      "arceus_fairy": [["other", 6]],
-      "arceus_electric": [["other", 4]],
-      "arceus_steel": [["other", 4]],
-      "arceus_flying": [["other", 4]],
-      "arceus_dark": [["other", 4]],
-      "arceus_ice": [["other", 4]],
-      "arceus_poison": [["other", 4]],
-      "arceus_bug": [["other", 4]],
-      "arceus_ground": [["other", 4]],
-      "arceus_fighting": [["other", 4]],
-      "arceus_psychic": [["other", 4]],
-      "arceus_ghost": [["other", 4]],
-      "arceus_water": [["other", 4]],
-      "arceus_fire": [["other", 4]],
-      "arceus_rock": [["other", 4]],
-      "arceus_dragon": [["other", 4]]
+      "arceus_grass": [["type", 4]],
+      "arceus_fairy": [["type", 6]],
+      "arceus_electric": [["type", 4]],
+      "arceus_steel": [["type", 4]],
+      "arceus_flying": [["type", 4]],
+      "arceus_dark": [["type", 4]],
+      "arceus_ice": [["type", 4]],
+      "arceus_poison": [["type", 4]],
+      "arceus_bug": [["type", 4]],
+      "arceus_ground": [["type", 4]],
+      "arceus_fighting": [["type", 4]],
+      "arceus_psychic": [["type", 4]],
+      "arceus_ghost": [["type", 4]],
+      "arceus_water": [["type", 4]],
+      "arceus_fire": [["type", 4]],
+      "arceus_rock": [["type", 4]],
+      "arceus_dragon": [["type", 4]]
     },
     "form_class": [["base", 4]],
     "formatted_name": "Arceus (Normal)"
@@ -14510,7 +14510,7 @@
     "form_data": {
       "arceus_normal": [["base", 4]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["type", 4]],
     "formatted_name": "Arceus (Ground)"
   },
   "arceus_fighting": {
@@ -14538,7 +14538,7 @@
     "form_data": {
       "arceus_normal": [["base", 4]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["type", 4]],
     "formatted_name": "Arceus (Fighting)"
   },
   "arceus_psychic": {
@@ -14566,7 +14566,7 @@
     "form_data": {
       "arceus_normal": [["base", 4]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["type", 4]],
     "formatted_name": "Arceus (Psychic)"
   },
   "arceus_ghost": {
@@ -14594,7 +14594,7 @@
     "form_data": {
       "arceus_normal": [["base", 4]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["type", 4]],
     "formatted_name": "Arceus (Ghost)"
   },
   "arceus_water": {
@@ -14622,7 +14622,7 @@
     "form_data": {
       "arceus_normal": [["base", 4]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["type", 4]],
     "formatted_name": "Arceus (Water)"
   },
   "arceus_fire": {
@@ -14650,7 +14650,7 @@
     "form_data": {
       "arceus_normal": [["base", 4]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["type", 4]],
     "formatted_name": "Arceus (Fire)"
   },
   "arceus_rock": {
@@ -14678,7 +14678,7 @@
     "form_data": {
       "arceus_normal": [["base", 4]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["type", 4]],
     "formatted_name": "Arceus (Rock)"
   },
   "arceus_dragon": {
@@ -14706,7 +14706,7 @@
     "form_data": {
       "arceus_normal": [["base", 4]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["type", 4]],
     "formatted_name": "Arceus (Dragon)"
   },
   "victini": {
@@ -22479,7 +22479,7 @@
     "form_data": {
       "silvally_normal": [["base", 7]]
     },
-    "form_class": [["other", 7]],
+    "form_class": [["type", 7]],
     "formatted_name": "Silvally (Grass)"
   },
   "silvally_fairy": {
@@ -22509,7 +22509,7 @@
     "form_data": {
       "silvally_normal": [["base", 7]]
     },
-    "form_class": [["other", 7]],
+    "form_class": [["type", 7]],
     "formatted_name": "Silvally (Fairy)"
   },
   "silvally_electric": {
@@ -22539,7 +22539,7 @@
     "form_data": {
       "silvally_normal": [["base", 7]]
     },
-    "form_class": [["other", 7]],
+    "form_class": [["type", 7]],
     "formatted_name": "Silvally (Electric)"
   },
   "silvally_steel": {
@@ -22569,7 +22569,7 @@
     "form_data": {
       "silvally_normal": [["base", 7]]
     },
-    "form_class": [["other", 7]],
+    "form_class": [["type", 7]],
     "formatted_name": "Silvally (Steel)"
   },
   "silvally_flying": {
@@ -22599,7 +22599,7 @@
     "form_data": {
       "silvally_normal": [["base", 7]]
     },
-    "form_class": [["other", 7]],
+    "form_class": [["type", 7]],
     "formatted_name": "Silvally (Flying)"
   },
   "silvally_dark": {
@@ -22629,7 +22629,7 @@
     "form_data": {
       "silvally_normal": [["base", 7]]
     },
-    "form_class": [["other", 7]],
+    "form_class": [["type", 7]],
     "formatted_name": "Silvally (Dark)"
   },
   "silvally_ice": {
@@ -22659,7 +22659,7 @@
     "form_data": {
       "silvally_normal": [["base", 7]]
     },
-    "form_class": [["other", 7]],
+    "form_class": [["type", 7]],
     "formatted_name": "Silvally (Ice)"
   },
   "silvally_poison": {
@@ -22689,7 +22689,7 @@
     "form_data": {
       "silvally_normal": [["base", 7]]
     },
-    "form_class": [["other", 7]],
+    "form_class": [["type", 7]],
     "formatted_name": "Silvally (Poison)"
   },
   "silvally_bug": {
@@ -22719,7 +22719,7 @@
     "form_data": {
       "silvally_normal": [["base", 7]]
     },
-    "form_class": [["other", 7]],
+    "form_class": [["type", 7]],
     "formatted_name": "Silvally (Bug)"
   },
   "silvally_normal": {
@@ -22747,23 +22747,23 @@
       "silvally-normal", 773
     ],
     "form_data": {
-      "silvally_grass": [["other", 7]],
-      "silvally_fairy": [["other", 7]],
-      "silvally_electric": [["other", 7]],
-      "silvally_steel": [["other", 7]],
-      "silvally_flying": [["other", 7]],
-      "silvally_dark": [["other", 7]],
-      "silvally_ice": [["other", 7]],
-      "silvally_poison": [["other", 7]],
-      "silvally_bug": [["other", 7]],
-      "silvally_ground": [["other", 7]],
-      "silvally_fighting": [["other", 7]],
-      "silvally_psychic": [["other", 7]],
-      "silvally_ghost": [["other", 7]],
-      "silvally_water": [["other", 7]],
-      "silvally_fire": [["other", 7]],
-      "silvally_rock": [["other", 7]],
-      "silvally_dragon": [["other", 7]]
+      "silvally_grass": [["type", 7]],
+      "silvally_fairy": [["type", 7]],
+      "silvally_electric": [["type", 7]],
+      "silvally_steel": [["type", 7]],
+      "silvally_flying": [["type", 7]],
+      "silvally_dark": [["type", 7]],
+      "silvally_ice": [["type", 7]],
+      "silvally_poison": [["type", 7]],
+      "silvally_bug": [["type", 7]],
+      "silvally_ground": [["type", 7]],
+      "silvally_fighting": [["type", 7]],
+      "silvally_psychic": [["type", 7]],
+      "silvally_ghost": [["type", 7]],
+      "silvally_water": [["type", 7]],
+      "silvally_fire": [["type", 7]],
+      "silvally_rock": [["type", 7]],
+      "silvally_dragon": [["type", 7]]
     },
     "form_class": [["base", 7]],
     "formatted_name": "Silvally (Normal)"
@@ -22795,7 +22795,7 @@
     "form_data": {
       "silvally_normal": [["base", 7]]
     },
-    "form_class": [["other", 7]],
+    "form_class": [["type", 7]],
     "formatted_name": "Silvally (Ground)"
   },
   "silvally_fighting": {
@@ -22825,7 +22825,7 @@
     "form_data": {
       "silvally_normal": [["base", 7]]
     },
-    "form_class": [["other", 7]],
+    "form_class": [["type", 7]],
     "formatted_name": "Silvally (Fighting)"
   },
   "silvally_psychic": {
@@ -22855,7 +22855,7 @@
     "form_data": {
       "silvally_normal": [["base", 7]]
     },
-    "form_class": [["other", 7]],
+    "form_class": [["type", 7]],
     "formatted_name": "Silvally (Psychic)"
   },
   "silvally_ghost": {
@@ -22885,7 +22885,7 @@
     "form_data": {
       "silvally_normal": [["base", 7]]
     },
-    "form_class": [["other", 7]],
+    "form_class": [["type", 7]],
     "formatted_name": "Silvally (Ghost)"
   },
   "silvally_water": {
@@ -22915,7 +22915,7 @@
     "form_data": {
       "silvally_normal": [["base", 7]]
     },
-    "form_class": [["other", 7]],
+    "form_class": [["type", 7]],
     "formatted_name": "Silvally (Water)"
   },
   "silvally_fire": {
@@ -22945,7 +22945,7 @@
     "form_data": {
       "silvally_normal": [["base", 7]]
     },
-    "form_class": [["other", 7]],
+    "form_class": [["type", 7]],
     "formatted_name": "Silvally (Fire)"
   },
   "silvally_rock": {
@@ -22975,7 +22975,7 @@
     "form_data": {
       "silvally_normal": [["base", 7]]
     },
-    "form_class": [["other", 7]],
+    "form_class": [["type", 7]],
     "formatted_name": "Silvally (Rock)"
   },
   "silvally_dragon": {
@@ -23005,7 +23005,7 @@
     "form_data": {
       "silvally_normal": [["base", 7]]
     },
-    "form_class": [["other", 7]],
+    "form_class": [["type", 7]],
     "formatted_name": "Silvally (Dragon)"
   },
   "minior": {

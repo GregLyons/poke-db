@@ -33,7 +33,8 @@ INSERT INTO stat (
   generation_id,
   stat_name,
   stat_formatted_name,
-  introduced
+  introduced,
+  stat_description
 ) VALUES ?;
 
 /*
@@ -59,7 +60,8 @@ INSERT INTO usage_method (
   generation_id,
   usage_method_name,
   usage_method_formatted_name,
-  introduced
+  introduced,
+  usage_method_description
 ) VALUES ?;
 
 INSERT INTO ability (
@@ -129,7 +131,8 @@ INSERT INTO field_state (
   field_state_max_layers,
   field_state_only_grounded,
   field_state_class,
-  field_state_target
+  field_state_target,
+  field_state_description
 ) VALUES ?;
 
 INSERT INTO nature (

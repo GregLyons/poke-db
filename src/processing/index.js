@@ -88,9 +88,11 @@ const learnsets = mergeLearnsets(gen2Learnsets, laterLearnsets);
 // #region
 
 const { pokemon: psIDs, } = require(RAW_DATA_PATH + 'ps-img.json');
-const { addLearnsetsToPokemonArr, addPokemonShowdownIDToPokemonArr, } = require('./utils/index.js');
-addLearnsetsToPokemonArr(learnsets, moves, pokemon, pokemonArr);
-addPokemonShowdownIDToPokemonArr(psIDs, pokemonArr)
+const { addLearnsetsToPokemonArr, addLearnDataToEvolutions, addPokemonShowdownIDToPokemonArr, } = require('./utils/index.js');
+const evolutionLearnsetMap = addLearnsetsToPokemonArr(learnsets, moves, pokemon, pokemonArr);
+addLearnDataToEvolutions(evolutionLearnsetMap, pokemonArr);
+addPokemonShowdownIDToPokemonArr(psIDs, pokemonArr);
+
 
 
 // Separate out LGPE only Pokemon
