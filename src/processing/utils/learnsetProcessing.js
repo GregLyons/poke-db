@@ -398,7 +398,7 @@ const addLearnsetsToPokemonArr = (learnsets, moves, pokemon, pokemonArr) => {
         evolutionLearnsetMap.set(evolutionName,
           {
             ...evolutionLearnsetMap.get(evolutionName),
-            [learnsetMoveName]: movePresenceInGenArr,
+            [moveName]: movePresenceInGenArr,
           }
         );
       }
@@ -422,7 +422,7 @@ const addLearnsetsToPokemonArr = (learnsets, moves, pokemon, pokemonArr) => {
   return evolutionLearnsetMap;
 }
 
-
+// For Pokemon which can only learn a move through evolution, add that move to their learnset
 const addLearnDataToEvolutions = (evolutionLearnsetMap, pokemonArr) => {
   for (let pokemonEntry of pokemonArr) {
     const pokemonName = pokemonEntry.name;
@@ -431,11 +431,12 @@ const addLearnDataToEvolutions = (evolutionLearnsetMap, pokemonArr) => {
     if (evolutionLearnsetData) {
       const pokemonLearnset = pokemonEntry.learnset;
       for (let moveName of Object.keys(evolutionLearnsetData)) {
-        if (pokemonLearnset[moveName]) {
-          pokemonLearnset[moveName] = pokemonLearnset[moveName].concat(evolutionLearnsetData[moveName].map(gen => gen + 'EV'));
-        }
-        else {
+        if (!pokemonLearnset[moveName]) {
           pokemonLearnset[moveName] = evolutionLearnsetData[moveName].map(gen => gen + 'EV');
+        }
+        // If the Pokemon can learn the move another way, do not add the 'EV' method to its learnset.
+        else {
+          // pokemonLearnset[moveName] = pokemonLearnset[moveName].concat(evolutionLearnsetData[moveName].map(gen => gen + 'EV'));
         }
       }
     }

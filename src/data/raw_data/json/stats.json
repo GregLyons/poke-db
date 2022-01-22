@@ -11,7 +11,8 @@
   },
   "special_attack": {
     "gen": 1,
-    "formatted_name": "Special attack"
+    "formatted_name": "Special attack",
+    "description": [["Determines the damage done by special moves used by this Pokemon. In Generation 1, Special Attack and Special Defense are combined into a single stat, 'Special'.", 1], ["Determines the damage done by special moves used by this Pokemon.", 2]]
   },
   "special_defense": {
     "gen": 1,

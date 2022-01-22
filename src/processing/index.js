@@ -90,6 +90,8 @@ const learnsets = mergeLearnsets(gen2Learnsets, laterLearnsets);
 const { pokemon: psIDs, } = require(RAW_DATA_PATH + 'ps-img.json');
 const { addLearnsetsToPokemonArr, addLearnDataToEvolutions, addPokemonShowdownIDToPokemonArr, } = require('./utils/index.js');
 const evolutionLearnsetMap = addLearnsetsToPokemonArr(learnsets, moves, pokemon, pokemonArr);
+// In the PS learnset data, some evolutions are listed as not being able to learn moves, even when their prevolutions can learn those moves. In such a case, we add an 'EV' flag to the move in question for the evolution's learnset data. 
+// To improve performance and reduce space in the database, we do not add an 'EV' flag to every move learned by a prevolution in an evolution's learnset data, as this would nearly double the learnset data in the database, which already comprises the bulk of the data stored.
 addLearnDataToEvolutions(evolutionLearnsetMap, pokemonArr);
 addPokemonShowdownIDToPokemonArr(psIDs, pokemonArr);
 

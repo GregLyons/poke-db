@@ -117,10 +117,11 @@ const getValuesForTable = (
       pTypeData = entityData;
       break;
 
-    case 'fieldStateJunctionTables':
+    case 'usageMethodJunctionTables':
       [
         ability_FKM,
         item_FKM,
+        usageMethod_FKM,
       ] = foreignKeyMaps;
       usageMethodData = entityData;
       break;
@@ -261,11 +262,18 @@ const getValuesForTable = (
         Need (
           generation_id
           stat_name,
-          stat_formatted_name
-          introduced
+          stat_formatted_name,
+          introduced,
+          stat_description
         )
       */
-      values = require(PROCESSED_DATA_PATH + 'stats.json').map(data => [data.gen, data.name, data.formatted_name, data.introduced]);
+      values = require(PROCESSED_DATA_PATH + 'stats.json').map(data => [
+        data.gen,
+        data.name,
+        data.formatted_name,
+        data.introduced,
+        data.description,
+      ]);
       break;
 
     case 'ability':
@@ -307,7 +315,8 @@ const getValuesForTable = (
           field_state_max_layers,
           field_state_only_grounded,
           field_state_class,
-          field_state_target
+          field_state_target,
+          field_state_description
         )
       */
       values = require(PROCESSED_DATA_PATH + 'fieldStates.json')
@@ -321,6 +330,7 @@ const getValuesForTable = (
           data.only_grounded,
           data.field_state_class,
           data.target,
+          data.description,
         ]);
       break;
 
@@ -479,13 +489,20 @@ const getValuesForTable = (
       /*
         Need (
           generation_id,
-          usage_method_name
-          usage_method_formatted_name
-          introduced
+          usage_method_name,
+          usage_method_formatted_name,
+          introduced,
+          usage_method_description
         )
       */
       values = require(PROCESSED_DATA_PATH + 'usageMethods.json')
-        .map(data => [data.gen, data.name, data.formatted_name, data.introduced]);
+        .map(data => [
+          data.gen,
+          data.name,
+          data.formatted_name,
+          data.introduced,
+          data.description
+        ]);
       break;
 
     case 'version_group':
@@ -602,7 +619,9 @@ const getValuesForTable = (
 
             // stage
             if (stageOrMultiplier) {
-              modifier = parseInt(modifier.slice(1), 0);
+              sign = modifier.includes('-') ? -1 : 1;
+              modifier = parseInt(modifier.slice(1), 10);
+
               return modifier != 0 
               ? [gen, abilityID, gen, statID, modifier, 1.0, 100.00, recipient]
               : [];
@@ -769,7 +788,7 @@ const getValuesForTable = (
         return acc.concat(
           Object.keys(usageMethodData).map(usageMethodName => {
             // We always compare entities of the same generation.
-            const { usage_method_id: usageMethodID } = usageMethod_FKM.get(makeMapKey([usageMethodName, gen,]));
+            const { usage_method_id: usageMethodID } = usageMethod_FKM.get(makeMapKey([gen, usageMethodName, ]));
 
               return usageMethodData[usageMethodName]
                 ? [gen, abilityID, gen, usageMethodID]
@@ -818,7 +837,9 @@ const getValuesForTable = (
 
             // stage
             if (stageOrMultiplier) {
-              modifier = parseInt(modifier.slice(1), 0);
+              sign = modifier.includes('-') ? -1 : 1;
+              modifier = parseInt(modifier.slice(1), 10);
+
               return modifier != 0 
               ? [gen, fieldStateID, gen, statID, modifier, 1.0, 100.00, recipient]
               : [];
@@ -1208,7 +1229,9 @@ const getValuesForTable = (
 
             // stage
             if (stageOrMultiplier) {
+              sign = modifier.includes('-') ? -1 : 1;
               modifier = parseInt(modifier.slice(1), 10);
+
               return modifier != 0 
               ? [gen, itemID, gen, statID, modifier, 1.0, 100.00, recipient]
               : [];
@@ -1600,12 +1623,12 @@ const getValuesForTable = (
       values = moveData.reduce((acc, curr) => {
         // Get ability data from curr.
         const { gen: gen, name: moveName, [usageMethodActionKey]: usageMethodData } = curr;
-        const { pmove_id: moveID } = ability_FKM.get(makeMapKey([gen,moveName, ]));
+        const { pmove_id: moveID } = move_FKM.get(makeMapKey([gen, moveName, ]));
 
         return acc.concat(
           Object.keys(usageMethodData).map(usageMethodName => {
             // We always compare entities of the same generation.
-            const { usage_method_id: usageMethodID } = usageMethod_FKM.get(makeMapKey([usageMethodName, gen,]));
+            const { usage_method_id: usageMethodID } = usageMethod_FKM.get(makeMapKey([gen, usageMethodName, ]));
 
               return usageMethodData[usageMethodName]
                 ? [gen, moveID, gen, usageMethodID]
@@ -1646,9 +1669,11 @@ const getValuesForTable = (
             
             // stage
             if (stageOrMultiplier) {
+              sign = modifier.includes('-') ? -1 : 1;
               modifier = parseInt(modifier.slice(1), 10);
+
               return modifier != 0 
-              ? [gen, moveID, gen, statID, modifier, 1.0, chance, recipient]
+              ? [gen, moveID, gen, statID, modifier * sign, 1.0, chance, recipient]
               : [];
             }
             // multiplier
@@ -1827,7 +1852,9 @@ const getValuesForTable = (
             
             // stage
             if (stageOrMultiplier) {
+              sign = modifier.includes('-') ? -1 : 1;
               modifier = parseInt(modifier.slice(1), 10);
+
               return modifier != 0 
               ? [gen, natureID, gen, statID, modifier, 1.0, 100.0, 'user']
               : [];
@@ -1955,7 +1982,7 @@ const getValuesForTable = (
         values = usageMethodData.reduce((acc, curr) => {
           // Get ability data from curr.
           const { gen: gen, name: usageMethodName, activates_ability: abilityData } = curr;
-          const { usage_method_id: usageMethodID } = usageMethod_FKM.get(makeMapKey([usageMethodName, gen,]));
+          const { usage_method_id: usageMethodID } = usageMethod_FKM.get(makeMapKey([gen, usageMethodName, ]));
           return acc.concat(
             Object.keys(abilityData).map(abilityName => {
               // We always compare entities of the same generation.
@@ -1984,7 +2011,7 @@ const getValuesForTable = (
         values = usageMethodData.reduce((acc, curr) => {
           // Get ability data from curr.
           const { gen: gen, name: usageMethodName, activates_item: itemData } = curr;
-          const { usage_method_id: usageMethodID } = usageMethod_FKM.get(makeMapKey([usageMethodName, gen,]));
+          const { usage_method_id: usageMethodID } = usageMethod_FKM.get(makeMapKey([gen, usageMethodName, ]));
           return acc.concat(
             Object.keys(itemData).map(itemName => {
               // We always compare entities of the same generation.
@@ -2121,7 +2148,7 @@ const getValuesForTable = (
             if (!move_FKM.get(makeMapKey([gen, moveName]))) {
               console.log(pokemonName, moveName);
             }
-            const { pmove_id: moveID } = move_FKM.get(makeMapKey([gen, moveName]));
+            const { pmove_id: moveID } = move_FKM.get(makeMapKey([gen, moveName, ]));
             
             return innerAcc.concat(
               // We can have multiple different learn methods within the same generation.

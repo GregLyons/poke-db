@@ -244,4 +244,4 @@ CREATE TABLE IF NOT EXISTS ability_ignores_field_state (
     ON UPDATE CASCADE,
 
   INDEX opposite_ability_ignores_field_state (field_state_generation_id, field_state_id, ability_generation_id, ability_id)
-);
+)

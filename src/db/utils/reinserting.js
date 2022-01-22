@@ -382,17 +382,18 @@ const reinsertUsageMethodJunctionData = async(db, tableStatements) => {
   const foreignKeyTables = [
     'ability',
     'item',
+    'usage_method',
   ];
   const foreignKeyMaps = await getForeignKeyMaps(db, tableStatements, foreignKeyTables);
   
-  const uasgeMethodData = require(PROCESSED_DATA_PATH + 'usageMethods.json');
+  const usageMethodData = require(PROCESSED_DATA_PATH + 'usageMethods.json');
 
   return await reinsertDataForTableGroup(
     db,
     tableStatements,
     usageMethodJunctionTableNames,
     'usageMethodJunctionTables',
-    uasgeMethodData,
+    usageMethodData,
     foreignKeyMaps
   );
 }

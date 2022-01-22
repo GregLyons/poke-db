@@ -48,7 +48,7 @@ def addDescriptions(statDict):
   ]
 
   # special attack
-  statDict["special_defense"]["description"] = [
+  statDict["special_attack"]["description"] = [
     ['Determines the damage done by special moves used by this Pokemon. In Generation 1, Special Attack and Special Defense are combined into a single stat, \'Special\'.', 1],
     ['Determines the damage done by special moves used by this Pokemon.', 2],
   ]
