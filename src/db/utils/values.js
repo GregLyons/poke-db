@@ -40,7 +40,8 @@ const getValuesForTable = (
       moveData,
       natureData,
       pokemonData,
-      pTypeData;
+      pTypeData,
+      usageMethodData;
 
   switch(tableGroup) {
     case 'abilityJunctionTables':
@@ -116,6 +117,14 @@ const getValuesForTable = (
       pTypeData = entityData;
       break;
 
+    case 'fieldStateJunctionTables':
+      [
+        ability_FKM,
+        item_FKM,
+      ] = foreignKeyMaps;
+      usageMethodData = entityData;
+      break;
+
     case 'pokemonJunctionTables':
       // We handle pokemon_pmove separately since it is so large.
       if (tableName == 'pokemon_pmove') {
@@ -133,6 +142,7 @@ const getValuesForTable = (
       }
       pokemonData = entityData;
       break;
+
     case 'versionGroupJunctionTables':
       if (tableName.split('_').includes('pdescription')) {
         [
@@ -167,6 +177,8 @@ const getValuesForTable = (
       enhanceOrHinder, enhanceOrHinderKey,
       // E.g. ability_creates_field_state, item_extends_field_state, ptype_suppresses_field_state, select 'creates', 'extends', 'suppresses', respectively.
       fieldStateAction, fieldStateActionKey,
+      // E.g. ability_prevents_usage_method
+      usageMethodAction, usageMethodActionKey,
       // Meta-entities
       metaEntityClass, metaEntity_id,
       metaEntity_FKM, metaEntityKey;
@@ -732,6 +744,38 @@ const getValuesForTable = (
             }
 
           })
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
+    
+    case 'ability_prevents_usage_method':
+      /*
+        Need (
+          ability_generation_id,
+          ability_id,    
+          usage_method_generation_id,
+          usage_method_id
+      */
+      usageMethodAction = tableName.split('_')[1];
+      usageMethodActionKey = usageMethodAction + '_usage_method';
+
+      values = abilityData.reduce((acc, curr) => {
+        // Get ability data from curr.
+        const { gen: gen, name: abilityName, [usageMethodActionKey]: usageMethodData } = curr;
+        const { ability_id: abilityID } = ability_FKM.get(makeMapKey([abilityName, gen,]));
+
+        return acc.concat(
+          Object.keys(usageMethodData).map(usageMethodName => {
+            // We always compare entities of the same generation.
+            const { usage_method_id: usageMethodID } = usageMethod_FKM.get(makeMapKey([usageMethodName, gen,]));
+
+              return usageMethodData[usageMethodName]
+                ? [gen, abilityID, gen, usageMethodID]
+                : [];
+            }
+          )
         )
       }, [])
       // Filter out empty entries
@@ -1541,6 +1585,38 @@ const getValuesForTable = (
       // Filter out empty entries
       .filter(data => data.length > 0);
       break;
+    
+    case 'pmove_prevents_usage_method':
+      /*
+        Need (
+          pmove_generation_id,
+          pmove_id,    
+          usage_method_generation_id,
+          usage_method_id
+      */
+      usageMethodAction = tableName.split('_')[1];
+      usageMethodActionKey = usageMethodAction + '_usage_method';
+
+      values = moveData.reduce((acc, curr) => {
+        // Get ability data from curr.
+        const { gen: gen, name: moveName, [usageMethodActionKey]: usageMethodData } = curr;
+        const { pmove_id: moveID } = ability_FKM.get(makeMapKey([gen,moveName, ]));
+
+        return acc.concat(
+          Object.keys(usageMethodData).map(usageMethodName => {
+            // We always compare entities of the same generation.
+            const { usage_method_id: usageMethodID } = usageMethod_FKM.get(makeMapKey([usageMethodName, gen,]));
+
+              return usageMethodData[usageMethodName]
+                ? [gen, moveID, gen, usageMethodID]
+                : [];
+            }
+          )
+        )
+      }, [])
+      // Filter out empty entries
+      .filter(data => data.length > 0);
+      break;
 
     case 'pmove_modifies_stat':
       /* 
@@ -1864,6 +1940,68 @@ const getValuesForTable = (
 
     //#endregion
     
+    /*
+      USAGE METHOD JUNCTION TABLES
+    */
+      case 'usage_method_activates_ability':
+        /*
+          Need (
+            usage_method_generation_id,
+            usage_method_id,    
+            ability_generation_id
+            ability_id
+          )
+        */
+        values = usageMethodData.reduce((acc, curr) => {
+          // Get ability data from curr.
+          const { gen: gen, name: usageMethodName, activates_ability: abilityData } = curr;
+          const { usage_method_id: usageMethodID } = usageMethod_FKM.get(makeMapKey([usageMethodName, gen,]));
+          return acc.concat(
+            Object.keys(abilityData).map(abilityName => {
+              // We always compare entities of the same generation.
+              const { ability_id: abilityID } = ability_FKM.get(makeMapKey([abilityName, gen,]));
+  
+              // True if effect is present, False otherwise.
+              return abilityData[abilityName]
+              ? [gen, usageMethodID, gen, abilityID]
+              : [];
+            })
+          )
+        }, [])
+        // Filter out empty entries
+        .filter(data => data.length > 0);
+        break;
+  
+      case 'usage_method_activates_item':
+        /*
+          Need (
+            usage_method_generation_id,
+            usage_method_id,    
+            item_generation_id
+            item_id
+          )
+        */
+        values = usageMethodData.reduce((acc, curr) => {
+          // Get ability data from curr.
+          const { gen: gen, name: usageMethodName, activates_item: itemData } = curr;
+          const { usage_method_id: usageMethodID } = usageMethod_FKM.get(makeMapKey([usageMethodName, gen,]));
+          return acc.concat(
+            Object.keys(itemData).map(itemName => {
+              // We always compare entities of the same generation.
+              const { item_id: itemID } = item_FKM.get(makeMapKey([gen, itemName, ]));
+  
+              // True if effect is present, False otherwise.
+              return itemData[itemName]
+              ? [gen, usageMethodID, gen, itemID]
+              : [];
+            })
+          )
+        }, [])
+        // Filter out empty entries
+        .filter(data => data.length > 0);
+        break;
+  
+
     /*
       POKEMON JUNCTION TABLES
     */

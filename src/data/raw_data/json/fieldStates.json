@@ -394,7 +394,7 @@
     "gen": 4,
     "formatted_name": "Toxic spikes",
     "field_state_class": "entry_hazard",
-    "damage_percent": [[12.5, 4]],
+    "damage_percent": [[0, 4]],
     "max_layers": 2,
     "only_grounded": true,
     "stat_modifications": {},

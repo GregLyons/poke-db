@@ -2,41 +2,63 @@
   "pulse": {
     "gen": 6,
     "formatted_name": "Pulse",
-    "description": [["Moves based on aura and pulses.", 6]]
+    "description": [["Moves based on aura and pulses.", 6]],
+    "activates_ability": {},
+    "activates_item": {}
   },
   "ball": {
     "gen": 6,
     "formatted_name": "Ball",
-    "description": [["Moves based on balls and bombs.", 6]]
+    "description": [["Moves based on balls and bombs.", 6]],
+    "activates_ability": {},
+    "activates_item": {}
   },
   "bite": {
     "gen": 6,
     "formatted_name": "Bite",
-    "description": [["Moves based on biting.", 6]]
+    "description": [["Moves based on biting.", 6]],
+    "activates_ability": {},
+    "activates_item": {}
   },
   "dance": {
     "gen": 7,
     "formatted_name": "Dance",
-    "description": [["Moves based on dancing.", 7]]
+    "description": [["Moves based on dancing.", 7]],
+    "activates_ability": {
+      "dancer": [[true, 7]]
+    },
+    "activates_item": {}
   },
   "explosive": {
     "gen": 3,
     "formatted_name": "Explosive",
-    "description": [["Moves based on explosions.", 3]]
+    "description": [["Moves based on explosions.", 3]],
+    "activates_ability": {},
+    "activates_item": {}
   },
   "powder": {
     "gen": 6,
     "formatted_name": "Powder",
-    "description": [["Moves based on powders and spores.", 6]]
+    "description": [["Moves based on powders and spores.", 6]],
+    "activates_ability": {},
+    "activates_item": {}
   },
   "punch": {
     "gen": 4,
     "formatted_name": "Punch",
-    "description": [["Moves based on punching.", 4]]
+    "description": [["Moves based on punching.", 4]],
+    "activates_ability": {},
+    "activates_item": {}
   },
   "sound": {
     "gen": 3,
     "formatted_name": "Sound",
-    "description": [["Moves based on sound.", 3]]
+    "description": [["Moves based on sound.", 3]],
+    "activates_ability": {
+      "liquid_voice": [[true, 7]]
+    },
+    "activates_item": {
+      "throat_spray": [[true, 8]]
+    }
   }
 }

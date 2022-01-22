@@ -147,8 +147,15 @@ def addEffectData(fpath, abilityDict):
 
         abilityDict[abilityName]["resists_status"][status] = [[True, abilityGen]]
 
+  # abilities which prevent usage methods
+  for abilityName in abilityDict.keys():
+    abilityDict[abilityName]["prevents_usage_method"] = {}
+
+  abilityDict["damp"]["prevents_usage_method"]["explosive"] = [[True, 3]]
+
   # abilities which boost types and usage methods
   with open(fpath + 'abilitiesBoostMoveClass.csv', 'r', encoding='utf-8') as boostMoveClassCSV:
+
     reader = csv.DictReader(boostMoveClassCSV)
     for row in reader:
       abilityName, boosts, multiplier, moveClass = row["Ability Name"], row["Boosts"], row["Multiplier"], row["Move Class"]

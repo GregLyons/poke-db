@@ -30,6 +30,13 @@ INSERT INTO ability_resists_usage_method (
   multiplier
 ) VALUES ?;
 
+INSERT INTO ability_prevents_usage_method (
+  ability_generation_id,
+  ability_id,
+  usage_method_generation_id,
+  usage_method_id
+) VALUES ?;
+
 INSERT INTO ability_modifies_stat (
   ability_generation_id,
   ability_id,

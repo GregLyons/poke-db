@@ -95,10 +95,26 @@ def addDescriptions(usageMethodDict):
 
   return usageMethodDict
 
+def addActivationData(usageMethodDict):
+  for usageMethodName in usageMethodDict.keys():
+    usageMethodDict[usageMethodName]["activates_ability"] = {}
+    usageMethodDict[usageMethodName]["activates_item"] = {}
+
+  # dancer
+  usageMethodDict["dance"]["activates_ability"]["dancer"] = [[True, 7]]
+
+  # sound
+  usageMethodDict["sound"]["activates_ability"]["liquid_voice"] = [[True, 7]]
+  usageMethodDict["sound"]["activates_item"]["throat_spray"] = [[True, 8]]
+
+  return usageMethodDict
+
 def main():
   usageMethodDict = makeUsageMethodDict()
 
   addDescriptions(usageMethodDict)
+
+  addActivationData(usageMethodDict)
 
   for usageMethodName in usageMethodDict.keys():
     if 'description' not in usageMethodDict[usageMethodName].keys():

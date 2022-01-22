@@ -396,6 +396,8 @@ def addContactToMoveDict(fname, moveDict):
 
 # read effect data and update moveDict
 def addEffectToMoveDict(fname, moveDict):
+  for moveName in moveDict.keys():
+    moveDict[moveName]["prevents_usage_method"] = {}
 
   with open(fname, encoding='utf-8') as effectCSV:
     reader = csv.DictReader(effectCSV)
@@ -414,6 +416,9 @@ def addEffectToMoveDict(fname, moveDict):
         effectGen = effectDict[effect]["gen"]
       # # if effect isn't in moveDict, add it and initialize as False
         moveDict[moveName]["effects"][effect] = [[True, max(effectGen, moveGen)]]
+    
+    # exceptions
+    moveDict["throat_chop"]["prevents_usage_method"]["sound"] = [[True, 7]]
       
   # EXCEPTIONS SECTION
   # not covered in the above .csv
@@ -1255,7 +1260,7 @@ def addFieldStateDate(moveDict):
     ['max_geyser', 'harsh_sunlight'],
     ['sandstorm', 'sandstorm'],
     ['max_rockfall', 'harsh_sunlight'],
-    ['hail', 'sandstorm'],
+    ['hail', 'hail'],
     ['max_hailstorm', 'harsh_sunlight'],
     # Terrains
     ['electric_terrain', 'electric_terrain'],

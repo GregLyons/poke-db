@@ -26,6 +26,7 @@ const FILENAMES_AND_KEYS = [
   ['moves.sql', 'moveJunctionTables'],
   ['natures.sql', 'natureJunctionTables'],
   ['pokemon.sql', 'pokemonJunctionTables'],
+  ['usageMethods.sql', 'usageMethodJunctionTables'],
   ['versionGroups.sql', 'versionGroupJunctionTables'],
 ]
 

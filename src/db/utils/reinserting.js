@@ -88,6 +88,7 @@ const reinsertAbilityJunctionData = async(db, tableStatements) => {
       'ability_prevents_field_state',
       'ability_suppresses_field_state',
       'ability_ignores_field_state',
+      'ability_prevents_usage_method',
     ]
   */
   const abilityJunctionTableNames = Object.keys(tableStatements.abilityJunctionTables);
@@ -234,6 +235,7 @@ const reinsertMoveJunctionData = async(db, tableStatements) => {
       'move_removes_field_state',
       'move_prevents_field_state',
       'move_suppresses_field_state',
+      'move_prevents_usage_method',
     ]
   */
   const moveJunctionTableNames = Object.keys(tableStatements.moveJunctionTables);
@@ -360,6 +362,37 @@ const reinsertPokemonJunctionData = async(db, tableStatements) => {
     pokemonJunctionTableNames,
     'pokemonJunctionTables',
     pokemonData,
+    foreignKeyMaps
+  );
+}
+
+/*
+  DELETE FROM usage method junction tables, then INSERT INTO those tables.
+*/
+const reinsertUsageMethodJunctionData = async(db, tableStatements) => {
+  /*
+    [
+      'usage_method_activates_ability',
+      'usage_method_activates_item',
+    ]
+  */
+  const usageMethodJunctionTableNames = Object.keys(tableStatements.usageMethodJunctionTables);
+
+  // Since Promise.all() preserves order, foreignKeyMaps unpacks alphabetically.
+  const foreignKeyTables = [
+    'ability',
+    'item',
+  ];
+  const foreignKeyMaps = await getForeignKeyMaps(db, tableStatements, foreignKeyTables);
+  
+  const uasgeMethodData = require(PROCESSED_DATA_PATH + 'usageMethods.json');
+
+  return await reinsertDataForTableGroup(
+    db,
+    tableStatements,
+    usageMethodJunctionTableNames,
+    'usageMethodJunctionTables',
+    uasgeMethodData,
     foreignKeyMaps
   );
 }
@@ -540,6 +573,7 @@ module.exports = {
   reinsertNatureJunctionData,
   reinsertTypeJunctionData,
   reinsertPokemonJunctionData,
+  reinsertUsageMethodJunctionData,
   reinsertVersionGroupJunctionData,
   reinsertLearnsetData,
 }

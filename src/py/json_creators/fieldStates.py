@@ -25,7 +25,7 @@ def makeFieldStateDict():
     ['stealth_rock', 4, 'entry_hazard', 12.5, False],
     ['spikes', 2, 'entry_hazard', 12.5, True],
     ['sticky_web', 6, 'entry_hazard', 0, True],
-    ['toxic_spikes', 4, 'entry_hazard', 12.5, True],
+    ['toxic_spikes', 4, 'entry_hazard', 0, True],
     ['sharp_steel', 8, 'entry_hazard', 12.5, False],
     # weather
     ['clear_skies', 1, 'weather', 0, False],

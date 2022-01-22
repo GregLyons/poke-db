@@ -65,6 +65,13 @@ INSERT INTO pmove_usage_method (
   usage_method_id
 ) VALUES ?;
 
+INSERT INTO pmove_prevents_usage_method (
+  pmove_generation_id,
+  pmove_id,
+  usage_method_generation_id,
+  usage_method_id
+) VALUES ?;
+
 INSERT INTO pmove_causes_pstatus (
   pmove_generation_id,
   pmove_id,

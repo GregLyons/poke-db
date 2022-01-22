@@ -70,6 +70,23 @@ CREATE TABLE IF NOT EXISTS ability_resists_usage_method (
   INDEX opposite_ability_resists_usage_method (usage_method_generation_id, usage_method_id, ability_generation_id, ability_id)
 );
 
+CREATE TABLE IF NOT EXISTS ability_prevents_usage_method (
+  ability_generation_id TINYINT UNSIGNED NOT NULL,
+  ability_id SMALLINT UNSIGNED NOT NULL,
+  usage_method_generation_id TINYINT UNSIGNED NOT NULL,
+  usage_method_id SMALLINT UNSIGNED NOT NULL,
+
+  PRIMARY KEY (ability_generation_id, ability_id, usage_method_generation_id, usage_method_id),
+  FOREIGN KEY (ability_generation_id, ability_id) REFERENCES ability(generation_id, ability_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  FOREIGN KEY (usage_method_generation_id, usage_method_id) REFERENCES usage_method(generation_id, usage_method_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  INDEX opposite_ability_prevents_usage_method (usage_method_generation_id, usage_method_id, ability_generation_id, ability_id)
+);
+
 CREATE TABLE IF NOT EXISTS ability_modifies_stat (
   ability_generation_id TINYINT UNSIGNED NOT NULL,
   ability_id SMALLINT UNSIGNED NOT NULL,

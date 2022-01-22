@@ -28,6 +28,7 @@ const {
   resetNatureJunctionTables,
   resetPokemonJunctionTables,
   resetTypeJunctionTables,
+  resetUsageMethodJunctionTables,
   resetVersionGroupJunctionTables,
 
   resetLearnsetTable,
@@ -75,6 +76,7 @@ const resetJunctionTables = async (ignoreLearnsetTable = true) => {
     resetNatureJunctionTables,
     resetPokemonJunctionTables,
     resetTypeJunctionTables,
+    resetUsageMethodJunctionTables,
     resetVersionGroupJunctionTables,
   ]
 
@@ -160,6 +162,7 @@ resetEverything();
 // resetItemJunctionTables(db, tableStatements);
 // resetPokemonJunctionTables(db, tableStatements);
 // resetTypeJunctionTables(db, tableStatements);
+// resetUsageMethodJunctionTables(db, tableStatements);
 // resetVersionGroupJunctionTables(db, tableStatements);
 
 // resetLearnsetTable(db, tableStatements);

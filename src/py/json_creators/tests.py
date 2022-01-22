@@ -103,6 +103,7 @@ def abilityTests(abilityDict):
       checkConsistency(abilityDict[abilityName]["resists_type"], 'type', typeDict, 0.0),
       checkConsistency(abilityDict[abilityName]["boosts_usage_method"], 'usage_method', usageMethodDict, 0.0),
       checkConsistency(abilityDict[abilityName]["resists_usage_method"], 'usage_method', usageMethodDict, 0.0),
+      checkConsistency(abilityDict[abilityName]["prevents_usage_method"], 'usage_method', usageMethodDict, False),
     ]:
       if inconsistency:
         print(f'Inconsistency found for {abilityName}: {inconsistency}')
@@ -160,6 +161,7 @@ def moveTests(moveDict):
       checkConsistency(moveDict[moveName]["causes_status"], 'status', statusDict, 0.0),
       checkConsistency(moveDict[moveName]["resists_status"], 'status', statusDict, False),
       checkConsistency(moveDict[moveName]["usage_method"], 'usage_method', usageMethodDict, False),
+      checkConsistency(moveDict[moveName]["prevents_usage_method"], 'usage_method', usageMethodDict, False),
     ]:
       if inconsistency:
         print(f'Inconsistency found for {moveName}: {inconsistency}')
