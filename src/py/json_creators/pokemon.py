@@ -1035,7 +1035,7 @@ def assertCosmeticForms(pokemonDict):
     if hasCoesmetic(baseFormName):
       for cosmeticFormName in pokemonDict[baseFormName]["form_data"].keys():
         # exceptions
-        if cosmeticFormName == 'pikachu_gmax': 
+        if cosmeticFormName in ['pikachu_gmax', 'alcremie_gmax']: 
           continue
 
         # end exceptions
@@ -1046,10 +1046,75 @@ def assertCosmeticForms(pokemonDict):
   return
 
 def assertTypeForms(pokemonDict):
-  for baseFormName in ['arceus_normal', 'castform_normal', 'silvally_normal']:
+  for baseFormName in [
+    'arceus_normal',
+    'castform_normal',
+    'silvally_normal'
+  ]:
     for typeFormName in pokemonDict[baseFormName]["form_data"].keys():
       pokemonDict[baseFormName]["form_data"][typeFormName][0][0] = 'type'
       pokemonDict[typeFormName]["form_class"][0][0] = 'type'
+
+  return
+
+def assertBattleForms(pokemonDict):
+  for battleFormName in [
+    'cherrim_sunshine',
+    'darmanitan_zen',
+    'darmanitan_zen_galar',
+    'meloetta_pirouette',
+    'greninja_ash',
+    'aegislash_blade',
+    'xerneas_active',
+    'wishiwashi_school',
+    'minior_meteor',
+    'mimikyu_busted',
+    'cramorant_gorging',
+    'cramorant_gulping',
+  ]:
+    # update battle form's form class
+    pokemonDict[battleFormName]["form_class"][0][0] = 'battle'
+
+    # find base form
+    for formName in pokemonDict[battleFormName]["form_data"].keys():
+      if pokemonDict[battleFormName]["form_data"][formName][0][0] == 'base':
+        baseFormName = formName
+
+    # update base form's form data
+    pokemonDict[baseFormName]["form_data"][battleFormName][0][0] = 'battle'
+
+  return
+
+# add flag for pokemon removed from gen 8
+def removedFromGen8(fname, pokemonDict):
+  for pokemonName in pokemonDict.keys():
+    pokemonDict[pokemonName]["removed_from_swsh"] = False
+    pokemonDict[pokemonName]["removed_from_bdsp"] = False
+
+  with open(fname, 'r', encoding='utf-8') as removedCSV:
+    reader = csv.DictReader(removedCSV)
+    for row in reader:
+      pokemonName, versionGroupCode = row["Pokemon Name"], row["Version Group"]
+      
+      if pokemonName not in pokemonDict.keys():
+        print(pokemonName)
+        continue
+
+      if versionGroupCode == 'SwSh':
+        pokemonDict[pokemonName]["removed_from_swsh"] = True
+
+        # if base form is removed, all other forms are removed as well
+        if pokemonDict[pokemonName]["form_class"][0][0] == 'base':
+          for formName in pokemonDict[pokemonName]["form_data"]:
+            pokemonDict[formName]["removed_from_swsh"] = True
+
+      else:
+        pokemonDict[pokemonName]["removed_from_bdsp"] = True
+
+        # if base form is removed, all other forms are removed as well
+        if pokemonDict[pokemonName]["form_class"][0][0] == 'base':
+          for formName in pokemonDict[pokemonName]["form_data"]:
+            pokemonDict[formName]["removed_from_bdsp"] = True
 
   return
 
@@ -1088,6 +1153,10 @@ def main():
 
   assertCosmeticForms(pokemonDict)
   assertTypeForms(pokemonDict)
+  assertBattleForms(pokemonDict)
+
+  removedFromGen8_fname = dataPath + 'pokemonRemovedFromGen8.csv'
+  removedFromGen8(removedFromGen8_fname, pokemonDict)
 
   checkGenConsistency(pokemonDict)
   pokemonTests(pokemonDict)

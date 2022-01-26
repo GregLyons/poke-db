@@ -100,7 +100,8 @@ INSERT INTO pmove (
   pmove_contact,
   pmove_target,
   pmove_removed_from_swsh,
-  pmove_removed_from_bdsp
+  pmove_removed_from_bdsp,
+  pmove_ptype_name
 ) VALUES ?;
 
 INSERT INTO pokemon (
@@ -119,7 +120,9 @@ INSERT INTO pokemon (
   pokemon_special_attack,
   pokemon_speed,
   pokemon_form_class,
-  pokemon_ps_id
+  pokemon_ps_id,
+  pokemon_ptype_name_1,
+  pokemon_ptype_name_2
 ) VALUES ?;
 
 INSERT INTO field_state (

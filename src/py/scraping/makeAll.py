@@ -17,6 +17,7 @@ import natures
 import pokemonByAbilities
 import pokemonByBaseStats
 import pokemonByType
+import pokemonRemovedFromGen8
 import movesModifyStat
 import typeMatchups
 
@@ -78,6 +79,9 @@ if __name__ == '__main__':
 
   pokemonByType.main()
   print('Pokemon type data complete')
+
+  pokemonRemovedFromGen8.main()
+  print('Removed Pokemon data complete')
 
   movesModifyStat.main()
   print('Stat modification data complete')

@@ -198,6 +198,7 @@ CREATE TABLE IF NOT EXISTS pmove (
   pmove_target ENUM('adjacent_ally', 'adjacent_foe', 'all_adjacent','all_adjacent_foes', 'all', 'all_allies', 'all_foes', 'any', 'any_adjacent', 'user', 'user_and_all_allies', 'user_or_adjacent_ally'),
   pmove_removed_from_swsh TINYINT UNSIGNED NOT NULL,
   pmove_removed_from_bdsp TINYINT UNSIGNED NOT NULL,
+  pmove_ptype_name VARCHAR(45) NOT NULL,
 
   PRIMARY KEY (generation_id, pmove_id),
   FOREIGN KEY (generation_id) REFERENCES generation(generation_id)
@@ -244,8 +245,10 @@ CREATE TABLE IF NOT EXISTS pokemon (
   pokemon_special_defense TINYINT UNSIGNED NOT NULL,
   pokemon_special_attack TINYINT UNSIGNED NOT NULL,
   pokemon_speed TINYINT UNSIGNED NOT NULL,
-  pokemon_form_class ENUM('gmax', 'mega', 'alola', 'galar', 'hisui', 'other', 'base', 'cosmetic', 'type', 'hisui'),
+  pokemon_form_class ENUM('gmax', 'mega', 'alola', 'galar', 'hisui', 'other', 'base', 'cosmetic', 'type', 'hisui', 'battle'),
   pokemon_ps_id VARCHAR(45) NOT NULL,
+  pokemon_ptype_name_1 VARCHAR(45) NOT NULL,
+  pokemon_ptype_name_2 VARCHAR(45) NOT NULL,
 
   PRIMARY KEY (generation_id, pokemon_id),
   FOREIGN KEY (generation_id) REFERENCES generation(generation_id)

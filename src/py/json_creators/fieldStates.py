@@ -121,7 +121,7 @@ def addTargetData(fieldStateDict):
     fieldStateClass = fieldStateDict[fieldStateName]["field_state_class"]
 
     # Based on field state class
-    if fieldStateClass in ['weather', 'room', 'terran']:
+    if fieldStateClass in ['weather', 'room', 'terrain']:
       targetClass = [['all', fieldStateGen]]
     elif fieldStateClass in ['entry_hazard']:
       targetClass = [['all_foes', fieldStateGen]]
@@ -133,6 +133,11 @@ def addTargetData(fieldStateDict):
       targetClass = [['all_allies', fieldStateGen]]
     elif fieldStateName in ['vine_lash', 'wildfire', 'cannonade', 'volcalith', 'sea_of_fire', 'swamp']:
       targetClass = [['all_foes', fieldStateGen]]
+    
+    # others
+    else:
+      print(fieldStateName)
+      targetClass = [['all', fieldStateGen]]
     
     fieldStateDict[fieldStateName]["target"] = targetClass
 

@@ -164,7 +164,7 @@
       "accuracy": [[1.67,
           "all", 100.0, 4]]
     },
-    "target": [["all_foes", 8]],
+    "target": [["all", 4]],
     "effects": {
       "grounds": [[true, 4]]
     },

@@ -410,7 +410,9 @@ const getValuesForTable = (
           pokemon_special_attack,
           pokemon_speed,
           pokemon_form_class,
-          pokemon_ps_id
+          pokemon_ps_id,
+          pokemon_ptype_name_1,
+          pokemon_ptype_name_2
         )
       */
       values = require(PROCESSED_DATA_PATH + 'pokemon.json')
@@ -433,6 +435,8 @@ const getValuesForTable = (
           data.speed,
           data.form_class,
           data.ps_id,
+          data.type_1,
+          data.type_2,
         ]);
       break;
     
@@ -450,8 +454,9 @@ const getValuesForTable = (
           pmove_priority,
           pmove_contact,
           pmove_target,
-          pmove_removed_from_swsh
-          pmove_removed_from_bdsp
+          pmove_removed_from_swsh,
+          pmove_removed_from_bdsp,
+          pmove_ptype_name
         )
       */
       values = require(PROCESSED_DATA_PATH + 'moves.json')
@@ -501,7 +506,7 @@ const getValuesForTable = (
           data.name,
           data.formatted_name,
           data.introduced,
-          data.description
+          data.description,
         ]);
       break;
 
