@@ -136,7 +136,6 @@ def addTargetData(fieldStateDict):
     
     # others
     else:
-      print(fieldStateName)
       targetClass = [['all', fieldStateGen]]
     
     fieldStateDict[fieldStateName]["target"] = targetClass

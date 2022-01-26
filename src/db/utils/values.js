@@ -411,6 +411,7 @@ const getValuesForTable = (
           pokemon_speed,
           pokemon_form_class,
           pokemon_ps_id,
+          pokemon_pokeapi_name,
           pokemon_ptype_name_1,
           pokemon_ptype_name_2
         )
@@ -435,6 +436,8 @@ const getValuesForTable = (
           data.speed,
           data.form_class,
           data.ps_id,
+          data.pokeapi[0],
+          data.pokeapi[1],
           data.type_1,
           data.type_2,
         ]);
@@ -474,6 +477,7 @@ const getValuesForTable = (
           data.target,
           data.removed_from_swsh,
           data.removed_from_bdsp,
+          data.type,
         ]);
       break;
 
@@ -628,7 +632,7 @@ const getValuesForTable = (
               modifier = parseInt(modifier.slice(1), 10);
 
               return modifier != 0 
-              ? [gen, abilityID, gen, statID, modifier, 1.0, 100.00, recipient]
+              ? [gen, abilityID, gen, statID, modifier * sign, 1.0, 100.00, recipient]
               : [];
             }
             // multiplier
@@ -846,7 +850,7 @@ const getValuesForTable = (
               modifier = parseInt(modifier.slice(1), 10);
 
               return modifier != 0 
-              ? [gen, fieldStateID, gen, statID, modifier, 1.0, 100.00, recipient]
+              ? [gen, fieldStateID, gen, statID, modifier * sign, 1.0, 100.00, recipient]
               : [];
             }
             // multiplier
@@ -1238,7 +1242,7 @@ const getValuesForTable = (
               modifier = parseInt(modifier.slice(1), 10);
 
               return modifier != 0 
-              ? [gen, itemID, gen, statID, modifier, 1.0, 100.00, recipient]
+              ? [gen, itemID, gen, statID, modifier * sign, 1.0, 100.00, recipient]
               : [];
             }
             // multiplier
@@ -1861,7 +1865,7 @@ const getValuesForTable = (
               modifier = parseInt(modifier.slice(1), 10);
 
               return modifier != 0 
-              ? [gen, natureID, gen, statID, modifier, 1.0, 100.0, 'user']
+              ? [gen, natureID, gen, statID, modifier * sign, 1.0, 100.0, 'user']
               : [];
             }
             // multiplier

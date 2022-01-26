@@ -627,6 +627,41 @@ def checkPokeAPIForms(fname, pokemonDict):
   for pokemonName in pokemonDict.keys():
     if pokemonDict[pokemonName]["gen"] != 'lgpe_only':
       pokemonDict[pokemonName]["gen"] = int(pokemonDict[pokemonName]["gen"])
+  
+  # PokeAPI distinguishes between 'pokemon' and 'pokemon-form', so some base forms are missing PokeAPI IDs. Add them.
+  pokemonDict["unown"]["pokeapi"] = ['unown', 201]
+
+  pokemonDict["mothim"]["pokeapi"] = ['mothim', 414]
+
+  pokemonDict["scatterbug"]["pokeapi"] = ['scatterbug', 664]
+  pokemonDict["spewpa"]["pokeapi"] = ['spewpa', 665]
+  pokemonDict["vivillon"]["pokeapi"] = ['vivillon', 666]
+
+  pokemonDict["flabebe"]["pokeapi"] = ['flabebe', 669]
+  pokemonDict["floette"]["pokeapi"] = ['floette', 670]
+  pokemonDict["florges"]["pokeapi"] = ['florges', 671]
+  
+  pokemonDict["xerneas"]["pokeapi"] = ['xerneas', 716]
+
+  pokemonDict["minior"]["pokeapi"] = ['minior-red', 10136]
+  pokemonDict["minior_meteor"]["pokeapi"] = ['minior-red-meteor', 774]
+
+  pokemonDict["sinistea"]["pokeapi"] = ['sinistea', 854]
+  pokemonDict["polteageist"]["pokeapi"] = ['polteageist', 855]
+
+  pokemonDict["necrozma_dusk_mane"]["pokeapi"] = ['necrozma_dusk', 10155]
+  pokemonDict["necrozma_dawn_wings"]["pokeapi"] = ['necrozma_dawn', 10156]
+
+  # doesn't have one
+  pokemonDict["pikachu_world_cap"]["pokeapi"] = ['pikachu', 25]
+  pokemonDict["pikachu_partner"]["pokeapi"] = ['pikachu', 25]
+  pokemonDict["eevee_partner"]["pokeapi"] = ['eevee', 25]
+
+  for pokemonName in pokemonDict.keys():
+    if "pokeapi" not in pokemonDict[pokemonName].keys():
+      print(pokemonName)
+    elif len(pokemonDict[pokemonName]["pokeapi"]) == 0:
+      print(pokemonName)
 
   return
 

@@ -121,6 +121,8 @@ INSERT INTO pokemon (
   pokemon_speed,
   pokemon_form_class,
   pokemon_ps_id,
+  pokemon_pokeapi_name,
+  pokemon_pokeapi_id,
   pokemon_ptype_name_1,
   pokemon_ptype_name_2
 ) VALUES ?;

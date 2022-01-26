@@ -6197,7 +6197,9 @@
     "ability_hidden": [["", 5]],
     "height": 0.5,
     "weight": 5.0,
-    "pokeapi": [],
+    "pokeapi": [
+      "unown", 201
+    ],
     "form_data": {
       "unown_a": [["cosmetic", 2]],
       "unown_b": [["cosmetic", 2]],
@@ -12846,7 +12848,9 @@
     "ability_hidden": [["tinted_lens", 5]],
     "height": 0.9,
     "weight": 23.3,
-    "pokeapi": [],
+    "pokeapi": [
+      "mothim", 414
+    ],
     "form_data": {
       "mothim_plant": [["other", 4]],
       "mothim_sandy": [["other", 4]],
@@ -20676,7 +20680,9 @@
     "ability_hidden": [["friend_guard", 6]],
     "height": 0.3,
     "weight": 2.5,
-    "pokeapi": [],
+    "pokeapi": [
+      "scatterbug", 664
+    ],
     "form_data": {
       "scatterbug_icy_snow": [["cosmetic", 6]],
       "scatterbug_polar": [["cosmetic", 6]],
@@ -20727,7 +20733,9 @@
     "ability_hidden": [["friend_guard", 6]],
     "height": 0.3,
     "weight": 8.4,
-    "pokeapi": [],
+    "pokeapi": [
+      "spewpa", 665
+    ],
     "form_data": {
       "spewpa_icy_snow": [["cosmetic", 6]],
       "spewpa_polar": [["cosmetic", 6]],
@@ -20776,7 +20784,9 @@
     "ability_hidden": [["friend_guard", 6]],
     "height": 1.2,
     "weight": 17.0,
-    "pokeapi": [],
+    "pokeapi": [
+      "vivillon", 666
+    ],
     "form_data": {
       "vivillon_meadow": [["cosmetic", 6]],
       "vivillon_icy_snow": [["cosmetic", 6]],
@@ -20885,7 +20895,9 @@
     "ability_hidden": [["symbiosis", 6]],
     "height": 0.1,
     "weight": 0.1,
-    "pokeapi": [],
+    "pokeapi": [
+      "flabebe", 669
+    ],
     "form_data": {
       "flabebe_red": [["cosmetic", 6]],
       "flabebe_yellow": [["cosmetic", 6]],
@@ -20921,7 +20933,9 @@
     "ability_hidden": [["symbiosis", 6]],
     "height": 0.2,
     "weight": 0.9,
-    "pokeapi": [],
+    "pokeapi": [
+      "floette", 670
+    ],
     "form_data": {
       "floette_eternal": [["cosmetic", 6]],
       "floette_red": [["cosmetic", 6]],
@@ -20956,7 +20970,9 @@
     "ability_hidden": [["symbiosis", 6]],
     "height": 1.1,
     "weight": 10.0,
-    "pokeapi": [],
+    "pokeapi": [
+      "florges", 671
+    ],
     "form_data": {
       "florges_red": [["cosmetic", 6]],
       "florges_yellow": [["cosmetic", 6]],
@@ -22194,7 +22210,9 @@
     "ability_hidden": [["", 6]],
     "height": 3.0,
     "weight": 215.0,
-    "pokeapi": [],
+    "pokeapi": [
+      "xerneas", 716
+    ],
     "form_data": {
       "xerneas_active": [["battle", 6]],
       "xerneas_neutral": [["other", 6]]
@@ -24639,7 +24657,9 @@
     "ability_hidden": [["", 7]],
     "height": 0.3,
     "weight": 0.3,
-    "pokeapi": [],
+    "pokeapi": [
+      "minior-red", 10136
+    ],
     "form_data": {
       "minior_meteor": [["battle", 7]],
       "minior_meteor_red": [["cosmetic", 7]],
@@ -26995,7 +27015,9 @@
     "ability_hidden": [["cursed_body", 8]],
     "height": 0.1,
     "weight": 0.2,
-    "pokeapi": [],
+    "pokeapi": [
+      "sinistea", 854
+    ],
     "form_data": {
       "sinistea_phony": [["cosmetic", 8]],
       "sinistea_antique": [["cosmetic", 8]]
@@ -27026,7 +27048,9 @@
     "ability_hidden": [["cursed_body", 8]],
     "height": 0.2,
     "weight": 0.4,
-    "pokeapi": [],
+    "pokeapi": [
+      "polteageist", 855
+    ],
     "form_data": {
       "polteageist_phony": [["cosmetic", 8]],
       "polteageist_antique": [["cosmetic", 8]]
@@ -32485,7 +32509,9 @@
     "ability_1": [["static", 7]],
     "ability_2": [["", 7]],
     "ability_hidden": [["", 7]],
-    "pokeapi": [],
+    "pokeapi": [
+      "pikachu", 25
+    ],
     "form_data": {
       "pikachu": [["base", 7]]
     },
@@ -32547,7 +32573,9 @@
     "ability_1": [["prism_armor", 7]],
     "ability_2": [["", 7]],
     "ability_hidden": [["", 7]],
-    "pokeapi": [],
+    "pokeapi": [
+      "necrozma_dusk", 10155
+    ],
     "form_data": {
       "necrozma": [["base", 7]]
     },
@@ -32575,7 +32603,9 @@
     "ability_1": [["prism_armor", 7]],
     "ability_2": [["", 7]],
     "ability_hidden": [["", 7]],
-    "pokeapi": [],
+    "pokeapi": [
+      "necrozma_dawn", 10156
+    ],
     "form_data": {
       "necrozma": [["base", 7]]
     },
@@ -32640,7 +32670,9 @@
     "ability_hidden": [["lightning_rod", 7]],
     "height": 0.4,
     "weight": 6.0,
-    "pokeapi": [],
+    "pokeapi": [
+      "pikachu", 25
+    ],
     "form_data": {},
     "form_class": [["base", "lgpe_only"]],
     "formatted_name": "Pikachu (Partner)",
@@ -32666,7 +32698,9 @@
     "ability_hidden": [["anticipation", 7]],
     "height": 0.3,
     "weight": 6.5,
-    "pokeapi": [],
+    "pokeapi": [
+      "eevee", 25
+    ],
     "form_data": {},
     "form_class": [["base", "lgpe_only"]],
     "formatted_name": "Eevee (Partner)",
@@ -33941,7 +33975,9 @@
     "ability_hidden": [["", 7]],
     "height": 0.3,
     "weight": 40.0,
-    "pokeapi": [],
+    "pokeapi": [
+      "minior-red-meteor", 774
+    ],
     "form_data": {
       "minior": [["base", 7]]
     },

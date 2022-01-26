@@ -245,8 +245,10 @@ CREATE TABLE IF NOT EXISTS pokemon (
   pokemon_special_defense TINYINT UNSIGNED NOT NULL,
   pokemon_special_attack TINYINT UNSIGNED NOT NULL,
   pokemon_speed TINYINT UNSIGNED NOT NULL,
-  pokemon_form_class ENUM('gmax', 'mega', 'alola', 'galar', 'hisui', 'other', 'base', 'cosmetic', 'type', 'hisui', 'battle'),
+  pokemon_form_class ENUM('gmax', 'mega', 'alola', 'galar', 'hisui', 'other', 'base', 'cosmetic', 'type', 'battle'),
   pokemon_ps_id VARCHAR(45) NOT NULL,
+  pokemon_pokeapi_name VARCHAR(45) NOT NULL,
+  pokemon_pokeapi_id VARCHAR(45) NOT NULL,
   pokemon_ptype_name_1 VARCHAR(45) NOT NULL,
   pokemon_ptype_name_2 VARCHAR(45) NOT NULL,
 
