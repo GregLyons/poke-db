@@ -2,9 +2,6 @@ import csv
 from utils import openLink, getCSVDataPath, parseName, genSymbolToNumber
 import re
 
-# TODO colored orbs for Kyogre and Groudon
-# TODO: Soul Dew, Eviolite, berries which restore HP but may confuse, double stab items (e.g. Adamant Orb), Deep Sea items, Wide Lens, Zoom Lens, Ultranecrozium Z, Pikashunium Z, Luck Incense, Air Balloon
-
 # # parse descriptions for the main list to classify item type
 # def parseDescription(description):
 

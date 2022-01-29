@@ -136,6 +136,24 @@ def makeInitialItemDict(fnamePrefix):
     'zamazenta': [[True, 8]]
   }
 
+  # Handle dragon scale manually
+  itemDict['dragon_scale'] = {
+    "item_class": [['type_enhancer', 2]],
+    "pokemon_specific": {},
+    "gen": 2,
+    "gen2_exclusive": True,
+    "knock_off": True,
+    "effects": {},
+    "causes_status": {},
+    "resists_status": {},
+    "boosts_type": {},
+    "resists_type": {},
+    "boosts_usage_method": {},
+    "resists_usage_method": {},
+    "stat_modifications": {},
+
+  }
+
   return itemDict
 
 # add berry data to item dictionary, including nature power data, type resistances, status resistances, and any other effects
@@ -623,7 +641,7 @@ def addOtherItemData(fpath, itemDict):
   # keep track of items to be handled
   for itemName in itemDict.keys():
     # Heavy duty boots is handled in addFieldStateData
-    if itemName == 'heavy_duty_boots':
+    if itemName in ['heavy_duty_boots', 'dragon_scale']:
       continue
 
     if itemName not in handledItems and 'berry' not in itemDict[itemName]["item_class"][0]:
@@ -731,6 +749,70 @@ def addNatureData(itemDict):
 
   return
 
+def removeUselessItems(itemDict):
+  del itemDict["cleanse_tag"]
+  del itemDict["everstone"]
+  del itemDict["exp_share"]
+  del itemDict["green_scarf"]
+  del itemDict["luck_incense"]
+  del itemDict["lucky_egg"]
+  del itemDict["pink_scarf"]
+  del itemDict["pure_incense"]
+  del itemDict["red_scarf"]
+  del itemDict["smoke_ball"]
+  del itemDict["soothe_bell"]
+  del itemDict["yellow_scarf"]
+  del itemDict["electirizer"]
+  del itemDict["magmarizer"]
+  del itemDict["reaper_cloth"]
+  del itemDict["protector"]
+  del itemDict["dubious_disc"]
+  del itemDict["blue_scarf"]
+  
+  # delete sweets
+  sweets = []
+  for itemName in itemDict.keys():
+    if itemName.split('_')[-1] == 'sweet' and itemDict[itemName]["gen"] == 8:
+      sweets.append(itemName)
+  for sweet in sweets:
+    del itemDict[sweet]
+
+  return
+
+def checkForMissingDescriptions(items_fname, berries_fname, gen2Berries_fname, itemDict):
+  descriptionDict = {}
+
+  with open(items_fname, 'r', encoding='utf-8') as descriptionsCSV:
+    reader = csv.DictReader(descriptionsCSV)
+
+    for row in reader:
+      itemName = row["Item Name"]
+      descriptionDict[itemName] = True
+
+  with open(berries_fname, 'r', encoding='utf-8') as descriptionsCSV:
+    reader = csv.DictReader(descriptionsCSV)
+
+    for row in reader:
+      itemName = row["Berry Name"]
+      descriptionDict[itemName] = True
+
+  with open(gen2Berries_fname, 'r', encoding='utf-8') as descriptionsCSV:
+    reader = csv.DictReader(descriptionsCSV)
+
+    for row in reader:
+      itemName = row["Gen2Berry Name"]
+      descriptionDict[itemName] = True
+
+  for itemName in itemDict.keys():
+    if itemName not in descriptionDict.keys():
+      print(itemName, 'missing description!')
+
+  for itemName in descriptionDict.keys():
+    if itemName not in itemDict.keys():
+      print(itemName, 'has a description but not in itemDict!')
+
+  return
+
 def main():
   # dictionaries containing effect names/gens and status names/gens
   global effectDict
@@ -756,6 +838,14 @@ def main():
   addFieldStateData(itemDict)
 
   addNatureData(itemDict)
+
+  removeUselessItems(itemDict)
+
+  descriptionDataPath = getCSVDataPath() + 'descriptions/'
+  descriptions_fname = descriptionDataPath + 'itemDescriptions.csv'
+  berryDescriptions_fname = descriptionDataPath + 'berryDescriptions.csv'
+  gen2BerryDescriptions_fname = descriptionDataPath + 'gen2berryDescriptions.csv'
+  checkForMissingDescriptions(descriptions_fname, berryDescriptions_fname, gen2BerryDescriptions_fname, itemDict)
 
   checkGenConsistency(itemDict)
   itemTests(itemDict)

@@ -124,7 +124,9 @@ INSERT INTO pokemon (
   pokemon_pokeapi_name,
   pokemon_pokeapi_id,
   pokemon_ptype_name_1,
-  pokemon_ptype_name_2
+  pokemon_ptype_name_2,
+  pokemon_removed_from_swsh,
+  pokemon_removed_from_bdsp
 ) VALUES ?;
 
 INSERT INTO field_state (

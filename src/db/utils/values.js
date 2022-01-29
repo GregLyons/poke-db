@@ -413,7 +413,9 @@ const getValuesForTable = (
           pokemon_ps_id,
           pokemon_pokeapi_name,
           pokemon_ptype_name_1,
-          pokemon_ptype_name_2
+          pokemon_ptype_name_2,
+          pokemon_removed_from_swsh,
+          pokemon_removed_from_bdsp,
         )
       */
       values = require(PROCESSED_DATA_PATH + 'pokemon.json')
@@ -440,6 +442,8 @@ const getValuesForTable = (
           data.pokeapi[1],
           data.type_1,
           data.type_2,
+          data.removed_from_swsh,
+          data.removed_from_bdsp,
         ]);
       break;
     

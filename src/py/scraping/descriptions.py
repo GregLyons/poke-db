@@ -24,6 +24,30 @@ def getDataList(category):
     bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Category:In-battle_effect_items', 0, 10)
     itemGroups = bs.find(id='mw-pages').find_all('div', {'class': 'mw-category-group'})
 
+    # Drives
+    # bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Category:Drives', 0, 10)
+    # driveGroups = bs.find(id='mw-pages').find_next('div', {'class': 'mw-content-ltr'}).find_next_siblings('div', {'class': 'mw-content-ltr'})
+
+    # Gems
+    # bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Category:Gems', 0, 10)
+    # gemGroups = bs.find(id='mw-pages').find_next('div', {'class': 'mw-category-group'}).find_next_siblings('div', {'class': 'mw-category-group'})
+    # itemGroups += gemGroups
+
+    # Stat increase
+    bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Category:Stat-increasing_items', 0, 10)
+    plusStatGroups = bs.find(id='mw-pages').find_all('div', {'class': 'mw-category-group'})
+    itemGroups += plusStatGroups
+
+    # Type increase
+    bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Category:Type-enhancing_held_items', 0, 10)
+    plusTypeGroups = bs.find(id='mw-pages').find('div', {'class': 'mw-category-group'}).find_next_siblings('div', {'class': 'mw-category-group'})
+    itemGroups += plusTypeGroups
+
+    # Z crystals
+    bs = openLink('https://bulbapedia.bulbagarden.net/wiki/Category:Z-Crystals', 0, 10)
+    zCrystalGroups = bs.find(id='mw-pages').find('div', {'class': 'mw-category-group'}).find_next_siblings('div', {'class': 'mw-category-group'})
+    itemGroups += zCrystalGroups
+
     dataRows, nameSlot, genSlot, ignoreSlot, ignoreCode, placeholderGen = itemGroups, None, None, None, None, None
 
   elif category == 'berry':
@@ -124,6 +148,22 @@ def scrapeDescriptions(fnamePrefix, category, descriptionDict):
 
   print('descriptionDict cleaned.')
 
+  # Manually add rusted sword/shield since they aren't accessible by list as far as I can tell
+  if category == 'item':
+    descriptionDict["rusted_shield"] = {
+      "gen": 8,
+      "description_type": 'item',
+      "descriptions": ['It is said that a hero used this shield to halt a terrible disaster in ancient times. But it\'s grown rusty and worn.'],
+      0: ['SwSh'],
+    }
+
+    descriptionDict["rusted_sword"] = {
+      "gen": 8,
+      "description_type": 'item',
+      "descriptions": ['It is said that a hero used this sword to halt a terrible disaster in ancient times. But it\'s grown rusty and worn.'],
+      0: ['SwSh'],
+    }
+
   print(f'Writing {category} descriptions to .csv.')
   # Write move descriptions to .csv
   # First column is Move Name, followed by the description index
@@ -139,6 +179,10 @@ def scrapeDescriptions(fnamePrefix, category, descriptionDict):
 
     for entityKey in [key for key in descriptionDict.keys() if descriptionDict[key]["description_type"] == category]:
       csvRow = [entityKey, descriptionDict[entityKey]["gen"]]
+      
+      if entityKey in ['gem', 'incense', 'plate', 'timespace_orbs', 'smoke_ball', 'luck_incense']:
+        del descriptionDict[entityKey]
+        continue
 
       for description in descriptionDict[entityKey]["descriptions"]:
         # remove new lines from description and remove accents from 'Pokémon'.
@@ -383,9 +427,21 @@ def handleItemLink(link, descriptionDict):
   # metronome has '(item)' appended to avoid confusion with the move--remove parentheses
   itemName, linkURL = parseName(link.get_text().rstrip('*')).replace('(item)', 'item'), 'https://bulbapedia.bulbagarden.net/' + link['href']
 
+  if itemName == 'black_belt_item':
+    itemName = 'black_belt'
+
   # checking for duplicate names, if any
   if itemName in descriptionDict:
     print(f'{itemName} is already in descriptionDict!')
+
+  # in type-enhancing section, there are sections for multiple items; ignore those
+  if itemName in ['incense', 'timespace_orbs', 'gem', 'plate']:
+    return itemName
+
+  # ignore useless items
+  if itemName in ['luck_incense', 'smoke_ball']:
+    return itemName
+
 
   bs = openLink(linkURL, 0, 10)
 
@@ -397,8 +453,17 @@ def handleItemLink(link, descriptionDict):
     else: 
       if re.search(r'Omega Ruby and Alpha Sapphire', introduction):
         itemGen = 6
+      elif re.search(r'Pokémon Sun and Moon', introduction):
+        itemGen = 7
+      elif re.search(r'Pokémon Ultra Sun and Ultra Moon', introduction):
+        itemGen = 7
       elif re.search(r'exclusive to the Generation II games', introduction):
         itemGen = 2
+      elif re.search(r'introduced in Pokémon Platinum', introduction):
+        itemGen = 4
+      elif re.search(r'first appeared in game data in Generation ([IVX]*).', introduction):
+        itemGenSearch = re.search(r'first appeared in game data in Generation ([IVX]*).', introduction)
+        itemGen = genSymbolToNumber(itemGenSearch.group(1))
       else:
         raise Exception("Could not find item gen from introduction:", introduction)
 
@@ -591,25 +656,25 @@ def main():
   fnamePrefix = dataPath + '___Descriptions'
   descriptionDict = {}
 
-  print('Scraping ability descriptions...')
-  scrapeDescriptions(fnamePrefix, 'ability', descriptionDict)
-  print()
+  # print('Scraping ability descriptions...')
+  # scrapeDescriptions(fnamePrefix, 'ability', descriptionDict)
+  # print()
 
-  print('Scraping berry descriptions...')
-  scrapeDescriptions(fnamePrefix, 'berry', descriptionDict)
-  print()
+  # print('Scraping berry descriptions...')
+  # scrapeDescriptions(fnamePrefix, 'berry', descriptionDict)
+  # print()
 
-  print('Scraping gen 2 berry descriptions...')
-  scrapeDescriptions(fnamePrefix, 'gen2berry', descriptionDict)
-  print()
+  # print('Scraping gen 2 berry descriptions...')
+  # scrapeDescriptions(fnamePrefix, 'gen2berry', descriptionDict)
+  # print()
 
   print('Scraping item descriptions...')
   scrapeDescriptions(fnamePrefix, 'item', descriptionDict)
   print()
 
-  print('Scraping move descriptions...')
-  scrapeDescriptions(fnamePrefix, 'move', descriptionDict)
-  print()
+  # print('Scraping move descriptions...')
+  # scrapeDescriptions(fnamePrefix, 'move', descriptionDict)
+  # print()
 
   return
 

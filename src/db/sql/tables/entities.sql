@@ -251,6 +251,8 @@ CREATE TABLE IF NOT EXISTS pokemon (
   pokemon_pokeapi_id VARCHAR(45) NOT NULL,
   pokemon_ptype_name_1 VARCHAR(45) NOT NULL,
   pokemon_ptype_name_2 VARCHAR(45) NOT NULL,
+  pokemon_removed_from_swsh TINYINT UNSIGNED NOT NULL,
+  pokemon_removed_from_bdsp TINYINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (generation_id, pokemon_id),
   FOREIGN KEY (generation_id) REFERENCES generation(generation_id)
