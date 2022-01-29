@@ -390,6 +390,11 @@ def addAbilityData(fname, pokemonDict):
   if pokemonName in ['pikachu_partner', 'eevee_partner']:
     pokemonDict[pokemonName]["gen"] = 'lgpe_only'
 
+  # darmanitan_zen_galar cannot possibly have gorilla tactics, since its presence in battle requires darmanitan_standard_galar to have zen_mode. We put 'zen_mode' in slot 1.
+  pokemonDict["darmanitan_zen_galar"]["ability_1"] = [['zen_mode', 8]]
+  pokemonDict["darmanitan_zen_galar"]["ability_2"] = [['', 8]]
+  pokemonDict["darmanitan_zen_galar"]["ability_hidden"] = [['', 8]]
+
   return
 
 # add data about evolution relations between Pokemon to pokemonDict
@@ -1167,6 +1172,13 @@ def removedFromGen8(fname, pokemonDict):
   # G-max removed from BDSP
   for pokemonName in pokemonDict.keys():
     if pokemonDict[pokemonName]["form_class"] == [["gmax", 8]]:
+      pokemonDict[pokemonName]["removed_from_bdsp"] = True
+
+  # Pokemon from later gens, except arceus_fairy, removed from BDSP
+  for pokemonName in pokemonDict.keys():
+    if pokemonName == 'arceus_fairy':
+      continue
+    if pokemonDict[pokemonName]["gen"] == 'lgpe_only' or pokemonDict[pokemonName]["gen"] > 4:
       pokemonDict[pokemonName]["removed_from_bdsp"] = True
 
   return

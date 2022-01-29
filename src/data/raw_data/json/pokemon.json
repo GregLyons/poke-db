@@ -32296,9 +32296,9 @@
     "special_attack": [[30, 8]],
     "special_defense": [[55, 8]],
     "speed": [[135, 8]],
-    "ability_1": [["gorilla_tactics", 8]],
+    "ability_1": [["zen_mode", 8]],
     "ability_2": [["", 8]],
-    "ability_hidden": [["zen_mode", 8]],
+    "ability_hidden": [["", 8]],
     "height": 1.7,
     "weight": 120.0,
     "pokeapi": [
@@ -32310,7 +32310,7 @@
     "form_class": [["battle", 8]],
     "formatted_name": "Darmanitan (Zen Galar)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "pikachu_original_cap": {
     "dex_number": 25,
@@ -32340,7 +32340,7 @@
     "form_class": [["cosmetic", 7]],
     "formatted_name": "Pikachu (Original Cap)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "pikachu_kalos_cap": {
     "dex_number": 25,
@@ -32370,7 +32370,7 @@
     "form_class": [["cosmetic", 7]],
     "formatted_name": "Pikachu (Kalos Cap)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "pikachu_alola_cap": {
     "dex_number": 25,
@@ -32400,7 +32400,7 @@
     "form_class": [["cosmetic", 7]],
     "formatted_name": "Pikachu (Alola Cap)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "pikachu_hoenn_cap": {
     "dex_number": 25,
@@ -32430,7 +32430,7 @@
     "form_class": [["cosmetic", 7]],
     "formatted_name": "Pikachu (Hoenn Cap)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "pikachu_sinnoh_cap": {
     "dex_number": 25,
@@ -32460,7 +32460,7 @@
     "form_class": [["cosmetic", 7]],
     "formatted_name": "Pikachu (Sinnoh Cap)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "pikachu_unova_cap": {
     "dex_number": 25,
@@ -32490,7 +32490,7 @@
     "form_class": [["cosmetic", 7]],
     "formatted_name": "Pikachu (Unova Cap)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "pikachu_world_cap": {
     "dex_number": 25,
@@ -32520,7 +32520,7 @@
     "form_class": [["cosmetic", 7]],
     "formatted_name": "Pikachu (World Cap)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "necrozma": {
     "dex_number": 800,
@@ -32677,7 +32677,7 @@
     "form_class": [["base", "lgpe_only"]],
     "formatted_name": "Pikachu (Partner)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "eevee_partner": {
     "dex_number": 133,
@@ -32705,7 +32705,7 @@
     "form_class": [["base", "lgpe_only"]],
     "formatted_name": "Eevee (Partner)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "kyogre_primal": {
     "dex_number": 382,
@@ -32740,7 +32740,7 @@
     "form_class": [["other", 6]],
     "formatted_name": "Kyogre (Primal)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "groudon_primal": {
     "dex_number": 383,
@@ -32775,7 +32775,7 @@
     "form_class": [["other", 6]],
     "formatted_name": "Groudon (Primal)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "deoxys_normal": {
     "dex_number": 386,
@@ -34900,7 +34900,7 @@
     "form_class": [["cosmetic", 6]],
     "formatted_name": "Pikachu (Rock Star)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "pikachu_belle": {
     "dex_number": 25,
@@ -34930,7 +34930,7 @@
     "form_class": [["cosmetic", 6]],
     "formatted_name": "Pikachu (Belle)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "pikachu_pop_star": {
     "dex_number": 25,
@@ -34960,7 +34960,7 @@
     "form_class": [["cosmetic", 6]],
     "formatted_name": "Pikachu (Pop Star)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "pikachu_phd": {
     "dex_number": 25,
@@ -34990,7 +34990,7 @@
     "form_class": [["cosmetic", 6]],
     "formatted_name": "Pikachu (Phd)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "pikachu_libre": {
     "dex_number": 25,
@@ -35020,7 +35020,7 @@
     "form_class": [["cosmetic", 6]],
     "formatted_name": "Pikachu (Libre)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "floette_eternal": {
     "dex_number": 670,
@@ -35200,7 +35200,7 @@
     "form_class": [["cosmetic", 7]],
     "formatted_name": "Pikachu (Partner Cap)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "unown_a": {
     "dex_number": 201,
@@ -37847,7 +37847,7 @@
     "form_class": [["cosmetic", 6]],
     "formatted_name": "Pikachu (Cosplay)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "minior_meteor_orange": {
     "dex_number": 774,
