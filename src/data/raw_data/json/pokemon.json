@@ -12852,9 +12852,9 @@
       "mothim", 414
     ],
     "form_data": {
-      "mothim_plant": [["other", 4]],
-      "mothim_sandy": [["other", 4]],
-      "mothim_trash": [["other", 4]]
+      "mothim_plant": [["cosmetic", 4]],
+      "mothim_sandy": [["cosmetic", 4]],
+      "mothim_trash": [["cosmetic", 4]]
     },
     "form_class": [["base", 4]],
     "formatted_name": "Mothim",
@@ -20219,10 +20219,10 @@
       "genesect", 649
     ],
     "form_data": {
-      "genesect_douse": [["other", 5]],
-      "genesect_shock": [["other", 5]],
-      "genesect_burn": [["other", 5]],
-      "genesect_chill": [["other", 5]]
+      "genesect_douse": [["battle", 5]],
+      "genesect_shock": [["battle", 5]],
+      "genesect_burn": [["battle", 5]],
+      "genesect_chill": [["battle", 5]]
     },
     "form_class": [["base", 5]],
     "formatted_name": "Genesect",
@@ -22215,7 +22215,7 @@
     ],
     "form_data": {
       "xerneas_active": [["battle", 6]],
-      "xerneas_neutral": [["other", 6]]
+      "xerneas_neutral": [["battle", 6]]
     },
     "form_class": [["base", 6]],
     "formatted_name": "Xerneas",
@@ -28382,8 +28382,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Venusaur (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "charizard_mega_x": {
     "dex_number": 6,
@@ -28412,8 +28412,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Charizard (Mega X)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "charizard_mega_y": {
     "dex_number": 6,
@@ -28447,8 +28447,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Charizard (Mega Y)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "blastoise_mega": {
     "dex_number": 9,
@@ -28482,8 +28482,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Blastoise (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "alakazam_mega": {
     "dex_number": 65,
@@ -28517,8 +28517,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Alakazam (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "gengar_mega": {
     "dex_number": 94,
@@ -28552,8 +28552,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Gengar (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "kangaskhan_mega": {
     "dex_number": 115,
@@ -28587,8 +28587,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Kangaskhan (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "pinsir_mega": {
     "dex_number": 127,
@@ -28622,8 +28622,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Pinsir (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "gyarados_mega": {
     "dex_number": 130,
@@ -28657,8 +28657,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Gyarados (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "aerodactyl_mega": {
     "dex_number": 142,
@@ -28692,8 +28692,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Aerodactyl (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "mewtwo_mega_x": {
     "dex_number": 150,
@@ -28722,8 +28722,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Mewtwo (Mega X)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "mewtwo_mega_y": {
     "dex_number": 150,
@@ -28757,8 +28757,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Mewtwo (Mega Y)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "ampharos_mega": {
     "dex_number": 181,
@@ -28793,7 +28793,7 @@
     "form_class": [["mega", 6]],
     "formatted_name": "Ampharos (Mega)",
     "removed_from_swsh": true,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "scizor_mega": {
     "dex_number": 212,
@@ -28827,8 +28827,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Scizor (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "heracross_mega": {
     "dex_number": 214,
@@ -28862,8 +28862,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Heracross (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "houndoom_mega": {
     "dex_number": 229,
@@ -28898,7 +28898,7 @@
     "form_class": [["mega", 6]],
     "formatted_name": "Houndoom (Mega)",
     "removed_from_swsh": true,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "tyranitar_mega": {
     "dex_number": 248,
@@ -28932,8 +28932,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Tyranitar (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "blaziken_mega": {
     "dex_number": 257,
@@ -28967,8 +28967,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Blaziken (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "gardevoir_mega": {
     "dex_number": 282,
@@ -29002,8 +29002,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Gardevoir (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "mawile_mega": {
     "dex_number": 303,
@@ -29037,8 +29037,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Mawile (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "aggron_mega": {
     "dex_number": 306,
@@ -29072,8 +29072,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Aggron (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "medicham_mega": {
     "dex_number": 308,
@@ -29108,7 +29108,7 @@
     "form_class": [["mega", 6]],
     "formatted_name": "Medicham (Mega)",
     "removed_from_swsh": true,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "manectric_mega": {
     "dex_number": 310,
@@ -29142,8 +29142,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Manectric (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "banette_mega": {
     "dex_number": 354,
@@ -29178,7 +29178,7 @@
     "form_class": [["mega", 6]],
     "formatted_name": "Banette (Mega)",
     "removed_from_swsh": true,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "absol_mega": {
     "dex_number": 359,
@@ -29212,8 +29212,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Absol (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "latias_mega": {
     "dex_number": 380,
@@ -29247,8 +29247,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Latias (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "latios_mega": {
     "dex_number": 381,
@@ -29282,8 +29282,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Latios (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "garchomp_mega": {
     "dex_number": 445,
@@ -29317,8 +29317,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Garchomp (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "lucario_mega": {
     "dex_number": 448,
@@ -29352,8 +29352,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Lucario (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "abomasnow_mega": {
     "dex_number": 460,
@@ -29387,8 +29387,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Abomasnow (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "beedrill_mega": {
     "dex_number": 15,
@@ -29423,7 +29423,7 @@
     "form_class": [["mega", 6]],
     "formatted_name": "Beedrill (Mega)",
     "removed_from_swsh": true,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "pidgeot_mega": {
     "dex_number": 18,
@@ -29458,7 +29458,7 @@
     "form_class": [["mega", 6]],
     "formatted_name": "Pidgeot (Mega)",
     "removed_from_swsh": true,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "slowbro_mega": {
     "dex_number": 80,
@@ -29492,8 +29492,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Slowbro (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "steelix_mega": {
     "dex_number": 208,
@@ -29527,8 +29527,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Steelix (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "sceptile_mega": {
     "dex_number": 254,
@@ -29562,8 +29562,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Sceptile (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "swampert_mega": {
     "dex_number": 260,
@@ -29597,8 +29597,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Swampert (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "sableye_mega": {
     "dex_number": 302,
@@ -29632,8 +29632,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Sableye (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "sharpedo_mega": {
     "dex_number": 319,
@@ -29667,8 +29667,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Sharpedo (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "camerupt_mega": {
     "dex_number": 323,
@@ -29703,7 +29703,7 @@
     "form_class": [["mega", 6]],
     "formatted_name": "Camerupt (Mega)",
     "removed_from_swsh": true,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "altaria_mega": {
     "dex_number": 334,
@@ -29737,8 +29737,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Altaria (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "glalie_mega": {
     "dex_number": 362,
@@ -29772,8 +29772,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Glalie (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "salamence_mega": {
     "dex_number": 373,
@@ -29807,8 +29807,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Salamence (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "metagross_mega": {
     "dex_number": 376,
@@ -29842,8 +29842,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Metagross (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "rayquaza_mega": {
     "dex_number": 384,
@@ -29872,8 +29872,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Rayquaza (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "lopunny_mega": {
     "dex_number": 428,
@@ -29907,8 +29907,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Lopunny (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "gallade_mega": {
     "dex_number": 475,
@@ -29942,8 +29942,8 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Gallade (Mega)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_swsh": true,
+    "removed_from_bdsp": true
   },
   "audino_mega": {
     "dex_number": 531,
@@ -29977,7 +29977,7 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Audino (Mega)",
-    "removed_from_swsh": false,
+    "removed_from_swsh": true,
     "removed_from_bdsp": true
   },
   "diancie_mega": {
@@ -30012,7 +30012,7 @@
     },
     "form_class": [["mega", 6]],
     "formatted_name": "Diancie (Mega)",
-    "removed_from_swsh": false,
+    "removed_from_swsh": true,
     "removed_from_bdsp": true
   },
   "rattata_alola": {
@@ -31194,7 +31194,7 @@
     "form_class": [["gmax", 8]],
     "formatted_name": "Charizard (Gmax)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "butterfree_gmax": {
     "dex_number": 12,
@@ -31224,7 +31224,7 @@
     "form_class": [["gmax", 8]],
     "formatted_name": "Butterfree (Gmax)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "pikachu_gmax": {
     "dex_number": 25,
@@ -31254,7 +31254,7 @@
     "form_class": [["gmax", 8]],
     "formatted_name": "Pikachu (Gmax)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "meowth_gmax": {
     "dex_number": 52,
@@ -31284,7 +31284,7 @@
     "form_class": [["gmax", 8]],
     "formatted_name": "Meowth (Gmax)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "machamp_gmax": {
     "dex_number": 68,
@@ -31314,7 +31314,7 @@
     "form_class": [["gmax", 8]],
     "formatted_name": "Machamp (Gmax)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "gengar_gmax": {
     "dex_number": 94,
@@ -31344,7 +31344,7 @@
     "form_class": [["gmax", 8]],
     "formatted_name": "Gengar (Gmax)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "kingler_gmax": {
     "dex_number": 99,
@@ -31374,7 +31374,7 @@
     "form_class": [["gmax", 8]],
     "formatted_name": "Kingler (Gmax)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "lapras_gmax": {
     "dex_number": 131,
@@ -31404,7 +31404,7 @@
     "form_class": [["gmax", 8]],
     "formatted_name": "Lapras (Gmax)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "eevee_gmax": {
     "dex_number": 133,
@@ -31434,7 +31434,7 @@
     "form_class": [["gmax", 8]],
     "formatted_name": "Eevee (Gmax)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "snorlax_gmax": {
     "dex_number": 143,
@@ -31464,7 +31464,7 @@
     "form_class": [["gmax", 8]],
     "formatted_name": "Snorlax (Gmax)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "garbodor_gmax": {
     "dex_number": 569,
@@ -31764,7 +31764,7 @@
     "form_class": [["gmax", 8]],
     "formatted_name": "Toxtricity (Low Key Gmax)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "toxtricity_amped_gmax": {
     "dex_number": 849,
@@ -32004,7 +32004,7 @@
     "form_class": [["gmax", 8]],
     "formatted_name": "Venusaur (Gmax)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "blastoise_gmax": {
     "dex_number": 9,
@@ -32034,7 +32034,7 @@
     "form_class": [["gmax", 8]],
     "formatted_name": "Blastoise (Gmax)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "rillaboom_gmax": {
     "dex_number": 812,
@@ -32184,7 +32184,7 @@
     "form_class": [["gmax", 8]],
     "formatted_name": "Urshifu (Rapid Strike Gmax)",
     "removed_from_swsh": false,
-    "removed_from_bdsp": false
+    "removed_from_bdsp": true
   },
   "darmanitan_standard": {
     "dex_number": 555,
@@ -32922,9 +32922,9 @@
       "giratina-altered", 487
     ],
     "form_data": {
-      "giratina_origin": [["base", 4]]
+      "giratina_origin": [["battle", 4]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["base", 4]],
     "formatted_name": "Giratina (Altered)",
     "removed_from_swsh": false,
     "removed_from_bdsp": false
@@ -32952,9 +32952,9 @@
       "giratina-origin", 10063
     ],
     "form_data": {
-      "giratina_altered": [["other", 4]]
+      "giratina_altered": [["base", 4]]
     },
-    "form_class": [["base", 4]],
+    "form_class": [["battle", 4]],
     "formatted_name": "Giratina (Origin)",
     "removed_from_swsh": false,
     "removed_from_bdsp": false
@@ -35259,7 +35259,7 @@
     "form_data": {
       "mothim": [["base", 4]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["cosmetic", 4]],
     "formatted_name": "Mothim (Plant)",
     "removed_from_swsh": true,
     "removed_from_bdsp": false
@@ -36419,7 +36419,7 @@
     "form_data": {
       "genesect": [["base", 5]]
     },
-    "form_class": [["other", 5]],
+    "form_class": [["battle", 5]],
     "formatted_name": "Genesect (Douse)",
     "removed_from_swsh": false,
     "removed_from_bdsp": true
@@ -36449,7 +36449,7 @@
     "form_data": {
       "genesect": [["base", 5]]
     },
-    "form_class": [["other", 5]],
+    "form_class": [["battle", 5]],
     "formatted_name": "Genesect (Shock)",
     "removed_from_swsh": false,
     "removed_from_bdsp": true
@@ -36479,7 +36479,7 @@
     "form_data": {
       "genesect": [["base", 5]]
     },
-    "form_class": [["other", 5]],
+    "form_class": [["battle", 5]],
     "formatted_name": "Genesect (Burn)",
     "removed_from_swsh": false,
     "removed_from_bdsp": true
@@ -36509,7 +36509,7 @@
     "form_data": {
       "genesect": [["base", 5]]
     },
-    "form_class": [["other", 5]],
+    "form_class": [["battle", 5]],
     "formatted_name": "Genesect (Chill)",
     "removed_from_swsh": false,
     "removed_from_bdsp": true
@@ -37745,7 +37745,7 @@
     "form_data": {
       "xerneas": [["base", 6]]
     },
-    "form_class": [["other", 6]],
+    "form_class": [["battle", 6]],
     "formatted_name": "Xerneas (Neutral)",
     "removed_from_swsh": false,
     "removed_from_bdsp": true
@@ -38297,7 +38297,7 @@
     "form_data": {
       "mothim": [["base", 4]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["cosmetic", 4]],
     "formatted_name": "Mothim (Sandy)",
     "removed_from_swsh": true,
     "removed_from_bdsp": false
@@ -38330,7 +38330,7 @@
     "form_data": {
       "mothim": [["base", 4]]
     },
-    "form_class": [["other", 4]],
+    "form_class": [["cosmetic", 4]],
     "formatted_name": "Mothim (Trash)",
     "removed_from_swsh": true,
     "removed_from_bdsp": false

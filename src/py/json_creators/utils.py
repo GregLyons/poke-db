@@ -184,7 +184,7 @@ def checkConsistency(entityDict, categoryName, categoryDict, defaultValue):
 
 def baseFormSuffices():
   # By putting 'ice' before 'normal', we ensure that the base forms for Arceus and Silvally are the Normal-type forms (note that they appear twice).
-  return ['ice', 'normal', 'plant', 'aria', 'baile', 'standard', 'origin', 'land', 'incarnate', 'shield', 'average', 'midday', 'solo', 'm', '50', 'overcast', 'west', 'red_striped', 'spring', 'ordinary', 'full_belly', 'amped', 'a', 'icy_snow', 'red']
+  return ['ice', 'normal', 'plant', 'aria', 'baile', 'standard', 'altered', 'land', 'incarnate', 'shield', 'average', 'midday', 'solo', 'm', '50', 'overcast', 'west', 'red_striped', 'spring', 'ordinary', 'full_belly', 'amped', 'a', 'icy_snow', 'red']
 
 # parse names in different forms from Bulbapedia and Smogon API to a common, snake_case form
 def parseName(text, mode='normal'):

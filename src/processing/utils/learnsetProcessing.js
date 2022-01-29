@@ -377,8 +377,10 @@ const addLearnsetsToPokemonArr = (learnsets, moves, pokemon, pokemonArr) => {
 
     const pokemonName = pokemonEntry.name;
     const evolutionData = pokemonEntry.evolves_to;
+
     const evolutionNames = Object.keys(evolutionData);
 
+    // Initialize evolutionLearnsetMap.get(evolutionName)
     for (let evolutionName of evolutionNames) {
       if (!evolutionLearnsetMap.has(evolutionName)) evolutionLearnsetMap.set(evolutionName, {});
     }
@@ -424,21 +426,87 @@ const addLearnsetsToPokemonArr = (learnsets, moves, pokemon, pokemonArr) => {
 
 // For Pokemon which can only learn a move through evolution, add that move to their learnset
 const addLearnDataToEvolutions = (evolutionLearnsetMap, pokemonArr) => {
+  // evolutionLearnsetMap only carries from one step to the next. So moves from 'oddish' will be passed onto 'gloom' but not to 'vileplume'. 
+  const nextEvolutionLearnsetMap = new Map();
+  
+  // First pass through pokemonArr. This will pick up 1 -> 2 and 2 -> 3 learn methods, but not 1 -> 3. We use this pass to set up nextEvolutionLearnsetMap, which will establish 1 -> 3.
   for (let pokemonEntry of pokemonArr) {
     const pokemonName = pokemonEntry.name;
     const evolutionLearnsetData = evolutionLearnsetMap.get(pokemonName);
 
+    // Check if this is a second-level evolution
+    let nextEvolutionData;
+    if (Object.keys(pokemonEntry.evolves_from).length > 0) {
+      // If a second-level evolution, get third evolution if it exists
+      nextEvolutionData = pokemonEntry.evolves_to;
+    }
+    let nextEvolutionNames = [];
+    if (nextEvolutionData) nextEvolutionNames = nextEvolutionNames.concat(Object.keys(nextEvolutionData));
+
+    // Initialize nextEvolutionLearnsetMap.get(nextEvolutionName)
+    for (let nextEvolutionName of nextEvolutionNames) {
+      if (!nextEvolutionLearnsetMap.has(nextEvolutionName)) nextEvolutionLearnsetMap.set(nextEvolutionName, {});
+    }
+
+    // Update current Pokemon's learnset with its prevolution learn data
     if (evolutionLearnsetData) {
       const pokemonLearnset = pokemonEntry.learnset;
       for (let moveName of Object.keys(evolutionLearnsetData)) {
-        if (!pokemonLearnset[moveName]) {
-          pokemonLearnset[moveName] = evolutionLearnsetData[moveName].map(gen => gen + 'EV');
-        }
-        // If the Pokemon can learn the move another way, do not add the 'EV' method to its learnset.
-        else {
-          // pokemonLearnset[moveName] = pokemonLearnset[moveName].concat(evolutionLearnsetData[moveName].map(gen => gen + 'EV'));
+        // If this Pokemon is the second in a three-evolution line, then the final evolution will not be handled by evolutionLearnsetMap. Thus, we need to add this to nextEvolutionLearnsetMap.
+        // Update current entry with previous evolution data
+        pokemonLearnset[moveName] = (pokemonLearnset[moveName] || []).concat(evolutionLearnsetData[moveName].map(gen => gen + 'EV'));
+
+        // Add moves learned only through evolution to nextEvolutionMap
+        for (let nextEvolutionName of nextEvolutionNames) {
+          // evolutionLearnsetData[moveName] is a list of gens in which the prevolution of this current Pokemon learns the move. This will be passed onto the third evolution.
+          nextEvolutionLearnsetMap.set(nextEvolutionName,
+            {
+              ...nextEvolutionLearnsetMap.get(nextEvolutionName),
+              [moveName]: evolutionLearnsetData[moveName],
+            }
+          );
         }
       }
+    }
+  }
+
+  // Handle 1 -> 3 learning
+  for (let pokemonEntry of pokemonArr) {
+    const pokemonName = pokemonEntry.name;
+    const nextEvolutionLearnsetData = nextEvolutionLearnsetMap.get(pokemonName);
+
+    // Update current Pokemon's learnset with 1 -> 3 learn data
+    if (nextEvolutionLearnsetData) {
+      const pokemonLearnset = pokemonEntry.learnset;
+      for (let moveName of Object.keys(nextEvolutionLearnsetData)) {
+        // The Pokemon can only learn the move through evolution
+        // If this Pokemon is the second in a three-evolution line, then the final evolution will not be handled by evolutionLearnsetMap. Thus, we need to add this to nextEvolutionLearnsetMap.
+        // Update current entry with previous evolution data
+        pokemonLearnset[moveName] = (pokemonLearnset[moveName] || []).concat(nextEvolutionLearnsetData[moveName].map(gen => gen + 'EV'));
+      }
+    }
+  }
+
+  // Remove 'EV' flags when there are other ways to learn the move in a given generation
+  for (let pokemonEntry of pokemonArr) {
+    const pokemonName = pokemonEntry.name;
+
+    // Iterate over moves in pokemonName's learnset
+    for (let moveName of Object.keys(pokemonEntry.learnset)) {
+      let gensWithOtherLearnMethod = [];
+
+      // Get gens with other learn method
+      for (let learnMethod of pokemonEntry.learnset[moveName]) {
+        if (!learnMethod.includes('EV')) {
+          // First character of learnMethod is gen
+          gensWithOtherLearnMethod.push(learnMethod.charAt(0));
+        }
+      }
+
+      // Keep learn method only if it's not , or if 'EV' is the only way to learn that move in that gen.
+      pokemonEntry.learnset[moveName] = [...new Set(
+        pokemonEntry.learnset[moveName].filter(learnMethod => !learnMethod.includes('EV') || !gensWithOtherLearnMethod.includes(learnMethod.charAt(0)))
+      )];
     }
   }
 }
@@ -565,6 +633,6 @@ const addPokemonShowdownIDToPokemonArr = (psIDs, pokemonArr) => {
 module.exports = {
   mergeLearnsets,
   addLearnsetsToPokemonArr,
-  addLearnDataToEvolutions,
+  addLearnDataToEvolutions: addLearnDataToEvolutions,
   addPokemonShowdownIDToPokemonArr,
 }

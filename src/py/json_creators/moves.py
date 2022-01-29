@@ -709,6 +709,17 @@ def removedFromGen8(fname, moveDict):
       moveDict[moveName]["removed_from_swsh"] = removedFromSwSh
       moveDict[moveName]["removed_from_bdsp"] = removedFromBDSP
 
+  # Z-moves removed from SwSh/BDSP
+  for moveName in moveDict.keys():
+    if moveDict[moveName]["z_move"]:
+      moveDict[moveName]["removed_from_swsh"] = True
+      moveDict[moveName]["removed_from_bdsp"] = True
+
+  # G-max removed from BDSP
+  for moveName in moveDict.keys():
+    if moveDict[moveName]["max_move"] or moveDict[moveName]["g_max_move"]:
+      moveDict[moveName]["removed_from_bdsp"] = True
+
   return
 
 # turn various strings into numeric types

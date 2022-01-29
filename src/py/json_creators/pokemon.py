@@ -1063,7 +1063,7 @@ def updateGens(pokemonDict):
   return
 
 def hasCoesmetic(baseFormName):
-  return 'pikachu' in baseFormName or 'pichu' in baseFormName or 'unown' in baseFormName or 'shellos' in baseFormName or 'gastrodon' in baseFormName or 'deerling' in baseFormName  or 'sawsbuck' in baseFormName or 'minior' in baseFormName or 'scatterbug' in baseFormName or 'spewpa' in baseFormName or 'vivillon' in baseFormName or 'flabebe' in baseFormName or 'floette' in baseFormName or 'florges' in baseFormName or 'furfrou' in baseFormName or 'minior' in baseFormName or 'sinistea' in baseFormName or 'polteageist' in baseFormName or 'alcremie' in baseFormName
+  return 'pikachu' in baseFormName or 'pichu' in baseFormName or 'unown' in baseFormName or 'shellos' in baseFormName or 'gastrodon' in baseFormName or 'deerling' in baseFormName  or 'sawsbuck' in baseFormName or 'minior' in baseFormName or 'scatterbug' in baseFormName or 'spewpa' in baseFormName or 'vivillon' in baseFormName or 'flabebe' in baseFormName or 'floette' in baseFormName or 'florges' in baseFormName or 'furfrou' in baseFormName or 'minior' in baseFormName or 'sinistea' in baseFormName or 'polteageist' in baseFormName or 'alcremie' in baseFormName or 'mothim' in baseFormName
 
 def assertCosmeticForms(pokemonDict):
   for baseFormName in [pokemonName for pokemonName in pokemonDict.keys() if pokemonDict[pokemonName]["form_class"][0][0] == 'base']:
@@ -1095,17 +1095,23 @@ def assertTypeForms(pokemonDict):
 def assertBattleForms(pokemonDict):
   for battleFormName in [
     'cherrim_sunshine',
+    'giratina_origin',
     'darmanitan_zen',
     'darmanitan_zen_galar',
     'meloetta_pirouette',
     'greninja_ash',
     'aegislash_blade',
     'xerneas_active',
+    'xerneas_neutral',
     'wishiwashi_school',
     'minior_meteor',
     'mimikyu_busted',
     'cramorant_gorging',
     'cramorant_gulping',
+    'genesect_douse',
+    'genesect_shock',
+    'genesect_burn',
+    'genesect_chill',
   ]:
     # update battle form's form class
     pokemonDict[battleFormName]["form_class"][0][0] = 'battle'
@@ -1126,6 +1132,7 @@ def removedFromGen8(fname, pokemonDict):
     pokemonDict[pokemonName]["removed_from_swsh"] = False
     pokemonDict[pokemonName]["removed_from_bdsp"] = False
 
+  # From .csv's
   with open(fname, 'r', encoding='utf-8') as removedCSV:
     reader = csv.DictReader(removedCSV)
     for row in reader:
@@ -1150,6 +1157,17 @@ def removedFromGen8(fname, pokemonDict):
         if pokemonDict[pokemonName]["form_class"][0][0] == 'base':
           for formName in pokemonDict[pokemonName]["form_data"]:
             pokemonDict[formName]["removed_from_bdsp"] = True
+
+  # Megas removed from SwSh/BDSP
+  for pokemonName in pokemonDict.keys():
+    if pokemonDict[pokemonName]["form_class"] == [["mega", 6]]:
+      pokemonDict[pokemonName]["removed_from_swsh"] = True
+      pokemonDict[pokemonName]["removed_from_bdsp"] = True
+
+  # G-max removed from BDSP
+  for pokemonName in pokemonDict.keys():
+    if pokemonDict[pokemonName]["form_class"] == [["gmax", 8]]:
+      pokemonDict[pokemonName]["removed_from_bdsp"] = True
 
   return
 
