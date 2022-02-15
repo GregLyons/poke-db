@@ -50,6 +50,7 @@ CREATE TABLE IF NOT EXISTS ability (
   ability_name VARCHAR(45) NOT NULL,
   ability_formatted_name VARCHAR(45) NOT NULL,
   introduced TINYINT UNSIGNED NOT NULL,
+  ability_ps_id VARCHAR(45) NOT NULL,
 
   PRIMARY KEY (generation_id, ability_id),
   FOREIGN KEY (generation_id) REFERENCES generation(generation_id)
@@ -71,6 +72,7 @@ CREATE TABLE IF NOT EXISTS item (
   item_formatted_name VARCHAR(45) NOT NULL,
   introduced TINYINT UNSIGNED NOT NULL,
   item_class ENUM('berry','choice', 'drive', 'gem', 'incense', 'mega_stone', 'memory', 'other', 'plate', 'power', 'stat_enhancer', 'type_enhancer', 'z_crystal'),
+  item_ps_id VARCHAR(45) NOT NULL,
 
   PRIMARY KEY (generation_id, item_id),
   FOREIGN KEY (generation_id) REFERENCES generation(generation_id)
@@ -93,6 +95,7 @@ CREATE TABLE IF NOT EXISTS effect (
   effect_formatted_name VARCHAR(45) NOT NULL,
   introduced TINYINT UNSIGNED NOT NULL,
   effect_description VARCHAR(400) NOT NULL,
+  effect_unformatted_name VARCHAR(45) NOT NULL,
 
   PRIMARY KEY (generation_id, effect_id),
   FOREIGN KEY (introduced) REFERENCES generation(generation_id)
@@ -113,6 +116,7 @@ CREATE TABLE IF NOT EXISTS field_state (
   field_state_class ENUM('entry_hazard', 'other', 'pledge', 'room', 'screen', 'terrain', 'weather'),
   field_state_target ENUM('all', 'all_allies', 'all_foes'),
   field_state_description VARCHAR(255) NOT NULL,
+  field_state_unformatted_name VARCHAR(45) NOT NULL,
 
   PRIMARY KEY (generation_id, field_state_id),
   FOREIGN KEY (introduced) REFERENCES generation(generation_id)
@@ -144,6 +148,7 @@ CREATE TABLE IF NOT EXISTS usage_method (
   usage_method_formatted_name VARCHAR(45) NOT NULL,
   introduced TINYINT UNSIGNED NOT NULL,
   usage_method_description VARCHAR(255) NOT NULL,
+  usage_method_unformatted_name VARCHAR(45) NOT NULL,
 
   PRIMARY KEY (generation_id, usage_method_id),
   FOREIGN KEY (introduced) REFERENCES generation(generation_id)
@@ -160,6 +165,7 @@ CREATE TABLE IF NOT EXISTS pstatus (
   introduced TINYINT UNSIGNED NOT NULL,
   pstatus_description VARCHAR(400) NOT NULL,
   pstatus_volatile TINYINT UNSIGNED NOT NULL,
+  pstatus_unformatted_name VARCHAR(45) NOT NULL,
 
   PRIMARY KEY (generation_id, pstatus_id),
   INDEX (pstatus_id)
@@ -199,6 +205,7 @@ CREATE TABLE IF NOT EXISTS pmove (
   pmove_removed_from_swsh TINYINT UNSIGNED NOT NULL,
   pmove_removed_from_bdsp TINYINT UNSIGNED NOT NULL,
   pmove_ptype_name VARCHAR(45) NOT NULL,
+  pmove_ps_id VARCHAR(45) NOT NULL,
 
   PRIMARY KEY (generation_id, pmove_id),
   FOREIGN KEY (generation_id) REFERENCES generation(generation_id)
@@ -223,6 +230,7 @@ CREATE TABLE IF NOT EXISTS stat (
   stat_formatted_name VARCHAR(45) NOT NULL,
   introduced TINYINT UNSIGNED NOT NULL,
   stat_description VARCHAR(255) NOT NULL,
+  stat_unformatted_name VARCHAR(45) NOT NULL,
 
   PRIMARY KEY (generation_id, stat_id),
   INDEX (stat_id)

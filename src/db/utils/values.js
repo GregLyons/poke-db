@@ -244,7 +244,8 @@ const getValuesForTable = (
           pstatus_formatted_name,
           introduced,
           pstatus_description,
-          pstatus_volatile
+          pstatus_volatile,
+          pstatus_unformatted_name
         )
       */
       values = require(PROCESSED_DATA_PATH + 'statuses.json').map(data => [
@@ -254,6 +255,7 @@ const getValuesForTable = (
         data.introduced,
         data.description,
         data.volatile,
+        data.formatted_name.toLowerCase().replace(/[^a-z0-9]+/g, ''),
       ]);
       break;
     
@@ -264,7 +266,8 @@ const getValuesForTable = (
           stat_name,
           stat_formatted_name,
           introduced,
-          stat_description
+          stat_description,
+          stat_unformatted_name
         )
       */
       values = require(PROCESSED_DATA_PATH + 'stats.json').map(data => [
@@ -273,6 +276,7 @@ const getValuesForTable = (
         data.formatted_name,
         data.introduced,
         data.description,
+        data.formatted_name.toLowerCase().replace(/[^a-z0-9]+/g, ''),
       ]);
       break;
 
@@ -282,11 +286,18 @@ const getValuesForTable = (
           generation_id,
           ability_name,
           ability_formatted_name,
+          ability_ps_id,
           introduced
         )
       */
       values = require(PROCESSED_DATA_PATH + 'abilities.json')
-        .map(data => [data.gen, data.name, data.formatted_name, data.introduced]);
+        .map(data => [
+          data.gen,
+          data.name,
+          data.formatted_name,
+          data.formatted_name.toLowerCase().replace(/[^a-z0-9]+/g, ''),
+          data.introduced
+        ]);
       break;
 
     case 'effect':
@@ -296,11 +307,19 @@ const getValuesForTable = (
           effect_name,
           effect_formatted_name,
           introduced,
-          description
+          description,
+          effect_unformatted_name
         )
       */
       values = require(PROCESSED_DATA_PATH + 'effects.json')
-        .map(data => [data.gen, data.name, data.formatted_name, data.introduced, data.description]);
+        .map(data => [
+          data.gen,
+          data.name,
+          data.formatted_name,
+          data.introduced,
+          data.description,
+          data.formatted_name.toLowerCase().replace(/[^a-z0-9]+/g, ''),
+        ]);
       break;
 
     case 'field_state':
@@ -317,6 +336,7 @@ const getValuesForTable = (
           field_state_class,
           field_state_target,
           field_state_description
+          field_state_unformatted_name
         )
       */
       values = require(PROCESSED_DATA_PATH + 'fieldStates.json')
@@ -331,6 +351,7 @@ const getValuesForTable = (
           data.field_state_class,
           data.target,
           data.description,
+          data.formatted_name.toLowerCase().replace(/[^a-z0-9]+/g, ''),
         ]);
       break;
 
@@ -341,6 +362,7 @@ const getValuesForTable = (
           item_name,
           item_formatted_name,
           introduced,
+          item_ps_id,
           item_class
         ) 
       */
@@ -350,7 +372,8 @@ const getValuesForTable = (
           data.name,
           data.formatted_name,
           data.introduced,
-          data.item_class
+          data.formatted_name.toLowerCase().replace(/[^a-z0-9]+/g, '').replace('metronomeitem', 'metronome'),
+          data.item_class,
         ]);
       break;
 
@@ -463,6 +486,7 @@ const getValuesForTable = (
           pmove_target,
           pmove_removed_from_swsh,
           pmove_removed_from_bdsp,
+          pmove_ps_id,
           pmove_ptype_name
         )
       */
@@ -481,6 +505,7 @@ const getValuesForTable = (
           data.target,
           data.removed_from_swsh,
           data.removed_from_bdsp,
+          data.formatted_name.toLowerCase().replace(/[^a-z0-9]+/g, ''),
           data.type,
         ]);
       break;
@@ -505,7 +530,8 @@ const getValuesForTable = (
           usage_method_name,
           usage_method_formatted_name,
           introduced,
-          usage_method_description
+          usage_method_description,
+          usage_method_unformatted_name
         )
       */
       values = require(PROCESSED_DATA_PATH + 'usageMethods.json')
@@ -515,6 +541,7 @@ const getValuesForTable = (
           data.formatted_name,
           data.introduced,
           data.description,
+          data.formatted_name.toLowerCase().replace(/[^a-z0-9]+/g, ''),
         ]);
       break;
 

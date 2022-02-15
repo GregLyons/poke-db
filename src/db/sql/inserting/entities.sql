@@ -26,7 +26,8 @@ INSERT INTO pstatus (
   pstatus_formatted_name,
   introduced,
   pstatus_description,
-  pstatus_volatile
+  pstatus_volatile,
+  pstatus_unformatted_name
 ) VALUES ?;
 
 INSERT INTO stat (
@@ -34,7 +35,8 @@ INSERT INTO stat (
   stat_name,
   stat_formatted_name,
   introduced,
-  stat_description
+  stat_description,
+  stat_unformatted_name
 ) VALUES ?;
 
 /*
@@ -53,7 +55,8 @@ INSERT INTO effect (
   effect_name,
   effect_formatted_name,
   introduced,
-  effect_description
+  effect_description,
+  effect_unformatted_name
 ) VALUES ?;
 
 INSERT INTO usage_method (
@@ -61,13 +64,15 @@ INSERT INTO usage_method (
   usage_method_name,
   usage_method_formatted_name,
   introduced,
-  usage_method_description
+  usage_method_description,
+  usage_method_unformatted_name
 ) VALUES ?;
 
 INSERT INTO ability (
   generation_id,
   ability_name,
   ability_formatted_name,
+  ability_ps_id,
   introduced
 ) VALUES ?;
 
@@ -76,6 +81,7 @@ INSERT INTO item (
   item_name,
   item_formatted_name,
   introduced,
+  item_ps_id,
   item_class
 ) VALUES ?;
 
@@ -101,6 +107,7 @@ INSERT INTO pmove (
   pmove_target,
   pmove_removed_from_swsh,
   pmove_removed_from_bdsp,
+  pmove_ps_id,
   pmove_ptype_name
 ) VALUES ?;
 
@@ -139,7 +146,8 @@ INSERT INTO field_state (
   field_state_only_grounded,
   field_state_class,
   field_state_target,
-  field_state_description
+  field_state_description,
+  field_state_unformatted_name
 ) VALUES ?;
 
 INSERT INTO nature (
