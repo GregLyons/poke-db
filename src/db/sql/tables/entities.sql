@@ -61,7 +61,8 @@ CREATE TABLE IF NOT EXISTS ability (
     ON UPDATE CASCADE,
 
   INDEX (ability_id),
-  INDEX gen_alpha (generation_id, ability_formatted_name),
+  INDEX gen_alpha (generation_id, ability_name),
+  INDEX gen_ps_id (generation_id, ability_ps_id),
   INDEX intro (introduced)
 );
 
@@ -83,7 +84,8 @@ CREATE TABLE IF NOT EXISTS item (
     ON UPDATE CASCADE,
 
   INDEX (item_id),
-  INDEX gen_alpha (generation_id, item_formatted_name),
+  INDEX gen_alpha (generation_id, item_name),
+  INDEX gen_ps_id (generation_id, item_ps_id),
   INDEX intro (introduced),
   INDEX by_class (generation_id, item_class)
 );
@@ -101,7 +103,9 @@ CREATE TABLE IF NOT EXISTS effect (
   FOREIGN KEY (introduced) REFERENCES generation(generation_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-  INDEX (effect_id)
+
+  INDEX (effect_id),
+  INDEX gen_unformatted_name (generation_id, effect_unformatted_name)
 );
 
 CREATE TABLE IF NOT EXISTS field_state (
@@ -122,7 +126,9 @@ CREATE TABLE IF NOT EXISTS field_state (
   FOREIGN KEY (introduced) REFERENCES generation(generation_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-  INDEX (field_state_id)
+
+  INDEX (field_state_id),
+  INDEX gen_unformatted_name (generation_id, field_state_unformatted_name)
 );
 
 CREATE TABLE IF NOT EXISTS nature (
@@ -154,7 +160,9 @@ CREATE TABLE IF NOT EXISTS usage_method (
   FOREIGN KEY (introduced) REFERENCES generation(generation_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-  INDEX (usage_method_id)
+
+  INDEX (usage_method_id),
+  INDEX gen_unformatted_name (generation_id, usage_method_unformatted_name)
 );
 
 CREATE TABLE IF NOT EXISTS pstatus (
@@ -168,7 +176,9 @@ CREATE TABLE IF NOT EXISTS pstatus (
   pstatus_unformatted_name VARCHAR(45) NOT NULL,
 
   PRIMARY KEY (generation_id, pstatus_id),
-  INDEX (pstatus_id)
+
+  INDEX (pstatus_id),
+  INDEX gen_unformatted_name (generation_id, pstatus_unformatted_name)
 );
 
 CREATE TABLE IF NOT EXISTS ptype (
@@ -216,10 +226,12 @@ CREATE TABLE IF NOT EXISTS pmove (
     ON UPDATE CASCADE,
   
   INDEX (pmove_id),
-  INDEX gen_alpha (generation_id, pmove_formatted_name),
+  INDEX gen_alpha (generation_id, pmove_name),
+  INDEX gen_ps_id (generation_id, pmove_ps_id),
   INDEX intro (introduced),
   INDEX by_power (generation_id, pmove_power),
-  INDEX by_category (generation_id, pmove_category)
+  INDEX by_category (generation_id, pmove_category),
+  INDEX by_ptype (pmove_ptype_name)
 );
 
 -- stats in battle, i.e. attack, defense, evasion, accuracy, critical hit ratio, but not HP
@@ -233,7 +245,8 @@ CREATE TABLE IF NOT EXISTS stat (
   stat_unformatted_name VARCHAR(45) NOT NULL,
 
   PRIMARY KEY (generation_id, stat_id),
-  INDEX (stat_id)
+  INDEX (stat_id),
+  INDEX gen_unformatted_name (generation_id, stat_unformatted_name)
 );
 
 -- does not include cosmetic forms
@@ -250,9 +263,10 @@ CREATE TABLE IF NOT EXISTS pokemon (
   pokemon_hp TINYINT UNSIGNED NOT NULL,
   pokemon_attack TINYINT UNSIGNED NOT NULL,
   pokemon_defense TINYINT UNSIGNED NOT NULL,
-  pokemon_special_defense TINYINT UNSIGNED NOT NULL,
   pokemon_special_attack TINYINT UNSIGNED NOT NULL,
+  pokemon_special_defense TINYINT UNSIGNED NOT NULL,
   pokemon_speed TINYINT UNSIGNED NOT NULL,
+  pokemon_base_stat_total SMALLINT UNSIGNED NOT NULL,
   pokemon_form_class ENUM('gmax', 'mega', 'alola', 'galar', 'hisui', 'other', 'base', 'cosmetic', 'type', 'battle'),
   pokemon_ps_id VARCHAR(45) NOT NULL,
   pokemon_pokeapi_name VARCHAR(45) NOT NULL,
@@ -271,12 +285,17 @@ CREATE TABLE IF NOT EXISTS pokemon (
     ON UPDATE CASCADE,
 
   INDEX (pokemon_id),
-  INDEX gen_alpha (generation_id, pokemon_formatted_name),
+  INDEX gen_alpha (generation_id, pokemon_name),
+  INDEX gen_ps_id (generation_id, pokemon_ps_id),
+  INDEX by_species (generation_id, pokemon_species),
   INDEX intro (introduced),
   INDEX dex_sort (generation_id, pokemon_dex, introduced),
   INDEX speed_tier (generation_id, pokemon_speed),
+  INDEX base_stat_total (generation_id, pokemon_base_stat_total),
   INDEX survive_physical (generation_id, pokemon_hp, pokemon_defense),
   INDEX survive_special (generation_id, pokemon_hp, pokemon_special_defense),
   INDEX damage_physical (generation_id, pokemon_attack),
-  INDEX damage_special (generation_id, pokemon_special_attack)
+  INDEX damage_special (generation_id, pokemon_special_attack),
+  INDEX by_ptype (generation_id, pokemon_ptype_name_1, pokemon_ptype_name_2),
+  INDEX by_form (generation_id, pokemon_form_class)
 );
