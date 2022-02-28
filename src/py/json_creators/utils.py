@@ -95,7 +95,7 @@ def effectList():
     # switchers
     'switches_out_target', 'switches_out_user', 
     # special accuracy properties
-    'hits_semi_invulnerable', 'cannot_miss', 'faints_user',
+    'hits_semi_invulnerable', 'cannot_miss',
     # different way of calculating power
     'variable_power', 'deals_direct_damage', 'powers_up', 'consecutive', 'counterattack', 
     # weight-related
@@ -109,7 +109,7 @@ def effectList():
     # ground-related
     'grounds', 'ungrounds', 'only_affects_grounded',
     # miscellaneous
-    'calls_other_move', 'depends_on_environment', 'multi_hit', 'ohko','changes_form', 'manipulates_item', 'activates_gulp_missile',  'extends_duration', 'other_move_enhancement', 'other_move_resistance',  'anti_mini', 'type_varies', 'other_move_order_change', 'no_effect',
+    'calls_other_move', 'depends_on_environment', 'multi_hit', 'ohko','changes_form', 'manipulates_item', 'activates_gulp_missile',  'extends_duration', 'other_move_enhancement', 'other_move_resistance',  'anti_mini', 'type_varies', 'other_move_order_change', 'no_effect', 'faints_user',
   ]
   return effects
 
@@ -271,3 +271,14 @@ def parseName(text, mode='normal'):
     return text.replace(' ', '_').lower().strip('_').replace('é', 'e')
   else:
     return
+
+def legendsArceusList():
+  return [
+    'wyrdeer',
+    'kleavor',
+    'ursaluna',
+    'basculegion',
+    'sneasler',
+    'overqwil',
+    'enamorus',
+  ]

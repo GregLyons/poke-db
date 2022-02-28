@@ -1,132 +1,134 @@
 from utils import effectList
 
 def makeEffectDict():
-  effectsAndGens = {
+  effectsAndData = {
     # karate chop
-    "high_crit_chance": 1,
+    "high_crit_chance": [1, 'crit'],
     # flail
-    "cannot_crit": 2,
+    "cannot_crit": [2, 'crit'],
     # storm throw
-    "always_crits": 5,
+    "always_crits": [5, 'crit'],
     # feint
-    "bypasses_protect": 4,
+    "bypasses_protect": [4, 'misc'], 
     # rest
-    "heals_nonvolatile": 1,
+    "heals_nonvolatile": [1, 'restore'],
     # recover
-    "restores_hp": 1,
+    "restores_hp": [1, 'restore'],
     # MysteryBerry
-    "restores_pp": 2,
+    "restores_pp": [2, 'restore'],
     # doubleedge
-    "recoil": 1,
+    "recoil": [1, 'cost'],
     # substitute
-    "costs_hp": 1,
+    "costs_hp": [1, 'cost'],
     # high jump kick
-    "can_crash": 1,
+    "can_crash": [1, 'cost'],
     # role play
-    "changes_ability": 3,
+    "changes_ability": [3, 'ability'],
     # mold breaker
-    "ignores_ability": 4,
+    "ignores_ability": [4, 'ability'],
     # gastro acid
-    "suppresses_ability": 4,
+    "suppresses_ability": [4, 'ability'],
     # conversion
-    "changes_pokemon_type": 1,
+    "changes_pokemon_type": [1, 'type'],
     # normalize
-    "changes_move_type": 4,
+    "changes_move_type": [4, 'type'],
     # photon geyser
-    "changes_damage_category": 7,
+    "changes_damage_category": [7, 'stat'],
     # foresight
-    "removes_type_immunity": 2,
+    "removes_type_immunity": [2, 'type'],
     # freeze dry
-    "special_type_effectiveness": 6,
+    "special_type_effectiveness": [6, 'type'],
     # roar
-    "switches_out_target": 2,
+    "switches_out_target": [2, 'switch'],
     # baton pass
-    "switches_out_user": 2,
+    "switches_out_user": [2, 'switch'],
     # bide
-    "hits_semi_invulnerable": 1,
+    "hits_semi_invulnerable": [1, 'accuracy'],
     # bide
-    "cannot_miss": 1,
+    "cannot_miss": [1, 'accuracy'],
     # explosion
-    "faints_user": 1,
+    "faints_user": [1, 'misc'],
     # hidden power
-    "variable_power": 2,
+    "variable_power": [2, 'power'],
     # sonic boom
-    "deals_direct_damage": 1,
+    "deals_direct_damage": [1, 'power'],
     # roll-out
-    "powers_up": 2,
+    "powers_up": [2, 'power'],
     # thrash
-    "consecutive": 1,
+    "consecutive": [1, 'power'],
     # bide
-    "counterattack": 1,
+    "counterattack": [1, 'power'],
     # low kick does not depend on weight in gens 1 or 2
-    "depends_on_weight": 3,
+    "depends_on_weight": [3, 'size'],
     # automotize
-    "affects_weight": 5,
+    "affects_weight": [5, 'size'],
     # metronome
-    "calls_other_move": 1,
+    "calls_other_move": [1, 'size'],
     # secret power
-    "depends_on_environment": 3,
+    "depends_on_environment": [3, 'misc'],
     # pin missile
-    "multi_hit": 1,
+    "multi_hit": [1, 'misc'],
     # fissure
-    "ohko": 1,
+    "ohko": [1, 'misc'],
     # transform doesn't count; forecast
-    "changes_form": 3,
+    "changes_form": [3, 'misc'],
     # absorb
-    "drains": 1,
+    "drains": [1, 'restore'],
     # thief
-    "manipulates_item": 2,
+    "manipulates_item": [2, 'misc'],
     # cramorant
-    "activates_gulp_missile": 8,
+    "activates_gulp_missile": [8, 'misc'],
     # static
-    "punishes_contact": 3,
+    "punishes_contact": [3, 'contact'],
     # light clay
-    "extends_duration": 4,
+    "extends_duration": [4, 'misc'],
     # adaptability; refers to abilities which power up moves via a mechanic other than move type or usage method, e.g. adaptability boosts STAB moves
-    "other_move_enhancement": 1,
+    "other_move_enhancement": [1, 'power'],
     # lagging tail; refers to priority bracket
-    "moves_last_in_priority": 4,
+    "moves_last_in_priority": [4, 'speed'],
     # quick claw
-    "moves_first_in_priority": 2,
+    "moves_first_in_priority": [2, 'speed'],
     # long reach
-    "ignores_contact": 7,
+    "ignores_contact": [7, 'contact'],
     # stomp started dealing double damage to minimized targets in gen 2
-    "anti_mini": 2,
+    "anti_mini": [2, 'accuracy'],
     # haze
-    "resets_stats": 1,
+    "resets_stats": [1, 'stat'],
     # battle armor
-    "prevents_crit": 3,
+    "prevents_crit": [3, 'crit'],
     # mist
-    "prevents_stat_drop": 1,
+    "prevents_stat_drop":[1, 'stat'],
     # prankster
-    "adds_priority": 5,
+    "adds_priority": [5, 'speed'],
     # after you; e.g. causes target to always use their move next, regardless of priority
     # contrast with instruct or dancer, which causes target to use a previously used move; the target still executes their own turn at the usual time
-    "other_move_order_change": 4,
+    "other_move_order_change": [4, 'speed'],
     # quick guard
-    "protects_against_priority": 5,
+    "protects_against_priority": [5, 'speed'],
     # wonder guard; refers to abilities which resist moves beyond their move type or class, e.g. wonder guard resists all non-super effective moves
-    "other_move_resistance": 3,
+    "other_move_resistance": [3, 'power'],
     # hidden power
-    "type_varies": 2,
+    "type_varies": [2, 'type'],
     # splash
-    "no_effect": 1,
+    "no_effect": [1, 'misc'],
     # psyshock (target's defense rather than special defense); body press (user's defense rather than attack)
-    "uses_different_stat": 5,
+    "uses_different_stat": [5, 'stat'],
     # iron ball; 
-    "grounds": 4,
+    "grounds": [4, 'ground'],
     # levitate; flying type does not count
-    "ungrounds": 3,
+    "ungrounds": [3, 'ground'],
     # arena trap
-    "only_affects_grounded": 3,
+    "only_affects_grounded": [3, 'ground'],
   }
 
   effectDict = {}
-  for effectName in effectsAndGens.keys():
+  for effectName in effectsAndData.keys():
+    effectGen, effectClass = effectsAndData[effectName]
     formattedEffectName = getFormattedName(effectName)
     effectDict[effectName] = {
-      "gen": effectsAndGens[effectName],
-      "formatted_name": formattedEffectName
+      "gen": effectGen,
+      "formatted_name": formattedEffectName,
+      "effect_class": effectClass,
     }
 
   # make sure all effects are accounted for

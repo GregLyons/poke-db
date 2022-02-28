@@ -1,7 +1,7 @@
 import csv
 import re
 import copy
-from utils import parseName, genSymbolToNumber, getCSVDataPath, genSymbolToNumber, typeList, baseFormSuffices
+from utils import parseName, genSymbolToNumber, getCSVDataPath, genSymbolToNumber, typeList, baseFormSuffices, legendsArceusList
 from tests import checkGenConsistency, pokemonTests
 
 # make initial Pokemon dict, with dex number, gen, species, and type data
@@ -82,6 +82,105 @@ def makeInitialPokemonDict(fname, changes_fname):
       pokemonDict[pokemonName]["type_2"] = [[previousType2, gen], [currentType2, genChange]]
 
   return pokemonDict
+
+# Adds gender ratio data
+def addGenderData(fname, pokemonDict):
+  # Initialize data fields
+  for pokemonName in pokemonDict.keys():
+    pokemonDict[pokemonName]["male_rate"] = None
+    pokemonDict[pokemonName]["female_rate"] = None
+    pokemonDict[pokemonName]["genderless"] = None
+
+  with open(fname, 'r', encoding='utf-8') as genderCSV:
+    reader = csv.DictReader(genderCSV)
+
+    for row in reader:
+      pokemonName, maleRatio, femaleRatio = row["Pokemon Name"], int(row["Males out of 8"]), int(row["Females out of 8"])
+      maleRate, femaleRate = genderRatioToRate(maleRatio), genderRatioToRate(femaleRatio)
+
+      # Skip over Legends Arceus Pokemon for now
+      if pokemonName in legendsArceusList():
+        continue
+
+      # Try to set up gender ratio right away
+      try:
+        pokemonGen = pokemonDict[pokemonName]["gen"]
+        pokemonDict[pokemonName]["male_rate"] = [[maleRate, pokemonGen]]
+        pokemonDict[pokemonName]["female_rate"] = [[femaleRate, pokemonGen]]
+
+        if maleRate == 0 and femaleRate == 0:
+          pokemonDict[pokemonName]["genderless"] = [[False, pokemonGen]]
+
+      # KeyErrors will occur because pokemonName is not in pokemonDict
+      except KeyError:
+        handled = False
+
+
+        # Alternate forms; copy data and modify gen
+        if pokemonName in [
+          'pikachu_partner_cap',
+          'pikachu_cosplay',
+          'pichu_spiky_eared',
+          'greninja_ash'
+        ]:
+          if pokemonName in ['pikachu_partner_cap', 'greninja_ash']:
+            gen = 7
+          elif pokemonName in ['pichu_spiky_eared']:
+            gen = 4
+          elif pokemonName in ['pikachu_cosplay']:
+            gen = 6
+          else:
+            raise
+
+          speciesName = pokemonName.split('_')[0]
+          pokemonDict[pokemonName] = copy.deepcopy(pokemonDict[speciesName])
+          pokemonDict[pokemonName]["gen"] = gen
+
+          pokemonDict[pokemonName]["male_rate"] = [[maleRate, gen]]
+          pokemonDict[pokemonName]["female_rate"] = [[femaleRate, gen]]
+          if maleRate == 0 and femaleRate == 0:
+            pokemonDict[pokemonName]["genderless"] = [[False, gen]]
+
+          handled = True
+
+        # Species name; assign gender ratio to each of the forms
+        for speciesName in [
+          'castform', 'burmy', 'oricorio', 'wormadam', 'darmanitan', 'arceus', 'meloetta', 'zygarde', 'silvally',
+        ]:
+          for formName in pokemonDict.keys():
+            if speciesName in formName:
+              formGen = pokemonDict[formName]["gen"]
+              pokemonDict[formName]["male_rate"] = [[maleRate, formGen]]
+              pokemonDict[formName]["female_rate"] = [[femaleRate, formGen]]
+
+              if maleRate == 0 and femaleRate == 0:
+                pokemonDict[formName]["genderless"] = [[False, formGen]]
+
+              handled = True
+        
+        if not handled:
+          print(pokemonName, 'not handled!')
+        
+  return pokemonDict
+
+def genderRatioToRate(ratio):
+  if ratio == 8:
+    return 1
+  elif ratio == 7:
+    return 0.875
+  elif ratio == 6:
+    return 0.75
+  elif ratio == 4:
+    return 0.5
+  elif ratio == 2:
+    return 0.25
+  elif ratio == 1:
+    return 0.125
+  elif ratio == 0:
+    return 0
+  else:
+    raise('Invalid ratio')
+
 
 # add base stat data to pokemonDict
 # some Pokemon forms which weren't present before (due to having the same type across forms) are added due to base stat differences; the corresponding base forms are then removed
@@ -1042,7 +1141,8 @@ def updateGens(pokemonDict):
       if type(pokemonEntry[key]) is list:
         patchList = pokemonEntry[key]
         
-        # Filter out patches prior to pokemonGen, except the last patch. If all patches took place prior to pokemonGen, then the last patch gives the _current_ value for the new form. 
+        # Filter out patches prior to pokemonGen, except the last patch. If all patches took place prior to pokemonGen, then the last patch gives the _current_ value for the new form.
+
         reducedPatchList = [patch for patch in patchList[:-1] if patch[-1] >= pokemonGen]
         if patchList[-1][-1] == 'lgpe_only':
           reducedPatchList.append(patchList[-1])
@@ -1189,6 +1289,9 @@ def main():
   type_fname = dataPath + 'pokemonByType.csv'
   type_changes_fname = dataPath + 'pokemonTypeChanges.csv'
   pokemonDict = makeInitialPokemonDict(type_fname, type_changes_fname)
+
+  gender_fname = dataPath + 'pokemonByGender.csv'
+  addGenderData(gender_fname, pokemonDict)
 
   baseStat_fnamePrefix = dataPath + 'pokemonByBaseStatsGen'
   addBaseStatData(baseStat_fnamePrefix, pokemonDict)
