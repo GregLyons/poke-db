@@ -98,6 +98,7 @@ CREATE TABLE IF NOT EXISTS effect (
   introduced TINYINT UNSIGNED NOT NULL,
   effect_description VARCHAR(400) NOT NULL,
   effect_unformatted_name VARCHAR(45) NOT NULL,
+  effect_class ENUM('crit', 'misc', 'restore', 'cost', 'ability', 'type', 'stat', 'switch', 'accuracy', 'power', 'size', 'contact', 'speed', 'ground'),
 
   PRIMARY KEY (generation_id, effect_id),
   FOREIGN KEY (introduced) REFERENCES generation(generation_id)
@@ -275,6 +276,9 @@ CREATE TABLE IF NOT EXISTS pokemon (
   pokemon_ptype_name_2 VARCHAR(45) NOT NULL,
   pokemon_removed_from_swsh TINYINT UNSIGNED NOT NULL,
   pokemon_removed_from_bdsp TINYINT UNSIGNED NOT NULL,
+  pokemon_male_rate DECIMAL(4, 1) UNSIGNED NOT NULL,
+  pokemon_female_rate DECIMAL(4, 1) UNSIGNED NOT NULL,
+  pokemon_genderless TINYINT UNSIGNED NOT NULL,
 
   PRIMARY KEY (generation_id, pokemon_id),
   FOREIGN KEY (generation_id) REFERENCES generation(generation_id)

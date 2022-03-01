@@ -109,6 +109,8 @@ def addGenderData(fname, pokemonDict):
         pokemonDict[pokemonName]["female_rate"] = [[femaleRate, pokemonGen]]
 
         if maleRate == 0 and femaleRate == 0:
+          pokemonDict[pokemonName]["genderless"] = [[True, pokemonGen]]
+        else:
           pokemonDict[pokemonName]["genderless"] = [[False, pokemonGen]]
 
       # KeyErrors will occur because pokemonName is not in pokemonDict
@@ -139,6 +141,8 @@ def addGenderData(fname, pokemonDict):
           pokemonDict[pokemonName]["male_rate"] = [[maleRate, gen]]
           pokemonDict[pokemonName]["female_rate"] = [[femaleRate, gen]]
           if maleRate == 0 and femaleRate == 0:
+            pokemonDict[pokemonName]["genderless"] = [[True, gen]]
+          else:
             pokemonDict[pokemonName]["genderless"] = [[False, gen]]
 
           handled = True
@@ -154,13 +158,29 @@ def addGenderData(fname, pokemonDict):
               pokemonDict[formName]["female_rate"] = [[femaleRate, formGen]]
 
               if maleRate == 0 and femaleRate == 0:
+                pokemonDict[formName]["genderless"] = [[True, formGen]]
+              else:
                 pokemonDict[formName]["genderless"] = [[False, formGen]]
 
               handled = True
         
         if not handled:
           print(pokemonName, 'not handled!')
-        
+
+  # Handle forms that aren't listed in table; use gender ratio of their species
+  for pokemonName in pokemonDict.keys():
+    maleRate, femaleRate, genderless = pokemonDict[pokemonName]["male_rate"], pokemonDict[pokemonName]["female_rate"], pokemonDict[pokemonName]["genderless"]
+
+    # Form isn't listed in table, hence it will have None values
+    if maleRate == None or femaleRate == None or genderless == None:
+      pokemonGen = pokemonDict[pokemonName]["gen"]
+      speciesName = pokemonDict[pokemonName]["species"]
+    
+      maleRate, femaleRate, genderless = pokemonDict[speciesName]["male_rate"][0][0], pokemonDict[speciesName]["female_rate"][0][0], pokemonDict[speciesName]["genderless"][0][0]
+      pokemonDict[pokemonName]["male_rate"] = [[maleRate, pokemonGen]]
+      pokemonDict[pokemonName]["female_rate"] = [[femaleRate, pokemonGen]]
+      pokemonDict[pokemonName]["genderless"] = [[genderless, pokemonGen]]
+
   return pokemonDict
 
 def genderRatioToRate(ratio):

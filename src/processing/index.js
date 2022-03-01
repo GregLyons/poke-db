@@ -237,6 +237,12 @@ splitPokemonArr.map(data => {
   if (isNaN(data.special_defense)) console.log(`${data.name}: Special defense ${data.special_defense} is not a number.`);
 
   if (isNaN(data.speed)) console.log(`${data.name}: Speed ${data.speed} is not a number.`);
+
+  if (isNaN(data.male_rate)) console.log(`${data.name}: Male rate ${data.male_rate} is not a number.`);
+
+  if (isNaN(data.female_rate)) console.log(`${data.name}: Female rate ${data.female_rate} is not a number.`);
+
+  if (!data.hasOwnProperty('genderless')) console.log(`${data.name}: Missing 'genderless' flag.`)
 });
 
 console.log('Checking types...');

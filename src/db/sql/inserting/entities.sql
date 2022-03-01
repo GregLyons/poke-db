@@ -56,7 +56,8 @@ INSERT INTO effect (
   effect_formatted_name,
   introduced,
   effect_description,
-  effect_unformatted_name
+  effect_unformatted_name,
+  effect_class
 ) VALUES ?;
 
 INSERT INTO usage_method (
@@ -134,7 +135,10 @@ INSERT INTO pokemon (
   pokemon_ptype_name_1,
   pokemon_ptype_name_2,
   pokemon_removed_from_swsh,
-  pokemon_removed_from_bdsp
+  pokemon_removed_from_bdsp,
+  pokemon_male_rate,
+  pokemon_female_rate,
+  pokemon_genderless
 ) VALUES ?;
 
 INSERT INTO field_state (

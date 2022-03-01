@@ -308,7 +308,8 @@ const getValuesForTable = (
           effect_formatted_name,
           introduced,
           description,
-          effect_unformatted_name
+          effect_unformatted_name,
+          effect_class
         )
       */
       values = require(PROCESSED_DATA_PATH + 'effects.json')
@@ -319,6 +320,7 @@ const getValuesForTable = (
           data.introduced,
           data.description,
           data.formatted_name.toLowerCase().replace(/[^a-z0-9]+/g, ''),
+          data.effect_class
         ]);
       break;
 
@@ -440,6 +442,9 @@ const getValuesForTable = (
           pokemon_ptype_name_2,
           pokemon_removed_from_swsh,
           pokemon_removed_from_bdsp,
+          pokemon_male_rate,
+          pokemon_female_rate,
+          pokemon_genderless
         )
       */
       values = require(PROCESSED_DATA_PATH + 'pokemon.json')
@@ -469,6 +474,9 @@ const getValuesForTable = (
           data.type_2,
           data.removed_from_swsh,
           data.removed_from_bdsp,
+          data.male_rate,
+          data.female_rate,
+          data.genderless,
         ]);
       break;
     
