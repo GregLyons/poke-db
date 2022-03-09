@@ -1,5 +1,6 @@
 import re
 
+
 def getCSVDataPath():
   return 'src\\data\\raw_data\\csv\\'
 
@@ -278,7 +279,33 @@ def legendsArceusList():
     'kleavor',
     'ursaluna',
     'basculegion',
+    'basculegion_male',
+    'basculegion_female',
     'sneasler',
     'overqwil',
     'enamorus',
+    'enamorus_incarnate',
+    'enamorus_therian',
+    'growlithe_hisuian',
+    'arcanine_hisuian',
+    'voltorb_hisuian',
+    'electrode_hisuian',
+    'typhlosion_hisuian',
+    'qwilfish_hisuian',
+    'sneasel_hisuian',
+    'dialga_origin',
+    'palkia_origin',
+    'samurott_hisuian',
+    'lilligant_hisuian',
+    'zorua_hisuian',
+    'zoroark_hisuian',
+    'braviary_hisuian',
+    'sliggoo_hisuian',
+    'goodra_hisuian',
+    'avalugg_hisuian',
+    'decidueye_hisuian',
+    'basculin_white_striped',
+    'legend_plate',
+    'hopo_berry',
+    'blank_plate',
   ]

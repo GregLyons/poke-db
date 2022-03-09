@@ -1,5 +1,7 @@
 import csv
-from utils import openLink, getCSVDataPath, parseName
+
+from utils import getCSVDataPath, openLink, parseName
+
 
 def makeRequirementCSV(fname): 
   with open(fname, 'w', newline='', encoding='utf-8') as csvFile:
@@ -72,9 +74,9 @@ def makeRequirementCSV(fname):
       elif 'guardian_of_alola' in moveName:
         pokemonNames = ['tapu_bulu', 'tapu_koko', 'tapu_lele', 'tapu_fini']
       elif 'sunraze' in moveName:
-        pokemonNames = ['solgaleo', 'necrozma_dusk']
+        pokemonNames = ['solgaleo', 'necrozma_dusk_mane']
       elif 'moonraze' in moveName:
-        pokemonNames = ['lunala', 'necrozma_dawn']
+        pokemonNames = ['lunala', 'necrozma_dawn_wings']
       elif 'burns_the_sky' in moveName:
         pokemonNames = ['necrozma_ultra']
       elif 'stormshards' in moveName:

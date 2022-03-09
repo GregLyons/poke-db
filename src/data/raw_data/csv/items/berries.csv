@@ -14,9 +14,9 @@ Gen,Number,Berry Name,Description
 3,13,mago_berry,"Restores 12.5%Gen. III–VI/50%Gen. VII/33%Gen. VIII HP when HP falls below 50%Gen. III–VI/25%Gen. V+, but confuses Pokémon that dislike sweet food."
 3,14,aguav_berry,"Restores 12.5%Gen. III–VI/50%Gen. VII/33%Gen. VIII HP when HP falls below 50%Gen. III–VI/25%Gen. V+, but confuses Pokémon that dislike bitter food."
 3,15,iapapa_berry,"Restores 12.5%Gen. III–VI/50%Gen. VII/33%Gen. VIII HP when HP falls below 50%Gen. III–VI/25%Gen. V+, but confuses Pokémon that dislike sour food."
-3,16,razz_berry,Makes wild Pokémon easier to capture.PE
+3,16,razz_berry,Makes wild Pokémon easier to capture.PE LA
 3,17,bluk_berry,
-3,18,nanab_berry,Makes wild Pokémon move less.PE
+3,18,nanab_berry,Makes wild Pokémon move less.PE LA
 3,19,wepear_berry,
 3,20,pinap_berry,Makes wild Pokémon more likely to drop items.PE
 3,21,pomeg_berry,"Lowers HP EVs, raises friendshipE, Gen. IV+."
@@ -66,3 +66,4 @@ Gen,Number,Berry Name,Description
 6,,roseli_berry,Halves damage taken from a super effective Fairy-type move.
 6,,kee_berry,Raises Defense when hit with a physical move.
 6,,maranga_berry,Raises Special Defense when hit with a special move.
+8,,hopo_berry,"Restores PP. It used on a wild Pokemon, the wild Pokemon's reactions are dulled.LA"

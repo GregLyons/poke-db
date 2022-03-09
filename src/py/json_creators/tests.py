@@ -1,8 +1,9 @@
-from utils import checkConsistency, numberOfGens, fieldStateList, natureList, statList, typeList
 import effects
 import elementalTypes
 import statuses
 import usageMethods
+from utils import (checkConsistency, fieldStateList, natureList, numberOfGens,
+                   statList, typeList)
 
 effectDict = effects.main()
 statusDict = statuses.main()

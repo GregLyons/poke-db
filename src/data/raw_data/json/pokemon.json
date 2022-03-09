@@ -35724,9 +35724,7 @@
     "form_data": {
       "necrozma_dusk_mane": [["other", 7]],
       "necrozma_dawn_wings": [["other", 7]],
-      "necrozma_ultra": [["other", 7]],
-      "necrozma_dusk": [["other", 7]],
-      "necrozma_dawn": [["other", 7]]
+      "necrozma_ultra": [["other", 7]]
     },
     "form_class": [["base", 7]],
     "formatted_name": "Necrozma",
@@ -35745,22 +35743,22 @@
     "female_rate": [[0, 7]],
     "genderless": [[true, 7]],
     "hp": [[97, 7]],
-    "attack": [[107, 7]],
-    "defense": [[101, 7]],
-    "special_attack": [[127, 7]],
-    "special_defense": [[89, 7]],
-    "speed": [[79, 7]],
+    "attack": [[157, 7]],
+    "defense": [[127, 7]],
+    "special_attack": [[113, 7]],
+    "special_defense": [[109, 7]],
+    "speed": [[77, 7]],
     "ability_1": [["prism_armor", 7]],
     "ability_2": [["", 7]],
     "ability_hidden": [["", 7]],
+    "height": 3.8,
+    "weight": 460.0,
     "pokeapi": [
       "necrozma_dusk", 10155
     ],
     "form_data": {
       "necrozma": [["base", 7]]
     },
-    "weight": 230.0,
-    "height": 2.4,
     "form_class": [["other", 7]],
     "formatted_name": "Necrozma (Dusk Mane)",
     "removed_from_swsh": false,
@@ -35778,22 +35776,22 @@
     "female_rate": [[0, 7]],
     "genderless": [[true, 7]],
     "hp": [[97, 7]],
-    "attack": [[107, 7]],
-    "defense": [[101, 7]],
-    "special_attack": [[127, 7]],
-    "special_defense": [[89, 7]],
-    "speed": [[79, 7]],
+    "attack": [[113, 7]],
+    "defense": [[109, 7]],
+    "special_attack": [[157, 7]],
+    "special_defense": [[127, 7]],
+    "speed": [[77, 7]],
     "ability_1": [["prism_armor", 7]],
     "ability_2": [["", 7]],
     "ability_hidden": [["", 7]],
+    "height": 4.2,
+    "weight": 350.0,
     "pokeapi": [
       "necrozma_dawn", 10156
     ],
     "form_data": {
       "necrozma": [["base", 7]]
     },
-    "weight": 230.0,
-    "height": 2.4,
     "form_class": [["other", 7]],
     "formatted_name": "Necrozma (Dawn Wings)",
     "removed_from_swsh": false,
@@ -37404,72 +37402,6 @@
     "form_class": [["battle", 7]],
     "formatted_name": "Minior (Meteor)",
     "removed_from_swsh": true,
-    "removed_from_bdsp": true
-  },
-  "necrozma_dusk": {
-    "dex_number": 800,
-    "species": "necrozma",
-    "gen": 7,
-    "type_1": [["psychic", 7]],
-    "type_2": [["", 7]],
-    "evolves_to": {},
-    "evolves_from": {},
-    "male_rate": [[0, 7]],
-    "female_rate": [[0, 7]],
-    "genderless": [[true, 7]],
-    "hp": [[97, 7]],
-    "attack": [[157, 7]],
-    "defense": [[127, 7]],
-    "special_attack": [[113, 7]],
-    "special_defense": [[109, 7]],
-    "speed": [[77, 7]],
-    "ability_1": [["prism_armor", 7]],
-    "ability_2": [["", 7]],
-    "ability_hidden": [["", 7]],
-    "height": 3.8,
-    "weight": 460.0,
-    "pokeapi": [
-      "necrozma-dusk", 10314
-    ],
-    "form_data": {
-      "necrozma": [["base", 7]]
-    },
-    "form_class": [["other", 7]],
-    "formatted_name": "Necrozma (Dusk)",
-    "removed_from_swsh": false,
-    "removed_from_bdsp": true
-  },
-  "necrozma_dawn": {
-    "dex_number": 800,
-    "species": "necrozma",
-    "gen": 7,
-    "type_1": [["psychic", 7]],
-    "type_2": [["", 7]],
-    "evolves_to": {},
-    "evolves_from": {},
-    "male_rate": [[0, 7]],
-    "female_rate": [[0, 7]],
-    "genderless": [[true, 7]],
-    "hp": [[97, 7]],
-    "attack": [[113, 7]],
-    "defense": [[109, 7]],
-    "special_attack": [[157, 7]],
-    "special_defense": [[127, 7]],
-    "speed": [[77, 7]],
-    "ability_1": [["prism_armor", 7]],
-    "ability_2": [["", 7]],
-    "ability_hidden": [["", 7]],
-    "height": 4.2,
-    "weight": 350.0,
-    "pokeapi": [
-      "necrozma-dawn", 10315
-    ],
-    "form_data": {
-      "necrozma": [["base", 7]]
-    },
-    "form_class": [["other", 7]],
-    "formatted_name": "Necrozma (Dawn)",
-    "removed_from_swsh": false,
     "removed_from_bdsp": true
   },
   "zacian_crowned": {

@@ -1,6 +1,8 @@
-import urllib.request
-from bs4 import BeautifulSoup
 import re
+import urllib.request
+
+from bs4 import BeautifulSoup
+
 
 #
 def getCSVDataPath():
@@ -178,9 +180,12 @@ def parseName(text, mode='normal'):
       speciesName = speciesName.replace('♀', ' Female').replace('Female', 'f')
       speciesName = speciesName.replace('♂', ' Male').replace('Male', 'm')
 
-    # ignore 'Mane' and 'Wings' in Necrozma
     if 'Necrozma' in speciesName:
-      form = form.replace(' Mane', '').replace(' Wings', '')
+      if 'awn' in form and 'ings' not in form:
+        form = 'Dawn Wings'
+      elif 'usk' in form and 'usk' not in form:
+        form = 'Dusk Mane'
+      
 
     # combine species and form name after parsing
     text = (speciesName + ' ' + form).strip().replace('  ', ' ')
@@ -210,7 +215,41 @@ def parseName(text, mode='normal'):
     return text.replace(' ', '_').lower().strip('_').replace('é', 'e')
   else:
     return
-  
+
+def legendsArceusList():
+  return [
+    'wyrdeer',
+    'kleavor',
+    'ursaluna',
+    'basculegion',
+    'basculegion_male',
+    'basculegion_female',
+    'sneasler',
+    'overqwil',
+    'enamorus',
+    'enamorus_incarnate',
+    'enamorus_therian',
+    'growlithe_hisuian',
+    'arcanine_hisuian',
+    'voltorb_hisuian',
+    'electrode_hisuian',
+    'typhlosion_hisuian',
+    'qwilfish_hisuian',
+    'sneasel_hisuian',
+    'dialga_origin',
+    'palkia_origin',
+    'samurott_hisuian',
+    'lilligant_hisuian',
+    'zorua_hisuian',
+    'zoroark_hisuian',
+    'braviary_hisuian',
+    'sliggoo_hisuian',
+    'goodra_hisuian',
+    'avalugg_hisuian',
+    'decidueye_hisuian',
+    'basculin_white_striped',
+  ]
+
 if __name__ == '__main__':
   # Testing Move name parser
   print('Testing move name parser...')

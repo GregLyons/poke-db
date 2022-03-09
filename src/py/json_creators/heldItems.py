@@ -1,11 +1,13 @@
 import csv
 import re
+
 import effects
+import elementalTypes as types
 import statuses
 import usageMethods
-import elementalTypes as types
-from utils import getCSVDataPath, statList, parseName, fieldStateList, checkConsistency
 from tests import checkGenConsistency, itemTests
+from utils import (checkConsistency, fieldStateList, getCSVDataPath,
+                   legendsArceusList, parseName, statList)
 
 
 # initial item dictionary with item name, item type, gen introduced, gen 2 exclusivity, and sprite URL
@@ -17,6 +19,9 @@ def makeInitialItemDict(fnamePrefix):
     itemDict = {}
     for row in reader:
       itemName = row["Item Name"]
+
+      if itemName in legendsArceusList():
+        continue
 
       # the gen 2 berries will be handled in the berry section
       gen2Exclusive = itemName in ['berserk_gene', 'polkadot_bow', 'pink_bow']
@@ -45,6 +50,9 @@ def makeInitialItemDict(fnamePrefix):
 
     for row in reader:
       itemName, itemClass, itemGen = row["Item Name"], row["Item Class"], row["Item Gen"]
+
+      if itemName in legendsArceusList():
+        continue
 
       if itemName not in itemDict:
         itemDict[itemName] = {
@@ -165,6 +173,9 @@ def addBerryData(fpath, itemDict):
     for row in reader:
       berryName, type, gen4Power, gen6Power = row["Berry Name"], row["Type"], row["Power in Gen IV-V"], int(row["Power in Gen VI"])
       gen = int(itemDict[berryName]["gen"])
+
+      if berryName in legendsArceusList():
+        continue
 
       if type not in typeDict.keys():
         print(berryName, type)
@@ -294,6 +305,10 @@ def addOtherItemData(fpath, itemDict):
     reader = csv.DictReader(typeItemCSV)
     for row in reader:
       itemType, itemName, type = row["Item Type"], row["Item Name"], row["Elemental Type"]
+
+      if itemName in legendsArceusList():
+        continue
+
       itemGen = itemDict[itemName]["gen"]
 
       if type not in typeDict.keys():

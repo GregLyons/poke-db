@@ -602,10 +602,10 @@ const addPokemonShowdownIDToPokemonArr = (psIDs, pokemonArr) => {
           case 'eevee_partner':
             pokemonEntry['ps_id'] = 'eeveestarter';
             break;
-          case 'necrozma_dusk':
+          case 'necrozma_dusk_mane':
             pokemonEntry['ps_id'] = 'necrozmaduskmane';
             break;
-          case 'necrozma_dawn':
+          case 'necrozma_dawn_wings':
             pokemonEntry['ps_id'] = 'necrozmadawnwings';
             break;
           case 'morpeko_full_belly':

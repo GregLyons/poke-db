@@ -95,7 +95,9 @@ Dex Number,Sprite URL,Pokemon Name,Ability 1,Ability 2,Hidden,Gen
 56,//archives.bulbagarden.net/media/upload/a/af/056MSPE.png,mankey,vital_spirit,anger_point,defiant,1
 57,//archives.bulbagarden.net/media/upload/a/aa/057MSPE.png,primeape,vital_spirit,anger_point,defiant,1
 58,//archives.bulbagarden.net/media/upload/4/45/058MS8.png,growlithe,intimidate,flash_fire,justified,1
+58,//archives.bulbagarden.net/media/upload/1/1a/058HMS.png,growlithe_hisuian,intimidate,flash_fire,justified,1
 59,//archives.bulbagarden.net/media/upload/c/cc/059MS8.png,arcanine,intimidate,flash_fire,justified,1
+59,//archives.bulbagarden.net/media/upload/2/2f/059HMS.png,arcanine_hisuian,intimidate,flash_fire,justified,1
 60,//archives.bulbagarden.net/media/upload/c/c7/060MS8.png,poliwag,water_absorb,damp,swift_swim,1
 61,//archives.bulbagarden.net/media/upload/b/b1/061MS8.png,poliwhirl,water_absorb,damp,swift_swim,1
 62,//archives.bulbagarden.net/media/upload/e/e4/062MS8.png,poliwrath,water_absorb,damp,swift_swim,1
@@ -157,7 +159,9 @@ Dex Number,Sprite URL,Pokemon Name,Ability 1,Ability 2,Hidden,Gen
 98,//archives.bulbagarden.net/media/upload/b/be/098MS8.png,krabby,hyper_cutter,shell_armor,sheer_force,1
 99,//archives.bulbagarden.net/media/upload/f/fd/099MS8.png,kingler,hyper_cutter,shell_armor,sheer_force,1
 100,//archives.bulbagarden.net/media/upload/3/31/100MSPE.png,voltorb,soundproof,static,aftermath,1
+100,//archives.bulbagarden.net/media/upload/d/de/100HMS.png,voltorb_hisuian,soundproof,static,aftermath,1
 101,//archives.bulbagarden.net/media/upload/3/31/101MSPE.png,electrode,soundproof,static,aftermath,1
+101,//archives.bulbagarden.net/media/upload/2/28/101HMS.png,electrode_hisuian,soundproof,static,aftermath,1
 102,//archives.bulbagarden.net/media/upload/0/07/102MS8.png,exeggcute,chlorophyll,,harvest,1
 103,//archives.bulbagarden.net/media/upload/f/fb/103MS8.png,exeggutor,chlorophyll,,harvest,1
 103,//archives.bulbagarden.net/media/upload/d/d3/103AMS8.png,exeggutor_alola,frisk,,harvest,7
@@ -197,6 +201,7 @@ Dex Number,Sprite URL,Pokemon Name,Ability 1,Ability 2,Hidden,Gen
 123,//archives.bulbagarden.net/media/upload/e/e6/123MS8.png,scyther,swarm,technician,steadfast,1
 212,//archives.bulbagarden.net/media/upload/b/bb/212MS8.png,scizor,swarm,technician,light_metal,2
 212,//archives.bulbagarden.net/media/upload/d/d8/212MMS6.png,scizor_mega,technician,,,6
+900,//archives.bulbagarden.net/media/upload/6/6e/900MS.png,kleavor,swarm,sheer_force,steadfast,8
 238,//archives.bulbagarden.net/media/upload/0/0e/238MS8.png,smoochum,oblivious,forewarn,hydration,2
 124,//archives.bulbagarden.net/media/upload/9/90/124MS8.png,jynx,oblivious,forewarn,dry_skin,1
 239,//archives.bulbagarden.net/media/upload/3/33/239MS8.png,elekid,static,,vital_spirit,2
@@ -253,6 +258,7 @@ Dex Number,Sprite URL,Pokemon Name,Ability 1,Ability 2,Hidden,Gen
 155,//archives.bulbagarden.net/media/upload/9/96/155MS6.png,cyndaquil,blaze,,flash_fire,2
 156,//archives.bulbagarden.net/media/upload/d/df/156MS6.png,quilava,blaze,,flash_fire,2
 157,//archives.bulbagarden.net/media/upload/5/55/157MS6.png,typhlosion,blaze,,flash_fire,2
+157,//archives.bulbagarden.net/media/upload/4/4c/157HMS.png,typhlosion_hisuian,blaze,,flash_fire,2
 158,//archives.bulbagarden.net/media/upload/3/39/158MS6.png,totodile,torrent,,sheer_force,2
 159,//archives.bulbagarden.net/media/upload/b/b9/159MS6.png,croconaw,torrent,,sheer_force,2
 160,//archives.bulbagarden.net/media/upload/9/99/160MS6.png,feraligatr,torrent,,sheer_force,2
@@ -307,13 +313,18 @@ Dex Number,Sprite URL,Pokemon Name,Ability 1,Ability 2,Hidden,Gen
 209,//archives.bulbagarden.net/media/upload/d/d4/209MS6.png,snubbull,intimidate,run_away,rattled,2
 210,//archives.bulbagarden.net/media/upload/8/8e/210MS6.png,granbull,intimidate,quick_feet,rattled,2
 211,//archives.bulbagarden.net/media/upload/a/a4/211MS8.png,qwilfish,poison_point,swift_swim,intimidate,2
+211,//archives.bulbagarden.net/media/upload/9/94/211HMS.png,qwilfish_hisuian,poison_point,swift_swim,intimidate,2
+904,//archives.bulbagarden.net/media/upload/8/8a/904MS.png,overqwil,poison_point,swift_swim,intimidate,8
 213,//archives.bulbagarden.net/media/upload/0/00/213MS8.png,shuckle,sturdy,gluttony,contrary,2
 214,//archives.bulbagarden.net/media/upload/9/9d/214MS8.png,heracross,swarm,guts,moxie,2
 214,//archives.bulbagarden.net/media/upload/e/ed/214MMS6.png,heracross_mega,skill_link,,,6
 215,//archives.bulbagarden.net/media/upload/e/ea/215MS8.png,sneasel,inner_focus,keen_eye,pickpocket,2
+215,//archives.bulbagarden.net/media/upload/e/e7/215HMS.png,sneasel_hisuian,inner_focus,keen_eye,poison_touch,2
 461,//archives.bulbagarden.net/media/upload/4/45/461MS8.png,weavile,pressure,,pickpocket,4
+903,//archives.bulbagarden.net/media/upload/6/64/903MS.png,sneasler,pressure,,poison_touch,8
 216,//archives.bulbagarden.net/media/upload/9/90/216MS6.png,teddiursa,pickup,quick_feet,honey_gather,2
 217,//archives.bulbagarden.net/media/upload/6/6d/217MS6.png,ursaring,guts,quick_feet,unnerve,2
+901,//archives.bulbagarden.net/media/upload/f/f5/901MS.png,ursaluna,guts,bulletproof,unnerve,8
 218,//archives.bulbagarden.net/media/upload/8/8e/218MS6.png,slugma,magma_armor,flame_body,weak_armor,2
 219,//archives.bulbagarden.net/media/upload/e/e3/219MS6.png,magcargo,magma_armor,flame_body,weak_armor,2
 220,//archives.bulbagarden.net/media/upload/2/26/220MS8.png,swinub,oblivious,snow_cloak,thick_fat,2
@@ -334,6 +345,7 @@ Dex Number,Sprite URL,Pokemon Name,Ability 1,Ability 2,Hidden,Gen
 231,//archives.bulbagarden.net/media/upload/6/6c/231MS6.png,phanpy,pickup,,sand_veil,2
 232,//archives.bulbagarden.net/media/upload/8/85/232MS6.png,donphan,sturdy,,sand_veil,2
 234,//archives.bulbagarden.net/media/upload/1/19/234MS6.png,stantler,intimidate,frisk,sap_sipper,2
+899,//archives.bulbagarden.net/media/upload/1/1c/899MS.png,wyrdeer,intimidate,frisk,sap_sipper,8
 235,//archives.bulbagarden.net/media/upload/a/af/235MS6.png,smeargle,own_tempo,technician,moody,2
 241,//archives.bulbagarden.net/media/upload/7/73/241MS8.png,miltank,thick_fat,scrappy,sap_sipper,2
 243,//archives.bulbagarden.net/media/upload/2/27/243MS8.png,raikou,pressure,,inner_focus,2
@@ -627,6 +639,7 @@ Dex Number,Sprite URL,Pokemon Name,Ability 1,Ability 2,Hidden,Gen
 501,//archives.bulbagarden.net/media/upload/b/bb/501MS6.png,oshawott,torrent,,shell_armor,5
 502,//archives.bulbagarden.net/media/upload/f/f1/502MS6.png,dewott,torrent,,shell_armor,5
 503,//archives.bulbagarden.net/media/upload/7/73/503MS6.png,samurott,torrent,,shell_armor,5
+503,//archives.bulbagarden.net/media/upload/a/ac/503HMS.png,samurott_hisuian,torrent,,shell_armor,5
 504,//archives.bulbagarden.net/media/upload/e/e2/504MS6.png,patrat,run_away,keen_eye,analytic,5
 505,//archives.bulbagarden.net/media/upload/e/e3/505MS6.png,watchog,illuminate,keen_eye,analytic,5
 506,//archives.bulbagarden.net/media/upload/a/ac/506MS8.png,lillipup,vital_spirit,pickup,run_away,5
@@ -674,8 +687,11 @@ Dex Number,Sprite URL,Pokemon Name,Ability 1,Ability 2,Hidden,Gen
 547,//archives.bulbagarden.net/media/upload/d/da/547MS8.png,whimsicott,prankster,infiltrator,chlorophyll,5
 548,//archives.bulbagarden.net/media/upload/c/cd/548MS8.png,petilil,chlorophyll,own_tempo,leaf_guard,5
 549,//archives.bulbagarden.net/media/upload/5/5b/549MS8.png,lilligant,chlorophyll,own_tempo,leaf_guard,5
+549,//archives.bulbagarden.net/media/upload/3/38/549HMS.png,lilligant_hisuian,chlorophyll,hustle,leaf_guard,5
 550,//archives.bulbagarden.net/media/upload/6/64/550MS8.png,basculin_red_striped,reckless,adaptability,mold_breaker,5
 550,//archives.bulbagarden.net/media/upload/7/7c/550BMS8.png,basculin_blue_striped,rock_head,adaptability,mold_breaker,5
+550,//archives.bulbagarden.net/media/upload/0/0c/550WMS.png,basculin_white_striped,rattled,adaptability,mold_breaker,5
+902,//archives.bulbagarden.net/media/upload/a/a4/902MS.png,basculegion,rattled,adaptability,mold_breaker,8
 551,//archives.bulbagarden.net/media/upload/5/51/551MS8.png,sandile,intimidate,moxie,anger_point,5
 552,//archives.bulbagarden.net/media/upload/5/5f/552MS8.png,krokorok,intimidate,moxie,anger_point,5
 553,//archives.bulbagarden.net/media/upload/6/69/553MS8.png,krookodile,intimidate,moxie,anger_point,5
@@ -684,7 +700,7 @@ Dex Number,Sprite URL,Pokemon Name,Ability 1,Ability 2,Hidden,Gen
 555,//archives.bulbagarden.net/media/upload/7/75/555MS8.png,darmanitan_standard,sheer_force,,zen_mode,5
 555,//archives.bulbagarden.net/media/upload/8/8f/555ZMS8.png,darmanitan_zen,zen_mode,,,5
 555,//archives.bulbagarden.net/media/upload/e/ed/555GMS8.png,darmanitan_standard_galar,gorilla_tactics,,zen_mode,8
-555,//archives.bulbagarden.net/media/upload/8/8e/555GZMS8.png,darmanitan_zen_galar,gorilla_tactics,,zen_mode,8
+555,//archives.bulbagarden.net/media/upload/8/8e/555GZMS8.png,darmanitan_zen_galar,zen_mode,,,8
 556,//archives.bulbagarden.net/media/upload/a/a3/556MS8.png,maractus,water_absorb,chlorophyll,storm_drain,5
 557,//archives.bulbagarden.net/media/upload/9/95/557MS8.png,dwebble,sturdy,shell_armor,weak_armor,5
 558,//archives.bulbagarden.net/media/upload/5/51/558MS8.png,crustle,sturdy,shell_armor,weak_armor,5
@@ -702,7 +718,9 @@ Dex Number,Sprite URL,Pokemon Name,Ability 1,Ability 2,Hidden,Gen
 568,//archives.bulbagarden.net/media/upload/5/55/568MS8.png,trubbish,stench,sticky_hold,aftermath,5
 569,//archives.bulbagarden.net/media/upload/2/26/569MS8.png,garbodor,stench,weak_armor,aftermath,5
 570,//archives.bulbagarden.net/media/upload/5/5d/570MS8.png,zorua,illusion,,,5
+570,//archives.bulbagarden.net/media/upload/6/6a/570HMS.png,zorua_hisuian,illusion,,,5
 571,//archives.bulbagarden.net/media/upload/8/81/571MS8.png,zoroark,illusion,,,5
+571,//archives.bulbagarden.net/media/upload/6/6f/571HMS.png,zoroark_hisuian,illusion,,,5
 572,//archives.bulbagarden.net/media/upload/d/dc/572MS8.png,minccino,cute_charm,technician,skill_link,5
 573,//archives.bulbagarden.net/media/upload/2/2f/573MS8.png,cinccino,cute_charm,technician,skill_link,5
 574,//archives.bulbagarden.net/media/upload/4/48/574MS8.png,gothita,frisk,competitive,shadow_tag,5
@@ -767,6 +785,7 @@ Dex Number,Sprite URL,Pokemon Name,Ability 1,Ability 2,Hidden,Gen
 626,//archives.bulbagarden.net/media/upload/b/b1/626MS8.png,bouffalant,reckless,sap_sipper,soundproof,5
 627,//archives.bulbagarden.net/media/upload/f/f5/627MS8.png,rufflet,keen_eye,sheer_force,hustle,5
 628,//archives.bulbagarden.net/media/upload/8/88/628MS8.png,braviary,keen_eye,sheer_force,defiant,5
+628,//archives.bulbagarden.net/media/upload/6/66/628HMS.png,braviary_hisuian,keen_eye,sheer_force,defiant,5
 629,//archives.bulbagarden.net/media/upload/1/19/629MS8.png,vullaby,big_pecks,overcoat,weak_armor,5
 630,//archives.bulbagarden.net/media/upload/6/65/630MS8.png,mandibuzz,big_pecks,overcoat,weak_armor,5
 631,//archives.bulbagarden.net/media/upload/f/f9/631MS8.png,heatmor,gluttony,flash_fire,white_smoke,5
@@ -788,8 +807,8 @@ Dex Number,Sprite URL,Pokemon Name,Ability 1,Ability 2,Hidden,Gen
 645,//archives.bulbagarden.net/media/upload/7/71/645MS8.png,landorus_incarnate,sand_force,,sheer_force,5
 645,//archives.bulbagarden.net/media/upload/b/b4/645TMS8.png,landorus_therian,intimidate,,,5
 646,//archives.bulbagarden.net/media/upload/9/9e/646MS8.png,kyurem,pressure,,,5
-646,//archives.bulbagarden.net/media/upload/7/73/646BMS8.png,kyurem_black,teravolt,,,5
 646,//archives.bulbagarden.net/media/upload/b/b5/646WMS8.png,kyurem_white,turboblaze,,,5
+646,//archives.bulbagarden.net/media/upload/7/73/646BMS8.png,kyurem_black,teravolt,,,5
 647,//archives.bulbagarden.net/media/upload/2/2e/647MS8.png,keldeo_ordinary,justified,,,5
 647,//archives.bulbagarden.net/media/upload/3/31/647RMS8.png,keldeo_resolute,justified,,,5
 648,//archives.bulbagarden.net/media/upload/6/6e/648MS6.png,meloetta_aria,serene_grace,,,5
@@ -855,7 +874,9 @@ Dex Number,Sprite URL,Pokemon Name,Ability 1,Ability 2,Hidden,Gen
 703,//archives.bulbagarden.net/media/upload/7/73/703MS8.png,carbink,clear_body,,sturdy,6
 704,//archives.bulbagarden.net/media/upload/c/cd/704MS8.png,goomy,sap_sipper,hydration,gooey,6
 705,//archives.bulbagarden.net/media/upload/5/50/705MS8.png,sliggoo,sap_sipper,hydration,gooey,6
+705,//archives.bulbagarden.net/media/upload/d/d2/705HMS.png,sliggoo_hisuian,sap_sipper,overcoat,gooey,6
 706,//archives.bulbagarden.net/media/upload/7/72/706MS8.png,goodra,sap_sipper,hydration,gooey,6
+706,//archives.bulbagarden.net/media/upload/8/8a/706HMS.png,goodra_hisuian,sap_sipper,overcoat,gooey,6
 707,//archives.bulbagarden.net/media/upload/2/24/707MS8.png,klefki,prankster,,magician,6
 708,//archives.bulbagarden.net/media/upload/f/fb/708MS8.png,phantump,natural_cure,frisk,harvest,6
 709,//archives.bulbagarden.net/media/upload/9/97/709MS8.png,trevenant,natural_cure,frisk,harvest,6
@@ -863,6 +884,7 @@ Dex Number,Sprite URL,Pokemon Name,Ability 1,Ability 2,Hidden,Gen
 711,//archives.bulbagarden.net/media/upload/f/f6/711MS8.png,gourgeist,pickup,frisk,insomnia,6
 712,//archives.bulbagarden.net/media/upload/2/22/712MS8.png,bergmite,own_tempo,ice_body,sturdy,6
 713,//archives.bulbagarden.net/media/upload/6/6a/713MS8.png,avalugg,own_tempo,ice_body,sturdy,6
+713,//archives.bulbagarden.net/media/upload/d/d6/713HMS.png,avalugg_hisuian,strong_jaw,ice_body,sturdy,6
 714,//archives.bulbagarden.net/media/upload/2/22/714MS8.png,noibat,frisk,infiltrator,telepathy,6
 715,//archives.bulbagarden.net/media/upload/e/e6/715MS8.png,noivern,frisk,infiltrator,telepathy,6
 716,//archives.bulbagarden.net/media/upload/2/2f/716MS8.png,xerneas,fairy_aura,,,6
@@ -879,6 +901,7 @@ Dex Number,Sprite URL,Pokemon Name,Ability 1,Ability 2,Hidden,Gen
 722,//archives.bulbagarden.net/media/upload/d/d1/722MS8.png,rowlet,overgrow,,long_reach,7
 723,//archives.bulbagarden.net/media/upload/a/ad/723MS8.png,dartrix,overgrow,,long_reach,7
 724,//archives.bulbagarden.net/media/upload/e/ec/724MS8.png,decidueye,overgrow,,long_reach,7
+724,//archives.bulbagarden.net/media/upload/e/ea/724HMS.png,decidueye_hisuian,overgrow,,long_reach,7
 725,//archives.bulbagarden.net/media/upload/8/85/725MS8.png,litten,blaze,,intimidate,7
 726,//archives.bulbagarden.net/media/upload/b/b9/726MS8.png,torracat,blaze,,intimidate,7
 727,//archives.bulbagarden.net/media/upload/a/ac/727MS8.png,incineroar,blaze,,intimidate,7
@@ -1072,3 +1095,5 @@ Dex Number,Sprite URL,Pokemon Name,Ability 1,Ability 2,Hidden,Gen
 898,//archives.bulbagarden.net/media/upload/8/87/898MS8.png,calyrex,unnerve,,,8
 898,//archives.bulbagarden.net/media/upload/e/ed/898IMS8.png,calyrex_ice,as_one_glastrier,,,8
 898,//archives.bulbagarden.net/media/upload/c/c4/898SMS8.png,calyrex_shadow,as_one_spectrier,,,8
+905,//archives.bulbagarden.net/media/upload/d/d1/905MS.png,enamorus_incarnate,healer,,contrary,8
+905,//archives.bulbagarden.net/media/upload/c/c6/905TMS.png,enamorus_therian,overcoat,,,8

@@ -76,6 +76,7 @@ rowap_berry,berry,4
 roseli_berry,berry,6
 kee_berry,berry,6
 maranga_berry,berry,6
+hopo_berry,berry,8
 shock_drive,drive,5
 burn_drive,drive,5
 chill_drive,drive,5
@@ -180,6 +181,7 @@ psychic_memory,memory,7
 rock_memory,memory,7
 steel_memory,memory,7
 water_memory,memory,7
+blank_plate,plate,8
 draco_plate,plate,4
 dread_plate,plate,4
 earth_plate,plate,4
@@ -188,6 +190,7 @@ flame_plate,plate,4
 icicle_plate,plate,4
 insect_plate,plate,4
 iron_plate,plate,4
+legend_plate,plate,8
 meadow_plate,plate,4
 mind_plate,plate,4
 pixie_plate,plate,6

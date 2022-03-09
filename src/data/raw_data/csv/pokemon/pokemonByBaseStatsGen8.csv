@@ -76,7 +76,9 @@ Dex Number,Pokemon Name,hp,attack,defense,special_attack,special_defense,speed
 56,mankey,40,80,35,35,45,70
 57,primeape,65,105,60,60,70,95
 58,growlithe,55,70,45,70,50,60
+58,growlithe_hisuian,60,75,45,65,50,55
 59,arcanine,90,110,80,100,80,95
+59,arcanine_hisuian,95,115,80,95,80,90
 60,poliwag,40,50,40,40,40,90
 61,poliwhirl,65,65,65,50,50,90
 62,poliwrath,90,95,95,70,90,70
@@ -131,7 +133,9 @@ Dex Number,Pokemon Name,hp,attack,defense,special_attack,special_defense,speed
 98,krabby,30,105,90,25,25,50
 99,kingler,55,130,115,50,50,75
 100,voltorb,40,30,50,55,55,100
+100,voltorb_hisuian,40,30,50,55,55,100
 101,electrode,60,50,70,80,80,150
+101,electrode_hisuian,60,50,70,80,80,150
 102,exeggcute,60,40,80,60,45,40
 103,exeggutor,95,95,85,125,75,55
 103,exeggutor_alola,95,105,85,125,75,45
@@ -202,6 +206,7 @@ Dex Number,Pokemon Name,hp,attack,defense,special_attack,special_defense,speed
 155,cyndaquil,39,52,43,60,50,65
 156,quilava,58,64,58,80,65,80
 157,typhlosion,78,84,78,109,85,100
+157,typhlosion_hisuian,73,84,78,119,85,95
 158,totodile,50,65,64,44,48,43
 159,croconaw,65,80,80,59,63,58
 160,feraligatr,85,105,100,79,83,78
@@ -259,12 +264,14 @@ Dex Number,Pokemon Name,hp,attack,defense,special_attack,special_defense,speed
 209,snubbull,60,80,50,40,40,30
 210,granbull,90,120,75,60,60,45
 211,qwilfish,65,95,85,55,55,85
+211,qwilfish_hisuian,65,95,85,55,55,85
 212,scizor,70,130,100,55,80,65
 212,scizor_mega,70,150,140,65,100,75
 213,shuckle,20,10,230,10,230,5
 214,heracross,80,125,75,40,95,85
 214,heracross_mega,80,185,115,40,105,75
 215,sneasel,55,95,55,35,75,115
+215,sneasel_hisuian,55,95,55,35,75,115
 216,teddiursa,60,80,50,50,50,40
 217,ursaring,90,130,75,75,75,55
 218,slugma,40,40,40,70,40,20
@@ -575,7 +582,9 @@ Dex Number,Pokemon Name,hp,attack,defense,special_attack,special_defense,speed
 481,mesprit,80,105,105,105,105,80
 482,azelf,75,125,70,125,70,115
 483,dialga,100,120,120,150,100,90
+483,dialga_origin,100,100,120,150,120,90
 484,palkia,90,120,100,150,120,100
+484,palkia_origin,90,100,100,150,120,120
 485,heatran,91,90,106,130,106,77
 486,regigigas,110,160,110,80,110,100
 487,giratina_altered,150,100,120,100,120,90
@@ -597,6 +606,7 @@ Dex Number,Pokemon Name,hp,attack,defense,special_attack,special_defense,speed
 501,oshawott,55,55,45,63,45,45
 502,dewott,75,75,60,83,60,60
 503,samurott,95,100,85,108,70,70
+503,samurott_hisuian,90,108,80,100,65,85
 504,patrat,45,55,39,35,39,42
 505,watchog,60,85,69,60,69,77
 506,lillipup,45,60,45,25,45,55
@@ -644,6 +654,7 @@ Dex Number,Pokemon Name,hp,attack,defense,special_attack,special_defense,speed
 547,whimsicott,60,67,85,77,75,116
 548,petilil,45,35,50,70,50,30
 549,lilligant,70,60,75,110,75,90
+549,lilligant_hisuian,70,105,75,50,75,105
 550,basculin,70,92,65,80,55,98
 551,sandile,50,72,35,35,35,65
 552,krokorok,60,82,45,45,45,74
@@ -670,7 +681,9 @@ Dex Number,Pokemon Name,hp,attack,defense,special_attack,special_defense,speed
 568,trubbish,50,50,62,40,62,65
 569,garbodor,80,95,82,60,82,75
 570,zorua,40,65,40,80,40,65
+570,zorua_hisuian,35,60,40,85,40,70
 571,zoroark,60,105,60,120,60,105
+571,zoroark_hisuian,55,100,60,125,60,110
 572,minccino,55,50,40,40,40,75
 573,cinccino,75,95,60,65,60,115
 574,gothita,45,30,50,55,65,45
@@ -729,6 +742,7 @@ Dex Number,Pokemon Name,hp,attack,defense,special_attack,special_defense,speed
 626,bouffalant,95,110,95,40,95,55
 627,rufflet,70,83,50,37,50,60
 628,braviary,100,123,75,57,75,80
+628,braviary_hisuian,110,83,70,112,70,65
 629,vullaby,70,55,75,45,65,60
 630,mandibuzz,110,65,105,55,95,80
 631,heatmor,85,97,66,105,66,65
@@ -814,7 +828,9 @@ Dex Number,Pokemon Name,hp,attack,defense,special_attack,special_defense,speed
 703,carbink,50,50,150,50,150,50
 704,goomy,45,50,35,55,75,40
 705,sliggoo,68,75,53,83,113,60
+705,sliggoo_hisuian,58,75,83,83,113,40
 706,goodra,90,100,70,110,150,80
+706,goodra_hisuian,80,100,100,110,150,60
 707,klefki,57,80,91,80,87,75
 708,phantump,43,70,48,50,60,38
 709,trevenant,85,110,76,65,82,56
@@ -828,6 +844,7 @@ Dex Number,Pokemon Name,hp,attack,defense,special_attack,special_defense,speed
 711,gourgeist_super,85,100,122,58,75,54
 712,bergmite,55,69,85,32,35,28
 713,avalugg,95,117,184,44,46,28
+713,avalugg_hisuian,95,127,184,34,36,38
 714,noibat,40,30,35,45,40,55
 715,noivern,85,70,80,97,80,123
 716,xerneas,126,131,95,131,98,99
@@ -843,6 +860,7 @@ Dex Number,Pokemon Name,hp,attack,defense,special_attack,special_defense,speed
 722,rowlet,68,55,55,50,50,42
 723,dartrix,78,75,75,70,70,52
 724,decidueye,78,107,75,100,100,70
+724,decidueye_hisuian,88,112,80,95,95,60
 725,litten,45,65,40,60,40,70
 726,torracat,65,85,50,80,50,90
 727,incineroar,95,115,90,80,90,60
@@ -923,8 +941,8 @@ Dex Number,Pokemon Name,hp,attack,defense,special_attack,special_defense,speed
 798,kartana,59,181,131,59,31,109
 799,guzzlord,223,101,53,97,53,43
 800,necrozma,97,107,101,127,89,79
-800,necrozma_dusk,97,157,127,113,109,77
-800,necrozma_dawn,97,113,109,157,127,77
+800,necrozma_dusk_mane,97,157,127,113,109,77
+800,necrozma_dawn_wings,97,113,109,157,127,77
 800,necrozma_ultra,97,167,97,167,97,129
 801,magearna,80,95,115,130,115,65
 802,marshadow,90,125,80,90,90,125
@@ -1033,3 +1051,12 @@ Dex Number,Pokemon Name,hp,attack,defense,special_attack,special_defense,speed
 898,calyrex,100,80,80,80,80,80
 898,calyrex_ice,100,165,150,85,130,50
 898,calyrex_shadow,100,85,80,165,100,150
+899,wyrdeer,103,105,72,105,75,65
+900,kleavor,70,135,95,45,70,85
+901,ursaluna,130,140,105,45,80,50
+902,basculegion_male,120,112,65,80,75,78
+902,basculegion_female,120,92,65,100,75,78
+903,sneasler,80,130,60,40,80,120
+904,overqwil,85,115,95,65,65,85
+905,enamorus_incarnate,74,115,70,135,80,106
+905,enamorus_therian,74,115,110,135,100,46

@@ -16,6 +16,7 @@ memory,psychic_memory,psychic
 memory,rock_memory,rock
 memory,steel_memory,steel
 memory,water_memory,water
+plate,blank_plate,normal
 plate,draco_plate,dragon
 plate,dread_plate,dark
 plate,earth_plate,ground
@@ -24,6 +25,7 @@ plate,flame_plate,fire
 plate,icicle_plate,ice
 plate,insect_plate,bug
 plate,iron_plate,steel
+plate,legend_plate,special
 plate,meadow_plate,grass
 plate,mind_plate,psychic
 plate,pixie_plate,fairy

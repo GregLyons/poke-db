@@ -903,8 +903,8 @@ Dex Number,Pokemon Name,hp,attack,defense,special_attack,special_defense,speed
 798,kartana,59,181,131,59,31,109
 799,guzzlord,223,101,53,97,53,43
 800,necrozma,97,107,101,127,89,79
-800,necrozma_dusk,97,157,127,113,109,77
-800,necrozma_dawn,97,113,109,157,127,77
+800,necrozma_dusk_mane,97,157,127,113,109,77
+800,necrozma_dawn_wings,97,113,109,157,127,77
 800,necrozma_ultra,97,167,97,167,97,129
 801,magearna,80,95,115,130,115,65
 802,marshadow,90,125,80,90,90,125

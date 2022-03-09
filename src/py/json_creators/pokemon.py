@@ -1,8 +1,11 @@
+import copy
 import csv
 import re
-import copy
-from utils import parseName, genSymbolToNumber, getCSVDataPath, genSymbolToNumber, typeList, baseFormSuffices, legendsArceusList
+
 from tests import checkGenConsistency, pokemonTests
+from utils import (baseFormSuffices, genSymbolToNumber, getCSVDataPath,
+                   legendsArceusList, parseName, typeList)
+
 
 # make initial Pokemon dict, with dex number, gen, species, and type data
 # the pokemonByType.csv doesn't contain all the Pokemon forms, since some different forms of the same Pokemon can have the same type. We will rectify this in future functions; for example, base stat data will add in the forms of deoxys since those have different base stats
@@ -221,6 +224,16 @@ def addBaseStatData(fnamePrefix, pokemonDict):
       for row in reader:
         pokemonName = row["Pokemon Name"]
 
+        if pokemonName == 'necrozma_dawn':
+          pokemonName = 'necrozma_dawn_wings'
+        elif pokemonName == 'necrozma_dusk':
+          pokemonName = 'necrozma_dusk_mane'
+
+        # Ignore Legends Arceus Pokemon
+        if pokemonName in legendsArceusList():
+          continue
+        
+
         # If Pokemon is new, add it to baseStatDict
         if pokemonName not in baseStatDict.keys():
 
@@ -380,12 +393,23 @@ def addAbilityData(fname, pokemonDict):
     notesReader = csv.DictReader(notesCSV)
 
     for row in reader:
-      if row["Pokemon Name"] != "Pokemon Name":
+      pokemonName = row["Pokemon Name"]
+      
+      if pokemonName == 'necrozma_dawn':
+        pokemonName = 'necrozma_dawn_wings'
+      elif pokemonName == 'necrozma_dusk':
+        pokemonName = 'necrozma_dusk_mane'
+
+      # Ignore Legends Arceus Pokemon
+      if pokemonName in legendsArceusList():
+        continue
+
+      if pokemonName != "Pokemon Name":
         dexNumber = row["Dex Number"]
         if dexNumber != '':
           dexNumber = int(dexNumber)
 
-        pokemonAbilityDict[row["Pokemon Name"]] = {
+        pokemonAbilityDict[pokemonName] = {
           # dex number will be used to keep track of form differences later
           "gen": int(row["Gen"]),
           "dex_number": dexNumber,
@@ -643,6 +667,11 @@ def checkPokeAPIForms(fname, pokemonDict):
       # ash greninja
       elif 'battle_bond' in parsedPokeapiName:
         pokemonName = 'greninja_ash'
+      # necrozma dawn and dusk
+      elif parsedPokeapiName == 'necrozma_dawn':
+        pokemonName = 'necrozma_dawn_wings'
+      elif parsedPokeapiName == 'necrozma_dusk':
+        pokemonName = 'necrozma_dusk_mane'
       # ignore totem pokemon
       elif '_totem' in parsedPokeapiName:
         continue

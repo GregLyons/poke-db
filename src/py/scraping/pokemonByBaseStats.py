@@ -1,5 +1,7 @@
 import csv
-from utils import openLink, getCSVDataPath, parseName
+
+from utils import getCSVDataPath, openLink, parseName
+
 
 # In gen 1, Sp. Attack and Sp. Defense are merged into one stat, 'Special', which is after Speed rather than before
 def formatGen1(csvRow):
@@ -72,6 +74,10 @@ def makeBaseStatCSVs(fnamePrefix):
               pokemonName = parseName(value, 'pokemon')
               if pokemonName == 'zygarde':
                 pokemonName = 'zygarde_50'
+              elif pokemonName == 'necrozma_dawn':
+                pokemonName = 'necrozma_dawn_wings'
+              elif pokemonName == 'necrozma_dusk':
+                pokemonName = 'necrozma_dusk_mane'
               csvRow.append(pokemonName)
 
         # cut off last two columns, Total and Average

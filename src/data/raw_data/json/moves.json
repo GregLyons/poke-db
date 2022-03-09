@@ -36198,7 +36198,7 @@
     "requirements": {
       "pokemon": {
         "solgaleo": [[true, 7]],
-        "necrozma_dusk": [[true, 7]]
+        "necrozma_dusk_mane": [[true, 7]]
       },
       "move": {
         "sunsteel_strike": [[true, 7]]
@@ -36260,7 +36260,7 @@
     "requirements": {
       "pokemon": {
         "lunala": [[true, 7]],
-        "necrozma_dawn": [[true, 7]]
+        "necrozma_dawn_wings": [[true, 7]]
       },
       "move": {
         "moongeist_beam": [[true, 7]]
