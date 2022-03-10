@@ -74,6 +74,7 @@ INSERT INTO ability (
   ability_name,
   ability_formatted_name,
   ability_ps_id,
+  ability_formatted_ps_id,
   introduced
 ) VALUES ?;
 
@@ -83,6 +84,7 @@ INSERT INTO item (
   item_formatted_name,
   introduced,
   item_ps_id,
+  item_formatted_ps_id,
   item_class
 ) VALUES ?;
 
@@ -109,6 +111,7 @@ INSERT INTO pmove (
   pmove_removed_from_swsh,
   pmove_removed_from_bdsp,
   pmove_ps_id,
+  pmove_formatted_ps_id,
   pmove_ptype_name
 ) VALUES ?;
 
@@ -130,6 +133,7 @@ INSERT INTO pokemon (
   pokemon_base_stat_total,
   pokemon_form_class,
   pokemon_ps_id,
+  pokemon_formatted_ps_id,
   pokemon_pokeapi_name,
   pokemon_pokeapi_id,
   pokemon_ptype_name_1,

@@ -287,6 +287,7 @@ const getValuesForTable = (
           ability_name,
           ability_formatted_name,
           ability_ps_id,
+          ability_formatted_ps_id,
           introduced
         )
       */
@@ -295,7 +296,8 @@ const getValuesForTable = (
           data.gen,
           data.name,
           data.formatted_name,
-          data.formatted_name.toLowerCase().replace(/[^a-z0-9]+/g, ''),
+          data.ps_id,
+          data.formatted_ps_id,
           data.introduced
         ]);
       break;
@@ -365,6 +367,7 @@ const getValuesForTable = (
           item_formatted_name,
           introduced,
           item_ps_id,
+          item_formatted_ps_id,
           item_class
         ) 
       */
@@ -374,7 +377,8 @@ const getValuesForTable = (
           data.name,
           data.formatted_name,
           data.introduced,
-          data.formatted_name.toLowerCase().replace(/[^a-z0-9]+/g, '').replace('metronomeitem', 'metronome'),
+          data.ps_id,
+          data.formatted_ps_id,
           data.item_class,
         ]);
       break;
@@ -437,6 +441,7 @@ const getValuesForTable = (
           pokemon_base_stat_total,
           pokemon_form_class,
           pokemon_ps_id,
+          pokemon_formatted_ps_id,
           pokemon_pokeapi_name,
           pokemon_ptype_name_1,
           pokemon_ptype_name_2,
@@ -468,6 +473,7 @@ const getValuesForTable = (
           data.hp + data.attack + data.defense + data.special_attack + data.special_defense + data.speed,
           data.form_class,
           data.ps_id,
+          data.formatted_ps_id,
           data.pokeapi[0],
           data.pokeapi[1],
           data.type_1,
@@ -497,6 +503,7 @@ const getValuesForTable = (
           pmove_removed_from_swsh,
           pmove_removed_from_bdsp,
           pmove_ps_id,
+          pmove_formatted_ps_id,
           pmove_ptype_name
         )
       */
@@ -515,7 +522,8 @@ const getValuesForTable = (
           data.target,
           data.removed_from_swsh,
           data.removed_from_bdsp,
-          data.formatted_name.toLowerCase().replace(/[^a-z0-9]+/g, ''),
+          data.ps_id,
+          data.formatted_ps_id,
           data.type,
         ]);
       break;

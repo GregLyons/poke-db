@@ -51,6 +51,7 @@ CREATE TABLE IF NOT EXISTS ability (
   ability_formatted_name VARCHAR(45) NOT NULL,
   introduced TINYINT UNSIGNED NOT NULL,
   ability_ps_id VARCHAR(45) NOT NULL,
+  ability_formatted_ps_id VARCHAR(45) NOT NULL,
 
   PRIMARY KEY (generation_id, ability_id),
   FOREIGN KEY (generation_id) REFERENCES generation(generation_id)
@@ -74,6 +75,7 @@ CREATE TABLE IF NOT EXISTS item (
   introduced TINYINT UNSIGNED NOT NULL,
   item_class ENUM('berry','choice', 'drive', 'gem', 'incense', 'mega_stone', 'memory', 'other', 'plate', 'power', 'stat_enhancer', 'type_enhancer', 'z_crystal'),
   item_ps_id VARCHAR(45) NOT NULL,
+  item_formatted_ps_id VARCHAR(45) NOT NULL,
 
   PRIMARY KEY (generation_id, item_id),
   FOREIGN KEY (generation_id) REFERENCES generation(generation_id)
@@ -217,6 +219,7 @@ CREATE TABLE IF NOT EXISTS pmove (
   pmove_removed_from_bdsp TINYINT UNSIGNED NOT NULL,
   pmove_ptype_name VARCHAR(45) NOT NULL,
   pmove_ps_id VARCHAR(45) NOT NULL,
+  pmove_formatted_ps_id VARCHAR(45) NOT NULL,
 
   PRIMARY KEY (generation_id, pmove_id),
   FOREIGN KEY (generation_id) REFERENCES generation(generation_id)
@@ -270,6 +273,7 @@ CREATE TABLE IF NOT EXISTS pokemon (
   pokemon_base_stat_total SMALLINT UNSIGNED NOT NULL,
   pokemon_form_class ENUM('gmax', 'mega', 'alola', 'galar', 'hisui', 'other', 'base', 'cosmetic', 'type', 'battle'),
   pokemon_ps_id VARCHAR(45) NOT NULL,
+  pokemon_formatted_ps_id VARCHAR(45) NOT NULL,
   pokemon_pokeapi_name VARCHAR(45) NOT NULL,
   pokemon_pokeapi_id VARCHAR(45) NOT NULL,
   pokemon_ptype_name_1 VARCHAR(45) NOT NULL,

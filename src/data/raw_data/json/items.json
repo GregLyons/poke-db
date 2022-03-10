@@ -101,26 +101,6 @@
     "ignores_field_state": {},
     "confuses_nature": {}
   },
-  "amulet_coin": {
-    "item_class": [["other", 2]],
-    "pokemon_specific": {},
-    "gen": 2,
-    "gen2_exclusive": false,
-    "knock_off": true,
-    "effects": {},
-    "causes_status": {},
-    "resists_status": {},
-    "boosts_type": {},
-    "resists_type": {},
-    "boosts_usage_method": {},
-    "resists_usage_method": {},
-    "stat_modifications": {},
-    "formatted_name": "Amulet Coin",
-    "extends_field_state": {},
-    "resists_field_state": {},
-    "ignores_field_state": {},
-    "confuses_nature": {}
-  },
   "assault_vest": {
     "item_class": [["stat_enhancer", 6]],
     "pokemon_specific": {},
@@ -2383,7 +2363,7 @@
     "item_class": [["z_crystal", 7]],
     "pokemon_specific": {
       "lunala": [[true, 7]],
-      "necrozma_dawn": [[true, 7]]
+      "necrozma_dawn_wings": [[true, 7]]
     },
     "gen": 7,
     "gen2_exclusive": false,
@@ -4061,7 +4041,7 @@
     "item_class": [["z_crystal", 7]],
     "pokemon_specific": {
       "solgaleo": [[true, 7]],
-      "necrozma_dusk": [[true, 7]]
+      "necrozma_dusk_mane": [[true, 7]]
     },
     "gen": 7,
     "gen2_exclusive": false,

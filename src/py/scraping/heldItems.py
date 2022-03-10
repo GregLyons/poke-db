@@ -1,6 +1,7 @@
 import csv
-from utils import openLink, getCSVDataPath, parseName, genSymbolToNumber
 import re
+
+from utils import genSymbolToNumber, getCSVDataPath, openLink, parseName
 
 # # parse descriptions for the main list to classify item type
 # def parseDescription(description):
@@ -786,6 +787,11 @@ def zCrystals(fname):
         # Form name comes first, 'Necrozma' comes last
         if 'Necrozma' in pokemonName:
           pokemonName = re.sub(r'(.*)(Necrozma)', r'\2 (\1)', pokemonName)
+
+          if 'awn' in pokemonName:
+            pokemonName = 'necrozma_dawn_wings'
+          if 'usk' in pokemonName:
+            pokemonName = 'necrozma_dusk_mane'
         
         pokemonName = parseName(pokemonName, 'pokemon')
 

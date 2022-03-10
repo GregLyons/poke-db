@@ -8307,48 +8307,6 @@
         "USUM",
         "PE"]]
   },
-  "amulet_coin": {
-    "gen": 2,
-    "description_class": "item", "0": [
-      "Doubles monetary earnings. (HOLD)",
-      [
-        "GS",
-        "C",
-        "Stad2"]],
-    "1": [
-      "Doubles money in battle if the holder takes part.",
-      [
-        "RS",
-        "E",
-        "Colo",
-        "XD"]],
-    "2": [
-      "An item to be held by a Pokemon. It doubles the battle money if the holding Pokemon takes part.",
-      [
-        "FRLG"]],
-    "3": [
-      "An item to be held by a Pokemon. It doubles a battle's prize money if the holding Pokemon joins in.",
-      [
-        "DP",
-        "Pt",
-        "HGSS",
-        "PBR",
-        "BW",
-        "B2W2"]],
-    "4": [
-      "An item to be held by a Pokemon. It doubles any prize money received if the holding Pokemon joins in a battle.",
-      [
-        "XY"]],
-    "5": [
-      "An item to be held by a Pokemon. It doubles any prize money received if the holding Pokemon joins a battle.",
-      [
-        "ORAS",
-        "SM",
-        "USUM",
-        "PE",
-        "SwSh",
-        "BDSP"]]
-  },
   "assault_vest": {
     "gen": 6,
     "description_class": "item", "0": [

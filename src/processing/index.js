@@ -26,11 +26,13 @@ In this step, we also add the names used in the learnset as 'ps_id', since they 
 
 4. For each entry in an entity array, split the entry into multiple copies according to generation. For example, "bulbasaur" in pokemonArr will be split into 8 entries, one for each gen, with the data appropriate to that gen.
 
-5. Import descriptions.json, effects.json, stats.json, statuses.json, usageMethods.json, and versionGroups.json, and serialize them. Aside from descriptions.json, these objects are much simpler in that they don't change across games (at least, the data--name and debut gen--we're tracking for them doesn't change), so we use a simplified version of serializeDict.
+5. Add 'formattedPSIDs': these are names of the entities in PokemonShowdown, which are necessary for using, e.g. @smogon/calc ('ps_id' doesn't suffice).
 
-6. Write arrays to .json files.
+6. Import descriptions.json, effects.json, stats.json, statuses.json, usageMethods.json, and versionGroups.json, and serialize them. Aside from descriptions.json, these objects are much simpler in that they don't change across games (at least, the data--name and debut gen--we're tracking for them doesn't change), so we use a simplified version of serializeDict.
 
-7. Valid data for insertion (e.g. check for numbers in numeric fields, defined values in non-nullable fields, etc.).
+7. Write arrays to .json files.
+
+8. Valid data for insertion (e.g. check for numbers in numeric fields, defined values in non-nullable fields, etc.).
 */
 
 /* 1. Extend patch notes and serialize. */
@@ -125,7 +127,89 @@ const splitUsageMethodArr = splitArr(usageMethodArr);
 
 // #endregion
 
-/* 5. Serialize descriptions and other simple objects. */
+/* 5. Add formatted psIDs to Pokemon, and add psIDs to other entities (abilities, items, moves). */
+// #region
+
+const {
+  addPSIDs_ability,
+  addPSIDs_item,
+  addPSIDs_move,
+  addPSIDs_pokemon,
+} = require('./utils/formattedPSIDs.js');
+
+// Abilities 
+// #region
+
+const { SS_ability, } = require('../data/raw_data/formatted-psids/abilities.js');
+addPSIDs_ability(splitAbilityArr, SS_ability);
+
+// #endregion
+
+// Items 
+// #region
+
+const { GSC_ONLY_item, MEGA_STONES_item, SS_item, } = require('../data/raw_data/formatted-psids/items.js');
+addPSIDs_item(splitItemArr, [...GSC_ONLY_item, ...Object.keys(MEGA_STONES_item), ...SS_item]);
+
+// #endregion
+
+// Moves
+// #region
+
+const { 
+  RBY_move, 
+  GSC_PATCH_move,
+  ADV_PATCH_move,
+  DPP_PATCH_move,
+  BW_PATCH_move,
+  XY_PATCH_move,
+  SM_PATCH_move,
+  SS_PATCH_move,
+} = require('../data/raw_data/formatted-psids/moves.js');
+
+addPSIDs_move(splitMoveArr, {
+  1: Object.keys(RBY_move),
+  2: Object.keys(GSC_PATCH_move),
+  3: Object.keys(ADV_PATCH_move),
+  4: Object.keys(DPP_PATCH_move),
+  5: Object.keys(BW_PATCH_move),
+  6: Object.keys(XY_PATCH_move),
+  7: Object.keys(SM_PATCH_move),
+  8: Object.keys(SS_PATCH_move),
+});
+
+// #endregion
+
+// Pokemon
+// #region
+
+const { 
+  RBY_pokemon, 
+  GSC_PATCH_pokemon,
+  ADV_PATCH_pokemon,
+  DPP_PATCH_pokemon,
+  BW_PATCH_pokemon,
+  XY_PATCH_pokemon,
+  SM_PATCH_pokemon,
+  SS_PATCH_pokemon,
+} = require('../data/raw_data/formatted-psids/pokemon.js');
+
+addPSIDs_pokemon(splitPokemonArr, {
+  1: Object.keys(RBY_pokemon),
+  2: Object.keys(GSC_PATCH_pokemon),
+  3: Object.keys(ADV_PATCH_pokemon),
+  4: Object.keys(DPP_PATCH_pokemon),
+  5: Object.keys(BW_PATCH_pokemon),
+  6: Object.keys(XY_PATCH_pokemon),
+  7: Object.keys(SM_PATCH_pokemon),
+  8: Object.keys(SS_PATCH_pokemon),
+});
+
+// #endregion
+
+// #endregion
+
+/* 6. Serialize descriptions and other simple objects. */
 // #region
 /*
 Entries in descriptionArr are objects of the form:
@@ -168,7 +252,7 @@ const versionGroupArr = serializeVersionGroupDict(versionGroups);
 
 // #endregion
 
-/* 6. Validate data. */
+/* 7. Validate data. */
 // #region
 
 console.log('\nValidating data...\n');
@@ -178,6 +262,10 @@ splitAbilityArr.map(data => {
   if (!data.name) console.log('Doesn\'t have a name!');
 
   if (isNaN(data.introduced)) console.log(`${data.name}: Debut gen ${data.introduced} is not a number.`);
+
+  if (!data.ps_id) console.log(`${data.name}: Doesn't have a Pokemon Showdown ID.`);
+
+  if (!data.formatted_ps_id) console.log(`${data.name}: Doesn't have a formatted Pokemon Showdown ID.`);
 });
 
 console.log('Checking items...');
@@ -185,6 +273,10 @@ splitItemArr.map(data => {
   if (!data.name) console.log('Doesn\'t have a name!');
 
   if (isNaN(data.introduced)) console.log(`${data.name}: Debut gen ${data.introduced} is not a number.`);
+
+  if (!data.ps_id) console.log(`${data.name}: Doesn't have a Pokemon Showdown ID.`);
+
+  if (!data.formatted_ps_id) console.log(`${data.name}: Doesn't have a formatted Pokemon Showdown ID.`);
 });
 
 console.log('Checking moves...');
@@ -206,6 +298,10 @@ splitMoveArr.map(data => {
   if (!data.hasOwnProperty('removed_from_swsh')) console.log(`${data.name}: Doesn't have an removed_from_swsh flag.`);
 
   if (!data.hasOwnProperty('removed_from_bdsp')) console.log(`${data.name}: Doesn't have an removed_from_bdsp flag.`);
+
+  if (!data.ps_id) console.log(`${data.name}: Doesn't have a Pokemon Showdown ID.`);
+
+  if (!data.formatted_ps_id) console.log(`${data.name}: Doesn't have a formatted Pokemon Showdown ID.`);
 });
 
 console.log('Checking Pokemon...');
@@ -220,7 +316,9 @@ splitPokemonArr.map(data => {
 
   if (!data.form_class) console.log(`${data.name}: Doesn't have a form class.`);
 
-  if (!data.ps_id) console.log(`${data.name}: Doesn't have a Pokemon Showdown ID.`)
+  if (!data.ps_id) console.log(`${data.name}: Doesn't have a Pokemon Showdown ID.`);
+
+  if (!data.formatted_ps_id) console.log(`${data.name}: Doesn't have a formatted Pokemon Showdown ID.`);
   
   if (isNaN(data.height)) console.log(`${data.name}: Height ${data.weight} is not a number.`);
 
@@ -254,7 +352,7 @@ splitPTypeArr.map(data => {
 
 // #endregion
 
-/* 7. Write arrays to .json files. */
+/* 8. Write arrays to .json files. */
 // #region
 
 const fs = require('fs');
@@ -289,7 +387,7 @@ FILENAMES_AND_ARRAYS.map(pair => {
     }
   });
 
-  console.log(`Saved ${fname}.`);
+  // console.log(`Saved ${fname}.`);
 });
 
 // #endregion

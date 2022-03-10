@@ -20,7 +20,7 @@ def makeInitialItemDict(fnamePrefix):
     for row in reader:
       itemName = row["Item Name"]
 
-      if itemName in legendsArceusList():
+      if itemName in legendsArceusList() or itemName == 'amulet_coin':
         continue
 
       # the gen 2 berries will be handled in the berry section
@@ -51,7 +51,7 @@ def makeInitialItemDict(fnamePrefix):
     for row in reader:
       itemName, itemClass, itemGen = row["Item Name"], row["Item Class"], row["Item Gen"]
 
-      if itemName in legendsArceusList():
+      if itemName in legendsArceusList() or itemName == 'amulet_coin':
         continue
 
       if itemName not in itemDict:
@@ -824,6 +824,9 @@ def checkForMissingDescriptions(items_fname, berries_fname, gen2Berries_fname, i
 
   for itemName in descriptionDict.keys():
     if itemName not in itemDict.keys():
+      # Ignore amulet coin
+      if itemName == 'amulet_coin':
+        continue
       print(itemName, 'has a description but not in itemDict!')
 
   return

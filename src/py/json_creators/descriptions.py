@@ -1,5 +1,7 @@
 import csv
+
 from utils import getCSVDataPath
+
 
 def makeDescriptionDict(dataPath):
   descriptionDict = {}
@@ -10,6 +12,7 @@ def makeDescriptionDict(dataPath):
 
       for row in descriptionReader:
         entityName, entityGen = row[f"{category} Name"], int(row["Gen"])
+
         # reclassify berries as items
         if 'erry' in category:
           descriptionType = 'item'
@@ -42,6 +45,9 @@ def makeDescriptionDict(dataPath):
             del descriptionDict[entityName][descriptionIndex]
           else:
             break
+
+  # Remove amulet coin
+  del descriptionDict["amulet_coin"]
 
   return descriptionDict
 
