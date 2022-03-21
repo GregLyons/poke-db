@@ -2,6 +2,7 @@ Effect Name,Move Name
 consecutive,ice_ball
 consecutive,outrage
 consecutive,petal_dance
+consecutive,raging_fury
 consecutive,rollout
 consecutive,thrash
 consecutive,uproar
@@ -284,6 +285,7 @@ heals_nonvolatile,aromatherapy
 heals_nonvolatile,g_max_sweetness
 heals_nonvolatile,heal_bell
 heals_nonvolatile,jungle_healing
+heals_nonvolatile,lunar_blessing
 heals_nonvolatile,psycho_shift
 heals_nonvolatile,purify
 heals_nonvolatile,refresh
@@ -292,6 +294,7 @@ heals_nonvolatile,smelling_salts
 heals_nonvolatile,sparkling_aria
 heals_nonvolatile,sparkly_swirl
 heals_nonvolatile,steam_eruption
+heals_nonvolatile,take_heart
 heals_nonvolatile,uproar
 heals_nonvolatile,wake_up_slap
 hits_semi_invulnerable,bide
@@ -322,10 +325,8 @@ cannot_miss,baddy_bad
 cannot_miss,bestow
 cannot_miss,bide
 cannot_miss,black_hole_eclipse
-cannot_miss,blizzard
 cannot_miss,block
 cannot_miss,bloom_doom
-cannot_miss,body_slam
 cannot_miss,bouncy_bubble
 cannot_miss,breakneck_blitz
 cannot_miss,buzzy_buzz
@@ -339,12 +340,10 @@ cannot_miss,corkscrew_crash
 cannot_miss,defog
 cannot_miss,devastating_drake
 cannot_miss,disarming_voice
-cannot_miss,dragon_rush
 cannot_miss,electrify
 cannot_miss,false_surrender
 cannot_miss,feint_attack
 cannot_miss,floral_healing
-cannot_miss,flying_press
 cannot_miss,foresight
 cannot_miss,freezy_frost
 cannot_miss,g_max_befuddle
@@ -387,8 +386,6 @@ cannot_miss,guard_swap
 cannot_miss,guardian_of_alola
 cannot_miss,heal_pulse
 cannot_miss,heart_swap
-cannot_miss,heat_crash
-cannot_miss,hurricane
 cannot_miss,hydro_vortex
 cannot_miss,hyperspace_fury
 cannot_miss,hyperspace_hole
@@ -427,7 +424,6 @@ cannot_miss,mind_reader
 cannot_miss,miracle_eye
 cannot_miss,never_ending_nightmare
 cannot_miss,nightmare
-cannot_miss,noble_roar
 cannot_miss,oceanic_operetta
 cannot_miss,odor_sleuth
 cannot_miss,pain_split
@@ -460,16 +456,13 @@ cannot_miss,speed_swap
 cannot_miss,spider_web
 cannot_miss,steamroller
 cannot_miss,stoked_sparksurfer
-cannot_miss,stomp
 cannot_miss,struggle
 cannot_miss,subzero_slammer
 cannot_miss,supersonic_skystrike
 cannot_miss,swift
 cannot_miss,tectonic_rage
 cannot_miss,telekinesis
-cannot_miss,thunder
 cannot_miss,topsy_turvy
-cannot_miss,toxic
 cannot_miss,transform
 cannot_miss,trump_card
 cannot_miss,twinkle_tackle
@@ -528,10 +521,12 @@ recoil,flare_blitz
 recoil,head_charge
 recoil,head_smash
 recoil,light_of_ruin
+recoil,self_destruct
 recoil,struggle
 recoil,submission
 recoil,take_down
 recoil,volt_tackle
+recoil,wave_crash
 recoil,wild_charge
 recoil,wood_hammer
 variable_power,acid_downpour
@@ -703,6 +698,7 @@ restores_hp,pollen_puff
 restores_hp,present
 restores_hp,wish
 restores_hp,heal_order
+restores_hp,lunar_blessing
 restores_hp,milk_drink
 restores_hp,moonlight
 restores_hp,morning_sun
@@ -844,7 +840,6 @@ powder,z_poison_powder
 powder,z_stun_spore
 powder,z_sleep_powder
 hits_semi_invulnerable,z_toxic
-cannot_miss,z_toxic
 resets_stats,z_agility
 restores_hp,z_teleport
 switches_out_user,z_teleport
@@ -1022,7 +1017,6 @@ cannot_miss,z_bestow
 resets_stats,z_cotton_guard
 changes_pokemon_type,z_trick_or_treat
 sound,z_noble_roar
-cannot_miss,z_noble_roar
 changes_move_type,z_ion_deluge
 changes_pokemon_type,z_forests_curse
 restores_hp,z_parting_shot

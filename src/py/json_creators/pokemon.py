@@ -1087,6 +1087,11 @@ def addFullName(pokemonDict):
 def getFormattedName(pokemonName):
   nameParts = pokemonName.split('_')
 
+  if pokemonName == 'farfetchd':
+    return 'Farfetch\'d'
+  if pokemonName == 'farfetchd_galar':
+    return 'Farfetch\'d (Galar)'
+
   if len(nameParts) == 1 and pokemonName != 'urshifu':
     return pokemonName.title()
 

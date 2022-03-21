@@ -1,6 +1,8 @@
 import csv
-from utils import openLink, getCSVDataPath, parseName, isShadowMove
 import re
+
+from utils import getCSVDataPath, isShadowMove, openLink, parseName
+
 
 # columns are Effect Name, Move Name
 def makeEffectCSV(label, url, writer):
@@ -12,6 +14,11 @@ def makeEffectCSV(label, url, writer):
 
   for move in moves:
     moveName = parseName(move)
+
+    # exclude some moves that cannot miss
+    if label == 'cannot-miss':
+      if moveName in ['blizzard', 'dragon_rush', 'body_slam', 'thunder', 'flying_press', 'hurricane', 'heat_crash', 'stomp', 'toxic']:
+        continue
 
     # ignore shadow moves
     if isShadowMove(moveName):

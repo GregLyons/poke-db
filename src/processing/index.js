@@ -117,6 +117,15 @@ const splitMoveArr = splitArr(moveArr);
 const splitPokemonArr = splitArr(pokemonArr);
 const splitPTypeArr = splitArr(pTypeArr);
 
+// For moves which cannot miss, replace accuracy with "null"; same with moves whose power varies
+for (let move of splitMoveArr) {
+  if (move.effects.cannot_miss) {
+    move.accuracy = null;
+  }
+  if (move.effects.variable_power || move.effects.deals_direct_damage) {
+    move.power = null;
+  }
+}
 
 const splitEffectArr = splitArr(effectArr);
 const splitFieldStateArr = splitArr(fieldStateArr);
@@ -135,7 +144,7 @@ const {
   addPSIDs_item,
   addPSIDs_move,
   addPSIDs_pokemon,
-} = require('./utils/formattedPSIDs.js');
+} = require('./utils/index.js');
 
 // Abilities 
 // #region
@@ -204,6 +213,7 @@ addPSIDs_pokemon(splitPokemonArr, {
   7: Object.keys(SM_PATCH_pokemon),
   8: Object.keys(SS_PATCH_pokemon),
 });
+
 
 // #endregion
 

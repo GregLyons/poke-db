@@ -1,12 +1,12 @@
 import csv
-import elementalTypes as types
-import effects
-import usageMethods
-import statuses
 from functools import cmp_to_key
-from utils import getCSVDataPath, genSymbolToNumber, numberOfGens
-from tests import checkGenConsistency, moveTests
 
+import effects
+import elementalTypes as types
+import statuses
+import usageMethods
+from tests import checkGenConsistency, moveTests
+from utils import genSymbolToNumber, getCSVDataPath, numberOfGens
 
 # Create move .json file with the following data:
 # name, description, power, PP, accuracy, category, priority, contact, target, type, gen introduced, where it affects item
@@ -406,6 +406,11 @@ def addEffectToMoveDict(fname, moveDict):
     for row in reader:
       effect = row["Effect Name"]
       moveName = row["Move Name"]
+
+      # Ignore PLAS moves
+      if moveName in ['raging_fury', 'lunar_blessing', 'take_heart', 'wave_crash']:
+        continue
+
       moveGen = moveDict[moveName]["gen"]
 
       # distinguish between usage method and other effects
@@ -458,6 +463,22 @@ def addEffectToMoveDict(fname, moveDict):
 
   # haze
   moveDict["haze"]["effects"]["resets_stats"] = [[True, 1]]
+
+  # body slam
+  moveDict["body_slam"]["effects"] = {
+    "anti_mini": [[True, 5]],
+  }
+
+  # dragon rush
+  moveDict["dragon_rush"]["effects"] = {
+    "anti_mini": [[False, 4], [True, 6]]
+  }
+
+  # heat crash
+  moveDict["heat_crash"]["effects"] = {
+    "anti_mini": [[False, 5], [True, 6]]
+  }
+
 
   return
 

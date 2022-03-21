@@ -3,4 +3,5 @@ module.exports = {
   ...require('./splitting.js'),
   ...require('./serializing.js'),
   ...require('./learnsetProcessing.js'),
-}
+  ...require('./formattedPSIDs'),
+};

@@ -1126,7 +1126,6 @@
     "g_max_move": false,
     "effects": {
       "anti_mini": [[true, 2]],
-      "cannot_miss": [[true, 1]],
       "powers_up": [[true, 2]]
     },
     "causes_status": {
@@ -1677,8 +1676,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "anti_mini": [[true, 2]],
-      "cannot_miss": [[true, 1]]
+      "anti_mini": [[true, 5]]
     },
     "causes_status": {
       "paralysis": [[30.0, 1]]
@@ -2951,9 +2949,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "cannot_miss": [[true, 1]]
-    },
+    "effects": {},
     "causes_status": {
       "freeze": [[10.0, 1]]
     },
@@ -4396,8 +4392,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "hits_semi_invulnerable": [[true, 1]],
-      "cannot_miss": [[true, 1]]
+      "hits_semi_invulnerable": [[true, 1]]
     },
     "causes_status": {
       "paralysis": [[10.0, 1], [30.0, 2]]
@@ -4655,8 +4650,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "hits_semi_invulnerable": [[true, 1]],
-      "cannot_miss": [[true, 1]]
+      "hits_semi_invulnerable": [[true, 1]]
     },
     "causes_status": {
       "bad_poison": [[100.0, 1]]
@@ -6053,7 +6047,8 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "faints_user": [[true, 1]]
+      "faints_user": [[true, 1]],
+      "recoil": [[true, 1]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -20665,8 +20660,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "anti_mini": [[true, 4]],
-      "cannot_miss": [[true, 4]]
+      "anti_mini": [[false, 4], [true, 6]]
     },
     "causes_status": {
       "flinch": [[20.0, 4]]
@@ -27202,10 +27196,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "depends_on_weight": [[true, 5]],
-      "anti_mini": [[true, 5]],
-      "cannot_miss": [[true, 5]],
-      "variable_power": [[true, 5]]
+      "anti_mini": [[false, 5], [true, 6]]
     },
     "causes_status": {},
     "resists_status": {},
@@ -27560,8 +27551,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "hits_semi_invulnerable": [[true, 5]],
-      "cannot_miss": [[true, 5]]
+      "hits_semi_invulnerable": [[true, 5]]
     },
     "causes_status": {
       "confusion": [[30.0, 5]]
@@ -28500,7 +28490,6 @@
     "g_max_move": false,
     "effects": {
       "anti_mini": [[true, 6]],
-      "cannot_miss": [[true, 6]],
       "special_type_effectiveness": [[true, 6]]
     },
     "causes_status": {},
@@ -28910,9 +28899,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "cannot_miss": [[true, 6]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {
@@ -44731,8 +44718,7 @@
     "max_move": false,
     "g_max_move": false,
     "effects": {
-      "hits_semi_invulnerable": [[true, 7]],
-      "cannot_miss": [[true, 7]]
+      "hits_semi_invulnerable": [[true, 7]]
     },
     "causes_status": {
       "bad_poison": [[100.0, 7]]
@@ -55212,9 +55198,7 @@
     "lgpe_only": false,
     "max_move": false,
     "g_max_move": false,
-    "effects": {
-      "cannot_miss": [[true, 7]]
-    },
+    "effects": {},
     "causes_status": {},
     "resists_status": {},
     "stat_modifications": {

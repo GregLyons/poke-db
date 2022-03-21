@@ -2851,7 +2851,7 @@
       "farfetchd_galar": [["galar", 8]]
     },
     "form_class": [["base", 1]],
-    "formatted_name": "Farfetchd",
+    "formatted_name": "Farfetch'd",
     "removed_from_swsh": false,
     "removed_from_bdsp": false
   },
@@ -33714,7 +33714,7 @@
       "farfetchd": [["base", 8]]
     },
     "form_class": [["galar", 8]],
-    "formatted_name": "Farfetc'd (Galar)",
+    "formatted_name": "Farfetch'd (Galar)",
     "removed_from_swsh": false,
     "removed_from_bdsp": true
   },
