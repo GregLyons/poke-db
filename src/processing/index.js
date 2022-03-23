@@ -79,10 +79,13 @@ const usageMethodArr = serializeDict(usageMethods);
 /* 2. Merge learnset data. */
 // #region
 const { RAW_DATA_PATH } = require('./utils/index.js');
-const { mergeLearnsets } = require('./utils/index.js');
-const gen2Learnsets = require(RAW_DATA_PATH + 'gen2learnsets.js');
-const laterLearnsets = require(RAW_DATA_PATH + 'learnsets.js');
-const learnsets = mergeLearnsets(gen2Learnsets, laterLearnsets);
+const { mergeGen2Learnsets } = require('./utils/index.js');
+const { mergeBDSPLearnsets } = require('./utils/index.js');
+const gen2Learnsets = require(RAW_DATA_PATH + 'learnsets/gen2learnsets.js');
+const laterLearnsets = require(RAW_DATA_PATH + 'learnsets/learnsets.js');
+const bdspLearnsets = require(RAW_DATA_PATH + 'learnsets/bdsplearnsets.js');
+const swshLearnsets = mergeGen2Learnsets(gen2Learnsets, laterLearnsets);
+const learnsets = mergeBDSPLearnsets(swshLearnsets, bdspLearnsets);
 
 // #endregion
 

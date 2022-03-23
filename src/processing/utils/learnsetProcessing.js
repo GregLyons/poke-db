@@ -4,7 +4,7 @@ const { replaceAll } = require('./helpers.js');
 // #region
 
 // Given learnset objects from separate periods, combine them into a single learnset object
-const mergeLearnsets = (gen2Learnsets, gen3OnwardsLearnsets) => {
+const mergeGen2Learnsets = (gen2Learnsets, gen3OnwardsLearnsets) => {
   let mergedLearnsets = {};
   let earlierLearnsets = JSON.parse(JSON.stringify(gen2Learnsets));
   let laterLearnsets = JSON.parse(JSON.stringify(gen3OnwardsLearnsets));
@@ -52,6 +52,60 @@ const mergeLearnsets = (gen2Learnsets, gen3OnwardsLearnsets) => {
 
   return mergedLearnsets;
 }
+
+const mergeBDSPLearnsets = (swshLearnsets, bdspLearnsets) => {
+  let mergedLearnsets = {};
+  let earlierLearnsets = JSON.parse(JSON.stringify(swshLearnsets));
+  let laterLearnsets = JSON.parse(JSON.stringify(bdspLearnsets));
+
+  // add data from earlierLearnsets 
+  for (let learnsetPokemonName of Object.keys(earlierLearnsets)) {
+    mergedLearnsets[learnsetPokemonName] = {};
+    mergedLearnsets[learnsetPokemonName].learnset = earlierLearnsets[learnsetPokemonName].learnset;
+    mergedLearnsets[learnsetPokemonName].event_data = earlierLearnsets[learnsetPokemonName].eventData;
+  }
+  
+  // add data from laterLearnsets
+  for (let learnsetPokemonName of Object.keys(laterLearnsets)) {
+    // if learnsetPokemonName is in earlierLearnset, we need to append new data to old data
+    if (mergedLearnsets[learnsetPokemonName]) {
+
+      // e.g. shayminsky
+      if (laterLearnsets[learnsetPokemonName].learnset === undefined) continue;
+
+      // concatenate learnset data
+      for (let learnsetMoveName of Object.keys(laterLearnsets[learnsetPokemonName].learnset)) {
+        // if move has data from SwSh, concatenate with new data
+        if (mergedLearnsets[learnsetPokemonName].learnset[learnsetMoveName]) {
+          mergedLearnsets[learnsetPokemonName].learnset[learnsetMoveName] = mergedLearnsets[learnsetPokemonName].learnset[learnsetMoveName].concat(laterLearnsets[learnsetPokemonName].learnset[learnsetMoveName]); 
+        }
+        // otherwise, no SwSh data to conatenate
+        else {
+          mergedLearnsets[learnsetPokemonName].learnset[learnsetMoveName] = laterLearnsets[learnsetPokemonName].learnset[learnsetMoveName]; 
+        }
+      }
+      // concatenate event data
+      // event data present from earlier period AND in later period (Fearow only has event data in earlier period)
+      if (mergedLearnsets[learnsetPokemonName].event_data && laterLearnsets[learnsetPokemonName].eventData) {
+        mergedLearnsets[learnsetPokemonName].event_data = mergedLearnsets[learnsetPokemonName].event_data.concat(laterLearnsets[learnsetPokemonName].eventData); 
+      }
+      // event data from later period, but not earlier period
+      else if (laterLearnsets[learnsetPokemonName].eventData) {
+        mergedLearnsets[learnsetPokemonName].event_data = laterLearnsets[learnsetPokemonName].eventData;
+      }
+      // case of event data only in earlier period needs no treatment, since that data is already in mergedLearnsets
+    }
+    // Pokemon is not present in earlierLearnset, so no need to merge data
+    else {
+      mergedLearnsets[learnsetPokemonName] = {};
+      mergedLearnsets[learnsetPokemonName].learnset = laterLearnsets[learnsetPokemonName].learnset;
+      mergedLearnsets[learnsetPokemonName].event_data = laterLearnsets[learnsetPokemonName].eventData;
+    }
+  }
+
+  return mergedLearnsets;
+}
+
 // #endregion
 
 // ADD LEARNSET AND EVENT DATA
@@ -631,7 +685,8 @@ const addPokemonShowdownIDToPokemonArr = (psIDs, pokemonArr) => {
 // #endregion
 
 module.exports = {
-  mergeLearnsets,
+  mergeGen2Learnsets,
+  mergeBDSPLearnsets,
   addLearnsetsToPokemonArr,
   addLearnDataToEvolutions: addLearnDataToEvolutions,
   addPokemonShowdownIDToPokemonArr,
