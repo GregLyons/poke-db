@@ -22,6 +22,9 @@ const getMaxMoves = moveArr => moveArr.filter(move => move.max_move).map(move =>
 
 const getGMaxMoves = moveArr => moveArr.filter(move => move.g_max_move).map(move => move.name);
 
+// Pokemon who cannot Dynamax, hence who can't use Max moves
+const noMax = ['zacian', 'zacian_crowned', 'zamazenta', 'zamazenta_crowned', 'eternatus'];
+
 // const getMovesOfClass = (moveArr, className) => {
 //   switch (className) {
 //     case 'z':
@@ -57,5 +60,6 @@ module.exports = {
   getStatusZMoves,
   getMaxMoves,
   getGMaxMoves,
+  noMax,
   replaceAll,
 }

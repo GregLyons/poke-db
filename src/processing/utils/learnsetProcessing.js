@@ -348,12 +348,13 @@ const getUpdatedLearnsets = (learnsets, moves, pokemon) => {
         // learnData is the gen + 'S' for 'Special'
         updatedLearnsets[learnsetPokemonName].learnset[learnsetMoveName] = [moveGen + 'B'];
       }
-    } 
+    }
     // indicates move depends on the type of the base move; non-Pokemon specific Z-moves, max moves, and gmax moves
     else if (moves[moveName].requirements.hasOwnProperty('type')) {
+      // Elemental type required for moveName
       const elType = moves[moveName].type[0][0];
 
-      // if a Pokemon learns a damaging move of type elType in moveGen, then it knows the corresponding Z-move
+      // if a Pokemon learns a damaging move of type elType in moveGen, then it knows the corresponding Z-move/Max Move
       for (let moveOfElType of moveArr
         // get moves whose type in gen moveGen was elType; will exclude moves later than moveGen
         .filter(move => {
@@ -417,6 +418,8 @@ const getUpdatedLearnsets = (learnsets, moves, pokemon) => {
 // adds learnset data to pokemonArr
 // also adds ps_id's to pokemonArr
 const addLearnsetsToPokemonArr = (learnsets, moves, pokemon, pokemonArr) => {
+  const { noMax, } = require('./helpers.js');
+
   // pokemonMap: pokemonName --> learnsetPokemonName
   // inversePokemonName: learnsetPokemonName --> pokemonName[]
   // the latter returns an array since for some Pokemon with multiple forms, learnsets puts the learnset on only one of the forms; e.g.inversePokemonName('deoxys') returns the names for all of Deoxys's forms
@@ -548,6 +551,22 @@ const addLearnsetsToPokemonArr = (learnsets, moves, pokemon, pokemonArr) => {
             const learnDatumGen = +d[0];
             return learnDatumGen >= gen;
           }));
+        }
+      }
+    }
+  }
+
+  // Certain Pokemon cannot Dynamax, so remove their Max Moves
+  for (let pokemonEntry of pokemonArr) {
+    const { name: pokemonName, learnset, } = pokemonEntry;
+
+    if (noMax.includes(pokemonName)) {
+      // Iterate over moves in learnset
+      for (moveName of Object.keys(learnset)) {
+        // If move begins with 'max_' (indicating Max Move), then remove it
+        // This works because the Pokemon here would only learn generic Max moves, which all begin with 'max_'
+        if (moveName.slice(0, 4) === 'max_') {
+          delete learnset[moveName];
         }
       }
     }
