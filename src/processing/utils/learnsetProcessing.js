@@ -475,6 +475,86 @@ const addLearnsetsToPokemonArr = (learnsets, moves, pokemon, pokemonArr) => {
     pokemonEntry['event_data'] = pokemonEventData;
   }
 
+  // Exceptions
+  // #region
+
+  // Learnset data has moves missing for certain forms, but the forms aren't entirely missing moves; this is because those forms gain specific moves.
+  // Here, we add on the moves of the base form to such forms
+  const exceptionMap = new Map();
+  for (let pokemonEntry of pokemonArr) {
+    const { name: pokemonName, learnset, gen } = pokemonEntry;
+
+    // Get learn data for base forms, which will occur before the problematic forms
+    let baseName;
+    if ([
+      'rotom',
+      'pumpkaboo_small',
+      'necrozma',
+      'zacian',
+      'zamazenta',
+      'pikachu',
+    ].includes(pokemonName)) {
+      exceptionMap.set(pokemonName, pokemonEntry.learnset);
+    }
+
+    // Determine baseName based on pokemonName
+    else if ([
+      'pikachu_pop_star',
+      'pikachu_rock_star',
+      'pikachu_belle',
+      'pikachu_phd',
+      'pikachu_libre',
+    ].includes(pokemonName)) {
+      baseName = 'pikachu';
+    }
+    else if ([
+      'rotom_heat',
+      'rotom_wash',
+      'rotom_frost',
+      'rotom_fan',
+      'rotom_mow',
+    ].includes(pokemonName)) {
+      baseName = 'rotom';
+    }
+    else if (pokemonName === 'zacian_crowned') {
+      baseName = 'zacian';
+    }
+    else if (pokemonName === 'zamazenta_crowned') {
+      baseName = 'zamazenta';
+    }
+    else if (pokemonName.includes('necrozma')) {
+      baseName = 'necrozma';
+    }
+    else if (pokemonName.includes('pumpkaboo')) {
+      baseName = 'pumpkaboo_small';
+    }
+
+    // If baseName has been assigned, continue; otherwise, move on
+    if (baseName !== undefined) {
+      // Iterate over learnData of baseName
+      for (let [moveName, learnData] of Object.entries(exceptionMap.get(baseName))) {
+        // If pokemonName's learnset doesn't contain current move, just use learnData of baseName for that move
+        if (learnset.moveName === undefined) {
+          // Since forms may be of a later gen, add only the learnData relevant to pokemonName (i.e. in current or later gen)
+          learnset[moveName] = learnData.filter(d => {
+            const learnDatumGen = +d[0];
+            return learnDatumGen >= gen;
+          });
+        }
+        // Otherwise, concatenate the learnData
+        else {
+          // Since forms may be of a later gen, add only the learnData relevant to pokemonName (i.e. in current or later gen)
+          learnset[moveName] = learnset[moveName].concat(learnData.filter(d => {
+            const learnDatumGen = +d[0];
+            return learnDatumGen >= gen;
+          }));
+        }
+      }
+    }
+  }
+
+  // #endregion
+
   return evolutionLearnsetMap;
 }
 

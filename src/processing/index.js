@@ -78,6 +78,7 @@ const usageMethodArr = serializeDict(usageMethods);
 
 /* 2. Merge learnset data. */
 // #region
+
 const { RAW_DATA_PATH } = require('./utils/index.js');
 const { mergeGen2Learnsets } = require('./utils/index.js');
 const { mergeBDSPLearnsets } = require('./utils/index.js');
@@ -86,6 +87,108 @@ const laterLearnsets = require(RAW_DATA_PATH + 'learnsets/learnsets.js');
 const bdspLearnsets = require(RAW_DATA_PATH + 'learnsets/bdsplearnsets.js');
 const swshLearnsets = mergeGen2Learnsets(gen2Learnsets, laterLearnsets);
 const learnsets = mergeBDSPLearnsets(swshLearnsets, bdspLearnsets);
+
+// for (let [pokemonName, learnData] of Object.entries(learnsets)) {
+//   if (!learnData.learnset) {
+//     console.log(pokemonName);
+//     console.log('No learn data');
+//   }
+//   else if (Object.keys(learnData.learnset).length < 5) {
+//     console.log(pokemonName);
+//   }
+// }
+
+// weedle
+// ditto
+// unown
+// pikachurockstar
+// pikachubelle
+// pikachupopstar
+// pikachuphd
+// pikachulibre
+// deoxysattack
+// No learn data
+// deoxysdefense
+// No learn data
+// deoxysspeed
+// No learn data
+// gastrodoneast
+// rotomheat
+// rotomwash
+// rotomfrost
+// rotomfan
+// rotommow
+// giratinaorigin
+// No learn data
+// shayminsky
+// No learn data
+// arceusbug
+// No learn data
+// arceusdark
+// No learn data
+// arceusdragon
+// No learn data
+// arceuselectric
+// No learn data
+// arceusfairy
+// No learn data
+// arceusfighting
+// No learn data
+// arceusfire
+// No learn data
+// arceusflying
+// No learn data
+// arceusghost
+// No learn data
+// arceusgrass
+// No learn data
+// arceusground
+// No learn data
+// arceusice
+// No learn data
+// arceuspoison
+// No learn data
+// arceuspsychic
+// No learn data
+// arceusrock
+// No learn data
+// arceussteel
+// No learn data
+// arceuswater
+// No learn data
+// tornadustherian
+// No learn data
+// thundurustherian
+// No learn data
+// landorustherian
+// No learn data
+// keldeoresolute
+// No learn data
+// genesectburn
+// No learn data
+// genesectchill
+// No learn data
+// genesectdouse
+// No learn data
+// genesectshock
+// No learn data
+// pumpkaboosuper
+// hoopaunbound
+// No learn data
+// cosmog
+// cosmoem
+// necrozmaduskmane
+// necrozmadawnwings
+// necrozmaultra
+// zaciancrowned
+// zamazentacrowned
+// flarelm
+// rebble
+// tactite
+// privatyke
+// monohm
+// duohm
+// protowatt
 
 // #endregion
 
@@ -100,6 +203,16 @@ const evolutionLearnsetMap = addLearnsetsToPokemonArr(learnsets, moves, pokemon,
 addLearnDataToEvolutions(evolutionLearnsetMap, pokemonArr);
 addPokemonShowdownIDToPokemonArr(psIDs, pokemonArr);
 
+for (let pokemon of pokemonArr) {
+  const { gen, name, learnset } = pokemon;
+
+  if (name.includes('unown')) continue;
+  else if (['cosmog', 'cosmoem', 'ditto', 'blipbug'].includes(name)) continue;
+
+  if (Object.keys(learnset).length < 10) {
+    console.log(gen, name);
+  }
+}
 
 
 // Separate out LGPE only Pokemon
